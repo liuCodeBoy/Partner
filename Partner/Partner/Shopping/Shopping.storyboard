@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bUz-dK-Dar">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="SCo-Wh-kHx">
+            <objects>
+                <viewController id="fhZ-Rk-wpj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q0Q-JP-3Bl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4GK-g9-K4H"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="v4R-Az-mKE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9a-Ar-XTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="428" y="176.76161919040482"/>
+        </scene>
+        <!--商城-->
+        <scene sceneID="gNq-qm-dFf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bUz-dK-Dar" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="商城" id="3kp-ih-nDs"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gm4-Ni-Mbh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fhZ-Rk-wpj" kind="relationship" relationship="rootViewController" id="Q0e-nt-gyg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IHN-aD-f7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-375" y="177"/>
+        </scene>
+    </scenes>
+</document>
