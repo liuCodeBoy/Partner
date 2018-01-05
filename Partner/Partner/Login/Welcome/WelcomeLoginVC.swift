@@ -13,18 +13,26 @@ class WelcomeLoginVC: UIViewController,UIScrollViewDelegate{
     @IBOutlet weak var pageView: UIView!
     @IBOutlet weak var welcomeScrollview: UIScrollView!
     var _pageControl: UIPageControl!
+    
+    override var prefersStatusBarHidden: Bool{
+        return false
+    }
+    @IBAction func showRegitserLoginVC(_ sender: Any) {
+          let RegisterAndLoginVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
+        self.present(RegisterAndLoginVC, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let  layer   = CALayer.init(layer: self)
-        layer.frame  =  aa.frame
-        layer.shadowOffset = CGSize.init(width: 5, height: 5)
-        layer.shadowOpacity = 0.8;
-        layer.backgroundColor = UIColor.gray.cgColor
-        layer.cornerRadius = 20
-        
-        self.view.layer.addSublayer(layer)
+//        
+//        let  layer   = CALayer.init(layer: self)
+//        layer.frame  =  aa.frame
+//        layer.shadowOffset = CGSize.init(width: 5, height: 5)
+//        layer.shadowOpacity = 0.8;
+//        layer.backgroundColor = UIColor.gray.cgColor
+//        layer.cornerRadius = 20
+//        
+//        self.view.layer.addSublayer(layer)
         
         
         welcomeScrollview.delegate = self
