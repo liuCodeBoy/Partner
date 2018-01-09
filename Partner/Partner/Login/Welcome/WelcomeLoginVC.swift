@@ -19,7 +19,8 @@ class WelcomeLoginVC: UIViewController,UIScrollViewDelegate{
     }
     @IBAction func showRegitserLoginVC(_ sender: Any) {
           let RegisterAndLoginVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
-        self.present(RegisterAndLoginVC, animated: true, completion: nil)
+         let  navRegistAndLoginVC = UINavigationController.init(rootViewController: RegisterAndLoginVC)
+        self.present(navRegistAndLoginVC, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
