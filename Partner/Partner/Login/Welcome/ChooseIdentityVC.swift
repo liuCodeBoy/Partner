@@ -45,17 +45,24 @@ class ChooseIdentityVC: UIViewController {
     }
     //设置选中状态
     func setSelected(btn : UIButton,lab : UILabel){
+        btn.isSelected = true
         btn.backgroundColor = #colorLiteral(red: 0.6047888398, green: 0.6928739548, blue: 0.7543881536, alpha: 1)
         lab.textColor = UIColor.white
     }
     //设置未选中状态
     func setUnSelected(btn : UIButton,lab : UILabel){
+        btn.isSelected = false
         btn.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
         lab.textColor = #colorLiteral(red: 0.6047888398, green: 0.6928739548, blue: 0.7543881536, alpha: 1)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    @IBAction func showProfileInformation(_ sender: Any) {
+        let informationDetailVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "InformationDetailVCID") as! InformationDetailVC
+        informationDetailVC.detailViewIsHidden = commonBtn.isSelected
+        if (commonBtn.isSelected || investorBtn.isSelected || entrepreneurBtn.isSelected) == false {
+            self.presentHintMessage(hintMessgae: "您还未选择类型", completion: nil)
+            return
+        }
+        self.navigationController?.pushViewController(informationDetailVC, animated: true)
+    }
 }
