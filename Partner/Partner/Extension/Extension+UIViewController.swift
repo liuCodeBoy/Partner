@@ -34,6 +34,38 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK:- confirmation alert
+    func presentConfirmationAlert(hint hintMessgae: String, completion: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: "提示", message: hintMessgae, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "确定", style: .default, handler: completion)
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK:- completion alert
+    func presentAlert(title alertTitle: String, hint hintMessgae: String, confirmTitle ok: String, cancelTitle cancel: String, confirmation confirmCompletion: ((UIAlertAction) -> Void)?, cancel cancelCompletion: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: alertTitle, message: hintMessgae, preferredStyle: .alert)
+        let ok = UIAlertAction(title: ok, style: .default, handler: confirmCompletion)
+        let cancel = UIAlertAction(title: cancel, style: .cancel, handler: cancelCompletion)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK:- make a phone call
+    func makePhoneCall(with number: String) {
+        let alert = UIAlertController(title: number, message: "", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "呼叫", style: .default) { (_) in
+            UIApplication.shared.openURL(URL.init(string: "tel://\(number)")!)
+        }
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func setNavBarBackBtn() {
         let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(popopop))
         self.navigationItem.setLeftBarButton(back, animated: true)

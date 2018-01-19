@@ -1,0 +1,138 @@
+//
+//  ModifyPasswordViewController.swift
+//  Partner
+//
+//  Created by Weslie on 17/01/2018.
+//
+
+import UIKit
+
+class ModifyPasswordViewController: UIViewController {
+    
+    @IBAction func popBtnClicked(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBOutlet weak var phoneNumTF: UITextField!
+    @IBOutlet weak var idNumTF: UITextField!
+    @IBOutlet weak var sendIDNumBtn: UIButton!
+    @IBOutlet weak var newPwdTF: UITextField!
+    @IBOutlet weak var confirmPwdTF: UITextField!
+    
+    @IBAction func sendIDNumClicked(_ sender: UIButton) {
+    }
+    @IBAction func confirmModifyBtnClicked(_ sender: UIButton) {
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // hide tab bar
+        self.tabBarController?.tabBar.isHidden = true
+    }
+
+}
+
+@IBDesignable
+open class ShadowButton: UIButton {
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = UIColor.white
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    @IBInspectable
+    public var cornerRadius: CGFloat = 2.0 {
+        didSet {
+            self.layer.cornerRadius = self.cornerRadius
+        }
+    }
+
+    @IBInspectable
+    public var shadowOpacity: Float = 0.5 {
+        didSet {
+            layer.shadowOpacity = self.shadowOpacity
+        }
+    }
+    
+    @IBInspectable
+    public var shadowOffset: CGSize = CGSize(width: 10, height: 10) {
+        didSet {
+            layer.shadowOffset = self.shadowOffset
+        }
+    }
+    
+    @IBInspectable
+    public var shadowColor: UIColor = UIColor.gray {
+        didSet {
+            layer.shadowColor = self.shadowColor.cgColor
+        }
+    }
+    
+    @IBInspectable
+    public var shadowRadius: CGFloat = 0 {
+        didSet {
+            layer.shadowRadius = self.shadowRadius
+        }
+    }
+    
+    public func reverseSelected() {
+        // add shadow
+        self.cornerRadius    = 4
+        self.shadowColor     = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 0.6708583048)
+        self.shadowOpacity   = 0.6
+        self.shadowOffset    = CGSize(width: 0, height: 4)
+        self.shadowRadius    = 4
+        // set color
+        self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.setTitleColor(#colorLiteral(red: 0.5411764979, green: 0.631372571, blue: 0.6980392337, alpha: 1), for: .normal)
+    }
+    public func setSelected() {
+        // remove shadow
+        self.shadowColor     = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.shadowOpacity   = 0
+        self.shadowOffset    = CGSize(width: 0, height: 0)
+        self.shadowRadius    = 0
+        // set color
+        self.backgroundColor = #colorLiteral(red: 0.5411764979, green: 0.631372571, blue: 0.6980392337, alpha: 1)
+        self.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+    }
+}
+
+@IBDesignable
+open class StrokeLabel: UILabel {
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    @IBInspectable
+    public var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = self.cornerRadius
+        }
+    }
+    
+    @IBInspectable
+    public var borderColor: UIColor = UIColor.white {
+        didSet {
+            layer.borderColor = self.borderColor.cgColor
+        }
+    }
+    
+    @IBInspectable
+    public var borderWidth: CGFloat = 0 {
+        didSet {
+            layer.borderWidth = self.borderWidth
+        }
+    }
+    
+}
+
