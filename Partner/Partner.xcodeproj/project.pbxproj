@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		53778418D7E5BF3B198BAAE4 /* Pods_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */; };
 		93A2197792B5860862374D6B /* Pods_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */; };
-		B62B05B51FFE291400BCFE3E /* shadowBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B05B41FFE291400BCFE3E /* shadowBtn.swift */; };
 		B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E5200C4932007799BC /* InformationDetailVC.swift */; };
 		B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E7200C506A007799BC /* Extension+UIViewController.swift */; };
 		B65517EA200C800E007799BC /* InterestedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E9200C800E007799BC /* InterestedVC.swift */; };
@@ -19,6 +18,9 @@
 		D33EA66F2011851D00745003 /* MyCustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA66E2011851D00745003 /* MyCustomSegue.swift */; };
 		D33EA6712011856500745003 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA6702011856500745003 /* SecondViewController.swift */; };
 		D33EA6732011859E00745003 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA6722011859E00745003 /* FirstViewController.swift */; };
+		D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA6762011D27200745003 /* Extension+UIView.swift */; };
+		D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA6792011D29200745003 /* CFFlowButtonView.swift */; };
+		D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA67B2011D68700745003 /* HomeViewController.swift */; };
 		D35F5655200EE35E00149861 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5654200EE35E00149861 /* ProfileSettingsViewController.swift */; };
 		D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5657200EE97200149861 /* ModifyPasswordViewController.swift */; };
 		D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5659200EF3AC00149861 /* FeedbackViewController.swift */; };
@@ -71,7 +73,6 @@
 		6D0678DD77F6C00CB0C07AE3 /* Pods_Partner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Partner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9032E3D99C1574E7CE07F113 /* Pods-PartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerTests/Pods-PartnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B62B05B41FFE291400BCFE3E /* shadowBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shadowBtn.swift; sourceTree = "<group>"; };
 		B65517E5200C4932007799BC /* InformationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailVC.swift; sourceTree = "<group>"; };
 		B65517E7200C506A007799BC /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		B65517E9200C800E007799BC /* InterestedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedVC.swift; sourceTree = "<group>"; };
@@ -81,6 +82,9 @@
 		D33EA66E2011851D00745003 /* MyCustomSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomSegue.swift; sourceTree = "<group>"; };
 		D33EA6702011856500745003 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D33EA6722011859E00745003 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		D33EA6762011D27200745003 /* Extension+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		D33EA6792011D29200745003 /* CFFlowButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFFlowButtonView.swift; sourceTree = "<group>"; };
+		D33EA67B2011D68700745003 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D35F5654200EE35E00149861 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		D35F5657200EE97200149861 /* ModifyPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPasswordViewController.swift; sourceTree = "<group>"; };
 		D35F5659200EF3AC00149861 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +166,14 @@
 				4244745640517A4639E1AAAB /* Pods-PartnerUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D33EA6782011D29200745003 /* FlowButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				D33EA6792011D29200745003 /* CFFlowButtonView.swift */,
+			);
+			path = FlowButtonView;
 			sourceTree = "<group>";
 		};
 		D35F5656200EE93C00149861 /* Settings */ = {
@@ -248,8 +260,8 @@
 		D378FECD1FF0D24F00065EEC /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				D33EA6782011D29200745003 /* FlowButtonView */,
 				B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */,
-				B62B05B41FFE291400BCFE3E /* shadowBtn.swift */,
 				B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */,
 				B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */,
 				B65517E5200C4932007799BC /* InformationDetailVC.swift */,
@@ -300,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				D378FEE01FF0D60800065EEC /* Home.storyboard */,
+				D33EA67B2011D68700745003 /* HomeViewController.swift */,
 				D378FEDC1FF0D5A400065EEC /* Plaza */,
 				D378FEDD1FF0D5BE00065EEC /* Social */,
 				D378FEDE1FF0D5C700065EEC /* Activity */,
@@ -366,6 +379,7 @@
 		D378FEDB1FF0D4EB00065EEC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D33EA6762011D27200745003 /* Extension+UIView.swift */,
 				B65517E7200C506A007799BC /* Extension+UIViewController.swift */,
 				D39A4F34200D98AE00022A76 /* Extension+Colors.swift */,
 				D39A4F33200D98AE00022A76 /* Extension+String.swift */,
@@ -1117,10 +1131,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Partner/Pods-Partner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1138,9 +1154,9 @@
 				B690A7921FFF607200AAA051 /* RegisterAndLoginVC.swift in Sources */,
 				D39A4F32200D985700022A76 /* SystemConstantValue.swift in Sources */,
 				D35F5655200EE35E00149861 /* ProfileSettingsViewController.swift in Sources */,
-				B62B05B51FFE291400BCFE3E /* shadowBtn.swift in Sources */,
 				D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */,
 				D33EA6732011859E00745003 /* FirstViewController.swift in Sources */,
+				D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */,
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
 				D33EA6712011856500745003 /* SecondViewController.swift in Sources */,
@@ -1148,7 +1164,9 @@
 				D39A4F37200D98AF00022A76 /* Extension+Colors.swift in Sources */,
 				D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */,
 				D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */,
+				D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */,
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
+				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
 				D33EA66F2011851D00745003 /* MyCustomSegue.swift in Sources */,

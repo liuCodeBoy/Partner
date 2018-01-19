@@ -42,6 +42,9 @@ class RegisterAndLoginVC: UIViewController {
         self.navigationController?.pushViewController(chooseIdentityVC, animated: true)
     }
     
-   
+    @IBAction func passengerLogin(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 }
