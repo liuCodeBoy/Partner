@@ -66,15 +66,30 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func setNavBarBackBtn() {
-        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(popopop))
-        self.navigationItem.setLeftBarButton(back, animated: true)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+    // add observer in the view controller to change frame
+    func notificationAddKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.init(keyboardShowNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.init(keyboardHideNotification), object: nil)
     }
     
-    @objc func popopop() {
-        self.navigationController?.popViewController(animated: true)
+    func keyboardWillShow(from aView: UIView) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(keyboardShowNotification), object: aView)
     }
-
+    @objc func keyboardWillShow(_ notification: Notification) {
+        let transformView = notification.object as! UIView
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            transformView.transform = CGAffineTransform(translationX: 0, y: -258)
+        }, completion: nil)
+    }
+    
+    func keyboardWillHide(from aView: UIView) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(keyboardHideNotification), object: aView)
+    }
+    @objc func keyboardWillHide(_ notification: Notification) {
+        let transformView = notification.object as! UIView
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            transformView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }, completion: nil)
+    }
 
 }

@@ -11,6 +11,9 @@ import UIKit
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
+let keyboardShowNotification = "com.Partner.keyboardWillShow"
+let keyboardHideNotification = "com.Partner.keyboardWillHide"
+
 let localVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
 
 let isIPHONEX: Bool = { () -> Bool in

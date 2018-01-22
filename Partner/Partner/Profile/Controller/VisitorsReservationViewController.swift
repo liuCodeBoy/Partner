@@ -17,6 +17,7 @@ class VisitorsReservationViewController: UIViewController, UIScrollViewDelegate,
     @IBOutlet weak var reserveForInspect: ShadowButton!
     @IBOutlet weak var infoScrollView: UIScrollView!
     @IBOutlet weak var scrollContainerView: UIView!
+    @IBOutlet weak var commitSuccessViewHCons: NSLayoutConstraint!
     
     @IBOutlet weak var communityLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
@@ -56,14 +57,36 @@ class VisitorsReservationViewController: UIViewController, UIScrollViewDelegate,
         picker.frame = UIScreen.main.bounds
         self.view.addSubview(picker)
     }
+    @IBAction func selectTimeClicked(_ sender: UIButton) {
+        let picker = Bundle.main.loadNibNamed("CustomTimePickerView", owner: nil, options: nil)?.first as! CustomTimePickerView
+        picker.frame = UIScreen.main.bounds
+        self.view.addSubview(picker)
+    }
     
     @IBAction func submitBtnClicked(_ sender: UIButton) {
         // TODO:- post request
         
         // pop vc
         presentConfirmationAlert(hint: "确认提交") { [weak self](_) in
-            self?.navigationController?.popViewController(animated: true)
+            // TODO:- wait for response
+            
+            self?.commitSuccessViewHCons.constant = 42
         }
+    }
+    
+    @IBAction func backToMainMenuClicked(_ sender: ShadowButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func btnSetSelect(_ sender: ShadowButton) {
+        sender.setSelected()
+    }
+    @IBAction func btnCancelSelect(_ sender: ShadowButton) {
+        sender.reverseSelected()
+    }
+
+    @IBAction func lookUpMyReservationClicked(_ sender: ShadowButton) {
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,45 +95,22 @@ class VisitorsReservationViewController: UIViewController, UIScrollViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         infoScrollView.delegate = self
         messageTV.delegate = self
         
-        observeKeyboard()
-    }
-    
-    func observeKeyboard() {
-        // observe keyboard appearance and dismiss
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
-    
-    @objc func keyboardWillShow(_ notification: Notification) {
-        //1. covert notification to dictionary
-        let dict = notification.userInfo
-        //2. get the frame of keyboard
-//        let keyboardFrame = (dict?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        //3. get animation duration
-        let duration = (dict?[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        //4. get offset value
-        let offsetY: CGFloat = 258
-        //4. make screen offset
-        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations: {
-            self.infoScrollView.transform = CGAffineTransform(translationX: 0, y: -offsetY)
-//            self.infoScrollView.contentOffset = CGPoint(x: 0, y: -offsetY)
-        }, completion: nil)
-
-    }
-
-    @objc func keyboardWillHide(_ notification: Notification) {
-        let dict = notification.userInfo
-        let duration = (dict?[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations: {
-            self.infoScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
-        }, completion: nil)
+        commitSuccessViewHCons.constant = 1000
+        notificationAddKeyboardObserver()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         messageTV.resignFirstResponder()
+        keyboardWillHide(from: infoScrollView)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        // change keyboard frame using notification
+        keyboardWillShow(from: infoScrollView)
     }
     
     func textViewDidChange(_ textView: UITextView) {
