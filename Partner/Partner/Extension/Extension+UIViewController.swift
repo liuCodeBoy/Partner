@@ -67,8 +67,10 @@ extension UIViewController {
     }
     
     func setNavBarBackBtn() {
-        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(popopop))
+      
+        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "left_arrow"), style: .done, target: self, action: #selector(popopop))
         self.navigationItem.setLeftBarButton(back, animated: true)
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     

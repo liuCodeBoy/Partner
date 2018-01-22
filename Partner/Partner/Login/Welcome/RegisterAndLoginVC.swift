@@ -16,11 +16,13 @@ class RegisterAndLoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        self.navigationController?.navigationBar.barStyle = .blackOpaque
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//      self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//      self.navigationController?.navigationBar.barStyle = .blackOpaque
+//      self.navigationController?.navigationBar.shadowImage = UIImage()
         registerView.isHidden = true
         loginView.isHidden = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
     }
     @IBAction func loginInAction(_ sender: Any) {
         UIView.animate(withDuration: 0.25) {

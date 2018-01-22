@@ -14,6 +14,7 @@ class InterestedVC: UIViewController {
     var scrollview     : UIScrollView?
     override func viewDidLoad() {
         super.viewDidLoad()
+//        addScrollView()
         addButton()
         
         
@@ -22,7 +23,10 @@ class InterestedVC: UIViewController {
     
     //     添加背景scroll
     func addScrollView(){
-        //        let backScrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: 100, width: , height: <#T##CGFloat#>))
+        let backScrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: 100, width: screenWidth , height: screenHeight - 100))
+        self.view.addSubview(backScrollView)
+        self.scrollview = backScrollView
+
     }
     
     /*
@@ -34,12 +38,14 @@ class InterestedVC: UIViewController {
             let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 20, height: 30))
             button.backgroundColor = UIColor.white
             var  frame = button.frame;
-            frame.size.width = CGFloat(10 * i + 10);
+            frame.size.width = CGFloat(80);
+            
             button.frame = frame;
             //          button.backgroundColor = UIColor.blue
             buttonArr.add(button)
         }
         self.buttonList = buttonArr
+        
         addFlowButtonView()
     }
     
@@ -51,8 +57,7 @@ class InterestedVC: UIViewController {
     func addFlowButtonView() -> () {
         //实例化一个FlowView对象
         let  tempFlowButtonView = CFFlowButtonView.init(initWithButtonList: (buttonList)! )
-        //        let tempFlowButtonView = CFFlowButtonView.init(buttonList: buttonList)
-        self.view.addSubview(tempFlowButtonView)
+        self.view?.addSubview(tempFlowButtonView)
         self.flowButtonView?.backgroundColor = UIColor.red
         self.flowButtonView = tempFlowButtonView
         //设置约束，不需要设置高度相关的约束

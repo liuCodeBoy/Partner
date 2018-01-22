@@ -20,6 +20,9 @@ class ChooseIdentityVC: UIViewController {
         setBorder(btn: investorBtn)
         setBorder(btn: entrepreneurBtn)
         setBorder(btn: commonBtn)
+        setNavBarBackBtn()
+        setNavBarTitle(title: "")
+        self.navigationController?.navigationBar.isHidden = false
 
     }
 
