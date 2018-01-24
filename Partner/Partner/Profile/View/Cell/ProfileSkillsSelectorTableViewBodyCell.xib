@@ -416,6 +416,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="profile_edit_tag_border" width="100" height="34"/>
+        <image name="profile_edit_tag_border" width="80" height="30"/>
     </resources>
 </document>
