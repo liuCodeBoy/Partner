@@ -92,4 +92,28 @@ extension UIViewController {
         }, completion: nil)
     }
 
+
+}
+
+extension UIView {
+    
+    func keyboardWillShow(from aView: UIView) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(keyboardShowNotification), object: aView)
+    }
+    @objc func keyboardWillShow(_ notification: Notification) {
+        let transformView = notification.object as! UIView
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            transformView.transform = CGAffineTransform(translationX: 0, y: -258)
+        }, completion: nil)
+    }
+    
+    func keyboardWillHide(from aView: UIView) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(keyboardHideNotification), object: aView)
+    }
+    @objc func keyboardWillHide(_ notification: Notification) {
+        let transformView = notification.object as! UIView
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            transformView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }, completion: nil)
+    }
 }

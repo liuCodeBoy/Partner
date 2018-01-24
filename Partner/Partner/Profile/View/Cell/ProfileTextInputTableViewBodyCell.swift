@@ -35,6 +35,8 @@ class ProfileTextInputTableViewBodyCell: UITableViewCell, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         placeholderLbl.isHidden = true
+        // MARK:- make the table view offset
+        keyboardWillShow(from: self.superview!)
     }
     
     func textViewDidChange(_ textView: UITextView) {

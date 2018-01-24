@@ -14,8 +14,10 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     }
     
     @IBAction func saveEditClicked(_ sender: UIButton) {
-        presentConfirmationAlert(hint: "确认保存修改？") { (_) in
+        presentConfirmationAlert(hint: "确认保存修改？") { [weak self](_) in
             // TODO:- save data
+            
+        self?.navigationController?.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -37,6 +39,8 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                                                     "ProfileSkillsSelectorTableViewBodyCell",
                                                     "ProfileTextInputTableViewBodyCell"])
         
+        
+        notificationAddKeyboardObserver()
         
     }
     
@@ -129,6 +133,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // MARK:- end deiting to force the object resign first responder
         self.profileInfoTableView.endEditing(true)
+        keyboardWillHide(from: profileInfoTableView)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
