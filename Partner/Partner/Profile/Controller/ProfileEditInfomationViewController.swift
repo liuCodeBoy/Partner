@@ -22,7 +22,6 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     }
     
     @IBOutlet weak var headerTitle: UILabel!
-    @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var profileInfoTableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,22 +33,16 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         profileInfoTableView.delegate = self
         profileInfoTableView.dataSource = self
         
-        profileInfoTableView.registerNibs(nibName: ["ProfileTableViewHeaderCell",
-                                                    "ProfileHobbiesSelectorTableViewBodyCell",
-                                                    "ProfileSkillsSelectorTableViewBodyCell",
-                                                    "ProfileTextInputTableViewBodyCell"])
-        
-        
         notificationAddKeyboardObserver()
         
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == 1 {
             return 8
         } else {
             return 1
@@ -59,17 +52,22 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewHeaderCell") as! ProfileTableViewHeaderCell
         switch section {
-        case 0: headerView.headerTitleLbl.text = "个人信息"
-        case 1: headerView.headerTitleLbl.text = "兴趣"
-        case 2: headerView.headerTitleLbl.text = "技能标签"
-        case 3: headerView.headerTitleLbl.text = "合伙需求"
-        case 4: headerView.headerTitleLbl.text = "个人介绍"
+        case 0 : return nil
+        case 1: headerView.headerTitleLbl.text = "个人信息"
+        case 2: headerView.headerTitleLbl.text = "兴趣"
+        case 3: headerView.headerTitleLbl.text = "技能标签"
+        case 4: headerView.headerTitleLbl.text = "合伙需求"
+        case 5: headerView.headerTitleLbl.text = "个人介绍"
         default: break
         }
         return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0.00001
+            
+        }
         return 60
     }
     
@@ -78,7 +76,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         var cell = UITableViewCell()
         
         switch indexPath.section {
-        case 0:
+        case 0: let avatarCell = tableView.dequeueReusableCell(withIdentifier: "ProfileEditChooseAvatarTableViewCell") as! ProfileEditChooseAvatarTableViewCell
+            cell = avatarCell
+        case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: "ProfileEditSelfInfomationCell")!
             switch indexPath.row {
             case 0: cell.textLabel?.text       = "姓名"
@@ -99,15 +99,15 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                     cell.detailTextLabel?.text = "请选择"
             default: break
             }
-        case 1: cell = tableView.dequeueReusableCell(withIdentifier: "ProfileHobbiesSelectorTableViewBodyCell")!
-        case 2: cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsSelectorTableViewBodyCell")!
-        case 3: let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
+        case 2: cell = tableView.dequeueReusableCell(withIdentifier: "ProfileHobbiesSelectorTableViewBodyCell")!
+        case 3: cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsSelectorTableViewBodyCell")!
+        case 4: let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
             tagCell.placeholderLbl.text = "简要介绍你的合伙需求（必填）"
         tagCell.presentAlert = { [weak self]() in
             self?.presentHintMessage(hintMessgae: "字符不能超过300字", completion: nil)
         }
             cell = tagCell
-        case 4: let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
+        case 5: let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
             tagCell.placeholderLbl.text = "可简单的介绍下自己（选填）"
             cell = tagCell
 
@@ -119,9 +119,10 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 0:     return 52
-        case 1, 2:  return 190
-        case 3, 4:  return 160
+        case 0:     return 150
+        case 1:     return 52
+        case 2, 3:  return 190
+        case 4, 5:  return 160
         default:    return 0
         }
     }
@@ -140,13 +141,4 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         self.profileInfoTableView.endEditing(true)
     }
 
-}
-
-extension UITableView {
-    func registerNibs(nibName: [String]) {
-        for name in nibName {
-            let nib = UINib(nibName: name, bundle: nil)
-            register(nib, forCellReuseIdentifier: name)
-        }
-    }
 }

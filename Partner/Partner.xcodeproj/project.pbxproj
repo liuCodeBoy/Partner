@@ -15,21 +15,15 @@
 		B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */; };
 		B690A7921FFF607200AAA051 /* RegisterAndLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */; };
 		B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */; };
-		D313909F2018B27500F6C57F /* TempTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D313909E2018B27500F6C57F /* TempTableViewController.swift */; };
-		D31390A12018B47100F6C57F /* TempTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31390A02018B47100F6C57F /* TempTableViewCell.swift */; };
 		D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA6762011D27200745003 /* Extension+UIView.swift */; };
 		D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA6792011D29200745003 /* CFFlowButtonView.swift */; };
 		D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA67B2011D68700745003 /* HomeViewController.swift */; };
 		D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347124F2011F0CF003E098E /* CustomTimePickerView.swift */; };
 		D34712512011F289003E098E /* CustomTimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347124E2011F0BA003E098E /* CustomTimePickerView.xib */; };
 		D347125520120085003E098E /* ProfileTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347125320120085003E098E /* ProfileTableViewHeaderCell.swift */; };
-		D347125620120085003E098E /* ProfileTableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347125420120085003E098E /* ProfileTableViewHeaderCell.xib */; };
 		D347125D201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347125B201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift */; };
-		D347125E201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347125C201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.xib */; };
 		D34712612012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347125F2012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift */; };
-		D34712622012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D34712602012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.xib */; };
 		D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347126320120685003E098E /* ProfileTextInputTableViewBodyCell.swift */; };
-		D347126620120685003E098E /* ProfileTextInputTableViewBodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347126420120685003E098E /* ProfileTextInputTableViewBodyCell.xib */; };
 		D347126820120943003E098E /* ProfileEditInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347126720120943003E098E /* ProfileEditInfomationViewController.swift */; };
 		D35F5655200EE35E00149861 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5654200EE35E00149861 /* ProfileSettingsViewController.swift */; };
 		D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5657200EE97200149861 /* ModifyPasswordViewController.swift */; };
@@ -54,6 +48,11 @@
 		D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A827E6201096C40053ADBF /* PartnerPickerView.swift */; };
 		D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */; };
 		D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8B8EF20107BB500EDD145 /* VisitorsReservationViewController.swift */; };
+		D3BCE69E2019D44A00097DDA /* InputDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BCE69D2019D44A00097DDA /* InputDetialViewController.swift */; };
+		D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */; };
+		D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */; };
+		D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */; };
+		D3BFC9BE2019CAD900D2C6BD /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9BD2019CAD800D2C6BD /* NetworkTool.swift */; };
 		FAB80F2A666DD7ADE1ECD37F /* Pods_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0678DD77F6C00CB0C07AE3 /* Pods_Partner.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,21 +88,15 @@
 		B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginVC.swift; sourceTree = "<group>"; };
 		B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginVC.swift; sourceTree = "<group>"; };
 		B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentityVC.swift; sourceTree = "<group>"; };
-		D313909E2018B27500F6C57F /* TempTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTableViewController.swift; sourceTree = "<group>"; };
-		D31390A02018B47100F6C57F /* TempTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTableViewCell.swift; sourceTree = "<group>"; };
 		D33EA6762011D27200745003 /* Extension+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		D33EA6792011D29200745003 /* CFFlowButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFFlowButtonView.swift; sourceTree = "<group>"; };
 		D33EA67B2011D68700745003 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D347124E2011F0BA003E098E /* CustomTimePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTimePickerView.xib; sourceTree = "<group>"; };
 		D347124F2011F0CF003E098E /* CustomTimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimePickerView.swift; sourceTree = "<group>"; };
 		D347125320120085003E098E /* ProfileTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeaderCell.swift; sourceTree = "<group>"; };
-		D347125420120085003E098E /* ProfileTableViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewHeaderCell.xib; sourceTree = "<group>"; };
 		D347125B201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHobbiesSelectorTableViewBodyCell.swift; sourceTree = "<group>"; };
-		D347125C201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHobbiesSelectorTableViewBodyCell.xib; sourceTree = "<group>"; };
 		D347125F2012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSkillsSelectorTableViewBodyCell.swift; sourceTree = "<group>"; };
-		D34712602012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSkillsSelectorTableViewBodyCell.xib; sourceTree = "<group>"; };
 		D347126320120685003E098E /* ProfileTextInputTableViewBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextInputTableViewBodyCell.swift; sourceTree = "<group>"; };
-		D347126420120685003E098E /* ProfileTextInputTableViewBodyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTextInputTableViewBodyCell.xib; sourceTree = "<group>"; };
 		D347126720120943003E098E /* ProfileEditInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditInfomationViewController.swift; sourceTree = "<group>"; };
 		D35F5654200EE35E00149861 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		D35F5657200EE97200149861 /* ModifyPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPasswordViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +127,11 @@
 		D3A827E6201096C40053ADBF /* PartnerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerPickerView.swift; sourceTree = "<group>"; };
 		D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerPickerView.xib; sourceTree = "<group>"; };
 		D3B8B8EF20107BB500EDD145 /* VisitorsReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsReservationViewController.swift; sourceTree = "<group>"; };
+		D3BCE69D2019D44A00097DDA /* InputDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDetialViewController.swift; sourceTree = "<group>"; };
+		D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditChooseAvatarTableViewCell.swift; sourceTree = "<group>"; };
+		D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectNoneProjectPlaceholderViewController.swift; sourceTree = "<group>"; };
+		D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditAndCreateViewController.swift; sourceTree = "<group>"; };
+		D3BFC9BD2019CAD800D2C6BD /* NetworkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		E46FEA25ACD4641F4CCFD97B /* Pods-PartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerUITests/Pods-PartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,13 +198,10 @@
 			isa = PBXGroup;
 			children = (
 				D347125320120085003E098E /* ProfileTableViewHeaderCell.swift */,
-				D347125420120085003E098E /* ProfileTableViewHeaderCell.xib */,
 				D347125B201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift */,
-				D347125C201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.xib */,
 				D347125F2012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift */,
-				D34712602012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.xib */,
 				D347126320120685003E098E /* ProfileTextInputTableViewBodyCell.swift */,
-				D347126420120685003E098E /* ProfileTextInputTableViewBodyCell.xib */,
+				D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -396,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				D378FF1B1FF0EADB00065EEC /* Profile.storyboard */,
+				D3BFC9BD2019CAD800D2C6BD /* NetworkTool.swift */,
 				D378FF1E1FF0EAEB00065EEC /* Model */,
 				D378FF1F1FF0EAEB00065EEC /* View */,
 				D378FF201FF0EAEB00065EEC /* Controller */,
@@ -851,9 +847,8 @@
 				D347126720120943003E098E /* ProfileEditInfomationViewController.swift */,
 				D3B8B8EF20107BB500EDD145 /* VisitorsReservationViewController.swift */,
 				D35F5659200EF3AC00149861 /* FeedbackViewController.swift */,
+				D3BFC9B82019C17F00D2C6BD /* MyProject */,
 				D35F5656200EE93C00149861 /* Settings */,
-				D313909E2018B27500F6C57F /* TempTableViewController.swift */,
-				D31390A02018B47100F6C57F /* TempTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -885,6 +880,16 @@
 				D378FED81FF0D47C00065EEC /* Shopping */,
 			);
 			path = Deprecated;
+			sourceTree = "<group>";
+		};
+		D3BFC9B82019C17F00D2C6BD /* MyProject */ = {
+			isa = PBXGroup;
+			children = (
+				D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */,
+				D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */,
+				D3BCE69D2019D44A00097DDA /* InputDetialViewController.swift */,
+			);
+			path = MyProject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1004,15 +1009,11 @@
 			files = (
 				D378FED41FF0D3D900065EEC /* Login.storyboard in Resources */,
 				D378FEE11FF0D60800065EEC /* Home.storyboard in Resources */,
-				D34712622012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.xib in Resources */,
 				D34712512011F289003E098E /* CustomTimePickerView.xib in Resources */,
 				D378FF1C1FF0EADB00065EEC /* Profile.storyboard in Resources */,
-				D347125620120085003E098E /* ProfileTableViewHeaderCell.xib in Resources */,
 				D378FEF91FF0E75A00065EEC /* Union.storyboard in Resources */,
 				D378FEA91FF0D21600065EEC /* LaunchScreen.storyboard in Resources */,
-				D347125E201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.xib in Resources */,
 				D378FEA61FF0D21600065EEC /* Assets.xcassets in Resources */,
-				D347126620120685003E098E /* ProfileTextInputTableViewBodyCell.xib in Resources */,
 				D378FF221FF0EBF100065EEC /* Shopping.storyboard in Resources */,
 				D378FEA41FF0D21600065EEC /* Main.storyboard in Resources */,
 				D378FEFE1FF0E80600065EEC /* Service.storyboard in Resources */,
@@ -1195,15 +1196,18 @@
 			files = (
 				D347125520120085003E098E /* ProfileTableViewHeaderCell.swift in Sources */,
 				B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */,
+				D3BFC9BE2019CAD900D2C6BD /* NetworkTool.swift in Sources */,
+				D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */,
 				B690A7921FFF607200AAA051 /* RegisterAndLoginVC.swift in Sources */,
 				D39A4F32200D985700022A76 /* SystemConstantValue.swift in Sources */,
 				D347126820120943003E098E /* ProfileEditInfomationViewController.swift in Sources */,
 				D34712612012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift in Sources */,
 				D35F5655200EE35E00149861 /* ProfileSettingsViewController.swift in Sources */,
-				D31390A12018B47100F6C57F /* TempTableViewCell.swift in Sources */,
 				D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */,
 				D347125D201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift in Sources */,
+				D3BCE69E2019D44A00097DDA /* InputDetialViewController.swift in Sources */,
 				D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */,
+				D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */,
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
 				B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */,
@@ -1212,8 +1216,8 @@
 				D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */,
 				D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */,
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
-				D313909F2018B27500F6C57F /* TempTableViewController.swift in Sources */,
 				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
+				D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */,
 				D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
