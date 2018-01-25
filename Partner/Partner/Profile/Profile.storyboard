@@ -338,7 +338,7 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjP-XB-9kY">
                                                 <rect key="frame" x="12" y="41" width="351" height="1"/>
-                                                <color key="backgroundColor" red="0.80784313730000001" green="0.84313725490000002" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="8Tx-F7-acU"/>
                                                 </constraints>
@@ -414,7 +414,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haI-Cv-zy8">
                                                 <rect key="frame" x="0.0" y="124" width="375" height="1"/>
-                                                <color key="backgroundColor" red="0.80784313730000001" green="0.84313725490000002" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="zE9-v9-FuA"/>
                                                 </constraints>
@@ -434,14 +434,14 @@
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKo-lk-6DH">
                                                                 <rect key="frame" x="0.0" y="99" width="94" height="1"/>
-                                                                <color key="backgroundColor" red="0.80784313730000001" green="0.84313725490000002" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="9Ob-AU-3Ep"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOo-b8-t0Z">
                                                                 <rect key="frame" x="93" y="0.0" width="1" height="99"/>
-                                                                <color key="backgroundColor" red="0.80784313730000001" green="0.84313725490000002" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="1" id="UYD-Ea-rg0"/>
                                                                 </constraints>
@@ -489,14 +489,14 @@
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1G-gH-p1y">
                                                                 <rect key="frame" x="0.0" y="99" width="93.5" height="1"/>
-                                                                <color key="backgroundColor" red="0.80784313730000001" green="0.84313725490000002" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="Wou-0J-V9l"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jq6-mi-HEa">
                                                                 <rect key="frame" x="92.5" y="0.0" width="1" height="100"/>
-                                                                <color key="backgroundColor" red="0.80784313730000001" green="0.84313725490000002" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="1" id="ULb-0o-bHF"/>
                                                                 </constraints>
@@ -3031,6 +3031,9 @@
                                         <state key="normal" title=" 设置" image="left_arrow">
                                             <color key="titleColor" red="0.64705882349999999" green="0.67450980390000004" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="popBtnClicked:" destination="0BU-St-AS4" eventType="touchUpInside" id="JqC-Kq-r9E"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3504,11 +3507,6 @@
                                 <connections>
                                     <segue destination="8pl-2q-G1O" kind="show" id="80x-fj-zbM"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hii-FS-Zqa">
-                                <rect key="frame" x="36" y="548" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -9258,6 +9256,6 @@
         <image name="up_arrow" width="10" height="6"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zxy-g1-ZpU"/>
+        <segue reference="pDG-Yy-NUE"/>
     </inferredMetricsTieBreakers>
 </document>

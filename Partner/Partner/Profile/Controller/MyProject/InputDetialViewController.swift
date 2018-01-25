@@ -62,6 +62,9 @@ class InputDetialViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        inputTF.becomeFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
