@@ -18,14 +18,6 @@ extension UIViewController {
         }
     }
     
-    // MARK:- set nav bar title
-    func setNavBarTitle(title navTitle: String) {
-        let titleLbl = UILabel()
-        titleLbl.text = navTitle
-        titleLbl.font = UIFont.systemFont(ofSize: 20)
-        self.navigationItem.titleView = titleLbl
-    }
-    
     // MARK:- convenience alert with hint message and completion
     func presentHintMessage(hintMessgae: String, completion: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: "提示", message: hintMessgae, preferredStyle: .alert)
@@ -66,17 +58,85 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func setNavBarBackBtn() {
-      
-        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "left_arrow"), style: .done, target: self, action: #selector(popopop))
-        self.navigationItem.setLeftBarButton(back, animated: true)
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+    // add observer in the view controller to change frame
+    func notificationAddKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.init(keyboardShowNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.init(keyboardHideNotification), object: nil)
     }
     
-    @objc func popopop() {
-        self.navigationController?.popViewController(animated: true)
+    func keyboardWillShow(from aView: UIView) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(keyboardShowNotification), object: aView)
+    }
+    @objc func keyboardWillShow(_ notification: Notification) {
+        let transformView = notification.object as! UIView
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            transformView.transform = CGAffineTransform(translationX: 0, y: -258)
+        }, completion: nil)
+    }
+    
+    func keyboardWillHide(from aView: UIView) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(keyboardHideNotification), object: aView)
+    }
+    @objc func keyboardWillHide(_ notification: Notification) {
+        let transformView = notification.object as! UIView
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            transformView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }, completion: nil)
+    }
+    
+    //设置选择样式
+    @objc func changeBtnStaus(button : UIButton) -> () {
+        if button.isSelected {
+            button.isSelected = false
+            button.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+            button.setTitleColor(#colorLiteral(red: 0.5860337019, green: 0.6928295493, blue: 0.7612000704, alpha: 1), for: .normal)
+        }else{
+            button.isSelected = true
+            button.backgroundColor = #colorLiteral(red: 0.5860337019, green: 0.6928295493, blue: 0.7612000704, alpha: 1)
+            button.setTitleColor(#colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1), for: .normal)
+        }
+    }
+    
+    //改变按钮边框
+    func changeBorder(btn : UIButton){
+        let  border = CAShapeLayer.init()
+        //虚线的颜色
+        border.strokeColor = #colorLiteral(red: 0.7063220143, green: 0.8319012523, blue: 0.9218811393, alpha: 1)
+        //填充的颜色
+        border.fillColor = UIColor.clear.cgColor
+        let path = UIBezierPath.init(roundedRect: btn.bounds, cornerRadius: 17)
+        //设置路径
+        border.path = path.cgPath;
+        border.frame = btn.bounds;
+        //虚线的宽度
+        border.lineWidth = 1.0;
+        //虚线的间隔
+        border.lineDashPattern = [4, 2]
+        btn.layer.addSublayer(border)
+        
     }
 
+}
 
+extension UIView {
+    
+    func keyboardWillShow(from aView: UIView) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(keyboardShowNotification), object: aView)
+    }
+    @objc func keyboardWillShow(_ notification: Notification) {
+        let transformView = notification.object as! UIView
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            transformView.transform = CGAffineTransform(translationX: 0, y: -258)
+        }, completion: nil)
+    }
+    
+    func keyboardWillHide(from aView: UIView) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(keyboardHideNotification), object: aView)
+    }
+    @objc func keyboardWillHide(_ notification: Notification) {
+        let transformView = notification.object as! UIView
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            transformView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }, completion: nil)
+    }
 }

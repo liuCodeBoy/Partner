@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension  String {
+extension String {
 //   static func getLabHeight(labelStr: String, font: UIFont, width: CGFloat) -> CGFloat {
 //        let statusLabelText = labelStr
 //        let size = CGSize(width: width, height: 900)
@@ -18,6 +18,19 @@ extension  String {
 //    }
     
     //MARK: - judge wheather the phone number is valid or not
+    
+    var isEmptyString: Bool {
+        get {
+            if self.replacingOccurrences(of: " ", with: "") == "" || self == "" {
+                return true
+            } else {
+                return false
+            }
+        }
+        set {
+            
+        }
+    }
     
     var isValidePhoneNumber: Bool {
         get {
@@ -30,10 +43,7 @@ extension  String {
                 return false
             }
         }
-        
-        set {
-            
-        }
+        set { }
     }
     
     var isValidPassword: Bool {
@@ -47,9 +57,7 @@ extension  String {
                 return false
             }
         }
-        set {
-            
-        }
+        set { }
     }
 
 }
