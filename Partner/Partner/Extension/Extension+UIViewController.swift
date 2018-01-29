@@ -18,14 +18,6 @@ extension UIViewController {
         }
     }
     
-    // MARK:- set nav bar title
-    func setNavBarTitle(title navTitle: String) {
-        let titleLbl = UILabel()
-        titleLbl.text = navTitle
-        titleLbl.font = UIFont.systemFont(ofSize: 20)
-        self.navigationItem.titleView = titleLbl
-    }
-    
     // MARK:- convenience alert with hint message and completion
     func presentHintMessage(hintMessgae: String, completion: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: "提示", message: hintMessgae, preferredStyle: .alert)
@@ -91,7 +83,38 @@ extension UIViewController {
             transformView.transform = CGAffineTransform(translationX: 0, y: 0)
         }, completion: nil)
     }
-
+    
+    //设置选择样式
+    @objc func changeBtnStaus(button : UIButton) -> () {
+        if button.isSelected {
+            button.isSelected = false
+            button.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+            button.setTitleColor(#colorLiteral(red: 0.5860337019, green: 0.6928295493, blue: 0.7612000704, alpha: 1), for: .normal)
+        }else{
+            button.isSelected = true
+            button.backgroundColor = #colorLiteral(red: 0.5860337019, green: 0.6928295493, blue: 0.7612000704, alpha: 1)
+            button.setTitleColor(#colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1), for: .normal)
+        }
+    }
+    
+    //改变按钮边框
+    func changeBorder(btn : UIButton){
+        let  border = CAShapeLayer.init()
+        //虚线的颜色
+        border.strokeColor = #colorLiteral(red: 0.7063220143, green: 0.8319012523, blue: 0.9218811393, alpha: 1)
+        //填充的颜色
+        border.fillColor = UIColor.clear.cgColor
+        let path = UIBezierPath.init(roundedRect: btn.bounds, cornerRadius: 17)
+        //设置路径
+        border.path = path.cgPath;
+        border.frame = btn.bounds;
+        //虚线的宽度
+        border.lineWidth = 1.0;
+        //虚线的间隔
+        border.lineDashPattern = [4, 2]
+        btn.layer.addSublayer(border)
+        
+    }
 
 }
 

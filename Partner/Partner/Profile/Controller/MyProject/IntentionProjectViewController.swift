@@ -8,6 +8,10 @@
 import UIKit
 
 class IntentionProjectViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBAction func popBtnClicked(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,5 +28,9 @@ class IntentionProjectViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IntentionProjectTableViewCell") as! IntentionProjectTableViewCell
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 116
     }
 }

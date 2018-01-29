@@ -15,6 +15,10 @@
 		B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */; };
 		B690A7921FFF607200AAA051 /* RegisterAndLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */; };
 		B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */; };
+		D3034646201ECE93007A37A5 /* MyProjectEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3034645201ECE93007A37A5 /* MyProjectEditViewController.swift */; };
+		D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3034647201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift */; };
+		D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3034649201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift */; };
+		D303464E201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303464D201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift */; };
 		D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA6762011D27200745003 /* Extension+UIView.swift */; };
 		D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA6792011D29200745003 /* CFFlowButtonView.swift */; };
 		D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA67B2011D68700745003 /* HomeViewController.swift */; };
@@ -45,6 +49,18 @@
 		D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A4F33200D98AE00022A76 /* Extension+String.swift */; };
 		D39A4F37200D98AF00022A76 /* Extension+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A4F34200D98AE00022A76 /* Extension+Colors.swift */; };
 		D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A4F3A200DA58200022A76 /* ProfileViewController.swift */; };
+		D39F14DE201EF68E003F3BC5 /* ProjectEditMarketAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F14DD201EF68E003F3BC5 /* ProjectEditMarketAnalysisTableViewCell.swift */; };
+		D39F14E0201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F14DF201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift */; };
+		D39F14E2201EF6B3003F3BC5 /* ProjectEditFundingNeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F14E1201EF6B3003F3BC5 /* ProjectEditFundingNeedTableViewCell.swift */; };
+		D39F14E4201EF754003F3BC5 /* ProjectEditBusinessPlanBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F14E3201EF754003F3BC5 /* ProjectEditBusinessPlanBookTableViewCell.swift */; };
+		D39F14E6201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F14E5201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift */; };
+		D39F8C32201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F8C31201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift */; };
+		D39F8C34201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F8C33201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift */; };
+		D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F8C35201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift */; };
+		D39F8C38201F0CB100A40AC1 /* MyProjectEditMarketAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F8C37201F0CB100A40AC1 /* MyProjectEditMarketAnalysisViewController.swift */; };
+		D39F8C3A201F0CC900A40AC1 /* MyProjectEditRunStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F8C39201F0CC900A40AC1 /* MyProjectEditRunStatusViewController.swift */; };
+		D39F8C3C201F0CFB00A40AC1 /* MyProjectEditFundingNeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F8C3B201F0CFB00A40AC1 /* MyProjectEditFundingNeedViewController.swift */; };
+		D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F8C3D201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift */; };
 		D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A827E6201096C40053ADBF /* PartnerPickerView.swift */; };
 		D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */; };
 		D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8B8EF20107BB500EDD145 /* VisitorsReservationViewController.swift */; };
@@ -92,6 +108,10 @@
 		B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginVC.swift; sourceTree = "<group>"; };
 		B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginVC.swift; sourceTree = "<group>"; };
 		B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentityVC.swift; sourceTree = "<group>"; };
+		D3034645201ECE93007A37A5 /* MyProjectEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditViewController.swift; sourceTree = "<group>"; };
+		D3034647201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		D3034649201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditMembersBriefTableViewCell.swift; sourceTree = "<group>"; };
+		D303464D201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditIntroductionTableViewCell.swift; sourceTree = "<group>"; };
 		D33EA6762011D27200745003 /* Extension+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		D33EA6792011D29200745003 /* CFFlowButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFFlowButtonView.swift; sourceTree = "<group>"; };
 		D33EA67B2011D68700745003 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +148,18 @@
 		D39A4F33200D98AE00022A76 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		D39A4F34200D98AE00022A76 /* Extension+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
 		D39A4F3A200DA58200022A76 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D39F14DD201EF68E003F3BC5 /* ProjectEditMarketAnalysisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditMarketAnalysisTableViewCell.swift; sourceTree = "<group>"; };
+		D39F14DF201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditRunStatusTableViewCell.swift; sourceTree = "<group>"; };
+		D39F14E1201EF6B3003F3BC5 /* ProjectEditFundingNeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditFundingNeedTableViewCell.swift; sourceTree = "<group>"; };
+		D39F14E3201EF754003F3BC5 /* ProjectEditBusinessPlanBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditBusinessPlanBookTableViewCell.swift; sourceTree = "<group>"; };
+		D39F14E5201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditConfirmButtonTableViewCell.swift; sourceTree = "<group>"; };
+		D39F8C31201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditTeamMembersViewController.swift; sourceTree = "<group>"; };
+		D39F8C33201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditAddTeamMembersViewController.swift; sourceTree = "<group>"; };
+		D39F8C35201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditProjectIntroductionViewController.swift; sourceTree = "<group>"; };
+		D39F8C37201F0CB100A40AC1 /* MyProjectEditMarketAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditMarketAnalysisViewController.swift; sourceTree = "<group>"; };
+		D39F8C39201F0CC900A40AC1 /* MyProjectEditRunStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditRunStatusViewController.swift; sourceTree = "<group>"; };
+		D39F8C3B201F0CFB00A40AC1 /* MyProjectEditFundingNeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditFundingNeedViewController.swift; sourceTree = "<group>"; };
+		D39F8C3D201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditSettingsViewController.swift; sourceTree = "<group>"; };
 		D3A827E6201096C40053ADBF /* PartnerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerPickerView.swift; sourceTree = "<group>"; };
 		D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerPickerView.xib; sourceTree = "<group>"; };
 		D3B8B8EF20107BB500EDD145 /* VisitorsReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsReservationViewController.swift; sourceTree = "<group>"; };
@@ -891,11 +923,34 @@
 			path = Deprecated;
 			sourceTree = "<group>";
 		};
+		D39F8C2E201F0BA400A40AC1 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				D3034645201ECE93007A37A5 /* MyProjectEditViewController.swift */,
+				D39F8C31201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift */,
+				D39F8C33201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift */,
+				D39F8C35201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift */,
+				D39F8C37201F0CB100A40AC1 /* MyProjectEditMarketAnalysisViewController.swift */,
+				D39F8C39201F0CC900A40AC1 /* MyProjectEditRunStatusViewController.swift */,
+				D39F8C3B201F0CFB00A40AC1 /* MyProjectEditFundingNeedViewController.swift */,
+				D39F8C3D201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
 		D3B8E5C4201AF245002F3A3A /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
 				D3B8E5C5201AF285002F3A3A /* SingleProjectTableViewCell.swift */,
 				D3B8E5C9201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift */,
+				D3034647201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift */,
+				D3034649201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift */,
+				D303464D201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift */,
+				D39F14DD201EF68E003F3BC5 /* ProjectEditMarketAnalysisTableViewCell.swift */,
+				D39F14DF201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift */,
+				D39F14E1201EF6B3003F3BC5 /* ProjectEditFundingNeedTableViewCell.swift */,
+				D39F14E3201EF754003F3BC5 /* ProjectEditBusinessPlanBookTableViewCell.swift */,
+				D39F14E5201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift */,
 			);
 			path = MyProject;
 			sourceTree = "<group>";
@@ -908,6 +963,7 @@
 				D3B8E5C7201AFC04002F3A3A /* IntentionProjectViewController.swift */,
 				D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */,
 				D3BCE69D2019D44A00097DDA /* InputDetialViewController.swift */,
+				D39F8C2E201F0BA400A40AC1 /* Edit */,
 			);
 			path = MyProject;
 			sourceTree = "<group>";
@@ -1221,34 +1277,50 @@
 				B690A7921FFF607200AAA051 /* RegisterAndLoginVC.swift in Sources */,
 				D39A4F32200D985700022A76 /* SystemConstantValue.swift in Sources */,
 				D347126820120943003E098E /* ProfileEditInfomationViewController.swift in Sources */,
+				D39F14DE201EF68E003F3BC5 /* ProjectEditMarketAnalysisTableViewCell.swift in Sources */,
 				D34712612012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift in Sources */,
 				D35F5655200EE35E00149861 /* ProfileSettingsViewController.swift in Sources */,
 				D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */,
+				D3034646201ECE93007A37A5 /* MyProjectEditViewController.swift in Sources */,
 				D347125D201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift in Sources */,
+				D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */,
 				D3BCE69E2019D44A00097DDA /* InputDetialViewController.swift in Sources */,
 				D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */,
 				D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */,
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
+				D39F8C3C201F0CFB00A40AC1 /* MyProjectEditFundingNeedViewController.swift in Sources */,
 				B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */,
 				D3B8E5C6201AF285002F3A3A /* SingleProjectTableViewCell.swift in Sources */,
 				D39A4F37200D98AF00022A76 /* Extension+Colors.swift in Sources */,
+				D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */,
 				D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */,
+				D39F14E0201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift in Sources */,
 				D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */,
+				D39F14E4201EF754003F3BC5 /* ProjectEditBusinessPlanBookTableViewCell.swift in Sources */,
+				D39F14E2201EF6B3003F3BC5 /* ProjectEditFundingNeedTableViewCell.swift in Sources */,
+				D39F8C3A201F0CC900A40AC1 /* MyProjectEditRunStatusViewController.swift in Sources */,
 				D3B8E5C3201AF1CB002F3A3A /* MyProjectViewController.swift in Sources */,
+				D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */,
 				D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */,
 				D3B8E5CA201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift in Sources */,
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
 				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
+				D39F14E6201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift in Sources */,
+				D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */,
 				D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */,
+				D39F8C38201F0CB100A40AC1 /* MyProjectEditMarketAnalysisViewController.swift in Sources */,
 				D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
+				D39F8C34201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
 				D3B8E5C8201AFC04002F3A3A /* IntentionProjectViewController.swift in Sources */,
 				D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */,
 				D378FEF21FF0E36600065EEC /* NetworkTools.swift in Sources */,
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,
+				D39F8C32201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift in Sources */,
 				D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */,
+				D303464E201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
