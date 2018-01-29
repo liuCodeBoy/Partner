@@ -45,9 +45,7 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
             self.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
                 self.navigationController?.popViewController(animated: true)
             })
-            
         }
-        
     }
     
     override func viewDidLoad() {

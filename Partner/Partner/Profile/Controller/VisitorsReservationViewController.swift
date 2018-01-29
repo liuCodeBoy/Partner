@@ -105,12 +105,12 @@ class VisitorsReservationViewController: UIViewController, UIScrollViewDelegate,
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         messageTV.resignFirstResponder()
-        keyboardWillHide(from: infoScrollView)
+        keyboardWillHide(withTransforming: infoScrollView)
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         // change keyboard frame using notification
-        keyboardWillShow(from: infoScrollView)
+        keyboardWillShow(withTransforming: infoScrollView)
     }
     
     func textViewDidChange(_ textView: UITextView) {

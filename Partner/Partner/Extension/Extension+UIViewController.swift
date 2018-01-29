@@ -64,7 +64,7 @@ extension UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.init(keyboardHideNotification), object: nil)
     }
     
-    func keyboardWillShow(from aView: UIView) {
+    func keyboardWillShow(withTransforming aView: UIView) {
         NotificationCenter.default.post(name: NSNotification.Name.init(keyboardShowNotification), object: aView)
     }
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -74,7 +74,7 @@ extension UIViewController {
         }, completion: nil)
     }
     
-    func keyboardWillHide(from aView: UIView) {
+    func keyboardWillHide(withTransforming aView: UIView) {
         NotificationCenter.default.post(name: NSNotification.Name.init(keyboardHideNotification), object: aView)
     }
     @objc func keyboardWillHide(_ notification: Notification) {
