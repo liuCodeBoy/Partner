@@ -9,11 +9,17 @@ import UIKit
 
 class SkillViewController: InterestedVC {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+    
+override func viewWillAppear(_ animated: Bool) {
+        buttonArr.removeAllObjects()
+        self.flowButtonView?.removeFromSuperview()
+        self.flowButtonView?.layoutSubviews()
+        if diyButtonText != "" {
+            buttonArr.add(diyButtonText)
+        }
+        getTagList()
     }
+    
     
     //请求标签
     override func getTagList(){
@@ -42,6 +48,42 @@ class SkillViewController: InterestedVC {
         }
     }
     
+    @objc override func editBySelf() -> () {
+        self.performSegue(withIdentifier: "skilledID", sender: nil)
+    }
+    
+    @IBAction func nextStepFunc(_ sender: Any) {
+        var  nums = 0
+        guard self.buttonList != nil else {
+            return
+        }
+        for btn in self.buttonList!{
+            let tempBtn =  btn as! UIButton
+            if(tempBtn.isSelected){
+                nums += 1
+                self.selectedArr.add(tempBtn.titleLabel?.text ?? "")
+            }
+        }
+        if(nums > 8){
+            self.presentHintMessage(hintMessgae: "请不要选择过多的标签", completion: nil)
+            return
+        }else if(nums == 0){
+            self.presentHintMessage(hintMessgae: "至少选择一种标签", completion: nil)
+            return
+        }else{
+            var  selectedStr = ""
+            for  i  in 0..<self.selectedArr.count {
+                if i == 0 {
+                    selectedStr.append((self.selectedArr[0] as? String)!)
+                }else{
+                    selectedStr.append(",")
+                    selectedStr.append((self.selectedArr[i] as? String)!)
+                }
+            }
+            perfectTagInfo(selectedStr : selectedStr)
+        }
+    }
+    
     
     //完善标签信息
     override func  perfectTagInfo(selectedStr : String){
@@ -52,7 +94,7 @@ class SkillViewController: InterestedVC {
             if error == nil {
                 // MARK:- judge the return data from server
                 if  result?["code"] as? Int == 200  {
-                    self?.performSegue(withIdentifier: "intestedSeguePushID", sender: nil)
+                   self?.performSegue(withIdentifier: "CooperativedemandVCID", sender: nil)
                 } else {
                     let  errorShow  =  result!["msg"] as! String
                     self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
