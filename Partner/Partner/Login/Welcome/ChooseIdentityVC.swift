@@ -14,7 +14,7 @@ class ChooseIdentityVC: UIViewController {
     @IBOutlet weak var investorBtn: UIButton!
     @IBOutlet weak var entrepreneurBtn: UIButton!
     @IBOutlet weak var commonBtn: UIButton!
-    
+    var indentifyValue : userCatrgory?
     override func viewDidLoad() {
         super.viewDidLoad()
         setBorder(btn: investorBtn)
@@ -22,24 +22,25 @@ class ChooseIdentityVC: UIViewController {
         setBorder(btn: commonBtn)
         setNavBarBackBtn()
         setNavBarTitle(title: "")
-        self.navigationController?.navigationBar.isHidden = false
-
     }
 
     @IBAction func investorAction(_ sender: Any) {
         setSelected(btn: investorBtn, lab: investorBtnLab)
         setUnSelected(btn: entrepreneurBtn, lab: enterpreneurLab)
         setUnSelected(btn: commonBtn, lab: commonLab)
+        indentifyValue = userCatrgory.investor
     }
     @IBAction func entrepreneurAction(_ sender: Any) {
        setSelected(btn: entrepreneurBtn, lab: enterpreneurLab)
        setUnSelected(btn: investorBtn, lab: investorBtnLab)
        setUnSelected(btn: commonBtn, lab: commonLab)
+        indentifyValue = userCatrgory.entrepreneur
     }
     @IBAction func commonAction(_ sender: Any) {
        setSelected(btn: commonBtn, lab: commonLab)
        setUnSelected(btn: investorBtn, lab: investorBtnLab)
        setUnSelected(btn: entrepreneurBtn, lab: enterpreneurLab)
+       indentifyValue = userCatrgory.ordinaryUser
     }
     //设置边框
     func  setBorder(btn : UIButton){
@@ -60,12 +61,34 @@ class ChooseIdentityVC: UIViewController {
     }
     
     @IBAction func showProfileInformation(_ sender: Any) {
-        let informationDetailVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "InformationDetailVCID") as! InformationDetailVC
-        informationDetailVC.detailViewIsHidden = commonBtn.isSelected
-        if (commonBtn.isSelected || investorBtn.isSelected || entrepreneurBtn.isSelected) == false {
+        //保存身份选择
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+            return
+        }
+        
+        guard  self.indentifyValue  != nil  else {
             self.presentHintMessage(hintMessgae: "您还未选择类型", completion: nil)
             return
         }
-        self.navigationController?.pushViewController(informationDetailVC, animated: true)
+        
+        NetWorkTool.shareInstance.updateUserIndentity(token: access_token, idenId: indentifyValue!, finished: { [weak self](result, error) in
+            if error == nil {
+                // MARK:- judge the return data from server
+                if result?["code"] as? Int == 200 {
+                    let informationDetailVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "InformationDetailVCID") as! InformationDetailVC
+                    informationDetailVC.detailViewIsHidden = (self?.commonBtn.isSelected)!
+                    self?.navigationController?.pushViewController(informationDetailVC, animated: true)
+                } else {
+                    let  errorShow  =  result!["msg"] as! String
+                    self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+                }
+            }
+        })
+    }
+    
+    
+    
+    @IBAction func backVC(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

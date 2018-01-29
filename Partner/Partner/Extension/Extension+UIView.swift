@@ -85,3 +85,24 @@ extension UIView{
     }
 
 }
+
+extension UILabel {
+    //获取高度
+    func getLabHeight(labelStr: String, font: UIFont, width: CGFloat) -> CGFloat {
+        let statusLabelText = labelStr
+        let size = CGSize(width: width, height: 900)
+        let dic = NSDictionary(object: font, forKey: NSAttributedStringKey.font as NSCopying)
+        let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as! [NSAttributedStringKey : Any] , context: nil).size
+        return strSize.height
+    }
+}
+
+extension UIButton {
+    //计算文字大小
+    class func getTextRectSize(text: NSString,font: UIFont,size: CGSize) -> CGRect {
+        let attributes = [NSAttributedStringKey.font: font]
+        let option = NSStringDrawingOptions.usesLineFragmentOrigin
+        let rect:CGRect = text.boundingRect(with: size, options: option, attributes: attributes, context: nil)
+        return rect;
+    }
+}

@@ -9,6 +9,11 @@ target 'Partner' do
 
  pod 'AFNetworking'
  pod 'Masonry'
+ pod 'TZImagePickerController'
+ pod 'MJRefresh'
+ pod 'MJExtension'
+
+
 
   target 'PartnerTests' do
     inherit! :search_paths
