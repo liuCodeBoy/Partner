@@ -12,6 +12,7 @@ target 'Partner' do
  pod 'TZImagePickerController'
  pod 'MJRefresh'
  pod 'MJExtension'
+ pod 'NoticeBar'
 
 
 
