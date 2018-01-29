@@ -48,6 +48,10 @@
 		D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A827E6201096C40053ADBF /* PartnerPickerView.swift */; };
 		D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */; };
 		D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8B8EF20107BB500EDD145 /* VisitorsReservationViewController.swift */; };
+		D3B8E5C3201AF1CB002F3A3A /* MyProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8E5C2201AF1CB002F3A3A /* MyProjectViewController.swift */; };
+		D3B8E5C6201AF285002F3A3A /* SingleProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8E5C5201AF285002F3A3A /* SingleProjectTableViewCell.swift */; };
+		D3B8E5C8201AFC04002F3A3A /* IntentionProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8E5C7201AFC04002F3A3A /* IntentionProjectViewController.swift */; };
+		D3B8E5CA201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8E5C9201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift */; };
 		D3BCE69E2019D44A00097DDA /* InputDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BCE69D2019D44A00097DDA /* InputDetialViewController.swift */; };
 		D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */; };
 		D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */; };
@@ -127,6 +131,10 @@
 		D3A827E6201096C40053ADBF /* PartnerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerPickerView.swift; sourceTree = "<group>"; };
 		D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerPickerView.xib; sourceTree = "<group>"; };
 		D3B8B8EF20107BB500EDD145 /* VisitorsReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsReservationViewController.swift; sourceTree = "<group>"; };
+		D3B8E5C2201AF1CB002F3A3A /* MyProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectViewController.swift; sourceTree = "<group>"; };
+		D3B8E5C5201AF285002F3A3A /* SingleProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProjectTableViewCell.swift; sourceTree = "<group>"; };
+		D3B8E5C7201AFC04002F3A3A /* IntentionProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentionProjectViewController.swift; sourceTree = "<group>"; };
+		D3B8E5C9201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentionProjectTableViewCell.swift; sourceTree = "<group>"; };
 		D3BCE69D2019D44A00097DDA /* InputDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDetialViewController.swift; sourceTree = "<group>"; };
 		D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditChooseAvatarTableViewCell.swift; sourceTree = "<group>"; };
 		D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectNoneProjectPlaceholderViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +205,7 @@
 		D34712522011FFF9003E098E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D3B8E5C4201AF245002F3A3A /* MyProject */,
 				D347125320120085003E098E /* ProfileTableViewHeaderCell.swift */,
 				D347125B201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift */,
 				D347125F2012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift */,
@@ -882,10 +891,21 @@
 			path = Deprecated;
 			sourceTree = "<group>";
 		};
+		D3B8E5C4201AF245002F3A3A /* MyProject */ = {
+			isa = PBXGroup;
+			children = (
+				D3B8E5C5201AF285002F3A3A /* SingleProjectTableViewCell.swift */,
+				D3B8E5C9201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift */,
+			);
+			path = MyProject;
+			sourceTree = "<group>";
+		};
 		D3BFC9B82019C17F00D2C6BD /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
 				D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */,
+				D3B8E5C2201AF1CB002F3A3A /* MyProjectViewController.swift */,
+				D3B8E5C7201AFC04002F3A3A /* IntentionProjectViewController.swift */,
 				D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */,
 				D3BCE69D2019D44A00097DDA /* InputDetialViewController.swift */,
 			);
@@ -1211,16 +1231,20 @@
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
 				B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */,
+				D3B8E5C6201AF285002F3A3A /* SingleProjectTableViewCell.swift in Sources */,
 				D39A4F37200D98AF00022A76 /* Extension+Colors.swift in Sources */,
 				D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */,
 				D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */,
+				D3B8E5C3201AF1CB002F3A3A /* MyProjectViewController.swift in Sources */,
 				D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */,
+				D3B8E5CA201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift in Sources */,
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
 				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
 				D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */,
 				D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
+				D3B8E5C8201AFC04002F3A3A /* IntentionProjectViewController.swift in Sources */,
 				D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */,
 				D378FEF21FF0E36600065EEC /* NetworkTools.swift in Sources */,
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,
