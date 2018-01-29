@@ -20,8 +20,7 @@ class ChooseIdentityVC: UIViewController {
         setBorder(btn: investorBtn)
         setBorder(btn: entrepreneurBtn)
         setBorder(btn: commonBtn)
-        setNavBarBackBtn()
-        setNavBarTitle(title: "")
+
     }
 
     @IBAction func investorAction(_ sender: Any) {

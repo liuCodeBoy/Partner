@@ -13,7 +13,7 @@ class MyProjectEditViewController: UIViewController {
     
     var isEdited = true
     
-    var edited: [String: Bool] = []
+//    var edited: [String: Bool] = []
     
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
