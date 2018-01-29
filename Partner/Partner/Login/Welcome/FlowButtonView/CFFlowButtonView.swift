@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CFFlowButtonView: UIView {
+class CFFlowButtonView: UIScrollView {
 
     /**
      *  存放需要显示的button
@@ -65,7 +65,7 @@ convenience init(initWithButtonList : NSMutableArray) {
             }
         }
         let lastButton = self.buttonList?.lastObject as! UIButton;
-        self.height = lastButton.frame.maxY + 10
+        self.contentSize.height = lastButton.frame.maxY + 10
         
     }
 }
