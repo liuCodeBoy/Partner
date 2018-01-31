@@ -18,6 +18,9 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15)
   - NoticeBar (0.1.7)
+  - SDWebImage (4.2.1):
+    - SDWebImage/Core (= 4.2.1)
+  - SDWebImage/Core (4.2.1)
   - TZImagePickerController (1.9.3)
 
 DEPENDENCIES:
@@ -26,6 +29,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - NoticeBar
+  - SDWebImage
   - TZImagePickerController
 
 SPEC CHECKSUMS:
@@ -34,8 +38,9 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   NoticeBar: 7b824879ef70398a6ba2e01338e2d8bedb2c9d4e
+  SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
   TZImagePickerController: 079ab986018c22793462e531045a75e366b18252
 
-PODFILE CHECKSUM: a2099a818871c91c606c8137a72115a694857993
+PODFILE CHECKSUM: a7e19ab4aca79c9439f33ab2ae853b1c4371d1f0
 
 COCOAPODS: 1.3.1

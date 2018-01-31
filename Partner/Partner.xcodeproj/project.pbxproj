@@ -13,12 +13,20 @@
 		B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E5200C4932007799BC /* InformationDetailVC.swift */; };
 		B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E7200C506A007799BC /* Extension+UIViewController.swift */; };
 		B65517EA200C800E007799BC /* InterestedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E9200C800E007799BC /* InterestedVC.swift */; };
+		B678C9982021C82F007FEB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6843E3820216B5E00B86A3F /* Assets.xcassets */; };
 		B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */; };
-		B690A7921FFF607200AAA051 /* RegisterAndLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */; };
+		B6843E372020223A00B86A3F /* UnionMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E362020223A00B86A3F /* UnionMainVC.swift */; };
+		B6843E3A202173FD00B86A3F /* MomentMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E39202173FD00B86A3F /* MomentMainVC.swift */; };
+		B6843E3D202192C700B86A3F /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E3C202192C700B86A3F /* StatusViewModel.swift */; };
+		B6843E40202195C800B86A3F /* StatusViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E3F202195C800B86A3F /* StatusViewCell.swift */; };
+		B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E412021999D00B86A3F /* PicCollectionView.swift */; };
 		B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */; };
 		B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A34317201C645300C7D5F5 /* communityModel.swift */; };
 		B6C27D072019AF200087FF17 /* ForgetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */; };
 		B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D32201EC911000479F8 /* TageModel.swift */; };
+		B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D34201F3697000479F8 /* AddTagBtnVC.swift */; };
+		B6EF1D3A201F5D8D000479F8 /* RegisterAndLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D39201F5D8C000479F8 /* RegisterAndLoginVC.swift */; };
+		B6EF1D3C201F5FD3000479F8 /* CooperativedemandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D3B201F5FD3000479F8 /* CooperativedemandVC.swift */; };
 		D3034646201ECE93007A37A5 /* MyProjectEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3034645201ECE93007A37A5 /* MyProjectEditViewController.swift */; };
 		D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3034647201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift */; };
 		D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3034649201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift */; };
@@ -38,7 +46,6 @@
 		D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5659200EF3AC00149861 /* FeedbackViewController.swift */; };
 		D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378FE9E1FF0D21600065EEC /* AppDelegate.swift */; };
 		D378FEA41FF0D21600065EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D378FEA21FF0D21600065EEC /* Main.storyboard */; };
-		D378FEA61FF0D21600065EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D378FEA51FF0D21600065EEC /* Assets.xcassets */; };
 		D378FEA91FF0D21600065EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D378FEA71FF0D21600065EEC /* LaunchScreen.storyboard */; };
 		D378FEB41FF0D21600065EEC /* PartnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378FEB31FF0D21600065EEC /* PartnerTests.swift */; };
 		D378FEBF1FF0D21600065EEC /* PartnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378FEBE1FF0D21600065EEC /* PartnerUITests.swift */; };
@@ -115,11 +122,19 @@
 		B65517E7200C506A007799BC /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		B65517E9200C800E007799BC /* InterestedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedVC.swift; sourceTree = "<group>"; };
 		B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginVC.swift; sourceTree = "<group>"; };
-		B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginVC.swift; sourceTree = "<group>"; };
+		B6843E362020223A00B86A3F /* UnionMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionMainVC.swift; sourceTree = "<group>"; };
+		B6843E3820216B5E00B86A3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6843E39202173FD00B86A3F /* MomentMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentMainVC.swift; sourceTree = "<group>"; };
+		B6843E3C202192C700B86A3F /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		B6843E3F202195C800B86A3F /* StatusViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewCell.swift; sourceTree = "<group>"; };
+		B6843E412021999D00B86A3F /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentityVC.swift; sourceTree = "<group>"; };
 		B6A34317201C645300C7D5F5 /* communityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = communityModel.swift; path = Partner/Login/Welcome/communityModel.swift; sourceTree = SOURCE_ROOT; };
 		B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPwdVC.swift; sourceTree = "<group>"; };
 		B6EF1D32201EC911000479F8 /* TageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TageModel.swift; path = Partner/Login/Welcome/TageModel.swift; sourceTree = SOURCE_ROOT; };
+		B6EF1D34201F3697000479F8 /* AddTagBtnVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagBtnVC.swift; sourceTree = "<group>"; };
+		B6EF1D39201F5D8C000479F8 /* RegisterAndLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginVC.swift; sourceTree = "<group>"; };
+		B6EF1D3B201F5FD3000479F8 /* CooperativedemandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooperativedemandVC.swift; sourceTree = "<group>"; };
 		D3034645201ECE93007A37A5 /* MyProjectEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditViewController.swift; sourceTree = "<group>"; };
 		D3034647201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		D3034649201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditMembersBriefTableViewCell.swift; sourceTree = "<group>"; };
@@ -140,7 +155,6 @@
 		D378FE9B1FF0D21600065EEC /* Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D378FE9E1FF0D21600065EEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D378FEA31FF0D21600065EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D378FEA51FF0D21600065EEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D378FEA81FF0D21600065EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D378FEAA1FF0D21600065EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D378FEAF1FF0D21600065EEC /* PartnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PartnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +257,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B6843E3320201E3A00B86A3F /* Moments */ = {
+			isa = PBXGroup;
+			children = (
+				B6843E3E202195A300B86A3F /* View */,
+				B6843E3B2021929E00B86A3F /* Model */,
+				B6843E39202173FD00B86A3F /* MomentMainVC.swift */,
+			);
+			path = Moments;
+			sourceTree = "<group>";
+		};
+		B6843E3B2021929E00B86A3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B6843E3C202192C700B86A3F /* StatusViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B6843E3E202195A300B86A3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6843E412021999D00B86A3F /* PicCollectionView.swift */,
+				B6843E3F202195C800B86A3F /* StatusViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D33EA6782011D29200745003 /* FlowButtonView */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,10 +346,10 @@
 				D378FED71FF0D47600065EEC /* Service */,
 				D378FED91FF0D4AF00065EEC /* Profile */,
 				D378FEDB1FF0D4EB00065EEC /* Extension */,
-				D378FEF11FF0E36500065EEC /* NetworkTools.swift */,
 				D378FE9E1FF0D21600065EEC /* AppDelegate.swift */,
+				D378FEF11FF0E36500065EEC /* NetworkTools.swift */,
 				D378FEA21FF0D21600065EEC /* Main.storyboard */,
-				D378FEA51FF0D21600065EEC /* Assets.xcassets */,
+				B6843E3820216B5E00B86A3F /* Assets.xcassets */,
 				D378FEA71FF0D21600065EEC /* LaunchScreen.storyboard */,
 				D378FEAA1FF0D21600065EEC /* Info.plist */,
 				D37AE8E3202064B700B32E4D /* Partner-Bridging-Header.h */,
@@ -350,13 +391,15 @@
 			isa = PBXGroup;
 			children = (
 				D33EA6782011D29200745003 /* FlowButtonView */,
+				B6EF1D39201F5D8C000479F8 /* RegisterAndLoginVC.swift */,
 				B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */,
 				B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */,
-				B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */,
 				B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */,
 				B65517E5200C4932007799BC /* InformationDetailVC.swift */,
 				B65517E9200C800E007799BC /* InterestedVC.swift */,
 				B641021C2015D7D3001C8787 /* SkillViewController.swift */,
+				B6EF1D34201F3697000479F8 /* AddTagBtnVC.swift */,
+				B6EF1D3B201F5FD3000479F8 /* CooperativedemandVC.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -419,8 +462,9 @@
 		D378FED61FF0D46100065EEC /* Union */ = {
 			isa = PBXGroup;
 			children = (
+				B6843E362020223A00B86A3F /* UnionMainVC.swift */,
 				D378FEF81FF0E75A00065EEC /* Union.storyboard */,
-				D378FEF41FF0E69E00065EEC /* Moments */,
+				B6843E3320201E3A00B86A3F /* Moments */,
 				D378FEF51FF0E6CA00065EEC /* Circle */,
 				D378FEF61FF0E6EE00065EEC /* Messages */,
 				D378FEF71FF0E70E00065EEC /* Hunt */,
@@ -619,16 +663,6 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
-		D378FEF41FF0E69E00065EEC /* Moments */ = {
-			isa = PBXGroup;
-			children = (
-				D378FEFF1FF0E87E00065EEC /* Model */,
-				D378FF001FF0E87E00065EEC /* View */,
-				D378FF011FF0E87E00065EEC /* Controller */,
-			);
-			path = Moments;
-			sourceTree = "<group>";
-		};
 		D378FEF51FF0E6CA00065EEC /* Circle */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,21 +693,21 @@
 			path = Hunt;
 			sourceTree = "<group>";
 		};
-		D378FEFF1FF0E87E00065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D378FF001FF0E87E00065EEC /* View */ = {
+		D378FEFA1FF0E7FA00065EEC /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		D378FF011FF0E87E00065EEC /* Controller */ = {
+		D378FEFB1FF0E7FB00065EEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D378FEFC1FF0E7FB00065EEC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1104,11 +1138,11 @@
 			files = (
 				D378FED41FF0D3D900065EEC /* Login.storyboard in Resources */,
 				D378FEE11FF0D60800065EEC /* Home.storyboard in Resources */,
+				B678C9982021C82F007FEB83 /* Assets.xcassets in Resources */,
 				D34712512011F289003E098E /* CustomTimePickerView.xib in Resources */,
 				D378FF1C1FF0EADB00065EEC /* Profile.storyboard in Resources */,
 				D378FEF91FF0E75A00065EEC /* Union.storyboard in Resources */,
 				D378FEA91FF0D21600065EEC /* LaunchScreen.storyboard in Resources */,
-				D378FEA61FF0D21600065EEC /* Assets.xcassets in Resources */,
 				D378FF221FF0EBF100065EEC /* Shopping.storyboard in Resources */,
 				D378FEA41FF0D21600065EEC /* Main.storyboard in Resources */,
 				D378FEFE1FF0E80600065EEC /* Service.storyboard in Resources */,
@@ -1287,6 +1321,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NoticeBar/NoticeBar.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1296,6 +1331,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NoticeBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1313,7 +1349,7 @@
 				D347125520120085003E098E /* ProfileTableViewHeaderCell.swift in Sources */,
 				B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */,
 				D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */,
-				B690A7921FFF607200AAA051 /* RegisterAndLoginVC.swift in Sources */,
+				B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */,
 				B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */,
 				D39A4F32200D985700022A76 /* SystemConstantValue.swift in Sources */,
 				D347126820120943003E098E /* ProfileEditInfomationViewController.swift in Sources */,
@@ -1323,13 +1359,16 @@
 				D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */,
 				D3034646201ECE93007A37A5 /* MyProjectEditViewController.swift in Sources */,
 				D347125D201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift in Sources */,
+				B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */,
 				D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */,
 				D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */,
+				B6843E40202195C800B86A3F /* StatusViewCell.swift in Sources */,
 				D3BCE69E2019D44A00097DDA /* InputDetialViewController.swift in Sources */,
 				D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */,
 				D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */,
 				D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */,
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
+				B6843E3D202192C700B86A3F /* StatusViewModel.swift in Sources */,
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
 				B641021D2015D7D3001C8787 /* SkillViewController.swift in Sources */,
 				B6C27D072019AF200087FF17 /* ForgetPwdVC.swift in Sources */,
@@ -1337,10 +1376,13 @@
 				B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */,
 				D3B8E5C6201AF285002F3A3A /* SingleProjectTableViewCell.swift in Sources */,
 				D39A4F37200D98AF00022A76 /* Extension+Colors.swift in Sources */,
+				B6EF1D3A201F5D8D000479F8 /* RegisterAndLoginVC.swift in Sources */,
 				D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */,
 				D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */,
 				B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */,
 				D39F14E0201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift in Sources */,
+				B6843E372020223A00B86A3F /* UnionMainVC.swift in Sources */,
+				B6843E3A202173FD00B86A3F /* MomentMainVC.swift in Sources */,
 				D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */,
 				D39F14E4201EF754003F3BC5 /* ProjectEditBusinessPlanBookTableViewCell.swift in Sources */,
 				D39F14E2201EF6B3003F3BC5 /* ProjectEditFundingNeedTableViewCell.swift in Sources */,
@@ -1351,6 +1393,7 @@
 				D3B8E5CA201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift in Sources */,
 				D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */,
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
+				B6EF1D3C201F5FD3000479F8 /* CooperativedemandVC.swift in Sources */,
 				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
 				D39F14E6201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift in Sources */,
 				D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */,

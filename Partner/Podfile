@@ -13,6 +13,7 @@ target 'Partner' do
  pod 'MJRefresh'
  pod 'MJExtension'
  pod 'NoticeBar'
+ pod 'SDWebImage'
 
 
 

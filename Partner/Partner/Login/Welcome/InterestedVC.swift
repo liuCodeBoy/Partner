@@ -8,7 +8,7 @@
 import UIKit
 import Masonry
 class InterestedVC: UIViewController {
-    
+    var  diyButtonText = [String]()
     var flowButtonView : CFFlowButtonView?
     var buttonList     : NSMutableArray?
     var scrollview     : UIScrollView?
@@ -16,6 +16,18 @@ class InterestedVC: UIViewController {
     var selectedArr    = NSMutableArray()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+    
+        buttonArr.removeAllObjects()
+        self.flowButtonView?.removeFromSuperview()
+        for i in 0..<diyButtonText.count{
+             let str = diyButtonText[i]
+              buttonArr.add(str)
+          }
         getTagList()
     }
  
@@ -44,6 +56,9 @@ class InterestedVC: UIViewController {
             }
         }
     }
+    
+    //InterestedID
+    
     
     
     
@@ -97,6 +112,7 @@ class InterestedVC: UIViewController {
                 // MARK:- judge the return data from server
                 if  result?["code"] as? Int == 200  {
                     self?.performSegue(withIdentifier: "intestedSeguePushID", sender: nil)
+                  
                 } else {
                     let  errorShow  =  result!["msg"] as! String
                     self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
@@ -104,6 +120,15 @@ class InterestedVC: UIViewController {
                 }
             }
         }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if  let dest = segue.destination as? AddTagBtnVC {
+              dest.sourceSegue = segue
+        }
+     
     }
     
     
@@ -144,11 +169,11 @@ class InterestedVC: UIViewController {
 
     
     @objc func editBySelf() -> () {
-        self.navigationController?.pushViewController(UIViewController.init(), animated: true)
+        
+        self.performSegue(withIdentifier: "InterestedID", sender: nil)
+        
     }
-    
-    
-    /**
+        /**
      *  设置FlowButtonView
      */
     func addFlowButtonView() -> () {

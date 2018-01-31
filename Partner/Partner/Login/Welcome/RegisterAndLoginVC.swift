@@ -56,7 +56,14 @@ class RegisterAndLoginVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         registerView.isHidden = true
         loginView.isHidden = false
+        
+        //添加子控制器
+          let welcomeVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "WelcomeLoginVCID")
+        self.addChildViewController(welcomeVC)
+        self.view.addSubview(welcomeVC.view)   
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
          self.phoneNumLab.resignFirstResponder()
