@@ -8,7 +8,7 @@
 import UIKit
 import Masonry
 class InterestedVC: UIViewController {
-    var  diyButtonText = ""
+    var  diyButtonText = [String]()
     var flowButtonView : CFFlowButtonView?
     var buttonList     : NSMutableArray?
     var scrollview     : UIScrollView?
@@ -21,12 +21,13 @@ class InterestedVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-         buttonArr.removeAllObjects()
-         self.flowButtonView?.removeFromSuperview()
-        self.flowButtonView?.layoutSubviews()
-        if diyButtonText != "" {
-            buttonArr.add(diyButtonText)
-        }
+    
+        buttonArr.removeAllObjects()
+        self.flowButtonView?.removeFromSuperview()
+        for i in 0..<diyButtonText.count{
+             let str = diyButtonText[i]
+              buttonArr.add(str)
+          }
         getTagList()
     }
  

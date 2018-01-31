@@ -8,18 +8,18 @@
 import UIKit
 
 class SkillViewController: InterestedVC {
-
-    
-override func viewWillAppear(_ animated: Bool) {
-        buttonArr.removeAllObjects()
-        self.flowButtonView?.removeFromSuperview()
-        self.flowButtonView?.layoutSubviews()
-        if diyButtonText != "" {
-            buttonArr.add(diyButtonText)
-        }
-        getTagList()
-    }
-    
+    var  skillButtonArr = [String]()
+//    override func viewWillAppear(_ animated: Bool) {
+//        
+//        buttonArr.removeAllObjects()
+//        self.flowButtonView?.removeFromSuperview()
+//        for i in 0..<skillButtonArr.count{
+//            let str = skillButtonArr[i]
+//            buttonArr.add(str)
+//        }
+//        getTagList()
+//        
+//    }
     
     //请求标签
     override func getTagList(){
@@ -27,7 +27,6 @@ override func viewWillAppear(_ animated: Bool) {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
             return
         }
-        self.buttonArr.removeAllObjects()
         NetWorkTool.shareInstance.getTagList(token: access_token, type: 1) { [weak self](result, error) in
             if error == nil {
                 // MARK:- judge the return data from server

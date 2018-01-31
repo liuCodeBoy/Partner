@@ -44,10 +44,10 @@ class AddTagBtnVC: UIViewController {
         // pass data to the segue source view controller
         if sourceSegue?.identifier == "InterestedID" {
              let source = sourceSegue?.source as! InterestedVC
-            source.diyButtonText = inputText!
+            source.diyButtonText.append(inputText!)
         }else if sourceSegue?.identifier == "skilledID"{
              let source = sourceSegue?.source as! SkillViewController
-             source.diyButtonText = inputText!
+             source.diyButtonText.append(inputText!)
         }
         self.navigationController?.popViewController(animated: true)
     }

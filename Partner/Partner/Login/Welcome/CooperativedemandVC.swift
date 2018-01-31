@@ -32,17 +32,29 @@ class CooperativedemandVC: UIViewController , UITextViewDelegate {
     @IBAction func submitBtnClicked(_ sender: UIButton) {
         if Int(inputTF.text.count) == 0 || inputTF.text.replacingOccurrences(of: " ", with: "") == "" {
             presentHintMessage(hintMessgae: "输入内容不能为空", completion: nil)
-        } else if Int(inputTF.text.count) > 300 {
-            presentHintMessage(hintMessgae: "字符不能超过300字", completion: nil)
+        } else if Int(inputTF.text.count) > 200 {
+            presentHintMessage(hintMessgae: "字符不能超过200字", completion: nil)
             return
         } else {
             // TODO:- post request
-            
-            // pop view controller
-            self.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
-                self.navigationController?.popViewController(animated: true)
+            //保存身份选择
+            guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+                return
+            }
+            NetWorkTool.shareInstance.perfectUserRequireInfo(token: access_token, require: inputTF.text, finished: { [weak self](result, error) in
+                if error == nil {
+                    // MARK:- judge the return data from server
+                    if  result?["code"] as? Int == 200  {
+                        self?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
+                            self?.navigationController?.dismiss(animated: true , completion: nil)
+                        })
+                    } else {
+                        let  errorShow  =  result!["msg"] as! String
+                        self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+                        
+                    }
+                }
             })
-            
         }
         
     }
