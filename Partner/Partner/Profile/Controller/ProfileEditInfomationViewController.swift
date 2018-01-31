@@ -134,7 +134,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // MARK:- end deiting to force the object resign first responder
         self.profileInfoTableView.endEditing(true)
-        keyboardWillHide(from: profileInfoTableView)
+        keyboardWillHide(withTransforming: profileInfoTableView)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

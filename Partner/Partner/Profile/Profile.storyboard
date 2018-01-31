@@ -1384,7 +1384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FwL-io-UDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="-657"/>
+            <point key="canvasLocation" x="2124" y="-627"/>
         </scene>
         <!--Profile Edit Infomation View Controller-->
         <scene sceneID="DeP-Gb-jFM">
@@ -3418,7 +3418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxQ-nS-Gnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="-657"/>
+            <point key="canvasLocation" x="470" y="-626"/>
         </scene>
         <!--My Project None Project Placeholder View Controller-->
         <scene sceneID="ARs-3M-gNr">
@@ -3885,7 +3885,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NjY-Gb-sTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="471" y="961"/>
+            <point key="canvasLocation" x="470" y="959"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kDY-xW-qQg">
@@ -4440,7 +4440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYI-8m-Sk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="470" y="1710"/>
+            <point key="canvasLocation" x="-274" y="958"/>
         </scene>
         <!--My Project Edit View Controller-->
         <scene sceneID="D55-Kx-U1N">
@@ -4450,6 +4450,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7c-xL-Sda">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" red="0.5411764979" green="0.63137257099999999" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="175-Tj-oZu">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <subviews>
@@ -4571,8 +4575,8 @@
                                                                 <constraint firstAttribute="height" constant="14" id="kRU-vd-6Lc"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏 123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bq-3i-YAd">
-                                                            <rect key="frame" x="221.5" y="108" width="48.5" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浏览 123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bq-3i-YAd">
+                                                            <rect key="frame" x="221.5" y="108" width="49" height="17"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="17" id="Z6s-m4-eXv"/>
                                                             </constraints>
@@ -4732,6 +4736,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="favLbl" destination="fsZ-Vk-s2c" id="Wqq-9f-FG3"/>
+                                            <outlet property="projLogoImg" destination="kPh-qK-RtG" id="y5S-85-ztf"/>
+                                            <outlet property="projNameLbl" destination="MUg-np-nVz" id="WnN-LP-O4e"/>
+                                            <outlet property="projStatusLbl" destination="oJi-1L-EHL" id="hw7-Y2-THC"/>
+                                            <outlet property="tag1Lbl" destination="tND-p9-wMZ" id="C4u-dd-zAV"/>
+                                            <outlet property="tag2Lbl" destination="t6M-bS-x1h" id="dqW-yO-cPr"/>
+                                            <outlet property="tag3Lbl" destination="rg3-RH-HKy" id="F1c-Nh-t0B"/>
+                                            <outlet property="viewLbl" destination="4Bq-3i-YAd" id="Dv9-Dj-Xgo"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditMembersBriefTableViewCell" rowHeight="60" id="JVO-cu-5sF" customClass="ProjectEditMembersBriefTableViewCell" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="292" width="375" height="60"/>
@@ -4843,6 +4857,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="avatar1Img" destination="hUc-2l-K3E" id="HGK-I7-LCg"/>
+                                            <outlet property="avatar2Img" destination="bMg-te-Lge" id="xeZ-j5-CMC"/>
+                                            <outlet property="avatar3Img" destination="UQ2-dF-qbe" id="SpS-MI-ip2"/>
+                                            <outlet property="avatar4Img" destination="z6U-kd-QRt" id="Vmf-SB-FRq"/>
+                                            <outlet property="avatar5Img" destination="lke-Jd-ZPP" id="agL-nC-Xhl"/>
+                                            <outlet property="membersCountLbl" destination="nua-nh-Vyh" id="d5s-uS-ywV"/>
                                             <segue destination="6gy-jY-JaT" kind="show" id="6G2-Dx-deq"/>
                                         </connections>
                                     </tableViewCell>
@@ -4863,16 +4883,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="请简明的描述您的公司所从事的业务、提供的服务等，不超过500字" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BC-sK-XW8">
-                                                    <rect key="frame" x="12" y="80" width="351" height="41"/>
+                                                    <rect key="frame" x="12" y="80" width="351" height="33.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="Gh1-QK-SJs"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Gh1-QK-SJs"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目亮点" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skg-Ka-6JA">
-                                                    <rect key="frame" x="12" y="131" width="58" height="20"/>
+                                                    <rect key="frame" x="12" y="123.5" width="58" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="d2J-Bz-cpx"/>
                                                     </constraints>
@@ -4881,7 +4901,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请从产品特色、核心资源、团队优势等方面描述项目亮点，不得超过200字" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXJ-um-Z9R">
-                                                    <rect key="frame" x="12" y="151" width="351" height="50.5"/>
+                                                    <rect key="frame" x="12" y="143.5" width="351" height="58"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -4902,9 +4922,12 @@
                                                         <constraint firstAttribute="height" constant="40" id="fmA-Gv-NlQ"/>
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
+                                                    <connections>
+                                                        <segue destination="O46-tb-B0l" kind="show" identifier="ProjectIntroductionEditSegue" id="V3F-Oy-geh"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDJ-8D-NFt">
-                                                    <rect key="frame" x="12" y="60" width="351" height="171.5"/>
+                                                    <rect key="frame" x="12" y="60" width="351" height="172"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加项目信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMc-f9-hck">
                                                             <rect key="frame" x="127" y="76" width="98" height="20"/>
@@ -4913,9 +4936,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ea-bC-Lbg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="171.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
                                                             <connections>
-                                                                <segue destination="O46-tb-B0l" kind="show" id="kbK-id-MqG"/>
+                                                                <segue destination="O46-tb-B0l" kind="show" identifier="ProjectIntroductionSegue" id="kbK-id-MqG"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -4959,6 +4982,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="addCoverView" destination="EDJ-8D-NFt" id="ZNP-uG-tYB"/>
+                                            <outlet property="editBtn" destination="xFB-SD-jzs" id="ANK-F1-5UG"/>
+                                            <outlet property="projHighlightsLbl" destination="dXJ-um-Z9R" id="qNc-Si-FHx"/>
+                                            <outlet property="projIntroLbl" destination="8BC-sK-XW8" id="LBG-iC-VqW"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditMarketAnalysisTableViewCell" rowHeight="345" id="Ob5-vR-0em" customClass="ProjectEditMarketAnalysisTableViewCell" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="584" width="375" height="345"/>
@@ -5052,6 +5081,9 @@
                                                         <constraint firstAttribute="height" constant="40" id="yns-Da-38H"/>
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
+                                                    <connections>
+                                                        <segue destination="FU0-JI-xsN" kind="show" id="bay-6m-TUh"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWV-KB-zIg">
                                                     <rect key="frame" x="12" y="60" width="351" height="285"/>
@@ -5090,7 +5122,7 @@
                                                 <constraint firstItem="giu-T6-1CC" firstAttribute="leading" secondItem="0iG-2h-qe1" secondAttribute="leading" constant="12" id="0zJ-VM-1J3"/>
                                                 <constraint firstItem="hgc-W9-hYn" firstAttribute="leading" secondItem="0iG-2h-qe1" secondAttribute="leading" constant="12" id="2Nq-gT-Tzh"/>
                                                 <constraint firstAttribute="trailing" secondItem="i5c-jn-XVB" secondAttribute="trailing" constant="12" id="4lC-DB-49H"/>
-                                                <constraint firstAttribute="bottom" secondItem="tgk-5E-9ej" secondAttribute="bottom" constant="30" id="7es-rd-BIl"/>
+                                                <constraint firstAttribute="bottom" secondItem="tgk-5E-9ej" secondAttribute="bottom" priority="750" constant="30" id="7es-rd-BIl"/>
                                                 <constraint firstAttribute="trailing" secondItem="giu-T6-1CC" secondAttribute="trailing" constant="12" id="Aj7-3O-fsF"/>
                                                 <constraint firstItem="i5c-jn-XVB" firstAttribute="leading" secondItem="0iG-2h-qe1" secondAttribute="leading" constant="12" id="G7K-yl-KpG"/>
                                                 <constraint firstItem="P5b-VB-ard" firstAttribute="leading" secondItem="0iG-2h-qe1" secondAttribute="leading" constant="12" id="H1T-2C-zNe"/>
@@ -5119,6 +5151,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="addCoverView" destination="lWV-KB-zIg" id="Wb2-mU-yaA"/>
+                                            <outlet property="aimUserGroupLbl" destination="giu-T6-1CC" id="hZU-65-Nai"/>
+                                            <outlet property="competitionRivalLbl" destination="xoR-Gi-7fW" id="fLp-fq-2MM"/>
+                                            <outlet property="editBtn" destination="uqz-FA-XbO" id="sT8-SQ-UVj"/>
+                                            <outlet property="ownSourceLbl" destination="tgk-5E-9ej" id="gaO-jQ-gRY"/>
+                                            <outlet property="profitModLbl" destination="i5c-jn-XVB" id="Qhe-4a-viK"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditRunStatusTableViewCell" rowHeight="232" id="enb-QN-zRV" customClass="ProjectEditRunStatusTableViewCell" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="929" width="375" height="232"/>
@@ -5273,9 +5313,12 @@
                                                         <constraint firstAttribute="height" constant="40" id="qSj-Hs-DM7"/>
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
+                                                    <connections>
+                                                        <segue destination="kv4-fY-wlH" kind="show" id="L7p-HO-3h4"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7a-rO-IEZ">
-                                                    <rect key="frame" x="12" y="60" width="351" height="171.5"/>
+                                                    <rect key="frame" x="12" y="60" width="351" height="172"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加运营状况" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v83-kq-7Iz">
                                                             <rect key="frame" x="127" y="76" width="98" height="20"/>
@@ -5284,7 +5327,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abq-2I-jzi">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="171.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
                                                             <connections>
                                                                 <segue destination="kv4-fY-wlH" kind="show" id="h7s-Yg-up8"/>
                                                             </connections>
@@ -5336,6 +5379,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="addCoverView" destination="m7a-rO-IEZ" id="hmb-Pc-bEZ"/>
+                                            <outlet property="editBtn" destination="xYe-xz-31t" id="hWs-E7-6My"/>
+                                            <outlet property="monthActivePeopleLbl" destination="XF2-C7-rz5" id="4Ob-HN-45V"/>
+                                            <outlet property="monthSalaryLbl" destination="6Sw-PW-9co" id="VFq-qy-mH7"/>
+                                            <outlet property="runDataLbl" destination="Ywa-7l-vEB" id="h0y-29-PuC"/>
+                                            <outlet property="totalUserLbl" destination="AYN-gw-LeT" id="W6E-69-GzP"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditFundingNeedTableViewCell" rowHeight="232" id="DoQ-hP-Eqi" customClass="ProjectEditFundingNeedTableViewCell" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1161" width="375" height="232"/>
@@ -5490,9 +5541,12 @@
                                                         <constraint firstAttribute="height" constant="40" id="osA-w6-3yM"/>
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
+                                                    <connections>
+                                                        <segue destination="irE-JC-4r4" kind="show" id="e1T-L8-uwu"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPs-ny-yLI">
-                                                    <rect key="frame" x="12" y="60" width="351" height="171.5"/>
+                                                    <rect key="frame" x="12" y="60" width="351" height="172"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加融资需求" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bu-BG-MU8">
                                                             <rect key="frame" x="127" y="76" width="98" height="20"/>
@@ -5501,7 +5555,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA3-Yt-QVP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="171.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
                                                             <connections>
                                                                 <segue destination="irE-JC-4r4" kind="show" id="lE5-Iv-Zpx"/>
                                                             </connections>
@@ -5553,6 +5607,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="addCoverView" destination="sPs-ny-yLI" id="Bd6-G4-jw6"/>
+                                            <outlet property="editBtn" destination="kMG-LB-XaN" id="jkl-BU-aUK"/>
+                                            <outlet property="fundingExpectationLbl" destination="C3L-Mq-e01" id="xuC-Ib-fmR"/>
+                                            <outlet property="fundingMomeyLbl" destination="OSQ-hU-x0g" id="9QO-WV-zK1"/>
+                                            <outlet property="moneyUsingPlanLbl" destination="KKq-HY-mL6" id="C3I-E9-GRx"/>
+                                            <outlet property="transferSharesLbl" destination="B07-Q4-dy5" id="3IE-11-Pfq"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditBusinessPlanBookTableViewCell" rowHeight="84" id="P7q-Mh-8Q0" customClass="ProjectEditBusinessPlanBookTableViewCell" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1393" width="375" height="84"/>
@@ -5614,6 +5676,9 @@
                                                 <constraint firstItem="dVp-Mh-8hw" firstAttribute="top" secondItem="tU6-TT-FSv" secondAttribute="bottom" constant="52" id="qnR-CI-kSX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="planBookLbl" destination="O48-L4-87Q" id="XiH-Gh-yNR"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditConfirmButtonTableViewCell" rowHeight="80" id="a3C-fI-9R3" customClass="ProjectEditConfirmButtonTableViewCell" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1477" width="375" height="80"/>
@@ -5663,15 +5728,19 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.5411764979" green="0.63137257099999999" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="w7c-xL-Sda" firstAttribute="top" secondItem="34p-CL-pH1" secondAttribute="top" id="7RX-0h-SJM"/>
+                            <constraint firstAttribute="trailing" secondItem="w7c-xL-Sda" secondAttribute="trailing" id="BmV-GU-tUP"/>
                             <constraint firstItem="175-Tj-oZu" firstAttribute="leading" secondItem="PVa-u4-4xO" secondAttribute="leading" id="DjS-Cn-LgK"/>
+                            <constraint firstItem="w7c-xL-Sda" firstAttribute="leading" secondItem="34p-CL-pH1" secondAttribute="leading" id="Gai-CZ-2UH"/>
                             <constraint firstItem="PVa-u4-4xO" firstAttribute="bottom" secondItem="ckV-Dd-Sgz" secondAttribute="bottom" id="Oep-a7-b0Q"/>
                             <constraint firstItem="ckV-Dd-Sgz" firstAttribute="leading" secondItem="PVa-u4-4xO" secondAttribute="leading" id="W8T-os-wmY"/>
                             <constraint firstAttribute="trailing" secondItem="ckV-Dd-Sgz" secondAttribute="trailing" id="Zaq-ci-Q7G"/>
                             <constraint firstAttribute="trailing" secondItem="175-Tj-oZu" secondAttribute="trailing" id="dkH-lc-ujn"/>
                             <constraint firstItem="175-Tj-oZu" firstAttribute="top" secondItem="PVa-u4-4xO" secondAttribute="top" id="ilw-pe-R4d"/>
                             <constraint firstItem="ckV-Dd-Sgz" firstAttribute="top" secondItem="175-Tj-oZu" secondAttribute="bottom" id="upS-3q-Ddh"/>
+                            <constraint firstItem="175-Tj-oZu" firstAttribute="top" secondItem="w7c-xL-Sda" secondAttribute="bottom" id="z1e-8U-CvZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PVa-u4-4xO"/>
                     </view>
@@ -5681,7 +5750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nu0-ki-ebT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="960"/>
+            <point key="canvasLocation" x="1296.8" y="959.37031484257875"/>
         </scene>
         <!--My Project Edit Team Members View Controller-->
         <scene sceneID="eAL-RF-uvs">
@@ -5861,7 +5930,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NH1-gn-10z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ny7-d3-kJW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2070" y="1710"/>
+            <point key="canvasLocation" x="2921" y="959"/>
         </scene>
         <!--My Project Edit Add Team Members View Controller-->
         <scene sceneID="cI5-4Q-F4N">
@@ -6346,7 +6415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaK-I7-GZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2833" y="1710"/>
+            <point key="canvasLocation" x="3692" y="958"/>
         </scene>
         <!--My Project Edit Project Introduction View Controller-->
         <scene sceneID="CC4-JF-M8T">
@@ -6382,6 +6451,9 @@
                                         <state key="normal" title="保存">
                                             <color key="titleColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveClicked:" destination="O46-tb-B0l" eventType="touchUpInside" id="zXY-oV-LvF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6423,7 +6495,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRA-am-PNN">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="uRA-am-PNN">
                                 <rect key="frame" x="0.0" y="150" width="375" height="468"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ny-Qt-wxh">
@@ -6443,8 +6515,14 @@
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7rx-c8-GES">
                                                         <rect key="frame" x="5" y="2" width="341" height="91.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="92" id="vCj-v6-VQo"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="O46-tb-B0l" id="LJK-xU-K2t"/>
+                                                        </connections>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2W-Fo-LWl">
                                                         <rect key="frame" x="301.5" y="96" width="39.5" height="17"/>
@@ -6489,12 +6567,18 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DqR-Cn-Cni">
-                                                <rect key="frame" x="12" y="234" width="351" height="120"/>
+                                                <rect key="frame" x="12" y="235" width="351" height="120"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hPg-22-AVK">
                                                         <rect key="frame" x="5" y="2" width="341" height="91.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="92" id="8dr-zR-8n8"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="O46-tb-B0l" id="RwX-l0-g2q"/>
+                                                        </connections>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKK-9A-lSK">
                                                         <rect key="frame" x="302" y="96" width="39" height="17"/>
@@ -6540,7 +6624,7 @@
                                             <constraint firstItem="XS4-ZU-OgE" firstAttribute="top" secondItem="HN9-nH-o11" secondAttribute="bottom" constant="9" id="OFv-M1-irI"/>
                                             <constraint firstAttribute="trailing" secondItem="DqR-Cn-Cni" secondAttribute="trailing" constant="12" id="RBc-UL-YqX"/>
                                             <constraint firstItem="HN9-nH-o11" firstAttribute="top" secondItem="6Ny-Qt-wxh" secondAttribute="top" constant="20" id="SWb-3b-ToN"/>
-                                            <constraint firstItem="DqR-Cn-Cni" firstAttribute="top" secondItem="mV2-nx-JX1" secondAttribute="bottom" constant="9" id="atj-TU-miF"/>
+                                            <constraint firstAttribute="bottom" secondItem="DqR-Cn-Cni" secondAttribute="bottom" constant="10" id="dJn-AL-pRy"/>
                                             <constraint firstAttribute="height" constant="365" id="knP-6b-Y5w"/>
                                             <constraint firstAttribute="trailing" secondItem="XS4-ZU-OgE" secondAttribute="trailing" constant="12" id="sdD-gQ-TUJ"/>
                                         </constraints>
@@ -6574,11 +6658,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YP5-mZ-hqv"/>
                     </view>
+                    <connections>
+                        <outlet property="inputLimitLbl1" destination="m2W-Fo-LWl" id="hw2-xm-Zd6"/>
+                        <outlet property="inputLimitLbl2" destination="qKK-9A-lSK" id="X9k-bu-9kj"/>
+                        <outlet property="inputTV1" destination="7rx-c8-GES" id="8JT-s9-P0K"/>
+                        <outlet property="inputTV2" destination="hPg-22-AVK" id="WXo-6z-umE"/>
+                        <outlet property="placeholderLbl1" destination="T0J-5j-UcE" id="HKR-B4-1fz"/>
+                        <outlet property="placeholderLbl2" destination="jmj-21-WD7" id="Aea-Cr-2Q9"/>
+                        <outlet property="scrollView" destination="uRA-am-PNN" id="kZa-MS-h7U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wom-jh-Ihu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AA1-9c-Zp0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2070" y="2444"/>
+            <point key="canvasLocation" x="350" y="1783"/>
         </scene>
         <!--My Project Edit Market Analysis View Controller-->
         <scene sceneID="ukG-2z-OjV">
@@ -6818,6 +6911,9 @@
                                                         <rect key="frame" x="5" y="2" width="341" height="91.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="FU0-JI-xsN" id="gG0-7R-PgW"/>
+                                                        </connections>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prV-Vn-u62">
                                                         <rect key="frame" x="302" y="96" width="39" height="17"/>
@@ -6895,6 +6991,9 @@
                                     <constraint firstAttribute="trailing" secondItem="wha-Vz-pX2" secondAttribute="trailing" id="ZTX-Lm-GOu"/>
                                     <constraint firstItem="wha-Vz-pX2" firstAttribute="width" secondItem="cTy-wQ-feR" secondAttribute="width" id="yVu-zn-MXh"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="FU0-JI-xsN" id="ZVH-8p-6na"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6916,11 +7015,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YAF-E1-mFB"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="0ws-sm-GoW" id="0gO-2r-ab2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APs-sX-GUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cJk-zq-qo7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2833" y="2444"/>
+            <point key="canvasLocation" x="1026" y="1782"/>
         </scene>
         <!--My Project Edit Run Status View Controller-->
         <scene sceneID="uio-lu-5vq">
@@ -7266,7 +7368,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGA-vI-xc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jZH-UX-0o3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3606" y="2444"/>
+            <point key="canvasLocation" x="1702" y="1782"/>
         </scene>
         <!--My Project Edit Funding Need View Controller-->
         <scene sceneID="8FI-Xf-8OZ">
@@ -7340,7 +7442,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMK-uz-SMk">
-                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
+                                <rect key="frame" x="0.0" y="150" width="375" height="468"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ggl-Fh-arN">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="382"/>
@@ -7637,6 +7739,7 @@
                         <constraints>
                             <constraint firstItem="mMK-uz-SMk" firstAttribute="trailing" secondItem="dvx-R4-kFQ" secondAttribute="trailing" id="0e4-18-mqA"/>
                             <constraint firstItem="kw8-xp-zN5" firstAttribute="leading" secondItem="dvx-R4-kFQ" secondAttribute="leading" id="9st-He-iY4"/>
+                            <constraint firstItem="dvx-R4-kFQ" firstAttribute="bottom" secondItem="mMK-uz-SMk" secondAttribute="bottom" id="FsN-LW-9gU"/>
                             <constraint firstItem="HUw-he-MpH" firstAttribute="top" secondItem="kw8-xp-zN5" secondAttribute="bottom" id="Hj6-SU-qM4"/>
                             <constraint firstItem="kw8-xp-zN5" firstAttribute="trailing" secondItem="dvx-R4-kFQ" secondAttribute="trailing" id="IcQ-qt-X0s"/>
                             <constraint firstItem="mMK-uz-SMk" firstAttribute="leading" secondItem="dvx-R4-kFQ" secondAttribute="leading" id="JKZ-sL-a2E"/>
@@ -7646,7 +7749,6 @@
                             <constraint firstAttribute="trailing" secondItem="uQ8-ec-Kcu" secondAttribute="trailing" id="dzV-gr-NHB"/>
                             <constraint firstItem="kw8-xp-zN5" firstAttribute="top" secondItem="uQ8-ec-Kcu" secondAttribute="bottom" id="mDq-an-lYZ"/>
                             <constraint firstItem="mMK-uz-SMk" firstAttribute="top" secondItem="HUw-he-MpH" secondAttribute="bottom" id="qli-aT-IHF"/>
-                            <constraint firstAttribute="bottom" secondItem="mMK-uz-SMk" secondAttribute="bottom" id="shY-8Y-xAa"/>
                             <constraint firstItem="kw8-xp-zN5" firstAttribute="top" secondItem="dvx-R4-kFQ" secondAttribute="top" id="vlM-bZ-dwm"/>
                             <constraint firstItem="HUw-he-MpH" firstAttribute="leading" secondItem="kw8-xp-zN5" secondAttribute="leading" id="vpw-lD-Dgg"/>
                         </constraints>
@@ -7656,7 +7758,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzM-9M-8SH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="P8l-4A-jFK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4366" y="2443"/>
+            <point key="canvasLocation" x="2376.8000000000002" y="1781.5592203898052"/>
         </scene>
         <!--My Project Edit And Create View Controller-->
         <scene sceneID="mVt-pD-kf1">
@@ -9971,13 +10073,14 @@
                                                 <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uG-xC-fRb">
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uG-xC-fRb">
                                                 <rect key="frame" x="325" y="22" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="4aB-mb-f2d"/>
                                                     <constraint firstAttribute="width" constant="16" id="jaY-Pr-mje"/>
                                                 </constraints>
                                                 <state key="normal" image="profile_my_project_radio_non_selected"/>
+                                                <state key="selected" image="profile_my_project_radio_selected"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -10026,7 +10129,8 @@
                                                     <constraint firstAttribute="height" constant="16" id="BFE-Ag-EML"/>
                                                     <constraint firstAttribute="width" constant="16" id="dl3-wH-rrf"/>
                                                 </constraints>
-                                                <state key="normal" image="profile_my_project_radio_selected"/>
+                                                <state key="normal" image="profile_my_project_radio_non_selected"/>
+                                                <state key="selected" image="profile_my_project_radio_selected"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -10107,7 +10211,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FlX-uz-I2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EM9-ba-YTU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2468" y="959"/>
+            <point key="canvasLocation" x="2124" y="959"/>
         </scene>
         <!--我的-->
         <scene sceneID="fSr-Y6-xDu">
@@ -10127,7 +10231,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDc-fA-tca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-849" y="171"/>
+            <point key="canvasLocation" x="-1156" y="170"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Esw-Wj-QTQ">
@@ -11674,8 +11778,12 @@
         <image name="up_arrow" width="10" height="6"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZHr-RT-XR7"/>
+        <segue reference="pDG-Yy-NUE"/>
         <segue reference="Woo-d6-Uei"/>
+        <segue reference="lE5-Iv-Zpx"/>
+        <segue reference="h7s-Yg-up8"/>
+        <segue reference="Fuv-Gx-AFw"/>
+        <segue reference="kbK-id-MqG"/>
         <segue reference="Bzs-ku-knP"/>
     </inferredMetricsTieBreakers>
 </document>

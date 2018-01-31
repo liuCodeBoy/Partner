@@ -8,6 +8,12 @@
 
 import UIKit
 
+private let swizzling: (AnyClass, Selector, Selector) -> () = { forClass, originalSelector, swizzledSelector in
+    let originalMethod = class_getInstanceMethod(forClass, originalSelector)
+    let swizzledMethod = class_getInstanceMethod(forClass, swizzledSelector)
+    method_exchangeImplementations(originalMethod!, swizzledMethod!)
+}
+
 extension UIViewController {
     
     // MARK:- set round rect of a UIView
@@ -17,7 +23,7 @@ extension UIViewController {
             target.layer.masksToBounds = true
         }
     }
-    
+
     // MARK:- convenience alert with hint message and completion
     func presentHintMessage(hintMessgae: String, completion: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: "提示", message: hintMessgae, preferredStyle: .alert)
@@ -64,7 +70,7 @@ extension UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.init(keyboardHideNotification), object: nil)
     }
     
-    func keyboardWillShow(from aView: UIView) {
+    func keyboardWillShow(withTransforming aView: UIView) {
         NotificationCenter.default.post(name: NSNotification.Name.init(keyboardShowNotification), object: aView)
     }
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -74,7 +80,7 @@ extension UIViewController {
         }, completion: nil)
     }
     
-    func keyboardWillHide(from aView: UIView) {
+    func keyboardWillHide(withTransforming aView: UIView) {
         NotificationCenter.default.post(name: NSNotification.Name.init(keyboardHideNotification), object: aView)
     }
     @objc func keyboardWillHide(_ notification: Notification) {
@@ -83,6 +89,21 @@ extension UIViewController {
             transformView.transform = CGAffineTransform(translationX: 0, y: 0)
         }, completion: nil)
     }
+    
+    // swizzling function
+    /*
+     static let classInit: Void = {
+     let originalSelector = #selector(viewDidLoad)
+     let swizzledSelector = #selector(weslie_viewDidLoad)
+     swizzling(UIViewController.self, originalSelector, swizzledSelector)
+     }()
+     
+     @objc func weslie_viewDidLoad() {
+     weslie_viewDidLoad()
+     print("I have swizzled the viewDidLoad system function")
+     }
+     */
+    
     
     //设置选择样式
     @objc func changeBtnStaus(button : UIButton) -> () {
@@ -138,5 +159,18 @@ extension UIView {
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
             transformView.transform = CGAffineTransform(translationX: 0, y: 0)
         }, completion: nil)
+    }
+    
+    // MARK:- get current responder
+    func currentFirstResponder() -> UIResponder? {
+        if self.isFirstResponder {
+            return self
+        }
+        for view in self.subviews {
+            if let responder = view.currentFirstResponder() {
+                return responder
+            }
+        }
+        return nil
     }
 }

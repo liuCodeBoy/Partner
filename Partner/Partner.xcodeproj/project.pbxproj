@@ -74,6 +74,9 @@
 		D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F8C3D201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift */; };
 		D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A827E6201096C40053ADBF /* PartnerPickerView.swift */; };
 		D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */; };
+		D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */; };
+		D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */; };
+		D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */; };
 		D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8B8EF20107BB500EDD145 /* VisitorsReservationViewController.swift */; };
 		D3B8E5C3201AF1CB002F3A3A /* MyProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8E5C2201AF1CB002F3A3A /* MyProjectViewController.swift */; };
 		D3B8E5C6201AF285002F3A3A /* SingleProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8E5C5201AF285002F3A3A /* SingleProjectTableViewCell.swift */; };
@@ -83,6 +86,7 @@
 		D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */; };
 		D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */; };
 		D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */; };
+		D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */; };
 		FAB80F2A666DD7ADE1ECD37F /* Pods_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0678DD77F6C00CB0C07AE3 /* Pods_Partner.framework */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +170,7 @@
 		D378FEFD1FF0E80600065EEC /* Service.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Service.storyboard; sourceTree = "<group>"; };
 		D378FF1B1FF0EADB00065EEC /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		D378FF211FF0EBF100065EEC /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
+		D37AE8E3202064B700B32E4D /* Partner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Partner-Bridging-Header.h"; sourceTree = "<group>"; };
 		D39A4F31200D984C00022A76 /* SystemConstantValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConstantValue.swift; sourceTree = "<group>"; };
 		D39A4F33200D98AE00022A76 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		D39A4F34200D98AE00022A76 /* Extension+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
@@ -184,6 +189,9 @@
 		D39F8C3D201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditSettingsViewController.swift; sourceTree = "<group>"; };
 		D3A827E6201096C40053ADBF /* PartnerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerPickerView.swift; sourceTree = "<group>"; };
 		D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerPickerView.xib; sourceTree = "<group>"; };
+		D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIView.swift"; sourceTree = "<group>"; };
+		D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIButton.swift"; sourceTree = "<group>"; };
+		D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UILabel.swift"; sourceTree = "<group>"; };
 		D3B8B8EF20107BB500EDD145 /* VisitorsReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsReservationViewController.swift; sourceTree = "<group>"; };
 		D3B8E5C2201AF1CB002F3A3A /* MyProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectViewController.swift; sourceTree = "<group>"; };
 		D3B8E5C5201AF285002F3A3A /* SingleProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProjectTableViewCell.swift; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 		D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditChooseAvatarTableViewCell.swift; sourceTree = "<group>"; };
 		D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectNoneProjectPlaceholderViewController.swift; sourceTree = "<group>"; };
 		D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditAndCreateViewController.swift; sourceTree = "<group>"; };
+		D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBackgroundCoverView.swift; sourceTree = "<group>"; };
 		E46FEA25ACD4641F4CCFD97B /* Pods-PartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerUITests/Pods-PartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,12 +295,12 @@
 		D34712522011FFF9003E098E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D3B8E5C4201AF245002F3A3A /* MyProject */,
 				D347125320120085003E098E /* ProfileTableViewHeaderCell.swift */,
 				D347125B201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift */,
 				D347125F2012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift */,
 				D347126320120685003E098E /* ProfileTextInputTableViewBodyCell.swift */,
 				D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */,
+				D3B8E5C4201AF245002F3A3A /* MyProject */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -343,6 +352,7 @@
 				B6843E3820216B5E00B86A3F /* Assets.xcassets */,
 				D378FEA71FF0D21600065EEC /* LaunchScreen.storyboard */,
 				D378FEAA1FF0D21600065EEC /* Info.plist */,
+				D37AE8E3202064B700B32E4D /* Partner-Bridging-Header.h */,
 				D39A4F39200DA15100022A76 /* Deprecated */,
 			);
 			path = Partner;
@@ -466,9 +476,6 @@
 			isa = PBXGroup;
 			children = (
 				D378FEFD1FF0E80600065EEC /* Service.storyboard */,
-				D378FEFB1FF0E7FB00065EEC /* Model */,
-				D378FEFA1FF0E7FA00065EEC /* View */,
-				D378FEFC1FF0E7FB00065EEC /* Controller */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -488,7 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				D378FF1B1FF0EADB00065EEC /* Profile.storyboard */,
-				D378FF1E1FF0EAEB00065EEC /* Model */,
+				D3CAC86E2021B0F40072064C /* Model */,
 				D378FF1F1FF0EAEB00065EEC /* View */,
 				D378FF201FF0EAEB00065EEC /* Controller */,
 			);
@@ -510,6 +517,7 @@
 				B65517E7200C506A007799BC /* Extension+UIViewController.swift */,
 				D39A4F34200D98AE00022A76 /* Extension+Colors.swift */,
 				D39A4F33200D98AE00022A76 /* Extension+String.swift */,
+				D3B6ADC5201F40C300A7B961 /* Designables */,
 				D378FEF31FF0E3E000065EEC /* Animations */,
 			);
 			path = Extension;
@@ -886,16 +894,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D378FF1E1FF0EAEB00065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D378FF1F1FF0EAEB00065EEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */,
 				D3A827E6201096C40053ADBF /* PartnerPickerView.swift */,
 				D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */,
 				D347124F2011F0CF003E098E /* CustomTimePickerView.swift */,
@@ -962,11 +964,9 @@
 			path = Edit;
 			sourceTree = "<group>";
 		};
-		D3B8E5C4201AF245002F3A3A /* MyProject */ = {
+		D3B6ADC4201F3D0100A7B961 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
-				D3B8E5C5201AF285002F3A3A /* SingleProjectTableViewCell.swift */,
-				D3B8E5C9201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift */,
 				D3034647201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift */,
 				D3034649201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift */,
 				D303464D201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift */,
@@ -975,6 +975,26 @@
 				D39F14E1201EF6B3003F3BC5 /* ProjectEditFundingNeedTableViewCell.swift */,
 				D39F14E3201EF754003F3BC5 /* ProjectEditBusinessPlanBookTableViewCell.swift */,
 				D39F14E5201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		D3B6ADC5201F40C300A7B961 /* Designables */ = {
+			isa = PBXGroup;
+			children = (
+				D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */,
+				D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */,
+				D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */,
+			);
+			path = Designables;
+			sourceTree = "<group>";
+		};
+		D3B8E5C4201AF245002F3A3A /* MyProject */ = {
+			isa = PBXGroup;
+			children = (
+				D3B6ADC4201F3D0100A7B961 /* Edit */,
+				D3B8E5C5201AF285002F3A3A /* SingleProjectTableViewCell.swift */,
+				D3B8E5C9201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift */,
 			);
 			path = MyProject;
 			sourceTree = "<group>";
@@ -990,6 +1010,13 @@
 				D39F8C2E201F0BA400A40AC1 /* Edit */,
 			);
 			path = MyProject;
+			sourceTree = "<group>";
+		};
+		D3CAC86E2021B0F40072064C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1069,6 +1096,7 @@
 				TargetAttributes = {
 					D378FE9A1FF0D21600065EEC = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					D378FEAE1FF0D21600065EEC = {
@@ -1332,9 +1360,11 @@
 				D3034646201ECE93007A37A5 /* MyProjectEditViewController.swift in Sources */,
 				D347125D201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift in Sources */,
 				B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */,
+				D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */,
 				D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */,
 				B6843E40202195C800B86A3F /* StatusViewCell.swift in Sources */,
 				D3BCE69E2019D44A00097DDA /* InputDetialViewController.swift in Sources */,
+				D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */,
 				D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */,
 				D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */,
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
@@ -1361,6 +1391,7 @@
 				D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */,
 				D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */,
 				D3B8E5CA201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift in Sources */,
+				D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */,
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
 				B6EF1D3C201F5FD3000479F8 /* CooperativedemandVC.swift in Sources */,
 				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
@@ -1373,6 +1404,7 @@
 				D39F8C34201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
 				D3B8E5C8201AFC04002F3A3A /* IntentionProjectViewController.swift in Sources */,
+				D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */,
 				D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */,
 				D378FEF21FF0E36600065EEC /* NetworkTools.swift in Sources */,
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,
@@ -1545,6 +1577,7 @@
 			baseConfigurationReference = 172AC59E61123A8F751E23DB /* Pods-Partner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UXX38SJ8T;
@@ -1558,6 +1591,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Partner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Partner/Partner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1568,6 +1603,7 @@
 			baseConfigurationReference = 2E04E32645370430D88F1860 /* Pods-Partner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UXX38SJ8T;
@@ -1581,6 +1617,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Partner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Partner/Partner-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
