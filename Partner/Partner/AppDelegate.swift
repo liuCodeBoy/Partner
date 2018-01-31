@@ -9,6 +9,11 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+//    override init() {
+//        super.init()
+//        UIViewController.classInit
+//    }
 
     var window: UIWindow?
 

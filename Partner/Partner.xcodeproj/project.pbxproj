@@ -79,6 +79,7 @@
 		D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */; };
 		D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */; };
 		D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */; };
+		D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */; };
 		FAB80F2A666DD7ADE1ECD37F /* Pods_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0678DD77F6C00CB0C07AE3 /* Pods_Partner.framework */; };
 /* End PBXBuildFile section */
 
@@ -186,6 +187,7 @@
 		D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditChooseAvatarTableViewCell.swift; sourceTree = "<group>"; };
 		D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectNoneProjectPlaceholderViewController.swift; sourceTree = "<group>"; };
 		D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditAndCreateViewController.swift; sourceTree = "<group>"; };
+		D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBackgroundCoverView.swift; sourceTree = "<group>"; };
 		E46FEA25ACD4641F4CCFD97B /* Pods-PartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerUITests/Pods-PartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -430,9 +432,6 @@
 			isa = PBXGroup;
 			children = (
 				D378FEFD1FF0E80600065EEC /* Service.storyboard */,
-				D378FEFB1FF0E7FB00065EEC /* Model */,
-				D378FEFA1FF0E7FA00065EEC /* View */,
-				D378FEFC1FF0E7FB00065EEC /* Controller */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -452,7 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				D378FF1B1FF0EADB00065EEC /* Profile.storyboard */,
-				D378FF1E1FF0EAEB00065EEC /* Model */,
+				D3CAC86E2021B0F40072064C /* Model */,
 				D378FF1F1FF0EAEB00065EEC /* View */,
 				D378FF201FF0EAEB00065EEC /* Controller */,
 			);
@@ -660,27 +659,6 @@
 			path = Hunt;
 			sourceTree = "<group>";
 		};
-		D378FEFA1FF0E7FA00065EEC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D378FEFB1FF0E7FB00065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D378FEFC1FF0E7FB00065EEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		D378FEFF1FF0E87E00065EEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -882,16 +860,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D378FF1E1FF0EAEB00065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D378FF1F1FF0EAEB00065EEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */,
 				D3A827E6201096C40053ADBF /* PartnerPickerView.swift */,
 				D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */,
 				D347124F2011F0CF003E098E /* CustomTimePickerView.swift */,
@@ -1004,6 +976,13 @@
 				D39F8C2E201F0BA400A40AC1 /* Edit */,
 			);
 			path = MyProject;
+			sourceTree = "<group>";
+		};
+		D3CAC86E2021B0F40072064C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1382,6 +1361,7 @@
 				D39F8C34201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
 				D3B8E5C8201AFC04002F3A3A /* IntentionProjectViewController.swift in Sources */,
+				D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */,
 				D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */,
 				D378FEF21FF0E36600065EEC /* NetworkTools.swift in Sources */,
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,

@@ -8,6 +8,12 @@
 
 import UIKit
 
+private let swizzling: (AnyClass, Selector, Selector) -> () = { forClass, originalSelector, swizzledSelector in
+    let originalMethod = class_getInstanceMethod(forClass, originalSelector)
+    let swizzledMethod = class_getInstanceMethod(forClass, swizzledSelector)
+    method_exchangeImplementations(originalMethod!, swizzledMethod!)
+}
+
 extension UIViewController {
     
     // MARK:- set round rect of a UIView
@@ -84,7 +90,19 @@ extension UIViewController {
         }, completion: nil)
     }
     
-    
+    // swizzling function
+    /*
+     static let classInit: Void = {
+     let originalSelector = #selector(viewDidLoad)
+     let swizzledSelector = #selector(weslie_viewDidLoad)
+     swizzling(UIViewController.self, originalSelector, swizzledSelector)
+     }()
+     
+     @objc func weslie_viewDidLoad() {
+     weslie_viewDidLoad()
+     print("I have swizzled the viewDidLoad system function")
+     }
+     */
     
     
     //设置选择样式

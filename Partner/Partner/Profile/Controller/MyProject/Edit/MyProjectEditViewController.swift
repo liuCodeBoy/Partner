@@ -9,13 +9,7 @@ import UIKit
 
 class MyProjectEditViewController: UIViewController {
     
-    internal class edited {
-        static var members     = false
-        static var introduce   = false
-        static var analysis    = false
-        static var run         = false
-        static var funding     = false
-    }
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,6 +20,10 @@ class MyProjectEditViewController: UIViewController {
     }
     
     @IBAction func backToEditWithoutSave(_ segue: UIStoryboardSegue) { }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +32,36 @@ class MyProjectEditViewController: UIViewController {
         tableView.dataSource = self
 
     }
+}
+
+internal class edited {
+    static var members     = false
+    static var introduce   = false
+    static var analysis    = false
+    static var run         = false
+    static var funding     = false
+    static var membersCount          = ""
+    
+    static var projIntro             = ""
+    static var projHighlights        = ""
+    
+    static var aimUserGroup          = ""
+    static var profitMod             = ""
+    static var competitionRival      = ""
+    static var ownSource             = ""
+    
+    static var monthSalary           = ""
+    static var monthActivePeople     = ""
+    static var totalUser             = ""
+    static var runData               = ""
+    
+    static var fundingMomey          = ""
+    static var transferShares        = ""
+    static var fundingExpectation    = ""
+    static var moneyUsingPlan        = ""
+    
+    static var planBook              = ""
+
 }
 
 extension MyProjectEditViewController: UITableViewDelegate, UITableViewDataSource {
@@ -50,18 +78,44 @@ extension MyProjectEditViewController: UITableViewDelegate, UITableViewDataSourc
             cell = header
         case 1:
             let member  = tableView.dequeueReusableCell(withIdentifier: "ProjectEditMembersBriefTableViewCell")     as! ProjectEditMembersBriefTableViewCell
+            member.membersCountLbl.text = edited.membersCount
             cell = member
         case 2:
             let intro   = tableView.dequeueReusableCell(withIdentifier: "ProjectEditIntroductionTableViewCell")     as! ProjectEditIntroductionTableViewCell
+            intro.projIntroLbl.text = edited.projIntro
+            intro.projHighlightsLbl.text = edited.projHighlights
+            if edited.introduce == true {
+                intro.addCoverView.isHidden = true
+            }
             cell = intro
         case 3:
             let market  = tableView.dequeueReusableCell(withIdentifier: "ProjectEditMarketAnalysisTableViewCell")   as! ProjectEditMarketAnalysisTableViewCell
+            market.aimUserGroupLbl.text = edited.aimUserGroup
+            market.profitModLbl.text = edited.profitMod
+            market.competitionRivalLbl.text = edited.competitionRival
+            market.ownSourceLbl.text = edited.ownSource
+            if edited.analysis == true {
+                market.addCoverView.isHidden = true
+            }
             cell = market
         case 4:
             let run     = tableView.dequeueReusableCell(withIdentifier: "ProjectEditRunStatusTableViewCell")        as! ProjectEditRunStatusTableViewCell
+            run.monthSalaryLbl.text = edited.monthSalary
+            run.monthActivePeopleLbl.text = edited.monthActivePeople
+            run.totalUserLbl.text = edited.totalUser
+            run.runDataLbl.text = edited.runData
+            if edited.run == true {
+                run.addCoverView.isHidden = true
+            }
             cell = run
         case 5:
             let funding = tableView.dequeueReusableCell(withIdentifier: "ProjectEditFundingNeedTableViewCell")      as! ProjectEditFundingNeedTableViewCell
+            funding.fundingMomeyLbl.text = edited.fundingMomey
+            funding.transferSharesLbl.text = edited.transferShares
+            funding.moneyUsingPlanLbl.text = edited.moneyUsingPlan
+            if edited.funding == true {
+                funding.addCoverView.isHidden = true
+            }
             cell = funding
         case 6:
             let plan    = tableView.dequeueReusableCell(withIdentifier: "ProjectEditBusinessPlanBookTableViewCell") as! ProjectEditBusinessPlanBookTableViewCell
@@ -108,5 +162,5 @@ extension MyProjectEditViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-    
+
 }

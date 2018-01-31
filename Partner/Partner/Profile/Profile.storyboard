@@ -4883,16 +4883,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="请简明的描述您的公司所从事的业务、提供的服务等，不超过500字" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BC-sK-XW8">
-                                                    <rect key="frame" x="12" y="80" width="351" height="41"/>
+                                                    <rect key="frame" x="12" y="80" width="351" height="33.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="Gh1-QK-SJs"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Gh1-QK-SJs"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目亮点" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skg-Ka-6JA">
-                                                    <rect key="frame" x="12" y="131" width="58" height="20"/>
+                                                    <rect key="frame" x="12" y="123.5" width="58" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="d2J-Bz-cpx"/>
                                                     </constraints>
@@ -4901,7 +4901,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请从产品特色、核心资源、团队优势等方面描述项目亮点，不得超过200字" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXJ-um-Z9R">
-                                                    <rect key="frame" x="12" y="151" width="351" height="50.5"/>
+                                                    <rect key="frame" x="12" y="143.5" width="351" height="58"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -4923,11 +4923,11 @@
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
                                                     <connections>
-                                                        <segue destination="O46-tb-B0l" kind="show" id="V3F-Oy-geh"/>
+                                                        <segue destination="O46-tb-B0l" kind="show" identifier="ProjectIntroductionEditSegue" id="V3F-Oy-geh"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDJ-8D-NFt">
-                                                    <rect key="frame" x="12" y="60" width="351" height="171.5"/>
+                                                    <rect key="frame" x="12" y="60" width="351" height="172"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加项目信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMc-f9-hck">
                                                             <rect key="frame" x="127" y="76" width="98" height="20"/>
@@ -4936,9 +4936,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ea-bC-Lbg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="171.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
                                                             <connections>
-                                                                <segue destination="O46-tb-B0l" kind="show" id="kbK-id-MqG"/>
+                                                                <segue destination="O46-tb-B0l" kind="show" identifier="ProjectIntroductionSegue" id="kbK-id-MqG"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -4985,6 +4985,8 @@
                                         <connections>
                                             <outlet property="addCoverView" destination="EDJ-8D-NFt" id="ZNP-uG-tYB"/>
                                             <outlet property="editBtn" destination="xFB-SD-jzs" id="ANK-F1-5UG"/>
+                                            <outlet property="projHighlightsLbl" destination="dXJ-um-Z9R" id="qNc-Si-FHx"/>
+                                            <outlet property="projIntroLbl" destination="8BC-sK-XW8" id="LBG-iC-VqW"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditMarketAnalysisTableViewCell" rowHeight="345" id="Ob5-vR-0em" customClass="ProjectEditMarketAnalysisTableViewCell" customModule="Partner" customModuleProvider="target">
@@ -5151,7 +5153,11 @@
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="addCoverView" destination="lWV-KB-zIg" id="Wb2-mU-yaA"/>
+                                            <outlet property="aimUserGroupLbl" destination="giu-T6-1CC" id="hZU-65-Nai"/>
+                                            <outlet property="competitionRivalLbl" destination="xoR-Gi-7fW" id="fLp-fq-2MM"/>
                                             <outlet property="editBtn" destination="uqz-FA-XbO" id="sT8-SQ-UVj"/>
+                                            <outlet property="ownSourceLbl" destination="tgk-5E-9ej" id="gaO-jQ-gRY"/>
+                                            <outlet property="profitModLbl" destination="i5c-jn-XVB" id="Qhe-4a-viK"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditRunStatusTableViewCell" rowHeight="232" id="enb-QN-zRV" customClass="ProjectEditRunStatusTableViewCell" customModule="Partner" customModuleProvider="target">
@@ -5312,7 +5318,7 @@
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7a-rO-IEZ">
-                                                    <rect key="frame" x="12" y="60" width="351" height="171.5"/>
+                                                    <rect key="frame" x="12" y="60" width="351" height="172"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加运营状况" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v83-kq-7Iz">
                                                             <rect key="frame" x="127" y="76" width="98" height="20"/>
@@ -5321,7 +5327,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abq-2I-jzi">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="171.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
                                                             <connections>
                                                                 <segue destination="kv4-fY-wlH" kind="show" id="h7s-Yg-up8"/>
                                                             </connections>
@@ -5376,6 +5382,10 @@
                                         <connections>
                                             <outlet property="addCoverView" destination="m7a-rO-IEZ" id="hmb-Pc-bEZ"/>
                                             <outlet property="editBtn" destination="xYe-xz-31t" id="hWs-E7-6My"/>
+                                            <outlet property="monthActivePeopleLbl" destination="XF2-C7-rz5" id="4Ob-HN-45V"/>
+                                            <outlet property="monthSalaryLbl" destination="6Sw-PW-9co" id="VFq-qy-mH7"/>
+                                            <outlet property="runDataLbl" destination="Ywa-7l-vEB" id="h0y-29-PuC"/>
+                                            <outlet property="totalUserLbl" destination="AYN-gw-LeT" id="W6E-69-GzP"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditFundingNeedTableViewCell" rowHeight="232" id="DoQ-hP-Eqi" customClass="ProjectEditFundingNeedTableViewCell" customModule="Partner" customModuleProvider="target">
@@ -5536,7 +5546,7 @@
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPs-ny-yLI">
-                                                    <rect key="frame" x="12" y="60" width="351" height="171.5"/>
+                                                    <rect key="frame" x="12" y="60" width="351" height="172"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加融资需求" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bu-BG-MU8">
                                                             <rect key="frame" x="127" y="76" width="98" height="20"/>
@@ -5545,7 +5555,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA3-Yt-QVP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="171.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
                                                             <connections>
                                                                 <segue destination="irE-JC-4r4" kind="show" id="lE5-Iv-Zpx"/>
                                                             </connections>
@@ -5600,6 +5610,10 @@
                                         <connections>
                                             <outlet property="addCoverView" destination="sPs-ny-yLI" id="Bd6-G4-jw6"/>
                                             <outlet property="editBtn" destination="kMG-LB-XaN" id="jkl-BU-aUK"/>
+                                            <outlet property="fundingExpectationLbl" destination="C3L-Mq-e01" id="xuC-Ib-fmR"/>
+                                            <outlet property="fundingMomeyLbl" destination="OSQ-hU-x0g" id="9QO-WV-zK1"/>
+                                            <outlet property="moneyUsingPlanLbl" destination="KKq-HY-mL6" id="C3I-E9-GRx"/>
+                                            <outlet property="transferSharesLbl" destination="B07-Q4-dy5" id="3IE-11-Pfq"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditBusinessPlanBookTableViewCell" rowHeight="84" id="P7q-Mh-8Q0" customClass="ProjectEditBusinessPlanBookTableViewCell" customModule="Partner" customModuleProvider="target">
@@ -6437,6 +6451,9 @@
                                         <state key="normal" title="保存">
                                             <color key="titleColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveClicked:" destination="O46-tb-B0l" eventType="touchUpInside" id="zXY-oV-LvF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -10056,13 +10073,14 @@
                                                 <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uG-xC-fRb">
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uG-xC-fRb">
                                                 <rect key="frame" x="325" y="22" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="4aB-mb-f2d"/>
                                                     <constraint firstAttribute="width" constant="16" id="jaY-Pr-mje"/>
                                                 </constraints>
                                                 <state key="normal" image="profile_my_project_radio_non_selected"/>
+                                                <state key="selected" image="profile_my_project_radio_selected"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -10111,7 +10129,8 @@
                                                     <constraint firstAttribute="height" constant="16" id="BFE-Ag-EML"/>
                                                     <constraint firstAttribute="width" constant="16" id="dl3-wH-rrf"/>
                                                 </constraints>
-                                                <state key="normal" image="profile_my_project_radio_selected"/>
+                                                <state key="normal" image="profile_my_project_radio_non_selected"/>
+                                                <state key="selected" image="profile_my_project_radio_selected"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -11764,7 +11783,7 @@
         <segue reference="lE5-Iv-Zpx"/>
         <segue reference="h7s-Yg-up8"/>
         <segue reference="Fuv-Gx-AFw"/>
-        <segue reference="V3F-Oy-geh"/>
+        <segue reference="kbK-id-MqG"/>
         <segue reference="Bzs-ku-knP"/>
     </inferredMetricsTieBreakers>
 </document>

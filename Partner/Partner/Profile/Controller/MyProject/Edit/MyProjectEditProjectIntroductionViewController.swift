@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyProjectEditProjectIntroductionViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
+class MyProjectEditProjectIntroductionViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var placeholderLbl1: UILabel!
     @IBOutlet weak var placeholderLbl2: UILabel!
@@ -20,36 +20,46 @@ class MyProjectEditProjectIntroductionViewController: UIViewController, UITextVi
     var keyboardRect: CGRect = CGRect()
     var keyboardChangeFrameAnimationDuration: Double = 0.0
     
+    var coverView: UIView?
+    
     var introductionString: String = "" {
         didSet {
-//            let charCount = Int(inputTF.text.count)
-//            inputLimitLbl.text = "\(charCount)/300"
-//            if charCount > 300 {
-//                presentHintMessage(hintMessgae: "字符不能超过300字", completion: nil)
-//            }
+            let charCount = Int(inputTV1.text.count)
+            inputLimitLbl1.text = "\(charCount)/500"
+            if charCount > 300 {
+                presentHintMessage(hintMessgae: "字符不能超过500字", completion: nil)
+            }
         }
     }
     
     var highlightString: String = "" {
         didSet {
-            
+            let charCount = Int(inputTV2.text.count)
+            inputLimitLbl2.text = "\(charCount)/200"
+            if charCount > 300 {
+                presentHintMessage(hintMessgae: "字符不能超过200字", completion: nil)
+            }
         }
     }
     
     @IBAction func saveClicked(_ sender: UIButton) {
-//        if Int(inputTF.text.count) == 0 || inputTF.text.replacingOccurrences(of: " ", with: "") == "" {
-//            presentHintMessage(hintMessgae: "输入内容不能为空", completion: nil)
-//        } else if Int(inputTF.text.count) > 300 {
-//            presentHintMessage(hintMessgae: "字符不能超过300字", completion: nil)
-//            return
-//        } else {
-//            // TODO:- post request
-//
-//            // pop view controller
-//            self.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
-//                self.navigationController?.popViewController(animated: true)
-//            })
-//        }
+        if Int(inputTV1.text.count) == 0 || inputTV1.text.replacingOccurrences(of: " ", with: "") == "" {
+            presentHintMessage(hintMessgae: "项目简介不能为空", completion: nil)
+        } else if Int(inputTV2.text.count) == 0 || inputTV2.text.replacingOccurrences(of: " ", with: "") == "" {
+            presentHintMessage(hintMessgae: "项目亮点不能为空", completion: nil)
+        } else if Int(inputTV1.text.count) > 500 || Int(inputTV2.text.count) > 300 {
+            presentHintMessage(hintMessgae: "您的字数不满足要求", completion: nil)
+        } else {
+            // TODO:- post request
+
+            // pop view controller
+            edited.projIntro = introductionString
+            edited.projHighlights = highlightString
+            edited.introduce = true
+            self.presentHintMessage(hintMessgae: "保存成功", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
+        }
     }
 
     override func viewDidLoad() {
@@ -57,6 +67,10 @@ class MyProjectEditProjectIntroductionViewController: UIViewController, UITextVi
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
 
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func keyboardWillChangeFrame(_ notification: Notification) {
@@ -68,16 +82,32 @@ class MyProjectEditProjectIntroductionViewController: UIViewController, UITextVi
 
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        if textView == inputTV1 {
+            introductionString = inputTV1.text
+        } else if textView == inputTV2 {
+            highlightString = inputTV2.text
+        }
+    }
+    
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView == inputTV1 {
             placeholderLbl1.isHidden = true
+            introductionString = inputTV1.text
         } else if textView == inputTV2 {
             placeholderLbl2.isHidden = true
+            highlightString = inputTV2.text
         }
         
-        let coverView = UIView(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight))
-        coverView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        // scroll cover view to dismiss keyboard
+        let coverView = KeyboardBackgroundCoverView()
+        coverView.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight)
+//        coverView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        self.coverView = coverView
+        let coverViewTap = UISwipeGestureRecognizer(target: self, action: #selector(coverViewSwipeToDismissKeyboard))
+        coverViewTap.direction = .up
+        coverView.addGestureRecognizer(coverViewTap)
         self.view.insertSubview(coverView, at: self.view.subviews.count)
 
         // FIXME:- click several times will cause offset unexpectedly
@@ -105,6 +135,14 @@ class MyProjectEditProjectIntroductionViewController: UIViewController, UITextVi
                 }, completion: nil)
             }
         }
+    }
+    
+    @objc func coverViewSwipeToDismissKeyboard() {
+        self.view.endEditing(true)
+        UIView.animate(withDuration: keyboardChangeFrameAnimationDuration, delay: 0, options: .curveEaseInOut, animations: {
+            self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+        }, completion: nil)
+        self.coverView?.removeFromSuperview()
     }
 
 }
