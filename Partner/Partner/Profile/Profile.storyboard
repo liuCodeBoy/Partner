@@ -10217,7 +10217,7 @@
         <scene sceneID="fSr-Y6-xDu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zmd-8y-eO6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="VqS-tA-T79"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="tab_bar_profile" selectedImage="tab_bar_profile_selected" id="VqS-tA-T79"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qXz-6K-qW4">
@@ -11775,6 +11775,8 @@
         <image name="profile_settings" width="20" height="20"/>
         <image name="profile_visitors_reservation" width="30" height="26"/>
         <image name="right_arrow" width="6" height="10"/>
+        <image name="tab_bar_profile" width="25" height="25"/>
+        <image name="tab_bar_profile_selected" width="28" height="28"/>
         <image name="up_arrow" width="10" height="6"/>
     </resources>
     <inferredMetricsTieBreakers>
