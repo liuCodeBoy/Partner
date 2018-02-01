@@ -69,7 +69,7 @@ class UnionMainVC: UIViewController {
         //添加滚动控件
         let  scrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: 64, width:screenWidth, height: screenHeight - 104))
         scrollView.backgroundColor = UIColor.red
-        scrollView.contentSize = CGSize.init(width: screenWidth  *  4, height: screenHeight - 64)
+        scrollView.contentSize = CGSize.init(width: screenWidth  *  4, height: screenHeight - 104)
         scrollView.bounces = false
         scrollView.isPagingEnabled = true
         self.view.addSubview(scrollView)
@@ -78,6 +78,7 @@ class UnionMainVC: UIViewController {
         
          let momentVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "MomentMainVCID")
         self.addChildViewController(momentVC)
+        momentVC.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight - 104)
         self.scrollView?.addSubview(momentVC.view)
         
         

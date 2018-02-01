@@ -14,6 +14,8 @@
 		B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E7200C506A007799BC /* Extension+UIViewController.swift */; };
 		B65517EA200C800E007799BC /* InterestedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E9200C800E007799BC /* InterestedVC.swift */; };
 		B678C9982021C82F007FEB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6843E3820216B5E00B86A3F /* Assets.xcassets */; };
+		B678C99A2021E065007FEB83 /* UnionNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */; };
+		B678C99C2021E967007FEB83 /* UnionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C99B2021E967007FEB83 /* UnionListModel.swift */; };
 		B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */; };
 		B6843E372020223A00B86A3F /* UnionMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E362020223A00B86A3F /* UnionMainVC.swift */; };
 		B6843E3A202173FD00B86A3F /* MomentMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E39202173FD00B86A3F /* MomentMainVC.swift */; };
@@ -121,6 +123,8 @@
 		B65517E5200C4932007799BC /* InformationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailVC.swift; sourceTree = "<group>"; };
 		B65517E7200C506A007799BC /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		B65517E9200C800E007799BC /* InterestedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedVC.swift; sourceTree = "<group>"; };
+		B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionNetWorkTool.swift; sourceTree = "<group>"; };
+		B678C99B2021E967007FEB83 /* UnionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionListModel.swift; sourceTree = "<group>"; };
 		B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginVC.swift; sourceTree = "<group>"; };
 		B6843E362020223A00B86A3F /* UnionMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionMainVC.swift; sourceTree = "<group>"; };
 		B6843E3820216B5E00B86A3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				B6843E3C202192C700B86A3F /* StatusViewModel.swift */,
+				B678C99B2021E967007FEB83 /* UnionListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				D378FEDB1FF0D4EB00065EEC /* Extension */,
 				D378FE9E1FF0D21600065EEC /* AppDelegate.swift */,
 				D378FEF11FF0E36500065EEC /* NetworkTools.swift */,
+				B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */,
 				D378FEA21FF0D21600065EEC /* Main.storyboard */,
 				B6843E3820216B5E00B86A3F /* Assets.xcassets */,
 				D378FEA71FF0D21600065EEC /* LaunchScreen.storyboard */,
@@ -691,27 +697,6 @@
 				D378FF0A1FF0E88300065EEC /* Controller */,
 			);
 			path = Hunt;
-			sourceTree = "<group>";
-		};
-		D378FEFA1FF0E7FA00065EEC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D378FEFB1FF0E7FB00065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D378FEFC1FF0E7FB00065EEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		D378FF021FF0E88000065EEC /* Model */ = {
@@ -1317,6 +1302,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Partner/Pods-Partner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/JXPhotoBrowser/JXPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -1327,6 +1314,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -1390,6 +1379,8 @@
 				D3B8E5C3201AF1CB002F3A3A /* MyProjectViewController.swift in Sources */,
 				D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */,
 				D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */,
+				B678C99C2021E967007FEB83 /* UnionListModel.swift in Sources */,
+				B678C99A2021E065007FEB83 /* UnionNetWorkTool.swift in Sources */,
 				D3B8E5CA201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift in Sources */,
 				D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */,
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,

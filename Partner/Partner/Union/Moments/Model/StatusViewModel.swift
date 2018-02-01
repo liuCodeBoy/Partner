@@ -6,7 +6,13 @@
 //
 
 import UIKit
-
+import MJExtension
 class StatusViewModel: NSObject {
-    var picURLs : [URL]?
+  @objc  var   pageNum     :  NSNumber?
+  @objc  var   pageSize    : NSNumber?
+  @objc  var   pages       : NSNumber?
+  @objc  var   hasNextPage : NSNumber?
+  @objc  var   nextPage    : NSNumber?
+//  @objc  var   list        : [UnionListModel]?
+ 
 }
