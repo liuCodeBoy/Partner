@@ -14,7 +14,8 @@ target 'Partner' do
  pod 'MJExtension'
  pod 'NoticeBar'
  pod 'SDWebImage'
-
+ pod 'JXPhotoBrowser'
+ pod 'Kingfisher'
 
 
   target 'PartnerTests' do

@@ -7,9 +7,10 @@
 //
 //
 import UIKit
-
+//定义跳转闭包
+typealias pushImageType = (UICollectionView ,IndexPath , [String]) -> ()
 class PicCollectionView: UICollectionView {
-
+    var   pushImageClouse : pushImageType?
     var picURLs: [URL] = [URL]() {
         didSet {
             sizeToFit()
@@ -17,16 +18,19 @@ class PicCollectionView: UICollectionView {
         }
     }
     
+    var  picStrs = [String]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         dataSource = self
+        delegate   = self
     }
     
 }
 
 
-extension PicCollectionView: UICollectionViewDataSource {
+extension PicCollectionView: UICollectionViewDataSource,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picURLs.count
     }
@@ -38,6 +42,14 @@ extension PicCollectionView: UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         if self.pushImageClouse != nil{
+            self.pushImageClouse!(self , indexPath,picStrs)
+        }
+
+    }
+    
 }
 
 
@@ -53,5 +65,6 @@ class PicCollectionViewCell: UICollectionViewCell {
     }
     
     @IBOutlet weak var pictureCellView: UIImageView!
+    
     
 }
