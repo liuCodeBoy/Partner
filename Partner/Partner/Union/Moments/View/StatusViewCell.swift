@@ -8,8 +8,8 @@
 import UIKit
 import SDWebImage
 
-private let edgeMargin: CGFloat = 10
-private let itemMargin: CGFloat = 5
+ let edgeMargin: CGFloat = 10
+ let itemMargin: CGFloat = 5
 class StatusViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionViewButtonDistanceCons: NSLayoutConstraint!

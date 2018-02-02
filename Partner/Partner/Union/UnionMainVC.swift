@@ -12,6 +12,9 @@ class UnionMainVC: UIViewController {
     var   sliderView : UIView?
     //滚动视图
     var   scrollView : UIScrollView?
+    
+    //滑动Btn数组
+    var   sliderBtnArr  = [UIButton]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
@@ -33,10 +36,11 @@ class UnionMainVC: UIViewController {
         btn.contentHorizontalAlignment = .center
         btn.contentVerticalAlignment   = .bottom
         btn.setTitle(btnStr, for: .normal)
-        btn.setTitleColor(#colorLiteral(red: 0.3028550148, green: 0.4081297517, blue: 0.4641876817, alpha: 1), for: .normal)
-        btn.setTitleColor(#colorLiteral(red: 0.7771913409, green: 0.7979340553, blue: 0.8144465089, alpha: 1), for: .selected)
+        btn.setTitleColor(#colorLiteral(red: 0.7771913409, green: 0.7979340553, blue: 0.8144465089, alpha: 1), for: .normal)
+        btn.setTitleColor( #colorLiteral(red: 0.3028550148, green: 0.4081297517, blue: 0.4641876817, alpha: 1),for: .selected)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         btn.addTarget(self, action: #selector(addOffSetX(btn:)), for: UIControlEvents.touchUpInside)
+        sliderBtnArr.append(btn)
         self.topContentView.addSubview(btn)
         if  i == 0 {
             sliderView =  UIView.init()
@@ -44,6 +48,7 @@ class UnionMainVC: UIViewController {
             sliderView?.frame.origin.y = btn.frame.maxY + 2
             sliderView?.frame.size = CGSize.init(width: 12, height: 3)
             sliderView?.backgroundColor = #colorLiteral(red: 0.2524492443, green: 0.3666573763, blue: 0.4243661463, alpha: 1)
+            btn.isSelected = true
             self.topContentView.addSubview(sliderView!)
         }
       }
@@ -74,13 +79,36 @@ class UnionMainVC: UIViewController {
         scrollView.isPagingEnabled = true
         self.view.addSubview(scrollView)
         self.scrollView = scrollView
+        self.scrollView?.delegate = self
         //添加子控制器
         
          let momentVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "MomentMainVCID")
         self.addChildViewController(momentVC)
+        
+        //CricleViewController 子控制器
+        let cricleVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CricleViewControllerID")
+        self.addChildViewController(cricleVC)
+        
         momentVC.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight - 104)
         self.scrollView?.addSubview(momentVC.view)
+        cricleVC.view.frame = CGRect.init(x: screenWidth, y: 0, width: screenWidth, height: screenHeight - 104)
+        self.scrollView?.addSubview(cricleVC.view)
         
         
     }
+}
+
+
+extension   UnionMainVC  : UIScrollViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+     let   page = Int(scrollView.contentOffset.x / screenWidth)
+     let   tempBtn  = self.sliderBtnArr[page]
+     addOffSetX(btn: tempBtn)
+        
+    }
+    
+    
+    
+    
+    
 }

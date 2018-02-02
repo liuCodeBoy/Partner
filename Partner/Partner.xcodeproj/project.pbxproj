@@ -24,6 +24,8 @@
 		B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E412021999D00B86A3F /* PicCollectionView.swift */; };
 		B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */; };
 		B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A34317201C645300C7D5F5 /* communityModel.swift */; };
+		B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */; };
+		B6B9A53A20243CC900AC24EB /* CricleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A53920243CC900AC24EB /* CricleViewController.swift */; };
 		B6C27D072019AF200087FF17 /* ForgetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */; };
 		B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D32201EC911000479F8 /* TageModel.swift */; };
 		B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D34201F3697000479F8 /* AddTagBtnVC.swift */; };
@@ -136,6 +138,8 @@
 		B6843E412021999D00B86A3F /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentityVC.swift; sourceTree = "<group>"; };
 		B6A34317201C645300C7D5F5 /* communityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = communityModel.swift; path = Partner/Login/Welcome/communityModel.swift; sourceTree = SOURCE_ROOT; };
+		B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriclePicktrueView.swift; sourceTree = "<group>"; };
+		B6B9A53920243CC900AC24EB /* CricleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricleViewController.swift; sourceTree = "<group>"; };
 		B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPwdVC.swift; sourceTree = "<group>"; };
 		B6EF1D32201EC911000479F8 /* TageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TageModel.swift; path = Partner/Login/Welcome/TageModel.swift; sourceTree = SOURCE_ROOT; };
 		B6EF1D34201F3697000479F8 /* AddTagBtnVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagBtnVC.swift; sourceTree = "<group>"; };
@@ -289,6 +293,31 @@
 			children = (
 				B6843E412021999D00B86A3F /* PicCollectionView.swift */,
 				B6843E3F202195C800B86A3F /* StatusViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B6B9A5322024336C00AC24EB /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				B6B9A536202437C800AC24EB /* View */,
+				B6B9A5332024337F00AC24EB /* Controller */,
+			);
+			path = Circle;
+			sourceTree = "<group>";
+		};
+		B6B9A5332024337F00AC24EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6B9A53920243CC900AC24EB /* CricleViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B6B9A536202437C800AC24EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -472,10 +501,10 @@
 		D378FED61FF0D46100065EEC /* Union */ = {
 			isa = PBXGroup;
 			children = (
+				B6B9A5322024336C00AC24EB /* Circle */,
 				B6843E362020223A00B86A3F /* UnionMainVC.swift */,
 				D378FEF81FF0E75A00065EEC /* Union.storyboard */,
 				B6843E3320201E3A00B86A3F /* Moments */,
-				D378FEF51FF0E6CA00065EEC /* Circle */,
 				D378FEF61FF0E6EE00065EEC /* Messages */,
 				D378FEF71FF0E70E00065EEC /* Hunt */,
 			);
@@ -676,16 +705,6 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
-		D378FEF51FF0E6CA00065EEC /* Circle */ = {
-			isa = PBXGroup;
-			children = (
-				D378FF021FF0E88000065EEC /* Model */,
-				D378FF031FF0E88000065EEC /* View */,
-				D378FF041FF0E88000065EEC /* Controller */,
-			);
-			path = Circle;
-			sourceTree = "<group>";
-		};
 		D378FEF61FF0E6EE00065EEC /* Messages */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,27 +723,6 @@
 				D378FF0A1FF0E88300065EEC /* Controller */,
 			);
 			path = Hunt;
-			sourceTree = "<group>";
-		};
-		D378FF021FF0E88000065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D378FF031FF0E88000065EEC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D378FF041FF0E88000065EEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		D378FF051FF0E88200065EEC /* Model */ = {
@@ -1416,10 +1414,12 @@
 				D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */,
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
 				D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */,
+				B6B9A53A20243CC900AC24EB /* CricleViewController.swift in Sources */,
 				B6EF1D3C201F5FD3000479F8 /* CooperativedemandVC.swift in Sources */,
 				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
 				D39F14E6201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift in Sources */,
 				D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */,
+				B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */,
 				D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */,
 				D39F8C38201F0CB100A40AC1 /* MyProjectEditMarketAnalysisViewController.swift in Sources */,
 				D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */,
