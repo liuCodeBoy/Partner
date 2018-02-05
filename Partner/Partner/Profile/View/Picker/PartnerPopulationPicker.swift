@@ -1,41 +1,37 @@
 //
-//  PartnerPickerView.swift
+//  PartnerPopulationPicker.swift
 //  Partner
 //
-//  Created by Weslie on 18/01/2018.
+//  Created by Weslie on 05/02/2018.
 //
 
 import UIKit
-let leftRow = ["南京市", "南京市", "南京市", "南京市", "南京市", "南京市", "南京市", "南京市"]
-let rightRoe = ["合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区"]
 
-class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
+class PartnerPopulationPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    @IBOutlet weak var pickerTitle: UILabel!
-    @IBOutlet weak var partnerPicker: UIPickerView!
-    
-    @IBAction func closeBtnClicked(_ sender: UIButton) {
-        self.removeFromSuperview()
+    @IBOutlet weak var backView: UIView!
+    @IBAction func cancelBtnClicked(_ sender: UIButton) {
     }
+    @IBAction func confirmBtnClicked(_ sender: UIButton) {
+    }
+    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
-        partnerPicker.delegate = self
-        partnerPicker.dataSource = self
+        super.awakeFromNib()
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.backView.alpha = 0.3
+            self.containerView.transform = CGAffineTransform(scaleX: 0, y: -276)
+        }, completion: nil)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch component {
-        case 0:
-            return 8
-        case 1:
-            return 8
-        default:
-            return 8
-        }
+        return 6
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -43,14 +39,14 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        switch component {
-        case 0:
-            return leftRow[row]
-        case 1:
-            return rightRoe[row]
-        default:
-            return ""
+        switch row {
+        case 0: return "没有合伙人"
+        case 1: return "1人"
+        case 2: return "2人"
+        case 3: return "3人"
+        case 4: return "4人"
+        case 5: return "5人及5人以上"
+        default: return nil
         }
     }
     
@@ -68,17 +64,18 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = NSTextAlignment.center
         
-        switch component {
-        case 0:
-            label.text = leftRow[row]
-        case 1:
-            label.text = rightRoe[row]
+        switch row {
+        case 0: label.text = "没有合伙人"
+        case 1: label.text = "1人"
+        case 2: label.text = "2人"
+        case 3: label.text = "3人"
+        case 4: label.text = "4人"
+        case 5: label.text = "5人及5人以上"
         default:
             break
         }
         
         return label
     }
-    
 
 }

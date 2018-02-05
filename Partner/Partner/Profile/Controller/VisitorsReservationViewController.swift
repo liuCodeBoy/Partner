@@ -53,9 +53,11 @@ class VisitorsReservationViewController: UIViewController, UIScrollViewDelegate,
     }
     
     @IBAction func selectCommunityClicked(_ sender: UIButton) {
-        let picker = Bundle.main.loadNibNamed("PartnerPickerView", owner: nil, options: nil)?.first as! PartnerPickerView
+//        let picker = Bundle.main.loadNibNamed("PartnerPickerView", owner: nil, options: nil)?.first as! PartnerPickerView
+        let picker = Bundle.main.loadNibNamed("EntrepreneurshipTimePicker", owner: nil, options: nil)?.first as! EntrepreneurshipTimePicker
         picker.frame = UIScreen.main.bounds
         self.view.addSubview(picker)
+        
     }
     @IBAction func selectTimeClicked(_ sender: UIButton) {
         let picker = Bundle.main.loadNibNamed("CustomTimePickerView", owner: nil, options: nil)?.first as! CustomTimePickerView
