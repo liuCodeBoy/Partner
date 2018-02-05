@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import TZImagePickerController
+import ImagePicker
+
 class InformationDetailVC: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     var detailViewIsHidden : Bool = false
@@ -32,8 +33,8 @@ class InformationDetailVC: UIViewController {
         loadData()
         CompanyView.isHidden = detailViewIsHidden
         //照片添加点击方法
-        let imageTap = UITapGestureRecognizer.init(target: self, action: #selector(addPhotoClick))
-        self.profileImageView.addGestureRecognizer(imageTap)
+//        let imageTap = UITapGestureRecognizer.init(target: self, action: #selector(addPhotoClick))
+//        self.profileImageView.addGestureRecognizer(imageTap)
         self.setRoundRect(targets: [profileImageView])
         //指定委托
         self.cityPickerView.delegate = self;
@@ -110,37 +111,51 @@ class InformationDetailVC: UIViewController {
 }
 
 //MARK: - 照片选择方法
-extension InformationDetailVC : TZImagePickerControllerDelegate {
-    @objc func addPhotoClick() -> () {
-        weak var  weakself = self
-        let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.view.tintColor = UIColor.black
-        let actionCancel = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
-        let actionPhoto = UIAlertAction.init(title: "选择上传照片", style: .default) { (UIAlertAction) -> Void in
-            weakself?.showLocalPhotoGallery()
-        }
+extension InformationDetailVC : ImagePickerDelegate {
+    
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         
-        alert.addAction(actionCancel)
-        alert.addAction(actionPhoto)
-        weakself?.present(alert, animated: true, completion: nil)
-}
-
-    private func showLocalPhotoGallery(){
-        weak var  weakself = self
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         
-        let  pushNumber = 1
-        let  imagePickerVc = TZImagePickerController.init(maxImagesCount: pushNumber, delegate: self as TZImagePickerControllerDelegate)
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         
-        imagePickerVc?.didFinishPickingPhotosWithInfosHandle = {(photosArr , assets ,isSelectOriginalPhoto ,infos) in
-            for i in  0..<photosArr!.count {
-                weakself?.profileImageView?.image = photosArr?[i]
-            }
-            
-        }
-        
-        self.present(imagePickerVc!, animated: true, completion: nil)
-        
-   }
+    }
+    
+//    @objc func addPhotoClick() -> () {
+//        weak var  weakself = self
+//        let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
+//        alert.view.tintColor = UIColor.black
+//        let actionCancel = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
+//        let actionPhoto = UIAlertAction.init(title: "选择上传照片", style: .default) { (UIAlertAction) -> Void in
+//            weakself?.showLocalPhotoGallery()
+//        }
+//
+//        alert.addAction(actionCancel)
+//        alert.addAction(actionPhoto)
+//        weakself?.present(alert, animated: true, completion: nil)
+//
+//    }
+//
+//    private func showLocalPhotoGallery(){
+//        weak var  weakself = self
+//
+//        let  pushNumber = 1
+//        let  imagePickerVc = TZImagePickerController.init(maxImagesCount: pushNumber, delegate: self as TZImagePickerControllerDelegate)
+//
+//        imagePickerVc?.didFinishPickingPhotosWithInfosHandle = {(photosArr , assets ,isSelectOriginalPhoto ,infos) in
+//            for i in  0..<photosArr!.count {
+//                weakself?.profileImageView?.image = photosArr?[i]
+//            }
+//
+//        }
+//
+//        self.present(imagePickerVc!, animated: true, completion: nil)
+//
+//   }
 }
 
   //MARK: - 城市选择

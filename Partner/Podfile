@@ -9,7 +9,7 @@ target 'Partner' do
 
  pod 'AFNetworking'
  pod 'Masonry'
- pod 'TZImagePickerController'
+ pod 'ImagePicker'
  pod 'MJRefresh'
  pod 'MJExtension'
  pod 'NoticeBar'
