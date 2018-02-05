@@ -45,6 +45,7 @@
 		D34712612012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347125F2012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift */; };
 		D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347126320120685003E098E /* ProfileTextInputTableViewBodyCell.swift */; };
 		D347126820120943003E098E /* ProfileEditInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347126720120943003E098E /* ProfileEditInfomationViewController.swift */; };
+		D355001620240163008D04A8 /* AspectImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D355001520240163008D04A8 /* AspectImageViewController.swift */; };
 		D35F5655200EE35E00149861 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5654200EE35E00149861 /* ProfileSettingsViewController.swift */; };
 		D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5657200EE97200149861 /* ModifyPasswordViewController.swift */; };
 		D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5659200EF3AC00149861 /* FeedbackViewController.swift */; };
@@ -159,6 +160,7 @@
 		D347125F2012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSkillsSelectorTableViewBodyCell.swift; sourceTree = "<group>"; };
 		D347126320120685003E098E /* ProfileTextInputTableViewBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextInputTableViewBodyCell.swift; sourceTree = "<group>"; };
 		D347126720120943003E098E /* ProfileEditInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditInfomationViewController.swift; sourceTree = "<group>"; };
+		D355001520240163008D04A8 /* AspectImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectImageViewController.swift; sourceTree = "<group>"; };
 		D35F5654200EE35E00149861 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		D35F5657200EE97200149861 /* ModifyPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPasswordViewController.swift; sourceTree = "<group>"; };
 		D35F5659200EF3AC00149861 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				D378FEFD1FF0E80600065EEC /* Service.storyboard */,
+				D355001520240163008D04A8 /* AspectImageViewController.swift */,
 				D3CAC86F2021EF9D0072064C /* Model */,
 				D3CAC8702021EFAC0072064C /* View */,
 				D3CAC8712021EFAF0072064C /* Controller */,
@@ -1330,6 +1333,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Partner/Pods-Partner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/JXPhotoBrowser/JXPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
@@ -1337,11 +1341,11 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NoticeBar/NoticeBar.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
@@ -1349,7 +1353,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NoticeBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1425,6 +1428,7 @@
 				D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
 				D39F8C34201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift in Sources */,
+				D355001620240163008D04A8 /* AspectImageViewController.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
 				D3B8E5C8201AFC04002F3A3A /* IntentionProjectViewController.swift in Sources */,
 				D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */,
