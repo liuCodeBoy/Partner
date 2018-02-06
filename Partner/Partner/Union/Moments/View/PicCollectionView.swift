@@ -33,12 +33,17 @@ class PicCollectionView: UICollectionView {
 extension PicCollectionView: UICollectionViewDataSource,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picURLs.count
+        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PicCell", for: indexPath) as! PicCollectionViewCell
         
-        cell.picURL = picURLs[indexPath.item]
+        if  picURLs.count > 0  {
+            cell.picURL = picURLs[indexPath.item]
+        }else{
+            cell.picURL = nil
+        }
         
         return cell
     }
@@ -58,6 +63,7 @@ class PicCollectionViewCell: UICollectionViewCell {
     var picURL: URL? {
         didSet {
             guard picURL != nil else {
+             pictureCellView.image = nil
                 return
             }
             pictureCellView.sd_setImage(with: picURL, placeholderImage: UIImage(named: "empty_picture"))

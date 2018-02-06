@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kay-ZW-Jhh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kay-ZW-Jhh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +40,7 @@
         <scene sceneID="QHZ-87-c9h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kay-ZW-Jhh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="hUF-X0-d3V"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="tab_bar_home" selectedImage="tab_bar_home_selected" id="hUF-X0-d3V"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ic6-Ho-3MR">
@@ -57,4 +57,8 @@
             <point key="canvasLocation" x="-417" y="112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_bar_home" width="24" height="24"/>
+        <image name="tab_bar_home_selected" width="25" height="25"/>
+    </resources>
 </document>

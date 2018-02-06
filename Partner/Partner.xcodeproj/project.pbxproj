@@ -27,6 +27,8 @@
 		B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */; };
 		B6B9A53A20243CC900AC24EB /* CricleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A53920243CC900AC24EB /* CricleViewController.swift */; };
 		B6C27D072019AF200087FF17 /* ForgetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */; };
+		B6E1FAFD20286D8000BB2B4E /* StatusPushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1FAFC20286D7F00BB2B4E /* StatusPushVC.swift */; };
+		B6E1FB01202871BD00BB2B4E /* PickImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1FB00202871BD00BB2B4E /* PickImageCollectionView.swift */; };
 		B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D32201EC911000479F8 /* TageModel.swift */; };
 		B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D34201F3697000479F8 /* AddTagBtnVC.swift */; };
 		B6EF1D3A201F5D8D000479F8 /* RegisterAndLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D39201F5D8C000479F8 /* RegisterAndLoginVC.swift */; };
@@ -142,6 +144,8 @@
 		B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriclePicktrueView.swift; sourceTree = "<group>"; };
 		B6B9A53920243CC900AC24EB /* CricleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricleViewController.swift; sourceTree = "<group>"; };
 		B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPwdVC.swift; sourceTree = "<group>"; };
+		B6E1FAFC20286D7F00BB2B4E /* StatusPushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPushVC.swift; sourceTree = "<group>"; };
+		B6E1FB00202871BD00BB2B4E /* PickImageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageCollectionView.swift; sourceTree = "<group>"; };
 		B6EF1D32201EC911000479F8 /* TageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TageModel.swift; path = Partner/Login/Welcome/TageModel.swift; sourceTree = SOURCE_ROOT; };
 		B6EF1D34201F3697000479F8 /* AddTagBtnVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagBtnVC.swift; sourceTree = "<group>"; };
 		B6EF1D39201F5D8C000479F8 /* RegisterAndLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginVC.swift; sourceTree = "<group>"; };
@@ -274,9 +278,9 @@
 		B6843E3320201E3A00B86A3F /* Moments */ = {
 			isa = PBXGroup;
 			children = (
+				B6B4295420287B2200B7F3E5 /* Controller */,
 				B6843E3E202195A300B86A3F /* View */,
 				B6843E3B2021929E00B86A3F /* Model */,
-				B6843E39202173FD00B86A3F /* MomentMainVC.swift */,
 			);
 			path = Moments;
 			sourceTree = "<group>";
@@ -293,15 +297,33 @@
 		B6843E3E202195A300B86A3F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B6E1FB00202871BD00BB2B4E /* PickImageCollectionView.swift */,
 				B6843E412021999D00B86A3F /* PicCollectionView.swift */,
 				B6843E3F202195C800B86A3F /* StatusViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
+		B6B4295320287B0C00B7F3E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B6B4295420287B2200B7F3E5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6843E39202173FD00B86A3F /* MomentMainVC.swift */,
+				B6E1FAFC20286D7F00BB2B4E /* StatusPushVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B6B9A5322024336C00AC24EB /* Circle */ = {
 			isa = PBXGroup;
 			children = (
+				B6B4295320287B0C00B7F3E5 /* Model */,
 				B6B9A536202437C800AC24EB /* View */,
 				B6B9A5332024337F00AC24EB /* Controller */,
 			);
@@ -503,10 +525,10 @@
 		D378FED61FF0D46100065EEC /* Union */ = {
 			isa = PBXGroup;
 			children = (
-				B6B9A5322024336C00AC24EB /* Circle */,
 				B6843E362020223A00B86A3F /* UnionMainVC.swift */,
 				D378FEF81FF0E75A00065EEC /* Union.storyboard */,
 				B6843E3320201E3A00B86A3F /* Moments */,
+				B6B9A5322024336C00AC24EB /* Circle */,
 				D378FEF61FF0E6EE00065EEC /* Messages */,
 				D378FEF71FF0E70E00065EEC /* Hunt */,
 			);
@@ -1416,6 +1438,7 @@
 				D3B8E5CA201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift in Sources */,
 				D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */,
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
+				B6E1FAFD20286D8000BB2B4E /* StatusPushVC.swift in Sources */,
 				D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */,
 				B6B9A53A20243CC900AC24EB /* CricleViewController.swift in Sources */,
 				B6EF1D3C201F5FD3000479F8 /* CooperativedemandVC.swift in Sources */,
@@ -1428,6 +1451,7 @@
 				D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
 				D39F8C34201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift in Sources */,
+				B6E1FB01202871BD00BB2B4E /* PickImageCollectionView.swift in Sources */,
 				D355001620240163008D04A8 /* AspectImageViewController.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
 				D3B8E5C8201AFC04002F3A3A /* IntentionProjectViewController.swift in Sources */,
@@ -1607,7 +1631,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UXX38SJ8T;
+				DEVELOPMENT_TEAM = M2JN69G9M6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1633,7 +1657,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UXX38SJ8T;
+				DEVELOPMENT_TEAM = M2JN69G9M6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

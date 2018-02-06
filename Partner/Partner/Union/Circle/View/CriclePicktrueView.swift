@@ -7,19 +7,8 @@
 
 import UIKit
 //定义跳转闭包
-//typealias pushImageType = (UICollectionView ,IndexPath , [String]) -> ()
 class CriclePicktrueView: UICollectionView {
     var   pushImageClouse : pushImageType?
-//    var picURLs: [URL] = [URL]() {
- 
-    //        didSet {
-//            sizeToFit()
-//            self.reloadData()
-//        }
-//    }
-   
-   //picStrs var  picStrs = [String]()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
