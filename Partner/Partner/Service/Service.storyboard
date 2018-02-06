@@ -3222,8 +3222,8 @@
                                                     <constraint firstAttribute="height" constant="200" id="F9F-im-zRz"/>
                                                 </constraints>
                                             </scrollView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="投资者推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg6-ZF-1m2">
-                                                <rect key="frame" x="-81" y="0.0" width="696" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资者推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg6-ZF-1m2">
+                                                <rect key="frame" x="12" y="18" width="696" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="syX-cl-WFh"/>
                                                 </constraints>
@@ -3244,7 +3244,7 @@
                                             <constraint firstItem="7hh-L8-8wy" firstAttribute="leading" secondItem="mw8-WN-duv" secondAttribute="trailing" id="Pyl-rx-bKz"/>
                                             <constraint firstItem="7hh-L8-8wy" firstAttribute="centerX" secondItem="Wg6-ZF-1m2" secondAttribute="centerX" id="Wcq-gV-YWD"/>
                                             <constraint firstAttribute="trailing" secondItem="7hh-L8-8wy" secondAttribute="trailing" constant="10" id="a3Y-eD-9PX"/>
-                                            <constraint firstItem="mw8-WN-duv" firstAttribute="centerY" secondItem="Wg6-ZF-1m2" secondAttribute="centerY" id="mAv-68-1RS"/>
+                                            <constraint firstItem="mw8-WN-duv" firstAttribute="centerY" secondItem="Wg6-ZF-1m2" secondAttribute="centerY" id="eXe-Fo-h3v"/>
                                         </constraints>
                                     </view>
                                 </subviews>

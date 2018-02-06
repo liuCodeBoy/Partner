@@ -16,8 +16,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J94-3n-aKi">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pu-Vy-ne5">
-                    <rect key="frame" x="12" y="401" width="351" height="256"/>
+                    <rect key="frame" x="12" y="667" width="351" height="256"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zY-N3-htp">
                             <rect key="frame" x="0.0" y="0.0" width="351" height="48"/>
@@ -72,15 +76,23 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="J94-3n-aKi" secondAttribute="trailing" id="AHL-xh-EoL"/>
+                <constraint firstItem="J94-3n-aKi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RGu-9e-TOr"/>
                 <constraint firstItem="4Pu-Vy-ne5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="VBO-L7-QUI"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4Pu-Vy-ne5" secondAttribute="bottom" constant="10" id="cF1-tS-eww"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4Pu-Vy-ne5" secondAttribute="bottom" constant="-256" id="cF1-tS-eww"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4Pu-Vy-ne5" secondAttribute="trailing" constant="12" id="cTf-iI-thy"/>
+                <constraint firstItem="J94-3n-aKi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mau-2u-0ma"/>
+                <constraint firstItem="J94-3n-aKi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sPU-IB-29U"/>
+                <constraint firstItem="J94-3n-aKi" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="tXb-So-gad"/>
+                <constraint firstItem="J94-3n-aKi" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="wMd-UU-lL7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="backgroundView" destination="J94-3n-aKi" id="b9R-uW-VEw"/>
                 <outlet property="partnerPicker" destination="hSp-tH-i37" id="WT9-19-xVH"/>
+                <outlet property="pickerContainerView" destination="4Pu-Vy-ne5" id="7DK-JA-rEw"/>
                 <outlet property="pickerTitle" destination="1AA-8a-NsU" id="vj9-ca-Aq8"/>
             </connections>
             <point key="canvasLocation" x="89.5" y="54.5"/>
