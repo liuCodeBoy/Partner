@@ -61,14 +61,19 @@ class StatusViewCell: UITableViewCell {
   
             
             var   urlArr = [URL]()
-            for picStr in viewModel.imgUrls! {
-                let picURL = URL(string: picStr as String)
-                urlArr.append(picURL!)
+            if let urls = viewModel.imgUrls {
+                for picStr in urls {
+                    let picURL = URL(string: picStr as String)
+                    urlArr.append(picURL!)
+                }
+                pictureView.picURLs = urlArr
+                pictureView.picStrs =  viewModel.imgUrls! as [String]
+            }else{
+                pictureView.picURLs = [URL]()
             }
-            
-            pictureView.picURLs = urlArr
-            pictureView.picStrs =  viewModel.imgUrls! as [String]
-            let pictureViewSize = calculatePictureSize((viewModel.imgUrls?.count)!)
+            let imageCount =  viewModel.imgUrls == nil ? 0  : viewModel.imgUrls?.count
+        
+            let pictureViewSize = calculatePictureSize(imageCount!)
             collectionviewHCons.constant = pictureViewSize.height
             collectionViewWCons.constant = pictureViewSize.width
        }
@@ -88,10 +93,10 @@ override  func awakeFromNib() {
         let layout = pictureView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
-
+    
+        pictureView.isScrollEnabled = false
         let imageViewWH = (screenWidth - 20  - 2 * edgeMargin - 2 * itemMargin) / 3
         layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
-        pictureView.isScrollEnabled = false
     }
     
 }
@@ -101,6 +106,10 @@ extension StatusViewCell {
         if count == 0 {
             collectionViewButtonDistanceCons.constant = 0
             return CGSize.zero
+        }
+        
+        if count == 1 {
+            return CGSize(width: screenWidth - 20 - 2 * edgeMargin - 2 * itemMargin, height: 150)
         }
         collectionViewButtonDistanceCons.constant = 10
         let imageViewWH = (screenWidth - 20 - 2 * edgeMargin - 2 * itemMargin) / 3

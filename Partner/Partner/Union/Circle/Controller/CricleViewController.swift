@@ -19,17 +19,6 @@ class CricleViewController: UIViewController {
         layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
         
         
-        self.addPushBtn()
+     
     }
-    
-    
-    //添加发布按钮
-    func   addPushBtn(){
-        let  btn = UIButton.init(frame: CGRect.init(x: screenWidth - 58 , y: screenHeight - 180 , width: 46, height: 46))
-        btn.setImage(UIImage.init(named: "pushBtn"), for: .normal)
-        self.view.addSubview(btn)
-        
-    }
-    
-
 }
