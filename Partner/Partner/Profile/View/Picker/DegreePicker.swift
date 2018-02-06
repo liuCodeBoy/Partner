@@ -1,14 +1,14 @@
 //
-//  PartnerPopulationPicker.swift
+//  DegreePicker.swift
 //  Partner
 //
-//  Created by Weslie on 05/02/2018.
+//  Created by Weslie on 06/02/2018.
 //
 
 import UIKit
 
-class PartnerPopulationPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
-
+class DegreePicker:  UIView, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     @IBOutlet weak var backView: UIView!
     @IBAction func cancelBtnClicked(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
@@ -37,7 +37,7 @@ class PartnerPopulationPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 6
+        return 5
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -46,12 +46,11 @@ class PartnerPopulationPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSou
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch row {
-        case 0: return "没有合伙人"
-        case 1: return "1人"
-        case 2: return "2人"
-        case 3: return "3人"
-        case 4: return "4人"
-        case 5: return "5人及5人以上"
+        case 0: return "学士"
+        case 1: return "硕士"
+        case 2: return "博士"
+        case 3: return "本科"
+        case 4: return "其他"
         default: return nil
         }
     }
@@ -71,17 +70,16 @@ class PartnerPopulationPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSou
         label.textAlignment = NSTextAlignment.center
         
         switch row {
-        case 0: label.text = "没有合伙人"
-        case 1: label.text = "1人"
-        case 2: label.text = "2人"
-        case 3: label.text = "3人"
-        case 4: label.text = "4人"
-        case 5: label.text = "5人及5人以上"
-        default:
-            break
+        case 0: label.text = "学士"
+        case 1: label.text = "硕士"
+        case 2: label.text = "博士"
+        case 3: label.text = "本科"
+        case 4: label.text = "其他"
+        default: break
         }
         
         return label
     }
-
+    
 }
+

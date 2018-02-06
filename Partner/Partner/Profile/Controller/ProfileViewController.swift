@@ -19,6 +19,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var backImageHeightCons: NSLayoutConstraint!
     
+    @IBAction func backToProfile(_ sender: UIStoryboardSegue) { }
+    
     @IBAction func loginOrRegisterBtnClicked(_ sender: UIButton) {
     }
     

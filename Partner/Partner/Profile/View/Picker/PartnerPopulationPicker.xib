@@ -24,7 +24,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH5-2O-dxH">
                     <rect key="frame" x="0.0" y="391" width="375" height="276"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmz-Ai-ITK" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmz-Ai-ITK" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                             <rect key="frame" x="12" y="10" width="351" height="256"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vmy-C1-cPo">
@@ -79,6 +79,10 @@
                                 </view>
                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMR-fG-TEO">
                                     <rect key="frame" x="0.0" y="50" width="351" height="206"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="iN0-l3-epB" id="jFX-Gw-vU9"/>
+                                        <outlet property="delegate" destination="iN0-l3-epB" id="eo1-gF-jnC"/>
+                                    </connections>
                                 </pickerView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

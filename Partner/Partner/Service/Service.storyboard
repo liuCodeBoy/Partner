@@ -1007,7 +1007,7 @@
                                     <outlet property="delegate" destination="AX0-mj-LW1" id="768-Lc-0H7"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lambor" translatesAutoresizingMaskIntoConstraints="NO" id="98U-6o-HNJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_profile_background" translatesAutoresizingMaskIntoConstraints="NO" id="98U-6o-HNJ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="E7J-Np-iNp"/>
@@ -4648,7 +4648,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lambor" width="653" height="435"/>
         <image name="left_arrow" width="6" height="10"/>
         <image name="location" width="14" height="18"/>
         <image name="male" width="11" height="16"/>

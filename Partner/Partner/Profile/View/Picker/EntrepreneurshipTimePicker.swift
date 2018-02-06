@@ -10,31 +10,45 @@ import UIKit
 class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var years: [Int] = [Int]()
+    var months: [String] = [String]()
     
+    let currentDate = Date()
+    var current = ""
+    
+    @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var backView: UIView!
     @IBAction func cancelBtnClicked(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.backView.alpha = 0
-            self.containerView.transform = CGAffineTransform(scaleX: 0, y: 276)
-        }, completion: nil)
+            self.picContainerView.transform = CGAffineTransform(translationX: 0, y: 276)
+        }) { (_) in
+            self.removeFromSuperview()
+        }
     }
     @IBAction func confirmBtnClicked(_ sender: UIButton) {
     }
     @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var picContainerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        let date = Date()
-        let yaer = date.year()
+        // get the curret year an create an array
+        let yaer = currentDate.year()
+        current = "\(yaer)/\(currentDate.month())月"
+        // set the placeholder picker title
+        timeLbl.text = "\(current) - \(current)"
         for i in 1968...yaer {
             years.append(i)
+        }
+        // reverse the element in the array
+        years.reverse()
+        for j in 1...12 {
+            months.append("\(j)月")
         }
         
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.backView.alpha = 0.3
-            self.containerView.transform = CGAffineTransform(scaleX: 0, y: -276)
+            self.picContainerView.transform = CGAffineTransform(translationX: 0, y: -276)
         }, completion: nil)
     }
     
@@ -45,26 +59,14 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case 0, 3: return years.count         //year
-        case 1, 4: return 12                   //momth
-        case 2   : return 1                    //
+        case 1, 4: return 12                  //momth
+        case 2   : return 1                   //
         default  : return 0
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 38
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch row {
-        case 0: return "没有合伙人"
-        case 1: return "1人"
-        case 2: return "2人"
-        case 3: return "3人"
-        case 4: return "4人"
-        case 5: return "5人及5人以上"
-        default: return nil
-        }
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -81,18 +83,24 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = NSTextAlignment.center
         
-        switch row {
-        case 0: label.text = "没有合伙人"
-        case 1: label.text = "1人"
-        case 2: label.text = "2人"
-        case 3: label.text = "3人"
-        case 4: label.text = "4人"
-        case 5: label.text = "5人及5人以上"
-        default:
-            break
+        switch component {
+        case 0: label.text = "\(years[row])"
+        case 1: label.text = months[row]
+        case 2: label.text = "至"
+        case 3: label.text = "\(years[row])"
+        case 4: label.text = months[row]
+        default :break
         }
         
         return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let fromYear    = pickerView.view(forRow: row, forComponent: 0) as? UILabel
+        let fromMonth   = pickerView.view(forRow: row, forComponent: 1) as? UILabel
+        let toYear      = pickerView.view(forRow: row, forComponent: 3) as? UILabel
+        let toMonth     = pickerView.view(forRow: row, forComponent: 4) as? UILabel
+        timeLbl.text = "\(fromYear?.text ?? "\(currentDate.year())")/\(fromMonth?.text ?? "\(currentDate.month())月") - \(toYear?.text ?? "\(currentDate.year())")/\(toMonth?.text ?? "\(currentDate.month())月")"
     }
     
 }

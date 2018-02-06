@@ -27,7 +27,7 @@ class EntrepreneurshipExperienceAlertSheet: UIView {
         
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.backView.alpha = 0.3
-            self.containerView.transform = CGAffineTransform(scaleX: 0, y: -232)
+            self.containerView.transform = CGAffineTransform(translationX: 0, y: 232)
         }, completion: nil)
     }
 
