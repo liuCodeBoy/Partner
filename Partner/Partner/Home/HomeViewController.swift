@@ -6,16 +6,114 @@
 //
 
 import UIKit
-
 class HomeViewController: UIViewController {
 
-    @IBAction func loginBtnClicked(_ sender: UIButton) {
-        let login = UIStoryboard.init(name: "Login", bundle: nil).instantiateInitialViewController()!
-        let navVC = UINavigationController.init(rootViewController: login)
-        self.present(navVC, animated: true, completion: nil)
-    }
+    @IBOutlet weak var topContentView: UIView!
+    var   sliderView : UIView?
+    //滚动视图
+    var   scrollView : UIScrollView?
+    
+    @IBOutlet weak var loopView: LoopView!
+    //滑动Btn数组
+    var   sliderBtnArr  = [UIButton]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.navigationController?.isNavigationBarHidden = true
+        addTopViewChildsBtn()
+        addChildScroll()
+//        let RegisterAndLoginVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
+//                 let  navRegistAndLoginVC = UINavigationController.init(rootViewController: RegisterAndLoginVC)
+//     self.present(navRegistAndLoginVC, animated: true, completion: nil)
+//      
     }
-
+    
+    //初始化头部按钮
+    func addTopViewChildsBtn(){
+        let  btnArr = ["广场","社区","活动","资讯"]
+        let  width  = (screenWidth) / CGFloat(btnArr.count)
+        for i in 0..<btnArr.count {
+            let  btnStr  = btnArr[i]
+            let  x       = CGFloat(i)  * width
+            let btn = UIButton.init(frame: CGRect.init(x: x, y: 0, width: width, height: 60))
+            btn.contentHorizontalAlignment = .center
+            btn.contentVerticalAlignment   = .bottom
+            btn.setTitle(btnStr, for: .normal)
+            btn.setTitleColor(#colorLiteral(red: 0.7771913409, green: 0.7979340553, blue: 0.8144465089, alpha: 1), for: .normal)
+            btn.setTitleColor( #colorLiteral(red: 0.3028550148, green: 0.4081297517, blue: 0.4641876817, alpha: 1),for: .selected)
+            btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+            btn.addTarget(self, action: #selector(addOffSetX(btn:)), for: UIControlEvents.touchUpInside)
+            sliderBtnArr.append(btn)
+            self.topContentView.addSubview(btn)
+            if  i == 0 {
+                sliderView =  UIView.init()
+                sliderView?.center.x = btn.center.x - 6
+                sliderView?.frame.origin.y = btn.frame.maxY + 2
+                sliderView?.frame.size = CGSize.init(width: 12, height: 3)
+                sliderView?.backgroundColor = #colorLiteral(red: 0.2524492443, green: 0.3666573763, blue: 0.4243661463, alpha: 1)
+                btn.isSelected = true
+                self.topContentView.addSubview(sliderView!)
+            }
+        }
+    }
+    
+    //添加偏移量功能
+    @objc  func   addOffSetX(btn : UIButton){
+        UIView.animate(withDuration: 0.3) {
+            weak var weakSelf = self
+            weakSelf?.sliderView?.center.x = btn.center.x
+        }
+        for tempBtn  in topContentView.subviews{
+            if  let   btn = tempBtn as? UIButton {
+                btn.isSelected = false
+            }
+        }
+        
+        btn.isSelected = !btn.isSelected
+    }
+    
+    //添加子控制器的ScrollView
+    func addChildScroll(){
+        //添加滚动控件
+        let  scrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: 64, width:screenWidth, height: screenHeight - 104))
+        scrollView.backgroundColor = UIColor.red
+        scrollView.contentSize = CGSize.init(width: screenWidth  *  4, height: screenHeight - 104)
+        scrollView.bounces = false
+        scrollView.isPagingEnabled = true
+        self.view.addSubview(scrollView)
+        self.scrollView = scrollView
+        self.scrollView?.delegate = self
+        //添加子控制器
+        
+        let homeVC  = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "PlazaVCID")
+        self.addChildViewController(homeVC)
+        homeVC.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight - 104)
+        self.scrollView?.addSubview(homeVC.view)
+//        //CricleViewController 子控制器
+//        let cricleVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CricleViewControllerID")
+//        self.addChildViewController(cricleVC)
+//        
+//        momentVC.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight - 104)
+//        self.scrollView?.addSubview(momentVC.view)
+//        cricleVC.view.frame = CGRect.init(x: screenWidth, y: 0, width: screenWidth, height: screenHeight - 104)
+//        self.scrollView?.addSubview(cricleVC.view)
+        
+        
+    }
 }
+
+
+extension   HomeViewController  : UIScrollViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let   page = Int(scrollView.contentOffset.x / screenWidth)
+        let   tempBtn  = self.sliderBtnArr[page]
+        addOffSetX(btn: tempBtn)
+        
+    }
+    
+    
+    
+    
+    
+}
+

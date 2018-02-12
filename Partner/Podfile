@@ -16,6 +16,9 @@ target 'Partner' do
  pod 'SDWebImage'
  pod 'JXPhotoBrowser'
  pod 'Kingfisher'
+ pod 'Lightbox'
+ pod 'NVActivityIndicatorView'
+ 
 
 
   target 'PartnerTests' do
