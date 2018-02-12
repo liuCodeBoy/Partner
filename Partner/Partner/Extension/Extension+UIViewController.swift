@@ -141,6 +141,23 @@ extension UIViewController {
 
 extension UIView {
     
+    private struct AssociateKeys {
+        static var foldProperty = "foldProperty"
+    }
+    var foldTag: Int {
+        set(value) {
+            objc_setAssociatedObject(self, &AssociateKeys.foldProperty, value, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+        get {
+            return objc_getAssociatedObject(self, &AssociateKeys.foldProperty) as! Int
+        }
+    }
+    
+    convenience init(withTag: HeaderFooterViewTag) {
+        self.init()
+        viewWithTag(withTag.rawValue)
+    }
+    
     func keyboardWillShow(from aView: UIView) {
         NotificationCenter.default.post(name: NSNotification.Name.init(keyboardShowNotification), object: aView)
     }
@@ -173,4 +190,7 @@ extension UIView {
         }
         return nil
     }
+    
+    
+    
 }

@@ -32,3 +32,8 @@ let isIPHONE_SE: Bool = { () -> Bool in
     }
 }()
 
+enum HeaderFooterViewTag: Int {
+    case homePageWrap = 50011
+}
+
+
