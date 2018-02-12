@@ -9,6 +9,7 @@ import UIKit
 import SDWebImage
 import JXPhotoBrowser
 import MJRefresh
+import NVActivityIndicatorView
 class MomentMainVC: UIViewController , UITableViewDelegate, UITableViewDataSource ,PhotoBrowserDelegate {
     @IBOutlet weak var momentTableView: UITableView!
     var  modelView =  [UnionListModel]()
@@ -16,6 +17,7 @@ class MomentMainVC: UIViewController , UITableViewDelegate, UITableViewDataSourc
     var   browser : PhotoBrowser?
     var   picStrsArr : [String]?
     var   collectionView : UICollectionView?
+    
     //初始化pageNums
     var   pageNum  = 1
     //标记nextPage 是否为空
@@ -25,8 +27,9 @@ class MomentMainVC: UIViewController , UITableViewDelegate, UITableViewDataSourc
         momentTableView.rowHeight = UITableViewAutomaticDimension
         momentTableView.estimatedRowHeight = 200
         momentTableView.separatorStyle = .none
+        //加载动画
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(AppDelegate.activityData)
         loadRefreshComponet(tableView: momentTableView)
-        
         loadStatuses()
         
         //添加按钮
@@ -92,10 +95,13 @@ extension  MomentMainVC {
 
 extension MomentMainVC {
     fileprivate func loadStatuses() {
+        if  self.nextPage == 0 {
+            self.momentTableView.mj_footer.endRefreshingWithNoMoreData()
+            return
+        }
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
             return
         }
-        
         NetWorkTool.shareInstance.getSocialCircleMomentList(token: access_token, type: 1, pageNum: pageNum) { [weak self](result, error) in
             if error != nil {
                 return }
@@ -114,19 +120,15 @@ extension MomentMainVC {
                 }
                 self?.pageNum += 1
             }
-            
-            if self?.nextPage == 0 {
-                 self?.momentTableView.mj_footer.endRefreshingWithNoMoreData()
-            }
-            
         
             if  let listDict = dict!["list"] as? [NSDictionary]  {
                 for dict in listDict{
                     let model =  UnionListModel.mj_object(withKeyValues: dict)
                     self?.modelView.append(model!)
-                    self?.momentTableView.mj_footer.endRefreshing()
-                    self?.momentTableView.reloadData()
                 }
+                self?.momentTableView.mj_footer.endRefreshing()
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                self?.momentTableView.reloadData()
             }
             self?.cacheImages((self?.modelView)!)
         }
@@ -161,8 +163,8 @@ extension MomentMainVC {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StatusViewCell") as!  StatusViewCell
-         cell.viewModel = modelView[indexPath.row]
-        
+        if  modelView.count > 0  { cell.viewModel = modelView[indexPath.row]}
+    
         // 显示，并指定打开第几张图
         cell.pictureView.pushImageClouse = {[weak self](tempPictureView ,index , strArr) in
             self?.picStrsArr  =  strArr

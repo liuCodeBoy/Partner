@@ -13,6 +13,11 @@
 		B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E5200C4932007799BC /* InformationDetailVC.swift */; };
 		B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E7200C506A007799BC /* Extension+UIViewController.swift */; };
 		B65517EA200C800E007799BC /* InterestedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E9200C800E007799BC /* InterestedVC.swift */; };
+		B65BE17E2029A4AD004407B1 /* CircleChooseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BE17D2029A4AD004407B1 /* CircleChooseTableView.swift */; };
+		B65BE18A2029D653004407B1 /* LoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BE1892029D652004407B1 /* LoopView.swift */; };
+		B65BE18C2029DBB8004407B1 /* PlazaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BE18B2029DBB8004407B1 /* PlazaVC.swift */; };
+		B65BE18E202AA18C004407B1 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65BE18D202AA18C004407B1 /* View.xib */; };
+		B65BE190202AF13A004407B1 /* CircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BE18F202AF13A004407B1 /* CircleModel.swift */; };
 		B678C9982021C82F007FEB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6843E3820216B5E00B86A3F /* Assets.xcassets */; };
 		B678C99A2021E065007FEB83 /* UnionNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */; };
 		B678C99C2021E967007FEB83 /* UnionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C99B2021E967007FEB83 /* UnionListModel.swift */; };
@@ -26,6 +31,7 @@
 		B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A34317201C645300C7D5F5 /* communityModel.swift */; };
 		B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */; };
 		B6B9A53A20243CC900AC24EB /* CricleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A53920243CC900AC24EB /* CricleViewController.swift */; };
+		B6BD3D06202D43A1005595ED /* CreateCricleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD3D05202D43A1005595ED /* CreateCricleVC.swift */; };
 		B6C27D072019AF200087FF17 /* ForgetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */; };
 		B6E1FAFD20286D8000BB2B4E /* StatusPushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1FAFC20286D7F00BB2B4E /* StatusPushVC.swift */; };
 		B6E1FB01202871BD00BB2B4E /* PickImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1FB00202871BD00BB2B4E /* PickImageCollectionView.swift */; };
@@ -33,6 +39,7 @@
 		B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D34201F3697000479F8 /* AddTagBtnVC.swift */; };
 		B6EF1D3A201F5D8D000479F8 /* RegisterAndLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D39201F5D8C000479F8 /* RegisterAndLoginVC.swift */; };
 		B6EF1D3C201F5FD3000479F8 /* CooperativedemandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D3B201F5FD3000479F8 /* CooperativedemandVC.swift */; };
+		B6F91F7B202D7C4D0095BECF /* LimitTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F91F7A202D7C4D0095BECF /* LimitTextView.swift */; };
 		D3034646201ECE93007A37A5 /* MyProjectEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3034645201ECE93007A37A5 /* MyProjectEditViewController.swift */; };
 		D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3034647201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift */; };
 		D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3034649201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift */; };
@@ -150,6 +157,11 @@
 		B65517E5200C4932007799BC /* InformationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailVC.swift; sourceTree = "<group>"; };
 		B65517E7200C506A007799BC /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		B65517E9200C800E007799BC /* InterestedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedVC.swift; sourceTree = "<group>"; };
+		B65BE17D2029A4AD004407B1 /* CircleChooseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChooseTableView.swift; sourceTree = "<group>"; };
+		B65BE1892029D652004407B1 /* LoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopView.swift; sourceTree = "<group>"; };
+		B65BE18B2029DBB8004407B1 /* PlazaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlazaVC.swift; sourceTree = "<group>"; };
+		B65BE18D202AA18C004407B1 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		B65BE18F202AF13A004407B1 /* CircleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleModel.swift; sourceTree = "<group>"; };
 		B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionNetWorkTool.swift; sourceTree = "<group>"; };
 		B678C99B2021E967007FEB83 /* UnionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionListModel.swift; sourceTree = "<group>"; };
 		B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginVC.swift; sourceTree = "<group>"; };
@@ -163,6 +175,7 @@
 		B6A34317201C645300C7D5F5 /* communityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = communityModel.swift; path = Partner/Login/Welcome/communityModel.swift; sourceTree = SOURCE_ROOT; };
 		B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriclePicktrueView.swift; sourceTree = "<group>"; };
 		B6B9A53920243CC900AC24EB /* CricleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricleViewController.swift; sourceTree = "<group>"; };
+		B6BD3D05202D43A1005595ED /* CreateCricleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCricleVC.swift; sourceTree = "<group>"; };
 		B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPwdVC.swift; sourceTree = "<group>"; };
 		B6E1FAFC20286D7F00BB2B4E /* StatusPushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPushVC.swift; sourceTree = "<group>"; };
 		B6E1FB00202871BD00BB2B4E /* PickImageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageCollectionView.swift; sourceTree = "<group>"; };
@@ -170,6 +183,7 @@
 		B6EF1D34201F3697000479F8 /* AddTagBtnVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagBtnVC.swift; sourceTree = "<group>"; };
 		B6EF1D39201F5D8C000479F8 /* RegisterAndLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginVC.swift; sourceTree = "<group>"; };
 		B6EF1D3B201F5FD3000479F8 /* CooperativedemandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooperativedemandVC.swift; sourceTree = "<group>"; };
+		B6F91F7A202D7C4D0095BECF /* LimitTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitTextView.swift; sourceTree = "<group>"; };
 		D3034645201ECE93007A37A5 /* MyProjectEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditViewController.swift; sourceTree = "<group>"; };
 		D3034647201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		D3034649201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditMembersBriefTableViewCell.swift; sourceTree = "<group>"; };
@@ -315,6 +329,61 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B65BE17F2029C348004407B1 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				B65BE1882029C3AB004407B1 /* New Group1 */,
+				B65BE1872029C3A5004407B1 /* New Group */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		B65BE1802029C365004407B1 /* Plaza */ = {
+			isa = PBXGroup;
+			children = (
+				B65BE1812029C365004407B1 /* Controller */,
+				B65BE1822029C365004407B1 /* Model */,
+				B65BE1832029C365004407B1 /* View */,
+			);
+			path = Plaza;
+			sourceTree = "<group>";
+		};
+		B65BE1812029C365004407B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B65BE18B2029DBB8004407B1 /* PlazaVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B65BE1822029C365004407B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B65BE1832029C365004407B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B65BE1872029C3A5004407B1 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		B65BE1882029C3AB004407B1 /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
 		B6843E3320201E3A00B86A3F /* Moments */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +409,7 @@
 				B6E1FB00202871BD00BB2B4E /* PickImageCollectionView.swift */,
 				B6843E412021999D00B86A3F /* PicCollectionView.swift */,
 				B6843E3F202195C800B86A3F /* StatusViewCell.swift */,
+				B65BE17D2029A4AD004407B1 /* CircleChooseTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +417,7 @@
 		B6B4295320287B0C00B7F3E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B65BE18F202AF13A004407B1 /* CircleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				B6B9A53920243CC900AC24EB /* CricleViewController.swift */,
+				B6BD3D05202D43A1005595ED /* CreateCricleVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -382,6 +454,22 @@
 			isa = PBXGroup;
 			children = (
 				B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B6F91F78202D7C070095BECF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B6F91F79202D7C150095BECF /* View */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		B6F91F79202D7C150095BECF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6F91F7A202D7C4D0095BECF /* LimitTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -595,14 +683,14 @@
 		D378FED51FF0D44000065EEC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B65BE1892029D652004407B1 /* LoopView.swift */,
 				D378FEE01FF0D60800065EEC /* Home.storyboard */,
 				D33EA67B2011D68700745003 /* HomeViewController.swift */,
-				D378FEDC1FF0D5A400065EEC /* Plaza */,
-				D378FEDD1FF0D5BE00065EEC /* Social */,
-				D378FEDE1FF0D5C700065EEC /* Activity */,
-				D378FEDF1FF0D5CE00065EEC /* Infomation */,
+				B65BE1802029C365004407B1 /* Plaza */,
+				B65BE17F2029C348004407B1 /* Social */,
 				D378FEE41FF0D67700065EEC /* Reservation */,
 				D378FF0B1FF0E90E00065EEC /* Miscellaneous */,
+				B65BE18D202AA18C004407B1 /* View.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -610,6 +698,7 @@
 		D378FED61FF0D46100065EEC /* Union */ = {
 			isa = PBXGroup;
 			children = (
+				B6F91F78202D7C070095BECF /* Tools */,
 				B6843E362020223A00B86A3F /* UnionMainVC.swift */,
 				D378FEF81FF0E75A00065EEC /* Union.storyboard */,
 				B6843E3320201E3A00B86A3F /* Moments */,
@@ -674,46 +763,6 @@
 				D378FEF31FF0E3E000065EEC /* Animations */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		D378FEDC1FF0D5A400065EEC /* Plaza */ = {
-			isa = PBXGroup;
-			children = (
-				D378FEF01FF0D91100065EEC /* Model */,
-				D378FEEF1FF0D90E00065EEC /* View */,
-				D378FEEE1FF0D90700065EEC /* Controller */,
-			);
-			path = Plaza;
-			sourceTree = "<group>";
-		};
-		D378FEDD1FF0D5BE00065EEC /* Social */ = {
-			isa = PBXGroup;
-			children = (
-				D378FF0C1FF0E93E00065EEC /* Model */,
-				D378FF0D1FF0E93E00065EEC /* View */,
-				D378FF0E1FF0E93E00065EEC /* Controller */,
-			);
-			path = Social;
-			sourceTree = "<group>";
-		};
-		D378FEDE1FF0D5C700065EEC /* Activity */ = {
-			isa = PBXGroup;
-			children = (
-				D378FF0F1FF0E94000065EEC /* Model */,
-				D378FF101FF0E94000065EEC /* View */,
-				D378FF111FF0E94000065EEC /* Controller */,
-			);
-			path = Activity;
-			sourceTree = "<group>";
-		};
-		D378FEDF1FF0D5CE00065EEC /* Infomation */ = {
-			isa = PBXGroup;
-			children = (
-				D378FF121FF0E94700065EEC /* Model */,
-				D378FF131FF0E94700065EEC /* View */,
-				D378FF141FF0E94800065EEC /* Controller */,
-			);
-			path = Infomation;
 			sourceTree = "<group>";
 		};
 		D378FEE31FF0D65F00065EEC /* AirPrint */ = {
@@ -786,27 +835,6 @@
 				D378FF171FF0E94900065EEC /* Controller */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		D378FEEE1FF0D90700065EEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D378FEEF1FF0D90E00065EEC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D378FEF01FF0D91100065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		D378FEF31FF0E3E000065EEC /* Animations */ = {
@@ -888,69 +916,6 @@
 				D378FEEB1FF0D78000065EEC /* Classes */,
 			);
 			path = Miscellaneous;
-			sourceTree = "<group>";
-		};
-		D378FF0C1FF0E93E00065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D378FF0D1FF0E93E00065EEC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D378FF0E1FF0E93E00065EEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D378FF0F1FF0E94000065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D378FF101FF0E94000065EEC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D378FF111FF0E94000065EEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D378FF121FF0E94700065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D378FF131FF0E94700065EEC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D378FF141FF0E94800065EEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		D378FF151FF0E94900065EEC /* Model */ = {
@@ -1259,6 +1224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D378FED41FF0D3D900065EEC /* Login.storyboard in Resources */,
+				B65BE18E202AA18C004407B1 /* View.xib in Resources */,
 				D30AA0F8202843D100711F20 /* EntrepreneurshipExperienceAlertSheet.xib in Resources */,
 				D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */,
 				D30AA0FC2028568800711F20 /* PartnerPopulationPicker.xib in Resources */,
@@ -1443,24 +1409,34 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Partner/Pods-Partner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
 				"${BUILT_PRODUCTS_DIR}/JXPhotoBrowser/JXPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Lightbox/Lightbox.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/NoticeBar/NoticeBar.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lightbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NoticeBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
@@ -1502,6 +1478,8 @@
 				D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */,
 				D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */,
 				D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */,
+				B6BD3D06202D43A1005595ED /* CreateCricleVC.swift in Sources */,
+				B65BE17E2029A4AD004407B1 /* CircleChooseTableView.swift in Sources */,
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
 				B6843E3D202192C700B86A3F /* StatusViewModel.swift in Sources */,
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
@@ -1517,6 +1495,7 @@
 				D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */,
 				D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */,
 				B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */,
+				B65BE18C2029DBB8004407B1 /* PlazaVC.swift in Sources */,
 				D39F14E0201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift in Sources */,
 				B6843E372020223A00B86A3F /* UnionMainVC.swift in Sources */,
 				B6843E3A202173FD00B86A3F /* MomentMainVC.swift in Sources */,
@@ -1560,11 +1539,14 @@
 				D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */,
 				D34C6AF5202D43C700EA225E /* MyHomePageExperiencesTableViewSectionHeaderCell.swift in Sources */,
 				D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */,
+				B65BE190202AF13A004407B1 /* CircleModel.swift in Sources */,
+				B6F91F7B202D7C4D0095BECF /* LimitTextView.swift in Sources */,
 				D378FEF21FF0E36600065EEC /* NetworkTools.swift in Sources */,
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,
 				D37D7131202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift in Sources */,
 				D39F8C32201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift in Sources */,
 				D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */,
+				B65BE18A2029D653004407B1 /* LoopView.swift in Sources */,
 				D303464E201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
