@@ -22,9 +22,9 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qc-zA-dyM">
-                    <rect key="frame" x="0.0" y="391" width="375" height="276"/>
+                    <rect key="frame" x="0.0" y="667" width="375" height="276"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ew-Md-bUv" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ew-Md-bUv" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                             <rect key="frame" x="12" y="10" width="351" height="256"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipe-py-h1o">
@@ -79,6 +79,10 @@
                                 </view>
                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cR1-b9-6AR">
                                     <rect key="frame" x="0.0" y="50" width="351" height="206"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="iN0-l3-epB" id="aJx-Uk-8ZX"/>
+                                        <outlet property="delegate" destination="iN0-l3-epB" id="uW3-Np-idc"/>
+                                    </connections>
                                 </pickerView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,14 +120,15 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Q8f-0H-cDm" secondAttribute="bottom" id="9fW-YK-3uA"/>
                 <constraint firstAttribute="trailing" secondItem="8Qc-zA-dyM" secondAttribute="trailing" id="bL7-uI-8zN"/>
                 <constraint firstAttribute="trailing" secondItem="Q8f-0H-cDm" secondAttribute="trailing" id="gLA-Ee-a1q"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8Qc-zA-dyM" secondAttribute="bottom" id="mtW-Vq-4m6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8Qc-zA-dyM" secondAttribute="bottom" constant="-276" id="mtW-Vq-4m6"/>
                 <constraint firstItem="8Qc-zA-dyM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xAl-ty-sPr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="backView" destination="Q8f-0H-cDm" id="eEJ-fb-OZr"/>
-                <outlet property="containerView" destination="8Qc-zA-dyM" id="NVm-7W-Fv9"/>
+                <outlet property="picContainerView" destination="8Qc-zA-dyM" id="cNX-Nq-pcE"/>
                 <outlet property="picker" destination="cR1-b9-6AR" id="XGk-1Q-q2U"/>
+                <outlet property="timeLbl" destination="Q6Y-OC-YGE" id="Dvy-Ev-bHP"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
