@@ -3520,7 +3520,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXq-HO-cEg" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
-                                <rect key="frame" x="36" y="569" width="303" height="40"/>
+                                <rect key="frame" x="36" y="618" width="303" height="40"/>
                                 <color key="backgroundColor" red="0.5411764979" green="0.63137257099999999" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QFd-fl-rvy"/>
@@ -3577,6 +3577,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z5k-Js-qBj"/>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rX4-Wf-Z23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3730,7 +3731,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OXu-Lm-qrL">
-                                <rect key="frame" x="0.0" y="200" width="375" height="529"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="578"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SingleProjectTableViewCell" rowHeight="248" id="nZQ-ju-q6e" customClass="SingleProjectTableViewCell" customModule="Partner" customModuleProvider="target">
@@ -5842,7 +5843,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xBQ-lS-wVd">
-                                <rect key="frame" x="0.0" y="130" width="375" height="599"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="648"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -6073,7 +6074,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckV-Dd-Sgz">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditHeaderTableViewCell" rowHeight="264" id="bsR-MR-Ie3" customClass="ProjectEditHeaderTableViewCell" customModule="Partner" customModuleProvider="target">
@@ -7396,7 +7397,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FnG-t9-fSB">
-                                <rect key="frame" x="0.0" y="131" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="131" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="5BD-az-uYp" detailTextLabel="0yu-oK-A7s" rowHeight="52" style="IBUITableViewCellStyleValue1" id="mYU-cI-SVN">
@@ -7570,7 +7571,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xa3-TE-3Tq">
-                                <rect key="frame" x="0.0" y="131" width="375" height="538"/>
+                                <rect key="frame" x="0.0" y="131" width="375" height="587"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHS-nR-v4r">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="485"/>
@@ -7917,7 +7918,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="343-0H-9QI">
-                                <rect key="frame" x="0.0" y="669" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="718" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nU-7t-9UT" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="12" y="10" width="169" height="40"/>
@@ -8066,7 +8067,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="uRA-am-PNN">
-                                <rect key="frame" x="0.0" y="130" width="375" height="599"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="648"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ny-Qt-wxh">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="365"/>
@@ -8319,7 +8320,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-wQ-feR">
-                                <rect key="frame" x="0.0" y="130" width="375" height="599"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="648"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wha-Vz-pX2">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="725"/>
@@ -8673,7 +8674,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-Vd-of3">
-                                <rect key="frame" x="0.0" y="131" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="131" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jms-eg-WAy">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
@@ -9012,7 +9013,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMK-uz-SMk">
-                                <rect key="frame" x="0.0" y="130" width="375" height="599"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="648"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ggl-Fh-arN">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="382"/>
@@ -9403,7 +9404,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpV-jo-raJ">
-                                <rect key="frame" x="0.0" y="89" width="375" height="640"/>
+                                <rect key="frame" x="0.0" y="89" width="375" height="689"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDM-YW-ewX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="660"/>
