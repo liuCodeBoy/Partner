@@ -116,7 +116,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="nJ2-sC-kqw" firstAttribute="leading" secondItem="Q9v-nS-TqT" secondAttribute="leading" id="ERW-f3-TLK"/>
-                <constraint firstItem="nJ2-sC-kqw" firstAttribute="bottom" secondItem="Q9v-nS-TqT" secondAttribute="bottom" id="GA6-1R-402"/>
+                <constraint firstItem="nJ2-sC-kqw" firstAttribute="bottom" secondItem="Mym-HK-gdR" secondAttribute="bottom" id="GA6-1R-402"/>
                 <constraint firstItem="ixx-EY-Pvw" firstAttribute="leading" secondItem="Q9v-nS-TqT" secondAttribute="leading" id="LHl-fV-UPN"/>
                 <constraint firstItem="Q9v-nS-TqT" firstAttribute="bottom" secondItem="ixx-EY-Pvw" secondAttribute="bottom" id="NHP-4n-IfT"/>
                 <constraint firstItem="nJ2-sC-kqw" firstAttribute="top" secondItem="Mym-HK-gdR" secondAttribute="top" id="U3y-zK-svH"/>

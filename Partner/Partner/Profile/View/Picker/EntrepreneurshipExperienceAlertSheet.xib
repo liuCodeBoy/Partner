@@ -138,7 +138,7 @@
                 <constraint firstItem="utI-cu-4BO" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="LQQ-9r-1gr"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="IrE-7q-ArN" secondAttribute="trailing" id="RED-78-cz5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="utI-cu-4BO" secondAttribute="bottom" constant="-232" id="T8Y-xC-NfR"/>
-                <constraint firstItem="IrE-7q-ArN" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="bxZ-KJ-b5v"/>
+                <constraint firstItem="IrE-7q-ArN" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="bxZ-KJ-b5v"/>
                 <constraint firstItem="IrE-7q-ArN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mxa-WB-F8s"/>
                 <constraint firstItem="IrE-7q-ArN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qLY-0f-Fqo"/>
             </constraints>

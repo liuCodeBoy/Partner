@@ -9,6 +9,10 @@ import UIKit
 
 class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var isExpandedArray = [true, true, false, false, false, false]
+    
+    var rows = [1, 8, 1, 1, 1, 1]
+    
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -19,6 +23,24 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
             
         self?.navigationController?.navigationController?.popViewController(animated: true)
         }
+    }
+    
+    @objc func foldExpandHeader(_ tap : UITapGestureRecognizer) {
+        let tag = tap.view!.foldTag
+        if isExpandedArray[tag] == false {
+            // expand section
+            isExpandedArray.remove(at: tag)
+            isExpandedArray.insert(true, at: tag)
+        } else {
+            // fold section
+            isExpandedArray.remove(at: tag)
+            isExpandedArray.insert(false, at: tag)
+        }
+        let index = IndexPath(item: 0, section: tag)
+        let range = Range.init(NSRange.init(location: index.section, length: 1))
+        guard range != nil else { return }
+        let set = IndexSet.init(integersIn: range!)
+        profileInfoTableView.reloadSections(set, with: .automatic)
     }
     
     @IBOutlet weak var headerTitle: UILabel!
@@ -42,15 +64,16 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
-            return 8
+        if isExpandedArray[section] == true {
+            return rows[section]
         } else {
-            return 1
+            return 0
         }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewHeaderCell") as! ProfileTableViewHeaderCell
+        let headerView = Bundle.main.loadNibNamed("ProfileEditTableViewHeader", owner: self, options: nil)?.first as! ProfileEditTableViewHeader
+ 
         switch section {
         case 0 : return nil
         case 1: headerView.headerTitleLbl.text = "个人信息"
@@ -60,13 +83,21 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         case 5: headerView.headerTitleLbl.text = "个人介绍"
         default: break
         }
+        
+        if isExpandedArray[section] == true {
+            headerView.arrowImg.image = #imageLiteral(resourceName: "down_arrow")
+        } else {
+            headerView.arrowImg.image = #imageLiteral(resourceName: "up_arrow")
+        }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(foldExpandHeader(_:)))
+        headerView.addGestureRecognizer(tap)
+        headerView.foldTag = section
         return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 0.00001
-            
         }
         return 60
     }

@@ -42,21 +42,54 @@ class InputDetialViewController: UIViewController {
             presentHintMessage(hintMessgae: "输入不能为空", completion: nil)
         }
         
-        // pass data to the segue source view controller
-        let source = sourceSegue?.source as! MyProjectEditAndCreateViewController
         guard let identifier = sourceSegue?.identifier else { return }
-        switch identifier {
-        case "projNameSegue":
-            source.projNameLbl.text     = inputText
-        case "comFullNameSegue":
-            source.comFullNameLbl.text  = inputText
-        case "contactNameSegue":
-            source.contactNameLbl.text  = inputText
-        case "contactPhoneSegue":
-            source.contactPhoneLbl.text = inputText
-        case "emailSegue":
-            source.emailLbl.text        = inputText
-        default: break
+        guard let sourceSegue = sourceSegue else { return }
+        
+        // judge the segue source view controller 
+        // pass data to the segue source view controller
+        
+        if sourceSegue.source.isKind(of: MyProjectEditAndCreateViewController.self) {
+            let source = sourceSegue.source as! MyProjectEditAndCreateViewController
+            switch identifier {
+            case "projNameSegue":
+                source.projNameLbl.text     = inputText
+            case "comFullNameSegue":
+                source.comFullNameLbl.text  = inputText
+            case "contactNameSegue":
+                source.contactNameLbl.text  = inputText
+            case "contactPhoneSegue":
+                source.contactPhoneLbl.text = inputText
+            case "emailSegue":
+                source.emailLbl.text        = inputText
+            default: break
+            }
+        } else if sourceSegue.source.isKind(of: MyHomePageAddEntrepreneurshipExperienceViewController.self) {
+            let source = sourceSegue.source as! MyHomePageAddEntrepreneurshipExperienceViewController
+            switch identifier {
+            case "MHPEEProjNameSegue":
+                source.projNameLbl.text = inputText
+            case "MHPEELocationSegue":
+                source.locationLbl.text = inputText
+            case "MHPEEBelongedSegue":
+                source.belongedLbl.text = inputText
+            default: break
+            }
+        } else if sourceSegue.source.isKind(of: MyHomePageAddWorkExperienceViewController.self) {
+            let source = sourceSegue.source as! MyHomePageAddWorkExperienceViewController
+            switch identifier {
+            case "MHPWEComNameSegue":
+                source.companyNameLbl.text = inputText
+            default: break
+            }
+        } else if sourceSegue.source.isKind(of: MyHomePageAddEducationExperienceViewController.self) {
+            let source = sourceSegue.source as! MyHomePageAddEducationExperienceViewController
+            switch identifier {
+            case "MHPEduEMajorSegue":
+                source.majorLbl.text = inputText
+            case "MHPEduESchoolSegue":
+                source.schoolLbl.text = inputText
+            default: break
+            }
         }
         
         self.navigationController?.popViewController(animated: true)
