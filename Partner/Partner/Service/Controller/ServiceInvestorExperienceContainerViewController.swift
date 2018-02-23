@@ -1,13 +1,13 @@
 //
-//  MyHomePageSelfExperienceContainerViewController.swift
+//  ServiceInvestorExperienceContainerViewController.swift
 //  Partner
 //
-//  Created by Weslie on 07/02/2018.
+//  Created by Weslie on 23/02/2018.
 //
 
 import UIKit
 
-class MyHomePageSelfExperienceContainerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ServiceInvestorExperienceContainerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var expCount = [1, 2, 3]
     
@@ -25,15 +25,13 @@ class MyHomePageSelfExperienceContainerViewController: UIViewController, UITable
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-
-    
     // MARK:- down swipe to zoom the header image
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let point = scrollView.contentOffset
         
         guard segue != nil else { return }
         
-        let source = segue?.source as! MyHomePageViewController
+        let source = segue?.source as! ServiceInvestorProfileViewController
         if point.y < 0 {
             // down swipe
             source.headerImgHCons.constant = -point.y + 160
@@ -47,7 +45,6 @@ class MyHomePageSelfExperienceContainerViewController: UIViewController, UITable
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-    
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "MyHomePageExperiencesTableViewSectionHeaderCell") as! MyHomePageExperiencesTableViewSectionHeaderCell
@@ -97,15 +94,17 @@ class MyHomePageSelfExperienceContainerViewController: UIViewController, UITable
     }
     
     @objc func addEntrepreneurshipExp() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.entrepreneurshipExp.rawValue) as! MyHomePageAddEntrepreneurshipExperienceViewController
+        
+        let vc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: StoryboardID.entrepreneurshipExp.rawValue)  as! MyHomePageAddEntrepreneurshipExperienceViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @objc func addWorkExp() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.workExp.rawValue) as! MyHomePageAddWorkExperienceViewController
+        let vc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: StoryboardID.workExp.rawValue) as! MyHomePageAddWorkExperienceViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @objc func addEducationExp() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.educationExp.rawValue) as! MyHomePageAddEducationExperienceViewController
+        let vc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: StoryboardID.educationExp.rawValue) as! MyHomePageAddEducationExperienceViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
+
 }

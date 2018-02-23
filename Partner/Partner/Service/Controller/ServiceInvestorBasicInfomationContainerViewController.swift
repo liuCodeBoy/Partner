@@ -1,17 +1,17 @@
 //
-//  MyHomePageBasicInfomationContainerViewController.swift
+//  ServiceInvestorBasicInfomationContainerViewController.swift
 //  Partner
 //
-//  Created by Weslie on 07/02/2018.
+//  Created by Weslie on 23/02/2018.
 //
 
 import UIKit
 
-class MyHomePageBasicInfomationContainerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class ServiceInvestorBasicInfomationContainerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     var segue: UIStoryboardSegue?
     @IBOutlet weak var tableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 11.0, *) {
@@ -22,14 +22,14 @@ class MyHomePageBasicInfomationContainerViewController: UIViewController, UITabl
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-
+    
     // MARK:- down swipe to zoom the header image
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let point = scrollView.contentOffset
         
         guard segue != nil else { return }
         
-        let source = segue?.source as! MyHomePageViewController
+        let source = segue?.source as! ServiceInvestorProfileViewController
         if point.y < 0 {
             // down swipe
             source.headerImgHCons.constant = -point.y + 160
@@ -61,4 +61,3 @@ class MyHomePageBasicInfomationContainerViewController: UIViewController, UITabl
     }
 
 }
-
