@@ -8,6 +8,24 @@
 import UIKit
 
 class MyHomePageViewController: UIViewController {
+    
+    @IBOutlet weak var avatar: RoundRectImage!
+    @IBOutlet weak var nickNameLbl: UILabel!
+    @IBOutlet weak var jobLbl: UILabel!
+    
+    var viewModel: ProfileInfoModel? {
+        didSet {
+            if let url = viewModel?.userImgUrl {
+                avatar.sd_setImage(with: URL.init(string: url), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+            }
+            if let name = viewModel?.userName {
+                nickNameLbl.text = name
+            }
+            if let job = viewModel?.jobName {
+                jobLbl.text = job
+            }
+        }
+    }
 
     @IBOutlet weak var navViewHCons: NSLayoutConstraint!
     @IBOutlet weak var headerImg: UIImageView!

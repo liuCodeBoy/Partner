@@ -12,6 +12,11 @@ class MyHomePageBasicInfomationContainerViewController: UIViewController, UITabl
     var segue: UIStoryboardSegue?
     @IBOutlet weak var tableView: UITableView!
     
+    var viewModel: ProfileInfoModel? {
+        didSet {
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 11.0, *) {
