@@ -85,7 +85,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4Pu-Vy-ne5" secondAttribute="trailing" constant="12" id="cTf-iI-thy"/>
                 <constraint firstItem="J94-3n-aKi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mau-2u-0ma"/>
                 <constraint firstItem="J94-3n-aKi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sPU-IB-29U"/>
-                <constraint firstItem="J94-3n-aKi" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="tXb-So-gad"/>
+                <constraint firstItem="J94-3n-aKi" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="tXb-So-gad"/>
                 <constraint firstItem="J94-3n-aKi" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="wMd-UU-lL7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

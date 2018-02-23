@@ -57,7 +57,6 @@
 		D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA67B2011D68700745003 /* HomeViewController.swift */; };
 		D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347124F2011F0CF003E098E /* CustomTimePickerView.swift */; };
 		D34712512011F289003E098E /* CustomTimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347124E2011F0BA003E098E /* CustomTimePickerView.xib */; };
-		D347125520120085003E098E /* ProfileTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347125320120085003E098E /* ProfileTableViewHeaderCell.swift */; };
 		D347125D201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347125B201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift */; };
 		D34712612012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347125F2012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift */; };
 		D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347126320120685003E098E /* ProfileTextInputTableViewBodyCell.swift */; };
@@ -122,6 +121,11 @@
 		D3D6E00B202999F8005D3413 /* DegreePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6E00A202999F8005D3413 /* DegreePicker.swift */; };
 		D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E00C20299A10005D3413 /* DegreePicker.xib */; };
 		D3E0D81D2021F8C300DCBCF4 /* Designable+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0D81C2021F8C300DCBCF4 /* Designable+UIImageView.swift */; };
+		D3E33488203232C40084687C /* MyHomePageAddEntrepreneurshipExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E33487203232C40084687C /* MyHomePageAddEntrepreneurshipExperienceViewController.swift */; };
+		D3E3348A203232E70084687C /* MyHomePageAddWorkExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E33489203232E70084687C /* MyHomePageAddWorkExperienceViewController.swift */; };
+		D3E3348C203232F90084687C /* MyHomePageAddEducationExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3348B203232F90084687C /* MyHomePageAddEducationExperienceViewController.swift */; };
+		D3E3349420351CBD0084687C /* ProfileEditTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E3349320351CBD0084687C /* ProfileEditTableViewHeader.xib */; };
+		D3E3349620351D180084687C /* ProfileEditTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3349520351D180084687C /* ProfileEditTableViewHeader.swift */; };
 		D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */; };
 		FAB80F2A666DD7ADE1ECD37F /* Pods_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0678DD77F6C00CB0C07AE3 /* Pods_Partner.framework */; };
 /* End PBXBuildFile section */
@@ -201,7 +205,6 @@
 		D33EA67B2011D68700745003 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D347124E2011F0BA003E098E /* CustomTimePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTimePickerView.xib; sourceTree = "<group>"; };
 		D347124F2011F0CF003E098E /* CustomTimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimePickerView.swift; sourceTree = "<group>"; };
-		D347125320120085003E098E /* ProfileTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		D347125B201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHobbiesSelectorTableViewBodyCell.swift; sourceTree = "<group>"; };
 		D347125F2012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSkillsSelectorTableViewBodyCell.swift; sourceTree = "<group>"; };
 		D347126320120685003E098E /* ProfileTextInputTableViewBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextInputTableViewBodyCell.swift; sourceTree = "<group>"; };
@@ -273,6 +276,11 @@
 		D3D6E00A202999F8005D3413 /* DegreePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreePicker.swift; sourceTree = "<group>"; };
 		D3D6E00C20299A10005D3413 /* DegreePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DegreePicker.xib; sourceTree = "<group>"; };
 		D3E0D81C2021F8C300DCBCF4 /* Designable+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIImageView.swift"; sourceTree = "<group>"; };
+		D3E33487203232C40084687C /* MyHomePageAddEntrepreneurshipExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomePageAddEntrepreneurshipExperienceViewController.swift; sourceTree = "<group>"; };
+		D3E33489203232E70084687C /* MyHomePageAddWorkExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomePageAddWorkExperienceViewController.swift; sourceTree = "<group>"; };
+		D3E3348B203232F90084687C /* MyHomePageAddEducationExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomePageAddEducationExperienceViewController.swift; sourceTree = "<group>"; };
+		D3E3349320351CBD0084687C /* ProfileEditTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEditTableViewHeader.xib; sourceTree = "<group>"; };
+		D3E3349520351D180084687C /* ProfileEditTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditTableViewHeader.swift; sourceTree = "<group>"; };
 		D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBackgroundCoverView.swift; sourceTree = "<group>"; };
 		E46FEA25ACD4641F4CCFD97B /* Pods-PartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerUITests/Pods-PartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -504,7 +512,6 @@
 		D34712522011FFF9003E098E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D347125320120085003E098E /* ProfileTableViewHeaderCell.swift */,
 				D347125B201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift */,
 				D347125F2012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift */,
 				D347126320120685003E098E /* ProfileTextInputTableViewBodyCell.swift */,
@@ -521,6 +528,9 @@
 				D354B4632029AC7400482BF2 /* MyHomePageViewController.swift */,
 				D37D712E202AE9ED007B38EB /* MyHomePageBasicInfomationContainerViewController.swift */,
 				D37D7130202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift */,
+				D3E33487203232C40084687C /* MyHomePageAddEntrepreneurshipExperienceViewController.swift */,
+				D3E33489203232E70084687C /* MyHomePageAddWorkExperienceViewController.swift */,
+				D3E3348B203232F90084687C /* MyHomePageAddEducationExperienceViewController.swift */,
 			);
 			path = MyHomePage;
 			sourceTree = "<group>";
@@ -963,6 +973,8 @@
 		D378FF1F1FF0EAEB00065EEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3E3349320351CBD0084687C /* ProfileEditTableViewHeader.xib */,
+				D3E3349520351D180084687C /* ProfileEditTableViewHeader.swift */,
 				D32328FC2027F4BC00D5AAE7 /* Picker */,
 				D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */,
 				D34712522011FFF9003E098E /* Cell */,
@@ -1227,6 +1239,7 @@
 				B65BE18E202AA18C004407B1 /* View.xib in Resources */,
 				D30AA0F8202843D100711F20 /* EntrepreneurshipExperienceAlertSheet.xib in Resources */,
 				D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */,
+				D3E3349420351CBD0084687C /* ProfileEditTableViewHeader.xib in Resources */,
 				D30AA0FC2028568800711F20 /* PartnerPopulationPicker.xib in Resources */,
 				D378FEE11FF0D60800065EEC /* Home.storyboard in Resources */,
 				B678C9982021C82F007FEB83 /* Assets.xcassets in Resources */,
@@ -1454,7 +1467,6 @@
 			files = (
 				D30AA0FE20285B7F00711F20 /* EntrepreneurshipTimePicker.swift in Sources */,
 				D30AA10220287BC200711F20 /* Extension+Date.swift in Sources */,
-				D347125520120085003E098E /* ProfileTableViewHeaderCell.swift in Sources */,
 				B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */,
 				D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */,
 				B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */,
@@ -1464,11 +1476,13 @@
 				D347126820120943003E098E /* ProfileEditInfomationViewController.swift in Sources */,
 				D39F14DE201EF68E003F3BC5 /* ProjectEditMarketAnalysisTableViewCell.swift in Sources */,
 				D34712612012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift in Sources */,
+				D3E3349620351D180084687C /* ProfileEditTableViewHeader.swift in Sources */,
 				D35F5655200EE35E00149861 /* ProfileSettingsViewController.swift in Sources */,
 				D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */,
 				D3E0D81D2021F8C300DCBCF4 /* Designable+UIImageView.swift in Sources */,
 				D3034646201ECE93007A37A5 /* MyProjectEditViewController.swift in Sources */,
 				D347125D201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift in Sources */,
+				D3E3348C203232F90084687C /* MyHomePageAddEducationExperienceViewController.swift in Sources */,
 				B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */,
 				D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */,
 				D354B4672029D07A00482BF2 /* MyHomePageBasicInfomationTableViewCell.swift in Sources */,
@@ -1524,12 +1538,14 @@
 				D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */,
 				B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */,
 				D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */,
+				D3E33488203232C40084687C /* MyHomePageAddEntrepreneurshipExperienceViewController.swift in Sources */,
 				D39F8C38201F0CB100A40AC1 /* MyProjectEditMarketAnalysisViewController.swift in Sources */,
 				D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */,
 				D3A75918202D7CFF0043D68D /* MyHomePageEducationExperienceTableViewCell.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
 				D39F8C34201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift in Sources */,
 				D34C6AF9202D44B400EA225E /* MyHomePageWorkExperienceTableViewCell.swift in Sources */,
+				D3E3348A203232E70084687C /* MyHomePageAddWorkExperienceViewController.swift in Sources */,
 				B6E1FB01202871BD00BB2B4E /* PickImageCollectionView.swift in Sources */,
 				D355001620240163008D04A8 /* AspectImageViewController.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
@@ -1717,7 +1733,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UXX38SJ8T;
+				DEVELOPMENT_TEAM = QR3FJ6C72F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1729,7 +1745,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LLVM_LTO = NO;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Partner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Qinglv.Partner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Partner/Partner-Bridging-Header.h";
@@ -1747,7 +1763,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UXX38SJ8T;
+				DEVELOPMENT_TEAM = QR3FJ6C72F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1757,7 +1773,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Partner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Qinglv.Partner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Partner/Partner-Bridging-Header.h";

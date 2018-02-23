@@ -32,6 +32,8 @@ class MyHomePageViewController: UIViewController {
         experienceContainerView.isHidden = false
     }
     
+    @IBAction func backToHomePage(_ sender: UIStoryboardSegue) { }
+    
     @IBAction func uploadHeaderBackImgClicked(_ sender: ShadowButton) {
     }
     override func viewDidLoad() {
@@ -39,7 +41,6 @@ class MyHomePageViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         if isIPHONEX {
             headerImgHCons.constant += 24
-            navViewHCons.constant += 24
         }
     }
     

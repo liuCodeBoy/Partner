@@ -10,10 +10,6 @@ import UIKit
 class MyHomePageSelfExperienceContainerViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
     var expCount = [1, 2, 3]
-//    var sectionCount = 3
-//    var headerIsFolded = [0, 0, 0]
-    
-    var isExpandedArray = [false, false, false]
     
     var segue: UIStoryboardSegue?
     @IBOutlet weak var tableView: UITableView!
@@ -93,21 +89,23 @@ class MyHomePageSelfExperienceContainerViewController: UIViewController , UITabl
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "MyHomePageWorkExperienceTableViewCell") as! MyHomePageWorkExperienceTableViewCell
             cell = singleCell
         case 2:
-            let singleCell = tableView.dequeueReusableCell(withIdentifier: "MyHomePageWorkExperienceTableViewCell") as! MyHomePageWorkExperienceTableViewCell
+            let singleCell = tableView.dequeueReusableCell(withIdentifier: "MyHomePageEducationExperienceTableViewCell") as! MyHomePageEducationExperienceTableViewCell
             cell = singleCell
-
         default: break
         }
         return cell
     }
     
     @objc func addEntrepreneurshipExp() {
-        self.storyboard?.instantiateViewController(withIdentifier: "<#T##String#>")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.entrepreneurshipExp.rawValue) as! MyHomePageAddEntrepreneurshipExperienceViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @objc func addWorkExp() {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.workExp.rawValue) as! MyHomePageAddWorkExperienceViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @objc func addEducationExp() {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID.educationExp.rawValue) as! MyHomePageAddEducationExperienceViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

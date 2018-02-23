@@ -153,10 +153,6 @@ extension UIView {
         }
     }
     
-    convenience init(withTag: HeaderFooterViewTag) {
-        self.init()
-        viewWithTag(withTag.rawValue)
-    }
     
     func keyboardWillShow(from aView: UIView) {
         NotificationCenter.default.post(name: NSNotification.Name.init(keyboardShowNotification), object: aView)
