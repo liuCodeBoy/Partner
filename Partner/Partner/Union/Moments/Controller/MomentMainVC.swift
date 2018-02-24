@@ -100,16 +100,31 @@ extension MomentMainVC {
             return
         }
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+            
+            self.presentAlert(title: "您还未登录", hint: "", confirmTitle: "登录", cancelTitle: "取消", confirmation: { (action) in
+                let  navRegistAndLoginVC = UINavigationController.init(rootViewController: AppDelegate.RegisterAndLoginVC)
+                self.present(navRegistAndLoginVC, animated: true, completion: nil)
+            }, cancel: nil)
             return
         }
         NetWorkTool.shareInstance.getSocialCircleMomentList(token: access_token, type: 1, pageNum: pageNum) { [weak self](result, error) in
             if error != nil {
                 return }
+            
+            if  result?["code"] as? Int != 200  {
+                let  msg = result?["msg"] as? String
+                self?.presentHintMessage(hintMessgae: msg! , completion: { (_) in
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                })
+               
+             }
+                
             guard let resultArray = result else{
                 return
             }
+            self?.momentTableView.mj_header.endRefreshing()
             let dict  =   resultArray["result"] as? NSDictionary
-          
             if  let statusViewModel = StatusViewModel.mj_object(withKeyValues: dict)
             {
                 self?.statusViewModelArr =  statusViewModel

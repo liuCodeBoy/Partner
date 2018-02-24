@@ -221,9 +221,11 @@ extension CriclePicktrueView : UICollectionViewDataSource,UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 && indexPath.row == self.modelArr.count {
             //CreateCricleVCID
-            if self.showVCClouse != nil {
+            if self.showVCClouse != nil{
                 self.showVCClouse!()
             }
+        }else{
+            
         }
     }
 }
