@@ -12,6 +12,7 @@ class MyHomePageSelfExperienceContainerViewController: UIViewController, UITable
     var expCount = [1, 2, 3]
     
     var segue: UIStoryboardSegue?
+
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
