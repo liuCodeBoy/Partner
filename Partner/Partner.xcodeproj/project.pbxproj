@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		53778418D7E5BF3B198BAAE4 /* Pods_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */; };
 		93A2197792B5860862374D6B /* Pods_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */; };
+		B625F2F8204115E50060F713 /* DetailInfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B625F2F7204115E50060F713 /* DetailInfoTableView.swift */; };
 		B641021D2015D7D3001C8787 /* SkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641021C2015D7D3001C8787 /* SkillViewController.swift */; };
 		B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E5200C4932007799BC /* InformationDetailVC.swift */; };
 		B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E7200C506A007799BC /* Extension+UIViewController.swift */; };
@@ -27,6 +28,7 @@
 		B68182DD203FC385007CE890 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68182DC203FC385007CE890 /* UserModel.swift */; };
 		B68182DF203FC846007CE890 /* UserSearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68182DE203FC846007CE890 /* UserSearchTableView.swift */; };
 		B68182E120401D1F007CE890 /* CircleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68182E020401D1F007CE890 /* CircleDetailVC.swift */; };
+		B68182E32041044C007CE890 /* CicrleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68182E22041044C007CE890 /* CicrleDetailModel.swift */; };
 		B6843E372020223A00B86A3F /* UnionMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E362020223A00B86A3F /* UnionMainVC.swift */; };
 		B6843E3A202173FD00B86A3F /* MomentMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E39202173FD00B86A3F /* MomentMainVC.swift */; };
 		B6843E3D202192C700B86A3F /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E3C202192C700B86A3F /* StatusViewModel.swift */; };
@@ -38,6 +40,9 @@
 		B6B9A53A20243CC900AC24EB /* CricleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A53920243CC900AC24EB /* CricleViewController.swift */; };
 		B6BD3D06202D43A1005595ED /* CreateCricleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD3D05202D43A1005595ED /* CreateCricleVC.swift */; };
 		B6C27D072019AF200087FF17 /* ForgetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */; };
+		B6D7F80B20415DC80044B31C /* CircleManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F80A20415DC80044B31C /* CircleManageVC.swift */; };
+		B6D7F80D204163BA0044B31C /* CircleNameEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F80C204163B90044B31C /* CircleNameEditVC.swift */; };
+		B6D7F80F204169370044B31C /* CircleSettingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7F80E204169370044B31C /* CircleSettingInfoModel.swift */; };
 		B6E1FAFD20286D8000BB2B4E /* StatusPushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1FAFC20286D7F00BB2B4E /* StatusPushVC.swift */; };
 		B6E1FB01202871BD00BB2B4E /* PickImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1FB00202871BD00BB2B4E /* PickImageCollectionView.swift */; };
 		B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EF1D32201EC911000479F8 /* TageModel.swift */; };
@@ -178,6 +183,7 @@
 		6D0678DD77F6C00CB0C07AE3 /* Pods_Partner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Partner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9032E3D99C1574E7CE07F113 /* Pods-PartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerTests/Pods-PartnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B625F2F7204115E50060F713 /* DetailInfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoTableView.swift; sourceTree = "<group>"; };
 		B641021C2015D7D3001C8787 /* SkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillViewController.swift; sourceTree = "<group>"; };
 		B641021E2016D2E2001C8787 /* NoticeBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NoticeBar.framework; path = Carthage/Build/iOS/NoticeBar.framework; sourceTree = "<group>"; };
 		B65517E5200C4932007799BC /* InformationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailVC.swift; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 		B68182DC203FC385007CE890 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B68182DE203FC846007CE890 /* UserSearchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchTableView.swift; sourceTree = "<group>"; };
 		B68182E020401D1F007CE890 /* CircleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDetailVC.swift; sourceTree = "<group>"; };
+		B68182E22041044C007CE890 /* CicrleDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicrleDetailModel.swift; sourceTree = "<group>"; };
 		B6843E362020223A00B86A3F /* UnionMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionMainVC.swift; sourceTree = "<group>"; };
 		B6843E3820216B5E00B86A3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6843E39202173FD00B86A3F /* MomentMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentMainVC.swift; sourceTree = "<group>"; };
@@ -208,6 +215,9 @@
 		B6B9A53920243CC900AC24EB /* CricleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricleViewController.swift; sourceTree = "<group>"; };
 		B6BD3D05202D43A1005595ED /* CreateCricleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCricleVC.swift; sourceTree = "<group>"; };
 		B6C27D062019AF200087FF17 /* ForgetPwdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPwdVC.swift; sourceTree = "<group>"; };
+		B6D7F80A20415DC80044B31C /* CircleManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleManageVC.swift; sourceTree = "<group>"; };
+		B6D7F80C204163B90044B31C /* CircleNameEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleNameEditVC.swift; sourceTree = "<group>"; };
+		B6D7F80E204169370044B31C /* CircleSettingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSettingInfoModel.swift; sourceTree = "<group>"; };
 		B6E1FAFC20286D7F00BB2B4E /* StatusPushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPushVC.swift; sourceTree = "<group>"; };
 		B6E1FB00202871BD00BB2B4E /* PickImageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageCollectionView.swift; sourceTree = "<group>"; };
 		B6EF1D32201EC911000479F8 /* TageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TageModel.swift; path = Partner/Login/Welcome/TageModel.swift; sourceTree = SOURCE_ROOT; };
@@ -471,6 +481,8 @@
 			children = (
 				B65BE18F202AF13A004407B1 /* CircleModel.swift */,
 				B68182DC203FC385007CE890 /* UserModel.swift */,
+				B68182E22041044C007CE890 /* CicrleDetailModel.swift */,
+				B6D7F80E204169370044B31C /* CircleSettingInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -501,6 +513,8 @@
 				B6BD3D05202D43A1005595ED /* CreateCricleVC.swift */,
 				B65AAC09203FAD5F00A76358 /* SearchUserVC.swift */,
 				B68182E020401D1F007CE890 /* CircleDetailVC.swift */,
+				B6D7F80A20415DC80044B31C /* CircleManageVC.swift */,
+				B6D7F80C204163B90044B31C /* CircleNameEditVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -511,6 +525,7 @@
 				B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */,
 				B68182DA203FAF2E007CE890 /* UserSearchBarCell.swift */,
 				B68182DE203FC846007CE890 /* UserSearchTableView.swift */,
+				B625F2F7204115E50060F713 /* DetailInfoTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1575,6 +1590,7 @@
 				D30AA10220287BC200711F20 /* Extension+Date.swift in Sources */,
 				B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */,
 				D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */,
+				B68182E32041044C007CE890 /* CicrleDetailModel.swift in Sources */,
 				D35A9D1D203FB1B700408B9E /* ServiceFounderBriefTableViewCell.swift in Sources */,
 				B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */,
 				B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */,
@@ -1586,6 +1602,7 @@
 				D34712612012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift in Sources */,
 				D3E3349620351D180084687C /* ProfileEditTableViewHeader.swift in Sources */,
 				D3722C8F203FA6F500E0B765 /* ServiceMainProviderListTableViewCell.swift in Sources */,
+				B625F2F8204115E50060F713 /* DetailInfoTableView.swift in Sources */,
 				D35F5655200EE35E00149861 /* ProfileSettingsViewController.swift in Sources */,
 				D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */,
 				D3E0D81D2021F8C300DCBCF4 /* Designable+UIImageView.swift in Sources */,
@@ -1620,6 +1637,7 @@
 				D3B8E5C6201AF285002F3A3A /* SingleProjectTableViewCell.swift in Sources */,
 				D39A4F37200D98AF00022A76 /* Extension+Colors.swift in Sources */,
 				B6EF1D3A201F5D8D000479F8 /* RegisterAndLoginVC.swift in Sources */,
+				B6D7F80D204163BA0044B31C /* CircleNameEditVC.swift in Sources */,
 				D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */,
 				D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */,
 				B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */,
@@ -1679,6 +1697,7 @@
 				D31C3CAD2040057300E97460 /* ProfileInfoModel.swift in Sources */,
 				D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */,
 				D34C6AF5202D43C700EA225E /* MyHomePageExperiencesTableViewSectionHeaderCell.swift in Sources */,
+				B6D7F80F204169370044B31C /* CircleSettingInfoModel.swift in Sources */,
 				D35A9D1F203FB67D00408B9E /* ServiceFindProjectViewController.swift in Sources */,
 				D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */,
 				B65BE190202AF13A004407B1 /* CircleModel.swift in Sources */,
@@ -1690,6 +1709,7 @@
 				D39F8C32201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift in Sources */,
 				D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */,
 				D35A9D1B203FB18C00408B9E /* ServiceProjectBriefTableViewCell.swift in Sources */,
+				B6D7F80B20415DC80044B31C /* CircleManageVC.swift in Sources */,
 				B65BE18A2029D653004407B1 /* LoopView.swift in Sources */,
 				D303464E201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift in Sources */,
 			);
