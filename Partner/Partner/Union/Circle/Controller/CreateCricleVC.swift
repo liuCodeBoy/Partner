@@ -7,27 +7,43 @@
 
 import UIKit
 import NVActivityIndicatorView
+
 class CreateCricleVC: UIViewController {
     @IBOutlet weak var pictrueCollectionView: PickImageCollectionView!
     @IBOutlet weak var placeholdView: LimitTextView!
+    @IBOutlet weak var selectedUserTableView: UserSearchTableView!
+    
+    var userModelArr = [UserModel]()
     let   limitNumbers  = 20
     let   pictrueNumber = 1
- override func viewDidLoad() {
+    var   circleID  = 0
+    override func viewDidLoad() {
         super.viewDidLoad()
         placeholdView.limitNum    = limitNumbers
         pictrueCollectionView.maxPictrues = pictrueNumber
         showVCClouse()
         setLayout()
-        
+    
+ 
       
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! SearchUserVC
+        dest.seague = segue
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        selectedUserTableView.userModelArr = userModelArr
+        
+    }
     
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+  
+    
    
- 
+    
     
     @IBAction func submitBtnClicked(_ sender: UIButton) {
         if Int(placeholdView.inputTF.text.count) == 0 || placeholdView.inputTF.text.replacingOccurrences(of: " ", with: "") == "" {
@@ -42,10 +58,16 @@ class CreateCricleVC: UIViewController {
                 presentHintMessage(hintMessgae: "您还未登录", completion: nil)
                 return
             }
+            var  membIds = UserDefaults.standard.string(forKey: "uid")!
+            if userModelArr.count > 0 {
+                for  model in userModelArr{
+                    membIds = membIds+","+"\(String(describing: model.uid!))"
+                }
+            }
         
             //加载动画
             NVActivityIndicatorPresenter.sharedInstance.startAnimating(AppDelegate.activityData)
-            NetWorkTool.shareInstance.circleCreated(token: access_token, membIds: UserDefaults.standard.string(forKey: "uid")!, circName: placeholdView.inputTF.text, circDesc: "", image: pictrueCollectionView.imageArr[0], finished: { [weak self](info, error) in
+            NetWorkTool.shareInstance.circleCreated(token: access_token, membIds: membIds, circName: placeholdView.inputTF.text, circDesc: "", image: pictrueCollectionView.imageArr[0], finished: { [weak self](info, error) in
                 NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 if error == nil {
                  // MARK:- judge the return data from server
