@@ -64,6 +64,17 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK:- token expired or login infomation invalid
+    func checkLoginStatus() {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentHintMessage(hintMessgae: "你还为登陆", completion: { [weak self](_) in
+                let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
+                self?.navigationController?.present(vc, animated: true, completion: nil)
+            })
+            return
+        }
+    }
+    
     // add observer in the view controller to change frame
     func notificationAddKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.init(keyboardShowNotification), object: nil)

@@ -8,6 +8,24 @@
 import UIKit
 
 class MyHomePageViewController: UIViewController {
+    
+    @IBOutlet weak var avatar: RoundRectImage!
+    @IBOutlet weak var nickNameLbl: UILabel!
+    @IBOutlet weak var jobLbl: UILabel!
+    
+    var viewModel: ProfileInfoModel? {
+        didSet {
+            if let url = viewModel?.userImgUrl {
+                avatar.sd_setImage(with: URL.init(string: url), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+            }
+            if let name = viewModel?.userName {
+                nickNameLbl.text = name
+            }
+            if let job = viewModel?.jobName {
+                jobLbl.text = job
+            }
+        }
+    }
 
     @IBOutlet weak var navViewHCons: NSLayoutConstraint!
     @IBOutlet weak var headerImg: UIImageView!
@@ -35,6 +53,20 @@ class MyHomePageViewController: UIViewController {
     @IBAction func backToHomePage(_ sender: UIStoryboardSegue) { }
     
     @IBAction func uploadHeaderBackImgClicked(_ sender: ShadowButton) {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        checkLoginStatus()
+        NetWorkTool.shareInstance.getMyInfo(token: access_token!) { [weak self](result, error) in
+            if error != nil {
+                self?.presentConfirmationAlert(hint: "\(String(describing: error))", completion: nil)
+            }
+            if result!["code"] as! Int == 200 {
+                self?.viewModel = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
+            } else {
+                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"])))", completion: nil)
+            }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
