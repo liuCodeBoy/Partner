@@ -9,12 +9,15 @@ import UIKit
 
 class MyHomePageBasicInfomationContainerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     var segue: UIStoryboardSegue?
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel: ProfileInfoModel? {
         didSet {
-            
+            if let url = viewModel?.userImgUrl {
+                
+            }
         }
     }
     override func viewDidLoad() {

@@ -42,3 +42,5 @@ enum StoryboardID: String {
     case workExp                = "MyHomePageAddWorkExperience"
     case educationExp           = "MyHomePageAddEducationExperience"
 }
+
+let access_token = UserDefaults.standard.string(forKey: "token")
