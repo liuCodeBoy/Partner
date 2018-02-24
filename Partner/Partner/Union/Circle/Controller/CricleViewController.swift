@@ -29,9 +29,16 @@ class CricleViewController: UIViewController {
             self.presentHintMessage(hintMessgae: info, completion: { (action) in
             })
         }
-        circlePickertrueView.showVCClouse = {() in
-        let createVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CreateCricleVCID")
-        self.navigationController?.show(createVC, sender: nil)
+        circlePickertrueView.showVCClouse = {(circleID) in
+            var  destVC : UIViewController?
+            if circleID == 0 {
+                destVC  = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CreateCricleVCID")
+            }else{
+                let  detailVC  = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleDetailVCID") as! CircleDetailVC
+                detailVC.circleId = circleID
+                destVC = detailVC
+            }
+            self.navigationController?.show(destVC!, sender: nil)
         }
     }
     
@@ -48,6 +55,11 @@ class CricleViewController: UIViewController {
     deinit {
          NotificationCenter.default.removeObserver(self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         self.tabBarController?.tabBar.isHidden = false
+    }
+  
 }
 
 

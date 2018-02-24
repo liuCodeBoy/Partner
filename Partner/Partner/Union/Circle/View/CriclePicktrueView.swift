@@ -10,7 +10,7 @@ import MJRefresh
 //定义提示闭包
 typealias showInfoType = (String) -> ()
 //弹出控制器闭包
-typealias showVCType = () -> ()
+typealias showVCType = (Int) -> ()
 class CriclePicktrueView: UICollectionView {
     var   showInfoTypeClouse : showInfoType?
     var   showVCClouse       : showVCType?
@@ -222,10 +222,19 @@ extension CriclePicktrueView : UICollectionViewDataSource,UICollectionViewDelega
         if indexPath.section == 0 && indexPath.row == self.modelArr.count {
             //CreateCricleVCID
             if self.showVCClouse != nil{
-                self.showVCClouse!()
+                self.showVCClouse!(0)
             }
         }else{
-            
+            guard  self.modelArr.count > 0 else{
+                return
+            }
+            if self.showVCClouse != nil && indexPath.section == 0{
+                 let model = self.modelArr[indexPath.row]
+                self.showVCClouse!(model.circleId as! Int)
+            }else if self.showVCClouse != nil && indexPath.section == 1{
+                let model = self.othersModelArr[indexPath.row]
+                self.showVCClouse!(model.circleId as! Int)
+            }
         }
     }
 }
