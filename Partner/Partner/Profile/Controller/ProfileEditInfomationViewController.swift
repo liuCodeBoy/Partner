@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import ImagePicker
+import Lightbox
 
-class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ImagePickerDelegate {
     
     var isExpandedArray = [true, true, false, false, false, false]
+    
+    var destnationVC: ProfileEditInfomationInputDetialViewController?
     
     var rows = [1, 8, 1, 1, 1, 1]
     
@@ -108,6 +112,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         
         switch indexPath.section {
         case 0: let avatarCell = tableView.dequeueReusableCell(withIdentifier: "ProfileEditChooseAvatarTableViewCell") as! ProfileEditChooseAvatarTableViewCell
+        // tap to pick image
+        let tap = UITapGestureRecognizer(target: self, action: #selector(chooseAvatar))
+        avatarCell.avatar.addGestureRecognizer(tap)
             cell = avatarCell
         case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: "ProfileEditSelfInfomationCell")!
@@ -130,7 +137,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                     cell.detailTextLabel?.text = "请选择"
             default: break
             }
-        case 2: cell = tableView.dequeueReusableCell(withIdentifier: "ProfileHobbiesSelectorTableViewBodyCell")!
+        case 2: let singleCell = tableView.dequeueReusableCell(withIdentifier: "ProfileHobbiesSelectorTableViewBodyCell") as! ProfileHobbiesSelectorTableViewBodyCell
+        
+            cell = singleCell
         case 3: cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsSelectorTableViewBodyCell")!
         case 4: let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
             tagCell.placeholderLbl.text = "简要介绍你的合伙需求（必填）"
@@ -158,8 +167,27 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         }
     }
     
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.section == 1 {
+            switch indexPath.row {
+            case 0, 2, 3, 4, 5: return indexPath
+            case 1: print("1")
+            case 6: print("6")
+            case 7: print("7")
+            default: break
+            }
+        }
+        return nil
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.section == 1 {
+            let selectedCell = tableView.cellForRow(at: indexPath)
+            let detialText = selectedCell?.textLabel?.text!
+            destnationVC?.navTitle = detialText
+            destnationVC?.previousIndexPath = indexPath
+            destnationVC?.inputPlaceholder = "请输入你的\(String(describing: detialText!))"
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -168,8 +196,56 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         keyboardWillHide(withTransforming: profileInfoTableView)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! ProfileEditInfomationInputDetialViewController
+        destnationVC = dest
+        destnationVC?.segue = segue
+        if segue.identifier != "PEIInputDetialSegue" {
+            destnationVC?.navTitle = "自定义标签"
+        }
+        
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.profileInfoTableView.endEditing(true)
+    }
+    
+    @objc func chooseAvatar() {
+        let picker = ImagePickerController()
+        picker.delegate = self
+        picker.imageLimit = 1
+        present(picker, animated: true, completion: nil)
+    }
+    
+    // MARK:- image picker protocol functions
+
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        guard images.count > 0 else { return }
+        let lightboxImages = images.map {
+            return LightboxImage(image: $0)
+        }
+        let lightbox = LightboxController(images: lightboxImages, startIndex: 0)
+        imagePicker.present(lightbox, animated: true, completion: nil)
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        guard images.count > 0 else { return }
+        imagePicker.dismiss(animated: true) {
+            weak var weakSelf = self
+            for img in images {
+                let avatarCell = weakSelf?.profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! ProfileEditChooseAvatarTableViewCell
+                avatarCell.avatar.image = img
+            }
+        }
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
 }

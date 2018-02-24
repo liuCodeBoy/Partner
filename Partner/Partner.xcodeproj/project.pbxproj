@@ -97,6 +97,7 @@
 		D3722C8F203FA6F500E0B765 /* ServiceMainProviderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3722C8E203FA6F500E0B765 /* ServiceMainProviderListTableViewCell.swift */; };
 		D3722C93203FACF700E0B765 /* ServiceProviderCompanyIntroductionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3722C92203FACF700E0B765 /* ServiceProviderCompanyIntroductionTableViewCell.swift */; };
 		D3722C95203FAD2B00E0B765 /* ServiceProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3722C94203FAD2B00E0B765 /* ServiceProviderViewController.swift */; };
+		D3787E8A20411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3787E8920411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift */; };
 		D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378FE9E1FF0D21600065EEC /* AppDelegate.swift */; };
 		D378FEA41FF0D21600065EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D378FEA21FF0D21600065EEC /* Main.storyboard */; };
 		D378FEA91FF0D21600065EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D378FEA71FF0D21600065EEC /* LaunchScreen.storyboard */; };
@@ -271,6 +272,7 @@
 		D3722C8E203FA6F500E0B765 /* ServiceMainProviderListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMainProviderListTableViewCell.swift; sourceTree = "<group>"; };
 		D3722C92203FACF700E0B765 /* ServiceProviderCompanyIntroductionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderCompanyIntroductionTableViewCell.swift; sourceTree = "<group>"; };
 		D3722C94203FAD2B00E0B765 /* ServiceProviderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderViewController.swift; sourceTree = "<group>"; };
+		D3787E8920411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditInfomationInputDetialViewController.swift; sourceTree = "<group>"; };
 		D378FE9B1FF0D21600065EEC /* Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D378FE9E1FF0D21600065EEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D378FEA31FF0D21600065EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1095,6 +1097,7 @@
 			children = (
 				D39A4F3A200DA58200022A76 /* ProfileViewController.swift */,
 				D347126720120943003E098E /* ProfileEditInfomationViewController.swift */,
+				D3787E8920411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift */,
 				D3B8B8EF20107BB500EDD145 /* VisitorsReservationViewController.swift */,
 				D35F5659200EF3AC00149861 /* FeedbackViewController.swift */,
 				D354B45F2029AC1300482BF2 /* MyHomePage */,
@@ -1649,6 +1652,7 @@
 				D39F8C3A201F0CC900A40AC1 /* MyProjectEditRunStatusViewController.swift in Sources */,
 				D30AA0F6202843C100711F20 /* EntrepreneurshipExperienceAlertSheet.swift in Sources */,
 				D3B8E5C3201AF1CB002F3A3A /* MyProjectViewController.swift in Sources */,
+				D3787E8A20411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift in Sources */,
 				D35A9D14203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift in Sources */,
 				D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */,
 				D30AA0FA2028568100711F20 /* PartnerPopulationPicker.swift in Sources */,

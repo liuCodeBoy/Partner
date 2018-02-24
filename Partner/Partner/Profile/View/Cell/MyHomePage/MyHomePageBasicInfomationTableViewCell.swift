@@ -32,7 +32,15 @@ class MyHomePageBasicInfomationTableViewCell: UITableViewCell {
             if let skill = viewModel?.skill {
                 skillsLbl.text = skill
             }
-            
+            if let hobby = viewModel?.hobby {
+                hobbiesLbl.text = hobby
+            }
+            if let req = viewModel?.require {
+                coopRequsetLbl.text = req
+            }
+            if let intro = viewModel?.desc {
+                selfIntroLbl.text = intro
+            }
         }
     }
 

@@ -17,6 +17,7 @@ class InputDetialViewController: UIViewController {
     
     var navTitle: String?
     var inputPlaceholder: String?
+    var inputLimit: Int = 24
     
     @IBOutlet weak var navTitleLbl: UILabel!
     @IBOutlet weak var inputTF: UITextField!
@@ -40,6 +41,10 @@ class InputDetialViewController: UIViewController {
     @IBAction func saveBtnClicked(_ sender: UIButton) {
         if inputText == nil || inputText!.isEmptyString {
             presentHintMessage(hintMessgae: "输入不能为空", completion: nil)
+        }
+        if inputText!.count > inputLimit {
+            presentConfirmationAlert(hint: "输入字数不能超过\(inputLimit)字", completion: nil)
+            return
         }
         
         guard let identifier = sourceSegue?.identifier else { return }
