@@ -13,5 +13,8 @@ class UserModel: NSObject {
      @objc var userImgUrl   :  String?
      @objc var userName     :  String?
      @objc var userComm     :  String?
-
+     @objc var create       :  NSNumber?
+     @objc var status       :  NSNumber?
+     @objc var circleMembId :  NSNumber?
 }
+

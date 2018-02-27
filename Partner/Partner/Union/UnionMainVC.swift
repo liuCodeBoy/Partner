@@ -39,6 +39,7 @@ class UnionMainVC: UIViewController {
         btn.setTitleColor(#colorLiteral(red: 0.7771913409, green: 0.7979340553, blue: 0.8144465089, alpha: 1), for: .normal)
         btn.setTitleColor( #colorLiteral(red: 0.3028550148, green: 0.4081297517, blue: 0.4641876817, alpha: 1),for: .selected)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        btn.tag = i+1212
         btn.addTarget(self, action: #selector(addOffSetX(btn:)), for: UIControlEvents.touchUpInside)
         sliderBtnArr.append(btn)
         self.topContentView.addSubview(btn)
@@ -59,14 +60,17 @@ class UnionMainVC: UIViewController {
     UIView.animate(withDuration: 0.3) {
         weak var weakSelf = self
         weakSelf?.sliderView?.center.x = btn.center.x
+        
+        let  index = CGFloat(btn.tag - 1212)
+        weakSelf?.scrollView?.contentOffset.x = index * screenWidth
        }
-    for tempBtn  in topContentView.subviews{
+      for tempBtn  in topContentView.subviews{
         if  let   btn = tempBtn as? UIButton {
              btn.isSelected = false
         }
     }
-    
     btn.isSelected = !btn.isSelected
+  
     }
     
     //添加子控制器的ScrollView

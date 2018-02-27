@@ -14,11 +14,17 @@ class CircleDetailVC: UIViewController {
     var   circleId : Int = 0
     @IBOutlet weak var CircleDetImag: UIImageView!
     @IBOutlet weak var detailTableview: DetailInfoTableView!
+    @IBOutlet weak var commandView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
         getCircleDetInfo()
+        //添加子控
+        let circledetailCommandVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleDetailCommandVCID")
+        circledetailCommandVC.view.frame = CGRect.init(x: 0, y: 0, width: commandView.frame.width, height: commandView.frame.height)
+        self.addChildViewController(circledetailCommandVC)
+        commandView.addSubview(circledetailCommandVC.view)
        
     }
     
@@ -55,12 +61,12 @@ class CircleDetailVC: UIViewController {
                                 case 1:
                                     self?.secondImg.sd_setImage(with: URL.init(string: imageStrArr[1]), placeholderImage: nil)
                                     self?.secondImg.isHidden = false
-                                    self?.firstImg.isHidden = true
+                                    self?.firstImg.isHidden = false
                                     self?.thirdImg.isHidden = true
                                 case 2:
                                     self?.thirdImg.sd_setImage(with: URL.init(string: imageStrArr[2]), placeholderImage: nil)
-                                    self?.firstImg.isHidden = true
-                                    self?.secondImg.isHidden = true
+                                    self?.firstImg.isHidden = false
+                                    self?.secondImg.isHidden = false
                                     self?.thirdImg.isHidden = false
                                 default: break
                                     
@@ -84,8 +90,15 @@ class CircleDetailVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let  destVC = segue.destination as! CircleManageVC
-        destVC.circleDetailSeague = segue
+        if segue.identifier == "CircleManageVCID" {
+            let  destVC = segue.destination as! CircleManageVC
+            destVC.circleDetailSeague = segue
+        }else if segue.identifier == "MemberOfCircleVCID" {
+            let  destVC = segue.destination as! MemberOfCircleVC
+            destVC.circleID = circleId
+             //destVC.circleDetailSeague = segue
+        }
+
     }
     
  
