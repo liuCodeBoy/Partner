@@ -23,6 +23,12 @@
 		B65E09D52044F40600BF81FF /* MyCircleEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09D42044F40600BF81FF /* MyCircleEntityModel.swift */; };
 		B65E09D72045416300BF81FF /* CircleDetailCommandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09D62045416300BF81FF /* CircleDetailCommandVC.swift */; };
 		B65E09D92045539200BF81FF /* CircleStautsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09D82045539200BF81FF /* CircleStautsCell.swift */; };
+		B65E09DB20464B3800BF81FF /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09DA20464B3800BF81FF /* NoticeViewController.swift */; };
+		B65E09DD20464CC900BF81FF /* NoticeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09DC20464CC900BF81FF /* NoticeListViewController.swift */; };
+		B65E09DF20464D2B00BF81FF /* NoticeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09DE20464D2B00BF81FF /* NoticeListCell.swift */; };
+		B65E09E12046538000BF81FF /* NoticeInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09E02046538000BF81FF /* NoticeInfoModel.swift */; };
+		B65E09E320468B7000BF81FF /* NoticeSocialConnListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09E220468B7000BF81FF /* NoticeSocialConnListModel.swift */; };
+		B65E09E5204690A900BF81FF /* NoticeSocialConnListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09E4204690A900BF81FF /* NoticeSocialConnListCell.swift */; };
 		B678C9982021C82F007FEB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6843E3820216B5E00B86A3F /* Assets.xcassets */; };
 		B678C99A2021E065007FEB83 /* UnionNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */; };
 		B678C99C2021E967007FEB83 /* UnionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C99B2021E967007FEB83 /* UnionListModel.swift */; };
@@ -209,6 +215,12 @@
 		B65E09D42044F40600BF81FF /* MyCircleEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCircleEntityModel.swift; sourceTree = "<group>"; };
 		B65E09D62045416300BF81FF /* CircleDetailCommandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDetailCommandVC.swift; sourceTree = "<group>"; };
 		B65E09D82045539200BF81FF /* CircleStautsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleStautsCell.swift; sourceTree = "<group>"; };
+		B65E09DA20464B3800BF81FF /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		B65E09DC20464CC900BF81FF /* NoticeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListViewController.swift; sourceTree = "<group>"; };
+		B65E09DE20464D2B00BF81FF /* NoticeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCell.swift; sourceTree = "<group>"; };
+		B65E09E02046538000BF81FF /* NoticeInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeInfoModel.swift; sourceTree = "<group>"; };
+		B65E09E220468B7000BF81FF /* NoticeSocialConnListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSocialConnListModel.swift; sourceTree = "<group>"; };
+		B65E09E4204690A900BF81FF /* NoticeSocialConnListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSocialConnListCell.swift; sourceTree = "<group>"; };
 		B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionNetWorkTool.swift; sourceTree = "<group>"; };
 		B678C99B2021E967007FEB83 /* UnionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionListModel.swift; sourceTree = "<group>"; };
 		B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginVC.swift; sourceTree = "<group>"; };
@@ -484,6 +496,8 @@
 				B6843E3C202192C700B86A3F /* StatusViewModel.swift */,
 				B678C99B2021E967007FEB83 /* UnionListModel.swift */,
 				B65E09D42044F40600BF81FF /* MyCircleEntityModel.swift */,
+				B65E09E02046538000BF81FF /* NoticeInfoModel.swift */,
+				B65E09E220468B7000BF81FF /* NoticeSocialConnListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -495,6 +509,8 @@
 				B6843E412021999D00B86A3F /* PicCollectionView.swift */,
 				B6843E3F202195C800B86A3F /* StatusViewCell.swift */,
 				B65BE17D2029A4AD004407B1 /* CircleChooseTableView.swift */,
+				B65E09DE20464D2B00BF81FF /* NoticeListCell.swift */,
+				B65E09E4204690A900BF81FF /* NoticeSocialConnListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -516,6 +532,8 @@
 			children = (
 				B6843E39202173FD00B86A3F /* MomentMainVC.swift */,
 				B6E1FAFC20286D7F00BB2B4E /* StatusPushVC.swift */,
+				B65E09DA20464B3800BF81FF /* NoticeViewController.swift */,
+				B65E09DC20464CC900BF81FF /* NoticeListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1637,6 +1655,7 @@
 				D3722C8F203FA6F500E0B765 /* ServiceMainProviderListTableViewCell.swift in Sources */,
 				B625F2F8204115E50060F713 /* DetailInfoTableView.swift in Sources */,
 				D35F5655200EE35E00149861 /* ProfileSettingsViewController.swift in Sources */,
+				B65E09DD20464CC900BF81FF /* NoticeListViewController.swift in Sources */,
 				D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */,
 				D3E0D81D2021F8C300DCBCF4 /* Designable+UIImageView.swift in Sources */,
 				D3722C93203FACF700E0B765 /* ServiceProviderCompanyIntroductionTableViewCell.swift in Sources */,
@@ -1651,6 +1670,7 @@
 				D35A9D23203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift in Sources */,
 				D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */,
 				B687ABA22043EBCE004C915A /* SearchUserJionInCircleVC.swift in Sources */,
+				B65E09E12046538000BF81FF /* NoticeInfoModel.swift in Sources */,
 				B6843E40202195C800B86A3F /* StatusViewCell.swift in Sources */,
 				D3BCE69E2019D44A00097DDA /* InputDetialViewController.swift in Sources */,
 				D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */,
@@ -1662,6 +1682,7 @@
 				D3722C95203FAD2B00E0B765 /* ServiceProviderViewController.swift in Sources */,
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
 				B6843E3D202192C700B86A3F /* StatusViewModel.swift in Sources */,
+				B65E09E5204690A900BF81FF /* NoticeSocialConnListCell.swift in Sources */,
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
 				D327F759202B7A900045671C /* MyHomePageMomentsTableViewCell.swift in Sources */,
 				B641021D2015D7D3001C8787 /* SkillViewController.swift in Sources */,
@@ -1691,6 +1712,7 @@
 				D30AA0F6202843C100711F20 /* EntrepreneurshipExperienceAlertSheet.swift in Sources */,
 				D3B8E5C3201AF1CB002F3A3A /* MyProjectViewController.swift in Sources */,
 				D3787E8A20411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift in Sources */,
+				B65E09E320468B7000BF81FF /* NoticeSocialConnListModel.swift in Sources */,
 				B65E09D92045539200BF81FF /* CircleStautsCell.swift in Sources */,
 				D35A9D14203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift in Sources */,
 				D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */,
@@ -1731,6 +1753,7 @@
 				D34C6AF9202D44B400EA225E /* MyHomePageWorkExperienceTableViewCell.swift in Sources */,
 				D3E3348A203232E70084687C /* MyHomePageAddWorkExperienceViewController.swift in Sources */,
 				B68182E120401D1F007CE890 /* CircleDetailVC.swift in Sources */,
+				B65E09DB20464B3800BF81FF /* NoticeViewController.swift in Sources */,
 				B6E1FB01202871BD00BB2B4E /* PickImageCollectionView.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
 				D37D712F202AE9ED007B38EB /* MyHomePageBasicInfomationContainerViewController.swift in Sources */,
@@ -1746,6 +1769,7 @@
 				D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */,
 				B65BE190202AF13A004407B1 /* CircleModel.swift in Sources */,
 				D3722C8B203FA68E00E0B765 /* ServiceMainHeaderTableViewCell.swift in Sources */,
+				B65E09DF20464D2B00BF81FF /* NoticeListCell.swift in Sources */,
 				B6F91F7B202D7C4D0095BECF /* LimitTextView.swift in Sources */,
 				D378FEF21FF0E36600065EEC /* NetworkTools.swift in Sources */,
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,

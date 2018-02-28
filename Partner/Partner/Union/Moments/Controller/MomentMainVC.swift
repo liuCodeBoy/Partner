@@ -17,7 +17,14 @@ class MomentMainVC: UIViewController , UITableViewDelegate, UITableViewDataSourc
     var   browser : PhotoBrowser?
     var   picStrsArr : [String]?
     var   collectionView : UICollectionView?
-    
+    var   type  =  1 {
+        didSet{
+        self.pageNum = 1
+        self.nextPage = 1
+        self.modelView.removeAll()
+        loadStatuses()
+        }
+    } //全部动态 2 感兴趣的人
     //初始化pageNums
     var   pageNum  = 1
     //标记nextPage 是否为空
@@ -34,6 +41,22 @@ class MomentMainVC: UIViewController , UITableViewDelegate, UITableViewDataSourc
         
         //添加按钮
         self.addPushBtn()
+    }
+    @IBAction func fliterDymaticClick(_ sender: Any) {
+        let alert = UIAlertController(title: "请选择筛选类型", message: "", preferredStyle: .actionSheet)
+        let allDaymatic = UIAlertAction(title: "全部动态", style: .default) { [weak self](_) in
+            self?.type = 1
+        }
+        let intrestedDaymatic = UIAlertAction(title: "我感兴趣", style: .default) { [weak self](_) in
+            self?.type = 2
+        }
+        let cancelBtn = UIAlertAction(title: "取消", style: .default, handler: nil)
+        alert.addAction(allDaymatic)
+        alert.addAction(intrestedDaymatic)
+        alert.addAction(cancelBtn)
+        self.present(alert, animated: true, completion: nil)
+        
+        
     }
     //生成照片控制器
     func addPictrueVC(){
@@ -109,7 +132,7 @@ extension MomentMainVC {
             }, cancel: nil)
             return
         }
-        NetWorkTool.shareInstance.getSocialCircleMomentList(token: access_token, type: 1, pageNum: pageNum) { [weak self](result, error) in
+        NetWorkTool.shareInstance.getSocialCircleMomentList(token: access_token, type: type, pageNum: pageNum) { [weak self](result, error) in
             if error != nil {
                 return }
             NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
