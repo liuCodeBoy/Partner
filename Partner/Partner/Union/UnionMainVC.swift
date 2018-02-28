@@ -60,7 +60,6 @@ class UnionMainVC: UIViewController {
     UIView.animate(withDuration: 0.3) {
         weak var weakSelf = self
         weakSelf?.sliderView?.center.x = btn.center.x
-        
         let  index = CGFloat(btn.tag - 1212)
         weakSelf?.scrollView?.contentOffset.x = index * screenWidth
        }
@@ -70,8 +69,22 @@ class UnionMainVC: UIViewController {
         }
     }
     btn.isSelected = !btn.isSelected
-  
+   }
+    
+    //设置滚动
+    func addBtnScroll(btn : UIButton){
+        UIView.animate(withDuration: 0.3) {
+            weak var weakSelf = self
+            weakSelf?.sliderView?.center.x = btn.center.x
+        }
+        for tempBtn  in topContentView.subviews{
+            if  let   btn = tempBtn as? UIButton {
+                btn.isSelected = false
+            }
+        }
+        btn.isSelected = !btn.isSelected
     }
+    
     
     //添加子控制器的ScrollView
     func addChildScroll(){
@@ -107,7 +120,7 @@ extension   UnionMainVC  : UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
      let   page = Int(scrollView.contentOffset.x / screenWidth)
      let   tempBtn  = self.sliderBtnArr[page]
-     addOffSetX(btn: tempBtn)
+     addBtnScroll(btn: tempBtn)
         
     }
     
