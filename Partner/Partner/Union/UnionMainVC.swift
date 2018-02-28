@@ -21,14 +21,16 @@ class UnionMainVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         addTopViewChildsBtn()
         addChildScroll()
-        
-        
+        addNoticBtn()
     }
+    
+  
+    
     
     //初始化头部按钮
   func addTopViewChildsBtn(){
     let  btnArr = ["社联","社圈","私信","寻合伙"]
-    let  width  = (screenWidth - 40) / CGFloat(btnArr.count)
+    let  width  = (screenWidth - 50) / CGFloat(btnArr.count)
     for i in 0..<btnArr.count {
         let  btnStr  = btnArr[i]
         let  x       = CGFloat(i)  * width
@@ -54,6 +56,23 @@ class UnionMainVC: UIViewController {
         }
       }
     }
+    
+    //添加通知按钮
+    func   addNoticBtn(){
+        let btn = UIButton.init(frame: CGRect.init(x: screenWidth - 50, y: 0, width: 50, height: 60))
+        btn.contentHorizontalAlignment = .center
+        btn.contentVerticalAlignment   = .bottom
+        btn.setImage(#imageLiteral(resourceName: "society_news_normal"), for: .normal)
+        btn.addTarget(self, action: #selector(addNotice(btn:)), for: UIControlEvents.touchUpInside)
+        self.topContentView.addSubview(btn)
+    }
+    //跳转通知控制器
+    @objc  func   addNotice(btn : UIButton){
+        let  noticeViewControllerVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "NoticeViewControllerID")
+        self.navigationController?.pushViewController(noticeViewControllerVC, animated: true)
+        
+    }
+    
     
     //添加偏移量功能
    @objc  func   addOffSetX(btn : UIButton){
