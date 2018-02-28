@@ -8,6 +8,7 @@
 import UIKit
 
 class UserSearchBarCell: UITableViewCell {
+    @IBOutlet weak var userIndentifyBtn: UIButton!
     @IBOutlet weak var imageHeaderView: UIImageView!
     @IBOutlet weak var nameTextLab: UILabel!
     @IBOutlet weak var communityLab: UILabel!
@@ -24,7 +25,12 @@ class UserSearchBarCell: UITableViewCell {
             if let  imageUrl =  viewModel.userImgUrl {
                 self.imageHeaderView.setImageWith(URL.init(string: imageUrl)!, placeholderImage: nil)
             }
-           
+            
+            if viewModel.create == 1 {
+                self.selectedBtn.isHidden = false
+            }else{
+                self.selectedBtn.isHidden = true
+            }
         }
     }
     @IBAction func chooseUser(_ sender: Any) {

@@ -20,6 +20,9 @@
 		B65BE18C2029DBB8004407B1 /* PlazaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BE18B2029DBB8004407B1 /* PlazaVC.swift */; };
 		B65BE18E202AA18C004407B1 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65BE18D202AA18C004407B1 /* View.xib */; };
 		B65BE190202AF13A004407B1 /* CircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BE18F202AF13A004407B1 /* CircleModel.swift */; };
+		B65E09D52044F40600BF81FF /* MyCircleEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09D42044F40600BF81FF /* MyCircleEntityModel.swift */; };
+		B65E09D72045416300BF81FF /* CircleDetailCommandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09D62045416300BF81FF /* CircleDetailCommandVC.swift */; };
+		B65E09D92045539200BF81FF /* CircleStautsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09D82045539200BF81FF /* CircleStautsCell.swift */; };
 		B678C9982021C82F007FEB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6843E3820216B5E00B86A3F /* Assets.xcassets */; };
 		B678C99A2021E065007FEB83 /* UnionNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */; };
 		B678C99C2021E967007FEB83 /* UnionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C99B2021E967007FEB83 /* UnionListModel.swift */; };
@@ -34,6 +37,14 @@
 		B6843E3D202192C700B86A3F /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E3C202192C700B86A3F /* StatusViewModel.swift */; };
 		B6843E40202195C800B86A3F /* StatusViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E3F202195C800B86A3F /* StatusViewCell.swift */; };
 		B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6843E412021999D00B86A3F /* PicCollectionView.swift */; };
+		B687AB9A2043B4A9004C915A /* CircleMemberListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687AB992043B4A9004C915A /* CircleMemberListTableView.swift */; };
+		B687AB9C2043B5CE004C915A /* CircleMemberListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687AB9B2043B5CE004C915A /* CircleMemberListVC.swift */; };
+		B687AB9E2043E279004C915A /* WatingJionInCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687AB9D2043E279004C915A /* WatingJionInCell.swift */; };
+		B687ABA02043E4EA004C915A /* CircleWatingJoinInListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687AB9F2043E4EA004C915A /* CircleWatingJoinInListTableView.swift */; };
+		B687ABA22043EBCE004C915A /* SearchUserJionInCircleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687ABA12043EBCE004C915A /* SearchUserJionInCircleVC.swift */; };
+		B687ABA420440313004C915A /* MemberOfCircleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687ABA320440313004C915A /* MemberOfCircleVC.swift */; };
+		B687ABA620440CC0004C915A /* CircleReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687ABA520440CC0004C915A /* CircleReportVC.swift */; };
+		B687ABA820440EA2004C915A /* reportReasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687ABA720440EA2004C915A /* reportReasonModel.swift */; };
 		B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */; };
 		B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A34317201C645300C7D5F5 /* communityModel.swift */; };
 		B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */; };
@@ -195,6 +206,9 @@
 		B65BE18B2029DBB8004407B1 /* PlazaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlazaVC.swift; sourceTree = "<group>"; };
 		B65BE18D202AA18C004407B1 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		B65BE18F202AF13A004407B1 /* CircleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleModel.swift; sourceTree = "<group>"; };
+		B65E09D42044F40600BF81FF /* MyCircleEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCircleEntityModel.swift; sourceTree = "<group>"; };
+		B65E09D62045416300BF81FF /* CircleDetailCommandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDetailCommandVC.swift; sourceTree = "<group>"; };
+		B65E09D82045539200BF81FF /* CircleStautsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleStautsCell.swift; sourceTree = "<group>"; };
 		B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionNetWorkTool.swift; sourceTree = "<group>"; };
 		B678C99B2021E967007FEB83 /* UnionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionListModel.swift; sourceTree = "<group>"; };
 		B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginVC.swift; sourceTree = "<group>"; };
@@ -209,6 +223,14 @@
 		B6843E3C202192C700B86A3F /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		B6843E3F202195C800B86A3F /* StatusViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewCell.swift; sourceTree = "<group>"; };
 		B6843E412021999D00B86A3F /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
+		B687AB992043B4A9004C915A /* CircleMemberListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMemberListTableView.swift; sourceTree = "<group>"; };
+		B687AB9B2043B5CE004C915A /* CircleMemberListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMemberListVC.swift; sourceTree = "<group>"; };
+		B687AB9D2043E279004C915A /* WatingJionInCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatingJionInCell.swift; sourceTree = "<group>"; };
+		B687AB9F2043E4EA004C915A /* CircleWatingJoinInListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWatingJoinInListTableView.swift; sourceTree = "<group>"; };
+		B687ABA12043EBCE004C915A /* SearchUserJionInCircleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserJionInCircleVC.swift; sourceTree = "<group>"; };
+		B687ABA320440313004C915A /* MemberOfCircleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberOfCircleVC.swift; sourceTree = "<group>"; };
+		B687ABA520440CC0004C915A /* CircleReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleReportVC.swift; sourceTree = "<group>"; };
+		B687ABA720440EA2004C915A /* reportReasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportReasonModel.swift; sourceTree = "<group>"; };
 		B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentityVC.swift; sourceTree = "<group>"; };
 		B6A34317201C645300C7D5F5 /* communityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = communityModel.swift; path = Partner/Login/Welcome/communityModel.swift; sourceTree = SOURCE_ROOT; };
 		B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriclePicktrueView.swift; sourceTree = "<group>"; };
@@ -461,6 +483,7 @@
 			children = (
 				B6843E3C202192C700B86A3F /* StatusViewModel.swift */,
 				B678C99B2021E967007FEB83 /* UnionListModel.swift */,
+				B65E09D42044F40600BF81FF /* MyCircleEntityModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,6 +506,7 @@
 				B68182DC203FC385007CE890 /* UserModel.swift */,
 				B68182E22041044C007CE890 /* CicrleDetailModel.swift */,
 				B6D7F80E204169370044B31C /* CircleSettingInfoModel.swift */,
+				B687ABA720440EA2004C915A /* reportReasonModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -515,6 +539,11 @@
 				B68182E020401D1F007CE890 /* CircleDetailVC.swift */,
 				B6D7F80A20415DC80044B31C /* CircleManageVC.swift */,
 				B6D7F80C204163B90044B31C /* CircleNameEditVC.swift */,
+				B687AB9B2043B5CE004C915A /* CircleMemberListVC.swift */,
+				B687ABA12043EBCE004C915A /* SearchUserJionInCircleVC.swift */,
+				B687ABA320440313004C915A /* MemberOfCircleVC.swift */,
+				B687ABA520440CC0004C915A /* CircleReportVC.swift */,
+				B65E09D62045416300BF81FF /* CircleDetailCommandVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -526,6 +555,10 @@
 				B68182DA203FAF2E007CE890 /* UserSearchBarCell.swift */,
 				B68182DE203FC846007CE890 /* UserSearchTableView.swift */,
 				B625F2F7204115E50060F713 /* DetailInfoTableView.swift */,
+				B687AB9D2043E279004C915A /* WatingJionInCell.swift */,
+				B687AB992043B4A9004C915A /* CircleMemberListTableView.swift */,
+				B687AB9F2043E4EA004C915A /* CircleWatingJoinInListTableView.swift */,
+				B65E09D82045539200BF81FF /* CircleStautsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1612,15 +1645,18 @@
 				D3E3348C203232F90084687C /* MyHomePageAddEducationExperienceViewController.swift in Sources */,
 				B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */,
 				B68182DF203FC846007CE890 /* UserSearchTableView.swift in Sources */,
+				B687AB9E2043E279004C915A /* WatingJionInCell.swift in Sources */,
 				D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */,
 				D354B4672029D07A00482BF2 /* MyHomePageBasicInfomationTableViewCell.swift in Sources */,
 				D35A9D23203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift in Sources */,
 				D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */,
+				B687ABA22043EBCE004C915A /* SearchUserJionInCircleVC.swift in Sources */,
 				B6843E40202195C800B86A3F /* StatusViewCell.swift in Sources */,
 				D3BCE69E2019D44A00097DDA /* InputDetialViewController.swift in Sources */,
 				D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */,
 				D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */,
 				D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */,
+				B687ABA820440EA2004C915A /* reportReasonModel.swift in Sources */,
 				B6BD3D06202D43A1005595ED /* CreateCricleVC.swift in Sources */,
 				B65BE17E2029A4AD004407B1 /* CircleChooseTableView.swift in Sources */,
 				D3722C95203FAD2B00E0B765 /* ServiceProviderViewController.swift in Sources */,
@@ -1629,6 +1665,8 @@
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
 				D327F759202B7A900045671C /* MyHomePageMomentsTableViewCell.swift in Sources */,
 				B641021D2015D7D3001C8787 /* SkillViewController.swift in Sources */,
+				B687AB9A2043B4A9004C915A /* CircleMemberListTableView.swift in Sources */,
+				B65E09D52044F40600BF81FF /* MyCircleEntityModel.swift in Sources */,
 				B6C27D072019AF200087FF17 /* ForgetPwdVC.swift in Sources */,
 				D39F8C3C201F0CFB00A40AC1 /* MyProjectEditFundingNeedViewController.swift in Sources */,
 				D3722C8D203FA6BE00E0B765 /* ServiceMainFounderListTableViewCell.swift in Sources */,
@@ -1653,6 +1691,7 @@
 				D30AA0F6202843C100711F20 /* EntrepreneurshipExperienceAlertSheet.swift in Sources */,
 				D3B8E5C3201AF1CB002F3A3A /* MyProjectViewController.swift in Sources */,
 				D3787E8A20411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift in Sources */,
+				B65E09D92045539200BF81FF /* CircleStautsCell.swift in Sources */,
 				D35A9D14203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift in Sources */,
 				D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */,
 				D30AA0FA2028568100711F20 /* PartnerPopulationPicker.swift in Sources */,
@@ -1667,14 +1706,18 @@
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
 				B6E1FAFD20286D8000BB2B4E /* StatusPushVC.swift in Sources */,
 				D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */,
+				B687AB9C2043B5CE004C915A /* CircleMemberListVC.swift in Sources */,
 				D35A9D19203FB13400408B9E /* ServiceInvestAndRaiseHeaderTitleTableViewCell.swift in Sources */,
 				D35A9D27203FBF1600408B9E /* ServiceInvestorExperienceContainerViewController.swift in Sources */,
 				B6B9A53A20243CC900AC24EB /* CricleViewController.swift in Sources */,
 				B6EF1D3C201F5FD3000479F8 /* CooperativedemandVC.swift in Sources */,
+				B65E09D72045416300BF81FF /* CircleDetailCommandVC.swift in Sources */,
+				B687ABA420440313004C915A /* MemberOfCircleVC.swift in Sources */,
 				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
 				D39F14E6201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift in Sources */,
 				D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */,
 				B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */,
+				B687ABA02043E4EA004C915A /* CircleWatingJoinInListTableView.swift in Sources */,
 				D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */,
 				D3E33488203232C40084687C /* MyHomePageAddEntrepreneurshipExperienceViewController.swift in Sources */,
 				D35A9D12203FAFB200408B9E /* ServiceFounderPlaceholderViewController.swift in Sources */,
@@ -1695,6 +1738,7 @@
 				D3B8E5C8201AFC04002F3A3A /* IntentionProjectViewController.swift in Sources */,
 				D3D6E00B202999F8005D3413 /* DegreePicker.swift in Sources */,
 				D31C3CAD2040057300E97460 /* ProfileInfoModel.swift in Sources */,
+				B687ABA620440CC0004C915A /* CircleReportVC.swift in Sources */,
 				D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */,
 				D34C6AF5202D43C700EA225E /* MyHomePageExperiencesTableViewSectionHeaderCell.swift in Sources */,
 				B6D7F80F204169370044B31C /* CircleSettingInfoModel.swift in Sources */,

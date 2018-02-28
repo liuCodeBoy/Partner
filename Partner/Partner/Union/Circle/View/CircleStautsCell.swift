@@ -1,17 +1,13 @@
 //
-//  StatusViewCell.swift
+//  CircleStautsCell.swift
 //  Partner
 //
-//  Created by LiuXinQiang on 2018/1/31.
+//  Created by LiuXinQiang on 2018/2/27.
 //
 
 import UIKit
 import SDWebImage
-
- let edgeMargin: CGFloat = 10
- let itemMargin: CGFloat = 5
-class StatusViewCell: UITableViewCell {
-
+class CircleStautsCell: UITableViewCell {
     @IBOutlet weak var collectionViewButtonDistanceCons: NSLayoutConstraint!
     @IBOutlet weak var collectionviewHCons: NSLayoutConstraint!
     @IBOutlet weak var collectionViewWCons: NSLayoutConstraint!
@@ -24,9 +20,8 @@ class StatusViewCell: UITableViewCell {
     @IBOutlet weak var contentText: UILabel!
     @IBOutlet weak var commentNumLab: UILabel!
     @IBOutlet weak var zanNumLab: UILabel!
-    @IBOutlet weak var pictureView: PicCollectionView!
     
-    @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var pictureView: PicCollectionView!
     @IBOutlet weak var zanBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
     
@@ -61,7 +56,7 @@ class StatusViewCell: UITableViewCell {
             }
             
             contentText.text = viewModel.content as String?
-  
+            
             
             var   urlArr = [URL]()
             if let urls = viewModel.imgUrls {
@@ -75,28 +70,26 @@ class StatusViewCell: UITableViewCell {
                 pictureView.picURLs = [URL]()
             }
             let imageCount =  viewModel.imgUrls == nil ? 0  : viewModel.imgUrls?.count
-        
+            
             let pictureViewSize = calculatePictureSize(imageCount!)
             collectionviewHCons.constant = pictureViewSize.height
             collectionViewWCons.constant = pictureViewSize.width
-       }
-    
-}
-    
-    
-    @IBAction func deleteStatus(_ sender: Any) {
+        }
+        
     }
+    
+
     @IBAction func commentAction(_ sender: Any) {
     }
     @IBAction func zanAction(_ sender: Any) {
     }
     
-override  func awakeFromNib() {
+    override  func awakeFromNib() {
         super.awakeFromNib()
         let layout = pictureView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
-    
+        
         pictureView.isScrollEnabled = false
         let imageViewWH = (screenWidth - 20  - 2 * edgeMargin - 2 * itemMargin) / 3
         layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
@@ -104,8 +97,8 @@ override  func awakeFromNib() {
     
 }
 
-extension StatusViewCell {
-     func calculatePictureSize(_ count: Int) -> CGSize{
+extension CircleStautsCell {
+    func calculatePictureSize(_ count: Int) -> CGSize{
         if count == 0 {
             collectionViewButtonDistanceCons.constant = 0
             return CGSize.zero
@@ -128,10 +121,7 @@ extension StatusViewCell {
 }
 
 
-extension  StatusViewCell {
-    
-    
-}
+
 
 
 

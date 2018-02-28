@@ -79,9 +79,10 @@ extension  MomentMainVC {
     
     @objc func refresh() -> () {
           self.pageNum = 1
+          self.nextPage = 1
           self.modelView.removeAll()
           loadStatuses()
-          momentTableView.mj_header.endRefreshing()
+//          momentTableView.mj_header.endRefreshing()
     }
     @objc func  endrefresh() -> (){
           loadStatuses()
@@ -94,7 +95,7 @@ extension  MomentMainVC {
 
 
 extension MomentMainVC {
-    fileprivate func loadStatuses() {
+  fileprivate   func loadStatuses() {
         if  self.nextPage == 0 {
             self.momentTableView.mj_footer.endRefreshingWithNoMoreData()
             return
@@ -111,15 +112,8 @@ extension MomentMainVC {
         NetWorkTool.shareInstance.getSocialCircleMomentList(token: access_token, type: 1, pageNum: pageNum) { [weak self](result, error) in
             if error != nil {
                 return }
-            
-            if  result?["code"] as? Int != 200  {
-                let  msg = result?["msg"] as? String
-                self?.presentHintMessage(hintMessgae: msg! , completion: { (_) in
-                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-                })
-               
-             }
-                
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+            if  result?["code"] as? Int == 200  {
             guard let resultArray = result else{
                 return
             }
@@ -146,8 +140,11 @@ extension MomentMainVC {
                 self?.momentTableView.reloadData()
             }
             self?.cacheImages((self?.modelView)!)
-        }
-
+           }else{
+                let  errorShow  =  result!["msg"] as! String
+                self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+            }
+         }
     }
     
     fileprivate func cacheImages(_ viewModels: [UnionListModel]) {

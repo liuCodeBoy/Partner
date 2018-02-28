@@ -77,6 +77,5 @@ class SearchUserVC: UIViewController {
                 self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
             }
         }
-    
-  }
+    }
 }

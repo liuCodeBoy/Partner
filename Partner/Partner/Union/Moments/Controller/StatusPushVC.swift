@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import NVActivityIndicatorView
 class StatusPushVC: UIViewController , UITextViewDelegate {
     
     @IBOutlet weak var isArrow: UIButton!
@@ -33,14 +33,16 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
     }
     @IBAction func showPublicBtnStatus(_ sender: Any) {
         self.isPublicBtn.isSelected =  !self.isPublicBtn.isSelected
-        if self.isPublicBtn.isSelected {
-            momePublicText.setTitle("公开", for: .normal)
+        if isPublicBtn.isSelected {
+           momePublicText.setTitle("公开", for: .normal)
+        }else{
+           momePublicText.setTitle("", for: .normal)
         }
     }
     //展示社圈
     @IBAction func changeArrowAction(_ sender: Any) {
         self.isArrow.isSelected = !self.isArrow.isSelected
-        showCircleView.isHidden = !self.isArrow.isSelected
+        showCircleView.isHidden = self.isArrow.isSelected
     }
     
     @IBAction func submitBtnClicked(_ sender: UIButton) {
@@ -53,24 +55,54 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
             // TODO:- post request
             //保存身份选择
             guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+                self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
                 return
             }
-//            NetWorkTool.shareInstance.perfectUserRequireInfo(token: access_token, require: inputTF.text, finished: { [weak self](result, error) in
-//                if error == nil {
-//                    // MARK:- judge the return data from server
-//                    if  result?["code"] as? Int == 500  {
-//                        self?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
-//                            self?.navigationController?.dismiss(animated: true , completion: nil)
-//                        })
-//                    } else {
-//                        let  errorShow  =  result!["msg"] as! String
-//                        self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
-//
-//                    }
-//                }
-//            })
+            
+            var momPublic = 1
+            var circleIdString : String?
+            circleIdString = nil
+            if isPublicBtn.isSelected == true {
+               momPublic = 1
+            }else{
+               momPublic = 2
+               circleIdString = getCircleIdString()
+            }
+            NVActivityIndicatorPresenter.sharedInstance.startAnimating(AppDelegate.activityData)
+            NetWorkTool.shareInstance.momentSend(token: access_token, circleIds: circleIdString, momeContent: inputTF.text, momePublic: momPublic, image: imagePickerImageView.imageArr, finished: { [weak self](result, error) in
+                if error == nil {
+                    // MARK:- judge the return data from server
+                    if  result?["code"] as? Int == 200  {
+                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                        self?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
+                            self?.navigationController?.popViewController(animated: true)
+                        })
+                    } else {
+                        let  errorShow  =  result!["msg"] as! String
+                        self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+                        
+                    }
+                }
+            })
         }
-        
+    }
+    
+    //获取圈ID字符串
+    func getCircleIdString() -> (String){
+        var resultStr = ""
+        var isFirst   = 0
+        let modelArr = self.showCircleView.userModelArr
+        for i  in 0..<modelArr.count{
+            let model = modelArr[i]
+            if model.selected == 1 && isFirst == 0 {
+                resultStr = "\(String(describing: model.id!))"
+                isFirst = 1
+            }else if (model.selected == 1){
+                resultStr += "," + "\(String(describing: model.id!))"
+            }
+        }
+        return resultStr
+    
     }
     
     override func viewDidLoad() {
