@@ -38,6 +38,7 @@ extension NetWorkTool {
     func editUser(token: String,
                   image: UIImage?,
                   userName: String,
+                  userGender: Int,
                   userMail: String,
                   userCompanyName: String,
                   userJob: String,
@@ -52,6 +53,7 @@ extension NetWorkTool {
         let urlString = "http://47.97.110.89/qm/user/api/editUser.do"
         var parameters = ["token"               : token,
                           "user.userName"       : userName,
+                          "userGender"          : userGender,
                           "user.userMail"       : userMail,
                           "user.userCompanyName": userCompanyName,
                           "user.userJob"        : userJob,

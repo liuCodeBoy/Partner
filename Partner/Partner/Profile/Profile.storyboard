@@ -1834,7 +1834,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="customizeBtnClicked:" destination="ZKJ-7W-hrK" eventType="touchUpInside" id="aMx-es-8EZ"/>
                                                         <segue destination="2Fe-KT-i6X" kind="show" identifier="PEICustomHobbyTagSegue1" id="fGM-cD-5AR"/>
                                                     </connections>
                                                 </button>
@@ -1859,7 +1858,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="customizeBtnClicked:" destination="ZKJ-7W-hrK" eventType="touchUpInside" id="cMy-XS-OXs"/>
                                                         <segue destination="2Fe-KT-i6X" kind="show" identifier="PEICustomHobbyTagSegue2" id="K6g-UQ-6m2"/>
                                                     </connections>
                                                 </button>
@@ -1884,7 +1882,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="customizeBtnClicked:" destination="ZKJ-7W-hrK" eventType="touchUpInside" id="Sdj-eT-DeX"/>
                                                         <segue destination="2Fe-KT-i6X" kind="show" identifier="PEICustomHobbyTagSegue3" id="Z6T-NF-hie"/>
                                                     </connections>
                                                 </button>
@@ -1909,7 +1906,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="customizeBtnClicked:" destination="ZKJ-7W-hrK" eventType="touchUpInside" id="DQ0-L4-S6T"/>
                                                         <segue destination="2Fe-KT-i6X" kind="show" identifier="PEICustomHobbyTagSegue4" id="uS9-rW-V0g"/>
                                                     </connections>
                                                 </button>
@@ -2303,6 +2299,9 @@
                                                             <real key="value" value="15"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <segue destination="2Fe-KT-i6X" kind="show" identifier="PEICustomSkillTagSegue1" id="KKY-Sb-3K3"/>
+                                                    </connections>
                                                 </button>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gx-rV-F8s" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                                     <rect key="frame" x="102" y="140" width="80.666666666666686" height="30"/>
@@ -2324,6 +2323,9 @@
                                                             <real key="value" value="15"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <segue destination="2Fe-KT-i6X" kind="show" identifier="PEICustomSkillTagSegue2" id="dOo-oh-1gF"/>
+                                                    </connections>
                                                 </button>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6S-kZ-Yss" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                                     <rect key="frame" x="192.66666666666666" y="140" width="79.999999999999972" height="30"/>
@@ -2345,6 +2347,9 @@
                                                             <real key="value" value="15"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <segue destination="2Fe-KT-i6X" kind="show" identifier="PEICustomSkillTagSegue3" id="1Z2-AQ-Lka"/>
+                                                    </connections>
                                                 </button>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lft-nQ-8kp" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                                     <rect key="frame" x="283" y="140" width="80" height="30"/>
@@ -2366,6 +2371,9 @@
                                                             <real key="value" value="15"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <segue destination="2Fe-KT-i6X" kind="show" identifier="PEICustomSkillTagSegue4" id="WAC-sm-joY"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -15365,8 +15373,8 @@
         <image name="tab_bar_profile_selected" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K6g-UQ-6m2"/>
-        <segue reference="dhe-tw-T1h"/>
+        <segue reference="WAC-sm-joY"/>
+        <segue reference="Wdd-qF-QKe"/>
         <segue reference="Woo-d6-Uei"/>
         <segue reference="lE5-Iv-Zpx"/>
         <segue reference="L7p-HO-3h4"/>

@@ -9,14 +9,29 @@ import UIKit
 
 class ProfileHobbiesSelectorTableViewBodyCell: UITableViewCell {
     
+    var hobbyString = ""
+    
+    var hobbyArray = [String]() {
+        didSet {
+            for skill in hobbyArray {
+                hobbyString += "\(skill),"
+            }
+            hobbyString.removeLast(1)
+        }
+    }
+    
     @IBAction func staticBtnClicked(_ sender: ShadowButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
-            sender.backgroundColor       = #colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1)
+            sender.backgroundColor = #colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1)
             sender.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+            hobbyArray.append((sender.titleLabel?.text)!)
+
         } else {
-            sender.backgroundColor       = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            sender.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             sender.setTitleColor(#colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1), for: .normal)
+            hobbyArray.remove(at: hobbyArray.index(of: (sender.titleLabel?.text)!)!)
+
         }
     }
     
