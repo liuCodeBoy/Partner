@@ -8,6 +8,9 @@
 import UIKit
 
 class CircleReportVC: UIViewController ,UITableViewDataSource,UITableViewDelegate{
+    //举报类型，1举报动态 2举报用户 3举报社圈
+    var  reportType : Int = 1
+    var  circleId   : Int = 0
     @IBOutlet weak var reportTableview: UITableView!
     var  reportArrModelArr = [reportReasonModel]()
     override func viewDidLoad() {
@@ -88,7 +91,7 @@ extension  CircleReportVC {
             self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
             return
         }
-        NetWorkTool.shareInstance.report(token: access_token, repoType: 3, reaId: reaId) { [weak self](result, error) in
+        NetWorkTool.shareInstance.report(token: access_token, repoType: reportType, reaId: reaId, id: circleId) { [weak self](result, error) in
             if  result?["code"] as? Int == 200  {
                 guard   result != nil else{
                     return

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import NoticeBar
 class DetailInfoTableView : UITableView,UITableViewDelegate,UITableViewDataSource{
     var topDetailModel : CicrleDetailModel?
     
@@ -80,6 +80,32 @@ class  CircleDetailTopCell : UITableViewCell{
         }
     }
     
+    @IBAction func applyJoinClick(_ sender: UIButton) {
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+            return
+        }
+        var color = UIColor.red
+        var showInfo = ""
+        if let circleID = detailModel?.circleId{
+            NetWorkTool.shareInstance.applyJoin(token: access_token, id: Int(truncating: circleID), finished: { (result, error) in
+                if  result?["code"] as? Int == 200  {
+                    guard   result != nil else{
+                        return
+                    }
+                    color = #colorLiteral(red: 0.6242706776, green: 0.8754864931, blue: 0.8703722358, alpha: 1)
+                    showInfo = "申请中"
+                    sender.setTitle(showInfo, for: .normal)
+                }else{
+                    showInfo =  result!["msg"] as! String
+                }
+          
+                let config = NoticeBarConfig(title: showInfo, image: nil, textColor: UIColor.white, backgroundColor: color, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let noticeBar = NoticeBar(config: config)
+                noticeBar.show(duration: 1.5, completed: nil)
+            })
+        }
+       
+    }
     
     
 }

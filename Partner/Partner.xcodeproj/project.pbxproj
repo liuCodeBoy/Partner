@@ -52,6 +52,7 @@
 		B687ABA620440CC0004C915A /* CircleReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687ABA520440CC0004C915A /* CircleReportVC.swift */; };
 		B687ABA820440EA2004C915A /* reportReasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687ABA720440EA2004C915A /* reportReasonModel.swift */; };
 		B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */; };
+		B690ADE12047FB220072C0C1 /* CircleNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690ADE02047FB220072C0C1 /* CircleNetWorkTools.swift */; };
 		B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A34317201C645300C7D5F5 /* communityModel.swift */; };
 		B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */; };
 		B6B9A53A20243CC900AC24EB /* CricleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A53920243CC900AC24EB /* CricleViewController.swift */; };
@@ -244,6 +245,7 @@
 		B687ABA520440CC0004C915A /* CircleReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleReportVC.swift; sourceTree = "<group>"; };
 		B687ABA720440EA2004C915A /* reportReasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportReasonModel.swift; sourceTree = "<group>"; };
 		B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentityVC.swift; sourceTree = "<group>"; };
+		B690ADE02047FB220072C0C1 /* CircleNetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleNetWorkTools.swift; sourceTree = "<group>"; };
 		B6A34317201C645300C7D5F5 /* communityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = communityModel.swift; path = Partner/Login/Welcome/communityModel.swift; sourceTree = SOURCE_ROOT; };
 		B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriclePicktrueView.swift; sourceTree = "<group>"; };
 		B6B9A53920243CC900AC24EB /* CricleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricleViewController.swift; sourceTree = "<group>"; };
@@ -755,6 +757,7 @@
 				D378FE9E1FF0D21600065EEC /* AppDelegate.swift */,
 				D378FEF11FF0E36500065EEC /* NetworkTools.swift */,
 				B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */,
+				B690ADE02047FB220072C0C1 /* CircleNetWorkTools.swift */,
 				D378FEA21FF0D21600065EEC /* Main.storyboard */,
 				B6843E3820216B5E00B86A3F /* Assets.xcassets */,
 				D378FEA71FF0D21600065EEC /* LaunchScreen.storyboard */,
@@ -1717,6 +1720,7 @@
 				D35A9D14203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift in Sources */,
 				D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */,
 				D30AA0FA2028568100711F20 /* PartnerPopulationPicker.swift in Sources */,
+				B690ADE12047FB220072C0C1 /* CircleNetWorkTools.swift in Sources */,
 				D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */,
 				B678C99C2021E967007FEB83 /* UnionListModel.swift in Sources */,
 				B678C99A2021E065007FEB83 /* UnionNetWorkTool.swift in Sources */,

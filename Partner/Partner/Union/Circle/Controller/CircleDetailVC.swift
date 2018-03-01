@@ -12,8 +12,12 @@ class CircleDetailVC: UIViewController {
     @IBOutlet weak var secondImg: RoundRectImage!
     @IBOutlet weak var thirdImg: RoundRectImage!
     var   circleId : Int = 0
+    var   create   : Int = 0
+    @IBOutlet weak var settingBtn: UIButton!
+    @IBOutlet weak var reportBtn: UIButton!
     @IBOutlet weak var CircleDetImag: UIImageView!
     @IBOutlet weak var detailTableview: DetailInfoTableView!
+    @IBOutlet weak var detailHCons: NSLayoutConstraint!
     @IBOutlet weak var commandView: UIView!
     
     override func viewDidLoad() {
@@ -21,13 +25,29 @@ class CircleDetailVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         getCircleDetInfo()
         //添加子控
+        addchildVC()
+        //设置设置按钮的切换
+        changeBtnType()
+    }
+    
+    //添加子控
+    func addchildVC(){
         let circledetailCommandVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleDetailCommandVCID")
         circledetailCommandVC.view.frame = CGRect.init(x: 0, y: 0, width: commandView.frame.width, height: commandView.frame.height)
         self.addChildViewController(circledetailCommandVC)
         commandView.addSubview(circledetailCommandVC.view)
-       
     }
-    
+
+    //设置设置按钮的切换
+    func changeBtnType(){
+        if create == 1 {
+         settingBtn.isHidden = false
+         reportBtn.isHidden = true
+        }else {
+         settingBtn.isHidden = true
+         reportBtn.isHidden = false
+        }
+    }
     
     // 网络请求圈详情数据
     func  getCircleDetInfo(){
@@ -48,6 +68,9 @@ class CircleDetailVC: UIViewController {
                     if  let dict  =   result!["result"] as? NSDictionary{
                     if  let statusViewModel = CicrleDetailModel.mj_object(withKeyValues: dict){
                         self?.detailTableview.topDetailModel = statusViewModel
+                        if statusViewModel.status == 2 {
+                            self?.detailHCons.constant = 0
+                        }
                         self?.detailTableview.reloadData()
                         self?.CircleDetImag.sd_setImage(with: URL.init(string: statusViewModel.imgUrl!), placeholderImage:nil)
                         if let imageStrArr = statusViewModel.membImgUrls{
@@ -101,6 +124,62 @@ class CircleDetailVC: UIViewController {
 
     }
     
- 
+    @IBAction func reportAction(_ sender: UIButton) {
+        let alert = UIAlertController(title: "提示", message: "请选择操作类型", preferredStyle: .actionSheet)
+        let report = UIAlertAction(title: "举报", style: .destructive) { [weak  self](_) in
+             let circleReportVc  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleReportVCID") as! CircleReportVC
+            circleReportVc.reportType = 3
+            circleReportVc.circleId = (self?.circleId)!
+            self?.navigationController?.pushViewController(circleReportVc, animated: true)
+            
+        }
+        let leave = UIAlertAction(title: "退出圈子", style: .destructive) { [weak self](_) in
+            self?.leaveCircle()
+        }
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alert.addAction(report)
+        if  create != 2 {
+            alert.addAction(leave)
+        }
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+     //MARK: - 退出圈子
+    //CircleReportVCID
+    
+   
+    func leaveCircle(){
+        self.presentAlert(title: "确认退出", hint: "", confirmTitle: "确定", cancelTitle: "取消", confirmation: { (action) in
+            self.withdrawCircle()
+        }, cancel: nil)
+    }
+    
+    
+    func  withdrawCircle(){
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+            self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
+            return
+        }
+        NetWorkTool.shareInstance.withdrawCircle(token: access_token, id: circleId) { [weak self](result, error) in
+            if  result?["code"] as? Int == 200  {
+                guard   result != nil else{
+                    return
+                }
+                self?.presentHintMessage(hintMessgae:  "退出成功", completion: { (action) in
+                    self?.navigationController?.popViewController(animated: true)
+                })
+            }else{
+                let  errorShow  =  result!["msg"] as! String
+                self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+            }
+        }
+    }
+    
+
+    
     
 }
