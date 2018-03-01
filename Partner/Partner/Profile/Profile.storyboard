@@ -3208,7 +3208,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3293,7 +3293,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3324,7 +3324,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3344,7 +3344,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hYY-LS-jnq"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="确认修改">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -9658,12 +9658,17 @@
                                                             <constraint firstAttribute="height" constant="1" id="uHX-Dy-pgP"/>
                                                         </constraints>
                                                     </view>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_my_project_camera_small" translatesAutoresizingMaskIntoConstraints="NO" id="DmW-S3-efX">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_my_project_camera_small" translatesAutoresizingMaskIntoConstraints="NO" id="DmW-S3-efX" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                         <rect key="frame" x="303" y="15" width="60" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="i5H-Am-yoS"/>
                                                             <constraint firstAttribute="width" constant="60" id="rGT-Tn-HUj"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="30"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3j3-eL-4uz">
                                                         <rect key="frame" x="303" y="15" width="60" height="60"/>
@@ -15373,8 +15378,8 @@
         <image name="tab_bar_profile_selected" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WAC-sm-joY"/>
-        <segue reference="Wdd-qF-QKe"/>
+        <segue reference="0Xc-af-QZW"/>
+        <segue reference="wda-7L-OAV"/>
         <segue reference="Woo-d6-Uei"/>
         <segue reference="lE5-Iv-Zpx"/>
         <segue reference="L7p-HO-3h4"/>

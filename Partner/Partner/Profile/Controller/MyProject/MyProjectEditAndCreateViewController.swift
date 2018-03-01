@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import ImagePicker
+import Lightbox
 
-class MyProjectEditAndCreateViewController: UIViewController {
+class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegate {
     
     @IBOutlet weak var projectLogoImg   : UIImageView!
     @IBOutlet weak var projNameLbl      : UILabel!
@@ -25,6 +27,10 @@ class MyProjectEditAndCreateViewController: UIViewController {
     }
     
     @IBAction func uploadAvatarClicked(_ sender: UIButton) {
+        let picker = ImagePickerController()
+        picker.delegate = self
+        picker.imageLimit = 1
+        present(picker, animated: true, completion: nil)
     }
     
     @IBAction func saveBtnClicked(_ sender: UIButton) {
@@ -82,6 +88,31 @@ class MyProjectEditAndCreateViewController: UIViewController {
         default: break
         }
         dest.sourceSegue = segue
+    }
+    
+    // MARK:- image picker protocol functions
+    
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        guard images.count > 0 else { return }
+        let lightboxImages = images.map {
+            return LightboxImage(image: $0)
+        }
+        let lightbox = LightboxController(images: lightboxImages, startIndex: 0)
+        imagePicker.present(lightbox, animated: true, completion: nil)
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        guard images.count > 0 else { return }
+        imagePicker.dismiss(animated: true) {
+            weak var weakSelf = self
+            for img in images {
+                weakSelf?.projectLogoImg.image = img
+            }
+        }
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 
 }

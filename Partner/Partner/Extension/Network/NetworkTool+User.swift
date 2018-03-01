@@ -88,5 +88,18 @@ extension NetWorkTool {
             finished(nil , error)
         }
     }
+    
+    // MARK:- 修改密码IOS
+    func changePwd(token: String, phone: String, newPwd: String, code: String, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http://47.97.110.89/qm/user/api/ios/changePwd.do"
+        let parameters = ["token" : token, "phone" : phone, "newPwd" : newPwd, "code" : code]
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            finished(resultDict, error)
+        }
+    }
 
 }

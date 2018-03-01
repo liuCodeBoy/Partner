@@ -105,7 +105,7 @@
 		D35A9D23203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A9D22203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift */; };
 		D35A9D27203FBF1600408B9E /* ServiceInvestorExperienceContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A9D26203FBF1600408B9E /* ServiceInvestorExperienceContainerViewController.swift */; };
 		D35A9D29203FBF3300408B9E /* ServiceInvestorBasicInfomationContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A9D28203FBF3300408B9E /* ServiceInvestorBasicInfomationContainerViewController.swift */; };
-		D35A9D2C203FE86A00408B9E /* NetworkTool+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A9D2B203FE86A00408B9E /* NetworkTool+Profile.swift */; };
+		D35A9D2C203FE86A00408B9E /* NetworkTool+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A9D2B203FE86A00408B9E /* NetworkTool+User.swift */; };
 		D35F5655200EE35E00149861 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5654200EE35E00149861 /* ProfileSettingsViewController.swift */; };
 		D35F5658200EE97200149861 /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5657200EE97200149861 /* ModifyPasswordViewController.swift */; };
 		D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35F5659200EF3AC00149861 /* FeedbackViewController.swift */; };
@@ -115,6 +115,7 @@
 		D3722C93203FACF700E0B765 /* ServiceProviderCompanyIntroductionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3722C92203FACF700E0B765 /* ServiceProviderCompanyIntroductionTableViewCell.swift */; };
 		D3722C95203FAD2B00E0B765 /* ServiceProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3722C94203FAD2B00E0B765 /* ServiceProviderViewController.swift */; };
 		D3787E8A20411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3787E8920411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift */; };
+		D3787E8C2047FD02000A0AA0 /* NetworkTool+Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3787E8B2047FD02000A0AA0 /* NetworkTool+Project.swift */; };
 		D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D378FE9E1FF0D21600065EEC /* AppDelegate.swift */; };
 		D378FEA41FF0D21600065EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D378FEA21FF0D21600065EEC /* Main.storyboard */; };
 		D378FEA91FF0D21600065EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D378FEA71FF0D21600065EEC /* LaunchScreen.storyboard */; };
@@ -161,6 +162,8 @@
 		D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */; };
 		D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */; };
 		D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */; };
+		D3C58DFB204807D600C88E98 /* NetworkTool+Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */; };
+		D3C58DFD204808A900C88E98 /* NetworkTool+CopyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58DFC204808A900C88E98 /* NetworkTool+CopyModel.swift */; };
 		D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAC8722021EFCD0072064C /* ServiceMainViewController.swift */; };
 		D3D6E00B202999F8005D3413 /* DegreePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6E00A202999F8005D3413 /* DegreePicker.swift */; };
 		D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E00C20299A10005D3413 /* DegreePicker.xib */; };
@@ -297,7 +300,7 @@
 		D35A9D22203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInvestorProfileViewController.swift; sourceTree = "<group>"; };
 		D35A9D26203FBF1600408B9E /* ServiceInvestorExperienceContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInvestorExperienceContainerViewController.swift; sourceTree = "<group>"; };
 		D35A9D28203FBF3300408B9E /* ServiceInvestorBasicInfomationContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInvestorBasicInfomationContainerViewController.swift; sourceTree = "<group>"; };
-		D35A9D2B203FE86A00408B9E /* NetworkTool+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Profile.swift"; sourceTree = "<group>"; };
+		D35A9D2B203FE86A00408B9E /* NetworkTool+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+User.swift"; sourceTree = "<group>"; };
 		D35F5654200EE35E00149861 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		D35F5657200EE97200149861 /* ModifyPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPasswordViewController.swift; sourceTree = "<group>"; };
 		D35F5659200EF3AC00149861 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +310,7 @@
 		D3722C92203FACF700E0B765 /* ServiceProviderCompanyIntroductionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderCompanyIntroductionTableViewCell.swift; sourceTree = "<group>"; };
 		D3722C94203FAD2B00E0B765 /* ServiceProviderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderViewController.swift; sourceTree = "<group>"; };
 		D3787E8920411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditInfomationInputDetialViewController.swift; sourceTree = "<group>"; };
+		D3787E8B2047FD02000A0AA0 /* NetworkTool+Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Project.swift"; sourceTree = "<group>"; };
 		D378FE9B1FF0D21600065EEC /* Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D378FE9E1FF0D21600065EEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D378FEA31FF0D21600065EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 		D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditChooseAvatarTableViewCell.swift; sourceTree = "<group>"; };
 		D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectNoneProjectPlaceholderViewController.swift; sourceTree = "<group>"; };
 		D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditAndCreateViewController.swift; sourceTree = "<group>"; };
+		D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Area.swift"; sourceTree = "<group>"; };
+		D3C58DFC204808A900C88E98 /* NetworkTool+CopyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+CopyModel.swift"; sourceTree = "<group>"; };
 		D3CAC8722021EFCD0072064C /* ServiceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMainViewController.swift; sourceTree = "<group>"; };
 		D3D6E00A202999F8005D3413 /* DegreePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreePicker.swift; sourceTree = "<group>"; };
 		D3D6E00C20299A10005D3413 /* DegreePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DegreePicker.xib; sourceTree = "<group>"; };
@@ -678,7 +684,10 @@
 		D35A9D2A203FE82F00408B9E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				D35A9D2B203FE86A00408B9E /* NetworkTool+Profile.swift */,
+				D35A9D2B203FE86A00408B9E /* NetworkTool+User.swift */,
+				D3787E8B2047FD02000A0AA0 /* NetworkTool+Project.swift */,
+				D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */,
+				D3C58DFC204808A900C88E98 /* NetworkTool+CopyModel.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1668,6 +1677,7 @@
 				D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */,
 				D354B4672029D07A00482BF2 /* MyHomePageBasicInfomationTableViewCell.swift in Sources */,
 				D35A9D23203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift in Sources */,
+				D3C58DFD204808A900C88E98 /* NetworkTool+CopyModel.swift in Sources */,
 				D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */,
 				B687ABA22043EBCE004C915A /* SearchUserJionInCircleVC.swift in Sources */,
 				B65E09E12046538000BF81FF /* NoticeInfoModel.swift in Sources */,
@@ -1696,6 +1706,7 @@
 				D3B8E5C6201AF285002F3A3A /* SingleProjectTableViewCell.swift in Sources */,
 				D39A4F37200D98AF00022A76 /* Extension+Colors.swift in Sources */,
 				B6EF1D3A201F5D8D000479F8 /* RegisterAndLoginVC.swift in Sources */,
+				D3C58DFB204807D600C88E98 /* NetworkTool+Area.swift in Sources */,
 				B6D7F80D204163BA0044B31C /* CircleNameEditVC.swift in Sources */,
 				D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */,
 				D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */,
@@ -1721,7 +1732,7 @@
 				B678C99C2021E967007FEB83 /* UnionListModel.swift in Sources */,
 				B678C99A2021E065007FEB83 /* UnionNetWorkTool.swift in Sources */,
 				D3B8E5CA201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift in Sources */,
-				D35A9D2C203FE86A00408B9E /* NetworkTool+Profile.swift in Sources */,
+				D35A9D2C203FE86A00408B9E /* NetworkTool+User.swift in Sources */,
 				D354B4642029AC7400482BF2 /* MyHomePageViewController.swift in Sources */,
 				D3A7591C202D7E470043D68D /* MyHomePageSectionHeaderWrapViewTableViewCell.swift in Sources */,
 				D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */,
@@ -1747,6 +1758,7 @@
 				B68182DD203FC385007CE890 /* UserModel.swift in Sources */,
 				B65AAC0A203FAD5F00A76358 /* SearchUserVC.swift in Sources */,
 				D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */,
+				D3787E8C2047FD02000A0AA0 /* NetworkTool+Project.swift in Sources */,
 				D3A75918202D7CFF0043D68D /* MyHomePageEducationExperienceTableViewCell.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
 				D39F8C34201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift in Sources */,

@@ -13,10 +13,12 @@ class ProfileHobbiesSelectorTableViewBodyCell: UITableViewCell {
     
     var hobbyArray = [String]() {
         didSet {
+            var str = ""
             for skill in hobbyArray {
-                hobbyString += "\(skill),"
+                str += "\(skill),"
             }
-            hobbyString.removeLast(1)
+            str.removeLast(1)
+            hobbyString = str
         }
     }
     
