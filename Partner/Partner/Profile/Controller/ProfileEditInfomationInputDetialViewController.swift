@@ -25,12 +25,12 @@ class ProfileEditInfomationInputDetialViewController: UIViewController {
     
     var inputText: String? {
         didSet {
-            if previousIndexPath?.row == 0 {
-                limitLbl.text = "\(String(describing: inputText!.count))/6"
-                if let text = inputTF.text, text.count > 6 {
-                    presentHintMessage(hintMessgae: "字数不能超过6个", completion: nil)
-                }
-            }
+//            if previousIndexPath?.row == 0 {
+//                limitLbl.text = "\(String(describing: inputText!.count))/6"
+//                if let text = inputTF.text, text.count > 6 {
+//                    presentHintMessage(hintMessgae: "字数不能超过6个", completion: nil)
+//                }
+//            }
             // change the button's state
             if inputText == nil || inputText!.isEmptyString {
                 saveBtn.isEnabled = false
@@ -83,10 +83,45 @@ class ProfileEditInfomationInputDetialViewController: UIViewController {
             }
             self.navigationController?.popViewController(animated: true)
         }
+        if segue.identifier!.hasPrefix("PEICustomSkillTagSegue") {
+            if let text = inputTF.text, text.count > 4 {
+                presentHintMessage(hintMessgae: "字数不能超过4个", completion: { (_) in
+                    return
+                })
+                return
+            }
+            let skillCell = source.profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 3)) as! ProfileSkillsSelectorTableViewBodyCell
+            switch segue.identifier! {
+            case "PEICustomSkillTagSegue1" :
+                skillCell.customBtn5.setTitle(inputText, for: .normal)
+                skillCell.customBtn5.backgroundColor = #colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1)
+                skillCell.customBtn5.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+                skillCell.customBtn6.isHidden = false
+            case "PEICustomSkillTagSegue2" :
+                skillCell.customBtn6.setTitle(inputText, for: .normal)
+                skillCell.customBtn6.backgroundColor = #colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1)
+                skillCell.customBtn6.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+                skillCell.customBtn7.isHidden = false
+            case "PEICustomSkillTagSegue3" :
+                skillCell.customBtn7.setTitle(inputText, for: .normal)
+                skillCell.customBtn7.backgroundColor = #colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1)
+                skillCell.customBtn7.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+                skillCell.customBtn8.isHidden = false
+            case "PEICustomSkillTagSegue4" :
+                skillCell.customBtn8.setTitle(inputText, for: .normal)
+                skillCell.customBtn8.backgroundColor = #colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1)
+                skillCell.customBtn8.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+                default: break
+            }
+            self.navigationController?.popViewController(animated: true)
+        }
         // get the cell at index path
         guard let indexPath = previousIndexPath else { return }
         if let text = inputTF.text, text.count > 6 && indexPath.row == 0 {
-            presentConfirmationAlert(hint: "字数不能超过6个", completion: nil)
+            presentHintMessage(hintMessgae: "字数不能超过6个", completion: { (_) in
+                return
+            })
+            return
         }
         let cell = source.profileInfoTableView.cellForRow(at: indexPath)
         cell?.detailTextLabel?.text = inputText
