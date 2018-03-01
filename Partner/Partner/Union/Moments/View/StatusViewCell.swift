@@ -52,6 +52,26 @@ class StatusViewCell: UITableViewCell {
             default:
                 break
             }
+            //设置评论数
+            if let  commentNum = viewModel.commentNum{
+                if commentNum != 0 {
+                    self.commentBtn.isSelected = true
+                    self.commentNumLab.text = "\(commentNum)"
+                }else{
+                    self.commentBtn.isSelected = false
+                    self.commentNumLab.text = "\(0)"
+                }
+            }
+            //设置点赞数
+            if let  thumbNum = viewModel.thumbNum{
+                if thumbNum != 0 {
+                    self.zanBtn.isSelected = true
+                    self.zanNumLab.text = "\(thumbNum)"
+                }else{
+                    self.zanBtn.isSelected = false
+                    self.zanNumLab.text = "\(0)"
+                }
+            }
             
             identifyIcon.setTitle(userIdentify, for: .normal)
             nickname.text = viewModel.userName
@@ -129,6 +149,21 @@ extension StatusViewCell {
 
 
 extension  StatusViewCell {
+      //MARK: - 点赞方法
+    
+//    guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+//    self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
+//    return
+//    }
+//    
+//    func thumb(){
+//     NetWorkTool.shareInstance.getNmomentThumb(token: <#T##String#>, id: <#T##Int#>, finished: <#T##([String : AnyObject]?, Error?) -> ()#>)
+//    }
+    
+    
+    
+    
+    
     
     
 }

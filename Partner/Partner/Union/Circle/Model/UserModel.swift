@@ -16,5 +16,8 @@ class UserModel: NSObject {
      @objc var create       :  NSNumber?
      @objc var status       :  NSNumber?
      @objc var circleMembId :  NSNumber?
+     @objc var type         :  NSNumber?
+//     @objc var circleMembId  :  NSNumber?
+
 }
 

@@ -25,6 +25,11 @@ class CricleViewController: UIViewController {
     
 //设置闭包弹出
     func showVCClouse() -> () {
+        var  isceate = 0
+        circlePickertrueView.postiSCreateClouse = {(create) in
+            isceate = create
+        }
+        
         circlePickertrueView.showInfoTypeClouse = {(info) in
             self.presentHintMessage(hintMessgae: info, completion: { (action) in
             })
@@ -36,6 +41,7 @@ class CricleViewController: UIViewController {
             }else{
                 let  detailVC  = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleDetailVCID") as! CircleDetailVC
                 detailVC.circleId = circleID
+                detailVC.create = isceate
                 destVC = detailVC
             }
             self.navigationController?.show(destVC!, sender: nil)

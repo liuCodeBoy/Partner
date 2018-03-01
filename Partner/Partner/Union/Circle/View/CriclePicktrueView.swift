@@ -11,9 +11,11 @@ import MJRefresh
 typealias showInfoType = (String) -> ()
 //弹出控制器闭包
 typealias showVCType = (Int) -> ()
+typealias postISCreateType = (Int) -> ()
 class CriclePicktrueView: UICollectionView {
     var   showInfoTypeClouse : showInfoType?
     var   showVCClouse       : showVCType?
+    var   postiSCreateClouse : postISCreateType?
     var   modelArr        = [CircleModel]()
     var   othersModelArr  = [CircleModel]()
     var   pageNum         = 1
@@ -54,6 +56,7 @@ class CriclePicktrueView: UICollectionView {
                             let   model = CircleModel.mj_object(withKeyValues: dict)
                             self?.modelArr.append(model!)
                         }
+                        self?.mj_header.endRefreshing()
                         self?.reloadData()
                     }
                 } else {
@@ -134,10 +137,10 @@ extension  CriclePicktrueView {
     }
     
     @objc func refresh() -> () {
-        self.pageNum = 1
         self.othersModelArr.removeAll()
+        setdeafultStatus()
+        getSelfCircleInfo()
         getOtherCircleInfo()
-        self.mj_header.endRefreshing()
     }
     @objc func  endrefresh() -> (){
         getOtherCircleInfo()
@@ -228,11 +231,16 @@ extension CriclePicktrueView : UICollectionViewDataSource,UICollectionViewDelega
             guard  self.modelArr.count > 0 else{
                 return
             }
-            if self.showVCClouse != nil && indexPath.section == 0{
+            if self.showVCClouse != nil && indexPath.section == 0 && self.postiSCreateClouse != nil{
                  let model = self.modelArr[indexPath.row]
+                self.postiSCreateClouse!(model.create as! Int)
                 self.showVCClouse!(model.circleId as! Int)
-            }else if self.showVCClouse != nil && indexPath.section == 1{
+            }else if self.showVCClouse != nil && indexPath.section == 1  && self.postiSCreateClouse != nil{
+                guard  self.othersModelArr.count > 0 else{
+                    return
+                }
                 let model = self.othersModelArr[indexPath.row]
+                self.postiSCreateClouse!(2)
                 self.showVCClouse!(model.circleId as! Int)
             }
         }
