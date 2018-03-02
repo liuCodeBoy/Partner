@@ -1,25 +1,18 @@
 //
-//  PartnerPickerView.swift
+//  PartnerSinglePickerView.swift
 //  Partner
 //
-//  Created by Weslie on 18/01/2018.
+//  Created by Weslie on 02/03/2018.
 //
 
 import UIKit
 
-class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
+class PartnerSinglePickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var twoDimensionArray = [[String : AnyObject]]()
-    
-    var firstComponentRows: Int = 0
-    var secondaryComponentRows: Int = 0
-    var firstComponentArray = [String]()
-    var secondaryComponentArray = [String]()
-    var secondaryComponentDictArray = [[String : AnyObject]]()
+    var componentArray = [String]()
     
     var inputLbl: UILabel?
-    var areaId: NSInteger?
-
+    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var pickerTitle: UILabel!
     @IBOutlet weak var pickerContainerView: UIView!
@@ -49,34 +42,15 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         // tap back view to dismiss
         let tap = UITapGestureRecognizer(target: self, action: #selector(closeBtnClicked(_:)))
         backgroundView.addGestureRecognizer(tap)
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        // judge the component
-        if component == 0 {
-            if firstComponentArray.count == 0 {
-                for dict in twoDimensionArray {
-                    let province = dict["name"] as! String
-                    firstComponentArray.append(province)
-                }
-            }
-            return firstComponentArray.count
-        } else {
-            // get the city array
-            secondaryComponentArray.removeAll()
-            secondaryComponentDictArray.removeAll()
-            guard twoDimensionArray.count != 0 else { return 0 }
-            secondaryComponentDictArray = twoDimensionArray[firstComponentRows]["cityList"] as! [[String: AnyObject]]
-            for dict in secondaryComponentDictArray {
-                let city = dict["name"] as! String
-                secondaryComponentArray.append(city)
-            }
-            return secondaryComponentArray.count
-        }
+        return componentArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -96,24 +70,16 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         label.sizeToFit()
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = NSTextAlignment.center
-
-        if component == 0 {
-            label.text = firstComponentArray[row]
-        } else {
-            label.text = secondaryComponentArray[row]
-        }
+        
+        label.text = componentArray[row]
         
         return label
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 0 {
-            firstComponentRows = pickerView.selectedRow(inComponent: 0)
-            pickerView.reloadComponent(1)
-        } else {
-            print(secondaryComponentDictArray[row]["id"])
-        }
+        inputLbl?.text = componentArray[row]
     }
     
-
+    
 }
+

@@ -9994,6 +9994,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8u-0y-pKg">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="identityClicked:" destination="8pl-2q-G1O" eventType="touchUpInside" id="3iZ-sL-7OL"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -10045,6 +10048,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNu-Yq-XMa">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="areaClicked:" destination="8pl-2q-G1O" eventType="touchUpInside" id="Yzy-BB-rsM"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -10096,6 +10102,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYR-aC-DqC">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="industryClicked:" destination="8pl-2q-G1O" eventType="touchUpInside" id="Yaw-m8-jFD"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -10147,6 +10156,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-gi-p15">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="financingClicked:" destination="8pl-2q-G1O" eventType="touchUpInside" id="DrQ-nN-ihH"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
