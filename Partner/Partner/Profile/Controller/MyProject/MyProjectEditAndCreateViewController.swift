@@ -11,11 +11,12 @@ import Lightbox
 
 class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegate {
     
-    var identityData = [[Int : String]]()
-    var identityId: Int?
+    var projModel: ProjectModel = ProjectModel()
     
+    var identityData = [[Int : String]]()
     var areaData = [[String : AnyObject]]()
-    var areaID: NSInteger = 2
+    
+    var financingData = [[Int : String]]()
     
     @IBOutlet weak var projectLogoImg   : UIImageView!
     @IBOutlet weak var projNameLbl      : UILabel!
@@ -44,16 +45,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     }
     
     @IBAction func identityClicked(_ sender: UIButton) {
-        let picker = Bundle.main.loadNibNamed("PartnerSinglePickerView", owner: nil, options: nil)?.first as! PartnerSinglePickerView
-        picker.frame = UIScreen.main.bounds
-        var nameArray = [String]()
-        for dict in identityData {
-            nameArray.append((dict.first?.value)!)
-        }
-        picker.componentArray = nameArray
-        picker.pickerTitle.text = "选择身份"
-        picker.inputLbl = identityLbl
-        self.view.addSubview(picker)
+        popupPartnerPicker(bindingLabel: identityLbl, type: .identity, model: projModel, componentDict: identityData)
     }
     
     @IBAction func areaClicked(_ sender: UIButton) {
@@ -62,41 +54,24 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
         picker.twoDimensionArray = areaData
         picker.pickerTitle.text = "选择所在区域"
         picker.inputLbl = locationLbl
-        picker.areaId = areaID
+        picker.projModel = projModel
         self.view.addSubview(picker)
     }
     
     @IBAction func industryClicked(_ sender: UIButton) {
-        print(areaID)
+
     }
     
     @IBAction func financingClicked(_ sender: UIButton) {
+        popupPartnerPicker(bindingLabel: financingLbl, type: .financing, model: projModel, componentDict: financingData)
+        
     }
     
     @IBAction func createProjBtnClicked(_ sender: ShadowButton) {
         // check wheather the infomation is completed
-        if  projectLogoImg.image    !=   #imageLiteral(resourceName: "profile_my_project_camera_small")     &&
-            projNameLbl.text        != "请输入"  &&
-            comFullNameLbl.text     != "请输入"  &&
-            contactNameLbl.text     != "请输入"  &&
-            contactPhoneLbl.text    != "请输入"  &&
-            emailLbl.text           != "请输入"  &&
-            identityLbl.text        != "请选择"  &&
-            locationLbl.text        != "请选择"  &&
-            industryLbl.text        != "请选择"  &&
-            financingLbl.text       != "请选择"
-        {
-            // TODO:- the infomation has completed, post request to upload
-            
-            presentHintMessage(hintMessgae: "创建成功", completion: { [weak self](_) in
-                self?.navigationController?.popViewController(animated: true)
-            })
-        } else {
-            presentHintMessage(hintMessgae: "请完善您的项目信息", completion: nil)
-        }
-        
         presentConfirmationAlert(hint: "确认要创建项目吗") { [weak self](_) in
-            self?.navigationController?.popViewController(animated: true)
+            // MARK:- create project
+            self?.saveAndCreateProj()
         }
     }
     override func viewDidLoad() {
@@ -106,9 +81,11 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
 
     }
     
+    // MARK:- network request
+    
     func loadAndSacePickerData() {
         checkLoginStatus()
-        // MARK:- identity data
+        // identity data
         NetWorkTool.shareInstance.getIndentityList(token: access_token!, type: 3) { (result, error) in
             weak var weakSelf = self
             if error != nil {
@@ -123,13 +100,12 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
                     let dictElement = [id : idenName]
                     weakSelf?.identityData.append(dictElement)
                 }
-                weakSelf?.identityId = weakSelf?.identityData.first?.first?.key
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
             }
         }
         
-        // MARK:- province and city
+        // province and city
         NetWorkTool.shareInstance.getProvinceAndCityList { (result, error) in
             weak var weakSelf = self
             if error != nil {
@@ -145,10 +121,77 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
             }
         }
+        
+        // industry
+        NetWorkTool.shareInstance.getInvestIndustryList { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save identity data into an array
+                
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
+        
+        // financing data
+        NetWorkTool.shareInstance.getRoundList { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save identity data into an array
+                for dict in result!["result"] as! [[String: AnyObject]] {
+                    let id = dict["id"] as! Int
+                    let idenName = dict["roundName"] as! String
+                    let dictElement = [id : idenName]
+                    weakSelf?.financingData.append(dictElement)
+                }
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
+    }
+    
+    func saveAndCreateProj() {
+        checkLoginStatus()
+        guard let logo = projModel.logo,
+              let fields = projModel.fields,
+              let projName = projModel.projName,
+              let projcompNmae = projModel.projCompName,
+              let projConnName = projModel.projConnName,
+              let projPhone = projModel.projPhone,
+              let projMail = projModel.projMail,
+              let idenId = projModel.idenId,
+              let areaId = projModel.areaId,
+              let roundId = projModel.roundId
+        else {
+            presentHintMessage(hintMessgae: "请完善您的项目信息", completion: nil)
+            return
+        }
+        NetWorkTool.shareInstance.createProject(token: access_token!, logo: logo, fields: fields, projName: projName, projCompName: projcompNmae, projConnName: projConnName, projPhone: projPhone, projMail: projMail, idenId: idenId as! Int, areaId: areaId as! Int, roundId: roundId as! Int) { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- create success
+                weakSelf?.presentHintMessage(hintMessgae: "创建成功", completion: { (_) in
+                    weakSelf?.navigationController?.popViewController(animated: true)
+                })
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(identityData)
         let dest = segue.destination as! InputDetialViewController
         switch segue.identifier! {
         case "projNameSegue":

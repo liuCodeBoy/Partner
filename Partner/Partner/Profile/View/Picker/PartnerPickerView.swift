@@ -9,6 +9,8 @@ import UIKit
 
 class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var projModel: ProjectModel?
+    
     var twoDimensionArray = [[String : AnyObject]]()
     
     var firstComponentRows: Int = 0
@@ -18,7 +20,6 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     var secondaryComponentDictArray = [[String : AnyObject]]()
     
     var inputLbl: UILabel?
-    var areaId: NSInteger?
 
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var pickerTitle: UILabel!
@@ -75,6 +76,9 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
                 let city = dict["name"] as! String
                 secondaryComponentArray.append(city)
             }
+            // save the default city id
+            projModel?.areaId = secondaryComponentDictArray[0]["id"] as? NSNumber
+            inputLbl?.text = secondaryComponentDictArray[0]["name"] as? String
             return secondaryComponentArray.count
         }
     }
@@ -111,7 +115,9 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             firstComponentRows = pickerView.selectedRow(inComponent: 0)
             pickerView.reloadComponent(1)
         } else {
-            print(secondaryComponentDictArray[row]["id"])
+            // save city id
+            projModel?.areaId = secondaryComponentDictArray[row]["id"] as? NSNumber
+            inputLbl?.text = secondaryComponentDictArray[row]["name"] as? String
         }
     }
     

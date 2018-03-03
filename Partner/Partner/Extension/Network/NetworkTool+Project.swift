@@ -9,18 +9,18 @@ import UIKit
 extension NetWorkTool {
     
     // MARK:- 创建项目
-    func changePwd(token        : String,
-                   logo         : UIImage,
-                   fields       : String,
-                   projName     : String,
-                   projCompName : String,
-                   projConnName : String,
-                   projPhone    : String,
-                   projMail     : String,
-                   idenId       : Int,
-                   areaId       : Int,
-                   roundId      : Int,
-                   finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+    func createProject(token        : String,
+                       logo         : UIImage,
+                       fields       : String,
+                       projName     : String,
+                       projCompName : String,
+                       projConnName : String,
+                       projPhone    : String,
+                       projMail     : String,
+                       idenId       : Int,
+                       areaId       : Int,
+                       roundId      : Int,
+                       finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
 
         let urlString = "http://47.97.110.89/qm/project/api/create.do"
         let parameters = ["token"                 : token,

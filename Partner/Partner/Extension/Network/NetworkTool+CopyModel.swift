@@ -101,6 +101,17 @@ extension NetWorkTool {
             finished(nil , error)
         }
     }
+    // MARK:- no parament
+    func noPara(finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http"
+        request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            finished(resultDict, error)
+        }
+    }
     
     
 }

@@ -7,9 +7,19 @@
 
 import UIKit
 
+enum PartnerPickerType: String {
+    case identity = "identity"
+    case financing = "financing"
+}
+
 class PartnerSinglePickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var type: PartnerPickerType?
+    
+    var projModel: ProjectModel?
+    
     var componentArray = [String]()
+    var componentDict = [[Int : String]]()
     
     var inputLbl: UILabel?
     
@@ -78,6 +88,14 @@ class PartnerSinglePickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSou
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         inputLbl?.text = componentArray[row]
+        // TODO:- pass id to model
+        switch type! {
+        case .identity:
+            projModel?.idenId = componentDict[row].first?.key as NSNumber?
+        case .financing:
+            projModel?.roundId = componentDict[row].first?.key as NSNumber?
+            print(projModel?.roundId)
+        }
     }
     
     
