@@ -849,6 +849,7 @@
                                                                 <constraint firstAttribute="height" constant="20" id="XRd-35-cAK"/>
                                                             </constraints>
                                                             <state key="normal" image="zan"/>
+                                                            <state key="selected" image="zan_selected"/>
                                                             <connections>
                                                                 <action selector="zanAction:" destination="Zq1-yN-hSY" eventType="touchUpInside" id="ubQ-ut-GsI"/>
                                                             </connections>
