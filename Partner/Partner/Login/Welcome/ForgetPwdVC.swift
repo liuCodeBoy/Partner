@@ -68,7 +68,8 @@ class ForgetPwdVC: UIViewController {
                 // MARK:- judge the return data from server
                 if result?["code"] as? Int == 200 {
                     self?.presentHintMessage(hintMessgae: result!["msg"] as! String, completion: { (action) in
-                        self?.navigationController?.popViewController(animated: true)})
+                        self?.dismiss(animated: true, completion: nil)
+                        })
                 } else {
                     let  errorShow  =  result!["msg"] as! String
                     self?.presentHintMessage(hintMessgae: errorShow, completion: nil)

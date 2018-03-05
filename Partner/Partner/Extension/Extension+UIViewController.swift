@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImagePicker
 
 private let swizzling: (AnyClass, Selector, Selector) -> () = { forClass, originalSelector, swizzledSelector in
     let originalMethod = class_getInstanceMethod(forClass, originalSelector)
@@ -64,15 +65,12 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    // MARK:- token expired or login infomation invalid
-    func checkLoginStatus() {
-        guard UserDefaults.standard.string(forKey: "token") != nil else {
-            presentHintMessage(hintMessgae: "你还为登陆", completion: { [weak self](_) in
-                let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
-                self?.navigationController?.present(vc, animated: true, completion: nil)
-            })
-            return
-        }
+    // MARK:- present login view controller
+    func presentLoginController() {
+        presentHintMessage(hintMessgae: "你还未登陆", completion: { [weak self](_) in
+            let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
+            self?.navigationController?.present(vc, animated: true, completion: nil)
+        })
     }
     
     // MARK:- pop up single component picker

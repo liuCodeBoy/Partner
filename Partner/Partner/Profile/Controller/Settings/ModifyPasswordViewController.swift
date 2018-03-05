@@ -86,7 +86,13 @@ class ModifyPasswordViewController: UIViewController {
             presentHintMessage(hintMessgae: "您两次输入的密码不一样", completion: nil)
             return
         }
-        checkLoginStatus()
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        
+        
+        
         // MARK:- post request
         NetWorkTool.shareInstance.changePwd(token: access_token!, phone: phone, newPwd: newPwd, code: idNum) { (result, error) in
             weak var weakSelf = self

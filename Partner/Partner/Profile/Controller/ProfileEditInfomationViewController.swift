@@ -108,7 +108,10 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     @IBAction func saveEditClicked(_ sender: UIButton) {
         presentConfirmationAlert(hint: "确认保存修改？") { [weak self](_) in
             // TODO:- save data
-            self?.checkLoginStatus()
+            guard UserDefaults.standard.string(forKey: "token") != nil else {
+                self?.presentLoginController()
+                return
+            }
             
             if self?.checkEditInfoCompleted() == false {
                 self?.presentHintMessage(hintMessgae: "请完善信息后再提交", completion: { (_) in
@@ -195,7 +198,10 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         notificationAddKeyboardObserver()
         
         // load data
-        checkLoginStatus()
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
         NetWorkTool.shareInstance.getMyInfo(token: access_token!) { [weak self](result, error) in
             if error != nil {
                 self?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
@@ -212,7 +218,10 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     }
     
     func saveInfomarion() {
-        checkLoginStatus()
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
         guard let avatar = avatarCell?.avatar.image else { return }
         // all info nonnull then post request
         NetWorkTool.shareInstance.editUser(token            : access_token!,

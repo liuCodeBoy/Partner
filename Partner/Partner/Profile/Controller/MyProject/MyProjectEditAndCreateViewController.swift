@@ -84,7 +84,10 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     // MARK:- network request
     
     func loadAndSacePickerData() {
-        checkLoginStatus()
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
         // identity data
         NetWorkTool.shareInstance.getIndentityList(token: access_token!, type: 3) { (result, error) in
             weak var weakSelf = self
@@ -159,7 +162,10 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     }
     
     func saveAndCreateProj() {
-        checkLoginStatus()
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
         guard let logo = projModel.logo,
               let fields = projModel.fields,
               let projName = projModel.projName,
