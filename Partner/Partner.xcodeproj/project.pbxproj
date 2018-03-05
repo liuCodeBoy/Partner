@@ -29,6 +29,12 @@
 		B65E09E12046538000BF81FF /* NoticeInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09E02046538000BF81FF /* NoticeInfoModel.swift */; };
 		B65E09E320468B7000BF81FF /* NoticeSocialConnListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09E220468B7000BF81FF /* NoticeSocialConnListModel.swift */; };
 		B65E09E5204690A900BF81FF /* NoticeSocialConnListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E09E4204690A900BF81FF /* NoticeSocialConnListCell.swift */; };
+		B675482F204CDD9400B60D3A /* DynamicCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675482E204CDD9400B60D3A /* DynamicCommonCell.swift */; };
+		B6754831204CF97E00B60D3A /* DynamicCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6754830204CF97E00B60D3A /* DynamicCommentModel.swift */; };
+		B6754835204D265F00B60D3A /* HotInvestorListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6754834204D265F00B60D3A /* HotInvestorListModel.swift */; };
+		B6754837204D3E7700B60D3A /* ProjectListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6754836204D3E7700B60D3A /* ProjectListModel.swift */; };
+		B6754839204D48CB00B60D3A /* TypeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6754838204D48CB00B60D3A /* TypeListModel.swift */; };
+		B675483F204D52E200B60D3A /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675483E204D52E200B60D3A /* InformationVC.swift */; };
 		B678C9982021C82F007FEB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6843E3820216B5E00B86A3F /* Assets.xcassets */; };
 		B678C99A2021E065007FEB83 /* UnionNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */; };
 		B678C99C2021E967007FEB83 /* UnionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C99B2021E967007FEB83 /* UnionListModel.swift */; };
@@ -53,6 +59,7 @@
 		B687ABA820440EA2004C915A /* reportReasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687ABA720440EA2004C915A /* reportReasonModel.swift */; };
 		B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */; };
 		B690ADE12047FB220072C0C1 /* CircleNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690ADE02047FB220072C0C1 /* CircleNetWorkTools.swift */; };
+		B690ADE3204CDA250072C0C1 /* DynamicDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690ADE2204CDA250072C0C1 /* DynamicDetailVC.swift */; };
 		B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A34317201C645300C7D5F5 /* communityModel.swift */; };
 		B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */; };
 		B6B9A53A20243CC900AC24EB /* CricleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B9A53920243CC900AC24EB /* CricleViewController.swift */; };
@@ -222,6 +229,12 @@
 		B65E09E02046538000BF81FF /* NoticeInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeInfoModel.swift; sourceTree = "<group>"; };
 		B65E09E220468B7000BF81FF /* NoticeSocialConnListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSocialConnListModel.swift; sourceTree = "<group>"; };
 		B65E09E4204690A900BF81FF /* NoticeSocialConnListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSocialConnListCell.swift; sourceTree = "<group>"; };
+		B675482E204CDD9400B60D3A /* DynamicCommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCommonCell.swift; sourceTree = "<group>"; };
+		B6754830204CF97E00B60D3A /* DynamicCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCommentModel.swift; sourceTree = "<group>"; };
+		B6754834204D265F00B60D3A /* HotInvestorListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotInvestorListModel.swift; sourceTree = "<group>"; };
+		B6754836204D3E7700B60D3A /* ProjectListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListModel.swift; sourceTree = "<group>"; };
+		B6754838204D48CB00B60D3A /* TypeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeListModel.swift; sourceTree = "<group>"; };
+		B675483E204D52E200B60D3A /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
 		B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionNetWorkTool.swift; sourceTree = "<group>"; };
 		B678C99B2021E967007FEB83 /* UnionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionListModel.swift; sourceTree = "<group>"; };
 		B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginVC.swift; sourceTree = "<group>"; };
@@ -246,6 +259,7 @@
 		B687ABA720440EA2004C915A /* reportReasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportReasonModel.swift; sourceTree = "<group>"; };
 		B690A7952003652D00AAA051 /* ChooseIdentityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIdentityVC.swift; sourceTree = "<group>"; };
 		B690ADE02047FB220072C0C1 /* CircleNetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleNetWorkTools.swift; sourceTree = "<group>"; };
+		B690ADE2204CDA250072C0C1 /* DynamicDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicDetailVC.swift; sourceTree = "<group>"; };
 		B6A34317201C645300C7D5F5 /* communityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = communityModel.swift; path = Partner/Login/Welcome/communityModel.swift; sourceTree = SOURCE_ROOT; };
 		B6B9A5342024354D00AC24EB /* CriclePicktrueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriclePicktrueView.swift; sourceTree = "<group>"; };
 		B6B9A53920243CC900AC24EB /* CricleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricleViewController.swift; sourceTree = "<group>"; };
@@ -457,6 +471,9 @@
 		B65BE1822029C365004407B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6754834204D265F00B60D3A /* HotInvestorListModel.swift */,
+				B6754836204D3E7700B60D3A /* ProjectListModel.swift */,
+				B6754838204D48CB00B60D3A /* TypeListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -482,6 +499,38 @@
 			path = "New Group1";
 			sourceTree = "<group>";
 		};
+		B675483A204D524F00B60D3A /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				B675483D204D528700B60D3A /* View */,
+				B675483C204D527E00B60D3A /* Model */,
+				B675483B204D526100B60D3A /* Controller */,
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
+		B675483B204D526100B60D3A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B675483E204D52E200B60D3A /* InformationVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B675483C204D527E00B60D3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B675483D204D528700B60D3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B6843E3320201E3A00B86A3F /* Moments */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +549,7 @@
 				B65E09D42044F40600BF81FF /* MyCircleEntityModel.swift */,
 				B65E09E02046538000BF81FF /* NoticeInfoModel.swift */,
 				B65E09E220468B7000BF81FF /* NoticeSocialConnListModel.swift */,
+				B6754830204CF97E00B60D3A /* DynamicCommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -513,6 +563,7 @@
 				B65BE17D2029A4AD004407B1 /* CircleChooseTableView.swift */,
 				B65E09DE20464D2B00BF81FF /* NoticeListCell.swift */,
 				B65E09E4204690A900BF81FF /* NoticeSocialConnListCell.swift */,
+				B675482E204CDD9400B60D3A /* DynamicCommonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -536,6 +587,7 @@
 				B6E1FAFC20286D7F00BB2B4E /* StatusPushVC.swift */,
 				B65E09DA20464B3800BF81FF /* NoticeViewController.swift */,
 				B65E09DC20464CC900BF81FF /* NoticeListViewController.swift */,
+				B690ADE2204CDA250072C0C1 /* DynamicDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -860,10 +912,9 @@
 				B65BE1892029D652004407B1 /* LoopView.swift */,
 				D378FEE01FF0D60800065EEC /* Home.storyboard */,
 				D33EA67B2011D68700745003 /* HomeViewController.swift */,
+				B675483A204D524F00B60D3A /* Information */,
 				B65BE1802029C365004407B1 /* Plaza */,
 				B65BE17F2029C348004407B1 /* Social */,
-				D378FEE41FF0D67700065EEC /* Reservation */,
-				D378FF0B1FF0E90E00065EEC /* Miscellaneous */,
 				B65BE18D202AA18C004407B1 /* View.xib */,
 			);
 			path = Home;
@@ -939,78 +990,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		D378FEE31FF0D65F00065EEC /* AirPrint */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AirPrint;
-			sourceTree = "<group>";
-		};
-		D378FEE41FF0D67700065EEC /* Reservation */ = {
-			isa = PBXGroup;
-			children = (
-				D378FF191FF0EA0400065EEC /* Model */,
-				D378FF1A1FF0EA0400065EEC /* View */,
-				D378FF181FF0EA0400065EEC /* Controller */,
-				D378FEE51FF0D6A900065EEC /* MeetingRoom */,
-				D378FEE61FF0D6D500065EEC /* Station */,
-				D378FEE71FF0D70700065EEC /* Site */,
-			);
-			path = Reservation;
-			sourceTree = "<group>";
-		};
-		D378FEE51FF0D6A900065EEC /* MeetingRoom */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MeetingRoom;
-			sourceTree = "<group>";
-		};
-		D378FEE61FF0D6D500065EEC /* Station */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Station;
-			sourceTree = "<group>";
-		};
-		D378FEE71FF0D70700065EEC /* Site */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Site;
-			sourceTree = "<group>";
-		};
-		D378FEE81FF0D71700065EEC /* DoorLock */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DoorLock;
-			sourceTree = "<group>";
-		};
-		D378FEE91FF0D73800065EEC /* ECoupons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ECoupons;
-			sourceTree = "<group>";
-		};
-		D378FEEA1FF0D76A00065EEC /* NetworkConnection */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkConnection;
-			sourceTree = "<group>";
-		};
-		D378FEEB1FF0D78000065EEC /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				D378FF151FF0E94900065EEC /* Model */,
-				D378FF161FF0E94900065EEC /* View */,
-				D378FF171FF0E94900065EEC /* Controller */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		D378FEF31FF0E3E000065EEC /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -1078,60 +1057,6 @@
 			children = (
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		D378FF0B1FF0E90E00065EEC /* Miscellaneous */ = {
-			isa = PBXGroup;
-			children = (
-				D378FEE31FF0D65F00065EEC /* AirPrint */,
-				D378FEEA1FF0D76A00065EEC /* NetworkConnection */,
-				D378FEE91FF0D73800065EEC /* ECoupons */,
-				D378FEE81FF0D71700065EEC /* DoorLock */,
-				D378FEEB1FF0D78000065EEC /* Classes */,
-			);
-			path = Miscellaneous;
-			sourceTree = "<group>";
-		};
-		D378FF151FF0E94900065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D378FF161FF0E94900065EEC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D378FF171FF0E94900065EEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D378FF181FF0EA0400065EEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D378FF191FF0EA0400065EEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D378FF1A1FF0EA0400065EEC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D378FF1F1FF0EAEB00065EEC /* View */ = {
@@ -1682,6 +1607,7 @@
 				B687ABA820440EA2004C915A /* reportReasonModel.swift in Sources */,
 				B6BD3D06202D43A1005595ED /* CreateCricleVC.swift in Sources */,
 				B65BE17E2029A4AD004407B1 /* CircleChooseTableView.swift in Sources */,
+				B690ADE3204CDA250072C0C1 /* DynamicDetailVC.swift in Sources */,
 				D3722C95203FAD2B00E0B765 /* ServiceProviderViewController.swift in Sources */,
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
 				B6843E3D202192C700B86A3F /* StatusViewModel.swift in Sources */,
@@ -1689,6 +1615,7 @@
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
 				D327F759202B7A900045671C /* MyHomePageMomentsTableViewCell.swift in Sources */,
 				B641021D2015D7D3001C8787 /* SkillViewController.swift in Sources */,
+				B675483F204D52E200B60D3A /* InformationVC.swift in Sources */,
 				B687AB9A2043B4A9004C915A /* CircleMemberListTableView.swift in Sources */,
 				B65E09D52044F40600BF81FF /* MyCircleEntityModel.swift in Sources */,
 				B6C27D072019AF200087FF17 /* ForgetPwdVC.swift in Sources */,
@@ -1742,11 +1669,15 @@
 				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
 				D39F14E6201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift in Sources */,
 				D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */,
+				B6754835204D265F00B60D3A /* HotInvestorListModel.swift in Sources */,
 				B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */,
 				B687ABA02043E4EA004C915A /* CircleWatingJoinInListTableView.swift in Sources */,
 				D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */,
+				B6754831204CF97E00B60D3A /* DynamicCommentModel.swift in Sources */,
 				D3E33488203232C40084687C /* MyHomePageAddEntrepreneurshipExperienceViewController.swift in Sources */,
+				B6754839204D48CB00B60D3A /* TypeListModel.swift in Sources */,
 				D35A9D12203FAFB200408B9E /* ServiceFounderPlaceholderViewController.swift in Sources */,
+				B675482F204CDD9400B60D3A /* DynamicCommonCell.swift in Sources */,
 				D39F8C38201F0CB100A40AC1 /* MyProjectEditMarketAnalysisViewController.swift in Sources */,
 				B68182DD203FC385007CE890 /* UserModel.swift in Sources */,
 				B65AAC0A203FAD5F00A76358 /* SearchUserVC.swift in Sources */,
@@ -1779,6 +1710,7 @@
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,
 				D37D7131202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift in Sources */,
 				D39F8C32201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift in Sources */,
+				B6754837204D3E7700B60D3A /* ProjectListModel.swift in Sources */,
 				D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */,
 				D35A9D1B203FB18C00408B9E /* ServiceProjectBriefTableViewCell.swift in Sources */,
 				B6D7F80B20415DC80044B31C /* CircleManageVC.swift in Sources */,

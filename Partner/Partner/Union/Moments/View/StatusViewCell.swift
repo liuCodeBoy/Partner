@@ -11,7 +11,7 @@ import NoticeBar
  let edgeMargin: CGFloat = 10
  let itemMargin: CGFloat = 5
 class StatusViewCell: UITableViewCell {
-
+    var   showVCClouse : showVCType?
     @IBOutlet weak var collectionViewButtonDistanceCons: NSLayoutConstraint!
     @IBOutlet weak var collectionviewHCons: NSLayoutConstraint!
     @IBOutlet weak var collectionViewWCons: NSLayoutConstraint!
@@ -39,18 +39,20 @@ class StatusViewCell: UITableViewCell {
             avatarImage.sd_setImage(with: URL.init(string: viewModel.userImgUrl! as String), placeholderImage: nil)
             
             var   userIdentify : String?
-            switch Int(truncating: viewModel.userIdenId!) {
-            case 1:
-                userIdentify = "投资商"
-                break
-            case 2:
-                userIdentify = "创业者"
-                break
-            case 3:
-                userIdentify = "普通用户"
-                break
-            default:
-                break
+            if let   IndentID = viewModel.userIdenId {
+                switch Int(truncating: IndentID) {
+                case 1:
+                    userIdentify = "投资商"
+                    break
+                case 2:
+                    userIdentify = "创业者"
+                    break
+                case 3:
+                    userIdentify = "普通用户"
+                    break
+                default:
+                    break
+                }
             }
             //设置评论数
             if let  commentNum = viewModel.commentNum{
@@ -107,6 +109,11 @@ class StatusViewCell: UITableViewCell {
     @IBAction func deleteStatus(_ sender: Any) {
     }
     @IBAction func commentAction(_ sender: Any) {
+//        DynamicDetailVCID
+        weak var weakself = self
+        if weakself?.showVCClouse != nil{
+            weakself?.showVCClouse!(weakself?.viewModel?.momentId as! Int)
+        }
     }
     @IBAction func zanAction(_ sender: UIButton) {
         thumb(btn: sender, isThumb: self.viewModel?.thumb as! Int)

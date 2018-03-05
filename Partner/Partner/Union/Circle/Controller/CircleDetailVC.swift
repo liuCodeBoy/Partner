@@ -149,9 +149,7 @@ class CircleDetailVC: UIViewController {
     
     
      //MARK: - 退出圈子
-    //CircleReportVCID
-    
-   
+    //CircleReportVCID   
     func leaveCircle(){
         self.presentAlert(title: "确认退出", hint: "", confirmTitle: "确定", cancelTitle: "取消", confirmation: { (action) in
             self.withdrawCircle()

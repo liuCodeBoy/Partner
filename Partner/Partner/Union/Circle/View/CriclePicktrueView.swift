@@ -104,8 +104,7 @@ class CriclePicktrueView: UICollectionView {
                             self?.othersModelArr.append(model!)
                             
                         }
-                        self?.mj_footer.endRefreshing()
-
+                        self?.mj_header.endRefreshing()
                         self?.reloadData()
                     }
                 } else {
@@ -228,13 +227,12 @@ extension CriclePicktrueView : UICollectionViewDataSource,UICollectionViewDelega
                 self.showVCClouse!(0)
             }
         }else{
-            guard  self.modelArr.count > 0 else{
-                return
-            }
             if self.showVCClouse != nil && indexPath.section == 0 && self.postiSCreateClouse != nil{
-                 let model = self.modelArr[indexPath.row]
+                if self.modelArr.count > 0 {
+                let model = self.modelArr[indexPath.row]
                 self.postiSCreateClouse!(model.create as! Int)
                 self.showVCClouse!(model.circleId as! Int)
+                }
             }else if self.showVCClouse != nil && indexPath.section == 1  && self.postiSCreateClouse != nil{
                 guard  self.othersModelArr.count > 0 else{
                     return

@@ -286,8 +286,6 @@ extension NetWorkTool {
             finished(resultDict, error)
         }
     }
-    
-    
     func getNowTime() -> (String){
         let date = NSDate.init(timeIntervalSinceNow: 0)
         let a  =  date.timeIntervalSince1970
@@ -295,5 +293,59 @@ extension NetWorkTool {
         return  timesString
     }
     
+    
+    //热门投资人（user/getHotInvestorList）
+    func getHotInvestorList(finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/user/api/getHotInvestorList.do"
+        //2.获取请求参数
+        let parameters = [:] as [String : Any]
+        //3.发送请求参数
+        request(.GET, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+
+    //项目列表（project/getProjectList）
+    func getProjectList(token:String?, order : Int, type : Int? , id : Int? ,fuzzy : String?, pageNum : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/project/api/getProjectList.do"
+        //2.获取请求参数
+        let parameters = ["token" : token ?? "", "type" : type ?? 0, "order" : order, "id" : id ?? 0 ,  "fuzzy" : fuzzy as Any ,"pageNum" :pageNum , "pageSize" : 10] 
+        //3.发送请求参数
+        request(.GET, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    //资讯类型列表（info/type/list）
+    func getTypeList(finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/info/api/type/list.do"
+        //2.获取请求参数
+        let parameters = [:] as [String : Any]
+        //3.发送请求参数
+        request(.GET, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
 }
 

@@ -198,6 +198,12 @@ extension MomentMainVC {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StatusViewCell") as!  StatusViewCell
+        cell.showVCClouse = {(momentId) in
+            //DynamicDetailVCID
+              let dynamicDetailVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "DynamicDetailVCID") as! DynamicDetailVC
+            dynamicDetailVC.momentId = momentId
+              self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
+        }
         if  modelView.count > 0  { cell.viewModel = modelView[indexPath.row]}
     
         // 显示，并指定打开第几张图

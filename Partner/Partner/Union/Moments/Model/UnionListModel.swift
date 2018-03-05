@@ -22,3 +22,4 @@ class UnionListModel: NSObject {
     @objc  var   thumb       : NSNumber?
     @objc  var   my          : NSNumber?
 }
+
