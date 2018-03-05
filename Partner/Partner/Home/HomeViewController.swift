@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     
     //初始化头部按钮
     func addTopViewChildsBtn(){
-        let  btnArr = ["广场","社区","活动","资讯"]
+        let  btnArr = ["广场","资讯"]
         let  width  = (screenWidth) / CGFloat(btnArr.count)
         for i in 0..<btnArr.count {
             let  btnStr  = btnArr[i]
@@ -77,7 +77,7 @@ class HomeViewController: UIViewController {
         //添加滚动控件
         let  scrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: 64, width:screenWidth, height: screenHeight - 104))
         scrollView.backgroundColor = UIColor.red
-        scrollView.contentSize = CGSize.init(width: screenWidth  *  4, height: screenHeight - 104)
+        scrollView.contentSize = CGSize.init(width: screenWidth  *  2, height: screenHeight - 104)
         scrollView.bounces = false
         scrollView.isPagingEnabled = true
         self.view.addSubview(scrollView)
@@ -89,12 +89,13 @@ class HomeViewController: UIViewController {
         self.addChildViewController(homeVC)
         homeVC.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight - 104)
         self.scrollView?.addSubview(homeVC.view)
-//        //CricleViewController 子控制器
-//        let cricleVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CricleViewControllerID")
-//        self.addChildViewController(cricleVC)
-//        
-//        momentVC.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight - 104)
-//        self.scrollView?.addSubview(momentVC.view)
+        
+//        //InformationVC 子控制器
+        let informationVC  = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "InformationVCID")
+        self.addChildViewController(informationVC)
+        informationVC.view.frame = CGRect.init(x: screenWidth, y: 0, width: screenWidth, height: screenHeight - 104)
+        self.scrollView?.addSubview(informationVC.view)
+        
 //        cricleVC.view.frame = CGRect.init(x: screenWidth, y: 0, width: screenWidth, height: screenHeight - 104)
 //        self.scrollView?.addSubview(cricleVC.view)
         
