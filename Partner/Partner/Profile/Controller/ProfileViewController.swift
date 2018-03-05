@@ -18,10 +18,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var dataIntegrityLbl: UILabel!
     @IBOutlet weak var dataIntegrityProgressWidthCons: NSLayoutConstraint!
     
-    @IBOutlet weak var officeOrderLbl: UILabel!
-    @IBOutlet weak var meetingRoomOrderLbl: UILabel!
-    @IBOutlet weak var stationOrderLbl: UILabel!
-    
     @IBOutlet weak var backImageHeightCons: NSLayoutConstraint!
     
     @IBAction func backToProfile(_ sender: UIStoryboardSegue) { }
@@ -61,15 +57,6 @@ class ProfileViewController: UIViewController {
                 dataIntegrityLbl.text = "\(percent)%"
                 let per = Double(truncating: percent) * 0.01
                 dataIntegrityProgressWidthCons.constant = CGFloat(120 * (1 - per))
-            }
-            if let count = viewModel?.officecubicleNum {
-                officeOrderLbl.text = "\(count)"
-            }
-            if let count = viewModel?.boardroomNum {
-                meetingRoomOrderLbl.text = "\(count)"
-            }
-            if let count = viewModel?.fieldNum {
-                stationOrderLbl.text = "\(count)"
             }
         }
     }

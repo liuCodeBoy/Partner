@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +19,38 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_screen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="16t-ro-O8W">
+                                <rect key="frame" x="117.66666666666667" y="194" width="139.66666666666663" height="140"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="16t-ro-O8W" secondAttribute="height" id="HQt-8L-wRp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_screen_sub_logo" translatesAutoresizingMaskIntoConstraints="NO" id="L5o-Au-lY3">
+                                <rect key="frame" x="127" y="354" width="120" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="L5o-Au-lY3" secondAttribute="height" multiplier="120:57" id="OM0-U6-h87"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="线上社交、商业服务平台" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yP8-Ks-JbN">
+                                <rect key="frame" x="120.33333333333331" y="743.66666666666663" width="135" height="14.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59999999999999998" green="0.68627450980392157" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="16t-ro-O8W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="2C5-Gu-ooL"/>
+                            <constraint firstItem="L5o-Au-lY3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7CV-yc-wMv"/>
+                            <constraint firstItem="yP8-Ks-JbN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9ir-Jr-1Od"/>
+                            <constraint firstItem="16t-ro-O8W" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Jwp-mn-801"/>
+                            <constraint firstItem="16t-ro-O8W" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.373" id="KBq-dG-8ht"/>
+                            <constraint firstItem="L5o-Au-lY3" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.32" id="PVQ-qP-cvt"/>
+                            <constraint firstItem="L5o-Au-lY3" firstAttribute="top" secondItem="16t-ro-O8W" secondAttribute="bottom" constant="20" id="RDr-xa-mtg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yP8-Ks-JbN" secondAttribute="bottom" constant="20" id="rPh-Qy-h85"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +59,8 @@
             <point key="canvasLocation" x="52" y="373.76311844077964"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launch_screen_logo" width="142" height="143"/>
+        <image name="launch_screen_sub_logo" width="122" height="60"/>
+    </resources>
 </document>
