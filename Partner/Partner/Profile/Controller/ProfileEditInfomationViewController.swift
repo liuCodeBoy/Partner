@@ -77,26 +77,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 default: break
                 }
             }
-            viewModel?.hobby = "asd, 124, 2345"
-
+            
         }
     }
-    
-//    class viewModel {
-//        static var image: UIImage?
-//        static var name: String?
-//        static var gender: NSNumber?
-//        static var mail: String?
-//        static var companyName: String?
-//        static var communityId: NSNumber? = 1
-//        static var identityId: NSNumber?
-//        static var job: String?
-//        static var hobby: String?
-//        static var skill: String?
-//        static var require: String?
-//        static var desc: String?
-//    }
-
     
     func checkEditInfoCompleted() -> Bool {
         if viewModel?.userName != nil && viewModel?.gender != nil && viewModel?.mail != nil && viewModel?.compName != nil && viewModel?.communityId != nil && viewModel?.idenId != nil && viewModel?.jobName != nil && viewModel?.hobby != nil && viewModel?.skill != nil && viewModel?.require != nil {
@@ -112,6 +95,12 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     
     var rows = [1, 8, 1, 1, 1, 1]
     
+    var avatarCell: ProfileEditChooseAvatarTableViewCell?
+    var hobbyCell: ProfileHobbiesSelectorTableViewBodyCell?
+    var skillCell: ProfileSkillsSelectorTableViewBodyCell?
+    var requireCell: ProfileTextInputTableViewBodyCell?
+    var descCell: ProfileTextInputTableViewBodyCell?
+    
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -119,7 +108,10 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     @IBAction func saveEditClicked(_ sender: UIButton) {
         presentConfirmationAlert(hint: "确认保存修改？") { [weak self](_) in
             // TODO:- save data
-            self?.checkLoginStatus()
+            guard UserDefaults.standard.string(forKey: "token") != nil else {
+                self?.presentLoginController()
+                return
+            }
             
             if self?.checkEditInfoCompleted() == false {
                 self?.presentHintMessage(hintMessgae: "请完善信息后再提交", completion: { (_) in
@@ -128,24 +120,8 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 return
             }
             
-            // save hobby and skil
-            let hobbyCell = self?.profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 2)) as! ProfileHobbiesSelectorTableViewBodyCell
-            let hobbies = hobbyCell.hobbyString
-            let skillCell = self?.profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 3)) as! ProfileSkillsSelectorTableViewBodyCell
-            let skills = skillCell.skillString
-            if hobbies == "" || skills == "" {
-                self?.presentHintMessage(hintMessgae: "请完善信息后再提交", completion: { (_) in
-                    return
-                })
-                return
-            } else {
-                self?.viewModel?.skill = skills
-                self?.viewModel?.hobby = hobbies
-            }
-            
             // save require and desc
-            let requireCell = self?.profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 4)) as! ProfileTextInputTableViewBodyCell
-            if let require = requireCell.inputTextView.text, require != "" && require.replacingOccurrences(of: " ", with: "") != "" {
+            if let requireCell = self?.requireCell, let require = requireCell.inputTextView.text, require != "" && require.replacingOccurrences(of: " ", with: "") != "" {
                 self?.viewModel?.require = require
             } else {
                 self?.presentHintMessage(hintMessgae: "请完善信息后再提交", completion: { (_) in
@@ -153,8 +129,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 })
                 return
             }
-            let descCell = self?.profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 5)) as! ProfileTextInputTableViewBodyCell
-            if let desc = descCell.inputTextView.text, desc != "" && desc.replacingOccurrences(of: " ", with: "") != "" {
+            if let descCell = self?.descCell, let desc = descCell.inputTextView.text, desc != "" && desc.replacingOccurrences(of: " ", with: "") != "" {
                 self?.viewModel?.desc = desc
             } else {
                 self?.presentHintMessage(hintMessgae: "请完善信息后再提交", completion: { (_) in
@@ -163,25 +138,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 return
             }
             
-//            NetWorkTool.shareInstance.editUser(token: access_token!,
-//                                               image: editUserInfo.image!,
-//                                               userName: editUserInfo.name!,
-//                                               userGender: editUserInfo.gender as! Int,
-//                                               userMail: editUserInfo.mail!,
-//                                               userCompanyName: editUserInfo.name!,
-//                                               userJob: editUserInfo.job!,
-//                                               communityId: editUserInfo.communityId as! Int,
-//                                               identityId: editUserInfo.identityId as! Int,
-//                                               userHobby: editUserInfo.hobby!,
-//                                               userSkill: editUserInfo.skill!,
-//                                               userRequire: editUserInfo.require!,
-//                                               userDesc: editUserInfo.desc!,
-//                                               finished: { (result, error) in
-//            // finish result callback
-//
-//
-//
-//            })
+            // infomation completed
+            self?.saveInfomarion()
+            
         self?.navigationController?.navigationController?.popViewController(animated: true)
         }
     }
@@ -202,6 +161,8 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         guard range != nil else { return }
         let set = IndexSet.init(integersIn: range!)
         profileInfoTableView.reloadSections(set, with: .automatic)
+        
+        // MARK:- if the section equals
     }
     
     @IBOutlet weak var headerTitle: UILabel!
@@ -214,10 +175,18 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     override func viewDidAppear(_ animated: Bool) {
 
         // save section 1 infomation
-        viewModel?.userName = (profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)))?.detailTextLabel?.text
-        viewModel?.mail = (profileInfoTableView.cellForRow(at: IndexPath.init(row: 3, section: 1)))?.detailTextLabel?.text
-        viewModel?.compName = (profileInfoTableView.cellForRow(at: IndexPath.init(row: 4, section: 1)))?.detailTextLabel?.text
-        viewModel?.jobName = (profileInfoTableView.cellForRow(at: IndexPath.init(row: 5, section: 1)))?.detailTextLabel?.text
+        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) {
+            viewModel?.userName = cell.detailTextLabel?.text
+        }
+        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 3, section: 1)) {
+            viewModel?.mail = cell.detailTextLabel?.text
+        }
+        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 4, section: 1)) {
+            viewModel?.compName = cell.detailTextLabel?.text
+        }
+        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 5, section: 1)) {
+            viewModel?.jobName = cell.detailTextLabel?.text
+        }
         
     }
     
@@ -229,7 +198,10 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         notificationAddKeyboardObserver()
         
         // load data
-        checkLoginStatus()
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
         NetWorkTool.shareInstance.getMyInfo(token: access_token!) { [weak self](result, error) in
             if error != nil {
                 self?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
@@ -239,10 +211,46 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 let model = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
                 self?.viewModel = model
             } else {
-                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"])))", completion: nil)
+                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"]!))", completion: nil)
             }
         }
         
+    }
+    
+    func saveInfomarion() {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        guard let avatar = avatarCell?.avatar.image else { return }
+        // all info nonnull then post request
+        NetWorkTool.shareInstance.editUser(token            : access_token!,
+                                           image            : avatar,
+                                           userName         :(viewModel?.userName)!,
+                                           userGender       : viewModel?.gender as! Int,
+                                           userMail         :(viewModel?.mail)!,
+                                           userCompanyName  :(viewModel?.compName)!,
+                                           userJob          :(viewModel?.jobName)!,
+                                           communityId      : viewModel?.communityId as! Int,
+                                           identityId       : viewModel?.idenId as! Int,
+                                           userHobby        : (viewModel?.hobby)!,
+                                           userSkill        : (viewModel?.skill)!,
+                                           userRequire      :(viewModel?.require)!,
+                                           userDesc         : viewModel?.desc)
+        { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+            }
+            if result!["code"] as! Int == 200 {
+                weakSelf?.presentHintMessage(hintMessgae: "个人信息修改成功", completion: { (_) in
+                    weakSelf?.navigationController?.popViewController(animated: true)
+                })
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -295,9 +303,10 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         switch indexPath.section {
         case 0:
             let avatarCell = tableView.dequeueReusableCell(withIdentifier: "ProfileEditChooseAvatarTableViewCell") as! ProfileEditChooseAvatarTableViewCell
-        // tap to pick image
-        let tap = UITapGestureRecognizer(target: self, action: #selector(chooseAvatar))
-        avatarCell.avatar.addGestureRecognizer(tap)
+            self.avatarCell = avatarCell
+            // tap to pick image
+            let tap = UITapGestureRecognizer(target: self, action: #selector(chooseAvatar))
+            avatarCell.avatar.addGestureRecognizer(tap)
             cell = avatarCell
         case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: "ProfileEditSelfInfomationCell")!
@@ -309,9 +318,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
             case 4: cell.textLabel?.text       = "公司"
             case 5: cell.textLabel?.text       = "职位"
             case 6: cell.textLabel?.text       = "社区"
-                    cell.detailTextLabel?.text = "请选择"
             case 7: cell.textLabel?.text       = "切换身份  审核中、游客无法编辑"
-                    cell.detailTextLabel?.text = "请选择"
             default: break
             }
         case 2:
@@ -321,6 +328,8 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 let hobbyArray = hobbies.components(separatedBy: ",")
                 // remove the same element of an array
                 var hobbyArr = Array(Set(hobbyArray))
+                // assign array and string to the cell
+                hobbyCell.hobbyArray = hobbyArr
                 // traverse the whole array and set selected status
                 for hobby in hobbyArr {
                     for btn in hobbyCell.contentView.subviews {
@@ -341,77 +350,117 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 case 0: break
                 case 1:
                     hobbyCell.customBtn1.setTitle(hobbyArr[0], for: .normal)
-                    hobbyCell.customBtn1.isSelected = true
+                    hobbyCell.customBtn1.setTagSelected()
                     hobbyCell.customBtn2.isHidden = false
                 case 2:
                     hobbyCell.customBtn1.setTitle(hobbyArr[0], for: .normal)
                     hobbyCell.customBtn2.setTitle(hobbyArr[1], for: .normal)
-                    hobbyCell.customBtn1.isSelected = true
-                    hobbyCell.customBtn2.isSelected = true
-                    hobbyCell.customBtn2.isHidden = false
+                    hobbyCell.customBtn1.setTagSelected()
+                    hobbyCell.customBtn2.setTagSelected()
                     hobbyCell.customBtn3.isHidden = false
                 case 3:
                     hobbyCell.customBtn1.setTitle(hobbyArr[0], for: .normal)
                     hobbyCell.customBtn2.setTitle(hobbyArr[1], for: .normal)
                     hobbyCell.customBtn3.setTitle(hobbyArr[2], for: .normal)
-                    hobbyCell.customBtn1.isSelected = true
-                    hobbyCell.customBtn2.isSelected = true
-                    hobbyCell.customBtn3.isSelected = true
-                    hobbyCell.customBtn2.isHidden = false
-                    hobbyCell.customBtn3.isHidden = false
+                    hobbyCell.customBtn1.setTagSelected()
+                    hobbyCell.customBtn2.setTagSelected()
+                    hobbyCell.customBtn3.setTagSelected()
                     hobbyCell.customBtn4.isHidden = false
                 case 4:
                     hobbyCell.customBtn1.setTitle(hobbyArr[0], for: .normal)
                     hobbyCell.customBtn2.setTitle(hobbyArr[1], for: .normal)
                     hobbyCell.customBtn3.setTitle(hobbyArr[2], for: .normal)
                     hobbyCell.customBtn4.setTitle(hobbyArr[3], for: .normal)
-                    hobbyCell.customBtn1.isSelected = true
-                    hobbyCell.customBtn2.isSelected = true
-                    hobbyCell.customBtn3.isSelected = true
-                    hobbyCell.customBtn4.isSelected = true
-                    hobbyCell.customBtn2.isHidden = false
-                    hobbyCell.customBtn3.isHidden = false
-                    hobbyCell.customBtn4.isHidden = false
-                    
+                    hobbyCell.customBtn1.setTagSelected()
+                    hobbyCell.customBtn2.setTagSelected()
+                    hobbyCell.customBtn3.setTagSelected()
+                    hobbyCell.customBtn4.setTagSelected()
                 default: break
-                    
-                    
                 }
-//                if hobbyArr.count > 0 {
-//                    if hobbyCell.customBtn1.isSelected == false {
-//                        hobbyCell.customBtn1.setTitle(hobby, for: .normal)
-//                        hobbyCell.customBtn1.isSelected = true
-//                        hobbyCell.customBtn2.isHidden = false
-//                    } else if hobbyCell.customBtn2.isSelected == false {
-//                        hobbyCell.customBtn2.setTitle(hobby, for: .normal)
-//                        hobbyCell.customBtn2.isSelected = true
-//                        hobbyCell.customBtn3.isHidden = false
-//                    } else if hobbyCell.customBtn3.isSelected == false {
-//                        hobbyCell.customBtn3.setTitle(hobby, for: .normal)
-//                        hobbyCell.customBtn3.isSelected = true
-//                        hobbyCell.customBtn4.isHidden = false
-//                    } else {
-//                        hobbyCell.customBtn4.setTitle(hobby, for: .normal)
-//                        hobbyCell.customBtn4.isSelected = true
-//                    }
-//                }
-                
-
-                
             }
-            
+            self.hobbyCell = hobbyCell
             cell = hobbyCell
-        case 3: cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsSelectorTableViewBodyCell")!
-        case 4: let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
+        case 3:
+            let skillCell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsSelectorTableViewBodyCell") as! ProfileSkillsSelectorTableViewBodyCell
+            if let skills = viewModel?.skill {
+                // get the single element of the string
+                let skillArray = skills.components(separatedBy: ",")
+                // remove the same element of an array
+                var skillArr = Array(Set(skillArray))
+                // assign array and string to the cell
+                skillCell.skillArray = skillArray
+                // traverse the whole array and set selected status
+                for skill in skillArr {
+                    for btn in skillCell.contentView.subviews {
+                        let button = btn as! ShadowButton
+                        let btnTitle = button.titleLabel!.text!
+                        if skill == btnTitle {
+                            button.isSelected = true
+                            button.backgroundColor = #colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1)
+                            button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+                            // remove the selected button in array
+                            skillArr.remove(at: skillArr.index(of: btnTitle)!)
+                        } else {
+                            continue
+                        }
+                    }
+                }
+                switch skillArr.count {
+                case 0: break
+                case 1:
+                    skillCell.customBtn5.setTitle(skillArr[0], for: .normal)
+                    skillCell.customBtn5.setTagSelected()
+                    skillCell.customBtn6.isHidden = false
+                case 2:
+                    skillCell.customBtn5.setTitle(skillArr[0], for: .normal)
+                    skillCell.customBtn6.setTitle(skillArr[1], for: .normal)
+                    skillCell.customBtn5.setTagSelected()
+                    skillCell.customBtn6.setTagSelected()
+                    skillCell.customBtn7.isHidden = false
+                case 3:
+                    skillCell.customBtn5.setTitle(skillArr[0], for: .normal)
+                    skillCell.customBtn6.setTitle(skillArr[1], for: .normal)
+                    skillCell.customBtn7.setTitle(skillArr[2], for: .normal)
+                    skillCell.customBtn5.setTagSelected()
+                    skillCell.customBtn6.setTagSelected()
+                    skillCell.customBtn7.setTagSelected()
+                    skillCell.customBtn8.isHidden = false
+                case 4:
+                    skillCell.customBtn5.setTitle(skillArr[0], for: .normal)
+                    skillCell.customBtn6.setTitle(skillArr[1], for: .normal)
+                    skillCell.customBtn7.setTitle(skillArr[2], for: .normal)
+                    skillCell.customBtn8.setTitle(skillArr[3], for: .normal)
+                    skillCell.customBtn5.setTagSelected()
+                    skillCell.customBtn6.setTagSelected()
+                    skillCell.customBtn7.setTagSelected()
+                    skillCell.customBtn8.setTagSelected()
+                default: break
+                }
+            }
+            self.skillCell = skillCell
+            cell = skillCell
+        case 4:
+            let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
             tagCell.placeholderLbl.text = "简要介绍你的合伙需求（必填）"
-        tagCell.presentAlert = { [weak self]() in
-            self?.presentHintMessage(hintMessgae: "字符不能超过300字", completion: nil)
-        }
+            tagCell.presentAlert = { [weak self]() in
+                self?.presentHintMessage(hintMessgae: "字符不能超过300字", completion: nil)
+            }
+            if viewModel?.require != nil || viewModel?.require != "" {
+                tagCell.inputTextView.text = viewModel?.require
+                tagCell.placeholderLbl.isHidden = true
+            }
             cell = tagCell
-        case 5: let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
+        case 5:
+            let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
             tagCell.placeholderLbl.text = "可简单的介绍下自己（选填）"
+            tagCell.presentAlert = { [weak self]() in
+                self?.presentHintMessage(hintMessgae: "字符不能超过300字", completion: nil)
+            }
+            if viewModel?.desc != nil || viewModel?.desc != "" {
+                tagCell.inputTextView.text = viewModel?.desc
+                tagCell.placeholderLbl.isHidden = true
+            }
             cell = tagCell
-
         default: break
         }
         
@@ -474,6 +523,24 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         // MARK:- end deiting to force the object resign first responder
         self.profileInfoTableView.endEditing(true)
         keyboardWillHide(withTransforming: profileInfoTableView)
+        // MARK:- store the require and description
+        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 4)) {
+            let requireCell = cell as! ProfileTextInputTableViewBodyCell
+            self.requireCell = requireCell
+            viewModel?.require = requireCell.inputString
+        }
+        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 5)) {
+            let descCell = cell as! ProfileTextInputTableViewBodyCell
+            self.descCell = descCell
+            viewModel?.desc = descCell.inputString
+        }
+        // MARK:- save hobby and skill
+        if let cell = hobbyCell {
+            viewModel?.hobby = cell.hobbyString
+        }
+        if let cell = skillCell {
+            viewModel?.skill = cell.skillString
+        }
     }
     
     

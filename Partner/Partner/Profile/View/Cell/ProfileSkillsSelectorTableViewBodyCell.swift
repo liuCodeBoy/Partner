@@ -13,10 +13,12 @@ class ProfileSkillsSelectorTableViewBodyCell: UITableViewCell {
     
     var skillArray = [String]() {
         didSet {
+            var str = ""
             for skill in skillArray {
-                skillString += "\(skill),"
+                str += "\(skill),"
             }
-            skillString.removeLast(1)
+            str.removeLast(1)
+            skillString = str
         }
     }
     

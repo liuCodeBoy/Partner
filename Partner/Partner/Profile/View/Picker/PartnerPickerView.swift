@@ -7,10 +7,19 @@
 
 import UIKit
 
-let leftRow = ["南京市", "南京市", "南京市", "南京市", "南京市", "南京市", "南京市", "南京市"]
-let rightRoe = ["合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区", "合伙人孵化某某某社区"]
-
 class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var projModel: ProjectModel?
+    
+    var twoDimensionArray = [[String : AnyObject]]()
+    
+    var firstComponentRows: Int = 0
+    var secondaryComponentRows: Int = 0
+    var firstComponentArray = [String]()
+    var secondaryComponentArray = [String]()
+    var secondaryComponentDictArray = [[String : AnyObject]]()
+    
+    var inputLbl: UILabel?
 
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var pickerTitle: UILabel!
@@ -37,6 +46,10 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             self.pickerContainerView.transform = CGAffineTransform(translationX: 0, y: -266)
             
         }, completion: nil)
+        
+        // tap back view to dismiss
+        let tap = UITapGestureRecognizer(target: self, action: #selector(closeBtnClicked(_:)))
+        backgroundView.addGestureRecognizer(tap)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -44,30 +57,34 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch component {
-        case 0:
-            return 8
-        case 1:
-            return 8
-        default:
-            return 8
+        // judge the component
+        if component == 0 {
+            if firstComponentArray.count == 0 {
+                for dict in twoDimensionArray {
+                    let province = dict["name"] as! String
+                    firstComponentArray.append(province)
+                }
+            }
+            return firstComponentArray.count
+        } else {
+            // get the city array
+            secondaryComponentArray.removeAll()
+            secondaryComponentDictArray.removeAll()
+            guard twoDimensionArray.count != 0 else { return 0 }
+            secondaryComponentDictArray = twoDimensionArray[firstComponentRows]["cityList"] as! [[String: AnyObject]]
+            for dict in secondaryComponentDictArray {
+                let city = dict["name"] as! String
+                secondaryComponentArray.append(city)
+            }
+            // save the default city id
+            projModel?.areaId = secondaryComponentDictArray[0]["id"] as? NSNumber
+            inputLbl?.text = secondaryComponentDictArray[0]["name"] as? String
+            return secondaryComponentArray.count
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 38
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        switch component {
-        case 0:
-            return leftRow[row]
-        case 1:
-            return rightRoe[row]
-        default:
-            return ""
-        }
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -83,17 +100,25 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         label.sizeToFit()
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = NSTextAlignment.center
-        
-        switch component {
-        case 0:
-            label.text = leftRow[row]
-        case 1:
-            label.text = rightRoe[row]
-        default:
-            break
+
+        if component == 0 {
+            label.text = firstComponentArray[row]
+        } else {
+            label.text = secondaryComponentArray[row]
         }
         
         return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0 {
+            firstComponentRows = pickerView.selectedRow(inComponent: 0)
+            pickerView.reloadComponent(1)
+        } else {
+            // save city id
+            projModel?.areaId = secondaryComponentDictArray[row]["id"] as? NSNumber
+            inputLbl?.text = secondaryComponentDictArray[row]["name"] as? String
+        }
     }
     
 

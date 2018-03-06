@@ -718,7 +718,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="closeControllerAction:" destination="h1h-zt-qdt" eventType="touchUpInside" id="l4Q-xa-OAr"/>
+                                            <action selector="sendIdentifyCodeAction:" destination="h1h-zt-qdt" eventType="touchUpInside" id="lxJ-WA-7Jh"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入您的验证码" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0eO-wo-0ry">
@@ -773,7 +773,7 @@
                     </view>
                     <connections>
                         <outlet property="identifyCodetextField" destination="0eO-wo-0ry" id="uu8-cr-fnD"/>
-                        <outlet property="identifyingbtn" destination="CrO-vm-Tl8" id="Qi1-Ls-Lf5"/>
+                        <outlet property="identifyingbtn" destination="CrO-vm-Tl8" id="wdv-Cs-lK6"/>
                         <outlet property="phoneTextField" destination="d31-3y-0Ys" id="KVl-cU-iGE"/>
                         <outlet property="pwdTextField" destination="4Nj-ZB-PTw" id="zAW-cf-MQQ"/>
                     </connections>

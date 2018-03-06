@@ -124,6 +124,15 @@ class ProfileEditInfomationInputDetialViewController: UIViewController {
             return
         }
         let cell = source.profileInfoTableView.cellForRow(at: indexPath)
+        if indexPath.section == 1 {
+            switch indexPath.row {
+            case 0: source.viewModel?.userName = inputText
+            case 3: source.viewModel?.mail     = inputText
+            case 4: source.viewModel?.compName = inputText
+            case 5: source.viewModel?.jobName  = inputText
+            default: break
+            }
+        }
         cell?.detailTextLabel?.text = inputText
         self.navigationController?.popViewController(animated: true)
     }

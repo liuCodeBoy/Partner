@@ -22,7 +22,7 @@ class ProfileTextInputTableViewBodyCell: UITableViewCell, UITextViewDelegate {
         inputTextView.delegate = self
     }
     
-    var inputString: String = "" {
+    var inputString: String? {
         didSet {
             let charCount = Int(inputTextView.text.count)
             inputLimitLbl.text = "\(charCount)/300"

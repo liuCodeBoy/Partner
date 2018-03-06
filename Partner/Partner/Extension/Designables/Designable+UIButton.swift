@@ -88,4 +88,16 @@ open class ShadowButton: UIButton {
         self.backgroundColor = #colorLiteral(red: 0.5411764979, green: 0.631372571, blue: 0.6980392337, alpha: 1)
         self.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
     }
+    
+    public func setTagSelected() {
+        // set color
+        self.backgroundColor = #colorLiteral(red: 0.5411764979, green: 0.631372571, blue: 0.6980392337, alpha: 1)
+        self.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        self.isHidden = false
+    }
+    public func cancelTagSelected() {
+        // set color
+        self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.setTitleColor(#colorLiteral(red: 0.5411764979, green: 0.631372571, blue: 0.6980392337, alpha: 1), for: .normal)
+    }
 }

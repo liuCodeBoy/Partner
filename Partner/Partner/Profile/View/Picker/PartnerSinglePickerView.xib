@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="VKK-Dv-w2i" customClass="PartnerSinglePickerView" customModule="Partner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ds2-lK-PAG">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsK-rZ-4bI">
+                    <rect key="frame" x="12" y="667" width="351" height="256"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Vu-FI-sUK">
+                            <rect key="frame" x="0.0" y="0.0" width="351" height="48"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择社区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvX-MR-vGa">
+                                    <rect key="frame" x="138.5" y="13" width="74" height="22"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7J-9Z-6hH">
+                                    <rect key="frame" x="303" y="0.0" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="3iH-sZ-PNH"/>
+                                    </constraints>
+                                    <state key="normal" image="picker_view_close"/>
+                                    <connections>
+                                        <action selector="closeBtnClicked:" destination="VKK-Dv-w2i" eventType="touchUpInside" id="Zp1-1U-Iv0"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Z7J-9Z-6hH" secondAttribute="trailing" id="4Gx-OW-y1M"/>
+                                <constraint firstItem="Z7J-9Z-6hH" firstAttribute="height" secondItem="2Vu-FI-sUK" secondAttribute="height" id="HHV-O5-X9N"/>
+                                <constraint firstItem="Z7J-9Z-6hH" firstAttribute="centerY" secondItem="mvX-MR-vGa" secondAttribute="centerY" id="VqG-sp-oXo"/>
+                                <constraint firstItem="mvX-MR-vGa" firstAttribute="centerY" secondItem="2Vu-FI-sUK" secondAttribute="centerY" id="cC0-1H-epk"/>
+                                <constraint firstAttribute="height" constant="48" id="oRe-x3-uL9"/>
+                                <constraint firstItem="mvX-MR-vGa" firstAttribute="centerX" secondItem="2Vu-FI-sUK" secondAttribute="centerX" id="qO4-Sn-VAQ"/>
+                            </constraints>
+                        </view>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nte-Rf-d2h">
+                            <rect key="frame" x="0.0" y="60" width="351" height="184"/>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="2Vu-FI-sUK" secondAttribute="trailing" id="Ccy-3T-4KY"/>
+                        <constraint firstItem="nte-Rf-d2h" firstAttribute="top" secondItem="2Vu-FI-sUK" secondAttribute="bottom" constant="12" id="TUf-Ba-7SH"/>
+                        <constraint firstItem="2Vu-FI-sUK" firstAttribute="top" secondItem="dsK-rZ-4bI" secondAttribute="top" id="dZZ-a8-nTC"/>
+                        <constraint firstItem="2Vu-FI-sUK" firstAttribute="leading" secondItem="dsK-rZ-4bI" secondAttribute="leading" id="fb4-ot-Lyw"/>
+                        <constraint firstAttribute="bottom" secondItem="nte-Rf-d2h" secondAttribute="bottom" constant="12" id="jPC-nB-kFu"/>
+                        <constraint firstAttribute="height" constant="256" id="mJQ-eg-BiG"/>
+                        <constraint firstAttribute="trailing" secondItem="nte-Rf-d2h" secondAttribute="trailing" id="mun-02-5P4"/>
+                        <constraint firstItem="nte-Rf-d2h" firstAttribute="leading" secondItem="dsK-rZ-4bI" secondAttribute="leading" id="s0A-Iy-uAG"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ds2-lK-PAG" firstAttribute="leading" secondItem="m62-pV-ck5" secondAttribute="leading" id="6Ht-5q-LM3"/>
+                <constraint firstItem="ds2-lK-PAG" firstAttribute="trailing" secondItem="m62-pV-ck5" secondAttribute="trailing" id="BVu-Pz-NAZ"/>
+                <constraint firstItem="ds2-lK-PAG" firstAttribute="bottom" secondItem="VKK-Dv-w2i" secondAttribute="bottom" id="QYZ-L6-5cg"/>
+                <constraint firstItem="m62-pV-ck5" firstAttribute="bottom" secondItem="dsK-rZ-4bI" secondAttribute="bottom" constant="-256" id="Qhe-Sd-Ld4"/>
+                <constraint firstItem="ds2-lK-PAG" firstAttribute="top" secondItem="VKK-Dv-w2i" secondAttribute="top" id="h8X-O2-diM"/>
+                <constraint firstItem="dsK-rZ-4bI" firstAttribute="leading" secondItem="m62-pV-ck5" secondAttribute="leading" constant="12" id="lXc-0I-cn8"/>
+                <constraint firstItem="m62-pV-ck5" firstAttribute="trailing" secondItem="dsK-rZ-4bI" secondAttribute="trailing" constant="12" id="pHY-BP-nrR"/>
+                <constraint firstItem="m62-pV-ck5" firstAttribute="trailing" secondItem="ds2-lK-PAG" secondAttribute="trailing" id="x0u-G6-jcu"/>
+                <constraint firstItem="ds2-lK-PAG" firstAttribute="leading" secondItem="m62-pV-ck5" secondAttribute="leading" id="ztx-Dj-P3d"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="m62-pV-ck5"/>
+            <connections>
+                <outlet property="backgroundView" destination="ds2-lK-PAG" id="54f-2d-UFV"/>
+                <outlet property="partnerPicker" destination="nte-Rf-d2h" id="urS-Ri-JdD"/>
+                <outlet property="pickerContainerView" destination="dsK-rZ-4bI" id="Gb0-RD-0aU"/>
+                <outlet property="pickerTitle" destination="mvX-MR-vGa" id="ihI-fv-j7c"/>
+            </connections>
+            <point key="canvasLocation" x="89.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="picker_view_close" width="12" height="12"/>
+    </resources>
+</document>

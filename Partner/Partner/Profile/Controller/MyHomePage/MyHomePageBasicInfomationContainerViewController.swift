@@ -15,7 +15,10 @@ class MyHomePageBasicInfomationContainerViewController: UIViewController, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
-        checkLoginStatus()
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
         NetWorkTool.shareInstance.getMyInfo(token: access_token!) { [weak self](result, error) in
             if error != nil {
                 self?.presentConfirmationAlert(hint: "\(String(describing: error))", completion: nil)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImagePicker
 
 private let swizzling: (AnyClass, Selector, Selector) -> () = { forClass, originalSelector, swizzledSelector in
     let originalMethod = class_getInstanceMethod(forClass, originalSelector)
@@ -64,15 +65,36 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    // MARK:- token expired or login infomation invalid
-    func checkLoginStatus() {
-        guard UserDefaults.standard.string(forKey: "token") != nil else {
-            presentHintMessage(hintMessgae: "你还为登陆", completion: { [weak self](_) in
-                let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
-                self?.navigationController?.present(vc, animated: true, completion: nil)
-            })
-            return
+    // MARK:- present login view controller
+    func presentLoginController() {
+        presentHintMessage(hintMessgae: "你还未登陆", completion: { [weak self](_) in
+            let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
+            self?.navigationController?.present(vc, animated: true, completion: nil)
+        })
+    }
+    
+    // MARK:- pop up single component picker
+    func popupPartnerPicker(bindingLabel label: UILabel, type pickerType: PartnerPickerType, model pickerModel: ProjectModel, componentDict dictData: [[Int : String]]) {
+        
+        let picker = Bundle.main.loadNibNamed("PartnerSinglePickerView", owner: nil, options: nil)?.first as! PartnerSinglePickerView
+        picker.frame = UIScreen.main.bounds
+        var nameArray = [String]()
+        for dict in dictData {
+            nameArray.append((dict.first?.value)!)
         }
+        var pickerTitle = ""
+        switch pickerType {
+        case .identity: pickerTitle = "选择身份"
+        case .financing: pickerTitle = "选择融资轮次"
+        }
+        picker.componentArray = nameArray
+        picker.pickerTitle.text = pickerTitle
+        picker.type = pickerType
+        picker.inputLbl = label
+        picker.projModel = pickerModel
+        picker.componentDict = dictData
+        self.view.addSubview(picker)
+        
     }
     
     // add observer in the view controller to change frame
