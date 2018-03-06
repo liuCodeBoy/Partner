@@ -21,5 +21,9 @@ class MyProjectNoneProjectPlaceholderViewController: UIViewController {
         super.viewDidLoad()
 
     }
-
+    @IBAction func createClicked(_ sender: ShadowButton) {
+        let vc = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "CreateProject") as! MyProjectEditAndCreateViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

@@ -7,8 +7,12 @@
 
 import UIKit
 import MJExtension
+
 class TageModel: NSObject {
- @objc var  tagName   :   String?
- @objc var  id        :   NSNumber?
- @objc var  tagType   :   NSNumber?
+    @objc var  tagName   :   String?
+    @objc var  id        :   NSNumber?
+    @objc var  tagType   :   NSNumber?
+    @objc var  induName  :   String?
+
+    
 }

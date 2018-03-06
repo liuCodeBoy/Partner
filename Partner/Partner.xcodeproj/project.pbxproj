@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3968A126204E302700A5DE22 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3968A125204E302700A5DE22 /* AuthModel.swift */; };
+		398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */; };
+		398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D3204EAB5200B52424 /* PartnerTimePicker.swift */; };
+		398978D6204EAB5F00B52424 /* PartnerTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */; };
+		399ED174204E239D00CD4054 /* NetworkTool+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */; };
 		39B693A1204CF6C100BEE5FA /* MyProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A0204CF6C100BEE5FA /* MyProject.storyboard */; };
 		39B693A3204CF8C800BEE5FA /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A2204CF8C800BEE5FA /* Auth.storyboard */; };
 		39B693A5204CF99D00BEE5FA /* ProfileDeprecated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A4204CF99D00BEE5FA /* ProfileDeprecated.storyboard */; };
@@ -221,6 +226,11 @@
 /* Begin PBXFileReference section */
 		172AC59E61123A8F751E23DB /* Pods-Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Partner/Pods-Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		2E04E32645370430D88F1860 /* Pods-Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Partner/Pods-Partner.release.xcconfig"; sourceTree = "<group>"; };
+		3968A125204E302700A5DE22 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInvestIndustrySelectViewController.swift; sourceTree = "<group>"; };
+		398978D3204EAB5200B52424 /* PartnerTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTimePicker.swift; sourceTree = "<group>"; };
+		398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerTimePicker.xib; sourceTree = "<group>"; };
+		399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Auth.swift"; sourceTree = "<group>"; };
 		39B693A0204CF6C100BEE5FA /* MyProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProject.storyboard; sourceTree = "<group>"; };
 		39B693A2204CF8C800BEE5FA /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		39B693A4204CF99D00BEE5FA /* ProfileDeprecated.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileDeprecated.storyboard; sourceTree = "<group>"; };
@@ -462,6 +472,7 @@
 				39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */,
 				39C1C789204D3EB300D3F2EF /* AuthEditInputTextViewController.swift */,
 				39C1C78B204D3F8400D3F2EF /* AuthApplianceResultViewController.swift */,
+				398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -707,6 +718,8 @@
 				D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */,
 				D3C58E082048F77400C88E98 /* PartnerSinglePickerView.swift */,
 				D3C58E0A2048F77C00C88E98 /* PartnerSinglePickerView.xib */,
+				398978D3204EAB5200B52424 /* PartnerTimePicker.swift */,
+				398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */,
 				D347124F2011F0CF003E098E /* CustomTimePickerView.swift */,
 				D347124E2011F0BA003E098E /* CustomTimePickerView.xib */,
 				D30AA0F5202843C100711F20 /* EntrepreneurshipExperienceAlertSheet.swift */,
@@ -784,6 +797,7 @@
 			isa = PBXGroup;
 			children = (
 				D35A9D2B203FE86A00408B9E /* NetworkTool+User.swift */,
+				399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */,
 				D3787E8B2047FD02000A0AA0 /* NetworkTool+Project.swift */,
 				D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */,
 				D3C58E042048EF3900C88E98 /* NetworkTool+Identity.swift */,
@@ -1249,6 +1263,7 @@
 			children = (
 				D31C3CAC2040057300E97460 /* ProfileInfoModel.swift */,
 				D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */,
+				3968A125204E302700A5DE22 /* AuthModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1408,6 +1423,7 @@
 				D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */,
 				D3E3349420351CBD0084687C /* ProfileEditTableViewHeader.xib in Resources */,
 				D30AA0FC2028568800711F20 /* PartnerPopulationPicker.xib in Resources */,
+				398978D6204EAB5F00B52424 /* PartnerTimePicker.xib in Resources */,
 				39B693A3204CF8C800BEE5FA /* Auth.storyboard in Resources */,
 				39B693A5204CF99D00BEE5FA /* ProfileDeprecated.storyboard in Resources */,
 				D378FEE11FF0D60800065EEC /* Home.storyboard in Resources */,
@@ -1644,6 +1660,7 @@
 				B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */,
 				D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */,
 				B68182E32041044C007CE890 /* CicrleDetailModel.swift in Sources */,
+				398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */,
 				D35A9D1D203FB1B700408B9E /* ServiceFounderBriefTableViewCell.swift in Sources */,
 				B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */,
 				B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */,
@@ -1653,6 +1670,7 @@
 				D39F14DE201EF68E003F3BC5 /* ProjectEditMarketAnalysisTableViewCell.swift in Sources */,
 				D35A9D21203FBC7600408B9E /* ServiceDetialViewController.swift in Sources */,
 				D34712612012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift in Sources */,
+				399ED174204E239D00CD4054 /* NetworkTool+Auth.swift in Sources */,
 				D3E3349620351D180084687C /* ProfileEditTableViewHeader.swift in Sources */,
 				D3722C8F203FA6F500E0B765 /* ServiceMainProviderListTableViewCell.swift in Sources */,
 				B625F2F8204115E50060F713 /* DetailInfoTableView.swift in Sources */,
@@ -1797,11 +1815,13 @@
 				B6754837204D3E7700B60D3A /* ProjectListModel.swift in Sources */,
 				D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */,
 				D3C58E0F204A991200C88E98 /* NetworkTool+Industry.swift in Sources */,
+				398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */,
 				D35A9D1B203FB18C00408B9E /* ServiceProjectBriefTableViewCell.swift in Sources */,
 				B6D7F80B20415DC80044B31C /* CircleManageVC.swift in Sources */,
 				39C1C788204D3E8300D3F2EF /* AuthApplyUploadViewController.swift in Sources */,
 				B65BE18A2029D653004407B1 /* LoopView.swift in Sources */,
 				D303464E201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift in Sources */,
+				3968A126204E302700A5DE22 /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

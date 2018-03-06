@@ -61,6 +61,7 @@ class ModifyPasswordViewController: UIViewController {
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 weakSelf?.presentHintMessage(hintMessgae: "验证码发送成功", completion: nil)
@@ -99,6 +100,7 @@ class ModifyPasswordViewController: UIViewController {
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 weakSelf?.presentHintMessage(hintMessgae: "密码修改成功", completion: { (_) in

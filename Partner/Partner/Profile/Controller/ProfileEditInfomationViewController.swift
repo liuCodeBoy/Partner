@@ -206,6 +206,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
             if error != nil {
                 self?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 let model = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
@@ -242,6 +243,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 weakSelf?.presentHintMessage(hintMessgae: "个人信息修改成功", completion: { (_) in

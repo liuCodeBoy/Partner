@@ -101,3 +101,20 @@ open class ShadowButton: UIButton {
         self.setTitleColor(#colorLiteral(red: 0.5411764979, green: 0.631372571, blue: 0.6980392337, alpha: 1), for: .normal)
     }
 }
+
+extension UIButton {
+    
+    private struct AssociateKeys {
+        static var customProperty = "customProperty"
+    }
+    
+    @IBInspectable
+    public var inputTitleID: String {
+        set(value) {
+            objc_setAssociatedObject(self, &AssociateKeys.customProperty, value, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+        get {
+            return objc_getAssociatedObject(self, &AssociateKeys.customProperty) as! String
+        }
+    }
+}

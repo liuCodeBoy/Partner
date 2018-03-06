@@ -45,7 +45,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     }
     
     @IBAction func identityClicked(_ sender: UIButton) {
-        popupPartnerPicker(bindingLabel: identityLbl, type: .identity, model: projModel, componentDict: identityData)
+        popupPartnerPicker(bindingLabel: identityLbl, type: .projIdentity, model: projModel, componentDict: identityData)
     }
     
     @IBAction func areaClicked(_ sender: UIButton) {
@@ -63,7 +63,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     }
     
     @IBAction func financingClicked(_ sender: UIButton) {
-        popupPartnerPicker(bindingLabel: financingLbl, type: .financing, model: projModel, componentDict: financingData)
+        popupPartnerPicker(bindingLabel: financingLbl, type: .projFinancing, model: projModel, componentDict: financingData)
         
     }
     
@@ -94,6 +94,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                // TODO:- save identity data into an array
@@ -114,6 +115,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- save province and city an array
@@ -131,6 +133,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- save identity data into an array
@@ -146,6 +149,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- save identity data into an array
@@ -185,6 +189,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- create success
