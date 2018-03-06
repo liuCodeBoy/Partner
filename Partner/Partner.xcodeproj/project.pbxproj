@@ -167,6 +167,8 @@
 		D3A7591C202D7E470043D68D /* MyHomePageSectionHeaderWrapViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A7591B202D7E470043D68D /* MyHomePageSectionHeaderWrapViewTableViewCell.swift */; };
 		D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A827E6201096C40053ADBF /* PartnerPickerView.swift */; };
 		D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */; };
+		D3AEBB9A204E47EA00FA955C /* infoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBB99204E47EA00FA955C /* infoModel.swift */; };
+		D3AEBBA0204E86D600FA955C /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBB9F204E86D500FA955C /* InfoDetailVC.swift */; };
 		D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */; };
 		D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */; };
 		D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */; };
@@ -179,6 +181,7 @@
 		D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */; };
 		D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */; };
 		D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */; };
+		D3C22E41204E456F00FBB007 /* InfomationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C22E40204E456F00FBB007 /* InfomationCell.swift */; };
 		D3C58DFB204807D600C88E98 /* NetworkTool+Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */; };
 		D3C58DFD204808A900C88E98 /* NetworkTool+CopyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58DFC204808A900C88E98 /* NetworkTool+CopyModel.swift */; };
 		D3C58E002048ED5E00C88E98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3C58E022048ED5E00C88E98 /* InfoPlist.strings */; };
@@ -393,6 +396,8 @@
 		D3A7591B202D7E470043D68D /* MyHomePageSectionHeaderWrapViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomePageSectionHeaderWrapViewTableViewCell.swift; sourceTree = "<group>"; };
 		D3A827E6201096C40053ADBF /* PartnerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerPickerView.swift; sourceTree = "<group>"; };
 		D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerPickerView.xib; sourceTree = "<group>"; };
+		D3AEBB99204E47EA00FA955C /* infoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoModel.swift; sourceTree = "<group>"; };
+		D3AEBB9F204E86D500FA955C /* InfoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoDetailVC.swift; path = /Users/Weslie/Desktop/Partner/Partner/Partner/Home/Information/Controller/InfoDetailVC.swift; sourceTree = "<absolute>"; };
 		D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIView.swift"; sourceTree = "<group>"; };
 		D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIButton.swift"; sourceTree = "<group>"; };
 		D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UILabel.swift"; sourceTree = "<group>"; };
@@ -405,6 +410,7 @@
 		D3BFC9B62019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditChooseAvatarTableViewCell.swift; sourceTree = "<group>"; };
 		D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectNoneProjectPlaceholderViewController.swift; sourceTree = "<group>"; };
 		D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditAndCreateViewController.swift; sourceTree = "<group>"; };
+		D3C22E40204E456F00FBB007 /* InfomationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationCell.swift; sourceTree = "<group>"; };
 		D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Area.swift"; sourceTree = "<group>"; };
 		D3C58DFC204808A900C88E98 /* NetworkTool+CopyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+CopyModel.swift"; sourceTree = "<group>"; };
 		D3C58E012048ED5E00C88E98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -551,8 +557,8 @@
 		B675483A204D524F00B60D3A /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				B675483D204D528700B60D3A /* View */,
-				B675483C204D527E00B60D3A /* Model */,
+				D3AEBB98204E47B600FA955C /* Model */,
+				D3C22E3F204E454900FBB007 /* View */,
 				B675483B204D526100B60D3A /* Controller */,
 			);
 			path = Information;
@@ -561,23 +567,10 @@
 		B675483B204D526100B60D3A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D3AEBB9F204E86D500FA955C /* InfoDetailVC.swift */,
 				B675483E204D52E200B60D3A /* InformationVC.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		B675483C204D527E00B60D3A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		B675483D204D528700B60D3A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B6843E3320201E3A00B86A3F /* Moments */ = {
@@ -1195,6 +1188,14 @@
 			path = Edit;
 			sourceTree = "<group>";
 		};
+		D3AEBB98204E47B600FA955C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3AEBB99204E47EA00FA955C /* infoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D3B6ADC4201F3D0100A7B961 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1242,6 +1243,14 @@
 				D39F8C2E201F0BA400A40AC1 /* Edit */,
 			);
 			path = MyProject;
+			sourceTree = "<group>";
+		};
+		D3C22E3F204E454900FBB007 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3C22E40204E456F00FBB007 /* InfomationCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D3CAC86E2021B0F40072064C /* Model */ = {
@@ -1648,6 +1657,7 @@
 				B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */,
 				B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */,
 				D39A4F32200D985700022A76 /* SystemConstantValue.swift in Sources */,
+				D3AEBB9A204E47EA00FA955C /* infoModel.swift in Sources */,
 				D34C6AF7202D448800EA225E /* MyHomePageEntrepreneurshipExperienceTableViewCell.swift in Sources */,
 				D347126820120943003E098E /* ProfileEditInfomationViewController.swift in Sources */,
 				D39F14DE201EF68E003F3BC5 /* ProjectEditMarketAnalysisTableViewCell.swift in Sources */,
@@ -1662,6 +1672,7 @@
 				D3E0D81D2021F8C300DCBCF4 /* Designable+UIImageView.swift in Sources */,
 				D3722C93203FACF700E0B765 /* ServiceProviderCompanyIntroductionTableViewCell.swift in Sources */,
 				D3034646201ECE93007A37A5 /* MyProjectEditViewController.swift in Sources */,
+				D3C22E41204E456F00FBB007 /* InfomationCell.swift in Sources */,
 				D347125D201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift in Sources */,
 				D3E3348C203232F90084687C /* MyHomePageAddEducationExperienceViewController.swift in Sources */,
 				B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */,
@@ -1713,6 +1724,7 @@
 				D39F14E0201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift in Sources */,
 				B68182DB203FAF2E007CE890 /* UserSearchBarCell.swift in Sources */,
 				B6843E372020223A00B86A3F /* UnionMainVC.swift in Sources */,
+				D3AEBBA0204E86D600FA955C /* InfoDetailVC.swift in Sources */,
 				B6843E3A202173FD00B86A3F /* MomentMainVC.swift in Sources */,
 				D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */,
 				D39F14E4201EF754003F3BC5 /* ProjectEditBusinessPlanBookTableViewCell.swift in Sources */,

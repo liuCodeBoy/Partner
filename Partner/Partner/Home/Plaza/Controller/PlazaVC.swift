@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+typealias SliderType = (Int) -> ()
 class PlazaVC: UIViewController {
     var loopView: LoopView!
     @IBOutlet weak var imageHeadView: UIView!
@@ -32,8 +32,9 @@ class PlazaVC: UIViewController {
     @IBOutlet weak var informationLab2: UILabel!
     @IBOutlet weak var informationImg3: RoundRectImage!
     @IBOutlet weak var informationLab3: UILabel!
-    
-    
+    var   typeListModelArr = [TypeListModel]()
+    //定义滑动闭包
+    var  sliderClouse : SliderType?
     override func viewDidLoad() {
         super.viewDidLoad()
         addTopImageView()
@@ -43,6 +44,11 @@ class PlazaVC: UIViewController {
         getTypeList()
     }
     
+    @IBAction func infoShowMore(_ sender: Any) {
+        if self.sliderClouse != nil {
+            sliderClouse!(0)
+        }
+    }
     
     
     
@@ -63,6 +69,9 @@ extension PlazaVC {
     //getHotInvestorList
     func  getHotInvestorList(){
         NetWorkTool.shareInstance.getHotInvestorList { [weak self](result, error) in
+            guard error == nil else {
+                return
+            }
             if  result?["code"] as? Int == 200  {
                 guard   result != nil else{
                     return
@@ -109,6 +118,9 @@ extension PlazaVC {
     //项目列表（project/getProjectList）
     func  getProjectList(){
         NetWorkTool.shareInstance.getProjectList(token: UserDefaults.standard.string(forKey: "token"), order: 1, type: nil, id: nil, fuzzy: nil, pageNum: 1) { [weak self](result, error) in
+            guard error == nil else {
+                return
+            }
             if  result?["code"] as? Int == 200  {
                 guard   result != nil else{
                     return
@@ -147,6 +159,9 @@ extension PlazaVC {
     func getTypeList(){
 //        TypeListModel
         NetWorkTool.shareInstance.getTypeList {[weak self](result, error) in
+            guard error == nil else {
+                return
+            }
             if  result?["code"] as? Int == 200  {
                 guard   result != nil else{
                     return
@@ -154,19 +169,26 @@ extension PlazaVC {
                 if  let dictArr  =   result!["result"] as? [NSDictionary]{
                     for i in 0..<dictArr.count{
                         if  let statusViewModel = TypeListModel.mj_object(withKeyValues: dictArr[i]){
+                            self?.typeListModelArr.append(statusViewModel)
                             if i == 0 {
                                 if let url = statusViewModel.imgUrl {
                                     self?.informationImg1.setImageWith(URL.init(string: url)!, placeholderImage: nil)
-                                   self?.informationLab1.text = statusViewModel.typeName
+                                    self?.informationLab1.text = statusViewModel.typeName
+                                    let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.tapInfo1))
+                                    self?.informationImg1.addGestureRecognizer(gesture)
                                 }
                             }else if  i == 1{
                                 if let url = statusViewModel.imgUrl {
                                     self?.informationImg2.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.tapInfo2))
+                                    self?.informationImg2.addGestureRecognizer(gesture)
                                 }
                                 self?.informationLab2.text = statusViewModel.typeName
                             }else if i == 2{
                                 if let url = statusViewModel.imgUrl {
                                     self?.informationImg3.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.tapInfo3))
+                                    self?.informationImg3.addGestureRecognizer(gesture)
                                 }
                                 self?.informationLab3.text = statusViewModel.typeName
                             }
@@ -181,8 +203,35 @@ extension PlazaVC {
                 self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
             }
         }
-        
-        
+    }
+}
+
+
+
+extension PlazaVC {
+    @objc  func tapInfo1(){
+        if let  id = self.typeListModelArr[0].typeId  {
+            if self.sliderClouse != nil {
+                sliderClouse!(Int(truncating: id))
+            }
+        }
+    }
+    
+    @objc  func tapInfo2(){
+        if let  id = self.typeListModelArr[1].typeId  {
+            if self.sliderClouse != nil {
+                sliderClouse!(Int(truncating: id))
+            }
+        }
+    }
+    
+    
+    @objc  func tapInfo3(){
+        if let  id = self.typeListModelArr[2].typeId  {
+            if self.sliderClouse != nil {
+                sliderClouse!(Int(truncating: id))
+            }
+        }
     }
     
     
