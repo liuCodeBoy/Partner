@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
             btn.setTitleColor(#colorLiteral(red: 0.7771913409, green: 0.7979340553, blue: 0.8144465089, alpha: 1), for: .normal)
             btn.setTitleColor( #colorLiteral(red: 0.3028550148, green: 0.4081297517, blue: 0.4641876817, alpha: 1),for: .selected)
             btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+            btn.tag = i+1212
             btn.addTarget(self, action: #selector(addOffSetX(btn:)), for: UIControlEvents.touchUpInside)
             sliderBtnArr.append(btn)
             self.topContentView.addSubview(btn)
@@ -58,7 +59,7 @@ class HomeViewController: UIViewController {
     }
     
     //添加偏移量功能
-    @objc  func   addOffSetX(btn : UIButton){
+    @objc  func   addBtnScroll(btn : UIButton){
         UIView.animate(withDuration: 0.3) {
             weak var weakSelf = self
             weakSelf?.sliderView?.center.x = btn.center.x
@@ -71,6 +72,24 @@ class HomeViewController: UIViewController {
         
         btn.isSelected = !btn.isSelected
     }
+    
+    
+    //添加偏移量功能
+    @objc  func   addOffSetX(btn : UIButton){
+        UIView.animate(withDuration: 0.3) {
+            weak var weakSelf = self
+            weakSelf?.sliderView?.center.x = btn.center.x
+            let  index = CGFloat(btn.tag - 1212)
+            weakSelf?.scrollView?.contentOffset.x = index * screenWidth
+        }
+        for tempBtn  in topContentView.subviews{
+            if  let   btn = tempBtn as? UIButton {
+                btn.isSelected = false
+            }
+        }
+        btn.isSelected = !btn.isSelected
+    }
+    
     
     //添加子控制器的ScrollView
     func addChildScroll(){
@@ -85,13 +104,22 @@ class HomeViewController: UIViewController {
         self.scrollView?.delegate = self
         //添加子控制器
         
-        let homeVC  = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "PlazaVCID")
+        let homeVC  = AppDelegate.homeVC
+        let  informationVC = AppDelegate.informationVC
         self.addChildViewController(homeVC)
         homeVC.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight - 104)
+        homeVC.sliderClouse = {(type) in
+            informationVC.type = type
+            informationVC.newsModelArr.removeAll()
+            informationVC.setdeafultStatus()
+            informationVC.getInfoList(type: type, fuzzy: nil)
+            UIView.animate(withDuration: 0.25, animations: {
+                self.scrollView?.contentOffset.x = screenWidth
+            })
+        }
         self.scrollView?.addSubview(homeVC.view)
         
 //        //InformationVC 子控制器
-        let informationVC  = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "InformationVCID")
         self.addChildViewController(informationVC)
         informationVC.view.frame = CGRect.init(x: screenWidth, y: 0, width: screenWidth, height: screenHeight - 104)
         self.scrollView?.addSubview(informationVC.view)
@@ -108,7 +136,7 @@ extension   HomeViewController  : UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let   page = Int(scrollView.contentOffset.x / screenWidth)
         let   tempBtn  = self.sliderBtnArr[page]
-        addOffSetX(btn: tempBtn)
+        addBtnScroll(btn: tempBtn)
         
     }
     
