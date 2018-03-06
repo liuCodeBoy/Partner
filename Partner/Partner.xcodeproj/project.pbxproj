@@ -11,6 +11,7 @@
 		398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */; };
 		398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D3204EAB5200B52424 /* PartnerTimePicker.swift */; };
 		398978D6204EAB5F00B52424 /* PartnerTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */; };
+		398978D8204EBD8B00B52424 /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D7204EBD8B00B52424 /* InfoDetailVC.swift */; };
 		399ED174204E239D00CD4054 /* NetworkTool+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */; };
 		39B693A1204CF6C100BEE5FA /* MyProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A0204CF6C100BEE5FA /* MyProject.storyboard */; };
 		39B693A3204CF8C800BEE5FA /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A2204CF8C800BEE5FA /* Auth.storyboard */; };
@@ -173,7 +174,6 @@
 		D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A827E6201096C40053ADBF /* PartnerPickerView.swift */; };
 		D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */; };
 		D3AEBB9A204E47EA00FA955C /* infoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBB99204E47EA00FA955C /* infoModel.swift */; };
-		D3AEBBA0204E86D600FA955C /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBB9F204E86D500FA955C /* InfoDetailVC.swift */; };
 		D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */; };
 		D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */; };
 		D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */; };
@@ -233,6 +233,7 @@
 		398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInvestIndustrySelectViewController.swift; sourceTree = "<group>"; };
 		398978D3204EAB5200B52424 /* PartnerTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTimePicker.swift; sourceTree = "<group>"; };
 		398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerTimePicker.xib; sourceTree = "<group>"; };
+		398978D7204EBD8B00B52424 /* InfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailVC.swift; path = ../../../../../../../../Downloads/InfoDetailVC.swift; sourceTree = "<group>"; };
 		399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Auth.swift"; sourceTree = "<group>"; };
 		39B693A0204CF6C100BEE5FA /* MyProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProject.storyboard; sourceTree = "<group>"; };
 		39B693A2204CF8C800BEE5FA /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -407,7 +408,6 @@
 		D3A827E6201096C40053ADBF /* PartnerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerPickerView.swift; sourceTree = "<group>"; };
 		D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerPickerView.xib; sourceTree = "<group>"; };
 		D3AEBB99204E47EA00FA955C /* infoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoModel.swift; sourceTree = "<group>"; };
-		D3AEBB9F204E86D500FA955C /* InfoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoDetailVC.swift; path = /Users/Weslie/Desktop/Partner/Partner/Partner/Home/Information/Controller/InfoDetailVC.swift; sourceTree = "<absolute>"; };
 		D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIView.swift"; sourceTree = "<group>"; };
 		D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIButton.swift"; sourceTree = "<group>"; };
 		D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UILabel.swift"; sourceTree = "<group>"; };
@@ -578,7 +578,7 @@
 		B675483B204D526100B60D3A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D3AEBB9F204E86D500FA955C /* InfoDetailVC.swift */,
+				398978D7204EBD8B00B52424 /* InfoDetailVC.swift */,
 				B675483E204D52E200B60D3A /* InformationVC.swift */,
 			);
 			path = Controller;
@@ -1742,7 +1742,6 @@
 				D39F14E0201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift in Sources */,
 				B68182DB203FAF2E007CE890 /* UserSearchBarCell.swift in Sources */,
 				B6843E372020223A00B86A3F /* UnionMainVC.swift in Sources */,
-				D3AEBBA0204E86D600FA955C /* InfoDetailVC.swift in Sources */,
 				B6843E3A202173FD00B86A3F /* MomentMainVC.swift in Sources */,
 				D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */,
 				D39F14E4201EF754003F3BC5 /* ProjectEditBusinessPlanBookTableViewCell.swift in Sources */,
@@ -1828,6 +1827,7 @@
 				D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */,
 				D3C58E0F204A991200C88E98 /* NetworkTool+Industry.swift in Sources */,
 				398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */,
+				398978D8204EBD8B00B52424 /* InfoDetailVC.swift in Sources */,
 				D35A9D1B203FB18C00408B9E /* ServiceProjectBriefTableViewCell.swift in Sources */,
 				B6D7F80B20415DC80044B31C /* CircleManageVC.swift in Sources */,
 				39C1C788204D3E8300D3F2EF /* AuthApplyUploadViewController.swift in Sources */,
