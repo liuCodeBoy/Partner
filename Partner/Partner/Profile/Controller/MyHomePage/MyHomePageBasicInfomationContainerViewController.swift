@@ -27,7 +27,7 @@ class MyHomePageBasicInfomationContainerViewController: UIViewController, UITabl
                 self?.modelView = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
                 self?.tableView.reloadData()
             } else {
-                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"])))", completion: nil)
+                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!)))", completion: nil)
             }
         }
     }

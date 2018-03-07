@@ -13,8 +13,11 @@
 		398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D3204EAB5200B52424 /* PartnerTimePicker.swift */; };
 		398978D6204EAB5F00B52424 /* PartnerTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */; };
 		398978D8204EBD8B00B52424 /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D7204EBD8B00B52424 /* InfoDetailVC.swift */; };
+		3994C840204FF328001B2717 /* NetworkTolol+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994C83F204FF328001B2717 /* NetworkTolol+Type.swift */; };
 		399ED174204E239D00CD4054 /* NetworkTool+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */; };
 		39A87F83204ED926003D8226 /* NetworkTool+Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A87F82204ED926003D8226 /* NetworkTool+Field.swift */; };
+		39A87F85204F8271003D8226 /* CopyModual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A87F84204F8271003D8226 /* CopyModual.swift */; };
+		39A87F87204F8951003D8226 /* AuthInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A87F86204F8951003D8226 /* AuthInfoModel.swift */; };
 		39B693A1204CF6C100BEE5FA /* MyProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A0204CF6C100BEE5FA /* MyProject.storyboard */; };
 		39B693A3204CF8C800BEE5FA /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A2204CF8C800BEE5FA /* Auth.storyboard */; };
 		39B693A5204CF99D00BEE5FA /* ProfileDeprecated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A4204CF99D00BEE5FA /* ProfileDeprecated.storyboard */; };
@@ -237,8 +240,11 @@
 		398978D3204EAB5200B52424 /* PartnerTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTimePicker.swift; sourceTree = "<group>"; };
 		398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerTimePicker.xib; sourceTree = "<group>"; };
 		398978D7204EBD8B00B52424 /* InfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailVC.swift; path = ../../../../../../../../Downloads/InfoDetailVC.swift; sourceTree = "<group>"; };
+		3994C83F204FF328001B2717 /* NetworkTolol+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTolol+Type.swift"; sourceTree = "<group>"; };
 		399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Auth.swift"; sourceTree = "<group>"; };
 		39A87F82204ED926003D8226 /* NetworkTool+Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Field.swift"; sourceTree = "<group>"; };
+		39A87F84204F8271003D8226 /* CopyModual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyModual.swift; sourceTree = "<group>"; };
+		39A87F86204F8951003D8226 /* AuthInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInfoModel.swift; sourceTree = "<group>"; };
 		39B693A0204CF6C100BEE5FA /* MyProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProject.storyboard; sourceTree = "<group>"; };
 		39B693A2204CF8C800BEE5FA /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		39B693A4204CF99D00BEE5FA /* ProfileDeprecated.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileDeprecated.storyboard; sourceTree = "<group>"; };
@@ -797,6 +803,7 @@
 				399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */,
 				D3787E8B2047FD02000A0AA0 /* NetworkTool+Project.swift */,
 				D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */,
+				3994C83F204FF328001B2717 /* NetworkTolol+Type.swift */,
 				D3C58E042048EF3900C88E98 /* NetworkTool+Identity.swift */,
 				D3C58E0E204A991200C88E98 /* NetworkTool+Industry.swift */,
 				D3C58E10204A9F2F00C88E98 /* NetworkTool+Round.swift */,
@@ -1046,6 +1053,7 @@
 			isa = PBXGroup;
 			children = (
 				D39A4F31200D984C00022A76 /* SystemConstantValue.swift */,
+				39A87F84204F8271003D8226 /* CopyModual.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -1279,6 +1287,7 @@
 				D31C3CAC2040057300E97460 /* ProfileInfoModel.swift */,
 				D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */,
 				3968A125204E302700A5DE22 /* AuthModel.swift */,
+				39A87F86204F8951003D8226 /* AuthInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1707,6 +1716,7 @@
 				D354B4672029D07A00482BF2 /* MyHomePageBasicInfomationTableViewCell.swift in Sources */,
 				D35A9D23203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift in Sources */,
 				D3C58DFD204808A900C88E98 /* NetworkTool+CopyModel.swift in Sources */,
+				39A87F87204F8951003D8226 /* AuthInfoModel.swift in Sources */,
 				D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */,
 				B687ABA22043EBCE004C915A /* SearchUserJionInCircleVC.swift in Sources */,
 				B65E09E12046538000BF81FF /* NoticeInfoModel.swift in Sources */,
@@ -1758,6 +1768,7 @@
 				D3787E8A20411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift in Sources */,
 				B65E09E320468B7000BF81FF /* NoticeSocialConnListModel.swift in Sources */,
 				B65E09D92045539200BF81FF /* CircleStautsCell.swift in Sources */,
+				3994C840204FF328001B2717 /* NetworkTolol+Type.swift in Sources */,
 				D35A9D14203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift in Sources */,
 				39123D94204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift in Sources */,
 				D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */,
@@ -1811,6 +1822,7 @@
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
 				D3C58E11204A9F2F00C88E98 /* NetworkTool+Round.swift in Sources */,
 				D3C58E0D204A7D5200C88E98 /* ProjectModel.swift in Sources */,
+				39A87F85204F8271003D8226 /* CopyModual.swift in Sources */,
 				D37D712F202AE9ED007B38EB /* MyHomePageBasicInfomationContainerViewController.swift in Sources */,
 				D35A9D29203FBF3300408B9E /* ServiceInvestorBasicInfomationContainerViewController.swift in Sources */,
 				D3B8E5C8201AFC04002F3A3A /* IntentionProjectViewController.swift in Sources */,

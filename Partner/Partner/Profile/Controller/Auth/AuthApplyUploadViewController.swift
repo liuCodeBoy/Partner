@@ -13,6 +13,83 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
     
     var viewModel: AuthModel = AuthModel()
     
+    var areaData = [[String : AnyObject]]()
+    var typeData = [[String : AnyObject]]()
+    
+    var isResumbit: Bool = false
+    var authID: Int? 
+    
+    var reSubmitViewModel: AuthInfoModel? {
+        didSet {
+            invSumbitBtn.setTitle("重新提交", for: .normal)
+            if let avatar = reSubmitViewModel?.imgUrl {
+                invAvatarImg.sd_setImage(with: URL.init(string: avatar), placeholderImage: #imageLiteral(resourceName: "profile_my_project_camera_small"), options: .continueInBackground, completed: nil)
+            }
+            if let card = reSubmitViewModel?.nameCardUrl {
+                invCardImg.sd_setImage(with: URL.init(string: card), placeholderImage: #imageLiteral(resourceName: "profile_my_project_business_card_small"), options: .continueInBackground, completed: nil)
+            }
+            if let realName = reSubmitViewModel?.realName {
+                invRealNameLbl.text = realName
+                // resubmit upload
+                viewModel.inveRealName = realName
+            }
+            if let phone = reSubmitViewModel?.phone {
+                invPhoneNumLbl.text = phone
+                // resubmit upload
+                viewModel.invePhone = phone
+            }
+            if let mail = reSubmitViewModel?.mail {
+                invEmailLbl.text = mail
+                // resubmit upload
+                viewModel.inveMail = mail
+            }
+            if let industry = reSubmitViewModel?.industryList {
+                // TODO:- show the count of the list
+                let count = industry.count
+                invIndustryLbl.text = "\(count)个"
+                // TODO:- pass data to next view controller
+                
+                // resubmit upload
+                var idString = ""
+                for dict in industry {
+                    let id = dict["id"] as! Int
+                    idString += "\(id),"
+                }
+                idString.removeLast(1)
+                viewModel.industryIds = idString
+            }
+            if let industryName = reSubmitViewModel?.instName {
+                invAgencyNameLbl.text = industryName
+            }
+            if let round = reSubmitViewModel?.inveRound, let id = reSubmitViewModel?.roundId {
+                invRoundLbl.text = round
+                // resubmit upload
+                viewModel.inveRound = id
+            }
+            if let identity = reSubmitViewModel?.inveIdentity, let id = reSubmitViewModel?.inveIdenId {
+                invIdentityLbl.text = identity
+                // resubmit upload
+                viewModel.idenId = id
+            }
+            if let name = reSubmitViewModel?.instName {
+                invAgencyNameLbl.text = name
+                // resubmit upload
+                viewModel.instName = name
+            }
+            if let job = reSubmitViewModel?.instJobName {
+                invAgencyJobLbl.text = job
+                // resubmit upload
+                viewModel.instJobName = job
+            }
+            if let time = reSubmitViewModel?.inTime {
+                invAgencyOnWorkTimeLbl.text = time
+                // resubmit upload
+                viewModel.inTime = time
+            }
+            
+        }
+    }
+    
     var datePicker: UIDatePicker?
     
     var idenID: NSNumber? {
@@ -50,6 +127,7 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
     @IBOutlet weak var invAgencyNameLbl         : UILabel!
     @IBOutlet weak var invAgencyJobLbl          : UILabel!
     @IBOutlet weak var invAgencyOnWorkTimeLbl   : UILabel!
+    @IBOutlet weak var invSumbitBtn: ShadowButton!
     
     // enterprise auth
     @IBOutlet weak var enterpriseAuth           : ShadowButton!
@@ -96,8 +174,9 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
             vc.navTitle = "真实姓名"
             vc.inputPlaceholder = "请输入\(title)"
             vc.saveClousre = {
-                self.viewModel.inveRealName = vc.inputText
-                self.invRealNameLbl.text = vc.inputText
+                weak var weakSelf = self
+                weakSelf?.viewModel.inveRealName = vc.inputText
+                weakSelf?.invRealNameLbl.text = vc.inputText
                 vc.navigationController?.popViewController(animated: true)
             }
         case "invPhoneNum":
@@ -105,8 +184,9 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
             vc.navTitle = title
             vc.inputPlaceholder = "请输入\(title)"
             vc.saveClousre = {
-                self.viewModel.invePhone = vc.inputText
-                self.invPhoneNumLbl.text = vc.inputText
+                weak var weakSelf = self
+                weakSelf?.viewModel.invePhone = vc.inputText
+                weakSelf?.invPhoneNumLbl.text = vc.inputText
                 vc.navigationController?.popViewController(animated: true)
             }
         case "invEmail":
@@ -114,8 +194,9 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
             vc.navTitle = title
             vc.inputPlaceholder = "请输入\(title)"
             vc.saveClousre = {
-                self.viewModel.inveMail = vc.inputText
-                self.invEmailLbl.text = vc.inputText
+                weak var weakSelf = self
+                weakSelf?.viewModel.inveMail = vc.inputText
+                weakSelf?.invEmailLbl.text = vc.inputText
                 vc.navigationController?.popViewController(animated: true)
             }
         case "invAgencyName":
@@ -123,8 +204,9 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
             vc.navTitle = title
             vc.inputPlaceholder = "请输入\(title)"
             vc.saveClousre = {
-                self.viewModel.instName = vc.inputText
-                self.invAgencyNameLbl.text = vc.inputText
+                weak var weakSelf = self
+                weakSelf?.viewModel.instName = vc.inputText
+                weakSelf?.invAgencyNameLbl.text = vc.inputText
                 vc.navigationController?.popViewController(animated: true)
             }
         case "invAgencyJob":
@@ -132,8 +214,100 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
             vc.navTitle = title
             vc.inputPlaceholder = "请输入\(title)"
             vc.saveClousre = {
-                self.viewModel.instJobName = vc.inputText
-                self.invAgencyJobLbl.text = vc.inputText
+                weak var weakSelf = self
+                weakSelf?.viewModel.instJobName = vc.inputText
+                weakSelf?.invAgencyJobLbl.text = vc.inputText
+                vc.navigationController?.popViewController(animated: true)
+            }
+        case "entName":
+            let title = "企业名称"
+            vc.navTitle = title
+            vc.inputPlaceholder = "请输入\(title)"
+            vc.saveClousre = {
+                weak var weakSelf = self
+                weakSelf?.viewModel.compName = vc.inputText
+                weakSelf?.entNameLbl.text = vc.inputText
+                vc.navigationController?.popViewController(animated: true)
+            }
+        case "entRealName":
+            let title = "真实姓名"
+            vc.navTitle = title
+            vc.inputPlaceholder = "请输入\(title)"
+            vc.saveClousre = {
+                weak var weakSelf = self
+                weakSelf?.viewModel.compConn = vc.inputText
+                weakSelf?.entRealNameLbl.text = vc.inputText
+                vc.navigationController?.popViewController(animated: true)
+            }
+        case "entPhone":
+            let title = "手机号"
+            vc.navTitle = title
+            vc.inputPlaceholder = "请输入\(title)"
+            vc.saveClousre = {
+                weak var weakSelf = self
+                weakSelf?.viewModel.compConnPhone = vc.inputText
+                weakSelf?.entPhoneLbl.text = vc.inputText
+                vc.navigationController?.popViewController(animated: true)
+            }
+        case "entMail":
+            let title = "邮箱"
+            vc.navTitle = title
+            vc.inputPlaceholder = "请输入\(title)"
+            vc.saveClousre = {
+                weak var weakSelf = self
+                weakSelf?.viewModel.compConnMail = vc.inputText
+                weakSelf?.entMailLbl.text = vc.inputText
+                vc.navigationController?.popViewController(animated: true)
+            }
+            
+        case "entCreditCode":
+            let title = "统一信用代码"
+            vc.navTitle = title
+            vc.inputPlaceholder = "请输入\(title)"
+            vc.saveClousre = {
+                weak var weakSelf = self
+                weakSelf?.viewModel.compCreditCode = vc.inputText
+                weakSelf?.entCreditCodeLbl.text = vc.inputText
+                vc.navigationController?.popViewController(animated: true)
+            }
+        case "entLegal":
+            let title = "法定代表人"
+            vc.navTitle = title
+            vc.inputPlaceholder = "请输入\(title)"
+            vc.saveClousre = {
+                weak var weakSelf = self
+                weakSelf?.viewModel.compRepresent = vc.inputText
+                weakSelf?.entLegalLbl.text = vc.inputText
+                vc.navigationController?.popViewController(animated: true)
+            }
+        case "entLegalID":
+            let title = "法人身份证号"
+            vc.navTitle = title
+            vc.inputPlaceholder = "请输入\(title)"
+            vc.saveClousre = {
+                weak var weakSelf = self
+                weakSelf?.viewModel.compCardNo = vc.inputText
+                weakSelf?.entLegalIDNumLbl.text = vc.inputText
+                vc.navigationController?.popViewController(animated: true)
+            }
+        case "entLegalID":
+            let title = "法人身份证号"
+            vc.navTitle = title
+            vc.inputPlaceholder = "请输入\(title)"
+            vc.saveClousre = {
+                weak var weakSelf = self
+                weakSelf?.viewModel.compCardNo = vc.inputText
+                weakSelf?.entLegalIDNumLbl.text = vc.inputText
+                vc.navigationController?.popViewController(animated: true)
+            }
+        case "entDetialAddress":
+            let title = "详细地址"
+            vc.navTitle = title
+            vc.inputPlaceholder = "请输入\(title)"
+            vc.saveClousre = {
+                weak var weakSelf = self
+                weakSelf?.viewModel.compAddrDetail = vc.inputText
+                weakSelf?.entDetialAddressLbl.text = vc.inputText
                 vc.navigationController?.popViewController(animated: true)
             }
         default: break
@@ -147,8 +321,14 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
     }
     @IBAction func identityClicked(_ sender: UIButton) {
         popupPartnerPicker(bindingLabel: invIdentityLbl, type: .authIdentity, model: viewModel, componentDict: identityData)
-        
     }
+    @IBAction func enterpriseTypeClicked(_ sender: UIButton) {
+        popupSecondaryPicker(bindingLabel: entTypeLbl, type: .enterpriseType, model: viewModel, componentDict: typeData)
+    }
+    @IBAction func areaClicked(_ sender: UIButton) {
+        popupSecondaryPicker(bindingLabel: entLocationLbl, type: .location, model: viewModel, componentDict: areaData)
+    }
+    
     @IBAction func workTimeClicked(_ sender: UIButton) {
         
         let picker = Bundle.main.loadNibNamed("PartnerTimePicker", owner: nil, options: nil)?.first as! PartnerTimePicker
@@ -159,7 +339,6 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
         self.view.addSubview(picker)
         
     }
-    
     
     @IBAction func uploadImg(_ sender: ShadowButton) {
         // change status to not selected
@@ -177,16 +356,12 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
         present(picker, animated: true, completion: nil)
     }
     
+    // MARK:- update auth infomation
     @IBAction func investAuthSumbit(_ sender: ShadowButton) {
-        guard UserDefaults.standard.string(forKey: "token") != nil else {
-            presentLoginController()
-            return
-        }
         uploadInvestAuthInfo()
-        
-        
     }
     @IBAction func enterpriseAuthSubmit(_ sender: ShadowButton) {
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -201,6 +376,12 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
             viewModel.inTime = date
             invAgencyOnWorkTimeLbl.text = date
         }
+        // show or hide agency view
+        if reSubmitViewModel?.inveIdentity == "投资机构" {
+            invAgencyView.isHidden = false
+        } else {
+            invAgencyView.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -209,6 +390,11 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
         
         loadAndSavePickerData()
         
@@ -259,9 +445,71 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
             }
         }
+        
+        // province and city
+        NetWorkTool.shareInstance.getProvinceAndCityList { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save province and city an array
+                for dict in result!["result"]! as! [[String : AnyObject]] {
+                    weakSelf?.areaData.append(dict)
+                }
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
+        
+        // enterprise type
+        NetWorkTool.shareInstance.getCompanyTypeList(token: access_token!) { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save province and city an array
+                for dict in result!["result"]! as! [[String : AnyObject]] {
+                    weakSelf?.typeData.append(dict)
+                }
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
+        
+        if isResumbit == true {
+            
+            guard authID != nil else { return }
+            
+            NetWorkTool.shareInstance.getAuthEditInfo(token: access_token!, type: 1, id: authID!, finished: { (result, error) in
+                weak var weakSelf = self
+                if error != nil {
+                    weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                    print(error as AnyObject)
+                    return
+                }
+                if result!["code"] as! Int == 200 {
+                    // TODO:- save data to model
+                    weakSelf?.reSubmitViewModel = AuthInfoModel.mj_object(withKeyValues: result!["result"])
+                } else {
+                    weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+                }
+            })
+        }
     }
     
     func uploadInvestAuthInfo() {
+        
+        // MARK:- resubmit upload image
+        if isResumbit == true {
+            viewModel.image = invAvatarImg.image
+            viewModel.nameCard = invCardImg.image
+        }
         guard   let image = viewModel.image,
                 let nameCard = viewModel.nameCard,
                 let industryIds = viewModel.industryIds,
@@ -274,38 +522,85 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
             presentHintMessage(hintMessgae: "请完善信息后提交", completion: nil)
             return
         }
-        if idenId == 5 && (viewModel.instName == nil || viewModel.instJobName == nil || viewModel.inTime == nil) {
-            presentHintMessage(hintMessgae: "请完善信息后提交", completion: nil)
-            return
-        }
-        NetWorkTool.shareInstance.authInvestor(token: access_token!,
-                                               image: image,
-                                               nameCard: nameCard,
-                                               industryIds: industryIds,
-                                               inveRealName: inveRealName,
-                                               invePhone: invePhone,
-                                               inveMail: inveMail,
-                                               inveRound: inveRound as! Int,
-                                               idenId: idenId as! Int,
-                                               instName: viewModel.instName,
-                                               instJobName: viewModel.instJobName,
-                                               inTime: viewModel.inTime)
-        { (result, error) in
-            weak var weakSelf = self
-            if error != nil {
-                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
-                print(error as AnyObject)
+        
+        // MARK:- judge the value if it is nil
+        if idenId == 5 {
+            guard let instName = viewModel.instName, let instJobName = viewModel.instJobName, let inTime = viewModel.inTime else {
+                presentHintMessage(hintMessgae: "请完善信息后提交", completion: nil)
                 return
             }
-            if result!["code"] as! Int == 200 {
-                // TODO:- save identity data into an array
-                weakSelf?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
-                    weakSelf?.navigationController?.popViewController(animated: true)
-                })
-            } else {
-                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            if instName.isEmptyString || instJobName.isEmptyString || inTime.isEmptyString {
+                presentHintMessage(hintMessgae: "请完善信息后提交", completion: nil)
+                return
             }
         }
+        
+        // MARK:- wheather is the first sumbit
+        if isResumbit == false {
+            NetWorkTool.shareInstance.authInvestor(token: access_token!,
+                                                   image: image,
+                                                   nameCard: nameCard,
+                                                   industryIds: industryIds,
+                                                   inveRealName: inveRealName,
+                                                   invePhone: invePhone,
+                                                   inveMail: inveMail,
+                                                   inveRound: inveRound as! Int,
+                                                   idenId: idenId as! Int,
+                                                   instName: viewModel.instName,
+                                                   instJobName: viewModel.instJobName,
+                                                   inTime: viewModel.inTime)
+            { (result, error) in
+                weak var weakSelf = self
+                if error != nil {
+                    weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                    print(error as AnyObject)
+                    return
+                }
+                if result!["code"] as! Int == 200 {
+                    // TODO:- save identity data into an array
+                    weakSelf?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
+                        weakSelf?.navigationController?.popViewController(animated: true)
+                    })
+                } else {
+                    weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+                }
+            }
+        } else {
+            // MARK:- not the first commit
+            guard let id = authID else { return }
+            NetWorkTool.shareInstance.editInvestorAuth(token: access_token!,
+                                                       image: image,
+                                                       nameCard: nameCard,
+                                                       industryIds: industryIds,
+                                                       id: id,
+                                                       inveRealName: inveRealName,
+                                                       invePhone: invePhone,
+                                                       inveMail: inveMail,
+                                                       inveRound: inveRound as! Int,
+                                                       idenId: idenId as! Int,
+                                                       instName: viewModel.instName,
+                                                       instJobName: viewModel.instJobName,
+                                                       inTime: viewModel.inTime)
+            { (result, error) in
+                weak var weakSelf = self
+                if error != nil {
+                    weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                    print(error as AnyObject)
+                    return
+                }
+                if result!["code"] as! Int == 200 {
+                    // TODO:- save identity data into an array
+                    weakSelf?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
+                        weakSelf?.navigationController?.popViewController(animated: true)
+                    })
+                } else {
+                    weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+                }
+            }
+        }
+        
+        
+        
     }
     
     // MARK:- image picker protocol functions
@@ -333,7 +628,7 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
                     weakSelf?.viewModel.nameCard = img
                 } else if (weakSelf?.entLicenseImgBtn.isSelected)! {
                     weakSelf?.entLicenseImg.image = img
-                    weakSelf?.viewModel.logo = img
+                    weakSelf?.viewModel.licence = img
                 } else if (weakSelf?.entLogoImgBtn.isSelected)! {
                     weakSelf?.entLogoImg.image = img
                     weakSelf?.viewModel.logo = img
@@ -347,8 +642,11 @@ class AuthApplyUploadViewController: UIViewController, ImagePickerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! AuthInvestIndustrySelectViewController
-        dest.segue = segue
+        let destnation = segue.destination
+        if destnation is AuthInvestIndustrySelectViewController {
+            let dest = destnation as! AuthInvestIndustrySelectViewController
+            dest.segue = segue
+        }
     }
 
 

@@ -87,7 +87,7 @@ class ProfileViewController: UIViewController {
                     let model = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
                     self?.viewModel = model
                 } else {
-                    self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"])))", completion: nil)
+                    self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!)))", completion: nil)
                 }
 
             })
