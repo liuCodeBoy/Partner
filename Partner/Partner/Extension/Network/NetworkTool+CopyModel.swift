@@ -10,7 +10,7 @@ import UIKit
 extension NetWorkTool {
     // MARK:- single
     func singleRequest(token: String, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://47.97.110.89/qm/"
+        let urlString = "http"
         let parameters = ["token" : token]
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             guard let resultDict = result as? [String : AnyObject] else {

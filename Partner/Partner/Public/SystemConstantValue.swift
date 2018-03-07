@@ -32,11 +32,6 @@ let isIPHONE_SE: Bool = { () -> Bool in
     }
 }()
 
-//enum HeaderFooterViewTag: Int {
-//    case homePageWrap = 50011
-//    case editProfileHeader = 50021
-//}
-
 enum StoryboardID: String {
     case entrepreneurshipExp    = "MyHomePageAddEntrepreneurshipExperience"
     case workExp                = "MyHomePageAddWorkExperience"

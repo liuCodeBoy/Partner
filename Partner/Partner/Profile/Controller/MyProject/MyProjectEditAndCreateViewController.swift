@@ -49,13 +49,8 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     }
     
     @IBAction func areaClicked(_ sender: UIButton) {
-        let picker = Bundle.main.loadNibNamed("PartnerPickerView", owner: nil, options: nil)?.first as! PartnerPickerView
-        picker.frame = UIScreen.main.bounds
-        picker.twoDimensionArray = areaData
-        picker.pickerTitle.text = "选择所在区域"
-        picker.inputLbl = locationLbl
-        picker.projModel = projModel
-        self.view.addSubview(picker)
+        popupSecondaryPicker(bindingLabel: locationLbl, type: .location
+            , model: projModel, componentDict: areaData)
     }
     
     @IBAction func industryClicked(_ sender: UIButton) {

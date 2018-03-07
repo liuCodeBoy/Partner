@@ -67,7 +67,7 @@ class MyHomePageViewController: UIViewController {
             if result!["code"] as! Int == 200 {
                 self?.viewModel = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
             } else {
-                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"])))", completion: nil)
+                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!)))", completion: nil)
             }
         }
     }

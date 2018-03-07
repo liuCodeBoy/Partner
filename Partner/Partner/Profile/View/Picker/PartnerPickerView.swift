@@ -7,9 +7,17 @@
 
 import UIKit
 
+enum SecondaryPickerType: String {
+    case enterpriseType = "enterpriseType"
+    case location = "location"
+}
+
 class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var type: SecondaryPickerType?
+    
     var projModel: ProjectModel?
+    var authModel: AuthModel?
     
     var twoDimensionArray = [[String : AnyObject]]()
     
@@ -37,6 +45,7 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         partnerPicker.delegate = self
         partnerPicker.dataSource = self
         
@@ -67,18 +76,36 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             }
             return firstComponentArray.count
         } else {
-            // get the city array
+            // reload array
             secondaryComponentArray.removeAll()
             secondaryComponentDictArray.removeAll()
+            
             guard twoDimensionArray.count != 0 else { return 0 }
-            secondaryComponentDictArray = twoDimensionArray[firstComponentRows]["cityList"] as! [[String: AnyObject]]
-            for dict in secondaryComponentDictArray {
-                let city = dict["name"] as! String
-                secondaryComponentArray.append(city)
+            
+            switch type! {
+            case .enterpriseType:
+                // save secondary component data source
+                secondaryComponentDictArray = twoDimensionArray[firstComponentRows]["children"] as! [[String: AnyObject]]
+                for dict in secondaryComponentDictArray {
+                    let name = dict["typeName"] as! String
+                    secondaryComponentArray.append(name)
+                }
+                // save the default id
+                authModel?.areaId = secondaryComponentDictArray[0]["id"] as? NSNumber
+                inputLbl?.text = secondaryComponentDictArray[0]["typeName"] as? String
+            case .location:
+                
+                // save secondary component data source
+                secondaryComponentDictArray = twoDimensionArray[firstComponentRows]["cityList"] as! [[String: AnyObject]]
+                for dict in secondaryComponentDictArray {
+                    let city = dict["name"] as! String
+                    secondaryComponentArray.append(city)
+                }
+                // save the default id
+                projModel?.areaId = secondaryComponentDictArray[0]["id"] as? NSNumber
+                inputLbl?.text = secondaryComponentDictArray[0]["name"] as? String
             }
-            // save the default city id
-            projModel?.areaId = secondaryComponentDictArray[0]["id"] as? NSNumber
-            inputLbl?.text = secondaryComponentDictArray[0]["name"] as? String
+            
             return secondaryComponentArray.count
         }
     }
@@ -116,8 +143,15 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             pickerView.reloadComponent(1)
         } else {
             // save city id
-            projModel?.areaId = secondaryComponentDictArray[row]["id"] as? NSNumber
-            inputLbl?.text = secondaryComponentDictArray[row]["name"] as? String
+            switch type! {
+            case .enterpriseType:
+                authModel?.areaId = secondaryComponentDictArray[row]["id"] as? NSNumber
+                inputLbl?.text = secondaryComponentDictArray[row]["typeName"] as? String
+            case .location:
+                projModel?.areaId = secondaryComponentDictArray[row]["id"] as? NSNumber
+                inputLbl?.text = secondaryComponentDictArray[row]["name"] as? String
+            }
+            
         }
     }
     

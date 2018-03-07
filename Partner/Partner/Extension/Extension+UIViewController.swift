@@ -105,6 +105,31 @@ extension UIViewController {
         
     }
     
+    func popupSecondaryPicker(bindingLabel label: UILabel, type pickerType: SecondaryPickerType, model pickerModel: NSObject, componentDict dictData: [[String : AnyObject]]) {
+                
+        let picker = Bundle.main.loadNibNamed("PartnerPickerView", owner: nil, options: nil)?.first as! PartnerPickerView
+        picker.frame = UIScreen.main.bounds
+        
+        var pickerTitle = ""
+        switch pickerType {
+        case .enterpriseType: pickerTitle = "选择企业类型"
+        case .location: pickerTitle = "选择地区"
+        }
+        picker.pickerTitle.text = pickerTitle
+        picker.type = pickerType
+        picker.inputLbl = label
+        // judge the model
+        if pickerModel is ProjectModel {
+            picker.projModel = pickerModel as? ProjectModel
+        } else if pickerModel is AuthModel {
+            picker.authModel = pickerModel as? AuthModel
+        }
+        
+        picker.twoDimensionArray = dictData
+        self.view.addSubview(picker)
+        
+    }
+    
     // add observer in the view controller to change frame
     func notificationAddKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.init(keyboardShowNotification), object: nil)

@@ -23,18 +23,18 @@ class AuthModel: NSObject {
     @objc var inTime           : String?
     
     // enterprise auth
-    @objc var logo             : UIImage?
-    @objc var licence          : UIImage?
-    @objc var typeIds          : String?
-    @objc var compName         : String?
-    @objc var compConn         : String?
-    @objc var compConnPhone    : String?
-    @objc var compConnMail     : String?
-    @objc var compDesc         : String?
-    @objc var compCreditCode   : NSNumber?
-    @objc var compRepresent    : String?
-    @objc var compCardNo       : String?
-    @objc var compAddrDetail   : String?
-    @objc var areaId           : NSNumber?
+    @objc var logo              : UIImage?
+    @objc var licence           : UIImage?
+    @objc var typeIds           : String?
+    @objc var compName          : String?
+    @objc var compConn          : String?
+    @objc var compConnPhone     : String?
+    @objc var compConnMail      : String?
+    @objc var compDesc          : String?
+    @objc var compCreditCode    : String?
+    @objc var compRepresent     : String?
+    @objc var compCardNo        : String?
+    @objc var compAddrDetail    : String?
+    @objc var areaId            : NSNumber?
 
 }
