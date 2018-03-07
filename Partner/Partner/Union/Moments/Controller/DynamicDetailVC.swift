@@ -238,11 +238,7 @@ extension  DynamicDetailVC {
            if modelArr.count > 1  {
               sectionH = 40
            }else{
-            if section == 1 {
-               sectionH = 40
-            }else{
              sectionH = 0.1
-             }
             }
           }
         }
@@ -289,11 +285,7 @@ extension  DynamicDetailVC {
             if modelArr.count > 1  {
                 showOrHideView.isHidden = false
             }else{
-                if section == 1 {
-                    showOrHideView.isHidden = false
-                }else{
-                    showOrHideView.isHidden = true
-                }
+              showOrHideView.isHidden = true
             }
         }
         return  showOrHideView
