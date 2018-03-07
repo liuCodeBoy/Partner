@@ -7,8 +7,9 @@
 
 import UIKit
 import Masonry
+
 class InterestedVC: UIViewController {
-    var  diyButtonText = [String]()
+    var diyButtonText = [String]()
     var flowButtonView : CFFlowButtonView?
     var buttonList     : NSMutableArray?
     var scrollview     : UIScrollView?
@@ -16,14 +17,12 @@ class InterestedVC: UIViewController {
     var selectedArr    = NSMutableArray()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
     
         buttonArr.removeAllObjects()
-        self.flowButtonView?.removeFromSuperview()
+        flowButtonView?.removeFromSuperview()
         for i in 0..<diyButtonText.count{
              let str = diyButtonText[i]
               buttonArr.add(str)
@@ -34,7 +33,7 @@ class InterestedVC: UIViewController {
     //请求标签
     func getTagList(){
         //保存身份选择
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
         NetWorkTool.shareInstance.getTagList(token: access_token, type: 2) { [weak self](result, error) in
@@ -42,71 +41,65 @@ class InterestedVC: UIViewController {
                 // MARK:- judge the return data from server
                 if  result?["code"] as? Int == 200  {
                     let  dictArr = result!["result"] as? [NSDictionary]
-                    for dict  in dictArr!{
+                    for dict in dictArr! {
                         let tagModel = TageModel.mj_object(withKeyValues: dict)
                         self?.buttonArr.add(tagModel?.tagName ?? "")
                     }
                     self?.buttonArr.add("+自定义")
                     self?.addButton()
                 } else {
-                    let  errorShow  =  result!["msg"] as! String
+                    let errorShow = result!["msg"] as! String
                     self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
                     
                 }
             }
         }
     }
-    
-    //InterestedID
-    
-    
-    
-    
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return false
     }
 
-    
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func nextStepBtn(_ sender: Any) {
-        var  nums = 0
-        guard self.buttonList != nil else {
-            return
-        }
-        for btn in self.buttonList!{
-            let tempBtn =  btn as! UIButton
-            if(tempBtn.isSelected){
+        var nums = 0
+        guard buttonList != nil else { return }
+        for btn in self.buttonList! {
+            let tempBtn = btn as! UIButton
+            if tempBtn.isSelected {
                 nums += 1
                 self.selectedArr.add(tempBtn.titleLabel?.text ?? "")
             }
         }
-        if(nums > 8){
-            self.presentHintMessage(hintMessgae: "请不要选择过多的标签", completion: nil)
+        if nums > 8 {
+            presentHintMessage(hintMessgae: "请不要选择过多的标签", completion: nil)
             return
-        }else if(nums == 0){
-            self.presentHintMessage(hintMessgae: "至少选择一种标签", completion: nil)
+        } else if nums == 0 {
+            presentHintMessage(hintMessgae: "至少选择一种标签", completion: nil)
             return
-        }else{
-            var  selectedStr = ""
-            for  i  in 0..<self.selectedArr.count {
+        } else {
+            var selectedStr = ""
+            for i in 0..<self.selectedArr.count {
                 if i == 0 {
                     selectedStr.append((self.selectedArr[0] as? String)!)
-                }else{
-                 selectedStr.append(",")
+                } else {
+                    selectedStr.append(",")
                     selectedStr.append((self.selectedArr[i] as? String)!)
                 }
             }
-            perfectTagInfo(selectedStr : selectedStr)
+            perfectTagInfo(selectedStr: selectedStr)
         }
     }
     
  //完善标签信息
-    func  perfectTagInfo(selectedStr : String){
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+    func perfectTagInfo(selectedStr : String){
+        
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
+        
         NetWorkTool.shareInstance.perfectUsertagInfo(token: access_token, type: 2, tagName: selectedStr) { [weak self](result, error) in
             if error == nil {
                 // MARK:- judge the return data from server
@@ -114,14 +107,12 @@ class InterestedVC: UIViewController {
                     self?.performSegue(withIdentifier: "intestedSeguePushID", sender: nil)
                   
                 } else {
-                    let  errorShow  =  result!["msg"] as! String
+                    let errorShow = result!["msg"] as! String
                     self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
-                    
                 }
             }
         }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -130,11 +121,7 @@ class InterestedVC: UIViewController {
         }
      
     }
-    
-    
-    /*
-     * 添加按钮
-     */
+
     func addButton(){
         let  tempArr = NSMutableArray.init()
         for i in 0..<self.buttonArr.count{
@@ -173,11 +160,10 @@ class InterestedVC: UIViewController {
         self.performSegue(withIdentifier: "InterestedID", sender: nil)
         
     }
-        /**
-     *  设置FlowButtonView
-     */
+
+    // 设置FlowButtonView
     func addFlowButtonView() -> () {
-        //实例化一个FlowView对象
+        // 实例化一个FlowView对象
         let  tempFlowButtonView = CFFlowButtonView.init(initWithButtonList: self.buttonList!)
         self.view?.addSubview(tempFlowButtonView)
         self.flowButtonView = tempFlowButtonView
