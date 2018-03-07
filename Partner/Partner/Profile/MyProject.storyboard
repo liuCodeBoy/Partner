@@ -96,6 +96,9 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createClicked:" destination="VOu-F7-f7t" eventType="touchUpInside" id="aV9-Vo-Wy1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4i-ue-bEq">
                                 <rect key="frame" x="274" y="175" width="46" height="30"/>

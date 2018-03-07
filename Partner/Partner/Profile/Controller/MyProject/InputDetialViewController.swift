@@ -15,6 +15,8 @@ class InputDetialViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @objc var saveClousre: (() -> Void)?
+    
     var navTitle: String?
     var inputPlaceholder: String?
     var inputLimit: Int = 24
@@ -104,11 +106,19 @@ class InputDetialViewController: UIViewController {
         inputTF.becomeFirstResponder()
     }
     
+    @objc func saveBtnCallBack() {
+        saveClousre!()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navTitleLbl.text = navTitle
         inputTF.placeholder = inputPlaceholder
+        
+        if saveClousre != nil {
+            saveBtn.addTarget(self, action: #selector(saveBtnCallBack), for: .touchUpInside)
+        }
     }
     
 

@@ -8,8 +8,10 @@
 import UIKit
 
 enum PartnerPickerType: String {
-    case identity = "identity"
-    case financing = "financing"
+    case projIdentity = "projIdentity"
+    case projFinancing = "projFinancing"
+    case authIdentity = "authIdentity"
+    case authFinancing = "authFinancing"
 }
 
 class PartnerSinglePickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -17,6 +19,7 @@ class PartnerSinglePickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSou
     var type: PartnerPickerType?
     
     var projModel: ProjectModel?
+    var authModel: AuthModel?
     
     var componentArray = [String]()
     var componentDict = [[Int : String]]()
@@ -39,6 +42,7 @@ class PartnerSinglePickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSou
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         partnerPicker.delegate = self
         partnerPicker.dataSource = self
         
@@ -90,11 +94,14 @@ class PartnerSinglePickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSou
         inputLbl?.text = componentArray[row]
         // TODO:- pass id to model
         switch type! {
-        case .identity:
+        case .projIdentity:
             projModel?.idenId = componentDict[row].first?.key as NSNumber?
-        case .financing:
+        case .projFinancing:
             projModel?.roundId = componentDict[row].first?.key as NSNumber?
-            print(projModel?.roundId)
+        case .authIdentity:
+            authModel?.idenId = componentDict[row].first?.key as NSNumber?
+        case .authFinancing:
+            authModel?.inveRound = componentDict[row].first?.key as NSNumber?
         }
     }
     

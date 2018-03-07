@@ -45,7 +45,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     }
     
     @IBAction func identityClicked(_ sender: UIButton) {
-        popupPartnerPicker(bindingLabel: identityLbl, type: .identity, model: projModel, componentDict: identityData)
+        popupPartnerPicker(bindingLabel: identityLbl, type: .projIdentity, model: projModel, componentDict: identityData)
     }
     
     @IBAction func areaClicked(_ sender: UIButton) {
@@ -63,7 +63,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     }
     
     @IBAction func financingClicked(_ sender: UIButton) {
-        popupPartnerPicker(bindingLabel: financingLbl, type: .financing, model: projModel, componentDict: financingData)
+        popupPartnerPicker(bindingLabel: financingLbl, type: .projFinancing, model: projModel, componentDict: financingData)
         
     }
     
@@ -94,6 +94,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                // TODO:- save identity data into an array
@@ -114,6 +115,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- save province and city an array
@@ -131,6 +133,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- save identity data into an array
@@ -146,6 +149,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- save identity data into an array
@@ -185,6 +189,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                 print(error as AnyObject)
+                return
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- create success
@@ -198,26 +203,32 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! InputDetialViewController
-        switch segue.identifier! {
-        case "projNameSegue":
-            dest.navTitle           = "项目名称"
-            dest.inputPlaceholder   = "请输入您的项目名称"
-        case "comFullNameSegue":
-            dest.navTitle           = "公司全称"
-            dest.inputPlaceholder   = "请输入您的公司全称"
-        case "contactNameSegue":
-            dest.navTitle           = "联系人姓名"
-            dest.inputPlaceholder   = "请输入联系人姓名"
-        case "contactPhoneSegue":
-            dest.navTitle           = "联系电话"
-            dest.inputPlaceholder   = "请输入联系电话"
-        case "emailSegue":
-            dest.navTitle           = "邮箱"
-            dest.inputPlaceholder   = "请输入邮箱"
-        default: break
+        let destnation = segue.destination
+        if destnation is InputDetialViewController {
+            let dest = destnation as! InputDetialViewController
+            switch segue.identifier! {
+            case "projNameSegue":
+                dest.navTitle           = "项目名称"
+                dest.inputPlaceholder   = "请输入您的项目名称"
+            case "comFullNameSegue":
+                dest.navTitle           = "公司全称"
+                dest.inputPlaceholder   = "请输入您的公司全称"
+            case "contactNameSegue":
+                dest.navTitle           = "联系人姓名"
+                dest.inputPlaceholder   = "请输入联系人姓名"
+            case "contactPhoneSegue":
+                dest.navTitle           = "联系电话"
+                dest.inputPlaceholder   = "请输入联系电话"
+            case "emailSegue":
+                dest.navTitle           = "邮箱"
+                dest.inputPlaceholder   = "请输入邮箱"
+            default: break
+            }
+            dest.sourceSegue = segue
+        } else if destnation is MyProjectCreateIndustrySelectViewController {
+            let dest = destnation as! MyProjectCreateIndustrySelectViewController
+            dest.segue = segue
         }
-        dest.sourceSegue = segue
     }
     
     // MARK:- image picker protocol functions

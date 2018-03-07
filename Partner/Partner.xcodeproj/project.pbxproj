@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39123D94204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39123D93204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift */; };
+		3968A126204E302700A5DE22 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3968A125204E302700A5DE22 /* AuthModel.swift */; };
+		398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */; };
+		398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D3204EAB5200B52424 /* PartnerTimePicker.swift */; };
+		398978D6204EAB5F00B52424 /* PartnerTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */; };
+		398978D8204EBD8B00B52424 /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D7204EBD8B00B52424 /* InfoDetailVC.swift */; };
+		399ED174204E239D00CD4054 /* NetworkTool+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */; };
+		39A87F83204ED926003D8226 /* NetworkTool+Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A87F82204ED926003D8226 /* NetworkTool+Field.swift */; };
 		39B693A1204CF6C100BEE5FA /* MyProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A0204CF6C100BEE5FA /* MyProject.storyboard */; };
 		39B693A3204CF8C800BEE5FA /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A2204CF8C800BEE5FA /* Auth.storyboard */; };
 		39B693A5204CF99D00BEE5FA /* ProfileDeprecated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A4204CF99D00BEE5FA /* ProfileDeprecated.storyboard */; };
@@ -168,7 +176,6 @@
 		D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A827E6201096C40053ADBF /* PartnerPickerView.swift */; };
 		D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */; };
 		D3AEBB9A204E47EA00FA955C /* infoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBB99204E47EA00FA955C /* infoModel.swift */; };
-		D3AEBBA0204E86D600FA955C /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBB9F204E86D500FA955C /* InfoDetailVC.swift */; };
 		D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */; };
 		D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */; };
 		D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */; };
@@ -224,6 +231,14 @@
 /* Begin PBXFileReference section */
 		172AC59E61123A8F751E23DB /* Pods-Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Partner/Pods-Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		2E04E32645370430D88F1860 /* Pods-Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Partner/Pods-Partner.release.xcconfig"; sourceTree = "<group>"; };
+		39123D93204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectCreateIndustrySelectViewController.swift; sourceTree = "<group>"; };
+		3968A125204E302700A5DE22 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInvestIndustrySelectViewController.swift; sourceTree = "<group>"; };
+		398978D3204EAB5200B52424 /* PartnerTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTimePicker.swift; sourceTree = "<group>"; };
+		398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerTimePicker.xib; sourceTree = "<group>"; };
+		398978D7204EBD8B00B52424 /* InfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailVC.swift; path = ../../../../../../../../Downloads/InfoDetailVC.swift; sourceTree = "<group>"; };
+		399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Auth.swift"; sourceTree = "<group>"; };
+		39A87F82204ED926003D8226 /* NetworkTool+Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Field.swift"; sourceTree = "<group>"; };
 		39B693A0204CF6C100BEE5FA /* MyProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProject.storyboard; sourceTree = "<group>"; };
 		39B693A2204CF8C800BEE5FA /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		39B693A4204CF99D00BEE5FA /* ProfileDeprecated.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileDeprecated.storyboard; sourceTree = "<group>"; };
@@ -397,7 +412,6 @@
 		D3A827E6201096C40053ADBF /* PartnerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerPickerView.swift; sourceTree = "<group>"; };
 		D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerPickerView.xib; sourceTree = "<group>"; };
 		D3AEBB99204E47EA00FA955C /* infoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoModel.swift; sourceTree = "<group>"; };
-		D3AEBB9F204E86D500FA955C /* InfoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoDetailVC.swift; path = /Users/Weslie/Desktop/Partner/Partner/Partner/Home/Information/Controller/InfoDetailVC.swift; sourceTree = "<absolute>"; };
 		D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIView.swift"; sourceTree = "<group>"; };
 		D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIButton.swift"; sourceTree = "<group>"; };
 		D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UILabel.swift"; sourceTree = "<group>"; };
@@ -468,6 +482,7 @@
 				39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */,
 				39C1C789204D3EB300D3F2EF /* AuthEditInputTextViewController.swift */,
 				39C1C78B204D3F8400D3F2EF /* AuthApplianceResultViewController.swift */,
+				398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -567,7 +582,7 @@
 		B675483B204D526100B60D3A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D3AEBB9F204E86D500FA955C /* InfoDetailVC.swift */,
+				398978D7204EBD8B00B52424 /* InfoDetailVC.swift */,
 				B675483E204D52E200B60D3A /* InformationVC.swift */,
 			);
 			path = Controller;
@@ -700,6 +715,8 @@
 				D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */,
 				D3C58E082048F77400C88E98 /* PartnerSinglePickerView.swift */,
 				D3C58E0A2048F77C00C88E98 /* PartnerSinglePickerView.xib */,
+				398978D3204EAB5200B52424 /* PartnerTimePicker.swift */,
+				398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */,
 				D347124F2011F0CF003E098E /* CustomTimePickerView.swift */,
 				D347124E2011F0BA003E098E /* CustomTimePickerView.xib */,
 				D30AA0F5202843C100711F20 /* EntrepreneurshipExperienceAlertSheet.swift */,
@@ -777,11 +794,13 @@
 			isa = PBXGroup;
 			children = (
 				D35A9D2B203FE86A00408B9E /* NetworkTool+User.swift */,
+				399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */,
 				D3787E8B2047FD02000A0AA0 /* NetworkTool+Project.swift */,
 				D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */,
 				D3C58E042048EF3900C88E98 /* NetworkTool+Identity.swift */,
 				D3C58E0E204A991200C88E98 /* NetworkTool+Industry.swift */,
 				D3C58E10204A9F2F00C88E98 /* NetworkTool+Round.swift */,
+				39A87F82204ED926003D8226 /* NetworkTool+Field.swift */,
 				D3C58DFC204808A900C88E98 /* NetworkTool+CopyModel.swift */,
 			);
 			path = Network;
@@ -1239,6 +1258,7 @@
 				D3B8E5C2201AF1CB002F3A3A /* MyProjectViewController.swift */,
 				D3B8E5C7201AFC04002F3A3A /* IntentionProjectViewController.swift */,
 				D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */,
+				39123D93204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift */,
 				D3BCE69D2019D44A00097DDA /* InputDetialViewController.swift */,
 				D39F8C2E201F0BA400A40AC1 /* Edit */,
 			);
@@ -1258,6 +1278,7 @@
 			children = (
 				D31C3CAC2040057300E97460 /* ProfileInfoModel.swift */,
 				D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */,
+				3968A125204E302700A5DE22 /* AuthModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1417,6 +1438,7 @@
 				D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */,
 				D3E3349420351CBD0084687C /* ProfileEditTableViewHeader.xib in Resources */,
 				D30AA0FC2028568800711F20 /* PartnerPopulationPicker.xib in Resources */,
+				398978D6204EAB5F00B52424 /* PartnerTimePicker.xib in Resources */,
 				39B693A3204CF8C800BEE5FA /* Auth.storyboard in Resources */,
 				39B693A5204CF99D00BEE5FA /* ProfileDeprecated.storyboard in Resources */,
 				D378FEE11FF0D60800065EEC /* Home.storyboard in Resources */,
@@ -1653,6 +1675,7 @@
 				B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */,
 				D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */,
 				B68182E32041044C007CE890 /* CicrleDetailModel.swift in Sources */,
+				398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */,
 				D35A9D1D203FB1B700408B9E /* ServiceFounderBriefTableViewCell.swift in Sources */,
 				B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */,
 				B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */,
@@ -1663,6 +1686,7 @@
 				D39F14DE201EF68E003F3BC5 /* ProjectEditMarketAnalysisTableViewCell.swift in Sources */,
 				D35A9D21203FBC7600408B9E /* ServiceDetialViewController.swift in Sources */,
 				D34712612012057A003E098E /* ProfileSkillsSelectorTableViewBodyCell.swift in Sources */,
+				399ED174204E239D00CD4054 /* NetworkTool+Auth.swift in Sources */,
 				D3E3349620351D180084687C /* ProfileEditTableViewHeader.swift in Sources */,
 				D3722C8F203FA6F500E0B765 /* ServiceMainProviderListTableViewCell.swift in Sources */,
 				B625F2F8204115E50060F713 /* DetailInfoTableView.swift in Sources */,
@@ -1724,7 +1748,6 @@
 				D39F14E0201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift in Sources */,
 				B68182DB203FAF2E007CE890 /* UserSearchBarCell.swift in Sources */,
 				B6843E372020223A00B86A3F /* UnionMainVC.swift in Sources */,
-				D3AEBBA0204E86D600FA955C /* InfoDetailVC.swift in Sources */,
 				B6843E3A202173FD00B86A3F /* MomentMainVC.swift in Sources */,
 				D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */,
 				D39F14E4201EF754003F3BC5 /* ProjectEditBusinessPlanBookTableViewCell.swift in Sources */,
@@ -1736,6 +1759,7 @@
 				B65E09E320468B7000BF81FF /* NoticeSocialConnListModel.swift in Sources */,
 				B65E09D92045539200BF81FF /* CircleStautsCell.swift in Sources */,
 				D35A9D14203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift in Sources */,
+				39123D94204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift in Sources */,
 				D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */,
 				D30AA0FA2028568100711F20 /* PartnerPopulationPicker.swift in Sources */,
 				B690ADE12047FB220072C0C1 /* CircleNetWorkTools.swift in Sources */,
@@ -1759,6 +1783,7 @@
 				B687ABA420440313004C915A /* MemberOfCircleVC.swift in Sources */,
 				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
 				D39F14E6201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift in Sources */,
+				39A87F83204ED926003D8226 /* NetworkTool+Field.swift in Sources */,
 				D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */,
 				B6754835204D265F00B60D3A /* HotInvestorListModel.swift in Sources */,
 				B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */,
@@ -1809,11 +1834,14 @@
 				B6754837204D3E7700B60D3A /* ProjectListModel.swift in Sources */,
 				D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */,
 				D3C58E0F204A991200C88E98 /* NetworkTool+Industry.swift in Sources */,
+				398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */,
+				398978D8204EBD8B00B52424 /* InfoDetailVC.swift in Sources */,
 				D35A9D1B203FB18C00408B9E /* ServiceProjectBriefTableViewCell.swift in Sources */,
 				B6D7F80B20415DC80044B31C /* CircleManageVC.swift in Sources */,
 				39C1C788204D3E8300D3F2EF /* AuthApplyUploadViewController.swift in Sources */,
 				B65BE18A2029D653004407B1 /* LoopView.swift in Sources */,
 				D303464E201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift in Sources */,
+				3968A126204E302700A5DE22 /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
