@@ -20,6 +20,8 @@ class CircleStautsCell: UITableViewCell {
     @IBOutlet weak var contentText: UILabel!
     @IBOutlet weak var commentNumLab: UILabel!
     @IBOutlet weak var zanNumLab: UILabel!
+    @IBOutlet weak var deleteLab: UILabel!
+    @IBOutlet weak var deleteBtn: UIButton!
     
     @IBOutlet weak var pictureView: PicCollectionView!
     @IBOutlet weak var zanBtn: UIButton!
@@ -49,6 +51,18 @@ class CircleStautsCell: UITableViewCell {
                     break
                 }
                 identifyIcon.setTitle(userIdentify, for: .normal)
+            }
+            
+            if viewModel.my == 1 {
+               
+                deleteBtn.isHidden = false
+                deleteLab.isHidden = false
+                
+            }else if viewModel.my == 0 {
+                
+                deleteBtn.isHidden = true
+                deleteLab.isHidden = true
+
             }
             
             

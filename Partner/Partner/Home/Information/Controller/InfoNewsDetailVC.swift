@@ -10,7 +10,7 @@
 import UIKit
 import WebKit
 import SDWebImage
-class InfoDetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource, WKUIDelegate, WKNavigationDelegate {
+class InfoNewsDetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource, WKUIDelegate, WKNavigationDelegate {
     lazy var tableView = UITableView()
     lazy var scrollView = UIScrollView()
     lazy var webView = WKWebView()
@@ -116,7 +116,7 @@ class InfoDetailVC: UIViewController,UITableViewDelegate, UITableViewDataSource,
 
 
 //MARK: -  tableView代理方法
-extension  InfoDetailVC {
+extension  InfoNewsDetailVC {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return webViewHeight;
