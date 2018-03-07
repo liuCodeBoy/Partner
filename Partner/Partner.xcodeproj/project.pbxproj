@@ -12,7 +12,6 @@
 		398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */; };
 		398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D3204EAB5200B52424 /* PartnerTimePicker.swift */; };
 		398978D6204EAB5F00B52424 /* PartnerTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */; };
-		398978D8204EBD8B00B52424 /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D7204EBD8B00B52424 /* InfoDetailVC.swift */; };
 		399ED174204E239D00CD4054 /* NetworkTool+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */; };
 		39A87F83204ED926003D8226 /* NetworkTool+Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A87F82204ED926003D8226 /* NetworkTool+Field.swift */; };
 		39B693A1204CF6C100BEE5FA /* MyProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A0204CF6C100BEE5FA /* MyProject.storyboard */; };
@@ -176,6 +175,11 @@
 		D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A827E6201096C40053ADBF /* PartnerPickerView.swift */; };
 		D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */; };
 		D3AEBB9A204E47EA00FA955C /* infoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBB99204E47EA00FA955C /* infoModel.swift */; };
+		D3AEBBA2204F750800FA955C /* InfoNewsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBBA1204F750700FA955C /* InfoNewsDetailVC.swift */; };
+		D3AEBBA4204F7BE500FA955C /* InVestorListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBBA3204F7BE500FA955C /* InVestorListVC.swift */; };
+		D3AEBBA8204F83B100FA955C /* industryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBBA7204F83B100FA955C /* industryListModel.swift */; };
+		D3AEBBAA204F94E700FA955C /* CommentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBBA9204F94E700FA955C /* CommentListModel.swift */; };
+		D3AEBBAE204FEE7000FA955C /* CommandFooterStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBBAD204FEE7000FA955C /* CommandFooterStatusModel.swift */; };
 		D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */; };
 		D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */; };
 		D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */; };
@@ -236,7 +240,6 @@
 		398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInvestIndustrySelectViewController.swift; sourceTree = "<group>"; };
 		398978D3204EAB5200B52424 /* PartnerTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTimePicker.swift; sourceTree = "<group>"; };
 		398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerTimePicker.xib; sourceTree = "<group>"; };
-		398978D7204EBD8B00B52424 /* InfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailVC.swift; path = ../../../../../../../../Downloads/InfoDetailVC.swift; sourceTree = "<group>"; };
 		399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Auth.swift"; sourceTree = "<group>"; };
 		39A87F82204ED926003D8226 /* NetworkTool+Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Field.swift"; sourceTree = "<group>"; };
 		39B693A0204CF6C100BEE5FA /* MyProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProject.storyboard; sourceTree = "<group>"; };
@@ -412,6 +415,11 @@
 		D3A827E6201096C40053ADBF /* PartnerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerPickerView.swift; sourceTree = "<group>"; };
 		D3A827E8201096CD0053ADBF /* PartnerPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerPickerView.xib; sourceTree = "<group>"; };
 		D3AEBB99204E47EA00FA955C /* infoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoModel.swift; sourceTree = "<group>"; };
+		D3AEBBA1204F750700FA955C /* InfoNewsDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoNewsDetailVC.swift; sourceTree = "<group>"; };
+		D3AEBBA3204F7BE500FA955C /* InVestorListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InVestorListVC.swift; sourceTree = "<group>"; };
+		D3AEBBA7204F83B100FA955C /* industryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = industryListModel.swift; sourceTree = "<group>"; };
+		D3AEBBA9204F94E700FA955C /* CommentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListModel.swift; sourceTree = "<group>"; };
+		D3AEBBAD204FEE7000FA955C /* CommandFooterStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandFooterStatusModel.swift; sourceTree = "<group>"; };
 		D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIView.swift"; sourceTree = "<group>"; };
 		D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIButton.swift"; sourceTree = "<group>"; };
 		D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UILabel.swift"; sourceTree = "<group>"; };
@@ -511,15 +519,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B65BE17F2029C348004407B1 /* Social */ = {
-			isa = PBXGroup;
-			children = (
-				B65BE1882029C3AB004407B1 /* New Group1 */,
-				B65BE1872029C3A5004407B1 /* New Group */,
-			);
-			path = Social;
-			sourceTree = "<group>";
-		};
 		B65BE1802029C365004407B1 /* Plaza */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +543,7 @@
 				B6754834204D265F00B60D3A /* HotInvestorListModel.swift */,
 				B6754836204D3E7700B60D3A /* ProjectListModel.swift */,
 				B6754838204D48CB00B60D3A /* TypeListModel.swift */,
+				D3AEBBA7204F83B100FA955C /* industryListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -553,20 +553,6 @@
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		B65BE1872029C3A5004407B1 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		B65BE1882029C3AB004407B1 /* New Group1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group1";
 			sourceTree = "<group>";
 		};
 		B675483A204D524F00B60D3A /* Information */ = {
@@ -582,7 +568,7 @@
 		B675483B204D526100B60D3A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				398978D7204EBD8B00B52424 /* InfoDetailVC.swift */,
+				D3AEBBA1204F750700FA955C /* InfoNewsDetailVC.swift */,
 				B675483E204D52E200B60D3A /* InformationVC.swift */,
 			);
 			path = Controller;
@@ -607,6 +593,8 @@
 				B65E09E02046538000BF81FF /* NoticeInfoModel.swift */,
 				B65E09E220468B7000BF81FF /* NoticeSocialConnListModel.swift */,
 				B6754830204CF97E00B60D3A /* DynamicCommentModel.swift */,
+				D3AEBBA9204F94E700FA955C /* CommentListModel.swift */,
+				D3AEBBAD204FEE7000FA955C /* CommandFooterStatusModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -982,9 +970,9 @@
 				B65BE1892029D652004407B1 /* LoopView.swift */,
 				D378FEE01FF0D60800065EEC /* Home.storyboard */,
 				D33EA67B2011D68700745003 /* HomeViewController.swift */,
+				D3AEBBA5204F7C1A00FA955C /* Investor */,
 				B675483A204D524F00B60D3A /* Information */,
 				B65BE1802029C365004407B1 /* Plaza */,
-				B65BE17F2029C348004407B1 /* Social */,
 				B65BE18D202AA18C004407B1 /* View.xib */,
 			);
 			path = Home;
@@ -1213,6 +1201,22 @@
 				D3AEBB99204E47EA00FA955C /* infoModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D3AEBBA5204F7C1A00FA955C /* Investor */ = {
+			isa = PBXGroup;
+			children = (
+				D3AEBBA6204F7C2F00FA955C /* Controller */,
+			);
+			path = Investor;
+			sourceTree = "<group>";
+		};
+		D3AEBBA6204F7C2F00FA955C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3AEBBA3204F7BE500FA955C /* InVestorListVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D3B6ADC4201F3D0100A7B961 /* Edit */ = {
@@ -1705,6 +1709,7 @@
 				B687AB9E2043E279004C915A /* WatingJionInCell.swift in Sources */,
 				D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */,
 				D354B4672029D07A00482BF2 /* MyHomePageBasicInfomationTableViewCell.swift in Sources */,
+				D3AEBBA8204F83B100FA955C /* industryListModel.swift in Sources */,
 				D35A9D23203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift in Sources */,
 				D3C58DFD204808A900C88E98 /* NetworkTool+CopyModel.swift in Sources */,
 				D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */,
@@ -1730,6 +1735,7 @@
 				B641021D2015D7D3001C8787 /* SkillViewController.swift in Sources */,
 				B675483F204D52E200B60D3A /* InformationVC.swift in Sources */,
 				B687AB9A2043B4A9004C915A /* CircleMemberListTableView.swift in Sources */,
+				D3AEBBA4204F7BE500FA955C /* InVestorListVC.swift in Sources */,
 				B65E09D52044F40600BF81FF /* MyCircleEntityModel.swift in Sources */,
 				B6C27D072019AF200087FF17 /* ForgetPwdVC.swift in Sources */,
 				D39F8C3C201F0CFB00A40AC1 /* MyProjectEditFundingNeedViewController.swift in Sources */,
@@ -1760,6 +1766,7 @@
 				B65E09D92045539200BF81FF /* CircleStautsCell.swift in Sources */,
 				D35A9D14203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift in Sources */,
 				39123D94204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift in Sources */,
+				D3AEBBA2204F750800FA955C /* InfoNewsDetailVC.swift in Sources */,
 				D39F8C36201F0C9F00A40AC1 /* MyProjectEditProjectIntroductionViewController.swift in Sources */,
 				D30AA0FA2028568100711F20 /* PartnerPopulationPicker.swift in Sources */,
 				B690ADE12047FB220072C0C1 /* CircleNetWorkTools.swift in Sources */,
@@ -1774,6 +1781,7 @@
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
 				B6E1FAFD20286D8000BB2B4E /* StatusPushVC.swift in Sources */,
 				D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */,
+				D3AEBBAE204FEE7000FA955C /* CommandFooterStatusModel.swift in Sources */,
 				B687AB9C2043B5CE004C915A /* CircleMemberListVC.swift in Sources */,
 				D35A9D19203FB13400408B9E /* ServiceInvestAndRaiseHeaderTitleTableViewCell.swift in Sources */,
 				D35A9D27203FBF1600408B9E /* ServiceInvestorExperienceContainerViewController.swift in Sources */,
@@ -1792,6 +1800,7 @@
 				D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */,
 				B6754831204CF97E00B60D3A /* DynamicCommentModel.swift in Sources */,
 				D3E33488203232C40084687C /* MyHomePageAddEntrepreneurshipExperienceViewController.swift in Sources */,
+				D3AEBBAA204F94E700FA955C /* CommentListModel.swift in Sources */,
 				B6754839204D48CB00B60D3A /* TypeListModel.swift in Sources */,
 				D35A9D12203FAFB200408B9E /* ServiceFounderPlaceholderViewController.swift in Sources */,
 				B675482F204CDD9400B60D3A /* DynamicCommonCell.swift in Sources */,
@@ -1835,7 +1844,6 @@
 				D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */,
 				D3C58E0F204A991200C88E98 /* NetworkTool+Industry.swift in Sources */,
 				398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */,
-				398978D8204EBD8B00B52424 /* InfoDetailVC.swift in Sources */,
 				D35A9D1B203FB18C00408B9E /* ServiceProjectBriefTableViewCell.swift in Sources */,
 				B6D7F80B20415DC80044B31C /* CircleManageVC.swift in Sources */,
 				39C1C788204D3E8300D3F2EF /* AuthApplyUploadViewController.swift in Sources */,

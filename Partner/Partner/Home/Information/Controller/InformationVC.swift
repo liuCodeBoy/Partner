@@ -223,21 +223,13 @@ extension InformationVC {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.newsModelArr.count > 0  {
             //取出模型
-             let informationVC  = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "InfoDetailVCID") as! InfoDetailVC
+             let informationVC  = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "InfoNewsDetailVCID") as! InfoNewsDetailVC
             let  model = newsModelArr[indexPath.row]
             if let urlStr = model.infoUrl{
               let   url = NSURL.init(string: urlStr)
               informationVC.url = url
             }
             self.navigationController?.pushViewController(informationVC, animated: true)
-            
         }
-        
-        
     }
-    
-    
-    
-    
-    
 }

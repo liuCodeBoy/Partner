@@ -10,6 +10,20 @@ import SDWebImage
 import JXPhotoBrowser
 import MJRefresh
 import NVActivityIndicatorView
+
+var tabBarHeight: CGFloat {
+    set {
+        
+    }
+    get {
+        if isIPHONEX {
+            return 83
+        } else {
+            return 49
+        }
+    }
+}
+
 class MomentMainVC: UIViewController , UITableViewDelegate, UITableViewDataSource ,PhotoBrowserDelegate {
     @IBOutlet weak var momentTableView: UITableView!
     var  modelView =  [UnionListModel]()
@@ -125,7 +139,6 @@ extension MomentMainVC {
         }
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
             NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-            
             self.presentAlert(title: "您还未登录", hint: "", confirmTitle: "登录", cancelTitle: "取消", confirmation: { (action) in
                 let  navRegistAndLoginVC = UINavigationController.init(rootViewController: AppDelegate.RegisterAndLoginVC)
                 self.present(navRegistAndLoginVC, animated: true, completion: nil)
@@ -134,8 +147,8 @@ extension MomentMainVC {
         }
         NetWorkTool.shareInstance.getSocialCircleMomentList(token: access_token, type: type, pageNum: pageNum) { [weak self](result, error) in
             if error != nil {
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 return }
-            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
             if  result?["code"] as? Int == 200  {
             guard let resultArray = result else{
                 return
@@ -215,6 +228,16 @@ extension MomentMainVC {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dynamicDetailVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "DynamicDetailVCID") as! DynamicDetailVC
+        if  modelView.count > 0  {
+           let viewModel = modelView[indexPath.row]
+            dynamicDetailVC.momentId = viewModel.momentId as? Int
+            self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
+        }
+        
+    }
 
 }
 
@@ -222,7 +245,9 @@ extension MomentMainVC {
 extension  MomentMainVC{
 //添加发布按钮
 func   addPushBtn(){
-    let  btn = UIButton.init(frame: CGRect.init(x: screenWidth - 58 , y: screenHeight - 180 , width: 46, height: 46))
+//    print(self.tabBarController?.tabBar.frame.height)
+  
+    let  btn = UIButton.init(frame: CGRect.init(x: screenWidth - 58 , y: screenHeight - 64 - (self.tabBarController?.tabBar.frame.height)! - 76, width: 46, height: 46))
     btn.addTarget(self, action: #selector(pushSendOutVC), for: .touchUpInside)
     btn.setImage(UIImage.init(named: "pushBtn"), for: .normal)
     self.view.addSubview(btn)
