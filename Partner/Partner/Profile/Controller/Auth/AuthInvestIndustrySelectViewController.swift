@@ -74,9 +74,16 @@ class AuthInvestIndustrySelectViewController: InterestedVC {
         
         guard segue != nil else { return }
         // save string and pass to the source
-        let source = segue?.source as! AuthApplyUploadViewController
-        source.viewModel.industryIds = selectedStr
-        source.invIndustryLbl.text = "\(nums)个"
+        let sourceVC = segue?.source
+        if sourceVC is AuthApplyUploadViewController {
+            let source = sourceVC as! AuthApplyInvestViewController
+            source.viewModel.industryIds = selectedStr
+            source.invIndustryLbl.text = "\(nums)个"
+        } else if sourceVC is AuthResubmitInvestAppliacneViewController {
+            let source = sourceVC as! AuthResubmitInvestAppliacneViewController
+            source.viewModel.industryIds = selectedStr
+            source.invIndustryLbl.text = "\(nums)个"
+        }
         
         self.navigationController?.popViewController(animated: true)
     }

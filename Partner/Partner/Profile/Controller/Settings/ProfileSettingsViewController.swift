@@ -88,5 +88,15 @@ class ProfileSettingsViewController: UIViewController {
         cacheSpace = big/(1024*1024)
         return cacheSpace
     }
-
+    
+    @IBAction func logOutClicked(_ sender: UIButton) {
+        
+        presentConfirmationAlert(hint: "确定退出登陆吗") { (_) in
+            // clear user defaults
+            UserDefaults.standard.removeObject(forKey: "token")
+            UserDefaults.standard.removeObject(forKey: "uid")
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
 }

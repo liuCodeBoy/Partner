@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3910F848205110ED00B670C4 /* NetworkTool+Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3910F847205110ED00B670C4 /* NetworkTool+Feedback.swift */; };
 		39123D94204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39123D93204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift */; };
 		3968A126204E302700A5DE22 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3968A125204E302700A5DE22 /* AuthModel.swift */; };
+		39837FCF2051240C002BC382 /* Entension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39837FCE2051240C002BC382 /* Entension+UIImage.swift */; };
+		39837FD1205130C6002BC382 /* PartnerEmpty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39837FD0205130C6002BC382 /* PartnerEmpty.xib */; };
+		39837FD3205136AE002BC382 /* AuthReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39837FD2205136AE002BC382 /* AuthReasonViewController.swift */; };
+		39837FD520513BFE002BC382 /* AuthApplyInvestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39837FD420513BFD002BC382 /* AuthApplyInvestViewController.swift */; };
+		39837FD720513C10002BC382 /* AuthApplyEnterpriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39837FD620513C0F002BC382 /* AuthApplyEnterpriseViewController.swift */; };
 		398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */; };
 		398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398978D3204EAB5200B52424 /* PartnerTimePicker.swift */; };
 		398978D6204EAB5F00B52424 /* PartnerTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */; };
+		398F4C8E20514CAB002F0B72 /* AuthResubmitInvestAppliacneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398F4C8D20514CAB002F0B72 /* AuthResubmitInvestAppliacneViewController.swift */; };
+		398F4C9020514CBF002F0B72 /* AuthResubmitEnterpriseApplianceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398F4C8F20514CBF002F0B72 /* AuthResubmitEnterpriseApplianceViewController.swift */; };
 		3994C840204FF328001B2717 /* NetworkTolol+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994C83F204FF328001B2717 /* NetworkTolol+Type.swift */; };
+		3994C8422050DE6F001B2717 /* AuthInputEnterpriseDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994C8412050DE6F001B2717 /* AuthInputEnterpriseDescriptionViewController.swift */; };
 		399ED174204E239D00CD4054 /* NetworkTool+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */; };
 		39A87F83204ED926003D8226 /* NetworkTool+Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A87F82204ED926003D8226 /* NetworkTool+Field.swift */; };
 		39A87F85204F8271003D8226 /* CopyModual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A87F84204F8271003D8226 /* CopyModual.swift */; };
@@ -23,8 +32,6 @@
 		39BFD412204D135500CD1563 /* ProfileEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BFD411204D135500CD1563 /* ProfileEdit.storyboard */; };
 		39BFD414204D155500CD1563 /* MyHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BFD413204D155500CD1563 /* MyHomePage.storyboard */; };
 		39C1C788204D3E8300D3F2EF /* AuthApplyUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */; };
-		39C1C78A204D3EB300D3F2EF /* AuthEditInputTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1C789204D3EB300D3F2EF /* AuthEditInputTextViewController.swift */; };
-		39C1C78C204D3F8400D3F2EF /* AuthApplianceResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1C78B204D3F8400D3F2EF /* AuthApplianceResultViewController.swift */; };
 		39C1C78E204D513A00D3F2EF /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1C78D204D513A00D3F2EF /* Extension+UIImageView.swift */; };
 		53778418D7E5BF3B198BAAE4 /* Pods_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */; };
 		93A2197792B5860862374D6B /* Pods_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */; };
@@ -238,12 +245,21 @@
 /* Begin PBXFileReference section */
 		172AC59E61123A8F751E23DB /* Pods-Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Partner/Pods-Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		2E04E32645370430D88F1860 /* Pods-Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Partner/Pods-Partner.release.xcconfig"; sourceTree = "<group>"; };
+		3910F847205110ED00B670C4 /* NetworkTool+Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Feedback.swift"; sourceTree = "<group>"; };
 		39123D93204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectCreateIndustrySelectViewController.swift; sourceTree = "<group>"; };
 		3968A125204E302700A5DE22 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		39837FCE2051240C002BC382 /* Entension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entension+UIImage.swift"; sourceTree = "<group>"; };
+		39837FD0205130C6002BC382 /* PartnerEmpty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerEmpty.xib; sourceTree = "<group>"; };
+		39837FD2205136AE002BC382 /* AuthReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthReasonViewController.swift; sourceTree = "<group>"; };
+		39837FD420513BFD002BC382 /* AuthApplyInvestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApplyInvestViewController.swift; sourceTree = "<group>"; };
+		39837FD620513C0F002BC382 /* AuthApplyEnterpriseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApplyEnterpriseViewController.swift; sourceTree = "<group>"; };
 		398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInvestIndustrySelectViewController.swift; sourceTree = "<group>"; };
 		398978D3204EAB5200B52424 /* PartnerTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerTimePicker.swift; sourceTree = "<group>"; };
 		398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerTimePicker.xib; sourceTree = "<group>"; };
+		398F4C8D20514CAB002F0B72 /* AuthResubmitInvestAppliacneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResubmitInvestAppliacneViewController.swift; sourceTree = "<group>"; };
+		398F4C8F20514CBF002F0B72 /* AuthResubmitEnterpriseApplianceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResubmitEnterpriseApplianceViewController.swift; sourceTree = "<group>"; };
 		3994C83F204FF328001B2717 /* NetworkTolol+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTolol+Type.swift"; sourceTree = "<group>"; };
+		3994C8412050DE6F001B2717 /* AuthInputEnterpriseDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInputEnterpriseDescriptionViewController.swift; sourceTree = "<group>"; };
 		399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Auth.swift"; sourceTree = "<group>"; };
 		39A87F82204ED926003D8226 /* NetworkTool+Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Field.swift"; sourceTree = "<group>"; };
 		39A87F84204F8271003D8226 /* CopyModual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyModual.swift; sourceTree = "<group>"; };
@@ -254,8 +270,6 @@
 		39BFD411204D135500CD1563 /* ProfileEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileEdit.storyboard; sourceTree = "<group>"; };
 		39BFD413204D155500CD1563 /* MyHomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyHomePage.storyboard; sourceTree = "<group>"; };
 		39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApplyUploadViewController.swift; sourceTree = "<group>"; };
-		39C1C789204D3EB300D3F2EF /* AuthEditInputTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEditInputTextViewController.swift; sourceTree = "<group>"; };
-		39C1C78B204D3F8400D3F2EF /* AuthApplianceResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApplianceResultViewController.swift; sourceTree = "<group>"; };
 		39C1C78D204D513A00D3F2EF /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		4244745640517A4639E1AAAB /* Pods-PartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerUITests/Pods-PartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -494,9 +508,13 @@
 			isa = PBXGroup;
 			children = (
 				39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */,
-				39C1C789204D3EB300D3F2EF /* AuthEditInputTextViewController.swift */,
-				39C1C78B204D3F8400D3F2EF /* AuthApplianceResultViewController.swift */,
+				39837FD420513BFD002BC382 /* AuthApplyInvestViewController.swift */,
+				39837FD620513C0F002BC382 /* AuthApplyEnterpriseViewController.swift */,
+				398F4C8D20514CAB002F0B72 /* AuthResubmitInvestAppliacneViewController.swift */,
+				398F4C8F20514CBF002F0B72 /* AuthResubmitEnterpriseApplianceViewController.swift */,
+				3994C8412050DE6F001B2717 /* AuthInputEnterpriseDescriptionViewController.swift */,
 				398978D1204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift */,
+				39837FD2205136AE002BC382 /* AuthReasonViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -789,6 +807,7 @@
 			children = (
 				D35A9D2B203FE86A00408B9E /* NetworkTool+User.swift */,
 				399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */,
+				3910F847205110ED00B670C4 /* NetworkTool+Feedback.swift */,
 				D3787E8B2047FD02000A0AA0 /* NetworkTool+Project.swift */,
 				D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */,
 				3994C83F204FF328001B2717 /* NetworkTolol+Type.swift */,
@@ -1049,15 +1068,16 @@
 		D378FEDB1FF0D4EB00065EEC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D35A9D2A203FE82F00408B9E /* Network */,
+				D3B6ADC5201F40C300A7B961 /* Designables */,
+				D378FEF31FF0E3E000065EEC /* Animations */,
 				D33EA6762011D27200745003 /* Extension+UIView.swift */,
 				B65517E7200C506A007799BC /* Extension+UIViewController.swift */,
+				39837FCE2051240C002BC382 /* Entension+UIImage.swift */,
 				39C1C78D204D513A00D3F2EF /* Extension+UIImageView.swift */,
 				D39A4F34200D98AE00022A76 /* Extension+Colors.swift */,
 				D39A4F33200D98AE00022A76 /* Extension+String.swift */,
 				D30AA10120287BC200711F20 /* Extension+Date.swift */,
-				D35A9D2A203FE82F00408B9E /* Network */,
-				D3B6ADC5201F40C300A7B961 /* Designables */,
-				D378FEF31FF0E3E000065EEC /* Animations */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1136,6 +1156,7 @@
 			children = (
 				D3E3349320351CBD0084687C /* ProfileEditTableViewHeader.xib */,
 				D3E3349520351D180084687C /* ProfileEditTableViewHeader.swift */,
+				39837FD0205130C6002BC382 /* PartnerEmpty.xib */,
 				D32328FC2027F4BC00D5AAE7 /* Picker */,
 				D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */,
 				D34712522011FFF9003E098E /* Cell */,
@@ -1469,6 +1490,7 @@
 				D378FEFE1FF0E80600065EEC /* Service.storyboard in Resources */,
 				39BFD412204D135500CD1563 /* ProfileEdit.storyboard in Resources */,
 				D3C58E0B2048F77C00C88E98 /* PartnerSinglePickerView.xib in Resources */,
+				39837FD1205130C6002BC382 /* PartnerEmpty.xib in Resources */,
 				D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1689,6 +1711,7 @@
 				D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */,
 				B68182E32041044C007CE890 /* CicrleDetailModel.swift in Sources */,
 				398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */,
+				398F4C9020514CBF002F0B72 /* AuthResubmitEnterpriseApplianceViewController.swift in Sources */,
 				D35A9D1D203FB1B700408B9E /* ServiceFounderBriefTableViewCell.swift in Sources */,
 				B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */,
 				B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */,
@@ -1713,7 +1736,6 @@
 				D347125D201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift in Sources */,
 				D3E3348C203232F90084687C /* MyHomePageAddEducationExperienceViewController.swift in Sources */,
 				B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */,
-				39C1C78A204D3EB300D3F2EF /* AuthEditInputTextViewController.swift in Sources */,
 				B68182DF203FC846007CE890 /* UserSearchTableView.swift in Sources */,
 				B687AB9E2043E279004C915A /* WatingJionInCell.swift in Sources */,
 				D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */,
@@ -1730,6 +1752,7 @@
 				D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */,
 				D33EA67C2011D68700745003 /* HomeViewController.swift in Sources */,
 				D3BFC9B72019BC5000D2C6BD /* ProfileEditChooseAvatarTableViewCell.swift in Sources */,
+				3994C8422050DE6F001B2717 /* AuthInputEnterpriseDescriptionViewController.swift in Sources */,
 				B687ABA820440EA2004C915A /* reportReasonModel.swift in Sources */,
 				B6BD3D06202D43A1005595ED /* CreateCricleVC.swift in Sources */,
 				B65BE17E2029A4AD004407B1 /* CircleChooseTableView.swift in Sources */,
@@ -1754,15 +1777,19 @@
 				D354B4692029D15500482BF2 /* MyHomePageAllMomentsTableViewSectionHeaderCell.swift in Sources */,
 				D3B8E5C6201AF285002F3A3A /* SingleProjectTableViewCell.swift in Sources */,
 				D39A4F37200D98AF00022A76 /* Extension+Colors.swift in Sources */,
+				3910F848205110ED00B670C4 /* NetworkTool+Feedback.swift in Sources */,
 				B6EF1D3A201F5D8D000479F8 /* RegisterAndLoginVC.swift in Sources */,
 				D3C58DFB204807D600C88E98 /* NetworkTool+Area.swift in Sources */,
+				39837FD520513BFE002BC382 /* AuthApplyInvestViewController.swift in Sources */,
 				B6D7F80D204163BA0044B31C /* CircleNameEditVC.swift in Sources */,
 				D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */,
 				D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */,
 				B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */,
 				B65BE18C2029DBB8004407B1 /* PlazaVC.swift in Sources */,
 				D39F14E0201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift in Sources */,
+				398F4C8E20514CAB002F0B72 /* AuthResubmitInvestAppliacneViewController.swift in Sources */,
 				B68182DB203FAF2E007CE890 /* UserSearchBarCell.swift in Sources */,
+				39837FD720513C10002BC382 /* AuthApplyEnterpriseViewController.swift in Sources */,
 				B6843E372020223A00B86A3F /* UnionMainVC.swift in Sources */,
 				B6843E3A202173FD00B86A3F /* MomentMainVC.swift in Sources */,
 				D35F565A200EF3AC00149861 /* FeedbackViewController.swift in Sources */,
@@ -1812,6 +1839,7 @@
 				B6754831204CF97E00B60D3A /* DynamicCommentModel.swift in Sources */,
 				D3E33488203232C40084687C /* MyHomePageAddEntrepreneurshipExperienceViewController.swift in Sources */,
 				D3AEBBAA204F94E700FA955C /* CommentListModel.swift in Sources */,
+				39837FCF2051240C002BC382 /* Entension+UIImage.swift in Sources */,
 				B6754839204D48CB00B60D3A /* TypeListModel.swift in Sources */,
 				D35A9D12203FAFB200408B9E /* ServiceFounderPlaceholderViewController.swift in Sources */,
 				B675482F204CDD9400B60D3A /* DynamicCommonCell.swift in Sources */,
@@ -1819,6 +1847,7 @@
 				B68182DD203FC385007CE890 /* UserModel.swift in Sources */,
 				B65AAC0A203FAD5F00A76358 /* SearchUserVC.swift in Sources */,
 				D34712502011F0CF003E098E /* CustomTimePickerView.swift in Sources */,
+				39837FD3205136AE002BC382 /* AuthReasonViewController.swift in Sources */,
 				D3787E8C2047FD02000A0AA0 /* NetworkTool+Project.swift in Sources */,
 				D3A75918202D7CFF0043D68D /* MyHomePageEducationExperienceTableViewCell.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
@@ -1849,7 +1878,6 @@
 				B6F91F7B202D7C4D0095BECF /* LimitTextView.swift in Sources */,
 				D378FEF21FF0E36600065EEC /* NetworkTools.swift in Sources */,
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,
-				39C1C78C204D3F8400D3F2EF /* AuthApplianceResultViewController.swift in Sources */,
 				D37D7131202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift in Sources */,
 				D39F8C32201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift in Sources */,
 				B6754837204D3E7700B60D3A /* ProjectListModel.swift in Sources */,

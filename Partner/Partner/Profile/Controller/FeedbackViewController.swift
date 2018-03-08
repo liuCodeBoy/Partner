@@ -35,21 +35,42 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
     @IBAction func submitBtnClicked(_ sender: UIButton) {
         if Int(inputTF.text.count) == 0 || inputTF.text.replacingOccurrences(of: " ", with: "") == "" {
             presentHintMessage(hintMessgae: "输入内容不能为空", completion: nil)
+            return
         } else if Int(inputTF.text.count) > 300 {
             presentHintMessage(hintMessgae: "字符不能超过300字", completion: nil)
             return
         } else {
             // TODO:- post request
             
-            // pop view controller
-            self.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
-                self.navigationController?.popViewController(animated: true)
+            guard UserDefaults.standard.string(forKey: "token") != nil else {
+                presentLoginController()
+                return
+            }
+            
+            NetWorkTool.shareInstance.sendFeedback(token: access_token!, feedContent: feedbackString, finished: { (result, error) in
+                weak var weakSelf = self
+                if error != nil {
+                    weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                    print(error as AnyObject)
+                    return
+                }
+                if result!["code"] as! Int == 200 {
+                    weakSelf?.presentHintMessage(hintMessgae: "提交反馈信息成功", completion: { (_) in
+                        weakSelf?.navigationController?.popViewController(animated: true)
+                    })
+                } else {
+                    weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+                }
             })
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        inputTF.becomeFirstResponder()
     }
     
     override func viewDidLoad() {

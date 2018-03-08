@@ -9,7 +9,8 @@ import UIKit
 
 enum SecondaryPickerType: String {
     case enterpriseType = "enterpriseType"
-    case location = "location"
+    case enterpriseLocation = "enterpriseLocation"
+    case projLocation = "projLocation"
 }
 
 class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -91,10 +92,22 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
                     secondaryComponentArray.append(name)
                 }
                 // save the default id
-                authModel?.areaId = secondaryComponentDictArray[0]["id"] as? NSNumber
+                /////
+                if let id = secondaryComponentDictArray[0]["id"] as? NSNumber {
+                    authModel?.typeIds = "\(id)"
+                }
                 inputLbl?.text = secondaryComponentDictArray[0]["typeName"] as? String
-            case .location:
-                
+            case .enterpriseLocation:
+                // save secondary component data source
+                secondaryComponentDictArray = twoDimensionArray[firstComponentRows]["cityList"] as! [[String: AnyObject]]
+                for dict in secondaryComponentDictArray {
+                    let city = dict["name"] as! String
+                    secondaryComponentArray.append(city)
+                }
+                // save the default id
+                authModel?.areaId = secondaryComponentDictArray[0]["id"] as? NSNumber
+                inputLbl?.text = secondaryComponentDictArray[0]["name"] as? String
+            case .projLocation:
                 // save secondary component data source
                 secondaryComponentDictArray = twoDimensionArray[firstComponentRows]["cityList"] as! [[String: AnyObject]]
                 for dict in secondaryComponentDictArray {
@@ -147,11 +160,15 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             case .enterpriseType:
                 authModel?.areaId = secondaryComponentDictArray[row]["id"] as? NSNumber
                 inputLbl?.text = secondaryComponentDictArray[row]["typeName"] as? String
-            case .location:
+            case .projLocation:
                 projModel?.areaId = secondaryComponentDictArray[row]["id"] as? NSNumber
                 inputLbl?.text = secondaryComponentDictArray[row]["name"] as? String
+            case .enterpriseLocation:
+                if let id = secondaryComponentDictArray[row]["id"] as? NSNumber {
+                    authModel?.typeIds = "\(id)"
+                }
+                inputLbl?.text = secondaryComponentDictArray[row]["typeName"] as? String
             }
-            
         }
     }
     

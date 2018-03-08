@@ -113,7 +113,7 @@ extension UIViewController {
         var pickerTitle = ""
         switch pickerType {
         case .enterpriseType: pickerTitle = "选择企业类型"
-        case .location: pickerTitle = "选择地区"
+        case .projLocation, .enterpriseLocation: pickerTitle = "选择地区"
         }
         picker.pickerTitle.text = pickerTitle
         picker.type = pickerType
@@ -169,7 +169,6 @@ extension UIViewController {
      print("I have swizzled the viewDidLoad system function")
      }
      */
-    
     
     //设置选择样式
     @objc func changeBtnStaus(button : UIButton) -> () {

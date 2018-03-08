@@ -84,7 +84,7 @@ extension NetWorkTool {
                    finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         let urlString = "http://47.97.110.89/qm/auth/api/authCompany.do"
         let parameters = ["token"                   : token,
-                          "ntypeIds"                : typeIds,
+                          "typeIds"                 : typeIds,
                           "icompany.compName"       : compName,
                           "icompany.compConn"       : compConn,
                           "icompany.compConnPhone"  : compConnPhone,
@@ -162,7 +162,6 @@ extension NetWorkTool {
                           finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         let urlString = "http://47.97.110.89/qm/auth/api/editInvestorAuth.do"
         var parameters = ["token"                   : token,
-                          "nameCard"                : nameCard,
                           "industryIds"             : industryIds,
                           "investor.id"             : id,
                           "investor.inveRealName"   : inveRealName,
@@ -205,7 +204,59 @@ extension NetWorkTool {
         }
     }
     
-    
-
+    // MARK:- 编辑企业认证
+    func editCompanyAuth(token          : String,
+                        logo            : UIImage,
+                        licence         : UIImage,
+                        typeIds         : String,
+                        id              : Int,
+                        compName        : String,
+                        compConn        : String,
+                        compConnPhone   : String,
+                        compConnMail    : String,
+                        compDesc        : String,
+                        compCreditCode  : String,
+                        compRepresent   : String,
+                        compCardNo      : String,
+                        compAddrDetail  : String,
+                        areaId          : Int,
+        finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http://47.97.110.89/qm/auth/api/editCompanyAuth.do"
+        let parameters = ["token"                   : token,
+                          "typeIds"                 : typeIds,
+                          "company.id"              : id,
+                          "company.compName"        : compName,
+                          "company.compConn"        : compConn,
+                          "company.compConnPhone"   : compConnPhone,
+                          "company.compConnMail"    : compConnMail,
+                          "company.compDesc"        : compDesc,
+                          "company.compCreditCode"  : compCreditCode,
+                          "company.compRepresent"   : compRepresent,
+                          "company.compCardNo"      : compCardNo,
+                          "company.compAddrDetail"  : compAddrDetail,
+                          "company.areaId"          : areaId
+            ] as [String : Any]
+        
+        // TODO:- with image
+        post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
+            //upload image
+            if let logo = UIImageJPEGRepresentation(logo, 0.5) {
+                let imageName = self?.getNowTime()
+                formData.appendPart(withFileData: logo, name: "logo", fileName: imageName!, mimeType: "image/png")
+            }
+            if let licence = UIImageJPEGRepresentation(licence, 0.5) {
+                let imageName = self?.getNowTime()
+                formData.appendPart(withFileData: licence, name: "licence", fileName: imageName!, mimeType: "image/png")
+            }
+            }, progress: { (Progress) in
+        }, success: { (_, success) in
+            guard let resultDict = success as? [String : AnyObject] else {
+                return
+            }
+            finished(resultDict , nil)
+        }) { (URLSessionDataTask, error) in
+            finished(nil , error)
+        }
+    }
     
 }

@@ -7,7 +7,7 @@
 
 import MJExtension
 
-class AuthInfoModel: NSObject {
+class AuthInvestInfoModel: NSObject {
 
     @objc var inveAuthId        : NSNumber?
     @objc var imgUrl            : String?
@@ -32,5 +32,26 @@ class AuthInfoModel: NSObject {
     @objc var inTime            : String?
     @objc var auth              : NSNumber?
     @objc var userIdenId        : NSNumber?
+
+}
+
+class AuthEnterpriseInfoModel: NSObject {
     
+    @objc var compAuthId        : NSNumber?
+    @objc var logoUrl           : String?
+    @objc var licenceUrl        : String?
+    @objc var compName          : String?
+    @objc var compTypeList      :[NSDictionary]?
+    @objc var compConn          : String?
+    @objc var phone             : String?
+    @objc var mail              : String?
+    @objc var compDesc          : String?
+    @objc var creditCode        : String?
+    @objc var represent         : String?
+    @objc var areaId            : NSNumber?
+    @objc var area              : String?
+    @objc var detailAddr        : String?
+    @objc var auth              : NSNumber?
+    @objc var userIdenId        : NSNumber?
+
 }
