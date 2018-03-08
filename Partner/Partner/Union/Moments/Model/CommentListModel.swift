@@ -17,8 +17,8 @@ class CommentListModel: NSObject {
     @objc  var   secAuth   : NSNumber? // 同时通过企业认证和投资认证
     @objc  var   commUserId    : NSNumber?
     @objc  var   level     : NSNumber?
-    @objc  var   commUserName    : NSString?
-    @objc  var   commentDate    : NSString?
+    @objc  var   commUserName  : String?
+    @objc  var   commentDate   : NSString?
     @objc  var   comments    : [NSDictionary]?
 
     

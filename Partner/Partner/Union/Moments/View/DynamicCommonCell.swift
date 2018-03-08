@@ -50,6 +50,9 @@ class DynamicCommonCell: UITableViewCell {
                 identifyIcon.setTitle(userIdentify, for: .normal)
             }
             
+            
+            
+            
 //            if viewModel.my == 1 {
 //
 //                deleteBtn.isHidden = false
@@ -64,15 +67,24 @@ class DynamicCommonCell: UITableViewCell {
             
             
             //设置评论数
-            if let  commentNum = viewModel.commentNum{
-                if commentNum != 0 {
-                    self.commentBtn.isSelected = true
-                    self.commentNumLab.text = "\(commentNum)"
-                }else{
-                    self.commentBtn.isSelected = false
-                    self.commentNumLab.text = "\(0)"
+                self.commentBtn.isSelected = true
+                if viewModel.level == 2 {
+                    if viewModel.my == 1 {
+                   
+                        commentNumLab.text = "删除"
+                        commentBtn.setImage(#imageLiteral(resourceName: "moments_delete"), for: .selected)
+                    }else{
+                        commentNumLab.text = "回复"
+                        commentBtn.setImage(#imageLiteral(resourceName: "comment_selected"), for: .selected)
+                    }
+                }else if viewModel.level == 1 {
+                     commentNumLab.text = "评论"
+                     commentBtn.setImage(#imageLiteral(resourceName: "comment_selected"), for: .selected)
+                }else if viewModel.level == 3 {
+                    commentNumLab.text = "删除"
+                    commentBtn.setImage(#imageLiteral(resourceName: "moments_delete"), for: .selected)
                 }
-            }
+            
             //设置点赞数
             if let  thumbNum = viewModel.thumbNum{
                 if thumbNum != 0 {
@@ -84,7 +96,43 @@ class DynamicCommonCell: UITableViewCell {
                 }
             }
             
-            nickname.text = viewModel.userName
+            
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+                
+         
+            if let level = viewModel.level{
+                guard viewModel.userName != nil else{
+                    return
+                }
+                var tempLevelName = ""
+                if level == 2{
+                guard viewModel.commUserName != nil else{
+                        return
+                    }
+                tempLevelName = viewModel.userName! + " 评论 "
+                 if viewModel.commUserId as? Int == uid{
+                      tempLevelName =  tempLevelName + "我"
+                 }else{
+                     tempLevelName  =  tempLevelName + viewModel.commUserName!
+                    }
+                }else if level == 3 {
+                tempLevelName = viewModel.userName! + " 回复 "
+                    if viewModel.commUserId as? Int == uid {
+                        tempLevelName =  tempLevelName + "我"
+                    }else{
+                        tempLevelName  =  tempLevelName + viewModel.commUserName!
+                    }
+                }else{
+                    tempLevelName = viewModel.userName!
+                }
+               nickname.text = tempLevelName
+                
+            }
+            
+            
+            
+            
+          
             createAt.text = viewModel.commentDate! as String
             if let name = viewModel.commName{
                 sourceFrom.text = name as String
@@ -96,4 +144,17 @@ class DynamicCommonCell: UITableViewCell {
         
     }
 
+    @IBAction func commentClick(_ sender: Any) {
+      let dynamicDetailVC = AppDelegate.dynamicDetailVC
+      dynamicDetailVC.inputTF.becomeFirstResponder()
+      dynamicDetailVC.parentId = viewModel?.commentId as? Int
+      dynamicDetailVC.commentType = 2
+    }
+  
+    
+    @IBAction func zanClick(_ sender: Any) {
+        
+    }
+    
+    
 }
