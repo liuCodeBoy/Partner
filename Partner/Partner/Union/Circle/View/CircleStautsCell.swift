@@ -7,6 +7,8 @@
 
 import UIKit
 import SDWebImage
+import NoticeBar
+typealias popVC = () -> ()
 class CircleStautsCell: UITableViewCell {
     @IBOutlet weak var collectionViewButtonDistanceCons: NSLayoutConstraint!
     @IBOutlet weak var collectionviewHCons: NSLayoutConstraint!
@@ -22,11 +24,12 @@ class CircleStautsCell: UITableViewCell {
     @IBOutlet weak var zanNumLab: UILabel!
     @IBOutlet weak var deleteLab: UILabel!
     @IBOutlet weak var deleteBtn: UIButton!
-    
+//
     @IBOutlet weak var pictureView: PicCollectionView!
     @IBOutlet weak var zanBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
     
+    var popClouse : popVC?
     
     var viewModel: UnionListModel? {
         didSet {
@@ -116,10 +119,32 @@ class CircleStautsCell: UITableViewCell {
         
     }
     
-
-    @IBAction func commentAction(_ sender: Any) {
+    @IBAction func deleteBtnAction(_ sender: Any) {
+        let alert = UIAlertController(title: "确定要删除改动态吗", message: "", preferredStyle: .alert)
+        let sureAction = UIAlertAction(title: "确认", style: .destructive) { [weak self](action) in
+            guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+                return
+            }
+            if let id = self?.viewModel?.momentId {
+                
+                self?.deleteDynamicAction(access_token: access_token, id: Int(truncating: id))
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+       
+        alert.addAction(sureAction)
+        alert.addAction(cancelAction)
+        AppDelegate.dynamicDetailVC.present(alert, animated: true, completion: nil)
+      
     }
-    @IBAction func zanAction(_ sender: Any) {
+    
+    @IBAction func commentAction(_ sender: Any) {
+          AppDelegate.dynamicDetailVC.inputTF.becomeFirstResponder()
+    }
+    @IBAction func zanAction(_ sender: UIButton) {
+        thumb(btn: sender, isThumb: self.viewModel?.thumb as! Int)
+
     }
     
     override  func awakeFromNib() {
@@ -156,6 +181,123 @@ extension CircleStautsCell {
         let pictureViewHeight = rows * imageViewWH + (rows - 1) * itemMargin
         return CGSize(width: pictureViewWidth, height: pictureViewHeight)
     }
+}
+
+
+// MARK:- 请求函数体
+extension  CircleStautsCell {
+    
+    //删除评论函数
+    func  deleteAction( access_token : String ,id : Int){
+        var color = UIColor.red
+        var showInfo = ""
+        NetWorkTool.shareInstance.deleteComment(token: access_token, commentId: id) {(result, error) in
+            if  result?["code"] as? Int == 200  {
+                guard   result != nil else{
+                    return
+                }
+                color = #colorLiteral(red: 0.6242706776, green: 0.8754864931, blue: 0.8703722358, alpha: 1)
+                showInfo = "删除成功"
+               
+            }else{
+                showInfo =  result!["msg"] as! String
+            }
+            let config = NoticeBarConfig(title: showInfo, image: nil, textColor: UIColor.white, backgroundColor: color, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+            let noticeBar = NoticeBar(config: config)
+            noticeBar.show(duration: 1.5, completed: nil)
+        }
+    }
+    
+    //删除动态函数
+    func  deleteDynamicAction( access_token : String ,id : Int){
+        var color = UIColor.red
+        var showInfo = ""
+        NetWorkTool.shareInstance.deleteMoment(token: access_token, id: id) {[weak self](result, error) in
+            if  result?["code"] as? Int == 200  {
+                guard   result != nil else{
+                    return
+                }
+                color = #colorLiteral(red: 0.6242706776, green: 0.8754864931, blue: 0.8703722358, alpha: 1)
+                showInfo = "删除成功"
+                if self?.popClouse != nil {
+                    self?.popClouse!()
+                }
+            }else{
+                showInfo =  result!["msg"] as! String
+            }
+            let config = NoticeBarConfig(title: showInfo, image: nil, textColor: UIColor.white, backgroundColor: color, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+            let noticeBar = NoticeBar(config: config)
+            noticeBar.show(duration: 1.5, completed: nil)
+        }
+    }
+    
+    func thumb(btn : UIButton , isThumb : Int){
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+            return
+        }
+        guard let id = viewModel?.momentId else{
+            return
+        }
+        if isThumb == 1 {
+            cancelThumb(btn: btn, access_token: access_token, id: Int(truncating: id))
+        }else{
+            getNmomentThumb(btn: btn, access_token: access_token, id: Int(truncating: id))
+        }
+        
+    }
+
+    //点赞按钮
+    func getNmomentThumb(btn : UIButton , access_token : String ,id : Int){
+        var color = UIColor.red
+        var showInfo = ""
+        NetWorkTool.shareInstance.getNmomentThumb(token: access_token, id: id) { [weak self](result, error) in
+            if  result?["code"] as? Int == 200  {
+                guard   result != nil else{
+                    return
+                }
+                color = #colorLiteral(red: 0.6242706776, green: 0.8754864931, blue: 0.8703722358, alpha: 1)
+                showInfo = "点赞成功"
+                btn.isSelected = true
+                self?.viewModel?.thumb = 1
+                let thumbNum = Int(truncating: (self?.viewModel?.thumbNum)!) + 1
+                self?.viewModel?.thumbNum = Int(truncating: (self?.viewModel?.thumbNum)!) + 1 as NSNumber
+                self?.zanNumLab.text = "\(thumbNum)"
+            }else{
+                showInfo =  result!["msg"] as! String
+            }
+            let config = NoticeBarConfig(title: showInfo, image: nil, textColor: UIColor.white, backgroundColor: color, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+            let noticeBar = NoticeBar(config: config)
+            noticeBar.show(duration: 1.5, completed: nil)
+        }
+    }
+    
+    //MARK: - 取消点赞方法
+    func cancelThumb(btn : UIButton , access_token : String ,id : Int){
+        var color = UIColor.red
+        var showInfo = ""
+        NetWorkTool.shareInstance.cancelThumb(token: access_token, id: id) { [weak self](result, error) in
+            if  result?["code"] as? Int == 200  {
+                guard   result != nil else{
+                    return
+                }
+                color = #colorLiteral(red: 0.6242706776, green: 0.8754864931, blue: 0.8703722358, alpha: 1)
+                btn.isSelected = false
+                self?.viewModel?.thumb = 0
+                showInfo = "取消点赞成功"
+                let thumbNum = Int(truncating: (self?.viewModel?.thumbNum)!) - 1
+                self?.viewModel?.thumbNum = Int(truncating: (self?.viewModel?.thumbNum)!) - 1 as NSNumber
+                self?.zanNumLab.text = "\(thumbNum)"
+            }else{
+                showInfo =  result!["msg"] as! String
+            }
+            let config = NoticeBarConfig(title: showInfo, image: nil, textColor: UIColor.white, backgroundColor: color, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+            let noticeBar = NoticeBar(config: config)
+            noticeBar.show(duration: 1.5, completed: nil)
+        }
+    }
+    
+
+    
 }
 
 

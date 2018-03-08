@@ -183,6 +183,7 @@
 		D3AEBBA8204F83B100FA955C /* industryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBBA7204F83B100FA955C /* industryListModel.swift */; };
 		D3AEBBAA204F94E700FA955C /* CommentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBBA9204F94E700FA955C /* CommentListModel.swift */; };
 		D3AEBBAE204FEE7000FA955C /* CommandFooterStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBBAD204FEE7000FA955C /* CommandFooterStatusModel.swift */; };
+		D3AEBBB02050C54900FA955C /* NoCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEBBAF2050C54900FA955C /* NoCommentCell.swift */; };
 		D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */; };
 		D3B6ADC9201F410100A7B961 /* Designable+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */; };
 		D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */; };
@@ -426,6 +427,7 @@
 		D3AEBBA7204F83B100FA955C /* industryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = industryListModel.swift; sourceTree = "<group>"; };
 		D3AEBBA9204F94E700FA955C /* CommentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListModel.swift; sourceTree = "<group>"; };
 		D3AEBBAD204FEE7000FA955C /* CommandFooterStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandFooterStatusModel.swift; sourceTree = "<group>"; };
+		D3AEBBAF2050C54900FA955C /* NoCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCommentCell.swift; sourceTree = "<group>"; };
 		D3B6ADC6201F40F800A7B961 /* Designable+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIView.swift"; sourceTree = "<group>"; };
 		D3B6ADC8201F410100A7B961 /* Designable+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIButton.swift"; sourceTree = "<group>"; };
 		D3B6ADCA201F410B00A7B961 /* Designable+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UILabel.swift"; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 				B65E09DE20464D2B00BF81FF /* NoticeListCell.swift */,
 				B65E09E4204690A900BF81FF /* NoticeSocialConnListCell.swift */,
 				B675482E204CDD9400B60D3A /* DynamicCommonCell.swift */,
+				D3AEBBAF2050C54900FA955C /* NoCommentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1845,6 +1848,7 @@
 				D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */,
 				B65BE190202AF13A004407B1 /* CircleModel.swift in Sources */,
 				D3722C8B203FA68E00E0B765 /* ServiceMainHeaderTableViewCell.swift in Sources */,
+				D3AEBBB02050C54900FA955C /* NoCommentCell.swift in Sources */,
 				B65E09DF20464D2B00BF81FF /* NoticeListCell.swift in Sources */,
 				B6F91F7B202D7C4D0095BECF /* LimitTextView.swift in Sources */,
 				D378FEF21FF0E36600065EEC /* NetworkTools.swift in Sources */,

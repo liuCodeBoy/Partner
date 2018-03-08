@@ -135,13 +135,7 @@ class NoticeSocialConnListCell: UITableViewCell {
             let noticeBar = NoticeBar(config: config)
             noticeBar.show(duration: 1.5, completed: nil)
         }
-        
-        
-        
     }
-    
-    
-    
 }
 
 

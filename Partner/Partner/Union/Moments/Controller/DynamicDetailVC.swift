@@ -6,29 +6,68 @@
 
 import UIKit
 import SDWebImage
+import NoticeBar
 import JXPhotoBrowser
 import MJRefresh
 import NVActivityIndicatorView
+
 class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource ,PhotoBrowserDelegate {
+    @IBOutlet weak var inputDialogueView: UIView!
+    @IBOutlet weak var inputTF: UITextField!
+    @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var statusTableview: UITableView!
+    
+    var isPushedFromTabBarHidden = false
     var  modelView =  [UnionListModel]()
     var  statusViewModelArr = StatusViewModel()
     var  commentTotalArr = [[CommentListModel]]()
-    var   browser : PhotoBrowser?
-    var   picStrsArr : [String]?
-    var   collectionView : UICollectionView?
-    var   momentId : Int?
-    var   tableRowNumArr = [Int]()
-    var   btnStaustsArr = [CommandFooterStatusModel]()
+    var  browser : PhotoBrowser?
+    var  picStrsArr : [String]?
+    var  collectionView : UICollectionView?
+    var  momentId : Int?
+    var  tableRowNumArr = [Int]()
+    var  btnStaustsArr = [CommandFooterStatusModel]()
+   
+    var  commentType = 1
+    var  parentId : Int?
+    var  socialCircleId : Int?
+    
+    var inputText: String? {
+        didSet {
+            if inputText?.count == 0 {
+                sendBtn.isEnabled = false
+                sendBtn.backgroundColor = UIColor.init(white: 0.84, alpha: 1)
+            } else {
+                sendBtn.isEnabled = true
+                sendBtn.backgroundColor = #colorLiteral(red: 0.3019607961, green: 0.6941176653, blue: 0.980392158, alpha: 1)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         statusTableview.rowHeight = UITableViewAutomaticDimension
         statusTableview.estimatedRowHeight = 200
         statusTableview.separatorStyle = .none
+        
         //加载动画
-        NVActivityIndicatorPresenter.sharedInstance.startAnimating(AppDelegate.activityData)
+       NVActivityIndicatorPresenter.sharedInstance.startAnimating(AppDelegate.activityData)
         loadRefreshComponet(tableView: statusTableview)
+        
+        //接受键盘输入通知
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(notific:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        //接受键盘收回通知
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHidden(note:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        sendBtn.setTitleColor(UIColor.darkGray, for: .disabled)
+        sendBtn.setTitleColor(UIColor.white, for: .normal)
+        inputTF.addTarget(self, action: #selector(passData), for: .allEditingEvents)
+        
         loadStatuses()
+    }
+    
+    @objc func passData() {
+        inputText = inputTF.text
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +82,17 @@ class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBAction func dismissVC(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func sendBtnClicked(_ sender: Any) {
+        if inputTF.text?.replacingOccurrences(of: " ", with: "") == "" || inputTF.text == nil || inputTF.text == "" {
+            presentHintMessage(hintMessgae: "输入不能为空", completion: nil)
+            return
+        }
+        if commentType  == 1 {
+            parentId = nil
+            socialCircleId = nil
+        }
+        commentFunc()
+    }
     
     func loadRefreshComponet(tableView : UITableView) -> () {
         //默认下拉刷新
@@ -52,8 +102,12 @@ class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @objc func refresh() -> () {
+
         self.modelView.removeAll()
+        self.btnStaustsArr.removeAll()
         self.commentTotalArr.removeAll()
+        self.tableRowNumArr.removeAll()
+
         loadStatuses()
         //momentTableView.mj_header.endRefreshing()
     }
@@ -84,14 +138,18 @@ class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func photoBrowser(_ photoBrowser: PhotoBrowser, highQualityUrlForIndex index: Int) -> URL? {
         return URL(string: picStrsArr![index])
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 
 
 extension DynamicDetailVC {
-    fileprivate   func loadStatuses() {
+    
+    func loadStatuses() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
-            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
             
             self.presentAlert(title: "您还未登录", hint: "", confirmTitle: "登录", cancelTitle: "取消", confirmation: { (action) in
                 let  navRegistAndLoginVC = UINavigationController.init(rootViewController: AppDelegate.RegisterAndLoginVC)
@@ -116,7 +174,6 @@ extension DynamicDetailVC {
                     self?.modelView.append(model!)
                     NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                     if model?.comments == nil {
-                        self?.presentHintMessage(hintMessgae: "评论暂时为空", completion: nil)
                     }else{
                         var  dynamicCommListArr = [CommentListModel]()
                          let listDict = model?.comments
@@ -128,6 +185,16 @@ extension DynamicDetailVC {
                                         for dict in listDict{
                                             if let commenyModel =  CommentListModel.mj_object(withKeyValues: dict){
                                                 dynamicCommListArr.append(commenyModel)
+                                                if commenyModel.comments != nil {
+                                                    if  let listDict = commenyModel.comments {
+                                                        for dict in listDict{
+                                                            if let commenyModel =  CommentListModel.mj_object(withKeyValues: dict){
+                                                                dynamicCommListArr.append(commenyModel)
+                                                                
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -172,25 +239,69 @@ extension DynamicDetailVC {
         group.notify(queue: DispatchQueue.main) {
             self.statusTableview.reloadData()
         }
+    }
+    
+    //coment function
+    func commentFunc() -> () {
+        
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+            
+            self.presentAlert(title: "您还未登录", hint: "", confirmTitle: "登录", cancelTitle: "取消", confirmation: { (action) in
+                let  navRegistAndLoginVC = UINavigationController.init(rootViewController: AppDelegate.RegisterAndLoginVC)
+                self.present(navRegistAndLoginVC, animated: true, completion: nil)
+            }, cancel: nil)
+            return
+        }
+        
+        var color = UIColor.red
+        var showInfo = ""
+        
+        
+        NetWorkTool.shareInstance.momentComment(token: access_token, type: commentType, momentId: momentId!, parentId: parentId, commContent: inputTF.text!, socialCircleId: socialCircleId) { [weak self](result, error) in
+            if  result?["code"] as? Int == 200  {
+                guard   result != nil else{
+                    return
+                }
+                color = #colorLiteral(red: 0.6242706776, green: 0.8754864931, blue: 0.8703722358, alpha: 1)
+                showInfo = "评论成功"
+                self?.commentType = 1
+                self?.inputTF.text = ""
+                self?.inputTF.resignFirstResponder()
+                self?.refresh()
+            }else{
+                showInfo =  result!["msg"] as! String
+            }
+            
+            let config = NoticeBarConfig(title: showInfo, image: nil, textColor: UIColor.white, backgroundColor: color, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+            let noticeBar = NoticeBar(config: config)
+            noticeBar.show(duration: 1.5, completed: nil)
+         }
         
     }
+    
 }
 
-
-
-
-
+// MARK:- tableview delegate function
 extension  DynamicDetailVC {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.commentTotalArr.count + 1
+        // 取出模型数组
+        var numSection = 0
+        if commentTotalArr.count > 0  {
+            numSection =  self.commentTotalArr.count + 1
+        }else{
+            numSection = 2
+        }
+        return numSection
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var  rowNum = 0
         if section == 0 {
             rowNum = 1
-        }else{
+        }else if(commentTotalArr.count != 0){
             rowNum = tableRowNumArr[section - 1]
+        }else{
+            rowNum = 1
         }
         return  rowNum
     }
@@ -198,6 +309,12 @@ extension  DynamicDetailVC {
         var  cell = UITableViewCell.init()
         if  indexPath.section == 0 {
             let firstCell = tableView.dequeueReusableCell(withIdentifier: "CircleStautsCellID") as!  CircleStautsCell
+            
+            firstCell.popClouse = {() in
+                self.navigationController?.popViewController(animated: true)
+                AppDelegate.momentVC.refresh()
+            }
+            
             if  modelView.count > 0  {
                 firstCell.viewModel = modelView[indexPath.row]
 
@@ -210,7 +327,7 @@ extension  DynamicDetailVC {
                 self?.browser?.show(index: index.row)
             }
             cell = firstCell
-        }else{
+        }else if(commentTotalArr.count != 0){
             let commentCell = tableView.dequeueReusableCell(withIdentifier: "DynamicCommonCellID") as!  DynamicCommonCell
              //取出模型数组
            if commentTotalArr.count > 0  {
@@ -222,7 +339,10 @@ extension  DynamicDetailVC {
             }
           }
           cell = commentCell
-       }
+        }else if(commentTotalArr.count == 0){
+             let commentCell = tableView.dequeueReusableCell(withIdentifier: "NoCommentCellID") as!  NoCommentCell
+             cell = commentCell
+        }
         return cell
     }
     
@@ -254,9 +374,10 @@ extension  DynamicDetailVC {
         let showOrHideBtn = UIButton.init()
         showOrHideBtn.frame.size = CGSize.init(width: 100, height: 40)
         showOrHideBtn.center = showOrHideView.center
-        let imgView = UIImageView.init(frame: CGRect.init(x: showOrHideBtn.centerX + 20, y: showOrHideBtn.centerY - 5, width: 10, height: 10))
+        let imgView = UIImageView.init(frame: CGRect.init(x: showOrHideBtn.centerX + 20, y: showOrHideBtn.centerY - 5, width: 13, height: 10))
         var  btnStausts : String?
         var  img   : UIImage?
+        if commentTotalArr.count > 0 {
         if section > 0 && tableRowNumArr[section - 1] > 1 {
             btnStaustsArr[section - 1].btnStausts! = "收起"
             btnStaustsArr[section - 1].btnImg! = #imageLiteral(resourceName: "up_arrow")
@@ -267,8 +388,8 @@ extension  DynamicDetailVC {
             btnStaustsArr[section - 1].btnImg! = #imageLiteral(resourceName: "down_arrow")
             btnStausts = btnStaustsArr[section - 1].btnStausts!
             img = btnStaustsArr[section - 1].btnImg
+         }
         }
-      
         showOrHideBtn.setTitle(btnStausts, for: .normal)
         showOrHideBtn.setTitleColor(UIColor.lightGray, for: .normal)
         imgView.image = img
@@ -303,6 +424,61 @@ extension  DynamicDetailVC {
         statusTableview.reloadData()
         
     }
+}
+
+
+// MARK:- 键盘响应事件
+extension DynamicDetailVC{
+    //键盘的弹起监控
+    @objc func keyboardWillChangeFrame(notific: NSNotification) {
+        let info = notific.userInfo
+        let  keyBoardBounds = (info?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let duration = (info?[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        var deltaY = keyBoardBounds.size.height +  (self.inputDialogueView?.frame.height)!
+            //keyBoardBounds.size.height - 2 * tabBarHeight + (self.inputDialogueView?.frame.height)!
+        let animations:(() -> Void) = {
+            //键盘的偏移量
+            
+            if self.isPushedFromTabBarHidden == true {
+                deltaY = keyBoardBounds.size.height
+            }
+            
+            self.inputDialogueView.transform = CGAffineTransform(translationX: 0 , y: -(deltaY))
+            
+        }
+        
+        if duration > 0 {
+            let options = UIViewAnimationOptions(rawValue: UInt((info?[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).intValue << 16))
+            
+            UIView.animate(withDuration: duration, delay: 0, options:options, animations: animations, completion: nil)
+            
+        }else{
+            animations()
+        }
+    }
+    //键盘的收起监控
+    @objc func keyboardWillHidden(note: NSNotification) {
+        let userInfo  = note.userInfo!
+        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        let animations:(() -> Void) = {
+            //键盘的偏移量
+            self.inputDialogueView.transform = .identity
+        }
+        if duration > 0 {
+            let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).intValue << 16))
+            
+            UIView.animate(withDuration: duration, delay: 0, options:options, animations: animations, completion: nil)
+        }else{
+            animations()
+        }
+    }
     
     
 }
+
+
+
+
+

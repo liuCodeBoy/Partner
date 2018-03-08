@@ -118,7 +118,7 @@ class UnionMainVC: UIViewController {
         self.scrollView?.delegate = self
         //添加子控制器
         
-         let momentVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "MomentMainVCID")
+         let momentVC  = AppDelegate.momentVC
         self.addChildViewController(momentVC)
         
         //CricleViewController 子控制器

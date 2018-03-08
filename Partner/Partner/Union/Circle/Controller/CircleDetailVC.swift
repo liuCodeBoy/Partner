@@ -32,7 +32,7 @@ class CircleDetailVC: UIViewController {
     
     //添加子控
     func addchildVC(){
-        let circledetailCommandVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleDetailCommandVCID")
+        let circledetailCommandVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleDetailCommandVCID") as!  CircleDetailCommandVC
         circledetailCommandVC.view.frame = CGRect.init(x: 0, y: 0, width: commandView.frame.width, height: commandView.frame.height)
         self.addChildViewController(circledetailCommandVC)
         commandView.addSubview(circledetailCommandVC.view)

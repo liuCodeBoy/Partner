@@ -64,7 +64,7 @@ class MomentMainVC: UIViewController , UITableViewDelegate, UITableViewDataSourc
         let intrestedDaymatic = UIAlertAction(title: "我感兴趣", style: .default) { [weak self](_) in
             self?.type = 2
         }
-        let cancelBtn = UIAlertAction(title: "取消", style: .default, handler: nil)
+        let cancelBtn = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(allDaymatic)
         alert.addAction(intrestedDaymatic)
         alert.addAction(cancelBtn)
@@ -213,9 +213,11 @@ extension MomentMainVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StatusViewCell") as!  StatusViewCell
         cell.showVCClouse = {(momentId) in
             //DynamicDetailVCID
-              let dynamicDetailVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "DynamicDetailVCID") as! DynamicDetailVC
+              let dynamicDetailVC  = AppDelegate.dynamicDetailVC
             dynamicDetailVC.momentId = momentId
-              self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
+            dynamicDetailVC.refresh()
+
+            self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
         }
         if  modelView.count > 0  { cell.viewModel = modelView[indexPath.row]}
     
@@ -230,10 +232,11 @@ extension MomentMainVC {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dynamicDetailVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "DynamicDetailVCID") as! DynamicDetailVC
+        let dynamicDetailVC  = AppDelegate.dynamicDetailVC
         if  modelView.count > 0  {
            let viewModel = modelView[indexPath.row]
             dynamicDetailVC.momentId = viewModel.momentId as? Int
+            dynamicDetailVC.refresh()
             self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
         }
         
