@@ -20,11 +20,11 @@ extension NetWorkTool {
         //1.获取请求的URLString
         let urlString = "http://47.97.110.89/qm/moment/api/send.do"
         //2.获取请求参数
-        var parameters = ["token" : token , "moment.momeContent" : momeContent ,"moment.momePublic" : momePublic ?? 1] as [String : Any]
+        var parameters = ["token" : token , "moment.momeContent" : momeContent ,"moment.momePublic" : momePublic ?? 1 ,"moment.socialCircleId" : circleIds] as [String : Any]
         //"circleIds" : circleIds ,
-        if momePublic == 2 {
-            parameters.updateValue(circleIds ?? "", forKey: "circleIds")
-        }
+//        if momePublic == 2 {
+//            parameters.updateValue(circleIds ?? "", forKey: "circleIds")
+//        }
         //3.发送请求参数
         post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
             //upload avatar
@@ -78,7 +78,7 @@ extension NetWorkTool {
     
     
     
-    //完善合作需求
+    
     func getSocialCircleMomentList(token:String , type : Int , pageNum : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
         let urlString = "http://47.97.110.89/qm/moment/api/getSocialConnMomentList.do"
@@ -95,6 +95,25 @@ extension NetWorkTool {
             finished(resultDict, error)
         }
     }
+    
+    //8.8.社圈页面动态列表（moment/getSocialCircleMomentList）
+    func getCircleMomentList(token:String , type : Int , pageNum : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/moment/api/getSocialCircleMomentList.do"
+        //2.获取请求参数
+        let parameters = ["token" : token , "circleId" : type, "pageNum" : pageNum] as [String : Any]
+        //3.发送请求参数
+        request(.GET, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
     
     
     //http://47.97.110.89/qm/circle/api/getMyCircleList.do

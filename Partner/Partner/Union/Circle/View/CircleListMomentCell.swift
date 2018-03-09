@@ -1,17 +1,13 @@
 //
-//  StatusViewCell.swift
+//  CircleListMomentCell.swift
 //  Partner
 //
-//  Created by LiuXinQiang on 2018/1/31.
-//
+//  Created by Weslie on 09/03/2018.
 
 import UIKit
 import SDWebImage
 import NoticeBar
- let edgeMargin: CGFloat = 10
- let itemMargin: CGFloat = 5
-class StatusViewCell: UITableViewCell {
-    var   showVCClouse : showVCType?
+class CircleListMomentCell: UITableViewCell {
     @IBOutlet weak var collectionViewButtonDistanceCons: NSLayoutConstraint!
     @IBOutlet weak var collectionviewHCons: NSLayoutConstraint!
     @IBOutlet weak var collectionViewWCons: NSLayoutConstraint!
@@ -24,14 +20,16 @@ class StatusViewCell: UITableViewCell {
     @IBOutlet weak var contentText: UILabel!
     @IBOutlet weak var commentNumLab: UILabel!
     @IBOutlet weak var zanNumLab: UILabel!
-    @IBOutlet weak var pictureView: PicCollectionView!
-    
+    @IBOutlet weak var deleteLab: UILabel!
     @IBOutlet weak var deleteBtn: UIButton!
+    //
+    @IBOutlet weak var pictureView: PicCollectionView!
     @IBOutlet weak var zanBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
-    
- 
-    
+
+    var   showVCClouse : showVCType?
+    var popClouse : popVC?
+   
     var viewModel: UnionListModel? {
         didSet {
             guard let viewModel = viewModel else {
@@ -40,8 +38,8 @@ class StatusViewCell: UITableViewCell {
             avatarImage.sd_setImage(with: URL.init(string: viewModel.userImgUrl! as String), placeholderImage: nil)
             
             var   userIdentify : String?
-            if let   IndentID = viewModel.userIdenId {
-                switch Int(truncating: IndentID) {
+            if let identID = viewModel.userIdenId{
+                switch Int(truncating: identID) {
                 case 1:
                     userIdentify = "投资商"
                     break
@@ -54,7 +52,22 @@ class StatusViewCell: UITableViewCell {
                 default:
                     break
                 }
+                identifyIcon.setTitle(userIdentify, for: .normal)
             }
+            
+            if viewModel.my == 1 {
+                
+                deleteBtn.isHidden = false
+                deleteLab.isHidden = false
+                
+            }else if viewModel.my == 0 {
+                
+                deleteBtn.isHidden = true
+                deleteLab.isHidden = true
+                
+            }
+            
+            
             //设置评论数
             if let  commentNum = viewModel.commentNum{
                 if commentNum != 0 {
@@ -76,7 +89,6 @@ class StatusViewCell: UITableViewCell {
                 }
             }
             
-            identifyIcon.setTitle(userIdentify, for: .normal)
             nickname.text = viewModel.userName
             createAt.text = viewModel.sendDate! as String
             if let name = viewModel.commName{
@@ -84,7 +96,7 @@ class StatusViewCell: UITableViewCell {
             }
             
             contentText.text = viewModel.content as String?
-  
+            
             
             var   urlArr = [URL]()
             if let urls = viewModel.imgUrls {
@@ -98,57 +110,34 @@ class StatusViewCell: UITableViewCell {
                 pictureView.picURLs = [URL]()
             }
             let imageCount =  viewModel.imgUrls == nil ? 0  : viewModel.imgUrls?.count
-        
+            
             let pictureViewSize = calculatePictureSize(imageCount!)
             collectionviewHCons.constant = pictureViewSize.height
             collectionViewWCons.constant = pictureViewSize.width
-       }
-    
-}
-    
-    
-    @IBAction func deleteStatus(_ sender: Any) {
-        let alert = UIAlertController(title: "请选择操作类型", message: "", preferredStyle: .actionSheet)
-        let ignoreAction = UIAlertAction(title: "屏蔽", style: .destructive) { [weak self](action) in
-            guard let access_token = UserDefaults.standard.string(forKey: "token") else{
-                return
-            }
-            if let id = self?.viewModel?.momentId {
-               self?.momentIgnore(access_token: access_token, id: Int(truncating: id))
-            }
-        }
-        let reportAction = UIAlertAction(title: "举报", style: .destructive) { [weak self](action) in
-            if let id = self?.viewModel?.momentId {
-                let reportVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleReportVCID") as! CircleReportVC
-                reportVC.circleId = Int(truncating: id)
-                AppDelegate.momentVC.navigationController?.pushViewController(reportVC, animated: true)
-            }
         }
         
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        
-        alert.addAction(ignoreAction)
-        alert.addAction(reportAction)
-        alert.addAction(cancelAction)
-        AppDelegate.momentVC.present(alert, animated: true, completion: nil)
     }
+    
+    
+    
     @IBAction func commentAction(_ sender: Any) {
-//        DynamicDetailVCID
         weak var weakself = self
         if weakself?.showVCClouse != nil{
             weakself?.showVCClouse!(weakself?.viewModel?.momentId as! Int)
         }
     }
+    
     @IBAction func zanAction(_ sender: UIButton) {
         thumb(btn: sender, isThumb: self.viewModel?.thumb as! Int)
+        
     }
     
-override  func awakeFromNib() {
+    override  func awakeFromNib() {
         super.awakeFromNib()
         let layout = pictureView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
-    
+        
         pictureView.isScrollEnabled = false
         let imageViewWH = (screenWidth - 20  - 2 * edgeMargin - 2 * itemMargin) / 3
         layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
@@ -156,8 +145,8 @@ override  func awakeFromNib() {
     
 }
 
-extension StatusViewCell {
-     func calculatePictureSize(_ count: Int) -> CGSize{
+extension CircleListMomentCell {
+    func calculatePictureSize(_ count: Int) -> CGSize{
         if count == 0 {
             collectionViewButtonDistanceCons.constant = 0
             return CGSize.zero
@@ -180,7 +169,11 @@ extension StatusViewCell {
 }
 
 
-extension  StatusViewCell {
+// MARK:- 请求函数体
+extension  CircleListMomentCell {
+    
+    
+    
     func thumb(btn : UIButton , isThumb : Int){
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
             return
@@ -193,11 +186,11 @@ extension  StatusViewCell {
         }else{
             getNmomentThumb(btn: btn, access_token: access_token, id: Int(truncating: id))
         }
-     
+        
     }
-    //MARK: - 点赞方法
-
-   func getNmomentThumb(btn : UIButton , access_token : String ,id : Int){
+    
+    //点赞按钮
+    func getNmomentThumb(btn : UIButton , access_token : String ,id : Int){
         var color = UIColor.red
         var showInfo = ""
         NetWorkTool.shareInstance.getNmomentThumb(token: access_token, id: id) { [weak self](result, error) in
@@ -210,7 +203,7 @@ extension  StatusViewCell {
                 btn.isSelected = true
                 self?.viewModel?.thumb = 1
                 let thumbNum = Int(truncating: (self?.viewModel?.thumbNum)!) + 1
-                 self?.viewModel?.thumbNum = Int(truncating: (self?.viewModel?.thumbNum)!) + 1 as NSNumber
+                self?.viewModel?.thumbNum = Int(truncating: (self?.viewModel?.thumbNum)!) + 1 as NSNumber
                 self?.zanNumLab.text = "\(thumbNum)"
             }else{
                 showInfo =  result!["msg"] as! String
@@ -221,8 +214,7 @@ extension  StatusViewCell {
         }
     }
     
-    
-  //MARK: - 取消点赞方法
+    //MARK: - 取消点赞方法
     func cancelThumb(btn : UIButton , access_token : String ,id : Int){
         var color = UIColor.red
         var showInfo = ""
@@ -233,10 +225,10 @@ extension  StatusViewCell {
                 }
                 color = #colorLiteral(red: 0.6242706776, green: 0.8754864931, blue: 0.8703722358, alpha: 1)
                 btn.isSelected = false
-                 self?.viewModel?.thumb = 0
-                 showInfo = "取消点赞成功"
+                self?.viewModel?.thumb = 0
+                showInfo = "取消点赞成功"
                 let thumbNum = Int(truncating: (self?.viewModel?.thumbNum)!) - 1
-                 self?.viewModel?.thumbNum = Int(truncating: (self?.viewModel?.thumbNum)!) - 1 as NSNumber
+                self?.viewModel?.thumbNum = Int(truncating: (self?.viewModel?.thumbNum)!) - 1 as NSNumber
                 self?.zanNumLab.text = "\(thumbNum)"
             }else{
                 showInfo =  result!["msg"] as! String
@@ -247,27 +239,13 @@ extension  StatusViewCell {
         }
     }
     
-    //MARK: - 屏蔽该动态
-    func momentIgnore(access_token : String ,id : Int){
-        var color = UIColor.red
-        var showInfo = ""
-        NetWorkTool.shareInstance.momentIgnore(token: access_token, id: id) {(result, error) in
-            if  result?["code"] as? Int == 200  {
-                guard   result != nil else{
-                    return
-                }
-                color = #colorLiteral(red: 0.6242706776, green: 0.8754864931, blue: 0.8703722358, alpha: 1)
-                showInfo = "屏蔽成功"
-                AppDelegate.momentVC.refresh()
-            }else{
-                showInfo =  result!["msg"] as! String
-            }
-            let config = NoticeBarConfig(title: showInfo, image: nil, textColor: UIColor.white, backgroundColor: color, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
-            let noticeBar = NoticeBar(config: config)
-            noticeBar.show(duration: 1.5, completed: nil)
-        }
-    }
+    
+    
 }
+
+
+
+
 
 
 

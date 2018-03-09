@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
+typealias changeSelctedType = () -> ()
 class CircleChooseTableView: UITableView,UITableViewDelegate,UITableViewDataSource {
+    
+    
     var  userModelArr = [MyCircleEntityModel]() {
         didSet {
             self.reloadData()
@@ -19,16 +21,13 @@ class CircleChooseTableView: UITableView,UITableViewDelegate,UITableViewDataSour
     }
     
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let  model = userModelArr[indexPath.row]
-//        print(model.selected)
-//    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.dequeueReusableCell(withIdentifier: "CircleChooseTableViewCellID", for: indexPath) as! CircleChooseTableViewCell
         if  userModelArr.count > 0 {
           let  model = userModelArr[indexPath.row]
           cell.model = model
         }
+   
         return cell
     }
     
@@ -85,7 +84,6 @@ class   CircleChooseTableViewCell : UITableViewCell{
         }else{
             model.selected = 0
         }
-        
-    }
+     }
     
 }

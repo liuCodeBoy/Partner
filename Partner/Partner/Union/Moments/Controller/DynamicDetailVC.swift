@@ -31,7 +31,8 @@ class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     var  commentType = 1
     var  parentId : Int?
     var  socialCircleId : Int?
-    
+    var  dynamicIsMy = 3
+
     var inputText: String? {
         didSet {
             if inputText?.count == 0 {
@@ -317,7 +318,7 @@ extension  DynamicDetailVC {
             
             if  modelView.count > 0  {
                 firstCell.viewModel = modelView[indexPath.row]
-
+                dynamicIsMy = modelView[indexPath.row].my as! Int
             }
             // 显示，并指定打开第几张图
             firstCell.pictureView.pushImageClouse = {[weak self](tempPictureView ,index , strArr) in
@@ -336,6 +337,8 @@ extension  DynamicDetailVC {
             if modelArr.count > 0  {
             let model = modelArr[indexPath.row]
              commentCell.viewModel = model
+             commentCell.dynamicIsMy = dynamicIsMy
+
             }
           }
           cell = commentCell

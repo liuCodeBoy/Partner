@@ -259,8 +259,8 @@ func   addPushBtn(){
     
     @objc func pushSendOutVC(){
         
-        let StatusPushVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "StatusPushVCID")
-        self.navigationController?.pushViewController(StatusPushVC, animated: true)
+        let statusPushVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "StatusPushVCID") as!  StatusPushVC
+        self.navigationController?.pushViewController(statusPushVC, animated: true)
     }
 
 }

@@ -28,17 +28,40 @@ class CircleDetailVC: UIViewController {
         addchildVC()
         //设置设置按钮的切换
         changeBtnType()
+        addPushBtn()
     }
     
     //添加子控
     func addchildVC(){
         let circledetailCommandVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleDetailCommandVCID") as!  CircleDetailCommandVC
+        circledetailCommandVC.circleId = circleId
         circledetailCommandVC.view.frame = CGRect.init(x: 0, y: 0, width: commandView.frame.width, height: commandView.frame.height)
         self.addChildViewController(circledetailCommandVC)
         commandView.addSubview(circledetailCommandVC.view)
     }
+    
+    
+    //添加发布按钮
+    func   addPushBtn(){
 
-    //设置设置按钮的切换
+        if  create != 2 {
+            let  btn = UIButton.init(frame: CGRect.init(x: screenWidth - 58 , y: screenHeight  - (self.tabBarController?.tabBar.frame.height)! - 76, width: 46, height: 46))
+            btn.addTarget(self, action: #selector(pushSendOutVC), for: .touchUpInside)
+            btn.setImage(UIImage.init(named: "pushBtn"), for: .normal)
+            self.view.addSubview(btn)
+        }
+    }
+    
+    @objc func pushSendOutVC(){
+        
+        let statusPushVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "StatusPushVCID") as!  StatusPushVC
+        statusPushVC.circleViewisHidden = true
+        statusPushVC.circleName = detailTableview.topDetailModel?.circleName
+        statusPushVC.circleId = detailTableview.topDetailModel?.circleId as? Int
+        self.navigationController?.pushViewController(statusPushVC, animated: true)
+    }
+
+    //设置按钮的切换
     func changeBtnType(){
         if create == 1 {
          settingBtn.isHidden = false
@@ -69,8 +92,7 @@ class CircleDetailVC: UIViewController {
                     if  let statusViewModel = CicrleDetailModel.mj_object(withKeyValues: dict){
                         self?.detailTableview.topDetailModel = statusViewModel
                         if statusViewModel.status == 2 {
-                            self?.detailHCons.constant = 0
-                        }
+                         }
                         self?.detailTableview.reloadData()
                         self?.CircleDetImag.sd_setImage(with: URL.init(string: statusViewModel.imgUrl!), placeholderImage:nil)
                         if let imageStrArr = statusViewModel.membImgUrls{

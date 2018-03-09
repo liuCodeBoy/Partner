@@ -29,7 +29,7 @@ class UnionMainVC: UIViewController {
     
     //初始化头部按钮
   func addTopViewChildsBtn(){
-    let  btnArr = ["社联","社圈","私信","寻合伙"]
+    let  btnArr = ["社联","社圈"]
     let  width  = (screenWidth - 50) / CGFloat(btnArr.count)
     for i in 0..<btnArr.count {
         let  btnStr  = btnArr[i]
@@ -110,7 +110,7 @@ class UnionMainVC: UIViewController {
         //添加滚动控件
         let  scrollView = UIScrollView.init(frame: CGRect.init(x: 0, y: 64, width:screenWidth, height: screenHeight - 104))
         scrollView.backgroundColor = UIColor.red
-        scrollView.contentSize = CGSize.init(width: screenWidth  *  4, height: screenHeight - 104)
+        scrollView.contentSize = CGSize.init(width: screenWidth  *  2, height: screenHeight - 104)
         scrollView.bounces = false
         scrollView.isPagingEnabled = true
         self.view.addSubview(scrollView)

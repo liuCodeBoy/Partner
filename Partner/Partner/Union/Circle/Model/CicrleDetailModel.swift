@@ -11,6 +11,8 @@ class CicrleDetailModel: NSObject {
     @objc var circleId   : NSNumber?
     @objc var circleName : String?
     @objc var imgUrl     : String?
+    @objc var desc       : String?
+
     @objc var membNum    : NSNumber?
     @objc var membImgUrls : [String]?
     @objc var status     : NSNumber?

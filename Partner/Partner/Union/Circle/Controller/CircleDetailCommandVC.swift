@@ -17,7 +17,8 @@ class CircleDetailCommandVC: UIViewController, UITableViewDelegate, UITableViewD
     var   browser : PhotoBrowser?
     var   picStrsArr : [String]?
     var   collectionView : UICollectionView?
-    
+    var   circleId : Int = 0
+
     //初始化pageNums
     var   pageNum  = 1
     //标记nextPage 是否为空
@@ -108,7 +109,7 @@ extension CircleDetailCommandVC {
             }, cancel: nil)
             return
         }
-        NetWorkTool.shareInstance.getSocialCircleMomentList(token: access_token, type: 1, pageNum: pageNum) { [weak self](result, error) in
+        NetWorkTool.shareInstance.getCircleMomentList(token: access_token, type: circleId , pageNum: pageNum) { [weak self](result, error) in
             if error != nil {
                 return }
             NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
@@ -176,7 +177,15 @@ extension  CircleDetailCommandVC {
         return self.modelView.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CircleStautsCellID") as!  CircleStautsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CircleListMomentCellID") as!  CircleListMomentCell
+        cell.showVCClouse = {(momentId) in
+            //DynamicDetailVCID
+            let dynamicDetailVC  = AppDelegate.dynamicDetailVC
+            dynamicDetailVC.momentId = momentId
+            dynamicDetailVC.refresh()
+            
+            self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
+        }
         if  modelView.count > 0  {
             cell.viewModel = modelView[indexPath.row]
             
@@ -190,6 +199,17 @@ extension  CircleDetailCommandVC {
             self?.browser?.show(index: index.row)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dynamicDetailVC  = AppDelegate.dynamicDetailVC
+        if  modelView.count > 0  {
+            let viewModel = modelView[indexPath.row]
+            dynamicDetailVC.momentId = viewModel.momentId as? Int
+            dynamicDetailVC.refresh()
+            self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
+        }
+        
     }
     
 }

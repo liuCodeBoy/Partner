@@ -211,6 +211,7 @@
 		D3C58E0B2048F77C00C88E98 /* PartnerSinglePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C58E0A2048F77C00C88E98 /* PartnerSinglePickerView.xib */; };
 		D3C58E0D204A7D5200C88E98 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */; };
 		D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAC8722021EFCD0072064C /* ServiceMainViewController.swift */; };
+		D3D5660A2052694A005C8E75 /* CircleListMomentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D566092052694A005C8E75 /* CircleListMomentCell.swift */; };
 		D3D6E00B202999F8005D3413 /* DegreePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6E00A202999F8005D3413 /* DegreePicker.swift */; };
 		D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E00C20299A10005D3413 /* DegreePicker.xib */; };
 		D3E0D81D2021F8C300DCBCF4 /* Designable+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0D81C2021F8C300DCBCF4 /* Designable+UIImageView.swift */; };
@@ -460,6 +461,7 @@
 		D3C58E0A2048F77C00C88E98 /* PartnerSinglePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerSinglePickerView.xib; sourceTree = "<group>"; };
 		D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		D3CAC8722021EFCD0072064C /* ServiceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMainViewController.swift; sourceTree = "<group>"; };
+		D3D566092052694A005C8E75 /* CircleListMomentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleListMomentCell.swift; sourceTree = "<group>"; };
 		D3D6E00A202999F8005D3413 /* DegreePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreePicker.swift; sourceTree = "<group>"; };
 		D3D6E00C20299A10005D3413 /* DegreePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DegreePicker.xib; sourceTree = "<group>"; };
 		D3E0D81C2021F8C300DCBCF4 /* Designable+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIImageView.swift"; sourceTree = "<group>"; };
@@ -697,6 +699,7 @@
 				B687AB992043B4A9004C915A /* CircleMemberListTableView.swift */,
 				B687AB9F2043E4EA004C915A /* CircleWatingJoinInListTableView.swift */,
 				B65E09D82045539200BF81FF /* CircleStautsCell.swift */,
+				D3D566092052694A005C8E75 /* CircleListMomentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1861,6 +1864,7 @@
 				D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */,
 				D34C6AF5202D43C700EA225E /* MyHomePageExperiencesTableViewSectionHeaderCell.swift in Sources */,
 				B6D7F80F204169370044B31C /* CircleSettingInfoModel.swift in Sources */,
+				D3D5660A2052694A005C8E75 /* CircleListMomentCell.swift in Sources */,
 				D35A9D1F203FB67D00408B9E /* ServiceFindProjectViewController.swift in Sources */,
 				D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */,
 				B65BE190202AF13A004407B1 /* CircleModel.swift in Sources */,
