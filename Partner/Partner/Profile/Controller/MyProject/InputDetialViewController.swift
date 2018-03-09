@@ -59,15 +59,20 @@ class InputDetialViewController: UIViewController {
             let source = sourceSegue.source as! MyProjectEditAndCreateViewController
             switch identifier {
             case "projNameSegue":
-                source.projNameLbl.text     = inputText
+                source.projNameLbl.text         = inputText
+                source.projModel.projName       = inputText
             case "comFullNameSegue":
-                source.comFullNameLbl.text  = inputText
+                source.comFullNameLbl.text      = inputText
+                source.projModel.projCompName   = inputText
             case "contactNameSegue":
-                source.contactNameLbl.text  = inputText
+                source.contactNameLbl.text      = inputText
+                source.projModel.projConnName   = inputText
             case "contactPhoneSegue":
-                source.contactPhoneLbl.text = inputText
+                source.contactPhoneLbl.text     = inputText
+                source.projModel.projPhone      = inputText
             case "emailSegue":
-                source.emailLbl.text        = inputText
+                source.emailLbl.text            = inputText
+                source.projModel.projMail       = inputText
             default: break
             }
         } else if sourceSegue.source.isKind(of: MyHomePageAddEntrepreneurshipExperienceViewController.self) {

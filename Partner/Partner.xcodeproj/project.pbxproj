@@ -20,10 +20,10 @@
 		398978D6204EAB5F00B52424 /* PartnerTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */; };
 		398F4C8E20514CAB002F0B72 /* AuthResubmitInvestAppliacneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398F4C8D20514CAB002F0B72 /* AuthResubmitInvestAppliacneViewController.swift */; };
 		398F4C9020514CBF002F0B72 /* AuthResubmitEnterpriseApplianceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398F4C8F20514CBF002F0B72 /* AuthResubmitEnterpriseApplianceViewController.swift */; };
-		3994C840204FF328001B2717 /* NetworkTolol+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994C83F204FF328001B2717 /* NetworkTolol+Type.swift */; };
 		3994C8422050DE6F001B2717 /* AuthInputEnterpriseDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3994C8412050DE6F001B2717 /* AuthInputEnterpriseDescriptionViewController.swift */; };
+		399E5FC920525E5F0008D222 /* NetworkTool+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399E5FC820525E5F0008D222 /* NetworkTool+Provider.swift */; };
+		399E5FCB20526C760008D222 /* NetworkTool+Dictionary-Related.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399E5FCA20526C760008D222 /* NetworkTool+Dictionary-Related.swift */; };
 		399ED174204E239D00CD4054 /* NetworkTool+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */; };
-		39A87F83204ED926003D8226 /* NetworkTool+Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A87F82204ED926003D8226 /* NetworkTool+Field.swift */; };
 		39A87F85204F8271003D8226 /* CopyModual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A87F84204F8271003D8226 /* CopyModual.swift */; };
 		39A87F87204F8951003D8226 /* AuthInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A87F86204F8951003D8226 /* AuthInfoModel.swift */; };
 		39B693A1204CF6C100BEE5FA /* MyProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A0204CF6C100BEE5FA /* MyProject.storyboard */; };
@@ -33,6 +33,7 @@
 		39BFD414204D155500CD1563 /* MyHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BFD413204D155500CD1563 /* MyHomePage.storyboard */; };
 		39C1C788204D3E8300D3F2EF /* AuthApplyUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */; };
 		39C1C78E204D513A00D3F2EF /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1C78D204D513A00D3F2EF /* Extension+UIImageView.swift */; };
+		39CB05D5205288FD00C67669 /* ProjectCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CB05D4205288FD00C67669 /* ProjectCollection.storyboard */; };
 		53778418D7E5BF3B198BAAE4 /* Pods_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */; };
 		93A2197792B5860862374D6B /* Pods_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */; };
 		B625F2F8204115E50060F713 /* DetailInfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B625F2F7204115E50060F713 /* DetailInfoTableView.swift */; };
@@ -204,15 +205,11 @@
 		D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */; };
 		D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */; };
 		D3C22E41204E456F00FBB007 /* InfomationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C22E40204E456F00FBB007 /* InfomationCell.swift */; };
-		D3C58DFB204807D600C88E98 /* NetworkTool+Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */; };
 		D3C58DFD204808A900C88E98 /* NetworkTool+CopyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58DFC204808A900C88E98 /* NetworkTool+CopyModel.swift */; };
 		D3C58E002048ED5E00C88E98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3C58E022048ED5E00C88E98 /* InfoPlist.strings */; };
-		D3C58E052048EF3900C88E98 /* NetworkTool+Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58E042048EF3900C88E98 /* NetworkTool+Identity.swift */; };
 		D3C58E092048F77400C88E98 /* PartnerSinglePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58E082048F77400C88E98 /* PartnerSinglePickerView.swift */; };
 		D3C58E0B2048F77C00C88E98 /* PartnerSinglePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C58E0A2048F77C00C88E98 /* PartnerSinglePickerView.xib */; };
 		D3C58E0D204A7D5200C88E98 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */; };
-		D3C58E0F204A991200C88E98 /* NetworkTool+Industry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58E0E204A991200C88E98 /* NetworkTool+Industry.swift */; };
-		D3C58E11204A9F2F00C88E98 /* NetworkTool+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58E10204A9F2F00C88E98 /* NetworkTool+Round.swift */; };
 		D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAC8722021EFCD0072064C /* ServiceMainViewController.swift */; };
 		D3D6E00B202999F8005D3413 /* DegreePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6E00A202999F8005D3413 /* DegreePicker.swift */; };
 		D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E00C20299A10005D3413 /* DegreePicker.xib */; };
@@ -259,10 +256,10 @@
 		398978D5204EAB5F00B52424 /* PartnerTimePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerTimePicker.xib; sourceTree = "<group>"; };
 		398F4C8D20514CAB002F0B72 /* AuthResubmitInvestAppliacneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResubmitInvestAppliacneViewController.swift; sourceTree = "<group>"; };
 		398F4C8F20514CBF002F0B72 /* AuthResubmitEnterpriseApplianceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResubmitEnterpriseApplianceViewController.swift; sourceTree = "<group>"; };
-		3994C83F204FF328001B2717 /* NetworkTolol+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTolol+Type.swift"; sourceTree = "<group>"; };
 		3994C8412050DE6F001B2717 /* AuthInputEnterpriseDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInputEnterpriseDescriptionViewController.swift; sourceTree = "<group>"; };
+		399E5FC820525E5F0008D222 /* NetworkTool+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Provider.swift"; sourceTree = "<group>"; };
+		399E5FCA20526C760008D222 /* NetworkTool+Dictionary-Related.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Dictionary-Related.swift"; sourceTree = "<group>"; };
 		399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Auth.swift"; sourceTree = "<group>"; };
-		39A87F82204ED926003D8226 /* NetworkTool+Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Field.swift"; sourceTree = "<group>"; };
 		39A87F84204F8271003D8226 /* CopyModual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyModual.swift; sourceTree = "<group>"; };
 		39A87F86204F8951003D8226 /* AuthInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInfoModel.swift; sourceTree = "<group>"; };
 		39B693A0204CF6C100BEE5FA /* MyProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProject.storyboard; sourceTree = "<group>"; };
@@ -272,6 +269,7 @@
 		39BFD413204D155500CD1563 /* MyHomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyHomePage.storyboard; sourceTree = "<group>"; };
 		39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApplyUploadViewController.swift; sourceTree = "<group>"; };
 		39C1C78D204D513A00D3F2EF /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
+		39CB05D4205288FD00C67669 /* ProjectCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectCollection.storyboard; sourceTree = "<group>"; };
 		4244745640517A4639E1AAAB /* Pods-PartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerUITests/Pods-PartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		651730BEE68B4A46A60D9F22 /* Pods-PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerTests/Pods-PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -455,16 +453,12 @@
 		D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectNoneProjectPlaceholderViewController.swift; sourceTree = "<group>"; };
 		D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectEditAndCreateViewController.swift; sourceTree = "<group>"; };
 		D3C22E40204E456F00FBB007 /* InfomationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationCell.swift; sourceTree = "<group>"; };
-		D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Area.swift"; sourceTree = "<group>"; };
 		D3C58DFC204808A900C88E98 /* NetworkTool+CopyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+CopyModel.swift"; sourceTree = "<group>"; };
 		D3C58E012048ED5E00C88E98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D3C58E032048ED7500C88E98 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		D3C58E042048EF3900C88E98 /* NetworkTool+Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Identity.swift"; sourceTree = "<group>"; };
 		D3C58E082048F77400C88E98 /* PartnerSinglePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerSinglePickerView.swift; sourceTree = "<group>"; };
 		D3C58E0A2048F77C00C88E98 /* PartnerSinglePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerSinglePickerView.xib; sourceTree = "<group>"; };
 		D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
-		D3C58E0E204A991200C88E98 /* NetworkTool+Industry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Industry.swift"; sourceTree = "<group>"; };
-		D3C58E10204A9F2F00C88E98 /* NetworkTool+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Round.swift"; sourceTree = "<group>"; };
 		D3CAC8722021EFCD0072064C /* ServiceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMainViewController.swift; sourceTree = "<group>"; };
 		D3D6E00A202999F8005D3413 /* DegreePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreePicker.swift; sourceTree = "<group>"; };
 		D3D6E00C20299A10005D3413 /* DegreePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DegreePicker.xib; sourceTree = "<group>"; };
@@ -812,12 +806,8 @@
 				399ED173204E239D00CD4054 /* NetworkTool+Auth.swift */,
 				3910F847205110ED00B670C4 /* NetworkTool+Feedback.swift */,
 				D3787E8B2047FD02000A0AA0 /* NetworkTool+Project.swift */,
-				D3C58DFA204807D600C88E98 /* NetworkTool+Area.swift */,
-				3994C83F204FF328001B2717 /* NetworkTolol+Type.swift */,
-				D3C58E042048EF3900C88E98 /* NetworkTool+Identity.swift */,
-				D3C58E0E204A991200C88E98 /* NetworkTool+Industry.swift */,
-				D3C58E10204A9F2F00C88E98 /* NetworkTool+Round.swift */,
-				39A87F82204ED926003D8226 /* NetworkTool+Field.swift */,
+				399E5FC820525E5F0008D222 /* NetworkTool+Provider.swift */,
+				399E5FCA20526C760008D222 /* NetworkTool+Dictionary-Related.swift */,
 				D3C58DFC204808A900C88E98 /* NetworkTool+CopyModel.swift */,
 			);
 			path = Network;
@@ -1050,6 +1040,7 @@
 				39BFD411204D135500CD1563 /* ProfileEdit.storyboard */,
 				39BFD413204D155500CD1563 /* MyHomePage.storyboard */,
 				39B693A0204CF6C100BEE5FA /* MyProject.storyboard */,
+				39CB05D4205288FD00C67669 /* ProjectCollection.storyboard */,
 				39B693A2204CF8C800BEE5FA /* Auth.storyboard */,
 				39B693A4204CF99D00BEE5FA /* ProfileDeprecated.storyboard */,
 				D3CAC86E2021B0F40072064C /* Model */,
@@ -1290,8 +1281,8 @@
 		D3BFC9B82019C17F00D2C6BD /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
-				D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */,
 				D3B8E5C2201AF1CB002F3A3A /* MyProjectViewController.swift */,
+				D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */,
 				D3B8E5C7201AFC04002F3A3A /* IntentionProjectViewController.swift */,
 				D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */,
 				39123D93204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift */,
@@ -1480,6 +1471,7 @@
 				39B693A5204CF99D00BEE5FA /* ProfileDeprecated.storyboard in Resources */,
 				D378FEE11FF0D60800065EEC /* Home.storyboard in Resources */,
 				D3C58E002048ED5E00C88E98 /* InfoPlist.strings in Resources */,
+				39CB05D5205288FD00C67669 /* ProjectCollection.storyboard in Resources */,
 				39B693A1204CF6C100BEE5FA /* MyProject.storyboard in Resources */,
 				B678C9982021C82F007FEB83 /* Assets.xcassets in Resources */,
 				D34712512011F289003E098E /* CustomTimePickerView.xib in Resources */,
@@ -1761,7 +1753,6 @@
 				B65BE17E2029A4AD004407B1 /* CircleChooseTableView.swift in Sources */,
 				B690ADE3204CDA250072C0C1 /* DynamicDetailVC.swift in Sources */,
 				D3722C95203FAD2B00E0B765 /* ServiceProviderViewController.swift in Sources */,
-				D3C58E052048EF3900C88E98 /* NetworkTool+Identity.swift in Sources */,
 				39C1C78E204D513A00D3F2EF /* Extension+UIImageView.swift in Sources */,
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
 				B6843E3D202192C700B86A3F /* StatusViewModel.swift in Sources */,
@@ -1782,7 +1773,6 @@
 				D39A4F37200D98AF00022A76 /* Extension+Colors.swift in Sources */,
 				3910F848205110ED00B670C4 /* NetworkTool+Feedback.swift in Sources */,
 				B6EF1D3A201F5D8D000479F8 /* RegisterAndLoginVC.swift in Sources */,
-				D3C58DFB204807D600C88E98 /* NetworkTool+Area.swift in Sources */,
 				39837FD520513BFE002BC382 /* AuthApplyInvestViewController.swift in Sources */,
 				B6D7F80D204163BA0044B31C /* CircleNameEditVC.swift in Sources */,
 				D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */,
@@ -1804,7 +1794,6 @@
 				D3787E8A20411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift in Sources */,
 				B65E09E320468B7000BF81FF /* NoticeSocialConnListModel.swift in Sources */,
 				B65E09D92045539200BF81FF /* CircleStautsCell.swift in Sources */,
-				3994C840204FF328001B2717 /* NetworkTolol+Type.swift in Sources */,
 				D35A9D14203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift in Sources */,
 				39123D94204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift in Sources */,
 				D3AEBBA2204F750800FA955C /* InfoNewsDetailVC.swift in Sources */,
@@ -1822,6 +1811,7 @@
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
 				B6E1FAFD20286D8000BB2B4E /* StatusPushVC.swift in Sources */,
 				D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */,
+				399E5FCB20526C760008D222 /* NetworkTool+Dictionary-Related.swift in Sources */,
 				D3AEBBAE204FEE7000FA955C /* CommandFooterStatusModel.swift in Sources */,
 				B687AB9C2043B5CE004C915A /* CircleMemberListVC.swift in Sources */,
 				D35A9D19203FB13400408B9E /* ServiceInvestAndRaiseHeaderTitleTableViewCell.swift in Sources */,
@@ -1832,7 +1822,6 @@
 				B687ABA420440313004C915A /* MemberOfCircleVC.swift in Sources */,
 				D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */,
 				D39F14E6201EF772003F3BC5 /* ProjectEditConfirmButtonTableViewCell.swift in Sources */,
-				39A87F83204ED926003D8226 /* NetworkTool+Field.swift in Sources */,
 				D303464A201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift in Sources */,
 				B6754835204D265F00B60D3A /* HotInvestorListModel.swift in Sources */,
 				B6B9A5352024354D00AC24EB /* CriclePicktrueView.swift in Sources */,
@@ -1861,7 +1850,6 @@
 				B65E09DB20464B3800BF81FF /* NoticeViewController.swift in Sources */,
 				B6E1FB01202871BD00BB2B4E /* PickImageCollectionView.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
-				D3C58E11204A9F2F00C88E98 /* NetworkTool+Round.swift in Sources */,
 				D3C58E0D204A7D5200C88E98 /* ProjectModel.swift in Sources */,
 				39A87F85204F8271003D8226 /* CopyModual.swift in Sources */,
 				D37D712F202AE9ED007B38EB /* MyHomePageBasicInfomationContainerViewController.swift in Sources */,
@@ -1881,12 +1869,12 @@
 				B65E09DF20464D2B00BF81FF /* NoticeListCell.swift in Sources */,
 				B6F91F7B202D7C4D0095BECF /* LimitTextView.swift in Sources */,
 				D378FEF21FF0E36600065EEC /* NetworkTools.swift in Sources */,
+				399E5FC920525E5F0008D222 /* NetworkTool+Provider.swift in Sources */,
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,
 				D37D7131202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift in Sources */,
 				D39F8C32201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift in Sources */,
 				B6754837204D3E7700B60D3A /* ProjectListModel.swift in Sources */,
 				D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */,
-				D3C58E0F204A991200C88E98 /* NetworkTool+Industry.swift in Sources */,
 				398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */,
 				D35A9D1B203FB18C00408B9E /* ServiceProjectBriefTableViewCell.swift in Sources */,
 				B6D7F80B20415DC80044B31C /* CircleManageVC.swift in Sources */,

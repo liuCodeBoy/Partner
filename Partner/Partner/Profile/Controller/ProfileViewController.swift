@@ -98,6 +98,7 @@ class ProfileViewController: UIViewController {
             // user hasn't loged in
             loginOrRegisterBtn.isHidden = false
             detialInfoView.isHidden = true
+            avatar.image = #imageLiteral(resourceName: "profile_avatar_placeholder")
         }
     }
 
