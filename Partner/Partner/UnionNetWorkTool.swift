@@ -8,6 +8,26 @@
 import UIKit
 
 extension NetWorkTool {
+    
+    // MARK:- 屏蔽动态（moment/ignore）
+    func momentIgnore(token:String ,id : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/moment/api/ignore.do"
+        //2.获取请求参数
+        let parameters = ["token" : token ,"id" : id] as [String : Any]
+        //3.发送请求参数
+        request(.POST , urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+
+    
    //MARK: -点赞动态（moment/thumb）
     func getNmomentThumb(token:String ,id : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
@@ -26,6 +46,23 @@ extension NetWorkTool {
         }
     }
     
+    // MARK:- 点赞评论（moment/comment/thumb）
+    func commentThumb(token:String ,id : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/moment/api/comment/thumb.do"
+        //2.获取请求参数
+        let parameters = ["token" : token ,"commentId" : id] as [String : Any]
+        //3.发送请求参数
+        request(.POST , urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
     
     //MARK: - 取消点赞动态（moment/cancelThumb）
     func cancelThumb(token:String ,id : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
@@ -33,6 +70,24 @@ extension NetWorkTool {
         let urlString = "http://47.97.110.89/qm/moment/api/cancelThumb.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"id" : id] as [String : Any]
+        //3.发送请求参数
+        request(.POST , urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //8.13.取消点赞评论（moment/cancelThumb）
+    func cancelCommentThumb(token:String ,id : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/moment/api/comment/cancelThumb.do"
+        //2.获取请求参数
+        let parameters = ["token" : token ,"commentId" : id] as [String : Any]
         //3.发送请求参数
         request(.POST , urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             //获取字典数据

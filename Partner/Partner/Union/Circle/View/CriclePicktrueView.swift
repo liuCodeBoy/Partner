@@ -258,6 +258,7 @@ class CriclePicktrueCell : UICollectionViewCell {
     @IBOutlet weak var CircleGrounpNum: UILabel!
     @IBOutlet weak var showImageView: UIImageView!
     @IBOutlet weak var addView: UIView!
+    @IBOutlet weak var CircleOwnerBtn: UIButton!
     var  cellModel : CircleModel?{
         didSet{
             if  let  tempName = cellModel?.circleName{
@@ -270,6 +271,19 @@ class CriclePicktrueCell : UICollectionViewCell {
             if let   numLab = cellModel?.membNum{
                 CircleGrounpNum.text = "\(numLab)名成员"
             }
+            CircleOwnerBtn.layer.cornerRadius = 3
+            CircleOwnerBtn.clipsToBounds = true
+            if let ismy = cellModel?.create {
+                CircleOwnerBtn.isHidden = false
+                if ismy == 1 {
+                    CircleOwnerBtn.setTitle("创建圈", for: .normal)
+                }else if ismy == 0 {
+                    CircleOwnerBtn.setTitle("追随圈", for: .normal)
+                }
+            }else{
+                CircleOwnerBtn.isHidden = true
+            }
+            
             if let imageStrArr = cellModel?.membImgUrls{
                 for i  in 0..<imageStrArr.count {
                     switch i {

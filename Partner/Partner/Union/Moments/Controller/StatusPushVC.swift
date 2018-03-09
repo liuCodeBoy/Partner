@@ -17,8 +17,15 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
     @IBOutlet weak var inputLimitLbl: UILabel!
     @IBOutlet weak var imagePickerImageView: PickImageCollectionView!
     @IBOutlet weak var showCircleView: CircleChooseTableView!
+    @IBOutlet weak var publicView: UIView!
+    @IBOutlet weak var circleLayoutView: UIView!
+    @IBOutlet weak var publicViewH: NSLayoutConstraint!
     
-    
+    var circleViewisHidden = false
+   
+    var circleId : Int?
+    var circleName : String?
+    var selectedStrArr  = [String]()
     var feedbackString: String = "" {
         didSet {
             let charCount = Int(inputTF.text.count)
@@ -31,12 +38,16 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func showPublicBtnStatus(_ sender: Any) {
+    @IBAction func showPublicBtnStatus(_ sender: UIButton) {
+        changeBtnStatus()
+    }
+    
+    func changeBtnStatus(){
         self.isPublicBtn.isSelected =  !self.isPublicBtn.isSelected
         if isPublicBtn.isSelected {
-           momePublicText.setTitle("公开", for: .normal)
+            momePublicText.setTitle("公开", for: .normal)
         }else{
-           momePublicText.setTitle("", for: .normal)
+            momePublicText.setTitle("", for: .normal)
         }
     }
     //展示社圈
@@ -46,6 +57,7 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
     }
     
     @IBAction func submitBtnClicked(_ sender: UIButton) {
+        selectedStrArr.removeAll()
         if Int(inputTF.text.count) == 0 || inputTF.text.replacingOccurrences(of: " ", with: "") == "" {
             presentHintMessage(hintMessgae: "输入内容不能为空", completion: nil)
         } else if Int(inputTF.text.count) > 500 {
@@ -62,12 +74,23 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
             var momPublic = 1
             var circleIdString : String?
             circleIdString = nil
-            if isPublicBtn.isSelected == true {
-               momPublic = 1
+            if circleId == nil {
+                if isPublicBtn.isSelected == true {
+                    momPublic = 1
+                    circleIdString =  nil
+                }else{
+                    momPublic = 2
+                    circleIdString = getCircleIdString()
+                    if self.selectedStrArr.count > 1 {
+                        presentHintMessage(hintMessgae: "只能勾选一个社圈", completion: nil)
+                        return
+                    }
+                }
             }else{
-               momPublic = 2
-               circleIdString = getCircleIdString()
+                momPublic = 2
+                circleIdString = "\(String(describing: circleId!))"
             }
+            
             NVActivityIndicatorPresenter.sharedInstance.startAnimating(AppDelegate.activityData)
             NetWorkTool.shareInstance.momentSend(token: access_token, circleIds: circleIdString, momeContent: inputTF.text, momePublic: momPublic, image: imagePickerImageView.imageArr, finished: { [weak self](result, error) in
                 if error == nil {
@@ -87,6 +110,15 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
         }
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     //获取圈ID字符串
     func getCircleIdString() -> (String){
         var resultStr = ""
@@ -96,8 +128,10 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
             let model = modelArr[i]
             if model.selected == 1 && isFirst == 0 {
                 resultStr = "\(String(describing: model.id!))"
+                selectedStrArr.append(resultStr)
                 isFirst = 1
             }else if (model.selected == 1){
+                selectedStrArr.append("\(String(describing: model.id!))")
                 resultStr += "," + "\(String(describing: model.id!))"
             }
         }
@@ -109,6 +143,10 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
         super.viewDidLoad()
         inputTF.delegate = self
         
+        self.publicView.isHidden = circleViewisHidden
+        self.circleLayoutView.isHidden = circleViewisHidden
+        self.showCircleView.isHidden = circleViewisHidden
+        momePublicText.setTitle(self.circleName, for: .normal)
         
         let layout = imagePickerImageView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumLineSpacing = 5

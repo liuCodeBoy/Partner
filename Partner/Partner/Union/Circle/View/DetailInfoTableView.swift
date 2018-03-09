@@ -60,23 +60,25 @@ class  CircleDetailTopCell : UITableViewCell{
                 switch Int(status!) {
                 case 0:
                     self.circleAddBtn.titleLabel?.text = "提交申请"
-                    maskButtonCons.constant =  30
+                    circleAddBtn.isHidden = false
                     break
                 case 1 :
                     self.circleAddBtn.titleLabel?.text = "审核中"
-                    maskButtonCons.constant =  30
+                    circleAddBtn.isHidden = false
                     break
                 case 3 :
                     self.circleAddBtn.titleLabel?.text = "再次申请"
-                    maskButtonCons.constant =  30
+                    circleAddBtn.isHidden = false
                     break
                 default:
-                    maskButtonCons.constant =  0
+                    circleAddBtn.isHidden = true
                     break
                 }
             }
-            
-            self.detailTextLab.text = ""
+            if let desString = (detailModel?.desc) as? String {
+                self.detailTextLab.text = "简介： "  + desString
+            }
+
         }
     }
     
