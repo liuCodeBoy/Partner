@@ -82,6 +82,7 @@ class ProfileViewController: UIViewController {
                 if error != nil {
                     self?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
                     print(error as AnyObject)
+                    return
                 }
                 if result!["code"] as! Int == 200 {
                     let model = ProfileInfoModel.mj_object(withKeyValues: result!["result"])

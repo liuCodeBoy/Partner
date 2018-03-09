@@ -49,7 +49,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     }
     
     @IBAction func areaClicked(_ sender: UIButton) {
-        popupSecondaryPicker(bindingLabel: locationLbl, type: .location
+        popupSecondaryPicker(bindingLabel: locationLbl, type: .projLocation
             , model: projModel, componentDict: areaData)
     }
     
