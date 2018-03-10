@@ -34,6 +34,8 @@
 		39C1C788204D3E8300D3F2EF /* AuthApplyUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */; };
 		39C1C78E204D513A00D3F2EF /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1C78D204D513A00D3F2EF /* Extension+UIImageView.swift */; };
 		39CB05D5205288FD00C67669 /* ProjectCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CB05D4205288FD00C67669 /* ProjectCollection.storyboard */; };
+		39FE11162053868E0060CD76 /* ServiceProvider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FE11152053868E0060CD76 /* ServiceProvider.storyboard */; };
+		39FE1118205386F30060CD76 /* InvestFinance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FE1117205386F30060CD76 /* InvestFinance.storyboard */; };
 		53778418D7E5BF3B198BAAE4 /* Pods_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */; };
 		93A2197792B5860862374D6B /* Pods_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */; };
 		B625F2F8204115E50060F713 /* DetailInfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B625F2F7204115E50060F713 /* DetailInfoTableView.swift */; };
@@ -271,6 +273,8 @@
 		39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApplyUploadViewController.swift; sourceTree = "<group>"; };
 		39C1C78D204D513A00D3F2EF /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		39CB05D4205288FD00C67669 /* ProjectCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectCollection.storyboard; sourceTree = "<group>"; };
+		39FE11152053868E0060CD76 /* ServiceProvider.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceProvider.storyboard; sourceTree = "<group>"; };
+		39FE1117205386F30060CD76 /* InvestFinance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InvestFinance.storyboard; sourceTree = "<group>"; };
 		4244745640517A4639E1AAAB /* Pods-PartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerUITests/Pods-PartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		651730BEE68B4A46A60D9F22 /* Pods-PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerTests/Pods-PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -502,6 +506,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39A8CE7C2052E9B500522E2E /* MyProject */ = {
+			isa = PBXGroup;
+			children = (
+				D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */,
+			);
+			path = MyProject;
+			sourceTree = "<group>";
+		};
+		39A8CE7D2052E9BF00522E2E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3968A125204E302700A5DE22 /* AuthModel.swift */,
+				39A87F86204F8951003D8226 /* AuthInfoModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		39C1C786204D3E5500D3F2EF /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +536,28 @@
 				39837FD2205136AE002BC382 /* AuthReasonViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		39FE1119205388840060CD76 /* InvestFinance */ = {
+			isa = PBXGroup;
+			children = (
+				D35A9D11203FAFB200408B9E /* ServiceFounderPlaceholderViewController.swift */,
+				D35A9D13203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift */,
+				D35A9D1E203FB67D00408B9E /* ServiceFindProjectViewController.swift */,
+				D35A9D22203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift */,
+				D35A9D28203FBF3300408B9E /* ServiceInvestorBasicInfomationContainerViewController.swift */,
+				D35A9D26203FBF1600408B9E /* ServiceInvestorExperienceContainerViewController.swift */,
+			);
+			path = InvestFinance;
+			sourceTree = "<group>";
+		};
+		39FE111A205388A60060CD76 /* ServiceProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3722C94203FAD2B00E0B765 /* ServiceProviderViewController.swift */,
+				D35A9D20203FBC7600408B9E /* ServiceDetialViewController.swift */,
+			);
+			path = ServiceProvider;
 			sourceTree = "<group>";
 		};
 		5D13C0210F69F8269245E27A /* Frameworks */ = {
@@ -828,9 +871,9 @@
 		D3722C89203FA64F00E0B765 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D3722C90203FAC7C00E0B765 /* Main */,
 				D35A9D15203FB08300408B9E /* Founder */,
 				D3722C91203FAC8500E0B765 /* Provider */,
-				D3722C90203FAC7C00E0B765 /* Main */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1018,6 +1061,8 @@
 			isa = PBXGroup;
 			children = (
 				D378FEFD1FF0E80600065EEC /* Service.storyboard */,
+				39FE11152053868E0060CD76 /* ServiceProvider.storyboard */,
+				39FE1117205386F30060CD76 /* InvestFinance.storyboard */,
 				D3CAC86F2021EF9D0072064C /* Model */,
 				D3CAC8702021EFAC0072064C /* View */,
 				D3CAC8712021EFAF0072064C /* Controller */,
@@ -1307,9 +1352,8 @@
 			isa = PBXGroup;
 			children = (
 				D31C3CAC2040057300E97460 /* ProfileInfoModel.swift */,
-				D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */,
-				3968A125204E302700A5DE22 /* AuthModel.swift */,
-				39A87F86204F8951003D8226 /* AuthInfoModel.swift */,
+				39A8CE7C2052E9B500522E2E /* MyProject */,
+				39A8CE7D2052E9BF00522E2E /* Auth */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1333,14 +1377,8 @@
 			isa = PBXGroup;
 			children = (
 				D3CAC8722021EFCD0072064C /* ServiceMainViewController.swift */,
-				D3722C94203FAD2B00E0B765 /* ServiceProviderViewController.swift */,
-				D35A9D11203FAFB200408B9E /* ServiceFounderPlaceholderViewController.swift */,
-				D35A9D13203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift */,
-				D35A9D1E203FB67D00408B9E /* ServiceFindProjectViewController.swift */,
-				D35A9D20203FBC7600408B9E /* ServiceDetialViewController.swift */,
-				D35A9D22203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift */,
-				D35A9D28203FBF3300408B9E /* ServiceInvestorBasicInfomationContainerViewController.swift */,
-				D35A9D26203FBF1600408B9E /* ServiceInvestorExperienceContainerViewController.swift */,
+				39FE111A205388A60060CD76 /* ServiceProvider */,
+				39FE1119205388840060CD76 /* InvestFinance */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1464,6 +1502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D378FED41FF0D3D900065EEC /* Login.storyboard in Resources */,
+				39FE11162053868E0060CD76 /* ServiceProvider.storyboard in Resources */,
 				B65BE18E202AA18C004407B1 /* View.xib in Resources */,
 				D30AA0F8202843D100711F20 /* EntrepreneurshipExperienceAlertSheet.xib in Resources */,
 				D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */,
@@ -1488,6 +1527,7 @@
 				D378FEFE1FF0E80600065EEC /* Service.storyboard in Resources */,
 				39BFD412204D135500CD1563 /* ProfileEdit.storyboard in Resources */,
 				D3C58E0B2048F77C00C88E98 /* PartnerSinglePickerView.xib in Resources */,
+				39FE1118205386F30060CD76 /* InvestFinance.storyboard in Resources */,
 				39837FD1205130C6002BC382 /* PartnerEmpty.xib in Resources */,
 				D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */,
 			);

@@ -11,13 +11,14 @@ import Lightbox
 
 class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePickerDelegate {
     
-    var containerSegue: UIStoryboardSegue?
+//    var containerSegue: UIStoryboardSegue?
     
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
     var viewModel: AuthModel = AuthModel()
+    
     
     var areaData = [[String : AnyObject]]()
     var typeData = [[String : AnyObject]]()
@@ -40,6 +41,7 @@ class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePick
     @IBOutlet weak var entLocationLbl           : UILabel!
     @IBOutlet weak var entDetialAddressLbl      : UILabel!
     
+    var reSubmitSegueReceiveModel: AuthEnterpriseInfoModel?
     var reSubmitViewModel: AuthEnterpriseInfoModel? {
         didSet {
             if let license = reSubmitViewModel?.licenceUrl {
@@ -110,12 +112,10 @@ class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePick
         present(picker, animated: true, completion: nil)
     }
     @IBAction func enterpriseTypeClicked(_ sender: UIButton) {
-        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
-        mainVC.popupSecondaryPicker(bindingLabel: entTypeLbl, type: .enterpriseType, model: viewModel, componentDict: typeData)
+        popupSecondaryPicker(bindingLabel: entTypeLbl, type: .enterpriseType, model: viewModel, componentDict: typeData)
     }
     @IBAction func areaClicked(_ sender: UIButton) {
-        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
-        mainVC.popupSecondaryPicker(bindingLabel: entLocationLbl, type: .enterpriseLocation, model: viewModel, componentDict: areaData)
+        popupSecondaryPicker(bindingLabel: entLocationLbl, type: .enterpriseLocation, model: viewModel, componentDict: areaData)
     }
     
     @IBAction func showInputVC(_ sender: UIButton) {
@@ -230,6 +230,9 @@ class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePick
         loadModelData()
         loadAndSavePickerData()
         
+        // MARK:- assign view model after UIObject initialized
+        reSubmitViewModel = reSubmitSegueReceiveModel
+        
     }
     
     func loadModelData() {
@@ -293,6 +296,9 @@ class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePick
     
     func uploadEnterpriseAuthInfo() {
         
+        viewModel.licence = entLicenseImg.image
+        viewModel.logo = entLogoImg.image
+        
         guard let logo = viewModel.logo,
             let licence = viewModel.licence,
             let typeIds = viewModel.typeIds,
@@ -311,20 +317,24 @@ class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePick
                 return
         }
         
-        NetWorkTool.shareInstance.authCompany(token: access_token!,
-                                              logo: logo,
-                                              licence: licence,
-                                              typeIds: typeIds,
-                                              compName: compName,
-                                              compConn: compConn,
-                                              compConnPhone: compConnPhone,
-                                              compConnMail: compConnMail,
-                                              compDesc: compDesc,
-                                              compCreditCode: compCreditCode,
-                                              compRepresent: compRepresent,
-                                              compCardNo: compCardNo,
-                                              compAddrDetail: compAddrDetail,
-                                              areaId: areaId as! Int,
+        // FIXME:- string value do not support unicode, else it will be 500 error
+        
+        guard let id = authID else { return } 
+        NetWorkTool.shareInstance.editCompanyAuth(token: access_token!,
+                                                  logo: logo,
+                                                  licence: licence,
+                                                  typeIds: typeIds,
+                                                  id: id,
+                                                  compName: compName,
+                                                  compConn: compConn,
+                                                  compConnPhone: compConnPhone,
+                                                  compConnMail: compConnMail,
+                                                  compDesc: compDesc,
+                                                  compCreditCode: compCreditCode,
+                                                  compRepresent: compRepresent,
+                                                  compCardNo: compCardNo,
+                                                  compAddrDetail: compAddrDetail,
+                                                  areaId: areaId as! Int,
         finished: { (result, error) in
             weak var weakSelf = self
             if error != nil {
@@ -335,7 +345,7 @@ class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePick
             if result!["code"] as! Int == 200 {
                 
                 weakSelf?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
-                    weakSelf?.navigationController?.popViewController(animated: true)
+                    weakSelf?.navigationController?.popToRootViewController(animated: true)
                 })
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
@@ -373,6 +383,15 @@ class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePick
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destnation = segue.destination
+        if destnation is AuthInputEnterpriseDescriptionViewController {
+            let dest = destnation as! AuthInputEnterpriseDescriptionViewController
+            dest.segue = segue
+            dest.str = viewModel.compDesc
+        }
     }
 
 

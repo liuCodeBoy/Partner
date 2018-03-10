@@ -68,6 +68,10 @@ class AuthInputEnterpriseDescriptionViewController: UIViewController, UITextView
             let source = sourceViewController as! AuthApplyEnterpriseViewController
             source.viewModel.compDesc = inputString
             source.entIntroLbl.text = "已输入"
+        } else if sourceViewController is AuthResubmitEnterpriseApplianceViewController {
+            let source = sourceViewController as! AuthResubmitEnterpriseApplianceViewController
+            source.viewModel.compDesc = inputString
+            source.entIntroLbl.text = "已输入"
         }
         
         

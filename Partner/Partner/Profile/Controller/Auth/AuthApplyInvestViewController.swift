@@ -458,8 +458,8 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
             dest.segue = segue
         } else if destnation is AuthResubmitInvestAppliacneViewController {
             let dest = destnation as! AuthResubmitInvestAppliacneViewController
-            dest.containerSegue = containerSegue
-            dest.reSubmitViewModel = invViewModel
+//            dest.containerSegue = containerSegue
+            dest.reSubmitSegueReceiveModel = invViewModel
             dest.authID = invViewModel?.inveAuthId as? Int
         }
     }
