@@ -20,6 +20,19 @@ extension NetWorkTool {
         }
     }
     
+    // MARK:- 类型列表（type/getTypeList）
+    func getTypeList(typeCate: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http://47.97.110.89/qm/type/api/getTypeList.do"
+        let parameters = ["typeCate" : typeCate] as [String : Any]
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            finished(resultDict, error)
+        }
+    }
+    
     // MARK:- 7.2.搜索服务商
     func searchProvider(pageNum: Int, pageSize: Int, fuzzy: String, type: Int, name: String, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         let urlString = "http://47.97.110.89/qm/project/api/updateProjectDesc.do"

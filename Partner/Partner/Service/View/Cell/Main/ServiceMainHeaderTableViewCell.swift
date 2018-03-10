@@ -9,15 +9,23 @@ import UIKit
 
 class ServiceMainHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var firstView: UIView!
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var thirdView: UIView!
+    @IBOutlet weak var fourView: UIView!
+    @IBOutlet weak var fiveView: UIView!
+    @IBOutlet weak var sixView: UIView!
+    @IBOutlet weak var sevenView: UIView!
+    
+    var modelArr : [ServiceProvideListModel]?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+//        for model in modelArr {
+//
+//        }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }
