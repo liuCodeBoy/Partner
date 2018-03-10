@@ -48,16 +48,25 @@ class DynamicCommonCell: UITableViewCell {
                 }
                 identifyIcon.setTitle(userIdentify, for: .normal)
             }
-            
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+
             if dynamicIsMy == 0 {
                 deleteBtn.isHidden = false
                 if viewModel.level == 2 {
                     if viewModel.my == 1 {
                         deleteBtn.isHidden = true
+                    }else {
+                        if viewModel.commUserId as? Int == uid{
+                            deleteBtn.isHidden = false
+                        }else{
+                            deleteBtn.isHidden = true
+                        }
                     }
                 }else if viewModel.level == 1 {
                     if viewModel.my == 0 {
                         deleteBtn.isHidden = true
+                    }else{
+                        deleteBtn.isHidden = false
                     }
                 }else if viewModel.level == 3 {
                     deleteBtn.isHidden = true
@@ -67,32 +76,61 @@ class DynamicCommonCell: UITableViewCell {
                 if viewModel.level == 2 {
                     if viewModel.my == 1 {
                         deleteBtn.isHidden = true
+                    }else{
+//                        if viewModel.commUserId as? Int == uid{
+                            deleteBtn.isHidden = false
+//                        }else{
+//                            deleteBtn.isHidden = true
+//                        }
                     }
                 }else if viewModel.level == 1 {
-            
+                    if viewModel.my == 1 {
+                        deleteBtn.isHidden = false
+                    }
                 }else if viewModel.level == 3 {
                     deleteBtn.isHidden = true
                 }
             }
             
-            
             //设置评论数
                 self.commentBtn.isSelected = true
                 if viewModel.level == 2 {
                     if viewModel.my == 1 {
-                   
+                        
+                        commentBtn.isHidden = false
                         commentNumLab.text = "删除"
                         commentBtn.setImage(#imageLiteral(resourceName: "moments_delete"), for: .selected)
+                        
                     }else{
+                        if viewModel.commUserId as? Int == uid {
+                        commentBtn.isHidden = false
                         commentNumLab.text = "回复"
                         commentBtn.setImage(#imageLiteral(resourceName: "comment_selected"), for: .selected)
+                        }else{
+                            if  dynamicIsMy == 1 {
+                                commentBtn.isHidden = false
+                                commentNumLab.text = "删除"
+                                commentBtn.setImage(#imageLiteral(resourceName: "moments_delete"), for: .selected)
+                            }else {
+                                commentNumLab.text = ""
+                                commentBtn.isHidden = true
+                            }
+                        }
                     }
                 }else if viewModel.level == 1 {
+                     commentBtn.isHidden = false
                      commentNumLab.text = "评论"
                      commentBtn.setImage(#imageLiteral(resourceName: "comment_selected"), for: .selected)
                 }else if viewModel.level == 3 {
-                    commentNumLab.text = "删除"
-                    commentBtn.setImage(#imageLiteral(resourceName: "moments_delete"), for: .selected)
+                    if viewModel.my == 1 {
+                        commentBtn.isHidden = false
+                        commentNumLab.text = "删除"
+                        commentBtn.setImage(#imageLiteral(resourceName: "moments_delete"), for: .selected)
+                    }else{
+                        commentNumLab.text = ""
+                        commentBtn.isHidden = true
+                    }
+                   
                 }
             
             //设置点赞数
@@ -107,7 +145,7 @@ class DynamicCommonCell: UITableViewCell {
             }
             
             
-            let  uid = UserDefaults.standard.integer(forKey: "uid")
+           
                 
          
             if let level = viewModel.level{
