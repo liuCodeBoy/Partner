@@ -36,6 +36,8 @@
 		39CB05D5205288FD00C67669 /* ProjectCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CB05D4205288FD00C67669 /* ProjectCollection.storyboard */; };
 		39FE11162053868E0060CD76 /* ServiceProvider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FE11152053868E0060CD76 /* ServiceProvider.storyboard */; };
 		39FE1118205386F30060CD76 /* InvestFinance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FE1117205386F30060CD76 /* InvestFinance.storyboard */; };
+		39FE111D2053911C0060CD76 /* ProjectListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE111C2053911C0060CD76 /* ProjectListTableView.swift */; };
+		39FE111F2053D59E0060CD76 /* ProjectEditlTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FE111E2053D59E0060CD76 /* ProjectEditlTableView.swift */; };
 		53778418D7E5BF3B198BAAE4 /* Pods_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */; };
 		93A2197792B5860862374D6B /* Pods_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */; };
 		B625F2F8204115E50060F713 /* DetailInfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B625F2F7204115E50060F713 /* DetailInfoTableView.swift */; };
@@ -61,7 +63,6 @@
 		B675482F204CDD9400B60D3A /* DynamicCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675482E204CDD9400B60D3A /* DynamicCommonCell.swift */; };
 		B6754831204CF97E00B60D3A /* DynamicCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6754830204CF97E00B60D3A /* DynamicCommentModel.swift */; };
 		B6754835204D265F00B60D3A /* HotInvestorListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6754834204D265F00B60D3A /* HotInvestorListModel.swift */; };
-		B6754837204D3E7700B60D3A /* ProjectListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6754836204D3E7700B60D3A /* ProjectListModel.swift */; };
 		B6754839204D48CB00B60D3A /* TypeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6754838204D48CB00B60D3A /* TypeListModel.swift */; };
 		B675483F204D52E200B60D3A /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675483E204D52E200B60D3A /* InformationVC.swift */; };
 		B678C9982021C82F007FEB83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6843E3820216B5E00B86A3F /* Assets.xcassets */; };
@@ -276,6 +277,8 @@
 		39CB05D4205288FD00C67669 /* ProjectCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectCollection.storyboard; sourceTree = "<group>"; };
 		39FE11152053868E0060CD76 /* ServiceProvider.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceProvider.storyboard; sourceTree = "<group>"; };
 		39FE1117205386F30060CD76 /* InvestFinance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InvestFinance.storyboard; sourceTree = "<group>"; };
+		39FE111C2053911C0060CD76 /* ProjectListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListTableView.swift; sourceTree = "<group>"; };
+		39FE111E2053D59E0060CD76 /* ProjectEditlTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditlTableView.swift; sourceTree = "<group>"; };
 		4244745640517A4639E1AAAB /* Pods-PartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerUITests/Pods-PartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		651730BEE68B4A46A60D9F22 /* Pods-PartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerTests/Pods-PartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -306,7 +309,6 @@
 		B675482E204CDD9400B60D3A /* DynamicCommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCommonCell.swift; sourceTree = "<group>"; };
 		B6754830204CF97E00B60D3A /* DynamicCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCommentModel.swift; sourceTree = "<group>"; };
 		B6754834204D265F00B60D3A /* HotInvestorListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotInvestorListModel.swift; sourceTree = "<group>"; };
-		B6754836204D3E7700B60D3A /* ProjectListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListModel.swift; sourceTree = "<group>"; };
 		B6754838204D48CB00B60D3A /* TypeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeListModel.swift; sourceTree = "<group>"; };
 		B675483E204D52E200B60D3A /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
 		B678C9992021E065007FEB83 /* UnionNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionNetWorkTool.swift; sourceTree = "<group>"; };
@@ -562,6 +564,15 @@
 			path = ServiceProvider;
 			sourceTree = "<group>";
 		};
+		39FE111B205390AD0060CD76 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				39FE111C2053911C0060CD76 /* ProjectListTableView.swift */,
+				39FE111E2053D59E0060CD76 /* ProjectEditlTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		5D13C0210F69F8269245E27A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,7 +619,6 @@
 			isa = PBXGroup;
 			children = (
 				B6754834204D265F00B60D3A /* HotInvestorListModel.swift */,
-				B6754836204D3E7700B60D3A /* ProjectListModel.swift */,
 				B6754838204D48CB00B60D3A /* TypeListModel.swift */,
 				D3AEBBA7204F83B100FA955C /* industryListModel.swift */,
 			);
@@ -1198,11 +1208,12 @@
 		D378FF1F1FF0EAEB00065EEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */,
 				D3E3349320351CBD0084687C /* ProfileEditTableViewHeader.xib */,
 				D3E3349520351D180084687C /* ProfileEditTableViewHeader.swift */,
 				39837FD0205130C6002BC382 /* PartnerEmpty.xib */,
 				D32328FC2027F4BC00D5AAE7 /* Picker */,
-				D3E78EB32021912F0006C31F /* KeyboardBackgroundCoverView.swift */,
+				39FE111B205390AD0060CD76 /* TableView */,
 				D34712522011FFF9003E098E /* Cell */,
 			);
 			path = View;
@@ -1321,9 +1332,9 @@
 		D3B8E5C4201AF245002F3A3A /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
-				D3B6ADC4201F3D0100A7B961 /* Edit */,
 				D3B8E5C5201AF285002F3A3A /* SingleProjectTableViewCell.swift */,
 				D3B8E5C9201AFCEC002F3A3A /* IntentionProjectTableViewCell.swift */,
+				D3B6ADC4201F3D0100A7B961 /* Edit */,
 			);
 			path = MyProject;
 			sourceTree = "<group>";
@@ -1331,8 +1342,8 @@
 		D3BFC9B82019C17F00D2C6BD /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
-				D3B8E5C2201AF1CB002F3A3A /* MyProjectViewController.swift */,
 				D3BFC9B92019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift */,
+				D3B8E5C2201AF1CB002F3A3A /* MyProjectViewController.swift */,
 				D3B8E5C7201AFC04002F3A3A /* IntentionProjectViewController.swift */,
 				D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */,
 				39123D93204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift */,
@@ -1750,6 +1761,7 @@
 				D30AA10220287BC200711F20 /* Extension+Date.swift in Sources */,
 				B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */,
 				D3BFC9BC2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift in Sources */,
+				39FE111F2053D59E0060CD76 /* ProjectEditlTableView.swift in Sources */,
 				B68182E32041044C007CE890 /* CicrleDetailModel.swift in Sources */,
 				398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */,
 				398F4C9020514CBF002F0B72 /* AuthResubmitEnterpriseApplianceViewController.swift in Sources */,
@@ -1854,6 +1866,7 @@
 				D354B4642029AC7400482BF2 /* MyHomePageViewController.swift in Sources */,
 				D3A7591C202D7E470043D68D /* MyHomePageSectionHeaderWrapViewTableViewCell.swift in Sources */,
 				D3B6ADC7201F40F800A7B961 /* Designable+UIView.swift in Sources */,
+				39FE111D2053911C0060CD76 /* ProjectListTableView.swift in Sources */,
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
 				B6E1FAFD20286D8000BB2B4E /* StatusPushVC.swift in Sources */,
 				D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */,
@@ -1921,7 +1934,6 @@
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,
 				D37D7131202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift in Sources */,
 				D39F8C32201F0C5C00A40AC1 /* MyProjectEditTeamMembersViewController.swift in Sources */,
-				B6754837204D3E7700B60D3A /* ProjectListModel.swift in Sources */,
 				D347126520120685003E098E /* ProfileTextInputTableViewBodyCell.swift in Sources */,
 				398978D2204E9D0A00B52424 /* AuthInvestIndustrySelectViewController.swift in Sources */,
 				D35A9D1B203FB18C00408B9E /* ServiceProjectBriefTableViewCell.swift in Sources */,
