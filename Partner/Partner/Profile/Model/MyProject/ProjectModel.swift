@@ -27,16 +27,17 @@ class ProjectModel: NSObject {
     @objc var logoUrl          : String?
     @objc var status           : String?
     // id, fieldName
-    @objc var fields           :[NSDictionary]?
+//    @objc var fields           :[NSDictionary]?
     // 项目状态，0未融资 1审核中 2通过 3审核不通过
-    @objc var status           : NSNumber?
+//    @objc var status           : NSNumber?
     
-    @objc var projMail         : String?
-    @objc var projMail         : String?
-    @objc var projMail         : String?
-    @objc var projMail         : String?
-    @objc var projMail         : String?
+//    @objc var projMail         : String?
+//    @objc var projMail         : String?
+//    @objc var projMail         : String?
+//    @objc var projMail         : String?
+//    @objc var projMail         : String?
 
 
 }
+
 
