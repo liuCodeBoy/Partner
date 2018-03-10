@@ -214,6 +214,7 @@
 		D3C58E0D204A7D5200C88E98 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */; };
 		D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAC8722021EFCD0072064C /* ServiceMainViewController.swift */; };
 		D3D5660A2052694A005C8E75 /* CircleListMomentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D566092052694A005C8E75 /* CircleListMomentCell.swift */; };
+		D3D5660D2053B31B005C8E75 /* ServiceProvideListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D5660C2053B31B005C8E75 /* ServiceProvideListModel.swift */; };
 		D3D6E00B202999F8005D3413 /* DegreePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6E00A202999F8005D3413 /* DegreePicker.swift */; };
 		D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E00C20299A10005D3413 /* DegreePicker.xib */; };
 		D3E0D81D2021F8C300DCBCF4 /* Designable+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0D81C2021F8C300DCBCF4 /* Designable+UIImageView.swift */; };
@@ -466,6 +467,7 @@
 		D3C58E0C204A7D5200C88E98 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		D3CAC8722021EFCD0072064C /* ServiceMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMainViewController.swift; sourceTree = "<group>"; };
 		D3D566092052694A005C8E75 /* CircleListMomentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleListMomentCell.swift; sourceTree = "<group>"; };
+		D3D5660C2053B31B005C8E75 /* ServiceProvideListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvideListModel.swift; sourceTree = "<group>"; };
 		D3D6E00A202999F8005D3413 /* DegreePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreePicker.swift; sourceTree = "<group>"; };
 		D3D6E00C20299A10005D3413 /* DegreePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DegreePicker.xib; sourceTree = "<group>"; };
 		D3E0D81C2021F8C300DCBCF4 /* Designable+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIImageView.swift"; sourceTree = "<group>"; };
@@ -1063,7 +1065,7 @@
 				D378FEFD1FF0E80600065EEC /* Service.storyboard */,
 				39FE11152053868E0060CD76 /* ServiceProvider.storyboard */,
 				39FE1117205386F30060CD76 /* InvestFinance.storyboard */,
-				D3CAC86F2021EF9D0072064C /* Model */,
+				D3D5660B2053B2D0005C8E75 /* Model */,
 				D3CAC8702021EFAC0072064C /* View */,
 				D3CAC8712021EFAF0072064C /* Controller */,
 			);
@@ -1358,13 +1360,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D3CAC86F2021EF9D0072064C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D3CAC8702021EFAC0072064C /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1381,6 +1376,14 @@
 				39FE1119205388840060CD76 /* InvestFinance */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D3D5660B2053B2D0005C8E75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3D5660C2053B31B005C8E75 /* ServiceProvideListModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1854,6 +1857,7 @@
 				D3B8B8F020107BB500EDD145 /* VisitorsReservationViewController.swift in Sources */,
 				B6E1FAFD20286D8000BB2B4E /* StatusPushVC.swift in Sources */,
 				D3CAC8732021EFCD0072064C /* ServiceMainViewController.swift in Sources */,
+				D3D5660D2053B31B005C8E75 /* ServiceProvideListModel.swift in Sources */,
 				399E5FCB20526C760008D222 /* NetworkTool+Dictionary-Related.swift in Sources */,
 				D3AEBBAE204FEE7000FA955C /* CommandFooterStatusModel.swift in Sources */,
 				B687AB9C2043B5CE004C915A /* CircleMemberListVC.swift in Sources */,

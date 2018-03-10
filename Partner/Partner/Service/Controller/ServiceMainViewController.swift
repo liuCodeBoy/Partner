@@ -8,6 +8,9 @@
 import UIKit
 
 class ServiceMainViewController: UIViewController {
+    @IBOutlet weak var serviceTableView: UITableView!
+    
+    var modelArr = [ServiceProvideListModel]()
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
@@ -44,4 +47,31 @@ extension ServiceMainViewController: UITableViewDelegate, UITableViewDataSource 
         }
         return cell
     }
+}
+
+
+extension  ServiceMainViewController {
+    
+    func getListType(){
+        NetWorkTool.shareInstance.getTypeList(typeCate: 2) { [weak self](info, error) in
+            if error == nil {
+                // MARK:- judge the return data from server
+                if info?["code"] as? Int == 200 {
+                    if  let  dictARR = info?["result"] as? [NSDictionary]{
+                        for  dict in dictARR{
+                            let   model = ServiceProvideListModel.mj_object(withKeyValues: dict)
+                            self?.modelArr.append(model!)
+                        }
+                        self?.serviceTableView.reloadData()
+                    }
+                } else {
+                        let  errorShow  =  info!["msg"] as! String
+                        self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+                        self?.serviceTableView.reloadData()
+                    
+                }
+            }
+        }
+    }
+    
 }

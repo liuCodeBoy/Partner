@@ -169,7 +169,7 @@
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZM-U2-LAd">
                                                                     <rect key="frame" x="0.0" y="0.0" width="175.66666666666666" height="1"/>
-                                                                    <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="Pzt-HA-Ywg"/>
                                                                     </constraints>
@@ -227,8 +227,8 @@
                                                                         <constraint firstAttribute="width" constant="1" id="hr0-Vm-ZLz"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT支持" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGD-mF-slt">
-                                                                    <rect key="frame" x="67.666666666666671" y="17.333333333333314" width="41" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="财税会计服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGD-mF-slt">
+                                                                    <rect key="frame" x="45.333333333333343" y="17.333333333333314" width="86" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -263,8 +263,8 @@
                                                                         <constraint firstAttribute="width" constant="1" id="AyU-ij-1If"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="营销推广" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZx-cx-Jab">
-                                                                    <rect key="frame" x="59" y="17" width="57.666666666666657" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZx-cx-Jab">
+                                                                    <rect key="frame" x="73.666666666666671" y="17" width="28.666666666666671" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -299,8 +299,8 @@
                                                                         <constraint firstAttribute="width" constant="1" id="usg-1Z-Ibv"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="法律咨询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P19-OD-0xb">
-                                                                    <rect key="frame" x="59" y="17" width="57.666666666666657" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT技术支持" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P19-OD-0xb">
+                                                                    <rect key="frame" x="53" y="17" width="70" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -335,8 +335,8 @@
                                                                         <constraint firstAttribute="height" constant="1" id="7B3-gc-aOZ"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="财税服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcJ-Ia-ccP">
-                                                                    <rect key="frame" x="59" y="17.666666666666686" width="57.333333333333343" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="法律政策服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcJ-Ia-ccP">
+                                                                    <rect key="frame" x="44.666666666666686" y="17.666666666666686" width="86" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -364,8 +364,8 @@
                                                                         <constraint firstAttribute="height" constant="1" id="XxQ-gK-b9Z"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="财务服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM6-AE-DVI">
-                                                                    <rect key="frame" x="59" y="17.666666666666686" width="57.333333333333343" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人才资源服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM6-AE-DVI">
+                                                                    <rect key="frame" x="44.666666666666686" y="17.666666666666686" width="86" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -390,19 +390,11 @@
                                                                         <constraint firstAttribute="height" constant="1" id="mM2-gZ-CSI"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="财务服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8S-7h-c0f">
-                                                                    <rect key="frame" x="59" y="17" width="57.333333333333343" height="17"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="A8S-7h-c0f" firstAttribute="centerX" secondItem="UXD-xl-Bkc" secondAttribute="centerX" id="Mws-uD-M4d"/>
                                                                 <constraint firstAttribute="bottom" secondItem="EYr-3E-ZK7" secondAttribute="bottom" id="OMQ-aD-C26"/>
                                                                 <constraint firstAttribute="trailing" secondItem="EYr-3E-ZK7" secondAttribute="trailing" id="WeG-bS-vHx"/>
-                                                                <constraint firstItem="A8S-7h-c0f" firstAttribute="centerY" secondItem="UXD-xl-Bkc" secondAttribute="centerY" id="gwI-DU-ucg"/>
                                                                 <constraint firstItem="EYr-3E-ZK7" firstAttribute="leading" secondItem="UXD-xl-Bkc" secondAttribute="leading" id="ksM-QR-zOl"/>
                                                             </constraints>
                                                         </view>
@@ -416,8 +408,8 @@
                                                                         <constraint firstAttribute="height" constant="1" id="7qw-vS-axd"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人才资源" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsk-Hf-SfB">
-                                                                    <rect key="frame" x="59.333333333333343" y="17" width="57.666666666666657" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="品牌宣传推广" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsk-Hf-SfB">
+                                                                    <rect key="frame" x="45.333333333333343" y="17" width="86" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -495,6 +487,15 @@
                                                 <constraint firstItem="263-6c-YYs" firstAttribute="leading" secondItem="GWE-lZ-pkO" secondAttribute="leading" constant="12" id="w2a-aQ-J7c"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstView" destination="tSG-hS-2Wj" id="tXY-yg-jax"/>
+                                            <outlet property="fiveView" destination="nvB-h7-h90" id="Gfv-1U-VSH"/>
+                                            <outlet property="fourView" destination="qVm-NS-yGk" id="ee2-gp-rjQ"/>
+                                            <outlet property="secondView" destination="Ijt-ey-Rlw" id="u5V-mG-9hH"/>
+                                            <outlet property="sevenView" destination="7x8-UJ-bih" id="Sn9-ZT-Oaq"/>
+                                            <outlet property="sixView" destination="flD-hl-bjg" id="ZLt-EO-OWB"/>
+                                            <outlet property="thirdView" destination="w0g-Td-ouQ" id="IeE-kC-daw"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ServiceMainFounderListTableViewCell" rowHeight="192" id="yo2-ja-s7T" customClass="ServiceMainFounderListTableViewCell" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="563" width="375" height="192"/>
@@ -819,6 +820,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="w5Q-ir-Lpl"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="serviceTableView" destination="Kfn-N9-7dO" id="h3p-SW-se5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAd-y5-XQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1007,7 +1011,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XTR-JK-tBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="609" y="865"/>
+            <point key="canvasLocation" x="1865" y="208"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cgb-Uc-n0q">
