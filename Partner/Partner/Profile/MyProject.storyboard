@@ -161,7 +161,7 @@
                                     <constraint firstItem="Tr0-kt-j09" firstAttribute="top" secondItem="iIK-qn-pSC" secondAttribute="top" constant="10" id="v9a-vB-F4i"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AAL-yI-Y9g">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AAL-yI-Y9g" customClass="ProjectListTableView" customModule="Partner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="200" width="375" height="612"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -182,7 +182,7 @@
                                                                 <constraint firstAttribute="height" constant="70" id="9gl-sZ-CSh"/>
                                                             </constraints>
                                                         </view>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PAI-6v-R3k">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PAI-6v-R3k">
                                                             <rect key="frame" x="135.66666666666666" y="30" width="80" height="80"/>
                                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -322,9 +322,9 @@
                                             <outlet property="nameLbl" destination="ypz-i6-2GN" id="sal-jX-FsW"/>
                                             <outlet property="projectImg" destination="PAI-6v-R3k" id="9rg-55-nVX"/>
                                             <outlet property="statusLbl" destination="O11-8q-q0P" id="tKY-A9-F0w"/>
-                                            <outlet property="tag1Lbl" destination="a8R-J0-8Ug" id="pwZ-BH-giz"/>
-                                            <outlet property="tag2Lbl" destination="Lch-gF-TSD" id="efc-Ps-jja"/>
-                                            <outlet property="tag3Lbl" destination="uvM-L1-CyL" id="zzn-Vb-inc"/>
+                                            <outletCollection property="tagLbl" destination="a8R-J0-8Ug" collectionClass="NSMutableArray" id="ndT-qb-grU"/>
+                                            <outletCollection property="tagLbl" destination="Lch-gF-TSD" collectionClass="NSMutableArray" id="1Az-wR-gyM"/>
+                                            <outletCollection property="tagLbl" destination="uvM-L1-CyL" collectionClass="NSMutableArray" id="0PD-Ih-Iad"/>
                                             <segue destination="AD3-TN-oHN" kind="show" id="kBd-Oe-bWH">
                                                 <nil key="action"/>
                                             </segue>
@@ -366,12 +366,13 @@
                         <outlet property="investorCreateProjBtn" destination="Tr0-kt-j09" id="1rw-LK-SoZ"/>
                         <outlet property="investorInvestProjBtn" destination="IpW-L9-1aW" id="Z5K-bN-UJc"/>
                         <outlet property="investorsSelectViewHCons" destination="EBn-Xk-B5I" id="m6Z-D1-Cct"/>
-                        <outlet property="tableView" destination="AAL-yI-Y9g" id="oSv-aE-zRc"/>
+                        <outlet property="placeholderContainerView" destination="eEg-M0-UQD" id="WOT-8d-kn5"/>
+                        <outlet property="tableView" destination="AAL-yI-Y9g" id="psF-hM-N25"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VsX-BZ-s4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4884" y="1186"/>
+            <point key="canvasLocation" x="4884" y="1185.960591133005"/>
         </scene>
         <!--Intention Project View Controller-->
         <scene sceneID="gjX-zT-5kP">
@@ -1077,7 +1078,7 @@
                                                     <rect key="frame" x="12" y="60" width="351" height="172"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加项目信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyJ-Pe-2I2">
-                                                            <rect key="frame" x="127.33333333333331" y="76" width="98" height="20"/>
+                                                            <rect key="frame" x="127.33333333333334" y="76" width="98" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1240,7 +1241,7 @@
                                                     <rect key="frame" x="12" y="60" width="351" height="285"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加市场分析" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGJ-uc-bPb">
-                                                            <rect key="frame" x="127.33333333333331" y="132.66666666666666" width="98" height="20"/>
+                                                            <rect key="frame" x="127.33333333333334" y="132.66666666666666" width="98" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -4139,13 +4140,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_my_no_project_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fS7-NJ-Uvf">
-                                <rect key="frame" x="88" y="39.999999999999986" width="199" height="198.66666666666663"/>
+                                <rect key="frame" x="88" y="40.000000000000014" width="199" height="198.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fS7-NJ-Uvf" secondAttribute="height" id="i2e-oa-GhP"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无相关项目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af0-pD-PPd">
-                                <rect key="frame" x="127" y="249.33333333333337" width="122.33333333333331" height="28"/>
+                                <rect key="frame" x="127" y="249" width="122.33333333333331" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="8SU-LZ-eRg"/>
                                 </constraints>
@@ -4196,6 +4197,7 @@
                             <constraint firstItem="af0-pD-PPd" firstAttribute="top" secondItem="fS7-NJ-Uvf" secondAttribute="bottom" constant="10" id="neB-p5-OAK"/>
                             <constraint firstItem="fS7-NJ-Uvf" firstAttribute="centerX" secondItem="jFc-Wa-ghc" secondAttribute="centerX" id="oNz-kG-bJ2"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="I4N-EN-aX7"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="80V-Qt-4x6" userLabel="First Responder" sceneMemberID="firstResponder"/>

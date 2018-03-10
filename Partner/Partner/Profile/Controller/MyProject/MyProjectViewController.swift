@@ -11,10 +11,11 @@ class MyProjectViewController: UIViewController {
     
     var pageNum: Int = 1
     var pageSize: Int = 10
-    
+        
     var isInvestor: Bool = true
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: ProjectListTableView!
+    @IBOutlet weak var placeholderContainerView: UIView!
     
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -48,9 +49,6 @@ class MyProjectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.delegate = self
-        tableView.dataSource = self
         
         if isInvestor == true {
             createProjBtn.isHidden = true
@@ -78,8 +76,19 @@ class MyProjectViewController: UIViewController {
                 return
             }
             if result!["code"] as! Int == 200 {
-                // TODO:- save data into model 
-                
+                // TODO:- save data into model
+                let resultDict = result!["result"] as! [String : AnyObject]
+                if resultDict["list"] == nil {
+                    // TODO:- no data, show placeholder
+                    weakSelf?.placeholderContainerView.isHidden = false
+                    return
+                }
+                weakSelf?.placeholderContainerView.isHidden = true
+                // TODO:- convert dict to model and assign to view to show
+                for dict in resultDict["list"] as! [[String : AnyObject]] {
+                    let model = ProjectListModel.mj_object(withKeyValues: dict)
+                    weakSelf?.tableView.modelArray.append(model!)
+                }
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
             }
@@ -88,18 +97,3 @@ class MyProjectViewController: UIViewController {
 
 }
 
-extension MyProjectViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SingleProjectTableViewCell") as! SingleProjectTableViewCell
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 248
-    }
-}
