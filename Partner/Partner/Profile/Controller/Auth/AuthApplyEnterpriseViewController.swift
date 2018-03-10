@@ -448,9 +448,12 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
             dest.segue = segue
         } else if destnation is AuthResubmitEnterpriseApplianceViewController {
             let dest = destnation as! AuthResubmitEnterpriseApplianceViewController
-            dest.containerSegue = containerSegue
-            dest.reSubmitViewModel = entViewModel
+//            dest.containerSegue = containerSegue
+            dest.reSubmitSegueReceiveModel = entViewModel
             dest.authID = entViewModel?.compAuthId as? Int
+        } else if destnation is AuthInputEnterpriseDescriptionViewController {
+            let dest = destnation as! AuthInputEnterpriseDescriptionViewController
+            dest.str = entViewModel?.compDesc
         }
     }
     

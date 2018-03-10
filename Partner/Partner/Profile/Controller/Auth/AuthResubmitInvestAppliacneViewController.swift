@@ -11,7 +11,7 @@ import Lightbox
 
 class AuthResubmitInvestAppliacneViewController: UIViewController, ImagePickerDelegate {
     
-    var containerSegue: UIStoryboardSegue?
+//    var containerSegue: UIStoryboardSegue?
     
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -52,6 +52,7 @@ class AuthResubmitInvestAppliacneViewController: UIViewController, ImagePickerDe
     
     var datePicker: UIDatePicker?
     
+    var reSubmitSegueReceiveModel: AuthInvestInfoModel?
     var reSubmitViewModel: AuthInvestInfoModel? {
         didSet {
             if let avatar = reSubmitViewModel?.imgUrl {
@@ -197,12 +198,10 @@ class AuthResubmitInvestAppliacneViewController: UIViewController, ImagePickerDe
         present(picker, animated: true, completion: nil)
     }
     @IBAction func financingRoundClicked(_ sender: UIButton) {
-        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
-        mainVC.popupPartnerPicker(bindingLabel: invRoundLbl, type: .authFinancing, model: viewModel, componentDict: financingData)
+        popupPartnerPicker(bindingLabel: invRoundLbl, type: .authFinancing, model: viewModel, componentDict: financingData)
     }
     @IBAction func identityClicked(_ sender: UIButton) {
-        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
-        mainVC.popupPartnerPicker(bindingLabel: invIdentityLbl, type: .authIdentity, model: viewModel, componentDict: identityData)
+        popupPartnerPicker(bindingLabel: invIdentityLbl, type: .authIdentity, model: viewModel, componentDict: identityData)
     }
     @IBAction func workTimeClicked(_ sender: UIButton) {
         let picker = Bundle.main.loadNibNamed("PartnerTimePicker", owner: nil, options: nil)?.first as! PartnerTimePicker
@@ -243,6 +242,9 @@ class AuthResubmitInvestAppliacneViewController: UIViewController, ImagePickerDe
         loadAndSavePickerData()
         
         invAgencyView.isHidden = true
+        
+        // MARK:- assign view model after UIObject initialized
+        reSubmitViewModel = reSubmitSegueReceiveModel
 
     }
     
@@ -364,7 +366,7 @@ class AuthResubmitInvestAppliacneViewController: UIViewController, ImagePickerDe
             if result!["code"] as! Int == 200 {
                 // TODO:- save identity data into an array
                 weakSelf?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
-                    weakSelf?.navigationController?.popViewController(animated: true)
+                    weakSelf?.navigationController?.popToRootViewController(animated: true)
                 })
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)

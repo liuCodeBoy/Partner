@@ -36,7 +36,7 @@ extension NetWorkTool {
             ] as [String : Any]
         post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
             //upload image
-            let cateName = "image"
+            let cateName = "logo"
             if let imageData = UIImageJPEGRepresentation(logo, 0.5){
                 let imageName = self?.getNowTime()
                 formData.appendPart(withFileData: imageData, name: cateName, fileName: imageName!, mimeType: "image/png")
