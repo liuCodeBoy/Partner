@@ -11,6 +11,8 @@ import Lightbox
 
 class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePickerDelegate {
     
+    var containerSegue: UIStoryboardSegue?
+    
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -108,10 +110,12 @@ class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePick
         present(picker, animated: true, completion: nil)
     }
     @IBAction func enterpriseTypeClicked(_ sender: UIButton) {
-        popupSecondaryPicker(bindingLabel: entTypeLbl, type: .enterpriseType, model: viewModel, componentDict: typeData)
+        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
+        mainVC.popupSecondaryPicker(bindingLabel: entTypeLbl, type: .enterpriseType, model: viewModel, componentDict: typeData)
     }
     @IBAction func areaClicked(_ sender: UIButton) {
-        popupSecondaryPicker(bindingLabel: entLocationLbl, type: .enterpriseLocation, model: viewModel, componentDict: areaData)
+        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
+        mainVC.popupSecondaryPicker(bindingLabel: entLocationLbl, type: .enterpriseLocation, model: viewModel, componentDict: areaData)
     }
     
     @IBAction func showInputVC(_ sender: UIButton) {
@@ -223,8 +227,28 @@ class AuthResubmitEnterpriseApplianceViewController: UIViewController, ImagePick
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadModelData()
         loadAndSavePickerData()
         
+    }
+    
+    func loadModelData() {
+        guard authID != nil else { return }
+        
+        NetWorkTool.shareInstance.getAuthEditInfo(token: access_token!, type: 2, id: authID!, finished: { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save data to model
+                weakSelf?.reSubmitViewModel = AuthEnterpriseInfoModel.mj_object(withKeyValues: result!["result"])
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        })
     }
     
     func loadAndSavePickerData() {

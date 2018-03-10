@@ -22,7 +22,7 @@ class CopyModel: UIViewController {
                 return
             }
             if result!["code"] as! Int == 200 {
-                // TODO:- save identity data into an array
+                // TODO:- save data into model 
                 weakSelf?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
                     weakSelf?.navigationController?.popViewController(animated: true)
                 })

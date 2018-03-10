@@ -40,10 +40,6 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
         present(picker, animated: true, completion: nil)
     }
     
-    @IBAction func saveBtnClicked(_ sender: UIButton) {
-        
-    }
-    
     @IBAction func identityClicked(_ sender: UIButton) {
         popupPartnerPicker(bindingLabel: identityLbl, type: .projIdentity, model: projModel, componentDict: identityData)
     }
@@ -62,7 +58,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
         
     }
     
-    @IBAction func createProjBtnClicked(_ sender: ShadowButton) {
+    @IBAction func createProjBtnClicked(_ sender: UIButton) {
         // check wheather the infomation is completed
         presentConfirmationAlert(hint: "确认要创建项目吗") { [weak self](_) in
             // MARK:- create project
@@ -243,6 +239,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             weak var weakSelf = self
             for img in images {
                 weakSelf?.projectLogoImg.image = img
+                weakSelf?.projModel.logo = img
             }
         }
     }

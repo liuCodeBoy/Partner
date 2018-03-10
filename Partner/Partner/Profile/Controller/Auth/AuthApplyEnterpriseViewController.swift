@@ -11,6 +11,8 @@ import Lightbox
 
 class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
     
+    var containerSegue: UIStoryboardSegue?
+    
     var viewModel: AuthModel = AuthModel()
     
     var entViewModel: AuthEnterpriseInfoModel? {
@@ -98,6 +100,7 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
     var areaData = [[String : AnyObject]]()
     var typeData = [[String : AnyObject]]()
     
+    @IBOutlet weak var enterpriseAuthScrollView: UIScrollView!
     @IBOutlet weak var entLicenseImg            : RoundRectImage!
     @IBOutlet weak var entLicenseImgBtn         : ShadowButton!
     @IBOutlet weak var entLogoImg               : RoundRectImage!
@@ -133,6 +136,9 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
     @IBOutlet weak var inReviewBtn: ShadowButton!
     @IBOutlet weak var rejectedView: UIView!
     
+    @IBOutlet weak var inReviewHCons: NSLayoutConstraint!
+    @IBOutlet weak var rejectHCons: NSLayoutConstraint!
+    
     @IBAction func uploadImg(_ sender: ShadowButton) {
         // change status to not selected
         entLicenseImgBtn.isSelected = false
@@ -147,10 +153,12 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
         present(picker, animated: true, completion: nil)
     }
     @IBAction func enterpriseTypeClicked(_ sender: UIButton) {
-        popupSecondaryPicker(bindingLabel: entTypeLbl, type: .enterpriseType, model: viewModel, componentDict: typeData)
+        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
+        mainVC.popupSecondaryPicker(bindingLabel: entTypeLbl, type: .enterpriseType, model: viewModel, componentDict: typeData)
     }
     @IBAction func areaClicked(_ sender: UIButton) {
-        popupSecondaryPicker(bindingLabel: entLocationLbl, type: .enterpriseLocation, model: viewModel, componentDict: areaData)
+        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
+        mainVC.popupSecondaryPicker(bindingLabel: entLocationLbl, type: .enterpriseLocation, model: viewModel, componentDict: areaData)
     }
 
     @IBAction func showInputVC(_ sender: UIButton) {
@@ -267,6 +275,11 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
         
         eenterpriseAuthScrollView.isHidden = true
         
+        if isIPHONEX {
+            inReviewHCons.constant += 14
+            rejectHCons.constant += 14
+        }
+        
     }
     
     func loadAndSavePickerData() {
@@ -327,6 +340,7 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
                 if result!["result"]!["auth"] as! Int == 0 {
                     // not verified
                     // TODO:- hide cover view
+                    weakSelf?.enterpriseAuthScrollView.isHidden = false
                     weakSelf?.eenterpriseAuthScrollView.isHidden = true
                 } else {
                     // verified
@@ -334,6 +348,7 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
                     let resultDict = result!["result"] as! [String : AnyObject]
                     weakSelf?.entViewModel = AuthEnterpriseInfoModel.mj_object(withKeyValues: resultDict)
                     // TODO:- show infomation
+                    weakSelf?.enterpriseAuthScrollView.isHidden = true
                     weakSelf?.eenterpriseAuthScrollView.isHidden = false
                 }
             } else {
@@ -433,6 +448,7 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
             dest.segue = segue
         } else if destnation is AuthResubmitEnterpriseApplianceViewController {
             let dest = destnation as! AuthResubmitEnterpriseApplianceViewController
+            dest.containerSegue = containerSegue
             dest.reSubmitViewModel = entViewModel
             dest.authID = entViewModel?.compAuthId as? Int
         }

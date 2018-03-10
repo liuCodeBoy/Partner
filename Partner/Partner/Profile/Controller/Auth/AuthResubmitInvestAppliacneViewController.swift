@@ -11,6 +11,8 @@ import Lightbox
 
 class AuthResubmitInvestAppliacneViewController: UIViewController, ImagePickerDelegate {
     
+    var containerSegue: UIStoryboardSegue?
+    
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -195,10 +197,12 @@ class AuthResubmitInvestAppliacneViewController: UIViewController, ImagePickerDe
         present(picker, animated: true, completion: nil)
     }
     @IBAction func financingRoundClicked(_ sender: UIButton) {
-        popupPartnerPicker(bindingLabel: invRoundLbl, type: .authFinancing, model: viewModel, componentDict: financingData)
+        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
+        mainVC.popupPartnerPicker(bindingLabel: invRoundLbl, type: .authFinancing, model: viewModel, componentDict: financingData)
     }
     @IBAction func identityClicked(_ sender: UIButton) {
-        popupPartnerPicker(bindingLabel: invIdentityLbl, type: .authIdentity, model: viewModel, componentDict: identityData)
+        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
+        mainVC.popupPartnerPicker(bindingLabel: invIdentityLbl, type: .authIdentity, model: viewModel, componentDict: identityData)
     }
     @IBAction func workTimeClicked(_ sender: UIButton) {
         let picker = Bundle.main.loadNibNamed("PartnerTimePicker", owner: nil, options: nil)?.first as! PartnerTimePicker

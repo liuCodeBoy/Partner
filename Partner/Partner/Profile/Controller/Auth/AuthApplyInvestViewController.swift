@@ -11,28 +11,32 @@ import Lightbox
 
 class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
     
+    var containerSegue: UIStoryboardSegue?
+    
     var viewModel: AuthModel = AuthModel()
     
     var invViewModel: AuthInvestInfoModel? {
         didSet {
             // MARK:- assign value to the label etc.
             if let imgUrl = invViewModel?.imgUrl {
-                invAvatarImg.sd_setImage(with: URL.init(string: imgUrl), placeholderImage: #imageLiteral(resourceName: "profile_my_project_camera_big"), options: .continueInBackground, completed: nil)
+                iinvAvatarImg.sd_setImage(with: URL.init(string: imgUrl), placeholderImage: #imageLiteral(resourceName: "profile_my_project_camera_big"), options: .continueInBackground, completed: nil)
             }
             if let nameCardUrl = invViewModel?.nameCardUrl {
-                invCardImg.sd_setImage(with: URL.init(string: nameCardUrl), placeholderImage: #imageLiteral(resourceName: "profile_my_project_business_card_big"), options: .continueInBackground, completed: nil)
+                iinvCardImg.sd_setImage(with: URL.init(string: nameCardUrl), placeholderImage: #imageLiteral(resourceName: "profile_my_project_business_card_big"), options: .continueInBackground, completed: nil)
             }
             if let inveRound = invViewModel?.inveRound {
-                invRoundLbl.text = inveRound
+                iinvRoundLbl.text = inveRound
             }
             if let realName = invViewModel?.realName {
-                invRealNameLbl.text = realName
+                iinvRealNameLbl.text = realName
             }
             if let inveIndentity = invViewModel?.inveIndentity {
                 if inveIndentity.hasPrefix("机构") {
                     iinvIdentityBtn.setTitle("机构", for: .normal)
+                    iinvAgencyView.isHidden = false
                 } else if inveIndentity.hasPrefix("个人") {
                     iinvIdentityBtn.setTitle("个人", for: .normal)
+                    iinvAgencyView.isHidden = true
                 }
             }
             if let industryList = invViewModel?.industryList {
@@ -53,16 +57,16 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
                 }
             }
             if let phone = invViewModel?.phone {
-                invPhoneNumLbl.text = phone
+                iinvPhoneNumLbl.text = phone
             }
             if let mail = invViewModel?.mail {
-                invEmailLbl.text = mail
+                iinvEmailLbl.text = mail
             }
             if let instName = invViewModel?.instName {
-                invAgencyNameLbl.text = instName
+                iinvAgencyNameLbl.text = instName
             }
             if let instJobName = invViewModel?.instJobName {
-                invAgencyJobLbl.text = instJobName
+                iinvAgencyJobLbl.text = instJobName
             }
             if let auth = invViewModel?.auth {
                 // 0未认证 1认证中 2通过 3不通过
@@ -87,7 +91,7 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
                 }
             }
             if let time = invViewModel?.inTime {
-                invAgencyOnWorkTimeLbl.text = time
+                iinvAgencyOnWorkTimeLbl.text = time
             }
         }
     }
@@ -106,6 +110,7 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
         }
     }
     
+    @IBOutlet weak var investAuthScrollView     : UIScrollView!
     @IBOutlet weak var invAvatarImg             : RoundRectImage!
     @IBOutlet weak var invAvatarImgBtn          : ShadowButton!
     @IBOutlet weak var invCardImg               : RoundRectImage!
@@ -142,6 +147,9 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
     @IBOutlet weak var inReviewView: UIView!
     @IBOutlet weak var inReviewBtn: ShadowButton!
     @IBOutlet weak var rejectedView: UIView!
+    
+    @IBOutlet weak var inReviewHCons: NSLayoutConstraint!
+    @IBOutlet weak var rejectHCons: NSLayoutConstraint!
     
     @IBAction func showInputVC(_ sender: UIButton) {
         
@@ -219,10 +227,12 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
         present(picker, animated: true, completion: nil)
     }
     @IBAction func financingRoundClicked(_ sender: UIButton) {
-        popupPartnerPicker(bindingLabel: invRoundLbl, type: .authFinancing, model: viewModel, componentDict: financingData)
+        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
+        mainVC.popupPartnerPicker(bindingLabel: invRoundLbl, type: .authFinancing, model: viewModel, componentDict: financingData)
     }
     @IBAction func identityClicked(_ sender: UIButton) {
-        popupPartnerPicker(bindingLabel: invIdentityLbl, type: .authIdentity, model: viewModel, componentDict: identityData)
+        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
+        mainVC.popupPartnerPicker(bindingLabel: invIdentityLbl, type: .authIdentity, model: viewModel, componentDict: identityData)
     }
     @IBAction func workTimeClicked(_ sender: UIButton) {
         let picker = Bundle.main.loadNibNamed("PartnerTimePicker", owner: nil, options: nil)?.first as! PartnerTimePicker
@@ -249,15 +259,23 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
             invAgencyOnWorkTimeLbl.text = date
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        judgeAuthStatus()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadAndSavePickerData()
-        judgeAuthStatus()
         
         invAgencyView.isHidden = true
         iinvestAuthScrollView.isHidden = true
+        
+        if isIPHONEX {
+            inReviewHCons.constant += 14
+            rejectHCons.constant += 14
+        }
 
     }
     
@@ -322,15 +340,21 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
                 // TODO:- judge the auth status
                 if result!["result"]!["auth"] as! Int == 0 {
                     // not verified
-                    // TODO:- hide cover view
+                    // TODO:- hide cover view and button view
+                    weakSelf?.investAuthScrollView.isHidden = false
                     weakSelf?.iinvestAuthScrollView.isHidden = true
+                    weakSelf?.rejectedView.isHidden = true
+                    weakSelf?.inReviewView.isHidden = true
                 } else {
                     // verified
                     // TODO:- save to model
                     let resultDict = result!["result"] as! [String : AnyObject]
                     weakSelf?.invViewModel = AuthInvestInfoModel.mj_object(withKeyValues: resultDict)
                     // TODO:- show infomation
+                    weakSelf?.investAuthScrollView.isHidden = true
                     weakSelf?.iinvestAuthScrollView.isHidden = false
+                    weakSelf?.rejectedView.isHidden = false
+                    weakSelf?.inReviewView.isHidden = false
                 }
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
@@ -434,6 +458,7 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
             dest.segue = segue
         } else if destnation is AuthResubmitInvestAppliacneViewController {
             let dest = destnation as! AuthResubmitInvestAppliacneViewController
+            dest.containerSegue = containerSegue
             dest.reSubmitViewModel = invViewModel
             dest.authID = invViewModel?.inveAuthId as? Int
         }

@@ -318,6 +318,9 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aQ-s7-mTJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                                        <connections>
+                                                            <segue destination="e9e-Cc-lbX" kind="show" id="h38-Pk-8Nm"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1927,7 +1930,7 @@
                 <viewControllerPlaceholder storyboardName="Auth" id="DE1-Yd-BfS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xjm-0f-SMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="189"/>
+            <point key="canvasLocation" x="1188" y="171"/>
         </scene>
         <!--ProfileEdit-->
         <scene sceneID="f6y-vw-snD">
@@ -1935,7 +1938,15 @@
                 <viewControllerPlaceholder storyboardName="ProfileEdit" id="XRu-AO-uRl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqT-vt-vzm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1216" y="244"/>
+            <point key="canvasLocation" x="1216" y="262"/>
+        </scene>
+        <!--ProjectCollection-->
+        <scene sceneID="mKg-wP-GeK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProjectCollection" id="e9e-Cc-lbX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LCA-YR-3Qz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249" y="207"/>
         </scene>
         <!--MyHomePage-->
         <scene sceneID="OGl-UK-efn">
@@ -1943,7 +1954,7 @@
                 <viewControllerPlaceholder storyboardName="MyHomePage" id="CJ0-Bn-fVm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2b-5N-9V6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232" y="114"/>
+            <point key="canvasLocation" x="1230" y="94"/>
         </scene>
         <!--MyProject-->
         <scene sceneID="sUp-T4-u5b">
@@ -1951,7 +1962,7 @@
                 <viewControllerPlaceholder storyboardName="MyProject" id="yFt-b3-gE6" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7MA-rg-KZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="151"/>
+            <point key="canvasLocation" x="1213" y="132"/>
         </scene>
         <!--我的-->
         <scene sceneID="fSr-Y6-xDu">
