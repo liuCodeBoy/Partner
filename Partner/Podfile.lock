@@ -32,6 +32,7 @@ PODS:
   - NVActivityIndicatorView (4.0.0):
     - NVActivityIndicatorView/Presenter (= 4.0.0)
   - NVActivityIndicatorView/Presenter (4.0.0)
+  - SCLAlertView (0.8)
   - SDWebImage (4.2.1):
     - SDWebImage/Core (= 4.2.1)
   - SDWebImage/Core (4.2.1)
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - MJRefresh
   - NoticeBar
   - NVActivityIndicatorView
+  - SCLAlertView
   - SDWebImage
 
 SPEC CHECKSUMS:
@@ -63,8 +65,9 @@ SPEC CHECKSUMS:
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   NoticeBar: 7b824879ef70398a6ba2e01338e2d8bedb2c9d4e
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
 
-PODFILE CHECKSUM: 664baba448a7e3497a83df596c6a4a5a834fcc98
+PODFILE CHECKSUM: d64d9a9ac80849308a419d52208602beb21a0140
 
 COCOAPODS: 1.4.0

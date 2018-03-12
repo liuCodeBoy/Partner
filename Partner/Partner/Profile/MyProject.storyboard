@@ -325,7 +325,7 @@
                                             <outletCollection property="tagLbl" destination="a8R-J0-8Ug" collectionClass="NSMutableArray" id="ndT-qb-grU"/>
                                             <outletCollection property="tagLbl" destination="Lch-gF-TSD" collectionClass="NSMutableArray" id="1Az-wR-gyM"/>
                                             <outletCollection property="tagLbl" destination="uvM-L1-CyL" collectionClass="NSMutableArray" id="0PD-Ih-Iad"/>
-                                            <segue destination="AD3-TN-oHN" kind="show" id="kBd-Oe-bWH">
+                                            <segue destination="AD3-TN-oHN" kind="show" identifier="MPEDetialInfoSegue" id="kBd-Oe-bWH">
                                                 <nil key="action"/>
                                             </segue>
                                         </connections>
@@ -649,7 +649,7 @@
                                     <constraint firstItem="d1F-Zr-rW5" firstAttribute="leading" secondItem="gDE-fA-9xw" secondAttribute="leading" constant="10" id="nkC-k5-LOd"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bQk-KF-9rD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bQk-KF-9rD" customClass="ProjectEditlTableView" customModule="Partner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -684,6 +684,9 @@
                                                                 <constraint firstAttribute="width" constant="40" id="VgE-ci-XqZ"/>
                                                             </constraints>
                                                             <state key="normal" image="profile_my_project_edit"/>
+                                                            <connections>
+                                                                <action selector="editClicked:" destination="ytL-yt-Nwb" eventType="touchUpInside" id="jrJ-SZ-XOu"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="projName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOx-Jr-x4a">
                                                             <rect key="frame" x="133.33333333333334" y="50" width="85" height="28"/>
@@ -885,10 +888,10 @@
                                             <outlet property="projLogoImg" destination="Fyj-hc-7Gt" id="8DB-ih-UiW"/>
                                             <outlet property="projNameLbl" destination="oOx-Jr-x4a" id="w5n-66-BI7"/>
                                             <outlet property="projStatusLbl" destination="NKP-bR-dqF" id="JZZ-CA-y8W"/>
-                                            <outlet property="tag1Lbl" destination="fzp-g9-Ca0" id="KVO-9c-xSW"/>
-                                            <outlet property="tag2Lbl" destination="Dvz-Nd-I6h" id="hkU-2P-n0m"/>
-                                            <outlet property="tag3Lbl" destination="4hx-04-qqY" id="SZU-NZ-ryi"/>
                                             <outlet property="viewLbl" destination="I0V-Zm-l7g" id="aqF-xx-XUH"/>
+                                            <outletCollection property="tagLbl" destination="fzp-g9-Ca0" collectionClass="NSMutableArray" id="Qjb-Hw-dQf"/>
+                                            <outletCollection property="tagLbl" destination="Dvz-Nd-I6h" collectionClass="NSMutableArray" id="F5c-3x-cUH"/>
+                                            <outletCollection property="tagLbl" destination="4hx-04-qqY" collectionClass="NSMutableArray" id="xP0-87-nZu"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditMembersBriefTableViewCell" rowHeight="60" id="H1b-uM-CYD" customClass="ProjectEditMembersBriefTableViewCell" customModule="Partner" customModuleProvider="target">
@@ -1907,7 +1910,7 @@
                         <viewLayoutGuide key="safeArea" id="GfK-Fi-J8m"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="bQk-KF-9rD" id="RDU-Zp-gLX"/>
+                        <outlet property="tableView" destination="bQk-KF-9rD" id="CI3-ad-Mnf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ePm-Ki-Enu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4202,7 +4205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="80V-Qt-4x6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5612" y="1260"/>
+            <point key="canvasLocation" x="5602" y="1261"/>
         </scene>
     </scenes>
     <resources>
@@ -4222,9 +4225,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4K2-Dz-dxN"/>
-        <segue reference="vqI-3G-G27"/>
-        <segue reference="kFi-PQ-dux"/>
-        <segue reference="L5x-kz-n3a"/>
+        <segue reference="JWp-2j-dqt"/>
+        <segue reference="DxQ-Aa-YgY"/>
+        <segue reference="wvX-dX-IFq"/>
         <segue reference="ISa-ZH-agr"/>
     </inferredMetricsTieBreakers>
 </document>

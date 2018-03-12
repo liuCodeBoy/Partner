@@ -1787,7 +1787,6 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqy-QR-AZC">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                                         <connections>
-                                                            <action selector="industryClicked:" destination="Mli-ot-5If" eventType="touchUpInside" id="YIQ-KK-f5N"/>
                                                             <segue destination="Pbm-xk-pg3" kind="show" identifier="fieldSegue" id="onq-PV-p7v"/>
                                                         </connections>
                                                     </button>
@@ -1965,6 +1964,7 @@
                         <outlet property="comFullNameLbl" destination="yC4-Qu-xgd" id="O2D-wV-sb7"/>
                         <outlet property="contactNameLbl" destination="Lfu-LH-khb" id="CXA-ad-zSX"/>
                         <outlet property="contactPhoneLbl" destination="Vom-Av-NFf" id="9vb-BX-HCP"/>
+                        <outlet property="creatProjBtn" destination="Fzo-M4-LAL" id="mVj-ZY-5Cu"/>
                         <outlet property="emailLbl" destination="9Yn-Ov-ZUt" id="6Bo-2y-Zi0"/>
                         <outlet property="financingLbl" destination="HUg-Sl-jqR" id="v15-kz-Qgi"/>
                         <outlet property="identityLbl" destination="9AD-Mu-Za5" id="RNC-I8-awb"/>
@@ -3843,6 +3843,6 @@
         <image name="service_profile_background" width="375" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k9l-rJ-ixa"/>
+        <segue reference="9f9-zb-Zur"/>
     </inferredMetricsTieBreakers>
 </document>
