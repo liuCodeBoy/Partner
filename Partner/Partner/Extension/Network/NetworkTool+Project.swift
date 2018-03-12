@@ -93,9 +93,9 @@ extension NetWorkTool {
     // MARK:- 6.4.修改市场分析
     func updateOperationState(token             : String,
                               id                : Int,
-                              projMonthIncome   : String,
-                              projMonthUser     : String,
-                              projTotalUser     : String,
+                              projMonthIncome   : Int,
+                              projMonthUser     : Int,
+                              projTotalUser     : Int,
                               projDataRemark    : String,
                               finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         let urlString = "http://47.97.110.89/qm/project/api/updateOperationState.do"
@@ -275,16 +275,16 @@ extension NetWorkTool {
                      roundId      : Int,
                      finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         
-        let urlString = "http://47.97.110.89/qm/project/api/create.do"
+        let urlString = "http://47.97.110.89/qm/project/api/edit.do"
         let parameters = ["token"               : token,
                           "fields"              : fields,
-                          "id"                  : id,
+                          "project.id"          : id,
                           "project.projName"    : projName,
                           "project.projCompName": projCompName,
                           "project.projConnName": projConnName,
                           "project.projPhone"   : projPhone,
                           "project.projMail"    : projMail,
-                          "project.idenIdds"    : idenId,
+                          "project.idenId"      : idenId,
                           "project.areaId"      : areaId,
                           "project.roundId"     : roundId
                          ] as [String : Any]
@@ -322,7 +322,7 @@ extension NetWorkTool {
     
     // MARK:- 6.16.我投资的项目列表
     func getMyInvestProjectList(token: String, pageNum: Int, pageSize: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://47.97.110.89/qm/project/api/getMyProjectList.do"
+        let urlString = "http://47.97.110.89/qm/project/api/getMyInvestProjectList.do"
         let parameters = ["token" : token, "pageNum" : pageNum, "pageSize" : pageSize] as [String : Any]
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             guard let resultDict = result as? [String : AnyObject] else {
@@ -469,7 +469,7 @@ extension NetWorkTool {
     }
     
     // MARK:- 6.25.编辑项目成员
-    func addMember(token        : String,
+    func editMember(token       : String,
                    image        : UIImage?,
                    id           : Int,
                    membName     : String,
@@ -478,7 +478,7 @@ extension NetWorkTool {
                    membDesc     : String?,
                    idenId       : Int,
                    finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://47.97.110.89/qm/project/api/addMember.do"
+        let urlString = "http://47.97.110.89/qm/project/api/editMember.do"
         var parameters = ["token"               : token,
                           "member.id"           : id,
                           "member.membName"     : membName,
@@ -512,7 +512,7 @@ extension NetWorkTool {
     }
     
     // MARK:- 6.26.项目成员列表
-    func getProjectPublic(token: String, projectId: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+    func getMemberList(token: String, projectId: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         let urlString = "http://47.97.110.89/qm/project/api/getMemberList.do"
         let parameters = ["token" : token, "projectId" : projectId] as [String : Any]
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
@@ -594,7 +594,7 @@ extension NetWorkTool {
     
     // MARK:- 6.31.我收藏的项目列表
     func getMyFocusProjectList(token : String, pageNum : Int, pageSize : Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://47.97.110.89/qm/project/api/getProjectList.do"
+        let urlString = "http://47.97.110.89/qm/project/api/getMyFocusProjectList.do"
         let parameters = ["token" : token, "pageNum" : pageNum, "pageSize" : pageSize] as [String : Any]
         
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
@@ -687,6 +687,19 @@ extension NetWorkTool {
     // MARK:- 6.39.删除投资申请
     func deleteFinancingApply(token: String, userId: Int, projectId: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         let urlString = "http://47.97.110.89/qm/project/api/deleteFinancingApply.do"
+        let parameters = ["token" : token, "userId" : userId, "projectId" : projectId] as [String : Any]
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            finished(resultDict, error)
+        }
+    }
+    
+    // MARK:- 6.40.投递项目
+    func deliverProject(token: String, userId: Int, projectId: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http://47.97.110.89/qm/project/api/deliverProject.do"
         let parameters = ["token" : token, "userId" : userId, "projectId" : projectId] as [String : Any]
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             guard let resultDict = result as? [String : AnyObject] else {

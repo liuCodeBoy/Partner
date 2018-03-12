@@ -47,6 +47,7 @@ class MyProjectViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {

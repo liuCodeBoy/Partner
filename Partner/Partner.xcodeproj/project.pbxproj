@@ -10,6 +10,8 @@
 		3910F848205110ED00B670C4 /* NetworkTool+Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3910F847205110ED00B670C4 /* NetworkTool+Feedback.swift */; };
 		39123D94204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39123D93204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift */; };
 		3968A126204E302700A5DE22 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3968A125204E302700A5DE22 /* AuthModel.swift */; };
+		396B2049205652BB00E1562D /* ProjectEditTeamMemberTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396B2048205652BB00E1562D /* ProjectEditTeamMemberTableView.swift */; };
+		396B204D205656DF00E1562D /* ProjectEditSingleTeamMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396B204C205656DF00E1562D /* ProjectEditSingleTeamMemberTableViewCell.swift */; };
 		39837FCF2051240C002BC382 /* Entension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39837FCE2051240C002BC382 /* Entension+UIImage.swift */; };
 		39837FD1205130C6002BC382 /* PartnerEmpty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39837FD0205130C6002BC382 /* PartnerEmpty.xib */; };
 		39837FD3205136AE002BC382 /* AuthReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39837FD2205136AE002BC382 /* AuthReasonViewController.swift */; };
@@ -251,6 +253,8 @@
 		3910F847205110ED00B670C4 /* NetworkTool+Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkTool+Feedback.swift"; sourceTree = "<group>"; };
 		39123D93204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectCreateIndustrySelectViewController.swift; sourceTree = "<group>"; };
 		3968A125204E302700A5DE22 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		396B2048205652BB00E1562D /* ProjectEditTeamMemberTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditTeamMemberTableView.swift; sourceTree = "<group>"; };
+		396B204C205656DF00E1562D /* ProjectEditSingleTeamMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditSingleTeamMemberTableViewCell.swift; sourceTree = "<group>"; };
 		39837FCE2051240C002BC382 /* Entension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entension+UIImage.swift"; sourceTree = "<group>"; };
 		39837FD0205130C6002BC382 /* PartnerEmpty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerEmpty.xib; sourceTree = "<group>"; };
 		39837FD2205136AE002BC382 /* AuthReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthReasonViewController.swift; sourceTree = "<group>"; };
@@ -510,6 +514,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		396B204A205652D500E1562D /* MyProject */ = {
+			isa = PBXGroup;
+			children = (
+				39FE111E2053D59E0060CD76 /* ProjectEditlTableView.swift */,
+				396B204B205652E700E1562D /* Edit */,
+				39FE111C2053911C0060CD76 /* ProjectListTableView.swift */,
+			);
+			path = MyProject;
+			sourceTree = "<group>";
+		};
+		396B204B205652E700E1562D /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				396B2048205652BB00E1562D /* ProjectEditTeamMemberTableView.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
 		39A8CE7C2052E9B500522E2E /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,8 +589,7 @@
 		39FE111B205390AD0060CD76 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				39FE111C2053911C0060CD76 /* ProjectListTableView.swift */,
-				39FE111E2053D59E0060CD76 /* ProjectEditlTableView.swift */,
+				396B204A205652D500E1562D /* MyProject */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -1307,6 +1328,7 @@
 			isa = PBXGroup;
 			children = (
 				D3034647201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift */,
+				396B204C205656DF00E1562D /* ProjectEditSingleTeamMemberTableViewCell.swift */,
 				D3034649201ECFFE007A37A5 /* ProjectEditMembersBriefTableViewCell.swift */,
 				D303464D201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift */,
 				D39F14DD201EF68E003F3BC5 /* ProjectEditMarketAnalysisTableViewCell.swift */,
@@ -1921,6 +1943,7 @@
 				D31C3CAD2040057300E97460 /* ProfileInfoModel.swift in Sources */,
 				B687ABA620440CC0004C915A /* CircleReportVC.swift in Sources */,
 				D3E78EB42021912F0006C31F /* KeyboardBackgroundCoverView.swift in Sources */,
+				396B204D205656DF00E1562D /* ProjectEditSingleTeamMemberTableViewCell.swift in Sources */,
 				D34C6AF5202D43C700EA225E /* MyHomePageExperiencesTableViewSectionHeaderCell.swift in Sources */,
 				B6D7F80F204169370044B31C /* CircleSettingInfoModel.swift in Sources */,
 				D3D5660A2052694A005C8E75 /* CircleListMomentCell.swift in Sources */,
@@ -1941,6 +1964,7 @@
 				D35A9D1B203FB18C00408B9E /* ServiceProjectBriefTableViewCell.swift in Sources */,
 				B6D7F80B20415DC80044B31C /* CircleManageVC.swift in Sources */,
 				39C1C788204D3E8300D3F2EF /* AuthApplyUploadViewController.swift in Sources */,
+				396B2049205652BB00E1562D /* ProjectEditTeamMemberTableView.swift in Sources */,
 				B65BE18A2029D653004407B1 /* LoopView.swift in Sources */,
 				D303464E201EF07B007A37A5 /* ProjectEditIntroductionTableViewCell.swift in Sources */,
 				3968A126204E302700A5DE22 /* AuthModel.swift in Sources */,

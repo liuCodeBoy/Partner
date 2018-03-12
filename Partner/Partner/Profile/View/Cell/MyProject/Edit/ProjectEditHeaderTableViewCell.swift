@@ -7,9 +7,11 @@
 
 import UIKit
 
+let pushEditProjBasicInfoNotification = "com.Partner.project.edit.push"
+
 class ProjectEditHeaderTableViewCell: UITableViewCell {
     
-    var pushEditProjInfoClosure: ((_ model: ProjectListModel) -> Void)?
+    var pushEditProjInfoClosure: ((_ model: ProjectBasicInfoModel) -> Void)?
 
     @IBOutlet weak var projLogoImg: UIImageView!
     @IBOutlet weak var projNameLbl: UILabel!
@@ -24,9 +26,14 @@ class ProjectEditHeaderTableViewCell: UITableViewCell {
     }
 
     @IBAction func editClicked(_ sender: UIButton) {
-        if pushEditProjInfoClosure != nil {
-            
+//        if pushEditProjInfoClosure != nil && viewModel != nil {
+//            pushEditProjInfoClosure!(viewModel!)
+//        }
+        
+        if let viewModel = viewModel {
+            NotificationCenter.default.post(name: NSNotification.Name.init(pushEditProjBasicInfoNotification), object: viewModel)
         }
+        
     }
     
     var viewModel: ProjectBasicInfoModel? {
@@ -57,11 +64,22 @@ class ProjectEditHeaderTableViewCell: UITableViewCell {
                 } else {
                     let count = fieldsDictArray.count
                     if count <= 3 {
-                        for i in 0..<count {
-                            tagLbl[i].text = (fieldsDictArray[i] as! [String : AnyObject])["fieldName"] as? String
-                        }
-                        for j in count..<2 {
-                            tagLbl[j].isHidden = true
+                        if count == 3 {
+                            for lbl in tagLbl {
+                                lbl.isHidden = false
+                            }
+                            for i in 0..<count {
+                                tagLbl[i].text = (fieldsDictArray[i] as! [String : AnyObject])["fieldName"] as? String
+                                tagLbl[i].isHidden = false
+                            }
+                        } else {
+                            for i in 0..<count {
+                                tagLbl[i].text = (fieldsDictArray[i] as! [String : AnyObject])["fieldName"] as? String
+                                tagLbl[i].isHidden = false
+                            }
+                            for j in count..<3 {
+                                tagLbl[j].isHidden = true
+                            }
                         }
                     } else {
                         for k in 0..<3 {
