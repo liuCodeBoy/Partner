@@ -20,7 +20,44 @@ class ProjectModel: NSObject {
     @objc var idenId           : NSNumber?
     @objc var areaId           : NSNumber?
     @objc var roundId          : NSNumber?
+    
+}
 
+class ProjectBasicInfoModel: NSObject {
+    
+    // MARK:- view project info
+    @objc var projectId        : NSNumber?
+    @objc var logoUrl          : String?
+    @objc var projName         : String?
+    @objc var compName         : String?
+    @objc var connName         : String?
+    @objc var phone            : String?
+    @objc var mail             : String?
+    @objc var idenId           : NSNumber?
+    @objc var idenName         : String?
+    @objc var areaId           : NSNumber?
+    @objc var areaName         : String?
+    @objc var roundId          : NSNumber?
+    @objc var roundName        : String?
+    // id, fieldName
+    @objc var fields           :[NSDictionary]?
+    
+    @objc var status           : NSNumber?
+    ////////////////
+    @objc var operation        : NSNumber?
+    @objc var foucsNum         : NSNumber?
+    @objc var scanNum          : NSNumber?
+    @objc var applyNum         : NSNumber?
+    
+}
+
+class ProjectDetialModel: NSObject {
+    
+    // MARK:- basic info
+    @objc var basicInfo         : ProjectBasicInfoModel?
+    
+    
+    
 }
 
 class ProjectListModel: NSObject {
@@ -40,5 +77,3 @@ class ProjectListModel: NSObject {
     @objc var desc          : String?
 
 }
-
-

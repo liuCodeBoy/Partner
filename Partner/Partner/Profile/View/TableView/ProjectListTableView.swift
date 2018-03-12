@@ -7,7 +7,11 @@
 
 import UIKit
 
+let passProjectIDNOtification = "com.Partner.projectID.pass"
+
 class ProjectListTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
+    
+    var passIDClosure: ((_ projID: Int) -> Void)?
     
     var modelArray: [ProjectListModel] = [ProjectListModel]() {
         didSet {
@@ -35,6 +39,23 @@ class ProjectListTableView: UITableView, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 248
     }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        let id = modelArray[indexPath.row].projectId as! Int
+        
+        if passIDClosure != nil {
+            passIDClosure!(id)
+        }
+        
+        return indexPath
+    }
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let id = modelArray[indexPath.row].projectId as! Int
+//        NotificationCenter.default.post(name: NSNotification.Name.init(passProjectIDNOtification), object: nil, userInfo: ["projectID" : id])
+//
+//    }
     
 }
 

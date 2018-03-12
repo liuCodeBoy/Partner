@@ -11,6 +11,58 @@ import Lightbox
 
 class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegate {
     
+    var isEdit: Bool = false
+    
+    var editViewModel: ProjectBasicInfoModel? {
+        didSet {
+            if let logo = editViewModel?.logoUrl {
+                projectLogoImg.sd_setImage(with: URL.init(string: logo), placeholderImage: #imageLiteral(resourceName: "profile_my_project_camera_small"), options: .continueInBackground, completed: nil)
+            }
+            if let name = editViewModel?.projName {
+                projNameLbl.text = name
+                projModel.projName = name
+            }
+            if let companyName = editViewModel?.compName {
+                comFullNameLbl.text = companyName
+                projModel.projCompName = companyName
+            }
+            if let contact = editViewModel?.connName {
+                contactNameLbl.text = contact
+                projModel.projConnName = contact
+            }
+            if let phone = editViewModel?.phone {
+                contactPhoneLbl.text = phone
+                projModel.projPhone = phone
+            }
+            if let mail = editViewModel?.mail {
+                emailLbl.text = mail
+                projModel.projMail = mail
+            }
+            if let identity = editViewModel?.idenName, let id = editViewModel?.idenId {
+                identityLbl.text = identity
+                projModel.idenId = id
+            }
+            if let area = editViewModel?.areaName, let id = editViewModel?.areaId {
+                locationLbl.text = area
+                projModel.areaId = id
+            }
+            if let fieldDictArray = editViewModel?.fields {
+                industryLbl.text = "\(fieldDictArray.count)个"
+                var str = ""
+                for dict in fieldDictArray {
+                    let id = dict["id"] as! Int
+                    str += "\(id),"
+                }
+                str.removeLast(1)
+                projModel.fields = str
+            }
+            if let round = editViewModel?.roundName, let id = editViewModel?.roundId {
+                financingLbl.text = round
+                projModel.roundId = id
+            }
+        }
+    }
+    
     var projModel: ProjectModel = ProjectModel()
     
     var identityData = [[Int : String]]()
@@ -49,26 +101,37 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             , model: projModel, componentDict: areaData)
     }
     
-    @IBAction func industryClicked(_ sender: UIButton) {
-
-    }
-    
     @IBAction func financingClicked(_ sender: UIButton) {
         popupPartnerPicker(bindingLabel: financingLbl, type: .projFinancing, model: projModel, componentDict: financingData)
         
     }
     
+    @IBOutlet weak var creatProjBtn: ShadowButton!
     @IBAction func createProjBtnClicked(_ sender: UIButton) {
-        // check wheather the infomation is completed
-        presentConfirmationAlert(hint: "确认要创建项目吗") { [weak self](_) in
-            // MARK:- create project
-            self?.saveAndCreateProj()
+        if isEdit == false {
+            // check wheather the infomation is completed
+            presentConfirmationAlert(hint: "确认要创建项目吗") { [weak self](_) in
+                // MARK:- create project
+                self?.saveAndCreateProj()
+            }
+        } else {
+            presentConfirmationAlert(hint: "确认保存吗") { [weak self](_) in
+                // MARK:- save project
+                self?.editAndSaveProjInfo()
+            }
         }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadAndSacePickerData()
+        
+        if isEdit == false {
+            creatProjBtn.setTitle("创建项目", for: .normal)
+        } else {
+            creatProjBtn.setTitle("保存信息", for: .normal)
+        }
 
     }
     
@@ -157,6 +220,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     }
     
     func saveAndCreateProj() {
+        
         guard UserDefaults.standard.string(forKey: "token") != nil else {
             presentLoginController()
             return
@@ -191,6 +255,62 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
             }
         }
+    }
+    
+    func editAndSaveProjInfo() {
+        
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        
+        projModel.logo = projectLogoImg.image
+        guard let logo = projModel.logo,
+            let fields = projModel.fields,
+            let projName = projModel.projName,
+            let projCompName = projModel.projCompName,
+            let projConnName = projModel.projConnName,
+            let projPhone = projModel.projPhone,
+            let projMail = projModel.projMail,
+            let idenId = projModel.idenId,
+            let areaId = projModel.areaId,
+            let roundId = projModel.roundId
+            else {
+                presentHintMessage(hintMessgae: "请完善您的项目信息", completion: nil)
+                return
+        }
+        
+        guard let id = editViewModel?.projectId else { return }
+        
+        NetWorkTool.shareInstance.editProject(token: access_token!,
+                                              logo: logo,
+                                              fields: fields,
+                                              id: id as! Int,
+                                              projName: projName, 
+                                              projCompName: projCompName,
+                                              projConnName: projConnName,
+                                              projPhone: projPhone,
+                                              projMail: projMail,
+                                              idenId: idenId as! Int,
+                                              areaId: areaId as! Int,
+                                              roundId: roundId as! Int)
+        { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save data into model
+                weakSelf?.presentHintMessage(hintMessgae: "保存成功", completion: { (_) in
+                    weakSelf?.navigationController?.popViewController(animated: true)
+                })
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

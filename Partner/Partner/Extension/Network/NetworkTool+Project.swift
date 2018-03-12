@@ -262,40 +262,39 @@ extension NetWorkTool {
     
     // MARK:- 6.14编辑项目
     func editProject(token        : String,
-                     logo         : UIImage?,
-                     fields       : String?,
+                     logo         : UIImage,
+                     fields       : String,
                      id           : Int,
-                     projName     : String?,
-                     projCompName : String?,
-                     projConnName : String?,
-                     projPhone    : String?,
-                     projMail     : String?,
-                     idenId       : Int?,
-                     areaId       : Int?,
-                     roundId      : Int?,
+                     projName     : String,
+                     projCompName : String,
+                     projConnName : String,
+                     projPhone    : String,
+                     projMail     : String,
+                     idenId       : Int,
+                     areaId       : Int,
+                     roundId      : Int,
                      finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         
         let urlString = "http://47.97.110.89/qm/project/api/create.do"
-        var parameters = ["token" : token, "id" : id] as [String : Any]
-        
-        if fields       != nil { parameters.updateValue(fields          as Any, forKey: "fields"                ) }
-        if projName     != nil { parameters.updateValue(projName        as Any, forKey: "project.projName"      ) }
-        if projCompName != nil { parameters.updateValue(projCompName    as Any, forKey: "project.projCompName"  ) }
-        if projConnName != nil { parameters.updateValue(projConnName    as Any, forKey: "project.projConnName"  ) }
-        if projPhone    != nil { parameters.updateValue(projPhone       as Any, forKey: "project.projPhone"     ) }
-        if projMail     != nil { parameters.updateValue(projMail        as Any, forKey: "project.projMail"      ) }
-        if idenId       != nil { parameters.updateValue(idenId          as Any, forKey: "project.idenIdds"      ) }
-        if areaId       != nil { parameters.updateValue(areaId          as Any, forKey: "project.areaId"        ) }
-        if roundId      != nil { parameters.updateValue(roundId         as Any, forKey: "project.roundId"       ) }
+        let parameters = ["token"               : token,
+                          "fields"              : fields,
+                          "id"                  : id,
+                          "project.projName"    : projName,
+                          "project.projCompName": projCompName,
+                          "project.projConnName": projConnName,
+                          "project.projPhone"   : projPhone,
+                          "project.projMail"    : projMail,
+                          "project.idenIdds"    : idenId,
+                          "project.areaId"      : areaId,
+                          "project.roundId"     : roundId
+                         ] as [String : Any]
         
         post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
             //upload image
             let cateName = "logo"
-            if logo != nil {
-                if let imageData = UIImageJPEGRepresentation(logo!, 0.5){
-                    let imageName = self?.getNowTime()
-                    formData.appendPart(withFileData: imageData, name: cateName, fileName: imageName!, mimeType: "image/png")
-                }
+            if let imageData = UIImageJPEGRepresentation(logo, 0.5){
+                let imageName = self?.getNowTime()
+                formData.appendPart(withFileData: imageData, name: cateName, fileName: imageName!, mimeType: "image/png")
             }
             }, progress: { (Progress) in
         }, success: { (_, success) in

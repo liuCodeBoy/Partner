@@ -11,6 +11,8 @@ class MyProjectViewController: UIViewController {
     
     var pageNum: Int = 1
     var pageSize: Int = 10
+    
+    var projID: Int = 0
         
     var isInvestor: Bool = true
     
@@ -61,6 +63,12 @@ class MyProjectViewController: UIViewController {
         }
         
         loadData()
+        
+        tableView.passIDClosure = { id in
+            weak var weakSelf = self
+            weakSelf?.projID = id
+        }
+        
     }
     
     func loadData() {
@@ -92,6 +100,15 @@ class MyProjectViewController: UIViewController {
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "MPEDetialInfoSegue" {
+            let dest = segue.destination as! MyProjectEditViewController
+            dest.projID = projID
+            
         }
     }
 

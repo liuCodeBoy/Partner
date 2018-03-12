@@ -18,9 +18,8 @@ target 'Partner' do
  pod 'Kingfisher'
  pod 'Lightbox'
  pod 'NVActivityIndicatorView'
+ pod 'SCLAlertView' 
  
-
-
   target 'PartnerTests' do
     inherit! :search_paths
     # Pods for testing
