@@ -49,6 +49,12 @@ class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         }
     }
     
+    var headerModelView: ProjectBasicInfoModel? {
+        didSet {
+            reloadData()
+        }
+    }
+    
     var modelView: ProjectDetialModel? {
         didSet {
             reloadData()
@@ -66,7 +72,7 @@ class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         delegate = self
         dataSource = self
         
-        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
@@ -76,12 +82,12 @@ class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         var cell = UITableViewCell()
         switch indexPath.row {
         case 0:
-            let header  = tableView.dequeueReusableCell(withIdentifier: "ProjectEditHeaderTableViewCell")           as! ProjectEditHeaderTableViewCell
-            header.viewModel = modelView?.basicInfo
+            let header = tableView.dequeueReusableCell(withIdentifier: "ProjectEditHeaderTableViewCell")           as! ProjectEditHeaderTableViewCell
+            header.viewModel = headerModelView
             cell = header
         case 1:
             let member  = tableView.dequeueReusableCell(withIdentifier: "ProjectEditMembersBriefTableViewCell")     as! ProjectEditMembersBriefTableViewCell
-            member.membersCountLbl.text = edited.membersCount
+            member.projId = projID
             cell = member
         case 2:
             let intro   = tableView.dequeueReusableCell(withIdentifier: "ProjectEditIntroductionTableViewCell")     as! ProjectEditIntroductionTableViewCell
@@ -182,11 +188,24 @@ extension ProjectEditlTableView {
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- save data into model
-                let basicInfoModel = ProjectBasicInfoModel.mj_object(withKeyValues: result!["result"])
                 
-                let model = ProjectDetialModel()
-                model.basicInfo = basicInfoModel
-                weakSelf?.modelView = model
+                weakSelf?.modelView = ProjectDetialModel.mj_object(withKeyValues: result!["result"])
+                
+            } else {
+                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+            }
+        }
+        
+        NetWorkTool.shareInstance.getProjectBasicInfo(token: access_token!, id: id) { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save data into model
+                
+                weakSelf?.headerModelView = ProjectBasicInfoModel.mj_object(withKeyValues: result!["result"])
                 
             } else {
                 SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")

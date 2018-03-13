@@ -44,15 +44,27 @@ class SingleProjectTableViewCell: UITableViewCell {
                 }
                 if fieldsDictArray.count == 1 {
                     tagLbl[1].isHidden = false
+                    tagLbl[3].isHidden = false
                     tagLbl[1].text = fieldsDictArray.first?["fieldName"] as? String
                 } else {
                     let count = fieldsDictArray.count
                     if count <= 3 {
-                        for i in 0..<count {
-                            tagLbl[i].text = (fieldsDictArray[i] as! [String : AnyObject])["fieldName"] as? String
-                        }
-                        for j in count..<2 {
-                            tagLbl[j].isHidden = true
+                        if count == 3 {
+                            for lbl in tagLbl {
+                                lbl.isHidden = false
+                            }
+                            for i in 0..<count {
+                                tagLbl[i].text = (fieldsDictArray[i] as! [String : AnyObject])["fieldName"] as? String
+                                tagLbl[i].isHidden = false
+                            }
+                        } else {
+                            for i in 0..<count {
+                                tagLbl[i].text = (fieldsDictArray[i] as! [String : AnyObject])["fieldName"] as? String
+                                tagLbl[i].isHidden = false
+                            }
+                            for j in count..<3 {
+                                tagLbl[j].isHidden = true
+                            }
                         }
                     } else {
                         for k in 0..<3 {

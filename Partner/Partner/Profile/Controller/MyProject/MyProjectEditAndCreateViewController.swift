@@ -13,55 +13,7 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     
     var isEdit: Bool = false
     
-    var editViewModel: ProjectBasicInfoModel? {
-        didSet {
-            if let logo = editViewModel?.logoUrl {
-                projectLogoImg.sd_setImage(with: URL.init(string: logo), placeholderImage: #imageLiteral(resourceName: "profile_my_project_camera_small"), options: .continueInBackground, completed: nil)
-            }
-            if let name = editViewModel?.projName {
-                projNameLbl.text = name
-                projModel.projName = name
-            }
-            if let companyName = editViewModel?.compName {
-                comFullNameLbl.text = companyName
-                projModel.projCompName = companyName
-            }
-            if let contact = editViewModel?.connName {
-                contactNameLbl.text = contact
-                projModel.projConnName = contact
-            }
-            if let phone = editViewModel?.phone {
-                contactPhoneLbl.text = phone
-                projModel.projPhone = phone
-            }
-            if let mail = editViewModel?.mail {
-                emailLbl.text = mail
-                projModel.projMail = mail
-            }
-            if let identity = editViewModel?.idenName, let id = editViewModel?.idenId {
-                identityLbl.text = identity
-                projModel.idenId = id
-            }
-            if let area = editViewModel?.areaName, let id = editViewModel?.areaId {
-                locationLbl.text = area
-                projModel.areaId = id
-            }
-            if let fieldDictArray = editViewModel?.fields {
-                industryLbl.text = "\(fieldDictArray.count)个"
-                var str = ""
-                for dict in fieldDictArray {
-                    let id = dict["id"] as! Int
-                    str += "\(id),"
-                }
-                str.removeLast(1)
-                projModel.fields = str
-            }
-            if let round = editViewModel?.roundName, let id = editViewModel?.roundId {
-                financingLbl.text = round
-                projModel.roundId = id
-            }
-        }
-    }
+    var editViewModel: ProjectBasicInfoModel?
     
     var projModel: ProjectModel = ProjectModel()
     
@@ -122,6 +74,8 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
         }
         
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -131,6 +85,10 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             creatProjBtn.setTitle("创建项目", for: .normal)
         } else {
             creatProjBtn.setTitle("保存信息", for: .normal)
+        }
+        
+        if editViewModel != nil {
+            loadModelInfo()
         }
 
     }
@@ -227,8 +185,9 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
         }
         guard let logo = projModel.logo,
               let fields = projModel.fields,
+              let id = editViewModel?.projectId,
               let projName = projModel.projName,
-              let projcompNmae = projModel.projCompName,
+              let projCompName = projModel.projCompName,
               let projConnName = projModel.projConnName,
               let projPhone = projModel.projPhone,
               let projMail = projModel.projMail,
@@ -239,7 +198,20 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             presentHintMessage(hintMessgae: "请完善您的项目信息", completion: nil)
             return
         }
-        NetWorkTool.shareInstance.createProject(token: access_token!, logo: logo, fields: fields, projName: projName, projCompName: projcompNmae, projConnName: projConnName, projPhone: projPhone, projMail: projMail, idenId: idenId as! Int, areaId: areaId as! Int, roundId: roundId as! Int) { (result, error) in
+
+        NetWorkTool.shareInstance.editProject(token: access_token!,
+                                              logo: logo,
+                                              fields: fields,
+                                              id: id as! Int,
+                                              projName: projName,
+                                              projCompName: projCompName,
+                                              projConnName: projConnName,
+                                              projPhone: projPhone,
+                                              projMail: projMail,
+                                              idenId: idenId as! Int,
+                                              areaId: areaId as! Int,
+                                              roundId: roundId as! Int)
+        { (result, error) in
             weak var weakSelf = self
             if error != nil {
                 weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
@@ -247,8 +219,8 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
                 return
             }
             if result!["code"] as! Int == 200 {
-                // TODO:- create success
-                weakSelf?.presentHintMessage(hintMessgae: "创建成功", completion: { (_) in
+                // TODO:- save success
+                weakSelf?.presentHintMessage(hintMessgae: "保存成功", completion: { (_) in
                     weakSelf?.navigationController?.popViewController(animated: true)
                 })
             } else {
@@ -366,6 +338,54 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func loadModelInfo() {
+        if let logo = editViewModel?.logoUrl {
+            projectLogoImg.sd_setImage(with: URL.init(string: logo), placeholderImage: #imageLiteral(resourceName: "profile_my_project_camera_small"), options: .continueInBackground, completed: nil)
+        }
+        if let name = editViewModel?.projName {
+            projNameLbl.text = name
+            projModel.projName = name
+        }
+        if let companyName = editViewModel?.compName {
+            comFullNameLbl.text = companyName
+            projModel.projCompName = companyName
+        }
+        if let contact = editViewModel?.connName {
+            contactNameLbl.text = contact
+            projModel.projConnName = contact
+        }
+        if let phone = editViewModel?.phone {
+            contactPhoneLbl.text = phone
+            projModel.projPhone = phone
+        }
+        if let mail = editViewModel?.mail {
+            emailLbl.text = mail
+            projModel.projMail = mail
+        }
+        if let identity = editViewModel?.idenName, let id = editViewModel?.idenId {
+            identityLbl.text = identity
+            projModel.idenId = id
+        }
+        if let area = editViewModel?.areaName, let id = editViewModel?.areaId {
+            locationLbl.text = area
+            projModel.areaId = id
+        }
+        if let fieldDictArray = editViewModel?.fields {
+            industryLbl.text = "\(fieldDictArray.count)个"
+            var str = ""
+            for dict in fieldDictArray {
+                let id = dict["id"] as! Int
+                str += "\(id),"
+            }
+            str.removeLast(1)
+            projModel.fields = str
+        }
+        if let round = editViewModel?.roundName, let id = editViewModel?.roundId {
+            financingLbl.text = round
+            projModel.roundId = id
+        }
     }
 
 }
