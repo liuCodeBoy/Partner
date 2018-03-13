@@ -19,6 +19,25 @@ class ProjectEditMarketAnalysisTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        addCoverView.isHidden = false
+    }
+    
+    var viewModel: ProjectDetialModel? {
+        didSet {
+            if let projUserGroup = viewModel?.projUserGroup {
+                aimUserGroupLbl.text = projUserGroup
+            }
+            if let projProfitModel = viewModel?.projProfitModel {
+                profitModLbl.text = projProfitModel
+            }
+            if let projCompetitor = viewModel?.projCompetitor {
+                competitionRivalLbl.text = projCompetitor
+            }
+            if let projResources = viewModel?.projResources {
+                ownSourceLbl.text = projResources
+            }
+            addCoverView.isHidden = true
+        }
     }
 
 }

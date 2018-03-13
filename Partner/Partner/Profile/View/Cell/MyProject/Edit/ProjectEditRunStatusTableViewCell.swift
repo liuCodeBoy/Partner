@@ -19,6 +19,25 @@ class ProjectEditRunStatusTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        addCoverView.isHidden = false
+    }
+    
+    var viewModel: ProjectDetialModel? {
+        didSet {
+            if let income = viewModel?.projMonthIncome {
+                monthSalaryLbl.text = "\(income)"
+            }
+            if let active = viewModel?.projMonthUser {
+                monthActivePeopleLbl.text = "\(active)"
+            }
+            if let total = viewModel?.projTotalUser {
+                totalUserLbl.text = "\(total)"
+            }
+            if let desc = viewModel?.projDataRemark {
+                runDataLbl.text = desc
+            }
+            addCoverView.isHidden = true
+        }
     }
 
 }

@@ -8,46 +8,11 @@
 import UIKit
 import SCLAlertView
 
-internal class edited {
-    static var members     = false
-    static var introduce   = false
-    static var analysis    = false
-    static var run         = false
-    static var funding     = false
-    static var membersCount          = ""
-    
-    static var projIntro             = ""
-    static var projHighlights        = ""
-    
-    static var aimUserGroup          = ""
-    static var profitMod             = ""
-    static var competitionRival      = ""
-    static var ownSource             = ""
-    
-    static var monthSalary           = ""
-    static var monthActivePeople     = ""
-    static var totalUser             = ""
-    static var runData               = ""
-    
-    static var fundingMomey          = ""
-    static var transferShares        = ""
-    static var fundingExpectation    = ""
-    static var moneyUsingPlan        = ""
-    
-    static var planBook              = ""
-    
-}
-
 typealias NonParamClosure = () -> Void
 
+let presentImagePickerNotification = "com.Partner.project.businessPlanBook.present"
+
 class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
-    
-    // MARK:- project id
-    var projID: Int? {
-        didSet {
-            loadProjBasicInfo()
-        }
-    }
     
     var headerModelView: ProjectBasicInfoModel? {
         didSet {
@@ -61,8 +26,8 @@ class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-   
-
+    var selectImageClosure: NonParamClosure?
+    
     override func awakeFromNib() {
         
         guard UserDefaults.standard.string(forKey: "token") != nil else { return }
@@ -83,51 +48,40 @@ class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         switch indexPath.row {
         case 0:
             let header = tableView.dequeueReusableCell(withIdentifier: "ProjectEditHeaderTableViewCell")           as! ProjectEditHeaderTableViewCell
+            // TODO:- pass view model to cell 
             header.viewModel = headerModelView
             cell = header
         case 1:
             let member  = tableView.dequeueReusableCell(withIdentifier: "ProjectEditMembersBriefTableViewCell")     as! ProjectEditMembersBriefTableViewCell
-            member.projId = projID
+            // TODO:- pass avatar image urls to cell
+            member.imgURLs = modelView?.membImgUrls
             cell = member
         case 2:
             let intro   = tableView.dequeueReusableCell(withIdentifier: "ProjectEditIntroductionTableViewCell")     as! ProjectEditIntroductionTableViewCell
-            intro.projIntroLbl.text = edited.projIntro
-            intro.projHighlightsLbl.text = edited.projHighlights
-            if edited.introduce == true {
-                intro.addCoverView.isHidden = true
-            }
+
+            // TODO:- pass detial string to cell
+            intro.viewModel = modelView
             cell = intro
         case 3:
             let market  = tableView.dequeueReusableCell(withIdentifier: "ProjectEditMarketAnalysisTableViewCell")   as! ProjectEditMarketAnalysisTableViewCell
-            market.aimUserGroupLbl.text = edited.aimUserGroup
-            market.profitModLbl.text = edited.profitMod
-            market.competitionRivalLbl.text = edited.competitionRival
-            market.ownSourceLbl.text = edited.ownSource
-            if edited.analysis == true {
-                market.addCoverView.isHidden = true
-            }
+
+            // TODO:- pass detial string to cell
+            market.viewModel = modelView
             cell = market
         case 4:
             let run     = tableView.dequeueReusableCell(withIdentifier: "ProjectEditRunStatusTableViewCell")        as! ProjectEditRunStatusTableViewCell
-            run.monthSalaryLbl.text = edited.monthSalary
-            run.monthActivePeopleLbl.text = edited.monthActivePeople
-            run.totalUserLbl.text = edited.totalUser
-            run.runDataLbl.text = edited.runData
-            if edited.run == true {
-                run.addCoverView.isHidden = true
-            }
+            // MARK:- pass detial string to cell
+            run.viewModel = modelView
             cell = run
         case 5:
             let funding = tableView.dequeueReusableCell(withIdentifier: "ProjectEditFundingNeedTableViewCell")      as! ProjectEditFundingNeedTableViewCell
-            funding.fundingMomeyLbl.text = edited.fundingMomey
-            funding.transferSharesLbl.text = edited.transferShares
-            funding.moneyUsingPlanLbl.text = edited.moneyUsingPlan
-            if edited.funding == true {
-                funding.addCoverView.isHidden = true
-            }
+            // MARK:- pass detial string to cell
+            funding.viewModel = modelView
             cell = funding
         case 6:
             let plan    = tableView.dequeueReusableCell(withIdentifier: "ProjectEditBusinessPlanBookTableViewCell") as! ProjectEditBusinessPlanBookTableViewCell
+            // MARK:- pass plan name to cell 
+            plan.viewModel = modelView
             cell = plan
         case 7:
             let confirm = tableView.dequeueReusableCell(withIdentifier: "ProjectEditConfirmButtonTableViewCell")    as! ProjectEditConfirmButtonTableViewCell
@@ -144,25 +98,35 @@ class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         case 0: return 264
         case 1: return 60
         case 2:
-            if edited.introduce == false {
+            if modelView?.projDesc == nil &&
+                modelView?.projHighlights == nil {
                 return 135
             } else {
                 return UITableViewAutomaticDimension
             }
         case 3:
-            if edited.analysis == false {
+            if modelView?.projUserGroup == nil &&
+                modelView?.projProfitModel == nil &&
+                modelView?.projCompetitor == nil &&
+                modelView?.projResources == nil {
                 return 135
             } else {
                 return UITableViewAutomaticDimension
             }
         case 4:
-            if edited.run == false {
+            if modelView?.projMonthIncome == nil && modelView?.projMonthUser == nil &&
+                modelView?.projTotalUser == nil &&
+                modelView?.projDataRemark == nil {
                 return 135
             } else {
                 return UITableViewAutomaticDimension
             }
         case 5:
-            if edited.funding == false {
+            if modelView?.currency == nil &&
+                modelView?.projFinancing == nil &&
+                modelView?.projShare == nil &&
+                modelView?.projValue == nil &&
+                modelView?.projFundPlan == nil {
                 return 135
             } else {
                 return UITableViewAutomaticDimension
@@ -171,47 +135,11 @@ class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-}
-
-// MARK:- network requrest
-
-extension ProjectEditlTableView {
-    
-    func loadProjBasicInfo() {
-        
-        guard let id = projID else { return }
-        NetWorkTool.shareInstance.getProjectEditInfo(token: access_token!, id: id) { (result, error) in
-            weak var weakSelf = self
-            if error != nil {
-                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
-                return
-            }
-            if result!["code"] as! Int == 200 {
-                // TODO:- save data into model
-                
-                weakSelf?.modelView = ProjectDetialModel.mj_object(withKeyValues: result!["result"])
-                
-            } else {
-                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
-            }
-        }
-        
-        NetWorkTool.shareInstance.getProjectBasicInfo(token: access_token!, id: id) { (result, error) in
-            weak var weakSelf = self
-            if error != nil {
-                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
-                return
-            }
-            if result!["code"] as! Int == 200 {
-                // TODO:- save data into model
-                
-                weakSelf?.headerModelView = ProjectBasicInfoModel.mj_object(withKeyValues: result!["result"])
-                
-            } else {
-                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
-            }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 6 {
+            // MARK:- select image as business plane book
+            NotificationCenter.default.post(name: NSNotification.Name.init(presentImagePickerNotification), object: nil)
         }
     }
+    
 }
-
-

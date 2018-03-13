@@ -10,6 +10,7 @@ import UIKit
 class InputDetialViewController: UIViewController {
     
     var sourceSegue: UIStoryboardSegue?
+    var keyboardType: UIKeyboardType?
     
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -123,6 +124,10 @@ class InputDetialViewController: UIViewController {
         
         if saveClousre != nil {
             saveBtn.addTarget(self, action: #selector(saveBtnCallBack), for: .touchUpInside)
+        }
+        
+        if keyboardType != nil {
+            inputTF.keyboardType = keyboardType!
         }
     }
     

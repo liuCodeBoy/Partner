@@ -6,12 +6,36 @@
 //
 
 import UIKit
+import SCLAlertView
+import ImagePicker
+import Lightbox
 
 class MyProjectEditViewController: UIViewController {
     
     var isEdited = true
     
-    var projID: Int? 
+    var projID: Int? {
+        didSet {
+            loadProjBasicInfo()
+        }
+    }
+    
+    var businessPlan: UIImage?
+    
+    var headerModelView: ProjectBasicInfoModel? {
+        didSet {
+            // MARK:- reload model
+            tableView.headerModelView = headerModelView
+        }
+    }
+    var modelView: ProjectDetialModel? {
+        didSet {
+            // MARK:- reload model
+            tableView.modelView = modelView
+        }
+    }
+    
+    var imagePicker: ImagePickerController?
     
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -19,19 +43,22 @@ class MyProjectEditViewController: UIViewController {
     
     @IBOutlet weak var tableView: ProjectEditlTableView!
     
-    @IBAction func backToEditWithoutSave(_ segue: UIStoryboardSegue) { }
-    
     override func viewWillAppear(_ animated: Bool) {
-        self.tableView.reloadData()
+        loadProjBasicInfo()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.projID = projID
-        
         NotificationCenter.default.addObserver(self, selector: #selector(pushEditProjVC(_:)), name: NSNotification.Name.init(pushEditProjBasicInfoNotification), object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(presentImagePicker), name: NSNotification.Name.init(presentImagePickerNotification), object: nil)
+    }
+    
+    @objc func presentImagePicker() {
+        let picker = ImagePickerController()
+        picker.delegate = self
+        picker.imageLimit = 1
+        present(picker, animated: true, completion: nil)
     }
     
     @objc func pushEditProjVC(_ notification: Notification) {
@@ -48,12 +75,150 @@ class MyProjectEditViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destnation = segue.destination
-        if segue.identifier == "MPEPushTMSegue" {
-            let dest = destnation as! MyProjectEditTeamMembersViewController
-            // TODO:- pass id to dest controller
-            dest.projID = projID
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "MPEPushTMSegue":
+                let dest = destnation as! MyProjectEditTeamMembersViewController
+                // TODO:- pass id to dest controller
+                dest.projID = projID
+            case "ProjectIntroductionSegue", "ProjectIntroductionEditSegue":
+                let dest = destnation as! MyProjectEditProjectIntroductionViewController
+                // TODO:- pass id and string to dest controller
+                dest.projID = projID
+                if let desc = modelView?.projDesc, let highlight = modelView?.projHighlights {
+                    dest.str1 = desc
+                    dest.str2 = highlight
+                }
+            case "ProjectMarketAnalysisSegue", "ProjectMarketAnalysisEditSegue":
+                let dest = destnation as! MyProjectEditMarketAnalysisViewController
+                // TODO:- pass id and string to dest controller
+                dest.projID = projID
+                if  let projUserGroup   = modelView?.projUserGroup,
+                    let projProfitModel = modelView?.projProfitModel,
+                    let projCompetitor  = modelView?.projCompetitor,
+                    let projResources   = modelView?.projResources
+                {
+                    dest.str1 = projUserGroup
+                    dest.str2 = projProfitModel
+                    dest.str3 = projCompetitor
+                    dest.str4 = projResources
+                }
+            case "ProjectRunStatusSegue", "ProjectRunStatusEditSegue" :
+                let dest = destnation as! MyProjectEditRunStatusViewController
+                // TODO:- pass id and string to dest controller
+                dest.projID = projID
+                dest.editViewModel = modelView
+            case "ProjectFundingSegue", "ProjectFundingEditSegue" :
+                let dest = destnation as! MyProjectEditFundingNeedViewController
+                // TODO:- pass id and string to dest controller
+                dest.projID = projID
+                dest.editViewModel = modelView
+            default: break
+            }
+            
         }
     }
     
 }
+
+
+extension MyProjectEditViewController {
+    
+    func loadProjBasicInfo() {
+        
+        guard let id = projID else { return }
+        // MARK:- whole info
+        NetWorkTool.shareInstance.getProjectEditInfo(token: access_token!, id: id) { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save data into model
+                
+                weakSelf?.modelView = ProjectDetialModel.mj_object(withKeyValues: result!["result"])
+                
+                // MARK:- save scan and view num
+                weakSelf?.headerModelView?.foucsNum =  weakSelf?.modelView?.foucsNum
+                weakSelf?.headerModelView?.scanNum =  weakSelf?.modelView?.scanNum
+                
+            } else {
+                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+            }
+        }
+        // MARK:- header cell info
+        NetWorkTool.shareInstance.getProjectBasicInfo(token: access_token!, id: id) { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save data into model
+                
+                weakSelf?.headerModelView = ProjectBasicInfoModel.mj_object(withKeyValues: result!["result"])
+                
+            } else {
+                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+            }
+        }
+    }
+    
+    func uploadBusinessPlanBook() {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        guard let id = projID else { return }
+        guard let businessPlan = businessPlan else { return }
+        NetWorkTool.shareInstance.uploadProjectPlan(token: access_token!, id: id, businessPlan: businessPlan) { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save data into model
+                weakSelf?.imagePicker?.presentHintMessage(hintMessgae: "上传成功", completion: { (_) in
+                    weakSelf?.imagePicker?.dismiss(animated: true, completion: nil)
+                })
+            } else {
+                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+            }
+        }
+    }
+}
+
+extension MyProjectEditViewController: ImagePickerDelegate {
+    
+    // MARK:- image picker protocol functions
+    
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        guard images.count > 0 else { return }
+        let lightboxImages = images.map {
+            return LightboxImage(image: $0)
+        }
+        let lightbox = LightboxController(images: lightboxImages, startIndex: 0)
+        imagePicker.present(lightbox, animated: true, completion: nil)
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        guard images.count > 0 else { return }
+        self.imagePicker = imagePicker
+        weak var weakSelf = self
+        for img in images {
+            weakSelf?.businessPlan = img
+        }
+        imagePicker.presentConfirmationAlert(hint: "是否上传图片？") { (_) in
+            weakSelf?.uploadBusinessPlanBook()
+        }
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+}
+
 

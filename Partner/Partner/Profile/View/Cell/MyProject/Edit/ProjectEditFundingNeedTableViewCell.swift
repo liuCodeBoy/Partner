@@ -19,6 +19,25 @@ class ProjectEditFundingNeedTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        addCoverView.isHidden = false
+    }
+    
+    var viewModel: ProjectDetialModel? {
+        didSet {
+            if let expect = viewModel?.projFinancing {
+                fundingMomeyLbl.text = "\(expect)万元"
+            }
+            if let stock = viewModel?.projShare {
+                transferSharesLbl.text = "\(stock)%"
+            }
+            if let estimate = viewModel?.projValue {
+                fundingExpectationLbl.text = "\(estimate)万"
+            }
+            if let plan = viewModel?.projFundPlan {
+                moneyUsingPlanLbl.text = plan
+            }
+            addCoverView.isHidden = true
+        }
     }
 
 }

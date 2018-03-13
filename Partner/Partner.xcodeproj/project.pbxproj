@@ -518,18 +518,10 @@
 			isa = PBXGroup;
 			children = (
 				39FE111E2053D59E0060CD76 /* ProjectEditlTableView.swift */,
-				396B204B205652E700E1562D /* Edit */,
+				396B2048205652BB00E1562D /* ProjectEditTeamMemberTableView.swift */,
 				39FE111C2053911C0060CD76 /* ProjectListTableView.swift */,
 			);
 			path = MyProject;
-			sourceTree = "<group>";
-		};
-		396B204B205652E700E1562D /* Edit */ = {
-			isa = PBXGroup;
-			children = (
-				396B2048205652BB00E1562D /* ProjectEditTeamMemberTableView.swift */,
-			);
-			path = Edit;
 			sourceTree = "<group>";
 		};
 		39A8CE7C2052E9B500522E2E /* MyProject */ = {
