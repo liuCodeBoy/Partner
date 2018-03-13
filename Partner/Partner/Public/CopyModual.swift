@@ -39,7 +39,7 @@ class CopyModel: UIViewController {
             }
             
             // MARK:- view seperate from controller
-            
+           // weak var weakSelf = self
             if error != nil {
                 SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
                 return
