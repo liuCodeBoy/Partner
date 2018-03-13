@@ -19,6 +19,7 @@ class ServiceMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
+         getListType()
     }
 
 }
@@ -34,6 +35,17 @@ extension ServiceMainViewController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.row {
         case 0:
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "ServiceMainHeaderTableViewCell") as! ServiceMainHeaderTableViewCell
+            if modelArr.count > 0 {
+                 singleCell.modelArr = modelArr
+            }
+            singleCell.pushClouse = { (id ,typename) in
+                let  showProviderVC = UIStoryboard.init(name: "Service", bundle: nil).instantiateViewController(withIdentifier: "GetProvideVCID") as! GetProvideVC
+                showProviderVC.provideID = id
+                showProviderVC.showTypeName = typename
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+                
+            }
+         
             cell = singleCell
         case 1:
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "ServiceMainFounderListTableViewCell") as! ServiceMainFounderListTableViewCell
