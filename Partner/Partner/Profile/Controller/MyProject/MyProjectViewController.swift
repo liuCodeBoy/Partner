@@ -16,7 +16,10 @@ class MyProjectViewController: UIViewController {
         
     var isInvestor: Bool = true
     
-    @IBOutlet weak var tableView: ProjectListTableView!
+    @IBOutlet weak var myProjectTableView: ProjectListTableView!
+    @IBOutlet weak var investProjectTableView: ProjectListTableView!
+    
+    // cover the table view, no proj placeholder
     @IBOutlet weak var placeholderContainerView: UIView!
     
     @IBAction func popBtnClicked(_ sender: UIButton) {
@@ -25,6 +28,9 @@ class MyProjectViewController: UIViewController {
     
     @IBOutlet weak var createProjBtn: UIButton!
     @IBAction func createProjBtnClicked(_ sender: UIButton) {
+        // MARK:- creat a new proj
+        let vc = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "CreateProject") as! MyProjectEditAndCreateViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBOutlet weak var intentionBtn: UIButton!
@@ -38,11 +44,21 @@ class MyProjectViewController: UIViewController {
     @IBAction func investorCreateProjBtnClicked(_ sender: ShadowButton) {
         investorCreateProjBtn.setSelected()
         investorInvestProjBtn.reverseSelected()
+        // show my proj
+        myProjectTableView.isHidden     = false
+        investProjectTableView.isHidden = true
+        createProjBtn.isHidden = false
+        intentionBtn.isHidden  = true
     }
     @IBOutlet weak var investorInvestProjBtn: ShadowButton!
     @IBAction func investorInvestProjBtnClicked(_ sender: ShadowButton) {
         investorCreateProjBtn.reverseSelected()
         investorInvestProjBtn.setSelected()
+        // show invest proj
+        myProjectTableView.isHidden     = true
+        investProjectTableView.isHidden = false
+        createProjBtn.isHidden = true
+        intentionBtn.isHidden  = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +81,13 @@ class MyProjectViewController: UIViewController {
         
         loadData()
         
-        tableView.passIDClosure = { id in
+        // MARK:- receive passed proj id to table view
+        myProjectTableView.passIDClosure = { id in
+            weak var weakSelf = self
+            weakSelf?.projID = id
+        }
+        
+        investProjectTableView.passIDClosure = { id in
             weak var weakSelf = self
             weakSelf?.projID = id
         }
@@ -77,6 +99,7 @@ class MyProjectViewController: UIViewController {
             presentLoginController()
             return
         }
+        // MARK:- load my proj
         NetWorkTool.shareInstance.getMyProjectList(token: access_token!, pageNum: pageNum, pageSize: pageSize) { (result, error) in
             weak var weakSelf = self
             if error != nil {
@@ -86,7 +109,7 @@ class MyProjectViewController: UIViewController {
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- remove the former data
-                weakSelf?.tableView.modelArray.removeAll()
+                weakSelf?.myProjectTableView.modelArray.removeAll()
                 // TODO:- save data into model
                 let resultDict = result!["result"] as! [String : AnyObject]
                 if resultDict["list"] == nil {
@@ -98,12 +121,42 @@ class MyProjectViewController: UIViewController {
                 // TODO:- convert dict to model and assign to view to show
                 for dict in resultDict["list"] as! [[String : AnyObject]] {
                     let model = ProjectListModel.mj_object(withKeyValues: dict)
-                    weakSelf?.tableView.modelArray.append(model!)
+                    weakSelf?.myProjectTableView.modelArray.append(model!)
                 }
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
             }
         }
+        
+        // MARK:- load invest proj
+        NetWorkTool.shareInstance.getMyInvestProjectList(token: access_token!, pageNum: pageNum, pageSize: pageSize) { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- remove the former data
+                weakSelf?.investProjectTableView.modelArray.removeAll()
+                // TODO:- save data into model
+                let resultDict = result!["result"] as! [String : AnyObject]
+                if resultDict["list"] == nil {
+                    // TODO:- no data, show placeholder
+                    weakSelf?.placeholderContainerView.isHidden = false
+                    return
+                }
+                weakSelf?.placeholderContainerView.isHidden = true
+                // TODO:- convert dict to model and assign to view to show
+                for dict in resultDict["list"] as! [[String : AnyObject]] {
+                    let model = ProjectListModel.mj_object(withKeyValues: dict)
+                    weakSelf?.investProjectTableView.modelArray.append(model!)
+                }
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

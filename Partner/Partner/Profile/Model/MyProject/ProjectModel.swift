@@ -12,6 +12,7 @@ class ProjectListModel: NSObject {
     @objc var projectId         : NSNumber?
     @objc var logoUrl           : String?
     @objc var projName          : String?
+    @objc var cityName          : String?
     // 项目状态，0未融资 1审核中 2通过 3审核不通过
     @objc var status            : NSNumber?
     // id, fieldName
@@ -89,6 +90,7 @@ class ProjectDetialModel: NSObject {
 
     // MARK:- basic info
     @objc var projectId         : NSNumber?
+    // 项目状态 0未提交 1审核中 2审核通过 3审核不通过
     @objc var status            : NSNumber?
     @objc var logoUrl           : String?
     @objc var projName          : String?

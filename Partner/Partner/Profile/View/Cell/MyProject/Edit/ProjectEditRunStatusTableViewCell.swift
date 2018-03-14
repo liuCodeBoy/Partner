@@ -24,8 +24,16 @@ class ProjectEditRunStatusTableViewCell: UITableViewCell {
     
     var viewModel: ProjectDetialModel? {
         didSet {
+            if let status = viewModel?.status {
+                if status == 0 {
+                    editBtn.isHidden = false
+                } else {
+                    editBtn.isHidden = true
+                }
+            }
             if let income = viewModel?.projMonthIncome {
                 monthSalaryLbl.text = "\(income)"
+                addCoverView.isHidden = true
             }
             if let active = viewModel?.projMonthUser {
                 monthActivePeopleLbl.text = "\(active)"
@@ -36,7 +44,7 @@ class ProjectEditRunStatusTableViewCell: UITableViewCell {
             if let desc = viewModel?.projDataRemark {
                 runDataLbl.text = desc
             }
-            addCoverView.isHidden = true
+            
         }
     }
 

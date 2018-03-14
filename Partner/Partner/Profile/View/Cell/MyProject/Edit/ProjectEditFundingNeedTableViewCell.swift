@@ -24,8 +24,16 @@ class ProjectEditFundingNeedTableViewCell: UITableViewCell {
     
     var viewModel: ProjectDetialModel? {
         didSet {
+            if let status = viewModel?.status {
+                if status == 0 {
+                    editBtn.isHidden = false
+                } else {
+                    editBtn.isHidden = true
+                }
+            }
             if let expect = viewModel?.projFinancing {
                 fundingMomeyLbl.text = "\(expect)万元"
+                addCoverView.isHidden = true
             }
             if let stock = viewModel?.projShare {
                 transferSharesLbl.text = "\(stock)%"
@@ -36,7 +44,7 @@ class ProjectEditFundingNeedTableViewCell: UITableViewCell {
             if let plan = viewModel?.projFundPlan {
                 moneyUsingPlanLbl.text = plan
             }
-            addCoverView.isHidden = true
+            
         }
     }
 

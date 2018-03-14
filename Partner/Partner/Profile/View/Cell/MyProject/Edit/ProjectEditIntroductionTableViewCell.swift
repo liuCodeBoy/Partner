@@ -22,13 +22,20 @@ class ProjectEditIntroductionTableViewCell: UITableViewCell {
     
     var viewModel: ProjectDetialModel? {
         didSet {
+            if let status = viewModel?.status {
+                if status == 0 {
+                    editBtn.isHidden = false
+                } else {
+                    editBtn.isHidden = true
+                }
+            }
             if let desc = viewModel?.projDesc, let highlight = viewModel?.projHighlights {
                 projIntroLbl.text = desc
                 projHighlightsLbl.text = highlight
                 // MARK:- desc is nil, show the cover view
                 addCoverView.isHidden = true
             }
-            addCoverView.isHidden = true
+            
         }
     }
 

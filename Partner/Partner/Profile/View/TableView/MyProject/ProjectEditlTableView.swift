@@ -85,6 +85,8 @@ class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             cell = plan
         case 7:
             let confirm = tableView.dequeueReusableCell(withIdentifier: "ProjectEditConfirmButtonTableViewCell")    as! ProjectEditConfirmButtonTableViewCell
+            // MARK:- pass id to cell
+            confirm.viewModel = modelView
             cell = confirm
             
         default: break
@@ -133,6 +135,18 @@ class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             }
         default: return UITableViewAutomaticDimension
         }
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        // MARK:- judge the proj status
+
+        if modelView?.status != 0 {
+            if indexPath.row == 1 {
+                return indexPath
+            }
+            return nil
+        }
+        return indexPath
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

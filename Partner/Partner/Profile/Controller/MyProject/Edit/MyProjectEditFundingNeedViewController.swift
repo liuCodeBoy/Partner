@@ -21,10 +21,8 @@ class MyProjectEditFundingNeedViewController: UIViewController, UITextViewDelega
     var editViewModel: ProjectDetialModel?
     var viewModel: ProjectDetialModel? {
         didSet {
-            // FIXME:- save the currency id to model
             if let currency = viewModel?.currency {
                 currencyLbl.text = currency
-                
             }
             if let expect = viewModel?.projFinancing {
                 expectedFinanceLbl.text = "\(expect)"
@@ -179,8 +177,7 @@ class MyProjectEditFundingNeedViewController: UIViewController, UITextViewDelega
         }
         guard let id = projID else { return }
         
-        guard let currencyId = modelView.currencyId,
-              let projFinancing = modelView.projFinancing,
+        guard let projFinancing = modelView.projFinancing,
               let projShare = modelView.projShare,
               let projValue = modelView.projValue,
               let projFundPlan = modelView.projFundPlan
@@ -193,7 +190,7 @@ class MyProjectEditFundingNeedViewController: UIViewController, UITextViewDelega
         presentConfirmationAlert(hint: "确认保存吗？", completion: { (_) in
             NetWorkTool.shareInstance.updateFinancingNeeds(token: access_token!,
                                                            id: id,
-                                                           currencyId: currencyId as! Int,
+                                                           currencyId: weakSelf?.modelView.currencyId as! Int?,
                                                            projFinancing: projFinancing as! Int,
                                                            projShare: projShare as! Int,
                                                            projValue: projValue as! Int,
