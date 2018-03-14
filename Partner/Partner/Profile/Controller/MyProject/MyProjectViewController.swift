@@ -47,7 +47,7 @@ class MyProjectViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
-        tableView.reloadData()
+        loadData()
     }
     
     override func viewDidLoad() {
@@ -85,6 +85,8 @@ class MyProjectViewController: UIViewController {
                 return
             }
             if result!["code"] as! Int == 200 {
+                // TODO:- remove the former data
+                weakSelf?.tableView.modelArray.removeAll()
                 // TODO:- save data into model
                 let resultDict = result!["result"] as! [String : AnyObject]
                 if resultDict["list"] == nil {

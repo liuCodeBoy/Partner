@@ -12,6 +12,8 @@ enum PartnerPickerType: String {
     case projFinancing = "projFinancing"
     case authIdentity = "authIdentity"
     case authFinancing = "authFinancing"
+    case projEditMember = "projEditMember"
+    case financeCurrency = "financeCurrency"
 }
 
 class PartnerSinglePickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -20,6 +22,8 @@ class PartnerSinglePickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSou
     
     var projModel: ProjectModel?
     var authModel: AuthModel?
+    var memberModel: ProjectMemberModel?
+    var projDetialModel: ProjectDetialModel?
     
     var componentArray = [String]()
     var componentDict = [[Int : String]]()
@@ -102,6 +106,10 @@ class PartnerSinglePickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSou
             authModel?.idenId = componentDict[row].first?.key as NSNumber?
         case .authFinancing:
             authModel?.inveRound = componentDict[row].first?.key as NSNumber?
+        case .projEditMember:
+            memberModel?.idenId = componentDict[row].first?.key as NSNumber?
+        case .financeCurrency:
+            projDetialModel?.currencyId = componentDict[row].first?.key as NSNumber?
         }
     }
     

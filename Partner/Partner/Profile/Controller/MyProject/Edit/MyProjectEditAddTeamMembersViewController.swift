@@ -12,11 +12,21 @@ import SCLAlertView
 
 class MyProjectEditAddTeamMembersViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate, ImagePickerDelegate {
     
+    var projID: Int?
+    var memberID: Int? {
+        didSet {
+            modelView.id = memberID as NSNumber?
+            loadMemberInfo()
+        }
+    }
+    
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
     var isEditMember: Bool = false
+    
+    var identityData = [[Int : String]]()
     
     var modelView: ProjectMemberModel = ProjectMemberModel()
     
@@ -27,25 +37,25 @@ class MyProjectEditAddTeamMembersViewController: UIViewController, UITextViewDel
             }
             if let name = viewModel?.name {
                 nickName.text = name
-                viewModel?.name = name
+                modelView.name = name
             }
             if let identity = viewModel?.idenName, let id = viewModel?.idenId {
                 idTypeLbl.text = identity
-                viewModel?.id = id
+                modelView.idenId = id
             }
             if let job = viewModel?.jobName {
                 jobLbl.text = job
-                viewModel?.jobName = job
+                modelView.jobName = job
             }
             if let email = viewModel?.mail {
                 emailLbl.text = email
-                viewModel?.mail = email
+                modelView.mail = email
             }
             if let desc = viewModel?.desc {
                 inputTF.text = desc
                 inputString = desc
                 placeholderLbl.isHidden = true
-                viewModel?.desc = desc
+                modelView.desc = desc
             }
         }
     }
@@ -67,9 +77,6 @@ class MyProjectEditAddTeamMembersViewController: UIViewController, UITextViewDel
     
     @IBOutlet weak var editView: UIView!
     
-    var keyboardRect: CGRect = CGRect()
-    var keyboardChangeFrameAnimationDuration: Double = 0.0
-    
     var str: String?
     var inputString: String = "" {
         didSet {
@@ -78,7 +85,13 @@ class MyProjectEditAddTeamMembersViewController: UIViewController, UITextViewDel
             if charCount > 500 {
                 presentHintMessage(hintMessgae: "字符不能超过500字", completion: nil)
             }
+            // MARK:- save description
+            modelView.desc = inputString
         }
+    }
+    @IBAction func identityClicked(_ sender: UIButton) {
+        // MARK:- save identoity id
+        popupPartnerPicker(bindingLabel: idTypeLbl, type: .projEditMember, model: modelView, componentDict: identityData)
     }
     
     @IBAction func uploadImg(_ sender: UIButton) {
@@ -99,7 +112,8 @@ class MyProjectEditAddTeamMembersViewController: UIViewController, UITextViewDel
             vc.inputPlaceholder = "请输入\(title)"
             vc.saveClousre = {
                 weak var weakSelf = self
-                weakSelf?.viewModel?.name = vc.inputText
+                // MARK:- save name
+                weakSelf?.modelView.name = vc.inputText
                 weakSelf?.nickName.text = vc.inputText
                 vc.navigationController?.popViewController(animated: true)
             }
@@ -109,7 +123,8 @@ class MyProjectEditAddTeamMembersViewController: UIViewController, UITextViewDel
             vc.inputPlaceholder = "请输入\(title)"
             vc.saveClousre = {
                 weak var weakSelf = self
-                weakSelf?.viewModel?.jobName = vc.inputText
+                // MARK:- save job name
+                weakSelf?.modelView.jobName = vc.inputText
                 weakSelf?.jobLbl.text = vc.inputText
                 vc.navigationController?.popViewController(animated: true)
             }
@@ -119,7 +134,8 @@ class MyProjectEditAddTeamMembersViewController: UIViewController, UITextViewDel
             vc.inputPlaceholder = "请输入\(title)"
             vc.saveClousre = {
                 weak var weakSelf = self
-                weakSelf?.viewModel?.mail = vc.inputText
+                // MARK:- save mail
+                weakSelf?.modelView.mail = vc.inputText
                 weakSelf?.emailLbl.text = vc.inputText
                 vc.navigationController?.popViewController(animated: true)
             }
@@ -153,58 +169,24 @@ class MyProjectEditAddTeamMembersViewController: UIViewController, UITextViewDel
             // change limit lbl
             inputString = str!
         }
+        
+        loadPickerData()
 
     }
     
     
     @IBAction func deleteBtnClicked(_ sender: UIButton) {
-        
+        deleteMember()
     }
     
     @IBAction func saveBtnClicked(_ sender: UIButton) {
         
-        editAndSaveInfo()
-        
-    }
-    
-    func editAndSaveInfo() {
-        guard UserDefaults.standard.string(forKey: "token") != nil else {
-            presentLoginController()
-            return
+        if isEditMember == true {
+            editAndSaveInfo()
+        } else {
+            createMember()
         }
         
-        guard let id = viewModel?.id,
-            let membName = viewModel?.name,
-            let membJobName = viewModel?.jobName,
-            let membMail = viewModel?.mail,
-            let idenId = viewModel?.idenId
-        else {
-            presentHintMessage(hintMessgae: "请完善您的项目信息", completion: nil)
-            return
-        }
-        NetWorkTool.shareInstance.editMember(token: access_token!,
-                                             image: viewModel?.image,
-                                             id: id as! Int,
-                                             membName: membName,
-                                             membJobName: membJobName,
-                                             membMail: membMail,
-                                             membDesc: viewModel?.desc,
-                                             idenId: idenId as! Int)
-        { (result, error) in
-            weak var weakSelf = self
-            if error != nil {
-                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
-                return
-            }
-            if result!["code"] as! Int == 200 {
-                // TODO:- save data into model
-                weakSelf?.presentHintMessage(hintMessgae: "保存成功", completion: { (_) in
-                    weakSelf?.navigationController?.popViewController(animated: true)
-                })
-            } else {
-                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
-            }
-        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -236,7 +218,7 @@ class MyProjectEditAddTeamMembersViewController: UIViewController, UITextViewDel
             weak var weakSelf = self
             for img in images {
                 weakSelf?.avatarImg.image = img
-                weakSelf?.viewModel?.image = img
+                weakSelf?.modelView.image = img
                 
             }
         }
@@ -246,4 +228,183 @@ class MyProjectEditAddTeamMembersViewController: UIViewController, UITextViewDel
         imagePicker.dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension MyProjectEditAddTeamMembersViewController {
+    // MARK:- operate member functions
+
+    // MARK:- edit member info
+    func editAndSaveInfo() {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        
+        modelView.image = avatarImg.image
+        guard let id = modelView.id,
+            let membName = modelView.name,
+            let membJobName = modelView.jobName,
+            let membMail = modelView.mail,
+            let idenId = modelView.idenId
+            else {
+                presentHintMessage(hintMessgae: "请完善您的项目信息", completion: nil)
+                return
+        }
+        
+        weak var weakSelf = self
+        presentConfirmationAlert(hint: "确认保存修改吗？", completion: { (_) in
+            NetWorkTool.shareInstance.editMember(token: access_token!,
+                                                 image: weakSelf?.modelView.image,
+                                                 id: id as! Int,
+                                                 membName: membName,
+                                                 membJobName: membJobName,
+                                                 membMail: membMail,
+                                                 membDesc: weakSelf?.modelView.desc,
+                                                 idenId: idenId as! Int)
+            { (result, error) in
+                
+                if error != nil {
+                    SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                    return
+                }
+                if result!["code"] as! Int == 200 {
+                    weakSelf?.presentHintMessage(hintMessgae: "保存成功", completion: { (_) in
+                        weakSelf?.navigationController?.popViewController(animated: true)
+                    })
+                } else {
+                    SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+                }
+            }
+        })
+    }
+    
+    // MARK:- add member
+    func createMember() {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        if modelView.image != #imageLiteral(resourceName: "profile_my_project_camera_small") {
+            modelView.image = avatarImg.image
+        } else {
+            modelView.image = nil
+        }
+        guard let projectId = projID,
+            let membName = modelView.name,
+            let membJobName = modelView.jobName,
+            let membMail = modelView.mail,
+            let idenId = modelView.idenId
+            else {
+                presentHintMessage(hintMessgae: "请完善您的项目信息", completion: nil)
+                return
+        }
+        
+        weak var weakSelf = self
+        presentConfirmationAlert(hint: "确认添加成员吗？", completion: { (_) in
+            NetWorkTool.shareInstance.addMember(token: access_token!,
+                                                image: weakSelf?.modelView.image,
+                                                membName: membName,
+                                                membJobName: membJobName,
+                                                membMail: membMail,
+                                                membDesc: weakSelf?.modelView.desc,
+                                                idenId: idenId as! Int,
+                                                projectId: projectId)
+            { (result, error) in
+                
+                if error != nil {
+                    SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                    return
+                }
+                if result!["code"] as! Int == 200 {
+                    weakSelf?.presentHintMessage(hintMessgae: "添加成功", completion: { (_) in
+                        weakSelf?.navigationController?.popViewController(animated: true)
+                    })
+                } else {
+                    SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+                }
+            }
+        })
+        
+    }
+    
+    // MARK:- delete member
+    func deleteMember() {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        guard let id = projID, let memberId = memberID else { return }
+        
+        presentConfirmationAlert(hint: "确认删除成员吗？", completion: { (_) in
+            NetWorkTool.shareInstance.deleteMember(token: access_token!, id: id, memberId: memberId) { (result, error) in
+                weak var weakSelf = self
+                if error != nil {
+                    SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                    return
+                }
+                if result!["code"] as! Int == 200 {
+                    weakSelf?.presentHintMessage(hintMessgae: "删除成功", completion: { (_) in
+                        weakSelf?.navigationController?.popViewController(animated: true)
+                    })
+                } else {
+                    SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+                }
+            }
+        })
+        
+    }
+    
+    // MARK:- load data
+    func loadPickerData() {
+        // identity data
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        
+        NetWorkTool.shareInstance.getIndentityList(token: access_token!, type: 3) { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save identity data into an array
+                for dict in result!["result"] as! [[String: AnyObject]] {
+                    let id = dict["id"] as! Int
+                    let idenName = dict["idenName"] as! String
+                    let dictElement = [id : idenName]
+                    weakSelf?.identityData.append(dictElement)
+                }
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
+    }
+    
+    func loadMemberInfo() {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        
+        guard let memberID = memberID else { return }
+        
+        NetWorkTool.shareInstance.getMemberInfo(token: access_token!, memberId: memberID) { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save data into model
+                weakSelf?.viewModel = ProjectMemberModel.mj_object(withKeyValues: result!["result"])
+                
+            } else {
+                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+            }
+        }
+        
+    }
 }

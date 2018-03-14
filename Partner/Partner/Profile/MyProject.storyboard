@@ -1235,7 +1235,7 @@
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
                                                     <connections>
-                                                        <segue destination="TkE-mx-DHm" kind="show" id="DxQ-Aa-YgY">
+                                                        <segue destination="TkE-mx-DHm" kind="show" identifier="ProjectMarketAnalysisEditSegue" id="DxQ-Aa-YgY">
                                                             <nil key="action"/>
                                                         </segue>
                                                     </connections>
@@ -1252,7 +1252,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1B1-So-r8g">
                                                             <rect key="frame" x="0.0" y="0.0" width="351" height="285"/>
                                                             <connections>
-                                                                <segue destination="TkE-mx-DHm" kind="show" id="kFi-PQ-dux">
+                                                                <segue destination="TkE-mx-DHm" kind="show" identifier="ProjectMarketAnalysisSegue" id="kFi-PQ-dux">
                                                                     <nil key="action"/>
                                                                 </segue>
                                                             </connections>
@@ -1471,7 +1471,7 @@
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
                                                     <connections>
-                                                        <segue destination="cl6-Wb-PVb" kind="show" id="JWp-2j-dqt">
+                                                        <segue destination="cl6-Wb-PVb" kind="show" identifier="ProjectRunStatusEditSegue" id="JWp-2j-dqt">
                                                             <nil key="action"/>
                                                         </segue>
                                                     </connections>
@@ -1488,7 +1488,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciU-uF-jgW">
                                                             <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
                                                             <connections>
-                                                                <segue destination="cl6-Wb-PVb" kind="show" id="vqI-3G-G27">
+                                                                <segue destination="cl6-Wb-PVb" kind="show" identifier="ProjectRunStatusSegue" id="vqI-3G-G27">
                                                                     <nil key="action"/>
                                                                 </segue>
                                                             </connections>
@@ -1703,7 +1703,7 @@
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
                                                     <connections>
-                                                        <segue destination="45W-Qs-iN2" kind="show" id="5fu-XA-MnE">
+                                                        <segue destination="45W-Qs-iN2" kind="show" identifier="ProjectFundingEditSegue" id="5fu-XA-MnE">
                                                             <nil key="action"/>
                                                         </segue>
                                                     </connections>
@@ -1720,7 +1720,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydj-Ve-4Ik">
                                                             <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
                                                             <connections>
-                                                                <segue destination="45W-Qs-iN2" kind="show" id="4K2-Dz-dxN">
+                                                                <segue destination="45W-Qs-iN2" kind="show" identifier="ProjectFundingSegue" id="4K2-Dz-dxN">
                                                                     <nil key="action"/>
                                                                 </segue>
                                                             </connections>
@@ -1937,7 +1937,7 @@
                                             <color key="titleColor" red="0.64705882349999999" green="0.67450980390000004" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="cE9-sH-f8z" kind="unwind" unwindAction="backToEditWithoutSave:" id="vrz-lI-Njw"/>
+                                            <action selector="popBtnClicked:" destination="H9Y-oB-VQc" eventType="touchUpInside" id="lkA-Cf-d0H"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYd-sW-Xvu">
@@ -2009,7 +2009,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="99.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fDn-oc-2O5">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fDn-oc-2O5">
                                                     <rect key="frame" x="12" y="20" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="hI4-Ib-Cih"/>
@@ -2084,7 +2084,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Bh-46-tAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="cE9-sH-f8z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5700" y="1912"/>
         </scene>
@@ -2227,8 +2226,8 @@
                                                         <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx9-4I-hmK">
-                                                        <rect key="frame" x="284.66666666666669" y="17.666666666666657" width="64.333333333333314" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx9-4I-hmK">
+                                                        <rect key="frame" x="306" y="17.666666666666657" width="43" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2284,8 +2283,8 @@
                                                         <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="idType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIX-Ts-coQ">
-                                                        <rect key="frame" x="305.66666666666669" y="18" width="43.333333333333314" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIX-Ts-coQ">
+                                                        <rect key="frame" x="306" y="18" width="43" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2306,6 +2305,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecY-dw-FVY">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="identityClicked:" destination="Dbu-oW-RqM" eventType="touchUpInside" id="4Ga-8c-wDk"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2392,8 +2394,8 @@
                                                         <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xA-vg-zoP">
-                                                        <rect key="frame" x="314.66666666666669" y="17.666666666666686" width="34.333333333333314" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xA-vg-zoP">
+                                                        <rect key="frame" x="306" y="17.666666666666686" width="43" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2650,7 +2652,7 @@
                                             <color key="titleColor" red="0.64705882349999999" green="0.67450980390000004" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Jeh-pU-T2t" kind="unwind" unwindAction="backToEditWithoutSave:" id="8Ra-Y9-RCK"/>
+                                            <action selector="popBtnClicked:" destination="Ex6-3h-KCT" eventType="touchUpInside" id="crW-iy-JRe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtM-Wg-62G">
@@ -2885,7 +2887,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8k-0i-jMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Jeh-pU-T2t" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3937" y="2736"/>
         </scene>
@@ -2906,7 +2907,7 @@
                                             <color key="titleColor" red="0.64705882349999999" green="0.67450980390000004" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="cJg-jb-33y" kind="unwind" unwindAction="backToEditWithoutSave:" id="akr-iZ-5Fj"/>
+                                            <action selector="popBtnClicked:" destination="TkE-mx-DHm" eventType="touchUpInside" id="NHB-Y5-scQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRd-IK-Hyq">
@@ -2923,6 +2924,9 @@
                                         <state key="normal" title="保存">
                                             <color key="titleColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveClicked:" destination="TkE-mx-DHm" eventType="touchUpInside" id="bqK-ff-4oO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2986,6 +2990,9 @@
                                                         <rect key="frame" x="5" y="2" width="341" height="91.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="TkE-mx-DHm" id="ANT-zA-Ces"/>
+                                                        </connections>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJW-bs-Ng8">
                                                         <rect key="frame" x="302" y="96" width="39" height="17"/>
@@ -3036,6 +3043,9 @@
                                                         <rect key="frame" x="5" y="2" width="341" height="91.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="TkE-mx-DHm" id="MuY-te-DeQ"/>
+                                                        </connections>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i8-Lo-ngZ">
                                                         <rect key="frame" x="302" y="96" width="39" height="17"/>
@@ -3086,6 +3096,9 @@
                                                         <rect key="frame" x="5" y="2" width="341" height="91.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="TkE-mx-DHm" id="aca-b3-W0o"/>
+                                                        </connections>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyX-4q-ugK">
                                                         <rect key="frame" x="302" y="96" width="39" height="17"/>
@@ -3232,11 +3245,22 @@
                         <viewLayoutGuide key="safeArea" id="mTZ-WI-Cgw"/>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="9sc-ZO-gV0" id="G5E-Zh-ywg"/>
+                        <outlet property="inputLimitLbl1" destination="qJW-bs-Ng8" id="rxy-Wn-Paq"/>
+                        <outlet property="inputLimitLbl2" destination="3i8-Lo-ngZ" id="YlK-Um-wnZ"/>
+                        <outlet property="inputLimitLbl3" destination="wyX-4q-ugK" id="Vv7-BV-G5Z"/>
+                        <outlet property="inputLimitLbl4" destination="crz-ba-9YM" id="3X7-hp-0tC"/>
+                        <outlet property="inputTV1" destination="1oX-3O-O3d" id="yFz-Gx-KJB"/>
+                        <outlet property="inputTV2" destination="tf1-JR-faI" id="jAy-AW-eRz"/>
+                        <outlet property="inputTV3" destination="RPJ-tH-BL1" id="P2y-7y-kM4"/>
+                        <outlet property="inputTV4" destination="9sc-ZO-gV0" id="Ujj-L1-62Z"/>
+                        <outlet property="placeholderLbl1" destination="uWc-RP-N4H" id="eSN-Cg-W6X"/>
+                        <outlet property="placeholderLbl2" destination="Fdp-iy-myl" id="Dsb-Dq-KCO"/>
+                        <outlet property="placeholderLbl3" destination="ehF-g7-l2F" id="IIH-Dj-1KV"/>
+                        <outlet property="placeholderLbl4" destination="BoD-6J-2RP" id="s2l-Ki-K4O"/>
+                        <outlet property="scrollView" destination="Ttt-Hs-3ky" id="3Kk-ff-OU5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVt-os-65Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="cJg-jb-33y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4612" y="2735"/>
         </scene>
@@ -3257,7 +3281,7 @@
                                             <color key="titleColor" red="0.64705882349999999" green="0.67450980390000004" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="oPP-jc-7wP" kind="unwind" unwindAction="backToEditWithoutSave:" id="B8g-Os-5ew"/>
+                                            <action selector="popBtnClicked:" destination="cl6-Wb-PVb" eventType="touchUpInside" id="3uW-Lh-jee"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZl-Ar-7iB">
@@ -3274,6 +3298,9 @@
                                         <state key="normal" title="保存">
                                             <color key="titleColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveBtnClicked:" destination="cl6-Wb-PVb" eventType="touchUpInside" id="quW-Tk-Nvv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3319,7 +3346,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihg-jd-Oxm">
-                                <rect key="frame" x="0.0" y="131" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="131" width="375" height="681"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BH9-Cq-nmk">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
@@ -3355,6 +3382,12 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIS-kj-7kR">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputTitleID" value="MPERSIncome"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="showInputVC:" destination="cl6-Wb-PVb" eventType="touchUpInside" id="4XB-Tl-Dte"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3406,6 +3439,12 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htW-P0-8dF">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputTitleID" value="MPERSActive"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="showInputVC:" destination="cl6-Wb-PVb" eventType="touchUpInside" id="xjW-OQ-voM"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3457,6 +3496,12 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVd-o5-ywc">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputTitleID" value="MPERSTotal"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="showInputVC:" destination="cl6-Wb-PVb" eventType="touchUpInside" id="h6p-iT-q9B"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3490,6 +3535,9 @@
                                                         <rect key="frame" x="5" y="2" width="341" height="91.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="cl6-Wb-PVb" id="u4M-x0-Xey"/>
+                                                        </connections>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YI-Fl-8pH">
                                                         <rect key="frame" x="301" y="96" width="40" height="17"/>
@@ -3560,7 +3608,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gHE-xG-ZIS" firstAttribute="bottom" secondItem="Ihg-jd-Oxm" secondAttribute="bottom" id="2dS-Zz-iA6"/>
+                            <constraint firstAttribute="bottom" secondItem="Ihg-jd-Oxm" secondAttribute="bottom" id="2dS-Zz-iA6"/>
                             <constraint firstItem="Ihg-jd-Oxm" firstAttribute="leading" secondItem="gHE-xG-ZIS" secondAttribute="leading" id="6Oy-sf-IrP"/>
                             <constraint firstItem="TJT-r5-bha" firstAttribute="top" secondItem="gHE-xG-ZIS" secondAttribute="top" id="7Dl-Nu-N1v"/>
                             <constraint firstItem="vFj-nO-7mC" firstAttribute="leading" secondItem="TJT-r5-bha" secondAttribute="leading" id="DZy-le-NI9"/>
@@ -3580,9 +3628,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gHE-xG-ZIS"/>
                     </view>
+                    <connections>
+                        <outlet property="inputLimitLbl" destination="4YI-Fl-8pH" id="vUb-mr-ngs"/>
+                        <outlet property="inputTF" destination="ewj-3q-YQB" id="mrf-X2-30W"/>
+                        <outlet property="momthlyIncomeLbl" destination="SDM-eI-QA3" id="FhR-gr-ryU"/>
+                        <outlet property="monthlyActiveUserLbl" destination="Bhv-NR-Nc1" id="MyB-Jl-XtI"/>
+                        <outlet property="placeholderLbl" destination="KdX-vy-q3M" id="map-nK-d8Q"/>
+                        <outlet property="scrollView" destination="Ihg-jd-Oxm" id="t9P-PJ-ve9"/>
+                        <outlet property="totalUserLbl" destination="YFp-q4-J3H" id="LVL-Jz-C3D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOQ-Cz-Vut" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="oPP-jc-7wP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5289" y="2735"/>
         </scene>
@@ -3603,7 +3659,7 @@
                                             <color key="titleColor" red="0.64705882349999999" green="0.67450980390000004" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="cFN-oj-HFU" kind="unwind" unwindAction="backToEditWithoutSave:" id="Hy4-yi-QiW"/>
+                                            <action selector="popBtnClicked:" destination="45W-Qs-iN2" eventType="touchUpInside" id="PEx-xc-huS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diY-20-Xw5">
@@ -3620,6 +3676,9 @@
                                         <state key="normal" title="保存">
                                             <color key="titleColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveBtnClicked:" destination="45W-Qs-iN2" eventType="touchUpInside" id="Clu-uE-lLl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3658,7 +3717,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgo-qm-DLr">
-                                <rect key="frame" x="0.0" y="130" width="375" height="648"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="682"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfD-IB-6oU">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="382"/>
@@ -3694,6 +3753,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5q-VA-2wh">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="selectCurrencyClicked:" destination="45W-Qs-iN2" eventType="touchUpInside" id="kqq-JE-PVq"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3745,6 +3807,12 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xed-LR-C1p">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputTitleID" value="MPEFNExpect"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="showInputVC:" destination="45W-Qs-iN2" eventType="touchUpInside" id="VbT-Um-JyH"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3796,6 +3864,12 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaA-Yp-1Ue">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputTitleID" value="MPEFNStock"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="showInputVC:" destination="45W-Qs-iN2" eventType="touchUpInside" id="ip4-ua-3o6"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3829,6 +3903,9 @@
                                                         <rect key="frame" x="5" y="2" width="341" height="91.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="45W-Qs-iN2" id="yZ1-iR-eun"/>
+                                                        </connections>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVV-XT-fPb">
                                                         <rect key="frame" x="301" y="96" width="40" height="17"/>
@@ -3894,6 +3971,12 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imp-IO-blb">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputTitleID" value="MPEFNEstimate"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="showInputVC:" destination="45W-Qs-iN2" eventType="touchUpInside" id="Ppz-SL-U0s"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3954,7 +4037,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zgo-qm-DLr" firstAttribute="trailing" secondItem="vTq-YB-eoa" secondAttribute="trailing" id="4WE-yi-iAa"/>
-                            <constraint firstItem="vTq-YB-eoa" firstAttribute="bottom" secondItem="zgo-qm-DLr" secondAttribute="bottom" id="Eba-SV-ot7"/>
+                            <constraint firstAttribute="bottom" secondItem="zgo-qm-DLr" secondAttribute="bottom" id="Eba-SV-ot7"/>
                             <constraint firstItem="zgo-qm-DLr" firstAttribute="top" secondItem="V9z-LY-aQH" secondAttribute="bottom" id="Ivw-vN-RqM"/>
                             <constraint firstAttribute="trailing" secondItem="Hy1-Ci-tQt" secondAttribute="trailing" id="M0q-TI-7P8"/>
                             <constraint firstItem="Hy1-Ci-tQt" firstAttribute="leading" secondItem="duJ-Gd-4fF" secondAttribute="leading" id="PTE-fG-Bwe"/>
@@ -3970,9 +4053,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vTq-YB-eoa"/>
                     </view>
+                    <connections>
+                        <outlet property="currencyLbl" destination="bIJ-WR-bNw" id="zfE-IB-44D"/>
+                        <outlet property="estimateLbl" destination="H9r-qm-3m5" id="bPe-0q-tGN"/>
+                        <outlet property="expectedFinanceLbl" destination="0N2-2c-8jE" id="4Ba-8F-3XK"/>
+                        <outlet property="inputLimitLbl" destination="YVV-XT-fPb" id="qu8-9H-v1r"/>
+                        <outlet property="inputTF" destination="CBz-Mq-xcT" id="a6e-UE-5xI"/>
+                        <outlet property="placeholderLbl" destination="5Xp-J5-SkX" id="jnM-Eh-1t3"/>
+                        <outlet property="scrollView" destination="zgo-qm-DLr" id="6BQ-MV-bwm"/>
+                        <outlet property="shareStockLbl" destination="I9U-wz-vn5" id="WsN-Qg-Iab"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETy-Zq-S5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="cFN-oj-HFU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5964" y="2735"/>
         </scene>
@@ -4271,9 +4363,9 @@
         <image name="right_arrow" width="6" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4K2-Dz-dxN"/>
+        <segue reference="5fu-XA-MnE"/>
         <segue reference="JWp-2j-dqt"/>
-        <segue reference="DxQ-Aa-YgY"/>
+        <segue reference="kFi-PQ-dux"/>
         <segue reference="wvX-dX-IFq"/>
         <segue reference="ISa-ZH-agr"/>
     </inferredMetricsTieBreakers>

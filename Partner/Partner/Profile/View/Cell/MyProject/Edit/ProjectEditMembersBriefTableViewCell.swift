@@ -10,15 +10,10 @@ import SCLAlertView
 
 class ProjectEditMembersBriefTableViewCell: UITableViewCell {
     
-    var projId: Int? {
-        didSet {
-            loadMemberData()
-        }
-    }
-    
     var imgURLs: [String]? {
         didSet {
             if let imgURLs = imgURLs {
+                memberCount = imgURLs.count
                 if imgURLs.count <= 5 {
                     // 1. hide all
                     for img in avatarImg {
@@ -34,8 +29,14 @@ class ProjectEditMembersBriefTableViewCell: UITableViewCell {
                         avatarImg[j].sd_setImage(with: URL.init(string: imgURLs[j]), placeholderImage: nil, options: .continueInBackground, completed: nil)
                     }
                 }
-            }
-            
+            } else {
+                // hide all
+                for img in avatarImg {
+                    img.isHidden = true
+                }
+                // set label title
+                membersCountLbl.text = "添加成员"
+            } 
         }
     }
     var memberCount: Int? {
@@ -53,35 +54,6 @@ class ProjectEditMembersBriefTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-    }
-    
-    func loadMemberData() {
-        
-        guard let projectId = projId else { return }
-        NetWorkTool.shareInstance.getMemberList(token: access_token!, projectId: projectId) { (result, error) in
-            weak var weakSelf = self
-            if error != nil {
-                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
-                return
-            }
-            if result!["code"] as! Int == 200 {
-                // TODO:- save data into model
-                if let resultDictArray = result!["result"] as? [[String : AnyObject]] {
-                    var count = 0
-                    var urlArray = [String]()
-                    for dict in resultDictArray {
-                        let imgURL = dict["imgUrl"] as! String
-                        urlArray.append(imgURL)
-                        weakSelf?.imgURLs = urlArray
-                        count += 1
-                    }
-                    weakSelf?.memberCount = count
-                }
-                
-            } else {
-                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
-            }
-        }
     }
 
 }

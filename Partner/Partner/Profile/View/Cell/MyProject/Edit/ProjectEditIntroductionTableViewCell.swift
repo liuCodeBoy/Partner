@@ -17,6 +17,19 @@ class ProjectEditIntroductionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        addCoverView.isHidden = false
+    }
+    
+    var viewModel: ProjectDetialModel? {
+        didSet {
+            if let desc = viewModel?.projDesc, let highlight = viewModel?.projHighlights {
+                projIntroLbl.text = desc
+                projHighlightsLbl.text = highlight
+                // MARK:- desc is nil, show the cover view
+                addCoverView.isHidden = true
+            }
+            addCoverView.isHidden = true
+        }
     }
 
 }

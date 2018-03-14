@@ -11,13 +11,9 @@ import SCLAlertView
 class ProjectEditTeamMemberTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     // MARK:- project id
-    var projID: Int? {
-        didSet {
-            loadMemberdata()
-        }
-    }
+    var projID: Int?
     
-    var passIDClosure: ((_ projID: Int) -> Void)?
+    var passIDClosure: ((_ memberID: Int) -> Void)?
     
     var modelArray: [ProjectMemberModel] = [ProjectMemberModel]() {
         didSet {
@@ -48,10 +44,11 @@ class ProjectEditTeamMemberTableView: UITableView, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
-        let id = modelArray[indexPath.row].id as! Int
+//        let projID = modelArray[indexPath.row].id as! Int
+        let memberID = modelArray[indexPath.row].id as! Int
         
         if passIDClosure != nil {
-            passIDClosure!(id)
+            passIDClosure!(memberID)
         }
         
         return indexPath
@@ -62,6 +59,8 @@ class ProjectEditTeamMemberTableView: UITableView, UITableViewDelegate, UITableV
 extension ProjectEditTeamMemberTableView {
     
     func loadMemberdata() {
+        
+        modelArray.removeAll()
         
         guard UserDefaults.standard.string(forKey: "token") != nil else { return }
         guard let projectId = projID else { return }
