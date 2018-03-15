@@ -8,18 +8,21 @@
 import UIKit
 
 class ProjectReviewTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
+    
+    var memberModelArray: [ProjectMemberModel] = [ProjectMemberModel]()
 
-//    var headerModelView: ProjectBasicInfoModel? {
-//        didSet {
-//            reloadData()
-//        }
-//    }
-//
-//    var modelView: ProjectDetialModel? {
-//        didSet {
-//            reloadData()
-//        }
-//    }
+    var modelView: ProjectDetialModel? {
+        didSet {
+            memberModelArray.removeAll()
+            if let memberInfoDict = modelView?.membInfos {
+                for dict in memberInfoDict {
+                    let model = ProjectMemberModel.mj_object(withKeyValues: dict)
+                    memberModelArray.append(model!)
+                }
+            }
+            reloadData()
+        }
+    }
     
     var selectImageClosure: NonParamClosure?
     
@@ -40,7 +43,7 @@ class ProjectReviewTableView: UITableView, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
-            return 5
+            return memberModelArray.count
         } else if section == 6 {
             return 2
         } else {
@@ -61,10 +64,11 @@ class ProjectReviewTableView: UITableView, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section != 0 || section != 6 {
-            return 70
+
+        if section == 0 || section == 6 {
+            return 0.0001
         } else {
-            return 0.00001
+            return 50
         }
     }
     
@@ -74,45 +78,47 @@ class ProjectReviewTableView: UITableView, UITableViewDelegate, UITableViewDataS
         case 0:
             let header = tableView.dequeueReusableCell(withIdentifier: "ProjectReviewBasicInfomationHeaderTableViewCell")           as! ProjectReviewBasicInfomationHeaderTableViewCell
             // TODO:- pass view model to cell
-//            header.viewModel = headerModelView
+            header.viewModel = modelView
             cell = header
         case 1:
             let member  = tableView.dequeueReusableCell(withIdentifier: "ProjectReviewMemberIntroductionTableViewCell")     as! ProjectReviewMemberIntroductionTableViewCell
             // TODO:- pass avatar image urls to cell
-//            member.imgURLs = modelView?.membImgUrls
+            member.viewModel = memberModelArray[indexPath.row]
             cell = member
         case 2:
             let intro   = tableView.dequeueReusableCell(withIdentifier: "ProjectReviewIntroductionTableViewCell")     as! ProjectReviewIntroductionTableViewCell
             
             // TODO:- pass detial string to cell
-//            intro.viewModel = modelView
+            intro.viewModel = modelView
             cell = intro
         case 3:
             let market  = tableView.dequeueReusableCell(withIdentifier: "ProjectReviewMarketAnalysisTableViewCell")   as! ProjectReviewMarketAnalysisTableViewCell
             
             // TODO:- pass detial string to cell
-//            market.viewModel = modelView
+            market.viewModel = modelView
             cell = market
         case 4:
             let run     = tableView.dequeueReusableCell(withIdentifier: "ProjectReviewRunStatusTableViewCell")        as! ProjectReviewRunStatusTableViewCell
             // MARK:- pass detial string to cell
-//            run.viewModel = modelView
+            run.viewModel = modelView
             cell = run
         case 5:
             let funding = tableView.dequeueReusableCell(withIdentifier: "ProjectReviewFundingNeedTableViewCell")      as! ProjectReviewFundingNeedTableViewCell
             // MARK:- pass detial string to cell
-//            funding.viewModel = modelView
+            funding.viewModel = modelView
             cell = funding
         case 6:
             if indexPath.row == 0 {
                 let plan    = tableView.dequeueReusableCell(withIdentifier: "ProjectEditBusinessPlanBookTableViewCell") as! ProjectEditBusinessPlanBookTableViewCell
                 // MARK:- pass plan name to cell
-//                plan.viewModel = modelView
+                plan.viewModel = modelView
                 cell = plan
             } else if indexPath.row == 1 {
                 let confirm = tableView.dequeueReusableCell(withIdentifier: "ProjectReviewConfirmButtonTableViewCell")    as! ProjectReviewConfirmButtonTableViewCell
                 // MARK:- pass id to cell
-//                confirm.viewModel = modelView
+                if let id = modelView?.projectId {
+                    confirm.projID = id as? Int
+                }
                 cell = confirm
             }
         default: break
@@ -122,31 +128,7 @@ class ProjectReviewTableView: UITableView, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         tableView.estimatedRowHeight = 100
-//        switch indexPath.row {
-//        case 0: return 264
-//        case 1: return 60
-//        default:
-//        }
         return UITableViewAutomaticDimension
     }
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        // MARK:- judge the proj status
-        
-//        if modelView?.status != 0 {
-//            if indexPath.row == 1 {
-//                return indexPath
-//            }
-//            return nil
-//        }
-        return indexPath
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 6 {
-            // MARK:- select image as business plane book
-            NotificationCenter.default.post(name: NSNotification.Name.init(presentImagePickerNotification), object: nil)
-        }
-    }
-
 }

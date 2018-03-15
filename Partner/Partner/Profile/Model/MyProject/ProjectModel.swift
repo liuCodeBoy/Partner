@@ -107,6 +107,7 @@ class ProjectDetialModel: NSObject {
     @objc var projDesc          : String?
     @objc var projHighlights    : String?
     @objc var membImgUrls       :[String]?
+    @objc var membInfos         :[NSDictionary]?
 
     @objc var projUserGroup     : String?
     @objc var projProfitModel   : String?

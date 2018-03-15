@@ -58,14 +58,6 @@
                                             </segue>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlp-px-OX4">
-                                        <rect key="frame" x="185" y="8" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <segue destination="hZD-k8-yzo" kind="show" id="RCE-gz-nac"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -169,7 +161,7 @@
                                     <constraint firstItem="Tr0-kt-j09" firstAttribute="top" secondItem="iIK-qn-pSC" secondAttribute="top" constant="10" id="v9a-vB-F4i"/>
                                 </constraints>
                             </view>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="55C-e8-wuY" customClass="ProjectListTableView" customModule="Partner" customModuleProvider="target">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="55C-e8-wuY" customClass="ProjectListTableView" customModule="Partner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="200" width="375" height="612"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -334,11 +326,12 @@
                                             <outletCollection property="tagLbl" destination="ctr-ld-HgP" collectionClass="NSMutableArray" id="k77-Cn-eBd"/>
                                             <outletCollection property="tagLbl" destination="xFe-8p-7Md" collectionClass="NSMutableArray" id="sPa-6l-Ctv"/>
                                             <outletCollection property="tagLbl" destination="W7A-iH-g0Q" collectionClass="NSMutableArray" id="WTc-cZ-h8E"/>
+                                            <segue destination="hZD-k8-yzo" kind="show" identifier="MPRDetialInfoSegue" id="TiT-st-EoA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AAL-yI-Y9g" customClass="ProjectListTableView" customModule="Partner" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AAL-yI-Y9g" customClass="ProjectListTableView" customModule="Partner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="200" width="375" height="612"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -831,7 +824,7 @@
                                     <constraint firstItem="d1F-Zr-rW5" firstAttribute="leading" secondItem="gDE-fA-9xw" secondAttribute="leading" constant="10" id="nkC-k5-LOd"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bQk-KF-9rD" customClass="ProjectEditlTableView" customModule="Partner" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bQk-KF-9rD" customClass="ProjectEditlTableView" customModule="Partner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -858,6 +851,9 @@
                                                             <state key="normal" title="预览">
                                                                 <color key="titleColor" red="0.55294120309999995" green="0.62745100259999997" blue="0.69411766529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <segue destination="hZD-k8-yzo" kind="show" id="NpH-Vf-cbf"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cW-rj-D2Z">
                                                             <rect key="frame" x="311" y="0.0" width="40" height="40"/>
@@ -4638,10 +4634,10 @@
             </objects>
             <point key="canvasLocation" x="6505" y="1196"/>
         </scene>
-        <!--View Controller-->
+        <!--My Project Review View Controller-->
         <scene sceneID="Glh-7z-W5X">
             <objects>
-                <viewController id="hZD-k8-yzo" sceneMemberID="viewController">
+                <viewController id="hZD-k8-yzo" customClass="MyProjectReviewViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="trh-xH-9JD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4661,9 +4657,12 @@
                                         <state key="normal" title="      " image="left_arrow_white">
                                             <color key="titleColor" red="0.64705882349999999" green="0.67450980390000004" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="popBtnClicked:" destination="hZD-k8-yzo" eventType="touchUpInside" id="URZ-bw-Uhm"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编辑项目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2i-p7-2c6">
-                                        <rect key="frame" x="158.66666666666666" y="14" width="57.333333333333343" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预览项目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2i-p7-2c6">
+                                        <rect key="frame" x="158.66666666666666" y="14" width="58" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -4704,11 +4703,11 @@
                                     <constraint firstItem="jPo-1W-agM" firstAttribute="centerY" secondItem="baz-LF-feo" secondAttribute="centerY" id="zvB-cH-0YO"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4F4-Es-omD" customClass="ProjectReviewTableView" customModule="Partner" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4F4-Es-omD" customClass="ProjectReviewTableView" customModule="Partner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectReviewBasicInfomationHeaderTableViewCell" rowHeight="264" id="Aub-ho-o4O" customClass="ProjectReviewBasicInfomationHeaderTableViewCell" customModule="Partner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectReviewBasicInfomationHeaderTableViewCell" rowHeight="264" id="Aub-ho-o4O" customClass="ProjectReviewBasicInfomationHeaderTableViewCell" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="264"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aub-ho-o4O" id="onv-hj-qfq">
@@ -4889,7 +4888,7 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bhi-vC-efM">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="project_logo_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Bhi-vC-efM">
                                                     <rect key="frame" x="148.66666666666666" y="10" width="78" height="78"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -4917,16 +4916,26 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="favLbl" destination="uwG-kj-o3I" id="iK4-8E-qSs"/>
+                                            <outlet property="projLogoImg" destination="Bhi-vC-efM" id="9gu-t2-5BO"/>
+                                            <outlet property="projNameLbl" destination="djv-st-x18" id="Bdg-9l-TgZ"/>
+                                            <outlet property="projStatusLbl" destination="Vuq-0u-CoF" id="KB8-N5-ljA"/>
+                                            <outlet property="viewLbl" destination="JQr-Il-MSg" id="1hd-Fg-CVf"/>
+                                            <outletCollection property="tagLbl" destination="RpV-6l-anR" collectionClass="NSMutableArray" id="W3w-na-HhL"/>
+                                            <outletCollection property="tagLbl" destination="emo-qG-gcK" collectionClass="NSMutableArray" id="Kfw-rP-PoH"/>
+                                            <outletCollection property="tagLbl" destination="uOL-eG-ZpM" collectionClass="NSMutableArray" id="7Wr-aA-PLO"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectReviewSectionHeaderTableViewCell" rowHeight="70" id="Uvp-Ja-XGY" customClass="ProjectReviewSectionHeaderTableViewCell" customModule="Partner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="292" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectReviewSectionHeaderTableViewCell" rowHeight="50" id="Uvp-Ja-XGY" customClass="ProjectReviewSectionHeaderTableViewCell" customModule="Partner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="292" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uvp-Ja-XGY" id="eGz-aZ-HLk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="团队介绍" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBH-HY-fLt" customClass="StrokeLabel" customModule="Partner" customModuleProvider="target">
-                                                    <rect key="frame" x="12" y="29.666666666666671" width="80" height="30"/>
+                                                    <rect key="frame" x="12" y="9.6666666666666643" width="80" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="CuA-Ax-8uS"/>
                                                         <constraint firstAttribute="width" constant="80" id="RA4-y7-h83"/>
@@ -4949,23 +4958,24 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="WBH-HY-fLt" firstAttribute="leading" secondItem="eGz-aZ-HLk" secondAttribute="leading" constant="12" id="5Qv-qn-md3"/>
-                                                <constraint firstItem="WBH-HY-fLt" firstAttribute="top" secondItem="eGz-aZ-HLk" secondAttribute="top" constant="30" id="Gfp-kv-4zX"/>
                                                 <constraint firstAttribute="bottom" secondItem="WBH-HY-fLt" secondAttribute="bottom" constant="10" id="Nhk-o0-j01"/>
+                                                <constraint firstItem="WBH-HY-fLt" firstAttribute="top" secondItem="eGz-aZ-HLk" secondAttribute="top" constant="10" id="aCh-zI-pY6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="headerLbl" destination="WBH-HY-fLt" id="XLu-xR-Bzc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectReviewMemberIntroductionTableViewCell" rowHeight="118" id="Ji8-bU-PLp" customClass="ProjectReviewMemberIntroductionTableViewCell" customModule="Partner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="362" width="375" height="118"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectReviewMemberIntroductionTableViewCell" rowHeight="118" id="Ji8-bU-PLp" customClass="ProjectReviewMemberIntroductionTableViewCell" customModule="Partner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="342" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ji8-bU-PLp" id="wRu-cB-YTK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="117.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hT2-cd-O3e">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hT2-cd-O3e">
                                                     <rect key="frame" x="12" y="20" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="G8R-PH-ksC"/>
@@ -4998,7 +5008,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNK-T6-WeT">
                                                     <rect key="frame" x="82" y="75" width="281" height="22.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -5024,8 +5034,8 @@
                                             <outlet property="nickNameLbl" destination="z5P-Bt-fTL" id="X8e-cy-axc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectReviewIntroductionTableViewCell" rowHeight="174" id="Ybm-aY-nMj" customClass="ProjectReviewIntroductionTableViewCell" customModule="Partner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="480" width="375" height="174"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectReviewIntroductionTableViewCell" rowHeight="174" id="Ybm-aY-nMj" customClass="ProjectReviewIntroductionTableViewCell" customModule="Partner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="460" width="375" height="174"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ybm-aY-nMj" id="VXt-u9-KiA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="173.66666666666666"/>
@@ -5080,9 +5090,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="projHighlightsLbl" destination="zfq-Hp-Xlk" id="BUP-dl-Gp1"/>
+                                            <outlet property="projIntroLbl" destination="KvE-cD-bDE" id="FYA-5U-6m6"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectReviewMarketAnalysisTableViewCell" rowHeight="289" id="wMS-J3-E6K" customClass="ProjectReviewMarketAnalysisTableViewCell" customModule="Partner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="654" width="375" height="289"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectReviewMarketAnalysisTableViewCell" rowHeight="289" id="wMS-J3-E6K" customClass="ProjectReviewMarketAnalysisTableViewCell" customModule="Partner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="634" width="375" height="289"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wMS-J3-E6K" id="geN-hq-Bsr">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="288.66666666666669"/>
@@ -5183,9 +5197,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="aimUserGroupLbl" destination="pqE-jc-Ft7" id="TqN-oQ-48C"/>
+                                            <outlet property="competitionRivalLbl" destination="NQe-Jk-b4w" id="QBL-uv-27b"/>
+                                            <outlet property="ownSourceLbl" destination="aab-fc-Ab6" id="c53-Td-Rff"/>
+                                            <outlet property="profitModLbl" destination="Cib-Io-e66" id="IYA-O6-24r"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectReviewRunStatusTableViewCell" rowHeight="177" id="fXW-fM-kHs" customClass="ProjectReviewRunStatusTableViewCell" customModule="Partner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="943" width="375" height="177"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectReviewRunStatusTableViewCell" rowHeight="177" id="fXW-fM-kHs" customClass="ProjectReviewRunStatusTableViewCell" customModule="Partner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="923" width="375" height="177"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fXW-fM-kHs" id="0D0-53-qXC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="176.66666666666666"/>
@@ -5343,9 +5363,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="monthActivePeopleLbl" destination="Pfi-5l-edG" id="tym-1F-wvz"/>
+                                            <outlet property="monthSalaryLbl" destination="Oe7-Y1-P3I" id="Caa-hc-kmS"/>
+                                            <outlet property="runDataLbl" destination="uAh-uV-mfI" id="hwX-ZF-io0"/>
+                                            <outlet property="totalUserLbl" destination="f0D-Sz-eu3" id="MAt-TM-FyT"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectReviewFundingNeedTableViewCell" rowHeight="177" id="ZM2-pi-1om" customClass="ProjectReviewFundingNeedTableViewCell" customModule="Partner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1120" width="375" height="177"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectReviewFundingNeedTableViewCell" rowHeight="177" id="ZM2-pi-1om" customClass="ProjectReviewFundingNeedTableViewCell" customModule="Partner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1100" width="375" height="177"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZM2-pi-1om" id="jvX-RC-40v">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="176.66666666666666"/>
@@ -5503,9 +5529,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="fundingExpectationLbl" destination="x02-DS-0fm" id="HlN-uG-94F"/>
+                                            <outlet property="fundingMomeyLbl" destination="zFm-EG-Hxk" id="UHr-EM-q34"/>
+                                            <outlet property="moneyUsingPlanLbl" destination="Y6F-Wo-64l" id="ydo-dC-S2v"/>
+                                            <outlet property="transferSharesLbl" destination="1uz-YF-Qpr" id="uao-X6-Qnq"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditBusinessPlanBookTableViewCell" rowHeight="54" id="Umn-Mt-Toa" customClass="ProjectEditBusinessPlanBookTableViewCell" customModule="Partner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1297" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="1277" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Umn-Mt-Toa" id="WTT-02-cI0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="53.666666666666664"/>
@@ -5560,8 +5592,8 @@
                                             <outlet property="planBookLbl" destination="5iR-lt-QN9" id="3wx-39-Le3"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectReviewConfirmButtonTableViewCell" rowHeight="80" id="3p8-L7-OJ6" customClass="ProjectReviewConfirmButtonTableViewCell" customModule="Partner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1351" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectReviewConfirmButtonTableViewCell" rowHeight="80" id="3p8-L7-OJ6" customClass="ProjectReviewConfirmButtonTableViewCell" customModule="Partner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1331" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3p8-L7-OJ6" id="YRA-Zt-P3f">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
@@ -5585,6 +5617,9 @@
                                                                     <real key="value" value="4"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="btnClicked:" destination="3p8-L7-OJ6" eventType="touchUpInside" id="DQo-B4-ZaO"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -5598,6 +5633,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="W1s-US-HcN" secondAttribute="bottom" id="DHQ-Qj-6kv"/>
+                                                <constraint firstItem="W1s-US-HcN" firstAttribute="top" secondItem="YRA-Zt-P3f" secondAttribute="top" constant="20" id="G8h-dM-oZb"/>
                                                 <constraint firstAttribute="trailing" secondItem="W1s-US-HcN" secondAttribute="trailing" id="W9c-fg-LJg"/>
                                                 <constraint firstItem="W1s-US-HcN" firstAttribute="leading" secondItem="YRA-Zt-P3f" secondAttribute="leading" id="o77-rY-dcp"/>
                                             </constraints>
@@ -5623,10 +5659,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J81-2Y-Bza"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="4F4-Es-omD" id="fCk-EV-y6y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzM-mq-pkP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4149.6000000000004" y="1911.576354679803"/>
+            <point key="canvasLocation" x="3433" y="1912"/>
         </scene>
     </scenes>
     <resources>
@@ -5644,9 +5683,11 @@
         <image name="profile_my_project_upload" width="20" height="20"/>
         <image name="profile_my_project_view" width="16" height="10"/>
         <image name="profile_settings" width="20" height="20"/>
+        <image name="project_logo_placeholder" width="60" height="60"/>
         <image name="right_arrow" width="6" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="NpH-Vf-cbf"/>
         <segue reference="5fu-XA-MnE"/>
         <segue reference="JWp-2j-dqt"/>
         <segue reference="kFi-PQ-dux"/>

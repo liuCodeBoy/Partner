@@ -164,7 +164,9 @@ class MyProjectViewController: UIViewController {
         if segue.identifier == "MPEDetialInfoSegue" {
             let dest = segue.destination as! MyProjectEditViewController
             dest.projID = projID
-            
+        } else if segue.identifier == "MPRDetialInfoSegue" {
+            let dest = segue.destination as! MyProjectReviewViewController
+            dest.projID = projID
         }
     }
 

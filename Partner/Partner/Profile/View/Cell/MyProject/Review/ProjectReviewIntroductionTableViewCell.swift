@@ -8,16 +8,25 @@
 import UIKit
 
 class ProjectReviewIntroductionTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var projIntroLbl: UILabel!
+    @IBOutlet weak var projHighlightsLbl: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    var viewModel: ProjectDetialModel? {
+        didSet {
+            
+            if let desc = viewModel?.projDesc {
+                projIntroLbl.text = desc
+            }
+            if let highlight = viewModel?.projHighlights {
+                projHighlightsLbl.text = highlight
+            }
+            
+        }
     }
 
 }

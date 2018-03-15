@@ -8,16 +8,32 @@
 import UIKit
 
 class ProjectReviewFundingNeedTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var fundingMomeyLbl: UILabel!
+    @IBOutlet weak var transferSharesLbl: UILabel!
+    @IBOutlet weak var fundingExpectationLbl: UILabel!
+    @IBOutlet weak var moneyUsingPlanLbl: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    var viewModel: ProjectDetialModel? {
+        didSet {
+            if let expect = viewModel?.projFinancing {
+                fundingMomeyLbl.text = "\(expect)万元"
+            }
+            if let stock = viewModel?.projShare {
+                transferSharesLbl.text = "\(stock)%"
+            }
+            if let estimate = viewModel?.projValue {
+                fundingExpectationLbl.text = "\(estimate)万"
+            }
+            if let plan = viewModel?.projFundPlan {
+                moneyUsingPlanLbl.text = plan
+            }
+            
+        }
     }
 
 }

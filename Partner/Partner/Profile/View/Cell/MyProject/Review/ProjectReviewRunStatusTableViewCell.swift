@@ -8,16 +8,32 @@
 import UIKit
 
 class ProjectReviewRunStatusTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var monthSalaryLbl: UILabel!
+    @IBOutlet weak var monthActivePeopleLbl: UILabel!
+    @IBOutlet weak var totalUserLbl: UILabel!
+    @IBOutlet weak var runDataLbl: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    var viewModel: ProjectDetialModel? {
+        didSet {
+            if let income = viewModel?.projMonthIncome {
+                monthSalaryLbl.text = "\(income)"
+            }
+            if let active = viewModel?.projMonthUser {
+                monthActivePeopleLbl.text = "\(active)"
+            }
+            if let total = viewModel?.projTotalUser {
+                totalUserLbl.text = "\(total)"
+            }
+            if let desc = viewModel?.projDataRemark {
+                runDataLbl.text = desc
+            }
+            
+        }
     }
 
 }

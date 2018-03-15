@@ -17,5 +17,22 @@ class ProjectReviewMemberIntroductionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    var viewModel: ProjectMemberModel? {
+        didSet {
+            if let avatar = viewModel?.imgUrl {
+                avatarImg.sd_setImage(with: URL.init(string: avatar), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+            }
+            if let name = viewModel?.name {
+                nickNameLbl.text = name
+            }
+            if let job = viewModel?.jobName {
+                jobLbl.text = job
+            }
+            if let detial = viewModel?.desc {
+                descLbl.text = detial
+            }
+        }
+    }
 
 }
