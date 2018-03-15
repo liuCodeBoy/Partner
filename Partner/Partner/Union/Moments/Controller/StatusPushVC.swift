@@ -101,6 +101,7 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
                             self?.navigationController?.popViewController(animated: true)
                         })
                     } else {
+                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                         let  errorShow  =  result!["msg"] as! String
                         self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
                         

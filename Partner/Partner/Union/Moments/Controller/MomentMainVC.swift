@@ -96,7 +96,7 @@ class MomentMainVC: UIViewController , UITableViewDelegate, UITableViewDataSourc
         }
         /// 高清图
         func photoBrowser(_ photoBrowser: PhotoBrowser, highQualityUrlForIndex index: Int) -> URL? {
-            return URL(string: picStrsArr![index])
+            return nil
         }
 }
 

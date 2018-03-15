@@ -219,6 +219,7 @@
 		D3D5660A2052694A005C8E75 /* CircleListMomentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D566092052694A005C8E75 /* CircleListMomentCell.swift */; };
 		D3D5660D2053B31B005C8E75 /* ServiceProvideListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D5660C2053B31B005C8E75 /* ServiceProvideListModel.swift */; };
 		D3D566112057BE82005C8E75 /* GetProvideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D566102057BE82005C8E75 /* GetProvideVC.swift */; };
+		D3D566132058CB58005C8E75 /* MoreProviderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D566122058CB58005C8E75 /* MoreProviderVC.swift */; };
 		D3D6E00B202999F8005D3413 /* DegreePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6E00A202999F8005D3413 /* DegreePicker.swift */; };
 		D3D6E00D20299A10005D3413 /* DegreePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E00C20299A10005D3413 /* DegreePicker.xib */; };
 		D3E0D81D2021F8C300DCBCF4 /* Designable+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0D81C2021F8C300DCBCF4 /* Designable+UIImageView.swift */; };
@@ -476,6 +477,7 @@
 		D3D566092052694A005C8E75 /* CircleListMomentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleListMomentCell.swift; sourceTree = "<group>"; };
 		D3D5660C2053B31B005C8E75 /* ServiceProvideListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvideListModel.swift; sourceTree = "<group>"; };
 		D3D566102057BE82005C8E75 /* GetProvideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProvideVC.swift; sourceTree = "<group>"; };
+		D3D566122058CB58005C8E75 /* MoreProviderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreProviderVC.swift; sourceTree = "<group>"; };
 		D3D6E00A202999F8005D3413 /* DegreePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreePicker.swift; sourceTree = "<group>"; };
 		D3D6E00C20299A10005D3413 /* DegreePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DegreePicker.xib; sourceTree = "<group>"; };
 		D3E0D81C2021F8C300DCBCF4 /* Designable+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Designable+UIImageView.swift"; sourceTree = "<group>"; };
@@ -1402,6 +1404,7 @@
 				39FE111A205388A60060CD76 /* ServiceProvider */,
 				39FE1119205388840060CD76 /* InvestFinance */,
 				D3D566102057BE82005C8E75 /* GetProvideVC.swift */,
+				D3D566122058CB58005C8E75 /* MoreProviderVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1910,6 +1913,7 @@
 				D3BFC9BA2019C1F400D2C6BD /* MyProjectNoneProjectPlaceholderViewController.swift in Sources */,
 				B6754831204CF97E00B60D3A /* DynamicCommentModel.swift in Sources */,
 				D3E33488203232C40084687C /* MyHomePageAddEntrepreneurshipExperienceViewController.swift in Sources */,
+				D3D566132058CB58005C8E75 /* MoreProviderVC.swift in Sources */,
 				D3AEBBAA204F94E700FA955C /* CommentListModel.swift in Sources */,
 				39837FCF2051240C002BC382 /* Entension+UIImage.swift in Sources */,
 				B6754839204D48CB00B60D3A /* TypeListModel.swift in Sources */,
