@@ -71,4 +71,31 @@ extension NetWorkTool {
             finished(resultDict, error)
         }
     }
+    
+// 获取支持（support/commit）
+    func supportCommit(token : String, typeId : Int, suppContent: String, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http://47.97.110.89/qm/support/api/commit.do"
+        let parameters = ["token" : token , "typeId" : typeId , "suppContent" : suppContent] as [String : Any]
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            finished(resultDict, error)
+        }
+    }
+    
+//获取联系方式（phone/getPhone）
+    func phoneGetPhone(phoneType : Int,finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http://47.97.110.89/qm/phone/api/getPhone.do"
+        let parameters = ["phoneType" : phoneType ] as [String : Any]
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            finished(resultDict, error)
+        }
+    }
+    
 }

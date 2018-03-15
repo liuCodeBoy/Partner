@@ -12,5 +12,5 @@ class HotInvestorListModel: NSObject {
     @objc  var   userImgUrl    : String?
     @objc  var   userName      : String?
     @objc  var   roundName     : String?
-    @objc  var   industryList  : [NSDictionary]?
+    @objc  var   industryList  : [[String : Any]]?
 }
