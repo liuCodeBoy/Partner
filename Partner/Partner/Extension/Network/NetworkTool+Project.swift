@@ -118,21 +118,24 @@ extension NetWorkTool {
     // MARK:- 6.5.修改融资需求
     func updateFinancingNeeds(token             : String,
                               id                : Int,
-                              currencyId        : Int,
+                              currencyId        : Int?,
                               projFinancing     : Int,
                               projShare         : Int,
                               projValue         : Int,
                               projFundPlan      : String,
                               finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         let urlString = "http://47.97.110.89/qm/project/api/updateFinancingNeeds.do"
-        let parameters = ["token"          : token,
+        var parameters = ["token"          : token,
                           "id"             : id,
-                          "currencyId"     : currencyId,
                           "projFinancing"  : projFinancing,
                           "projShare"      : projShare,
                           "projValue"      : projValue,
                           "projFundPlan"   : projFundPlan
             ] as [String : Any]
+        
+        if currencyId != nil {
+            parameters.updateValue(currencyId!, forKey: "currencyId")
+        }
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             guard let resultDict = result as? [String : AnyObject] else {
                 finished(nil, error)

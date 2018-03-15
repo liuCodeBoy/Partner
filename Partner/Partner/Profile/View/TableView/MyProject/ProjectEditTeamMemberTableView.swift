@@ -12,6 +12,13 @@ class ProjectEditTeamMemberTableView: UITableView, UITableViewDelegate, UITableV
     
     // MARK:- project id
     var projID: Int?
+    var status: Int? {
+        didSet {
+            if status != 0 {
+                self.allowsSelection = false
+            }
+        }
+    }
     
     var passIDClosure: ((_ memberID: Int) -> Void)?
     

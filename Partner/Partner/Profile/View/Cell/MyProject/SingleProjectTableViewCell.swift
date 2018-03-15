@@ -44,7 +44,6 @@ class SingleProjectTableViewCell: UITableViewCell {
                 }
                 if fieldsDictArray.count == 1 {
                     tagLbl[1].isHidden = false
-                    tagLbl[3].isHidden = false
                     tagLbl[1].text = fieldsDictArray.first?["fieldName"] as? String
                 } else {
                     let count = fieldsDictArray.count
@@ -76,5 +75,4 @@ class SingleProjectTableViewCell: UITableViewCell {
             }
         }
     }
-
 }

@@ -15,12 +15,11 @@ class MyProjectEditTeamMembersViewController: UIViewController {
     
     var projID: Int?
     var memberID: Int?
+    var status: Int?
 
     @IBOutlet weak var tableView: ProjectEditTeamMemberTableView!
-    
-    @IBAction func addMemberClicked(_ sender: UIButton) {
-        
-    }
+
+    @IBOutlet weak var addMemberBtn: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.loadMemberdata()
@@ -31,6 +30,10 @@ class MyProjectEditTeamMembersViewController: UIViewController {
         
         // TODO:- pass proj id to tableview
         tableView.projID = projID
+        tableView.status = status
+        if status != 0 {
+            addMemberBtn.isHidden = true
+        }
         
         tableView.passIDClosure = { member in
             weak var weakSelf = self

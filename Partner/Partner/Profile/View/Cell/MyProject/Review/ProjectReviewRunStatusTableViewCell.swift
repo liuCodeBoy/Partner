@@ -1,39 +1,27 @@
 //
-//  ProjectEditRunStatusTableViewCell.swift
+//  ProjectReviewRunStatusTableViewCell.swift
 //  Partner
 //
-//  Created by Weslie on 29/01/2018.
+//  Created by YJ on 2018/3/14.
 //
 
 import UIKit
 
-class ProjectEditRunStatusTableViewCell: UITableViewCell {
+class ProjectReviewRunStatusTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var addCoverView: UIView!
-    @IBOutlet weak var editBtn: UIButton!
-
     @IBOutlet weak var monthSalaryLbl: UILabel!
     @IBOutlet weak var monthActivePeopleLbl: UILabel!
     @IBOutlet weak var totalUserLbl: UILabel!
     @IBOutlet weak var runDataLbl: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        addCoverView.isHidden = false
     }
     
     var viewModel: ProjectDetialModel? {
         didSet {
-            if let status = viewModel?.status {
-                if status == 0 {
-                    editBtn.isHidden = false
-                } else {
-                    editBtn.isHidden = true
-                }
-            }
             if let income = viewModel?.projMonthIncome {
                 monthSalaryLbl.text = "\(income)"
-                addCoverView.isHidden = true
             }
             if let active = viewModel?.projMonthUser {
                 monthActivePeopleLbl.text = "\(active)"

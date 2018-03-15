@@ -1,39 +1,27 @@
 //
-//  ProjectEditFundingNeedTableViewCell.swift
+//  ProjectReviewFundingNeedTableViewCell.swift
 //  Partner
 //
-//  Created by Weslie on 29/01/2018.
+//  Created by YJ on 2018/3/14.
 //
 
 import UIKit
 
-class ProjectEditFundingNeedTableViewCell: UITableViewCell {
+class ProjectReviewFundingNeedTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var addCoverView: UIView!
-    @IBOutlet weak var editBtn: UIButton!
-
     @IBOutlet weak var fundingMomeyLbl: UILabel!
     @IBOutlet weak var transferSharesLbl: UILabel!
     @IBOutlet weak var fundingExpectationLbl: UILabel!
     @IBOutlet weak var moneyUsingPlanLbl: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        addCoverView.isHidden = false
     }
     
     var viewModel: ProjectDetialModel? {
         didSet {
-            if let status = viewModel?.status {
-                if status == 0 {
-                    editBtn.isHidden = false
-                } else {
-                    editBtn.isHidden = true
-                }
-            }
             if let expect = viewModel?.projFinancing {
                 fundingMomeyLbl.text = "\(expect)万元"
-                addCoverView.isHidden = true
             }
             if let stock = viewModel?.projShare {
                 transferSharesLbl.text = "\(stock)%"

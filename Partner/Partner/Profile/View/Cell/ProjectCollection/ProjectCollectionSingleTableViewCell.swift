@@ -1,60 +1,33 @@
 //
-//  ProjectEditHeaderTableViewCell.swift
+//  ProjectCollectionSingleTableViewCell.swift
 //  Partner
 //
-//  Created by Weslie on 29/01/2018.
+//  Created by YJ on 2018/3/14.
 //
 
 import UIKit
 
-let pushEditProjBasicInfoNotification = "com.Partner.project.edit.push"
+class ProjectCollectionSingleTableViewCell: UITableViewCell {
 
-class ProjectEditHeaderTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var projLogoImg: UIImageView!
+    @IBOutlet weak var logoImg: UIImageView!
     @IBOutlet weak var projNameLbl: UILabel!
-    @IBOutlet weak var projStatusLbl: UILabel!
-    @IBOutlet weak var favLbl: UILabel!
-    @IBOutlet weak var viewLbl: UILabel!
-    
+    @IBOutlet weak var roundLbl: UILabel!
     @IBOutlet var tagLbl: [StrokeLabel]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    @IBOutlet weak var editBtn: UIButton!
-    @IBAction func editClicked(_ sender: UIButton) {
-        
-        if let viewModel = viewModel {
-            NotificationCenter.default.post(name: NSNotification.Name.init(pushEditProjBasicInfoNotification), object: viewModel)
-        }
-        
-    }
     
-    var viewModel: ProjectBasicInfoModel? {
+    var viewModel: ProjectListModel? {
         didSet {
-            if let status = viewModel?.status {
-                if status == 0 {
-                    editBtn.isHidden = false
-                } else {
-                    editBtn.isHidden = true
-                }
-            }
             if let logo = viewModel?.logoUrl {
-                projLogoImg.sd_setImage(with: URL.init(string: logo), placeholderImage: #imageLiteral(resourceName: "project_logo_placeholder"), options: .continueInBackground, completed: nil)
+                logoImg.sd_setImage(with: URL.init(string: logo), placeholderImage: #imageLiteral(resourceName: "project_logo_placeholder"), options: .continueInBackground, completed: nil)
             }
             if let name = viewModel?.projName {
                 projNameLbl.text = name
             }
-            if let round = viewModel?.roundName {
-                projStatusLbl.text = round
-            }
-            if let fav = viewModel?.foucsNum {
-                favLbl.text = "收藏 \(fav)"
-            }
-            if let view = viewModel?.scanNum {
-                viewLbl.text = "浏览 \(view)"
+            if let round = viewModel?.cityName {
+                roundLbl.text = round
             }
             if let fieldsDictArray = viewModel?.fields {
                 // hide all
@@ -63,6 +36,7 @@ class ProjectEditHeaderTableViewCell: UITableViewCell {
                 }
                 if fieldsDictArray.count == 1 {
                     tagLbl[1].isHidden = false
+                    tagLbl[3].isHidden = false
                     tagLbl[1].text = fieldsDictArray.first?["fieldName"] as? String
                 } else {
                     let count = fieldsDictArray.count

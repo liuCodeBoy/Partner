@@ -1,15 +1,13 @@
 //
-//  ProjectEditHeaderTableViewCell.swift
+//  ProjectReviewBasicInfomationHeaderTableViewCell.swift
 //  Partner
 //
-//  Created by Weslie on 29/01/2018.
+//  Created by YJ on 2018/3/14.
 //
 
 import UIKit
 
-let pushEditProjBasicInfoNotification = "com.Partner.project.edit.push"
-
-class ProjectEditHeaderTableViewCell: UITableViewCell {
+class ProjectReviewBasicInfomationHeaderTableViewCell: UITableViewCell {
     
     @IBOutlet weak var projLogoImg: UIImageView!
     @IBOutlet weak var projNameLbl: UILabel!
@@ -18,29 +16,13 @@ class ProjectEditHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var viewLbl: UILabel!
     
     @IBOutlet var tagLbl: [StrokeLabel]!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    @IBOutlet weak var editBtn: UIButton!
-    @IBAction func editClicked(_ sender: UIButton) {
-        
-        if let viewModel = viewModel {
-            NotificationCenter.default.post(name: NSNotification.Name.init(pushEditProjBasicInfoNotification), object: viewModel)
-        }
-        
-    }
     
-    var viewModel: ProjectBasicInfoModel? {
+    var viewModel: ProjectDetialModel? {
         didSet {
-            if let status = viewModel?.status {
-                if status == 0 {
-                    editBtn.isHidden = false
-                } else {
-                    editBtn.isHidden = true
-                }
-            }
             if let logo = viewModel?.logoUrl {
                 projLogoImg.sd_setImage(with: URL.init(string: logo), placeholderImage: #imageLiteral(resourceName: "project_logo_placeholder"), options: .continueInBackground, completed: nil)
             }

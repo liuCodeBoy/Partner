@@ -81,6 +81,8 @@ class MyProjectEditViewController: UIViewController {
                 let dest = destnation as! MyProjectEditTeamMembersViewController
                 // TODO:- pass id to dest controller
                 dest.projID = projID
+                // TODO:- pass proj status to dest controller
+                dest.status = modelView?.status as? Int
             case "ProjectIntroductionSegue", "ProjectIntroductionEditSegue":
                 let dest = destnation as! MyProjectEditProjectIntroductionViewController
                 // TODO:- pass id and string to dest controller
@@ -113,6 +115,10 @@ class MyProjectEditViewController: UIViewController {
                 // TODO:- pass id and string to dest controller
                 dest.projID = projID
                 dest.editViewModel = modelView
+            case "MPESettingSegue":
+                let dest = destnation as! MyProjectEditSettingsViewController
+                // TODO:- pass id and string to dest controller
+                dest.projID = projID
             default: break
             }
             
@@ -142,6 +148,7 @@ extension MyProjectEditViewController {
                 // MARK:- save scan and view num
                 weakSelf?.headerModelView?.foucsNum =  weakSelf?.modelView?.foucsNum
                 weakSelf?.headerModelView?.scanNum =  weakSelf?.modelView?.scanNum
+                weakSelf?.headerModelView?.status = weakSelf?.modelView?.status
                 
             } else {
                 SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")

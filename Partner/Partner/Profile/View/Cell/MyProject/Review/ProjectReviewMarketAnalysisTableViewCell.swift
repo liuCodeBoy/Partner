@@ -1,16 +1,13 @@
 //
-//  ProjectEditMarketAnalysisTableViewCell.swift
+//  ProjectReviewMarketAnalysisTableViewCell.swift
 //  Partner
 //
-//  Created by Weslie on 29/01/2018.
+//  Created by YJ on 2018/3/14.
 //
 
 import UIKit
 
-class ProjectEditMarketAnalysisTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var addCoverView: UIView!
-    @IBOutlet weak var editBtn: UIButton!
+class ProjectReviewMarketAnalysisTableViewCell: UITableViewCell {
 
     @IBOutlet weak var aimUserGroupLbl: UILabel!
     @IBOutlet weak var profitModLbl: UILabel!
@@ -19,21 +16,12 @@ class ProjectEditMarketAnalysisTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        addCoverView.isHidden = false
     }
     
     var viewModel: ProjectDetialModel? {
         didSet {
-            if let status = viewModel?.status {
-                if status == 0 {
-                    editBtn.isHidden = false
-                } else {
-                    editBtn.isHidden = true
-                }
-            }
             if let projUserGroup = viewModel?.projUserGroup {
                 aimUserGroupLbl.text = projUserGroup
-                addCoverView.isHidden = true
             }
             if let projProfitModel = viewModel?.projProfitModel {
                 profitModLbl.text = projProfitModel
