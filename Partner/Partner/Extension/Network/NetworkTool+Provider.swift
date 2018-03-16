@@ -34,8 +34,8 @@ extension NetWorkTool {
     }
     
     // MARK:- 7.2.搜索服务商
-    func searchProvider(pageNum: Int, pageSize: Int, fuzzy: String, type: Int, name: String, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://47.97.110.89/qm/project/api/updateProjectDesc.do"
+    func searchProvider(pageNum: Int, pageSize: Int, fuzzy: String?, type: Int?, name: String?, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http://47.97.110.89/qm/provider/api/searchProvider.do"
         let parameters = ["pageNum" : pageNum, "pageSize" : pageSize, "fuzzy" : fuzzy, "type" : type, "name" : name] as [String : Any]
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             guard let resultDict = result as? [String : AnyObject] else {

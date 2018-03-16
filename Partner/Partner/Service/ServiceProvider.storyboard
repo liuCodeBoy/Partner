@@ -14,7 +14,7 @@
         <!--Service Provider View Controller-->
         <scene sceneID="pGH-XX-Iyt">
             <objects>
-                <viewController id="qyW-QG-TAH" customClass="ServiceProviderViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServiceProviderViewControllerID" id="qyW-QG-TAH" customClass="ServiceProviderViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g5Q-bX-GvA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,9 +240,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="w2G-D7-DnT" kind="show" id="aB3-Ug-zhd">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <outlet property="companyLab" destination="cKA-mZ-BR5" id="dS5-Fe-bqy"/>
+                                            <outlet property="licationString" destination="A9c-A4-tBG" id="B0O-7h-qce"/>
+                                            <outlet property="logoImage" destination="VrT-yh-Vs2" id="aic-Gy-e3m"/>
+                                            <outlet property="mainImageView" destination="n47-BS-ruB" id="bkB-iE-kAn"/>
+                                            <outlet property="tag1" destination="EgT-Bg-cgg" id="caO-Ye-w5P"/>
+                                            <outlet property="tag2" destination="5ae-AH-kNE" id="UIk-Iy-nUo"/>
+                                            <outlet property="viewNumBtn" destination="qrM-yc-epu" id="PTA-V1-vw4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -270,15 +274,19 @@
                         <viewLayoutGuide key="safeArea" id="8Ns-8r-r1x"/>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="serviceProvideTableView" destination="BdG-2f-6PT" id="v0h-R4-xX3"/>
+                        <outlet property="topScrollView" destination="tSt-2Q-fdf" id="aN6-yN-q4H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcv-ic-VWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2497" y="54"/>
+            <point key="canvasLocation" x="2063" y="38"/>
         </scene>
         <!--Service Detial View Controller-->
         <scene sceneID="dy5-XI-Cxd">
             <objects>
-                <viewController id="w2G-D7-DnT" customClass="ServiceDetialViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServiceDetialViewControllerID" id="w2G-D7-DnT" customClass="ServiceDetialViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iyz-am-H61">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +312,7 @@
                                         <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRx-sG-I0g">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRx-sG-I0g">
                                         <rect key="frame" x="331" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jRx-sG-I0g" secondAttribute="height" id="FzA-sG-g4e"/>
@@ -501,7 +509,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="148-FX-rQj">
-                                                <rect key="frame" x="61.666666666666657" y="569.66666666666663" width="52" height="17"/>
+                                                <rect key="frame" x="61.666666666666657" y="568.66666666666663" width="52" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -591,10 +599,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hNI-O9-1Sp"/>
                     </view>
+                    <connections>
+                        <outlet property="companyNameLab" destination="baa-yP-vMg" id="lUK-Vr-cB3"/>
+                        <outlet property="detailImage" destination="AQx-dS-k4I" id="dOj-jF-eFq"/>
+                        <outlet property="locationLab" destination="148-FX-rQj" id="fdy-pp-gYu"/>
+                        <outlet property="namelab" destination="7Ns-mG-d5Z" id="Gl6-QV-ozH"/>
+                        <outlet property="officialwebsiteLab" destination="tzc-xh-Yah" id="F7B-jE-aKz"/>
+                        <outlet property="phoneLab" destination="wNa-sg-Mbi" id="xtM-w1-cxn"/>
+                        <outlet property="scanBtn" destination="poc-Pi-Vfz" id="pJA-bb-40k"/>
+                        <outlet property="serviceCommunityLab" destination="80h-kr-jDX" id="LMq-TI-GHG"/>
+                        <outlet property="summaryLab" destination="ORa-Ww-Reo" id="TL2-2B-4nG"/>
+                        <outlet property="type" destination="Hfe-he-twh" id="b8x-ig-snO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwf-f9-fw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3226" y="53"/>
+            <point key="canvasLocation" x="2519" y="38"/>
         </scene>
     </scenes>
     <resources>
