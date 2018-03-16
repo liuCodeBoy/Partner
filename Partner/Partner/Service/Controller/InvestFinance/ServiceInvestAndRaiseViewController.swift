@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class ServiceInvestAndRaiseViewController: UIViewController {
     
+    var modelArr  = [ProjectListModel]()
+    var hotInvestorListArr = [HotInvestorListModel]()
+    @IBOutlet weak var ServiceTableView: UITableView!
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -19,9 +23,64 @@ class ServiceInvestAndRaiseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+         getSelectedProject()
+         getHotInvestorList()
     }
 
 }
+
+// MARK:- 获取精选项目
+extension ServiceInvestAndRaiseViewController{
+    func getSelectedProject(){
+        NetWorkTool.shareInstance.getSelectedProjectList(token: access_token) { [weak self](result, error) in
+            guard error == nil else {
+                return
+            }
+            if  result?["code"] as? Int == 200  {
+                guard   result != nil else{
+                    return
+                }
+                if  let dictArr  =   result!["result"] as? [NSDictionary]{
+                    for dict in  dictArr {
+                       let model = ProjectListModel.mj_object(withKeyValues: dict)
+                        self?.modelArr.append(model!)
+                    }
+                    self?.ServiceTableView.reloadData()
+                }
+            }else{
+                  SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+            }
+        }
+    }
+    
+    
+    
+    //getHotInvestorList
+    func  getHotInvestorList(){
+        NetWorkTool.shareInstance.getHotInvestorList { [weak self](result, error) in
+            guard error == nil else {
+                return
+            }
+            if  result?["code"] as? Int == 200  {
+                guard   result != nil else{
+                    return
+                }
+                if  let dictArr  =   result!["result"] as? [NSDictionary]{
+                    for i in 0..<dictArr.count{
+                        if  let statusViewModel = HotInvestorListModel.mj_object(withKeyValues: dictArr[i]){
+                        self?.hotInvestorListArr.append(statusViewModel)
+                }
+            }
+             self?.ServiceTableView.reloadData()
+             }
+            }else{
+                  SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+            }
+        }
+    }
+}
+
+
 
 extension ServiceInvestAndRaiseViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -31,8 +90,8 @@ extension ServiceInvestAndRaiseViewController: UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 1: return 5
-        case 2: return 8
+        case 1: return modelArr.count
+        case 2: return hotInvestorListArr.count
         default: return 1
         }
     }
@@ -42,7 +101,7 @@ extension ServiceInvestAndRaiseViewController: UITableViewDelegate, UITableViewD
         switch section {
         case 0: return nil
         case 1: header.titleLbl.text = "精选项目"
-        case 2: header.titleLbl.text = "精选项目"
+        case 2: header.titleLbl.text = "热门投资人"
         default: break
         }
         return header
@@ -65,12 +124,20 @@ extension ServiceInvestAndRaiseViewController: UITableViewDelegate, UITableViewD
             cell = singleCell!
         case 1:
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "ServiceProjectBriefTableViewCell") as! ServiceProjectBriefTableViewCell
+            if modelArr.count > 0 {
+                singleCell.model = modelArr[indexPath.row]
+            }
             cell = singleCell
         case 2:
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "ServiceFounderBriefTableViewCell") as! ServiceFounderBriefTableViewCell
+            if hotInvestorListArr.count > 0 {
+                singleCell.model = hotInvestorListArr[indexPath.row]
+            }
             cell = singleCell
         default: break
         }
         return cell
     }
 }
+
+

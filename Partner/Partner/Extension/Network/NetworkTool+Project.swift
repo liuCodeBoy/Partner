@@ -623,7 +623,7 @@ extension NetWorkTool {
     }
     
     // MARK:- 6.34.精选项目
-    func getSelectedProjectList(token: String, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+    func getSelectedProjectList(token: String?, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         let urlString = "http://47.97.110.89/qm/project/api/getSelectedProjectList.do"
         let parameters = ["token" : token] as [String : Any]
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
