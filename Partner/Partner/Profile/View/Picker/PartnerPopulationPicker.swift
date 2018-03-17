@@ -8,18 +8,32 @@
 import UIKit
 
 class PartnerPopulationPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var saveDataClosure: ((_ role: String) -> Void)?
+    
+    var count: String?
 
     @IBOutlet weak var backView: UIView!
     @IBAction func cancelBtnClicked(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            self.backView.alpha = 0.3
+            self.backView.alpha = 0
             self.containerView.transform = CGAffineTransform(translationX: 0, y: 276)
         }) { (_) in
             self.removeFromSuperview()
         }
     }
     @IBAction func confirmBtnClicked(_ sender: UIButton) {
+        if saveDataClosure != nil, count != nil {
+            saveDataClosure!(count!)
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+                self.backView.alpha = 0
+                self.containerView.transform = CGAffineTransform(translationX: 0, y: 276)
+            }) { (_) in
+                self.removeFromSuperview()
+            }
+        }
     }
+    
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var containerView: UIView!
     
@@ -30,6 +44,10 @@ class PartnerPopulationPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSou
             self.backView.alpha = 0.3
             self.containerView.transform = CGAffineTransform(translationX: 0, y: -276)
         }, completion: nil)
+        
+        // tap back view to dismiss
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cancelBtnClicked(_:)))
+        backView.addGestureRecognizer(tap)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -82,6 +100,11 @@ class PartnerPopulationPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSou
         }
         
         return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let lbl = pickerView.view(forRow: row, forComponent: component) as? UILabel
+        count = lbl?.text
     }
 
 }

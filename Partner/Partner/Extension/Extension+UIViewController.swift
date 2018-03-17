@@ -90,6 +90,7 @@ extension UIViewController {
         case .authFinancing: pickerTitle = "选择投资轮次"
         case .projEditMember: pickerTitle = "选择成员身份"
         case .financeCurrency: pickerTitle = "选择币种"
+        case .entrepreneurFuncingScale: pickerTitle = "选择融资规模"
         }
         picker.componentArray = nameArray
         picker.pickerTitle.text = pickerTitle
@@ -104,6 +105,8 @@ extension UIViewController {
             picker.memberModel = pickerModel as? ProjectMemberModel
         } else if pickerModel is ProjectDetialModel {
             picker.projDetialModel = pickerModel as? ProjectDetialModel
+        } else if pickerModel is EntrepreneurshipModel {
+            picker.entrepreneurshipModel = pickerModel as? EntrepreneurshipModel
         }
         
         picker.componentDict = dictData

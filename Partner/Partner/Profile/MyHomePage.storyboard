@@ -175,6 +175,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zb1-n4-iXx">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="selectJob:" destination="MHA-Wu-zaB" eventType="touchUpInside" id="fVK-qi-99K"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -338,6 +341,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mt-YQ-qJA">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="selectTime:" destination="MHA-Wu-zaB" eventType="touchUpInside" id="Jbc-4x-oOV"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -389,6 +395,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcO-7Z-ZW7">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="selectPopulation:" destination="MHA-Wu-zaB" eventType="touchUpInside" id="ZS7-4u-s0j"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -440,6 +449,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLG-iU-gts">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="selectTeamCount:" destination="MHA-Wu-zaB" eventType="touchUpInside" id="7kp-u0-iEA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -491,6 +503,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZO-Pm-68Q">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="selectFinanceScale:" destination="MHA-Wu-zaB" eventType="touchUpInside" id="wz8-WR-PEH"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -569,6 +584,9 @@
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="MHA-Wu-zaB" id="AtK-Qa-UHc"/>
+                                                                </connections>
                                                             </textView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nw-T7-zKm">
                                                                 <rect key="frame" x="297" y="103" width="44" height="22"/>
@@ -678,7 +696,7 @@
                                             <constraint firstAttribute="height" constant="40" id="CiV-iy-LjM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="保存">
+                                        <state key="normal" title="添加经历">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -689,6 +707,9 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveBtnClicked:" destination="MHA-Wu-zaB" eventType="touchUpInside" id="pwh-6E-0yG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -718,6 +739,9 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteBtnClicked:" destination="MHA-Wu-zaB" eventType="touchUpInside" id="FL6-ah-Z5R"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfl-Wl-fE2" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="193.66666666666663" y="10" width="169.33333333333337" height="40"/>
@@ -734,6 +758,9 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveBtnClicked:" destination="MHA-Wu-zaB" eventType="touchUpInside" id="96P-cX-9C6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -776,21 +803,24 @@
                     </view>
                     <connections>
                         <outlet property="belongedLbl" destination="CvD-iG-on4" id="P1I-7U-vrv"/>
-                        <outlet property="deleteOrSaveView" destination="MId-nt-27p" id="jnm-aA-eR6"/>
+                        <outlet property="deleteOrSaveView" destination="OPm-gb-tQV" id="dG8-SS-IZP"/>
                         <outlet property="entreRoleLbl" destination="OHt-oc-uRn" id="oaK-JS-21U"/>
                         <outlet property="fundingScaleLbl" destination="Ujv-gP-67V" id="Tor-F8-nME"/>
+                        <outlet property="inputLimitLbl" destination="8Nw-T7-zKm" id="fsY-KR-MPj"/>
+                        <outlet property="inputTF" destination="rmP-oK-kf1" id="AoN-aH-PgU"/>
                         <outlet property="isFullTimeBtn" destination="PIk-Bt-epX" id="5qQ-1O-GlX"/>
                         <outlet property="locationLbl" destination="8Ab-dv-4eK" id="IKC-4J-7Vb"/>
                         <outlet property="partnerCountLbl" destination="u5p-39-Wn2" id="8m2-t1-jwl"/>
+                        <outlet property="placeholderLbl" destination="ktf-my-Hne" id="zwW-sK-FTt"/>
                         <outlet property="projNameLbl" destination="RVv-8c-Lvx" id="i4c-Eg-fj9"/>
-                        <outlet property="saveView" destination="OPm-gb-tQV" id="lxb-hb-aoB"/>
+                        <outlet property="saveView" destination="MId-nt-27p" id="Qb0-ZU-aZG"/>
                         <outlet property="teamMenberCountLbl" destination="lXe-cJ-PgX" id="GqE-nv-rta"/>
                         <outlet property="timeLbl" destination="cpA-ju-EHl" id="IF0-9r-mHx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzI-0I-8li" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5407" y="-594"/>
+            <point key="canvasLocation" x="5405.6000000000004" y="-594.0886699507389"/>
         </scene>
         <!--My Home Page Add Education Experience View Controller-->
         <scene sceneID="WPq-w2-c9i">
@@ -863,7 +893,7 @@
                                 <rect key="frame" x="0.0" y="130" width="375" height="588"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeQ-0H-07r">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="412"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNP-Ay-PrI">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
@@ -952,6 +982,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih5-iS-fi9">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="selectDegree:" destination="aO8-L7-sub" eventType="touchUpInside" id="gdZ-XO-U4p"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1028,8 +1061,62 @@
                                                     <constraint firstItem="qXV-4y-8wJ" firstAttribute="leading" secondItem="hdd-qC-wCS" secondAttribute="leading" constant="12" id="yil-h7-Spc"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKn-Vq-HlM">
+                                                <rect key="frame" x="0.0" y="156" width="375" height="52"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在校时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZf-Tl-XJX">
+                                                        <rect key="frame" x="12" y="17" width="65.333333333333329" height="19.666666666666671"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0C-Ts-mu2">
+                                                        <rect key="frame" x="306" y="17.666666666666686" width="43" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.64705882349999999" green="0.67450980390000004" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="WY3-jg-53H">
+                                                        <rect key="frame" x="351" y="20" width="12" height="12"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="12" id="BqF-i7-jyj"/>
+                                                            <constraint firstAttribute="height" constant="12" id="Xyo-2j-jvP"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvu-av-z2T">
+                                                        <rect key="frame" x="12" y="51" width="351" height="1"/>
+                                                        <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="u7E-Kl-As3"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pot-Zq-cbb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="selectTime:" destination="aO8-L7-sub" eventType="touchUpInside" id="ECc-bw-pKW"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Pot-Zq-cbb" secondAttribute="trailing" id="5Zt-wf-hNH"/>
+                                                    <constraint firstItem="z0C-Ts-mu2" firstAttribute="centerY" secondItem="tKn-Vq-HlM" secondAttribute="centerY" id="FIz-Tg-57n"/>
+                                                    <constraint firstAttribute="height" constant="52" id="Ffb-Ni-hc2"/>
+                                                    <constraint firstItem="yZf-Tl-XJX" firstAttribute="leading" secondItem="tKn-Vq-HlM" secondAttribute="leading" constant="12" id="Inw-mb-eYO"/>
+                                                    <constraint firstAttribute="bottom" secondItem="kvu-av-z2T" secondAttribute="bottom" id="NtV-67-ATa"/>
+                                                    <constraint firstItem="WY3-jg-53H" firstAttribute="leading" secondItem="z0C-Ts-mu2" secondAttribute="trailing" constant="2" id="TTl-GY-uoP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kvu-av-z2T" secondAttribute="trailing" constant="12" id="d25-me-RaX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WY3-jg-53H" secondAttribute="trailing" constant="12" id="evY-7w-aQU"/>
+                                                    <constraint firstItem="Pot-Zq-cbb" firstAttribute="top" secondItem="tKn-Vq-HlM" secondAttribute="top" id="g2e-s0-dG9"/>
+                                                    <constraint firstItem="kvu-av-z2T" firstAttribute="leading" secondItem="tKn-Vq-HlM" secondAttribute="leading" constant="12" id="gkz-UF-Uq8"/>
+                                                    <constraint firstItem="WY3-jg-53H" firstAttribute="centerY" secondItem="tKn-Vq-HlM" secondAttribute="centerY" id="nr2-9m-Ng2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Pot-Zq-cbb" secondAttribute="bottom" id="q9k-xH-B5y"/>
+                                                    <constraint firstItem="Pot-Zq-cbb" firstAttribute="leading" secondItem="tKn-Vq-HlM" secondAttribute="leading" id="qaS-WU-GVL"/>
+                                                    <constraint firstItem="yZf-Tl-XJX" firstAttribute="centerY" secondItem="tKn-Vq-HlM" secondAttribute="centerY" id="zKh-mt-3FV"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7e-LP-kkd">
-                                                <rect key="frame" x="0.0" y="156" width="375" height="184"/>
+                                                <rect key="frame" x="0.0" y="208" width="375" height="184"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教育描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gg-pw-dH1">
                                                         <rect key="frame" x="12" y="15" width="66" height="20"/>
@@ -1045,6 +1132,9 @@
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="aO8-L7-sub" id="g0L-zS-fNf"/>
+                                                                </connections>
                                                             </textView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcN-wY-EqF">
                                                                 <rect key="frame" x="297" y="103" width="44" height="22"/>
@@ -1101,14 +1191,17 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="2GN-eN-OKj" firstAttribute="top" secondItem="PNP-Ay-PrI" secondAttribute="bottom" id="03O-0W-MWt"/>
+                                            <constraint firstItem="C7e-LP-kkd" firstAttribute="top" secondItem="tKn-Vq-HlM" secondAttribute="bottom" id="4E2-m0-7YW"/>
+                                            <constraint firstItem="tKn-Vq-HlM" firstAttribute="top" secondItem="hdd-qC-wCS" secondAttribute="bottom" id="91n-Xs-05a"/>
+                                            <constraint firstAttribute="trailing" secondItem="tKn-Vq-HlM" secondAttribute="trailing" id="EKN-rv-3Cf"/>
                                             <constraint firstItem="hdd-qC-wCS" firstAttribute="top" secondItem="2GN-eN-OKj" secondAttribute="bottom" id="Rli-AI-pFL"/>
                                             <constraint firstItem="2GN-eN-OKj" firstAttribute="leading" secondItem="xeQ-0H-07r" secondAttribute="leading" id="ZW8-ZQ-FOI"/>
+                                            <constraint firstItem="tKn-Vq-HlM" firstAttribute="leading" secondItem="xeQ-0H-07r" secondAttribute="leading" id="bUF-hB-BzC"/>
                                             <constraint firstItem="hdd-qC-wCS" firstAttribute="leading" secondItem="xeQ-0H-07r" secondAttribute="leading" id="bi7-Dd-UbC"/>
                                             <constraint firstAttribute="bottom" secondItem="C7e-LP-kkd" secondAttribute="bottom" constant="20" id="cwa-KF-SPk"/>
                                             <constraint firstItem="C7e-LP-kkd" firstAttribute="leading" secondItem="xeQ-0H-07r" secondAttribute="leading" id="dce-UF-heJ"/>
                                             <constraint firstItem="PNP-Ay-PrI" firstAttribute="leading" secondItem="xeQ-0H-07r" secondAttribute="leading" id="ieF-ls-Nnw"/>
                                             <constraint firstAttribute="trailing" secondItem="hdd-qC-wCS" secondAttribute="trailing" id="jfO-EC-eTE"/>
-                                            <constraint firstItem="C7e-LP-kkd" firstAttribute="top" secondItem="hdd-qC-wCS" secondAttribute="bottom" id="kJ9-6q-hqa"/>
                                             <constraint firstItem="PNP-Ay-PrI" firstAttribute="top" secondItem="xeQ-0H-07r" secondAttribute="top" id="l3E-Ae-pgz"/>
                                             <constraint firstAttribute="trailing" secondItem="PNP-Ay-PrI" secondAttribute="trailing" id="uqA-gC-uML"/>
                                             <constraint firstAttribute="trailing" secondItem="2GN-eN-OKj" secondAttribute="trailing" id="vj8-gt-tRK"/>
@@ -1145,6 +1238,9 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveBtnClicked:" destination="aO8-L7-sub" eventType="touchUpInside" id="aoe-A6-h4F"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1174,6 +1270,9 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteBtnClicked:" destination="aO8-L7-sub" eventType="touchUpInside" id="djO-1g-9AD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TF7-R1-icE" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="193.66666666666663" y="10" width="169.33333333333337" height="40"/>
@@ -1190,6 +1289,9 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveBtnClicked:" destination="aO8-L7-sub" eventType="touchUpInside" id="jhA-sf-6qq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1229,14 +1331,18 @@
                     <connections>
                         <outlet property="degreeLbl" destination="W7M-xJ-uBQ" id="A8M-LQ-Epn"/>
                         <outlet property="deleteOrSaveView" destination="j6L-KL-S99" id="ghm-k7-jjk"/>
+                        <outlet property="inputLimitLbl" destination="RcN-wY-EqF" id="WmZ-Lm-Vyx"/>
+                        <outlet property="inputTF" destination="FTo-YV-VkF" id="KSw-Ab-i1X"/>
                         <outlet property="majorLbl" destination="NYy-su-HD9" id="Vxc-LB-jCU"/>
+                        <outlet property="placeholderLbl" destination="BHX-hI-O5T" id="OFn-L3-ACv"/>
                         <outlet property="saveView" destination="712-h0-r2p" id="Wci-qd-STV"/>
                         <outlet property="schoolLbl" destination="TSZ-TX-x3f" id="Hmv-dp-2rl"/>
+                        <outlet property="timeLbl" destination="z0C-Ts-mu2" id="I0w-pw-GoF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhg-fa-5II" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6687" y="-593"/>
+            <point key="canvasLocation" x="6685.6000000000004" y="-593.3497536945813"/>
         </scene>
         <!--My Project Edit And Create View Controller-->
         <scene sceneID="Cqs-ub-A41">
@@ -2947,6 +3053,9 @@
                                                         <constraint firstAttribute="height" constant="40" id="GgZ-Rp-GkF"/>
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
+                                                    <connections>
+                                                        <action selector="editBtnClicked:" destination="Bdz-dU-5ha" eventType="touchUpInside" id="qoa-IG-9ha"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="founder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmU-Jm-J9h">
                                                     <rect key="frame" x="52" y="36" width="53.666666666666657" height="21"/>
@@ -2957,7 +3066,7 @@
                                                     <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="job" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WG-oO-Cts" customClass="StrokeLabel" customModule="Partner" customModuleProvider="target">
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="job" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WG-oO-Cts" customClass="StrokeLabel" customModule="Partner" customModuleProvider="target">
                                                     <rect key="frame" x="112.66666666666669" y="36.666666666666664" width="40" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="9kb-br-zrB"/>
@@ -3127,6 +3236,17 @@
                                                 <constraint firstItem="5WG-oO-Cts" firstAttribute="leading" secondItem="cmU-Jm-J9h" secondAttribute="trailing" constant="7" id="yxj-Y4-LaK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descLbl" destination="exP-Dt-Fp5" id="xrb-DR-uFv"/>
+                                            <outlet property="fundingScaleLbl" destination="4hD-3p-YZi" id="pZC-xv-KGU"/>
+                                            <outlet property="industryLbl" destination="3aD-xn-14B" id="qza-2N-4d4"/>
+                                            <outlet property="jobNameLbl" destination="cmU-Jm-J9h" id="TSa-gQ-goN"/>
+                                            <outlet property="locationLbl" destination="AUo-6A-bkZ" id="Z1I-Y0-Q7P"/>
+                                            <outlet property="peopleCountLbl" destination="BXl-Ua-J1Z" id="Cfb-Qr-YA5"/>
+                                            <outlet property="projNameLbl" destination="UiS-SU-wm0" id="y1c-JQ-KCk"/>
+                                            <outlet property="teamMemberCountLbl" destination="Eb3-n3-2Kp" id="ZpD-Hw-OIn"/>
+                                            <outlet property="timeLbl" destination="Wsw-3R-qfr" id="vZ6-bT-bGF"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyHomePageWorkExperienceTableViewCell" rowHeight="172" id="cOQ-oa-Zna" customClass="MyHomePageWorkExperienceTableViewCell" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="370" width="375" height="172"/>
@@ -3158,6 +3278,9 @@
                                                         <constraint firstAttribute="height" constant="40" id="hfO-1O-5Vx"/>
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
+                                                    <connections>
+                                                        <action selector="editBtnClicked:" destination="cOQ-oa-Zna" eventType="touchUpInside" id="Hme-dp-XF6"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任职时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7W-2s-4ew">
                                                     <rect key="frame" x="52" y="69" width="62" height="21"/>
@@ -3220,6 +3343,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="HZY-OI-aPT" secondAttribute="trailing" constant="52" id="zV3-Po-aB3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="compNameLbl" destination="gMl-xU-bof" id="xZ2-3T-maW"/>
+                                            <outlet property="descLbl" destination="HZY-OI-aPT" id="fPR-cZ-upt"/>
+                                            <outlet property="jobNameLbl" destination="2Tf-oz-egu" id="hfU-IX-IGa"/>
+                                            <outlet property="timeLbl" destination="BW0-WI-liE" id="fo9-Xz-BKa"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyHomePageEducationExperienceTableViewCell" rowHeight="172" id="uIn-kB-2a5" customClass="MyHomePageEducationExperienceTableViewCell" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="542" width="375" height="172"/>
@@ -3251,6 +3380,9 @@
                                                         <constraint firstAttribute="height" constant="40" id="RAD-if-7zc"/>
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
+                                                    <connections>
+                                                        <action selector="editBtnClicked:" destination="uIn-kB-2a5" eventType="touchUpInside" id="ujk-tI-Iu7"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在校时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-jN-kZn">
                                                     <rect key="frame" x="52" y="69" width="62" height="21"/>
@@ -3313,6 +3445,12 @@
                                                 <constraint firstAttribute="bottom" secondItem="G7u-Cn-1nl" secondAttribute="bottom" constant="20" id="o5S-zz-u5Q"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="degreeLbl" destination="qFU-tm-GDu" id="wsF-jI-lhz"/>
+                                            <outlet property="descLbl" destination="G7u-Cn-1nl" id="DhC-Kg-1Ql"/>
+                                            <outlet property="schoolNameLbl" destination="bhZ-nb-az7" id="E4e-6J-N1U"/>
+                                            <outlet property="timeLbl" destination="4U3-KW-OUa" id="0ks-LU-lD4"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="120" id="CL8-J7-DRP">
                                         <rect key="frame" x="0.0" y="714" width="375" height="120"/>
@@ -3521,7 +3659,7 @@
                                                         <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1U0-9w-bPp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1U0-9w-bPp">
                                                         <rect key="frame" x="306" y="17.666666666666657" width="43" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.64705882349999999" green="0.67450980390000004" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3543,6 +3681,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfV-Px-sBC">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <segue destination="ny3-BK-5Up" kind="show" identifier="MHPWEJobNameSegue" id="8DS-Q9-z5V"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3594,6 +3735,9 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-vo-nZu">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                        <connections>
+                                                            <action selector="selectTime:" destination="P1C-Vr-ffs" eventType="touchUpInside" id="Yvs-zR-lPQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3631,6 +3775,9 @@
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="P1C-Vr-ffs" id="DS7-1Q-Uui"/>
+                                                                </connections>
                                                             </textView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkv-eM-BIy">
                                                                 <rect key="frame" x="297" y="103" width="44" height="22"/>
@@ -3720,7 +3867,7 @@
                                             <constraint firstAttribute="height" constant="40" id="yLj-nF-n47"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="保存">
+                                        <state key="normal" title="添加经历">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -3731,6 +3878,9 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveBtnClicked:" destination="P1C-Vr-ffs" eventType="touchUpInside" id="Ntf-kT-9CN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3760,6 +3910,9 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteBtnClicked:" destination="P1C-Vr-ffs" eventType="touchUpInside" id="JZ1-I0-zyR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29G-AB-I3v" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="193.66666666666663" y="10" width="169.33333333333337" height="40"/>
@@ -3776,6 +3929,9 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveBtnClicked:" destination="P1C-Vr-ffs" eventType="touchUpInside" id="Jhu-lK-1uL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431610000004" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3816,6 +3972,9 @@
                         <outlet property="companyNameLbl" destination="rOj-bU-IF8" id="mXn-aY-CkZ"/>
                         <outlet property="deleteOrSaveView" destination="xim-iq-rjY" id="Yf0-69-O6A"/>
                         <outlet property="inServiceTimeLbl" destination="DQi-mH-5IR" id="ewk-t7-zKk"/>
+                        <outlet property="inputLimitLbl" destination="Nkv-eM-BIy" id="pHe-P8-RD5"/>
+                        <outlet property="inputTF" destination="odn-0T-V5D" id="GVH-Nn-Hdb"/>
+                        <outlet property="placeholderLbl" destination="1VI-N3-NA0" id="2xZ-Az-Zc7"/>
                         <outlet property="positionLbl" destination="1U0-9w-bPp" id="MEc-Ns-hKA"/>
                         <outlet property="saveView" destination="LQ0-3m-ryQ" id="za7-qy-fyM"/>
                     </connections>
@@ -3843,6 +4002,6 @@
         <image name="service_profile_background" width="375" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9f9-zb-Zur"/>
+        <segue reference="dgT-L5-h9b"/>
     </inferredMetricsTieBreakers>
 </document>

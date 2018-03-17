@@ -9,6 +9,10 @@ import UIKit
 
 class DegreePicker:  UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var saveDataClosure: ((_ degree: String) -> Void)?
+    
+    var degree: String?
+    
     @IBOutlet weak var backView: UIView!
     @IBAction func cancelBtnClicked(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
@@ -19,6 +23,15 @@ class DegreePicker:  UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
     @IBAction func confirmBtnClicked(_ sender: UIButton) {
+        if saveDataClosure != nil, degree != nil {
+            saveDataClosure!(degree!)
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+                self.backView.alpha = 0
+                self.containerView.transform = CGAffineTransform(translationX: 0, y: 276)
+            }) { (_) in
+                self.removeFromSuperview()
+            }
+        }
     }
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var containerView: UIView!
@@ -30,6 +43,11 @@ class DegreePicker:  UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             self.backView.alpha = 0.3
             self.containerView.transform = CGAffineTransform(translationX: 0, y: -276)
         }, completion: nil)
+        
+        // tap back view to dismiss
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cancelBtnClicked(_:)))
+        backView.addGestureRecognizer(tap)
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -79,6 +97,11 @@ class DegreePicker:  UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         }
         
         return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let lbl = pickerView.view(forRow: row, forComponent: component) as? UILabel
+        degree = lbl?.text
     }
     
 }

@@ -1960,8 +1960,64 @@
                                             <outlet property="transferSharesLbl" destination="vcf-9o-Gaq" id="vAc-QM-DBd"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditBusinessPlanBookTableViewCell" rowHeight="54" id="TlL-ce-piC" customClass="ProjectEditBusinessPlanBookTableViewCell" customModule="Partner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1393" width="375" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TlL-ce-piC" id="RDL-DN-vqm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOq-mr-8ec">
+                                                    <rect key="frame" x="0.0" y="52.666666666666664" width="375" height="1"/>
+                                                    <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="c5y-8l-Aib"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商业计划书" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf8-JB-hgG">
+                                                    <rect key="frame" x="12" y="16" width="82" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="jfh-r4-6A0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="jdt-DX-kkE">
+                                                    <rect key="frame" x="351" y="21.666666666666668" width="12" height="12.000000000000004"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="12" id="knd-fU-z7j"/>
+                                                        <constraint firstAttribute="width" constant="12" id="pYN-wt-rQT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未上传" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJr-3R-1RS">
+                                                    <rect key="frame" x="298" y="17.666666666666668" width="49" height="20.000000000000004"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jdt-DX-kkE" firstAttribute="centerY" secondItem="gf8-JB-hgG" secondAttribute="centerY" id="JGI-6r-5uf"/>
+                                                <constraint firstItem="jdt-DX-kkE" firstAttribute="leading" secondItem="WJr-3R-1RS" secondAttribute="trailing" constant="4" id="MS6-9K-UKw"/>
+                                                <constraint firstAttribute="trailing" secondItem="nOq-mr-8ec" secondAttribute="trailing" id="PoJ-x8-2dt"/>
+                                                <constraint firstItem="WJr-3R-1RS" firstAttribute="centerY" secondItem="jdt-DX-kkE" secondAttribute="centerY" id="T4o-jD-BLF"/>
+                                                <constraint firstItem="gf8-JB-hgG" firstAttribute="leading" secondItem="RDL-DN-vqm" secondAttribute="leading" constant="12" id="VPl-iN-DxY"/>
+                                                <constraint firstAttribute="bottom" secondItem="nOq-mr-8ec" secondAttribute="bottom" id="dVl-1P-OHn"/>
+                                                <constraint firstAttribute="trailing" secondItem="jdt-DX-kkE" secondAttribute="trailing" constant="12" id="h9S-y3-TlJ"/>
+                                                <constraint firstItem="gf8-JB-hgG" firstAttribute="top" secondItem="RDL-DN-vqm" secondAttribute="top" constant="16" id="hwb-wb-lGY"/>
+                                                <constraint firstItem="gf8-JB-hgG" firstAttribute="centerY" secondItem="RDL-DN-vqm" secondAttribute="centerY" id="jo0-nt-dTo"/>
+                                                <constraint firstItem="nOq-mr-8ec" firstAttribute="leading" secondItem="RDL-DN-vqm" secondAttribute="leading" id="zpQ-Eg-lPL"/>
+                                                <constraint firstItem="nOq-mr-8ec" firstAttribute="top" secondItem="gf8-JB-hgG" secondAttribute="bottom" constant="15" id="zxl-D1-6PT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="planBookLbl" destination="WJr-3R-1RS" id="l5d-Ti-8sH"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditConfirmButtonTableViewCell" rowHeight="80" id="1QS-mo-1gf" customClass="ProjectEditConfirmButtonTableViewCell" customModule="Partner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1393" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="1447" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1QS-mo-1gf" id="cIv-ER-QIA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>

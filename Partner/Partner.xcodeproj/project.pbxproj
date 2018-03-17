@@ -45,6 +45,7 @@
 		39B693A5204CF99D00BEE5FA /* ProfileDeprecated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B693A4204CF99D00BEE5FA /* ProfileDeprecated.storyboard */; };
 		39BFD412204D135500CD1563 /* ProfileEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BFD411204D135500CD1563 /* ProfileEdit.storyboard */; };
 		39BFD414204D155500CD1563 /* MyHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BFD413204D155500CD1563 /* MyHomePage.storyboard */; };
+		39BFEB52205D11EC00A6EFFB /* SelfExperienceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFEB51205D11EC00A6EFFB /* SelfExperienceModel.swift */; };
 		39C1C788204D3E8300D3F2EF /* AuthApplyUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */; };
 		39C1C78E204D513A00D3F2EF /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C1C78D204D513A00D3F2EF /* Extension+UIImageView.swift */; };
 		39CB05D5205288FD00C67669 /* ProjectCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CB05D4205288FD00C67669 /* ProjectCollection.storyboard */; };
@@ -310,6 +311,7 @@
 		39B693A4204CF99D00BEE5FA /* ProfileDeprecated.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileDeprecated.storyboard; sourceTree = "<group>"; };
 		39BFD411204D135500CD1563 /* ProfileEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileEdit.storyboard; sourceTree = "<group>"; };
 		39BFD413204D155500CD1563 /* MyHomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyHomePage.storyboard; sourceTree = "<group>"; };
+		39BFEB51205D11EC00A6EFFB /* SelfExperienceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfExperienceModel.swift; sourceTree = "<group>"; };
 		39C1C787204D3E8300D3F2EF /* AuthApplyUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApplyUploadViewController.swift; sourceTree = "<group>"; };
 		39C1C78D204D513A00D3F2EF /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		39CB05D4205288FD00C67669 /* ProjectCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectCollection.storyboard; sourceTree = "<group>"; };
@@ -656,6 +658,14 @@
 				394C39562058FD4A00E2D802 /* ProjectCollectionSingleTableViewCell.swift */,
 			);
 			path = ProjectCollection;
+			sourceTree = "<group>";
+		};
+		39BFEB50205D11D500A6EFFB /* MyHomePage */ = {
+			isa = PBXGroup;
+			children = (
+				39BFEB51205D11EC00A6EFFB /* SelfExperienceModel.swift */,
+			);
+			path = MyHomePage;
 			sourceTree = "<group>";
 		};
 		39C1C786204D3E5500D3F2EF /* Auth */ = {
@@ -1505,6 +1515,7 @@
 			isa = PBXGroup;
 			children = (
 				D31C3CAC2040057300E97460 /* ProfileInfoModel.swift */,
+				39BFEB50205D11D500A6EFFB /* MyHomePage */,
 				39A8CE7C2052E9B500522E2E /* MyProject */,
 				39A8CE7D2052E9BF00522E2E /* Auth */,
 			);
@@ -2056,6 +2067,7 @@
 				39837FCF2051240C002BC382 /* Entension+UIImage.swift in Sources */,
 				B6754839204D48CB00B60D3A /* TypeListModel.swift in Sources */,
 				D35A9D12203FAFB200408B9E /* ServiceFounderPlaceholderViewController.swift in Sources */,
+				39BFEB52205D11EC00A6EFFB /* SelfExperienceModel.swift in Sources */,
 				B675482F204CDD9400B60D3A /* DynamicCommonCell.swift in Sources */,
 				D39F8C38201F0CB100A40AC1 /* MyProjectEditMarketAnalysisViewController.swift in Sources */,
 				B68182DD203FC385007CE890 /* UserModel.swift in Sources */,
