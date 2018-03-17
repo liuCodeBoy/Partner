@@ -185,6 +185,7 @@
 		D378FEFE1FF0E80600065EEC /* Service.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D378FEFD1FF0E80600065EEC /* Service.storyboard */; };
 		D378FF1C1FF0EADB00065EEC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D378FF1B1FF0EADB00065EEC /* Profile.storyboard */; };
 		D378FF221FF0EBF100065EEC /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D378FF211FF0EBF100065EEC /* Shopping.storyboard */; };
+		D37ACE9A205D05890007B3F2 /* InvestorListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37ACE99205D05890007B3F2 /* InvestorListVC.swift */; };
 		D37D712F202AE9ED007B38EB /* MyHomePageBasicInfomationContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D712E202AE9ED007B38EB /* MyHomePageBasicInfomationContainerViewController.swift */; };
 		D37D7131202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D7130202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift */; };
 		D39A4F32200D985700022A76 /* SystemConstantValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A4F31200D984C00022A76 /* SystemConstantValue.swift */; };
@@ -460,6 +461,7 @@
 		D378FEFD1FF0E80600065EEC /* Service.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Service.storyboard; sourceTree = "<group>"; };
 		D378FF1B1FF0EADB00065EEC /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		D378FF211FF0EBF100065EEC /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
+		D37ACE99205D05890007B3F2 /* InvestorListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestorListVC.swift; sourceTree = "<group>"; };
 		D37AE8E3202064B700B32E4D /* Partner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Partner-Bridging-Header.h"; sourceTree = "<group>"; };
 		D37D712E202AE9ED007B38EB /* MyHomePageBasicInfomationContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomePageBasicInfomationContainerViewController.swift; sourceTree = "<group>"; };
 		D37D7130202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomePageSelfExperienceContainerViewController.swift; sourceTree = "<group>"; };
@@ -680,6 +682,7 @@
 				D35A9D22203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift */,
 				D35A9D28203FBF3300408B9E /* ServiceInvestorBasicInfomationContainerViewController.swift */,
 				D35A9D26203FBF1600408B9E /* ServiceInvestorExperienceContainerViewController.swift */,
+				D37ACE99205D05890007B3F2 /* InvestorListVC.swift */,
 			);
 			path = InvestFinance;
 			sourceTree = "<group>";
@@ -2069,6 +2072,7 @@
 				D3B0DB4B205A25C700326B64 /* SelectedProviderModel.swift in Sources */,
 				39AE9097205930A100ED8452 /* ProjectReviewTableView.swift in Sources */,
 				B68182E120401D1F007CE890 /* CircleDetailVC.swift in Sources */,
+				D37ACE9A205D05890007B3F2 /* InvestorListVC.swift in Sources */,
 				B65E09DB20464B3800BF81FF /* NoticeViewController.swift in Sources */,
 				B6E1FB01202871BD00BB2B4E /* PickImageCollectionView.swift in Sources */,
 				D39A4F3B200DA58200022A76 /* ProfileViewController.swift in Sources */,
