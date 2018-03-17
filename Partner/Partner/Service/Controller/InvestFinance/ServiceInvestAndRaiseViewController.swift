@@ -138,6 +138,23 @@ extension ServiceInvestAndRaiseViewController: UITableViewDelegate, UITableViewD
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1:
+            let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
+            if modelArr.count > 0 {
+                let model = modelArr[indexPath.row]
+                destVC.projID = model.projectId as? Int
+                self.navigationController?.pushViewController(destVC, animated: true)
+            }
+            break
+            
+            
+        default: break
+            
+        }
+    }
 }
 
 

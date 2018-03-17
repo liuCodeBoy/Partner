@@ -1,19 +1,19 @@
 //
-//  ServiceFindProjectViewController.swift
+//  InvestorListVC.swift
 //  Partner
 //
-//  Created by Weslie on 23/02/2018.
+//  Created by Weslie on 17/03/2018.
 //
 
 import UIKit
 import MJRefresh
 import SCLAlertView
 
-class ServiceFindProjectViewController: UIViewController {
+class InvestorListVC: UIViewController {
     var   pageNum  = 1 //标记nextPage 是否为空
     var   nextPage = 1
     
-    var modelArr = [ProjectListModel]()
+    var modelArr = [HotInvestorListModel]()
     @IBOutlet weak var projectListTableView: UITableView!
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -21,19 +21,19 @@ class ServiceFindProjectViewController: UIViewController {
     @IBOutlet weak var hotBtn: ShadowButton!
     @IBOutlet weak var newBtn: ShadowButton!
     var order = 2         //排序条件，1热门 2最新
-
-
+    
+    
     @IBAction func hotClicked(_ sender: ShadowButton) {
         hotBtn.setSelected()
         newBtn.reverseSelected()
-         order = 1
+        order = 1
         
         pageNum  = 1 //标记nextPage 是否为空
         nextPage = 1
-         self.modelArr.removeAll()
+        self.modelArr.removeAll()
         // TODO:- reload data
         getProjectList()
-
+        
     }
     @IBAction func newClicked(_ sender: ShadowButton) {
         hotBtn.reverseSelected()
@@ -45,7 +45,7 @@ class ServiceFindProjectViewController: UIViewController {
         self.modelArr.removeAll()
         // TODO:- reload data
         getProjectList()
-
+        
         
     }
     
@@ -53,10 +53,10 @@ class ServiceFindProjectViewController: UIViewController {
         super.viewDidLoad()
         loadRefreshComponet(tableView: projectListTableView)
         getProjectList()
-
+        
     }
     
-
+    
     
     
     func loadRefreshComponet(tableView : UITableView) -> () {
@@ -71,18 +71,18 @@ class ServiceFindProjectViewController: UIViewController {
         getProjectList()
     }
     
-
-
+    
+    
 }
 
-extension ServiceFindProjectViewController: UITableViewDelegate, UITableViewDataSource {
+extension InvestorListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return modelArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceProjectBriefTableViewCell") as! ServiceProjectBriefTableViewCell
+       let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceFounderBriefTableViewCell") as! ServiceFounderBriefTableViewCell
         if modelArr.count > 0 {
             let model = modelArr[indexPath.row]
             cell.model = model
@@ -94,13 +94,13 @@ extension ServiceFindProjectViewController: UITableViewDelegate, UITableViewData
         let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
         if modelArr.count > 0 {
             let model = modelArr[indexPath.row]
-            destVC.projID = model.projectId as? Int
-            self.navigationController?.pushViewController(destVC, animated: true)
-            if access_token != nil {
-                NetWorkTool.shareInstance.scanProject(token: access_token!, id: (model.projectId as? Int)!, finished: { (result, error) in
-                    
-                })
-            }
+//            destVC.projID = model.uid as? Int
+//            self.navigationController?.pushViewController(destVC, animated: true)
+//            if access_token != nil {
+//                NetWorkTool.shareInstance.scanProject(token: access_token!, id: (model.projectId as? Int)!, finished: { (result, error) in
+//                    
+//                })
+//            }
         }
     }
     
@@ -110,7 +110,9 @@ extension ServiceFindProjectViewController: UITableViewDelegate, UITableViewData
             projectListTableView.mj_footer.endRefreshingWithNoMoreData()
             return
         }
-        NetWorkTool.shareInstance.getProjectList(token: access_token, order: order, type: nil, id: nil, fuzzy: nil, pageNum: pageNum) { [weak self](result, error) in
+        
+ 
+        NetWorkTool.shareInstance.getInvestorList(pageNum: pageNum, order: order, type: nil, id: nil, fuzzy: nil) { [weak self](result, error) in
             guard error == nil else {
                 return
             }
@@ -128,10 +130,10 @@ extension ServiceFindProjectViewController: UITableViewDelegate, UITableViewData
                     }
                     self?.pageNum += 1
                 }
-     
+                
                 if  let dictArr  =   result!["result"]!["list"] as? [NSDictionary]{
                     for i in 0..<dictArr.count{
-                        if  let statusViewModel = ProjectListModel.mj_object(withKeyValues: dictArr[i]){
+                        if  let statusViewModel = HotInvestorListModel.mj_object(withKeyValues: dictArr[i]){
                             self?.modelArr.append(statusViewModel)
                         }
                     }

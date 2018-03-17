@@ -39,6 +39,10 @@ class ServiceProjectBriefTableViewCell: UITableViewCell {
                 detailLab.text = provComm
             }
             
+            if let companyNameStr = model?.projName{
+                companyNameLab.text = companyNameStr
+            }
+            
             if let focus = model?.focus{
                 if focus == 1 {
                     type = 2
