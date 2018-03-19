@@ -11,12 +11,16 @@ class CircleReportVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
     //举报类型，1举报动态 2举报用户 3举报社圈
     var  reportType : Int = 1
     var  circleId   : Int = 0
+    var  userID     : Int = 0
     @IBOutlet weak var reportTableview: UITableView!
     var  reportArrModelArr = [reportReasonModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         getReportList()
-        // Do any additionl setup after loading the view.
+        if userID > 0 {
+            reportType = 2
+            circleId = userID
+        }
     }
 
     @IBAction func dismissVC(_ sender: Any) {
@@ -97,7 +101,7 @@ extension  CircleReportVC {
                     return
               }
             self?.presentHintMessage(hintMessgae:  "举报成功", completion: { (action) in
-                    self?.navigationController?.popViewController(animated: true)
+                self?.navigationController?.popViewController(animated: true)
              })
             }else{
             let  errorShow  =  result!["msg"] as! String

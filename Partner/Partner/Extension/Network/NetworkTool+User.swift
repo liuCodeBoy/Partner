@@ -34,6 +34,19 @@ extension NetWorkTool {
         }
     }
     
+ // MARK:- 获取用户个人信息
+    func getUserHomePageInfo(token: String, userId : Int,finished: @escaping(_ result :[String : AnyObject]? , _ error: Error?) ->()) {
+        let urlString = "http://47.97.110.89/qm/user/api/getUserHomePageInfo.do"
+        let parameters = ["token" : token , "userId" : userId] as [String : Any]
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+                finished(resultDict, error)
+                }
+            }
+    
     // MARK:- 用户编辑
     func editUser(token: String,
                   image: UIImage?,
@@ -502,16 +515,16 @@ extension NetWorkTool {
     }
 
     // MARK:- 1.37.获取用户个人主页信息（非本人 - 个人主页页面）
-    func getUserHomePageInfo(token: String, userId: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://47.97.110.89/qm/user/api/deleteUserEdu.do"
-        let parameters = ["token" : token, "userId" : userId] as [String : Any]
-        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
-            guard let resultDict = result as? [String : AnyObject] else {
-                finished(nil, error)
-                return
-            }
-            finished(resultDict, error)
-        }
-    }
+//    func getUserHomePageInfo(token: String, userId: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+//        let urlString = "http://47.97.110.89/qm/user/api/deleteUserEdu.do"
+//        let parameters = ["token" : token, "userId" : userId] as [String : Any]
+//        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+//            guard let resultDict = result as? [String : AnyObject] else {
+//                finished(nil, error)
+//                return
+//            }
+//            finished(resultDict, error)
+//        }
+    //}
 
 }

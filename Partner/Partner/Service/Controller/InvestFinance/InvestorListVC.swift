@@ -96,17 +96,12 @@ extension InvestorListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
+        let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
         if modelArr.count > 0 {
             let model = modelArr[indexPath.row]
-//            destVC.projID = model.uid as? Int
-//            self.navigationController?.pushViewController(destVC, animated: true)
-//            if access_token != nil {
-//                NetWorkTool.shareInstance.scanProject(token: access_token!, id: (model.projectId as? Int)!, finished: { (result, error) in
-//                    
-//                })
-//            }
+            destVC.id = model.uid as? Int
         }
+        self.navigationController?.pushViewController(destVC, animated: true)
     }
     
     
