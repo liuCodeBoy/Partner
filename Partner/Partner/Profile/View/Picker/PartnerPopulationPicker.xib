@@ -22,7 +22,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH5-2O-dxH">
-                    <rect key="frame" x="0.0" y="391" width="375" height="276"/>
+                    <rect key="frame" x="0.0" y="667" width="375" height="276"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmz-Ai-ITK" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                             <rect key="frame" x="12" y="10" width="351" height="256"/>
@@ -116,7 +116,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="KZH-je-Iqz" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="3hu-yu-meZ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="CH5-2O-dxH" secondAttribute="bottom" id="4Mz-0u-M2L"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="CH5-2O-dxH" secondAttribute="bottom" constant="-276" id="4Mz-0u-M2L"/>
                 <constraint firstItem="KZH-je-Iqz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IEi-az-3Wg"/>
                 <constraint firstItem="CH5-2O-dxH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Uac-J7-1Tx"/>
                 <constraint firstItem="KZH-je-Iqz" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Vbd-z6-EVL"/>

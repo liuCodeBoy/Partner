@@ -81,10 +81,13 @@ class InputDetialViewController: UIViewController {
             switch identifier {
             case "MHPEEProjNameSegue":
                 source.projNameLbl.text = inputText
+                source.modelView?.entrProjName = inputText
             case "MHPEELocationSegue":
                 source.locationLbl.text = inputText
+                source.modelView?.entrIndustry = inputText
             case "MHPEEBelongedSegue":
                 source.belongedLbl.text = inputText
+                source.modelView?.entrArea = inputText
             default: break
             }
         } else if sourceSegue.source.isKind(of: MyHomePageAddWorkExperienceViewController.self) {
@@ -92,6 +95,10 @@ class InputDetialViewController: UIViewController {
             switch identifier {
             case "MHPWEComNameSegue":
                 source.companyNameLbl.text = inputText
+                source.modelView?.jobCompName = inputText
+            case "MHPWEJobNameSegue":
+                source.positionLbl.text = inputText
+                source.modelView?.jobName = inputText
             default: break
             }
         } else if sourceSegue.source.isKind(of: MyHomePageAddEducationExperienceViewController.self) {
@@ -99,8 +106,10 @@ class InputDetialViewController: UIViewController {
             switch identifier {
             case "MHPEduEMajorSegue":
                 source.majorLbl.text = inputText
+                source.modelView?.eduSpecialty = inputText
             case "MHPEduESchoolSegue":
                 source.schoolLbl.text = inputText
+                source.modelView?.eduSchool = inputText
             default: break
             }
         }

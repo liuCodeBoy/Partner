@@ -12,6 +12,11 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
     var years: [Int] = [Int]()
     var months: [String] = [String]()
     
+    var beginDate: String?
+    var endDate: String?
+    var time: String?
+    var saveDataClosure: ((_ from: String, _ to: String, _ time: String) -> Void)?
+    
     let currentDate = Date()
     var current = ""
     
@@ -25,7 +30,17 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
             self.removeFromSuperview()
         }
     }
+    
     @IBAction func confirmBtnClicked(_ sender: UIButton) {
+        if saveDataClosure != nil {
+            saveDataClosure!(beginDate!, endDate!, time!)
+        }
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.backView.alpha = 0
+            self.picContainerView.transform = CGAffineTransform(translationX: 0, y: 276)
+        }) { (_) in
+            self.removeFromSuperview()
+        }
     }
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var picContainerView: UIView!
@@ -46,6 +61,11 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
             months.append("\(j)月")
         }
         
+        // set the deafult value
+        beginDate = "\(currentDate.year())/\(currentDate.month())"
+        endDate = "\(currentDate.year())/\(currentDate.month())"
+        time = "\(beginDate!) - \(endDate!)"
+
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.backView.alpha = 0.3
             self.picContainerView.transform = CGAffineTransform(translationX: 0, y: -276)
@@ -100,7 +120,17 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
         let fromMonth   = pickerView.view(forRow: row, forComponent: 1) as? UILabel
         let toYear      = pickerView.view(forRow: row, forComponent: 3) as? UILabel
         let toMonth     = pickerView.view(forRow: row, forComponent: 4) as? UILabel
-        timeLbl.text = "\(fromYear?.text ?? "\(currentDate.year())")/\(fromMonth?.text ?? "\(currentDate.month())月") - \(toYear?.text ?? "\(currentDate.year())")/\(toMonth?.text ?? "\(currentDate.month())月")"
+
+        let beginTime = "\(fromYear?.text ?? "\(currentDate.year())")/\(fromMonth?.text ?? "\(currentDate.month())")"
+        let endTime = "\(toYear?.text ?? "\(currentDate.year())")/\(toMonth?.text ?? "\(currentDate.month())")"
+        let entDate = "\(beginTime) - \(endTime)"
+        
+        self.beginDate = beginTime
+        self.endDate = endTime
+        self.time = entDate
+        
+        timeLbl.text = entDate
+        
     }
     
 }

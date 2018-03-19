@@ -343,7 +343,7 @@ extension NetWorkTool {
     }
     
     // MARK:- 1.29.编辑工作经历（个人主页）
-    func updateUserEntrepreneurship(token          : String,
+    func editUserJob(token          : String,
                                     id             : Int,
                                     jobCompName    : String,
                                     jobName        : String,
@@ -440,6 +440,7 @@ extension NetWorkTool {
     
     // MARK:- 1.33.编辑教育经历（个人主页）
     func editUserEdu(token          : String,
+                     id             : Int,
                      eduSchool      : String,
                      eduDegree      : String?,
                      eduSpecialty   : String,
@@ -451,6 +452,7 @@ extension NetWorkTool {
         
         let urlString = "http://47.97.110.89/qm/user/api/editUserEdu.do"
         var parameters = ["token"            : token,
+                          "id"               : id,
                           "eduSchool"        : eduSchool,
                           "eduSpecialty"     : eduSpecialty,
                           "eduDate"          : eduDate,
@@ -488,7 +490,7 @@ extension NetWorkTool {
     
     // MARK:- 1.36.获取我的个人主页信息（个人主页页面）
     func getMyHomePageInfo(token: String, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://47.97.110.89/qm/user/api/deleteUserEdu.do"
+        let urlString = "http://47.97.110.89/qm/user/api/getMyHomePageInfo.do"
         let parameters = ["token" : token]
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             guard let resultDict = result as? [String : AnyObject] else {
