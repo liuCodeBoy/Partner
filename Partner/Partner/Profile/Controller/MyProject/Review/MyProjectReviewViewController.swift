@@ -30,6 +30,7 @@ class MyProjectReviewViewController: UIViewController {
     @IBOutlet weak var tableView: ProjectReviewTableView!
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
         loadProjBasicInfo()
     }
 
@@ -37,6 +38,11 @@ class MyProjectReviewViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
 
 }
 

@@ -163,8 +163,8 @@ extension InformationVC {
             newsListTableView.mj_footer.endRefreshingWithNoMoreData()
             return
         }
-        
-        NetWorkTool.shareInstance.getInfoList(type: type, fuzzy: fuzzy, pageNum: pageNum) { [weak self](info, error) in
+     
+         NetWorkTool.shareInstance.getInfoList(type: type, fuzzy: fuzzy, pageNum: pageNum) { [weak self](info, error) in
             if error == nil {
                 // MARK:- judge the return data from server
                 if info?["code"] as? Int == 200 {

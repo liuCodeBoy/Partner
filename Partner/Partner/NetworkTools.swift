@@ -378,9 +378,9 @@ extension NetWorkTool {
         //1.获取请求的URLString
         let urlString = "http://47.97.110.89/qm/info/api/list.do"
         //2.获取请求参数
-        let parameters = ["type" : type ?? 0,  "fuzzy" : fuzzy as Any ,"pageNum" :pageNum , "pageSize" : 10] as [String : Any]
+        let parameters = ["type" : type ?? 0,  "fuzzy" : fuzzy  ,"pageNum" :pageNum , "pageSize" : 10] as [String : Any]
         //3.发送请求参数
-        request(.GET, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             //获取字典数据
             guard let resultDict = result as? [String : AnyObject] else {
                 finished(nil, error)
