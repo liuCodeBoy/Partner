@@ -33,6 +33,7 @@ class PlazaVC: UIViewController {
     @IBOutlet weak var informationImg3: RoundRectImage!
     @IBOutlet weak var informationLab3: UILabel!
     var   typeListModelArr = [TypeListModel]()
+    var   projectListModelArr = [ProjectListModel]()
     //定义滑动闭包
     var  sliderClouse : SliderType?
     override func viewDidLoad() {
@@ -50,7 +51,16 @@ class PlazaVC: UIViewController {
         }
     }
     
+    @IBAction func showHotInvestorVC(_ sender: Any) {
+        //ServiceFindProjectViewControllerID
+        let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "InvestorListVCID") as! InvestorListVC
+        self.navigationController?.pushViewController(destVC, animated: true)
+       }
     
+    @IBAction func showInvestor(_ sender: Any) {
+        let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceFindProjectViewControllerID") as! ServiceFindProjectViewController
+        self.navigationController?.pushViewController(destVC, animated: true)
+    }
     
     
     //addTopImageView
@@ -128,19 +138,27 @@ extension PlazaVC {
                 if  let dictArr  =   result!["result"]!["list"] as? [NSDictionary]{
                     for i in 0..<dictArr.count{
                         if  let statusViewModel = ProjectListModel.mj_object(withKeyValues: dictArr[i]){
+                            
                             if i == 0 {
                                 if let url = statusViewModel.logoUrl {
                                     self?.hotProjectImg1.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushProject))
+                                    self?.hotProjectImg1.addGestureRecognizer(gesture)
                                 }
                             }else if  i == 1{
                                 if let url = statusViewModel.logoUrl {
                                     self?.hotProjectImg2.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushProject2))
+                                    self?.hotProjectImg2.addGestureRecognizer(gesture)
                                 }
                             }else if i == 2{
                                 if let url = statusViewModel.logoUrl {
                                     self?.hotProjectImg3.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushProject3))
+                                    self?.hotProjectImg3.addGestureRecognizer(gesture)
                                 }
                             }
+                            self?.projectListModelArr.append(statusViewModel)
                         }
                     }
                     if dictArr.count == 0 {
@@ -154,9 +172,30 @@ extension PlazaVC {
         }
     }
     
+   @objc  func pushProject() -> () {
+        let statusViewModel = projectListModelArr[0]
+       let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
+        destVC.projID = statusViewModel.projectId as? Int
+        self.navigationController?.pushViewController(destVC, animated: true)
+    
+    }
+    
+    @objc  func pushProject2() -> () {
+        let statusViewModel = projectListModelArr[1]
+        let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
+        destVC.projID = statusViewModel.projectId as? Int
+        self.navigationController?.pushViewController(destVC, animated: true)
+    }
+    @objc  func pushProject3() -> () {
+        
+        let statusViewModel = projectListModelArr[2]
+        let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
+        destVC.projID = statusViewModel.projectId as? Int
+        self.navigationController?.pushViewController(destVC, animated: true)
+    }
     
     //资讯类型列表（info/type/list）
-    func getTypeList(){
+    @objc func getTypeList(){
 //        TypeListModel
         NetWorkTool.shareInstance.getTypeList {[weak self](result, error) in
             guard error == nil else {

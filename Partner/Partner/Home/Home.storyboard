@@ -77,6 +77,9 @@
                                                 <state key="normal" title="更多" image="instructionArrow">
                                                     <color key="titleColor" red="0.72941176470000002" green="0.75294117650000003" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="showHotInvestorVC:" destination="3uY-hg-xnR" eventType="touchUpInside" id="hZV-e1-fR5"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门投资者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uU8-BA-Ceu">
                                                 <rect key="frame" x="12" y="185" width="82" height="22"/>
@@ -391,7 +394,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsY-QR-8hN" userLabel="Shadow View1" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="232" y="10" width="230" height="246"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="neb-ex-55n" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="neb-ex-55n" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="0.0" width="220" height="246"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -427,7 +430,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PpC-WY-yuU" userLabel="Shadow View2" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="12" y="10" width="220" height="246"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-4z-oe9" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-4z-oe9" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="220" height="246"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -466,7 +469,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXc-Dg-aj4" userLabel="Shadow View3" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="462" y="10" width="220" height="246"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="zNV-z6-gNF" userLabel="service_detail_bg3" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="zNV-z6-gNF" userLabel="service_detail_bg3" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="0.0" width="210" height="246"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -537,7 +540,7 @@
                                                     <color key="titleColor" red="0.72941176470000002" green="0.75294117650000003" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="S5M-jx-WWN" kind="show" id="zXQ-fK-L4v"/>
+                                                    <action selector="showInvestor:" destination="3uY-hg-xnR" eventType="touchUpInside" id="R8b-1j-ypP"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门项目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPE-Bq-l3H">
@@ -926,7 +929,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wje-Ju-11L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="936"/>
+            <point key="canvasLocation" x="2455" y="112"/>
         </scene>
         <!--首页-->
         <scene sceneID="QHZ-87-c9h">

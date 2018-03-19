@@ -56,8 +56,13 @@ class InvestorListVC: UIViewController {
         
     }
     
-    
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+
+    }
     
     func loadRefreshComponet(tableView : UITableView) -> () {
         //上拉刷新
