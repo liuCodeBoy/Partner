@@ -121,23 +121,12 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
             }
             
             // save require and desc
-            if let requireCell = self?.requireCell, let require = requireCell.inputTextView.text, require != "" && require.replacingOccurrences(of: " ", with: "") != "" {
-                self?.viewModel?.require = require
-            } else {
+            if self?.viewModel?.require == nil {
                 self?.presentHintMessage(hintMessgae: "请完善信息后再提交", completion: { (_) in
                     return
                 })
                 return
             }
-            if let descCell = self?.descCell, let desc = descCell.inputTextView.text, desc != "" && desc.replacingOccurrences(of: " ", with: "") != "" {
-                self?.viewModel?.desc = desc
-            } else {
-                self?.presentHintMessage(hintMessgae: "请完善信息后再提交", completion: { (_) in
-                    return
-                })
-                return
-            }
-            
             // infomation completed
             self?.saveInfomarion()
             
