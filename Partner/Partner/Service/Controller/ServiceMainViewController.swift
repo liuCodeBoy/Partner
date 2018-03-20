@@ -23,6 +23,13 @@ class ServiceMainViewController: UIViewController {
          getListType()
         getSelectedProviderList()
     }
+    
+    @IBAction func getMoreInvestor(_ sender: Any) {
+        let dest = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "InvestorListVCID") as! InvestorListVC
+        self.navigationController?.pushViewController(dest, animated: true)
+    }
+    
+    
 
 }
 
@@ -53,6 +60,14 @@ extension ServiceMainViewController: UITableViewDelegate, UITableViewDataSource 
             cell = singleCell
         case 1:
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "ServiceMainFounderListTableViewCell") as! ServiceMainFounderListTableViewCell
+            
+            singleCell.pushVC = { (id) in
+//                let  showProviderVC = UIStoryboard.init(name: "Service", bundle: nil).instantiateViewController(withIdentifier: "GetProvideVCID") as! GetProvideVC
+//                showProviderVC.provideID = id
+//                showProviderVC.showTypeName = typename
+//                self.navigationController?.pushViewController(showProviderVC, animated: true)
+                
+            }
             cell = singleCell
         case 2:
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "ServiceMainProviderHeaderTableViewCell") as! ServiceMainProviderHeaderTableViewCell

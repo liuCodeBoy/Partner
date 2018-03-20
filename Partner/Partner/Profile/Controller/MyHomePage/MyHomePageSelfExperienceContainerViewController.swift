@@ -137,7 +137,6 @@ class MyHomePageSelfExperienceContainerViewController: UIViewController, UITable
 }
 
 extension MyHomePageSelfExperienceContainerViewController {
-    
     // MARK:- network request
     func getEntrepreneurInfo() {
         NetWorkTool.shareInstance.getMyHomePageInfo(token: access_token!) { (result, error) in

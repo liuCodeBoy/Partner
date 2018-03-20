@@ -13,7 +13,10 @@ class ServiceMainFounderListTableViewCell: UITableViewCell {
     @IBOutlet weak var detailLab1: UILabel!
     @IBOutlet weak var kindType1: StrokeLabel!
     @IBOutlet weak var kindType2: StrokeLabel!
+    
     @IBOutlet weak var shadow1: ShadowView!
+    @IBOutlet weak var shadow2: ShadowView!
+    @IBOutlet weak var shadow3: ShadowView!
     
     @IBOutlet weak var image2: RoundRectImage!
     @IBOutlet weak var nickName2: UILabel!
@@ -26,7 +29,38 @@ class ServiceMainFounderListTableViewCell: UITableViewCell {
     @IBOutlet weak var detailLab3: UILabel!
     @IBOutlet weak var kind3Type1: StrokeLabel!
     @IBOutlet weak var kind3Type2: StrokeLabel!
+    var modelArr = [HotInvestorListModel]()
+    var pushVC : postISCreateType?
     
+    
+    @objc func button1Click(_ sender: Any) {
+        if modelArr.count > 0 {
+            let model = modelArr[0]
+            if self.pushVC != nil {
+                pushVC!(model.uid as! Int)
+            }
+        }
+        
+    }
+    
+     func button2Click(_ sender: Any) {
+    
+        if modelArr.count > 0 {
+            let model = modelArr[1]
+            if self.pushVC != nil {
+                pushVC!(model.uid as! Int)
+            }
+        }
+    }
+    
+     func button3(_ sender: Any) {
+        if modelArr.count > 0 {
+            let model = modelArr[2]
+            if self.pushVC != nil {
+                pushVC!(model.uid as! Int)
+            }
+        }
+    }
     
     
     override func awakeFromNib() {
@@ -36,7 +70,7 @@ class ServiceMainFounderListTableViewCell: UITableViewCell {
 }
 
 extension ServiceMainFounderListTableViewCell {
-    
+
     //getHotInvestorList
     func  getHotInvestorList(){
         NetWorkTool.shareInstance.getHotInvestorList { [weak self](result, error) in
@@ -56,6 +90,8 @@ extension ServiceMainFounderListTableViewCell {
                                 }
                                 self?.nickName1.text = statusViewModel.userName
                                 self?.detailLab1.text = statusViewModel.roundName
+                                let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.button1Click(_:)))
+                                self?.shadow1.addGestureRecognizer(gesture)
                                 if let dictArr = statusViewModel.industryList {
                                     if dictArr.count >= 1 {
                                     if let dictStr = dictArr[0]["induName"]{
@@ -131,6 +167,9 @@ extension ServiceMainFounderListTableViewCell {
             
         }
     }
+    
+    
+    
     
 }
 

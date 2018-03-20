@@ -149,7 +149,14 @@ extension ServiceInvestAndRaiseViewController: UITableViewDelegate, UITableViewD
                 self.navigationController?.pushViewController(destVC, animated: true)
             }
             break
-            
+        case 2:
+            let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+            if hotInvestorListArr.count > 0 {
+                let model = hotInvestorListArr[indexPath.row]
+                destVC.id = model.uid as? Int
+                self.navigationController?.pushViewController(destVC, animated: true)
+            }
+            break
             
         default: break
             

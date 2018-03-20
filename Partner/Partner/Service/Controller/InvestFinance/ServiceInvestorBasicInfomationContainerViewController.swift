@@ -1,17 +1,40 @@
 //
-//  ServiceInvestorBasicInfomationContainerViewController.swift
+//  MyHomePageBasicInfomationContainerViewController.swift
 //  Partner
 //
-//  Created by Weslie on 23/02/2018.
+//  Created by Weslie on 07/02/2018.
 //
 
 import UIKit
 
 class ServiceInvestorBasicInfomationContainerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     var segue: UIStoryboardSegue?
+    var modelView: ProfileInfoModel?
+    var id : Int?
+    
     @IBOutlet weak var tableView: UITableView!
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        
+        NetWorkTool.shareInstance.getUserHomePageInfo(token: access_token!, userId: id!) { [weak self](result, error) in
+            if error != nil {
+                self?.presentConfirmationAlert(hint: "\(String(describing: error))", completion: nil)
+            }
+            if result!["code"] as! Int == 200 {
+                self?.modelView = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
+                self?.tableView.reloadData()
+            } else {
+                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!)))", completion: nil)
+            }
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 11.0, *) {
@@ -49,6 +72,7 @@ class ServiceInvestorBasicInfomationContainerViewController: UIViewController, U
         switch indexPath.row {
         case 0:
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "MyHomePageBasicInfomationTableViewCell") as! MyHomePageBasicInfomationTableViewCell
+            singleCell.viewModel = modelView
             cell = singleCell
         case 1:
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "MyHomePageAllMomentsTableViewSectionHeaderCell") as! MyHomePageAllMomentsTableViewSectionHeaderCell
@@ -59,5 +83,7 @@ class ServiceInvestorBasicInfomationContainerViewController: UIViewController, U
         }
         return cell
     }
-
+    
 }
+
+
