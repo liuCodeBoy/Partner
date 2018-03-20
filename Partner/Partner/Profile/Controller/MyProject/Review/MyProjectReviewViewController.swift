@@ -36,6 +36,8 @@ class MyProjectReviewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(pushInvestorVC), name: NSNotification.Name.init(pushInvestorNotification), object: nil)
 
     }
     
@@ -47,6 +49,14 @@ class MyProjectReviewViewController: UIViewController {
 }
 
 extension MyProjectReviewViewController {
+    
+    @objc func pushInvestorVC() {
+        
+        // FIXME:- to push investor vc and pass proj id
+        /// call judgeDeliverValid first and then deliver project
+        
+        
+    }
     
     func loadProjBasicInfo() {
         

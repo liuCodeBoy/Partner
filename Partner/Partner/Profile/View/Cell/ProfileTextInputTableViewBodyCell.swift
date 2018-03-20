@@ -30,6 +30,7 @@ class ProfileTextInputTableViewBodyCell: UITableViewCell, UITextViewDelegate {
                 // notify vc to present alert with block
                 presentAlert!()
             }
+            
         }
     }
     

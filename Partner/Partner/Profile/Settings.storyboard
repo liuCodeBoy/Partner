@@ -822,7 +822,6 @@
                                         </state>
                                         <connections>
                                             <action selector="popBtnClicked:" destination="7e0-Ss-Cdc" eventType="touchUpInside" id="Pkg-Mt-ExQ"/>
-                                            <action selector="popBtnClicked:" destination="dmH-1P-bod" eventType="touchUpInside" id="hbf-Pp-C7g"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -852,7 +851,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合伙人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GD6-Od-hqM">
-                                <rect key="frame" x="157.66666666666666" y="250" width="61" height="28"/>
+                                <rect key="frame" x="157" y="250" width="61.333333333333343" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="Uhi-pl-nmz"/>
                                 </constraints>
@@ -1020,7 +1019,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZk-Kx-Y0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="-265"/>
+            <point key="canvasLocation" x="2996" y="-265.27093596059115"/>
         </scene>
         <!--Profile New Functions Introduction View Controller-->
         <scene sceneID="JSb-XH-rOf">

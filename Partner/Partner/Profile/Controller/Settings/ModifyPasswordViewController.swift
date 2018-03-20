@@ -24,7 +24,7 @@ class ModifyPasswordViewController: UIViewController {
     // send id number count down
     fileprivate var remainingSeconds: Int = 0 {
         willSet {
-            sendIDNumBtn.setTitle("重新发送\(newValue)秒", for: .normal)
+            sendIDNumBtn.setTitle("等待\(newValue)秒", for: .normal)
             if newValue <= 0 {
                 sendIDNumBtn.setTitle("发送验证码", for: .normal)
                 isCounting = false
@@ -65,6 +65,8 @@ class ModifyPasswordViewController: UIViewController {
             }
             if result!["code"] as! Int == 200 {
                 weakSelf?.presentHintMessage(hintMessgae: "验证码发送成功", completion: nil)
+                weakSelf?.idNumTF.endEditing(true)
+                weakSelf?.isCounting = true
             } else {
                 weakSelf?.presentHintMessage(hintMessgae: "\(String(describing: result!["msg"]!))", completion: nil)
             }

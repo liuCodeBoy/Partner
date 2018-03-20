@@ -451,6 +451,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 tagCell.inputTextView.text = viewModel?.require
                 tagCell.placeholderLbl.isHidden = true
             }
+            self.requireCell = tagCell
             cell = tagCell
         case 5:
             let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
@@ -462,6 +463,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 tagCell.inputTextView.text = viewModel?.desc
                 tagCell.placeholderLbl.isHidden = true
             }
+            self.descCell = tagCell
             cell = tagCell
         default: break
         }
@@ -526,15 +528,25 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         self.profileInfoTableView.endEditing(true)
         keyboardWillHide(withTransforming: profileInfoTableView)
         // MARK:- store the require and description
-        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 4)) {
-            let requireCell = cell as! ProfileTextInputTableViewBodyCell
-            self.requireCell = requireCell
-            viewModel?.require = requireCell.inputString
+//        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 4)) {
+//            let requireCell = cell as! ProfileTextInputTableViewBodyCell
+//            self.requireCell = requireCell
+//            viewModel?.require = requireCell.inputString
+//        }
+//        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 5)) {
+//            let descCell = cell as! ProfileTextInputTableViewBodyCell
+//            self.descCell = descCell
+//            viewModel?.desc = descCell.inputString
+//        }
+        if let require = viewModel?.require {
+            requireCell?.inputString = require
+            let charCount = Int(require.count)
+            requireCell?.inputLimitLbl.text = "\(charCount)/300"
         }
-        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 5)) {
-            let descCell = cell as! ProfileTextInputTableViewBodyCell
-            self.descCell = descCell
-            viewModel?.desc = descCell.inputString
+        if let desc = viewModel?.desc {
+            descCell?.inputString = desc
+            let charCount = Int(desc.count)
+            descCell?.inputLimitLbl.text = "\(charCount)/300"
         }
         // MARK:- save hobby and skill
         if let cell = hobbyCell {
