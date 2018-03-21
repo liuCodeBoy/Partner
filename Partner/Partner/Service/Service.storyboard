@@ -628,25 +628,6 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ci-B6-IEd" userLabel="scrollViewW">
                                                             <rect key="frame" x="0.0" y="0.0" width="950" height="124"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raD-Rj-8gh">
-                                                                    <rect key="frame" x="314" y="10" width="294" height="114"/>
-                                                                    <connections>
-                                                                        <action selector="button2Click:" destination="yo2-ja-s7T" eventType="touchUpInside" id="MU3-9W-mdX"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCO-vX-Atq">
-                                                                    <rect key="frame" x="623" y="10" width="294" height="114"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <connections>
-                                                                        <action selector="button3:" destination="yo2-ja-s7T" eventType="touchUpInside" id="flb-zp-qy6"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWj-Oz-2Ja" userLabel="Button1">
-                                                                    <rect key="frame" x="5" y="10" width="294" height="114"/>
-                                                                    <connections>
-                                                                        <action selector="button1Click:" destination="yo2-ja-s7T" eventType="touchUpInside" id="S2x-fm-HNA"/>
-                                                                    </connections>
-                                                                </button>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4W-QS-FXw" userLabel="Shadow View2" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                     <rect key="frame" x="314" y="10" width="294" height="114"/>
                                                                     <subviews>
@@ -964,28 +945,16 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="HCO-vX-Atq" firstAttribute="height" secondItem="wbF-mi-BN0" secondAttribute="height" id="2IY-2B-TeL"/>
-                                                                <constraint firstItem="raD-Rj-8gh" firstAttribute="width" secondItem="k4W-QS-FXw" secondAttribute="width" id="5uH-KQ-lyT"/>
-                                                                <constraint firstItem="FWj-Oz-2Ja" firstAttribute="width" secondItem="dqo-5E-8Le" secondAttribute="width" id="7xD-kT-oUK"/>
-                                                                <constraint firstItem="FWj-Oz-2Ja" firstAttribute="top" secondItem="dqo-5E-8Le" secondAttribute="top" id="86k-bC-i6T"/>
                                                                 <constraint firstItem="k4W-QS-FXw" firstAttribute="trailing" secondItem="wbF-mi-BN0" secondAttribute="leading" constant="-15" id="F73-fv-CzH"/>
                                                                 <constraint firstAttribute="width" constant="950" id="Hph-Wb-lUY"/>
                                                                 <constraint firstAttribute="height" constant="124" id="JpS-vI-DEC"/>
-                                                                <constraint firstItem="FWj-Oz-2Ja" firstAttribute="height" secondItem="dqo-5E-8Le" secondAttribute="height" id="Ozc-zN-YA3"/>
                                                                 <constraint firstItem="k4W-QS-FXw" firstAttribute="leading" secondItem="dqo-5E-8Le" secondAttribute="trailing" constant="15" id="Phr-6f-33W"/>
-                                                                <constraint firstItem="HCO-vX-Atq" firstAttribute="width" secondItem="wbF-mi-BN0" secondAttribute="width" id="RjC-Hy-L5d"/>
-                                                                <constraint firstItem="HCO-vX-Atq" firstAttribute="top" secondItem="wbF-mi-BN0" secondAttribute="top" id="VcN-vm-H7C"/>
                                                                 <constraint firstItem="dqo-5E-8Le" firstAttribute="leading" secondItem="5Ci-B6-IEd" secondAttribute="leading" constant="5" id="YYK-fe-pZk"/>
                                                                 <constraint firstItem="wbF-mi-BN0" firstAttribute="top" secondItem="k4W-QS-FXw" secondAttribute="top" id="ceD-IA-yji"/>
                                                                 <constraint firstItem="dqo-5E-8Le" firstAttribute="top" secondItem="5Ci-B6-IEd" secondAttribute="top" constant="10" id="e4K-zp-4jS"/>
-                                                                <constraint firstItem="FWj-Oz-2Ja" firstAttribute="leading" secondItem="dqo-5E-8Le" secondAttribute="leading" id="fjE-wX-lQG"/>
                                                                 <constraint firstItem="k4W-QS-FXw" firstAttribute="height" secondItem="dqo-5E-8Le" secondAttribute="height" id="fyf-p9-rcg"/>
                                                                 <constraint firstItem="k4W-QS-FXw" firstAttribute="width" secondItem="dqo-5E-8Le" secondAttribute="width" id="g1l-8p-G7h"/>
-                                                                <constraint firstItem="raD-Rj-8gh" firstAttribute="top" secondItem="k4W-QS-FXw" secondAttribute="top" id="jYs-qc-lc5"/>
                                                                 <constraint firstItem="k4W-QS-FXw" firstAttribute="top" secondItem="dqo-5E-8Le" secondAttribute="top" id="oCB-WP-Sol"/>
-                                                                <constraint firstItem="HCO-vX-Atq" firstAttribute="leading" secondItem="wbF-mi-BN0" secondAttribute="leading" id="xdc-C8-fg3"/>
-                                                                <constraint firstItem="raD-Rj-8gh" firstAttribute="leading" secondItem="k4W-QS-FXw" secondAttribute="leading" id="yKa-Ku-t3D"/>
-                                                                <constraint firstItem="raD-Rj-8gh" firstAttribute="height" secondItem="k4W-QS-FXw" secondAttribute="height" id="yxu-Hx-wGS"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>

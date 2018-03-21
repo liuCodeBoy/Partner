@@ -43,7 +43,7 @@ class ServiceMainFounderListTableViewCell: UITableViewCell {
         
     }
     
-     func button2Click(_ sender: Any) {
+    @objc func button2Click(_ sender: Any) {
     
         if modelArr.count > 0 {
             let model = modelArr[1]
@@ -53,7 +53,7 @@ class ServiceMainFounderListTableViewCell: UITableViewCell {
         }
     }
     
-     func button3(_ sender: Any) {
+    @objc func button3(_ sender: Any) {
         if modelArr.count > 0 {
             let model = modelArr[2]
             if self.pushVC != nil {
@@ -84,6 +84,7 @@ extension ServiceMainFounderListTableViewCell {
                 if  let dictArr  =   result!["result"] as? [NSDictionary]{
                     for i in 0..<dictArr.count{
                         if  let statusViewModel = HotInvestorListModel.mj_object(withKeyValues: dictArr[i]){
+                            self?.modelArr.append(statusViewModel)
                             if i == 0 {
                                 if let url = statusViewModel.userImgUrl {
                                     self?.image1.setImageWith(URL.init(string: url)!, placeholderImage: nil)
@@ -116,6 +117,8 @@ extension ServiceMainFounderListTableViewCell {
                                 }
                                 self?.nickName2.text = statusViewModel.userName
                                 self?.detailLab2.text = statusViewModel.roundName
+                                let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.button2Click(_:)))
+                                self?.shadow2.addGestureRecognizer(gesture)
                                 if let dictArr = statusViewModel.industryList {
                                     if dictArr.count >= 1 {
                                         if let dictStr = dictArr[0]["induName"]{
@@ -139,6 +142,8 @@ extension ServiceMainFounderListTableViewCell {
                                 }
                                 self?.nickName3.text = statusViewModel.userName
                                 self?.detailLab3.text = statusViewModel.roundName
+                                let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.button3(_:)))
+                                self?.shadow3.addGestureRecognizer(gesture)
                                 if let dictArr = statusViewModel.industryList {
                                     if dictArr.count >= 1 {
                                         if let dictStr = dictArr[0]["induName"]{

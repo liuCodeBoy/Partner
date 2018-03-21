@@ -247,7 +247,7 @@ extension NetWorkTool {
     
     
     // 获取成员 搜索用户
-    func searchUserList(token:String , type : Int , fuzzy : String, circleId : Int ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+    func searchUserList(token:String , type : Int , fuzzy : String, circleId : Int?,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
         let urlString = "http://47.97.110.89/qm/user/api/circle/searchUserList.do"
         //2.获取请求参数

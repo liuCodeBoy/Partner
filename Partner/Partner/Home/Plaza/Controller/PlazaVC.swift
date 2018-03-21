@@ -20,6 +20,9 @@ class PlazaVC: UIViewController {
     @IBOutlet weak var hotName3: UILabel!
     @IBOutlet weak var roundName3: UILabel!
     
+    @IBOutlet weak var hotVoteChildView1: ShadowView!
+    @IBOutlet weak var hotVoteChildView2: ShadowView!
+    @IBOutlet weak var hotVoteChildView3: ShadowView!
     //hotProject
     @IBOutlet weak var hotProjectImg1: RoundRectImage!
     @IBOutlet weak var hotProjectImg2: RoundRectImage!
@@ -34,6 +37,8 @@ class PlazaVC: UIViewController {
     @IBOutlet weak var informationLab3: UILabel!
     var   typeListModelArr = [TypeListModel]()
     var   projectListModelArr = [ProjectListModel]()
+    
+    var hotModelArr = [HotInvestorListModel]()
     //定义滑动闭包
     var  sliderClouse : SliderType?
     override func viewDidLoad() {
@@ -89,24 +94,31 @@ extension PlazaVC {
                 if  let dictArr  =   result!["result"] as? [NSDictionary]{
                     for i in 0..<dictArr.count{
                         if  let statusViewModel = HotInvestorListModel.mj_object(withKeyValues: dictArr[i]){
+                            self?.hotModelArr.append(statusViewModel)
                             if i == 0 {
                                 if let url = statusViewModel.userImgUrl {
                                     self?.hotImg1.setImageWith(URL.init(string: url)!, placeholderImage: nil)
                                 }
                                 self?.hotName1.text = statusViewModel.userName
                                 self?.roundName1.text = statusViewModel.roundName
+                                let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushHotInvestor))
+                                self?.hotVoteChildView1.addGestureRecognizer(gesture)
                             }else if  i == 1{
                                 if let url = statusViewModel.userImgUrl {
                                     self?.hotImg2.setImageWith(URL.init(string: url)!, placeholderImage: nil)
                                 }
                                 self?.hotName2.text = statusViewModel.userName
                                 self?.roundName2.text = statusViewModel.roundName
+                                let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushHotInvestor2))
+                                self?.hotVoteChildView2.addGestureRecognizer(gesture)
                             }else if i == 2{
                                 if let url = statusViewModel.userImgUrl {
                                     self?.hotImg3.setImageWith(URL.init(string: url)!, placeholderImage: nil)
                                 }
                                 self?.hotName3.text = statusViewModel.userName
                                 self?.roundName3.text = statusViewModel.roundName
+                                let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushHotInvestor3))
+                                self?.hotVoteChildView3.addGestureRecognizer(gesture)
                             }
                             
                         }
@@ -121,6 +133,37 @@ extension PlazaVC {
                 self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
             }
             
+        }
+    }
+    
+    
+    @objc  func pushHotInvestor(){
+        
+        if hotModelArr.count > 0 {
+            let model = hotModelArr[0]
+            let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+            showProviderVC.id = model.uid as? Int
+            self.navigationController?.pushViewController(showProviderVC, animated: true)
+        }
+        
+    
+    }
+    
+    @objc  func pushHotInvestor2(){
+        if hotModelArr.count > 0 {
+            let model = hotModelArr[1]
+            let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+            showProviderVC.id = model.uid as? Int
+            self.navigationController?.pushViewController(showProviderVC, animated: true)
+        }
+    }
+    
+    @objc  func pushHotInvestor3(){
+        if hotModelArr.count > 0 {
+            let model = hotModelArr[2]
+            let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+            showProviderVC.id = model.uid as? Int
+            self.navigationController?.pushViewController(showProviderVC, animated: true)
         }
     }
     

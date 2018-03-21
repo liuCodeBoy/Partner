@@ -148,9 +148,11 @@ class MyProjectViewController: UIViewController {
                 }
                 weakSelf?.placeholderContainerView.isHidden = true
                 // TODO:- convert dict to model and assign to view to show
-                for dict in resultDict["list"] as! [[String : AnyObject]] {
-                    let model = ProjectListModel.mj_object(withKeyValues: dict)
-                    weakSelf?.investProjectTableView.modelArray.append(model!)
+                if let resultDict = resultDict["list"] as? [[String : AnyObject]] {
+                    for dict in resultDict {
+                        let model = ProjectListModel.mj_object(withKeyValues: dict)
+                        weakSelf?.investProjectTableView.modelArray.append(model!)
+                    }
                 }
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)

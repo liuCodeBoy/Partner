@@ -62,10 +62,9 @@ extension ServiceMainViewController: UITableViewDelegate, UITableViewDataSource 
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "ServiceMainFounderListTableViewCell") as! ServiceMainFounderListTableViewCell
             
             singleCell.pushVC = { (id) in
-//                let  showProviderVC = UIStoryboard.init(name: "Service", bundle: nil).instantiateViewController(withIdentifier: "GetProvideVCID") as! GetProvideVC
-//                showProviderVC.provideID = id
-//                showProviderVC.showTypeName = typename
-//                self.navigationController?.pushViewController(showProviderVC, animated: true)
+                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                showProviderVC.id = id
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
                 
             }
             cell = singleCell

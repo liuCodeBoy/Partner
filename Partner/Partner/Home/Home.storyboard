@@ -725,6 +725,9 @@
                         <outlet property="hotProjectImg1" destination="f9g-4z-oe9" id="Obl-lh-jCI"/>
                         <outlet property="hotProjectImg2" destination="neb-ex-55n" id="4YZ-af-AZU"/>
                         <outlet property="hotProjectImg3" destination="zNV-z6-gNF" id="58k-r3-bwS"/>
+                        <outlet property="hotVoteChildView1" destination="RiR-JJ-rsu" id="Ssy-IW-nIY"/>
+                        <outlet property="hotVoteChildView2" destination="RkK-Qc-N4Y" id="ymQ-Ey-UPe"/>
+                        <outlet property="hotVoteChildView3" destination="yGT-hq-KNy" id="xks-OQ-ibV"/>
                         <outlet property="imageHeadView" destination="3fp-3Y-eHS" id="sBs-Fo-CyW"/>
                         <outlet property="informationImg1" destination="ecI-sM-cou" id="u2z-pi-YSp"/>
                         <outlet property="informationImg2" destination="NC2-Ow-5hE" id="WK9-ID-CfH"/>
@@ -1508,7 +1511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSh-Sw-OIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="112"/>
+            <point key="canvasLocation" x="1799" y="121"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2N6-Kj-U77">
