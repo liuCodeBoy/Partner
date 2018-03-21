@@ -373,7 +373,7 @@ extension NetWorkTool {
     }
     
     
-    //资讯列表（info/list）
+    //资讯列表（info/list）ss
     func getInfoList(type : Int? ,fuzzy : String?, pageNum : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
         let urlString = "http://47.97.110.89/qm/info/api/list.do"
