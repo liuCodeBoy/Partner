@@ -154,6 +154,7 @@ class MyProjectViewController: UIViewController {
                         weakSelf?.investProjectTableView.modelArray.append(model!)
                     }
                 }
+                
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
             }

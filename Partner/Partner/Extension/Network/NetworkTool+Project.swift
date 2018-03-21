@@ -700,10 +700,23 @@ extension NetWorkTool {
         }
     }
     
-    // MARK:- 6.40.投递项目
-    func deliverProject(token: String, userId: Int, projectId: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+    // MARK:- 6.40.校验是否可以投递项目
+    func judgeDelierValid(token: String, userId: Int, projectId: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         let urlString = "http://47.97.110.89/qm/project/api/deliverProject.do"
         let parameters = ["token" : token, "userId" : userId, "projectId" : projectId] as [String : Any]
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            finished(resultDict, error)
+        }
+    }
+    
+    // MARK:- 6.40.投递项目
+    func deliverProject(token: String, userId: Int, projectIds: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http://47.97.110.89/qm/project/api/deliverProject.do"
+        let parameters = ["token" : token, "userId" : userId, "projectIds" : projectIds] as [String : Any]
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             guard let resultDict = result as? [String : AnyObject] else {
                 finished(nil, error)

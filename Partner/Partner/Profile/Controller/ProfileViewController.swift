@@ -9,6 +9,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    var isInvestor = true
+    
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickNameLbl: UILabel!
     @IBOutlet weak var genderImg: UIImageView!
@@ -47,9 +49,9 @@ class ProfileViewController: UIViewController {
             }
             if let id = viewModel?.idenId {
                 switch id {
-                case 1: verifyLbl.text = " 投资商 "
-                case 2: verifyLbl.text = " 创业者 "
-                case 3: verifyLbl.text = " 普通用户 "
+                case 1: verifyLbl.text = " 投资商 "; isInvestor = true
+                case 2: verifyLbl.text = " 创业者 "; isInvestor = false
+                case 3: verifyLbl.text = " 普通用户 "; isInvestor = false
                 default: break
                 }
             }
@@ -131,6 +133,14 @@ class ProfileViewController: UIViewController {
         // 提示框弹出
         present(alert, animated: true) { () -> Void in
             
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destnation = segue.destination
+        if destnation is MyProjectViewController {
+            let dest = destnation as! MyProjectViewController
+            dest.isInvestor = self.isInvestor
         }
     }
     
