@@ -11,7 +11,7 @@ import MJRefresh
 
 class searchVC: UIViewController,UITableViewDelegate , UITableViewDataSource, UITextFieldDelegate{
 
-    var searchType = 0
+    var searchType = 1
     //1搜索用户 2搜索服务商
     
     //初始化资讯模型数组
@@ -20,7 +20,7 @@ class searchVC: UIViewController,UITableViewDelegate , UITableViewDataSource, UI
     var   pageNum         = 1
     //标记nextPage 是否为空
     var   nextPage = 1
-    var   newsModelArr = [infoModel]()
+    var   newsModelArr = [SelectedProviderModel]()
     
     
     var  type = 0
@@ -86,6 +86,9 @@ class searchVC: UIViewController,UITableViewDelegate , UITableViewDataSource, UI
         nextPage = 1
     }
     
+    @IBAction func popViewControl(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     //展示列表
     @objc func   btnClickShowTbaleList(btn : UIButton){
@@ -110,7 +113,8 @@ extension searchVC {
         guard access_token != nil else {
             return
         }
-        NetWorkTool.shareInstance.searchUserList(token: access_token!, type: 1, fuzzy: fuzzy!, circleId: nil) { [weak self](info, error) in
+        NetWorkTool.shareInstance.searchProvider(pageNum: pageNum, pageSize: 10, fuzzy: fuzzy, type: nil, name: nil) { [weak self](info, error) in
+
             if error == nil {
                 // MARK:- judge the return data from server
                 if info?["code"] as? Int == 200 {
@@ -130,7 +134,7 @@ extension searchVC {
                     
                     if  let  dictARR = info?["result"]!["list"] as? [NSDictionary]{
                         for  dict in dictARR{
-                            let   model = infoModel.mj_object(withKeyValues: dict)
+                            let   model = SelectedProviderModel.mj_object(withKeyValues: dict)
                             self?.newsModelArr.append(model!)
                             
                         }
@@ -151,31 +155,38 @@ extension searchVC {
         return newsModelArr.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  90
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return  90
+//    }
+//
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InfomationCellID", for: indexPath) as! InfomationCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceProviderCompanyIntroductionTableViewCell", for: indexPath) as! ServiceProviderCompanyIntroductionTableViewCell
         if self.newsModelArr.count > 0  {
             //取出模型
             let  model = newsModelArr[indexPath.row]
-            cell.viewModel = model
+            cell.model = model
         }
         return  cell
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if self.newsModelArr.count > 0  {
-            //取出模型
-            let informationVC  = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "InfoNewsDetailVCID") as! InfoNewsDetailVC
-            let  model = newsModelArr[indexPath.row]
-            if let urlStr = model.infoUrl{
-                let   url = NSURL.init(string: urlStr)
-                informationVC.url = url
-            }
-            self.navigationController?.pushViewController(informationVC, animated: true)
+        if newsModelArr.count > 0 {
+            //初始化控制器
+            let VC  = UIStoryboard.init(name: "ServiceProvider", bundle: nil).instantiateViewController(withIdentifier: "ServiceDetialViewControllerID") as! ServiceDetialViewController
+            let model = newsModelArr[indexPath.row]
+            VC.id = model.providerId as? Int
+            NetWorkTool.shareInstance.scanProvider(id:  (model.providerId as? Int)!, finished: { (result, error) in
+                
+            })
+            self.navigationController?.pushViewController(VC, animated: true)
+            
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.searchTextF.resignFirstResponder()
+    }
+    
 }
