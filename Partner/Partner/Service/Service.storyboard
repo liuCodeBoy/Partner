@@ -987,6 +987,9 @@
                                                     <state key="normal" title="更多" image="right_arrow">
                                                         <color key="titleColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="getMoreInvestor:" destination="sWJ-WU-hgb" eventType="touchUpInside" id="DTm-7Y-j19"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1885,7 +1888,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGz-gd-TKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242" y="30"/>
+            <point key="canvasLocation" x="-121" y="-59"/>
         </scene>
     </scenes>
     <resources>

@@ -15,7 +15,7 @@
         <!--Auth Apply Upload View Controller-->
         <scene sceneID="QbL-EQ-SmP">
             <objects>
-                <viewController id="5Zb-cI-FbB" customClass="AuthApplyUploadViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthApplyUploadViewControllerID" id="5Zb-cI-FbB" customClass="AuthApplyUploadViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lqb-5D-tIy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -61,6 +61,11 @@
 		53778418D7E5BF3B198BAAE4 /* Pods_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */; };
 		93A2197792B5860862374D6B /* Pods_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */; };
 		B625F2F8204115E50060F713 /* DetailInfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B625F2F7204115E50060F713 /* DetailInfoTableView.swift */; };
+		B6314C932067DC2E00DE6D0D /* ProjectSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6314C922067DC2D00DE6D0D /* ProjectSearchVC.swift */; };
+		B6314C952067EAB000DE6D0D /* ProjectFliterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6314C942067EAB000DE6D0D /* ProjectFliterVC.swift */; };
+		B6314C972067EE8F00DE6D0D /* FounderSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6314C962067EE8F00DE6D0D /* FounderSearchVC.swift */; };
+		B6314C992068974400DE6D0D /* FounderFliterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6314C982068974400DE6D0D /* FounderFliterVC.swift */; };
+		B6314C9B2068D1EB00DE6D0D /* ServiceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6314C9A2068D1EB00DE6D0D /* ServiceListCell.swift */; };
 		B641021D2015D7D3001C8787 /* SkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641021C2015D7D3001C8787 /* SkillViewController.swift */; };
 		B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E5200C4932007799BC /* InformationDetailVC.swift */; };
 		B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E7200C506A007799BC /* Extension+UIViewController.swift */; };
@@ -335,6 +340,11 @@
 		9032E3D99C1574E7CE07F113 /* Pods-PartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerTests/Pods-PartnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B625F2F7204115E50060F713 /* DetailInfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoTableView.swift; sourceTree = "<group>"; };
+		B6314C922067DC2D00DE6D0D /* ProjectSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSearchVC.swift; sourceTree = "<group>"; };
+		B6314C942067EAB000DE6D0D /* ProjectFliterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFliterVC.swift; sourceTree = "<group>"; };
+		B6314C962067EE8F00DE6D0D /* FounderSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FounderSearchVC.swift; sourceTree = "<group>"; };
+		B6314C982068974400DE6D0D /* FounderFliterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FounderFliterVC.swift; sourceTree = "<group>"; };
+		B6314C9A2068D1EB00DE6D0D /* ServiceListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCell.swift; sourceTree = "<group>"; };
 		B641021C2015D7D3001C8787 /* SkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillViewController.swift; sourceTree = "<group>"; };
 		B641021E2016D2E2001C8787 /* NoticeBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NoticeBar.framework; path = Carthage/Build/iOS/NoticeBar.framework; sourceTree = "<group>"; };
 		B65517E5200C4932007799BC /* InformationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailVC.swift; sourceTree = "<group>"; };
@@ -837,6 +847,7 @@
 				B65E09E4204690A900BF81FF /* NoticeSocialConnListCell.swift */,
 				B675482E204CDD9400B60D3A /* DynamicCommonCell.swift */,
 				D3AEBBAF2050C54900FA955C /* NoCommentCell.swift */,
+				B6314C9A2068D1EB00DE6D0D /* ServiceListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1549,6 +1560,10 @@
 				D3D566102057BE82005C8E75 /* GetProvideVC.swift */,
 				D3D566122058CB58005C8E75 /* MoreProviderVC.swift */,
 				D37ACEA1206243B10007B3F2 /* SearchFliterVC.swift */,
+				B6314C922067DC2D00DE6D0D /* ProjectSearchVC.swift */,
+				B6314C942067EAB000DE6D0D /* ProjectFliterVC.swift */,
+				B6314C962067EE8F00DE6D0D /* FounderSearchVC.swift */,
+				B6314C982068974400DE6D0D /* FounderFliterVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1938,6 +1953,7 @@
 				398978D4204EAB5200B52424 /* PartnerTimePicker.swift in Sources */,
 				398F4C9020514CBF002F0B72 /* AuthResubmitEnterpriseApplianceViewController.swift in Sources */,
 				D35A9D1D203FB1B700408B9E /* ServiceFounderBriefTableViewCell.swift in Sources */,
+				B6314C972067EE8F00DE6D0D /* FounderSearchVC.swift in Sources */,
 				B6843E422021999D00B86A3F /* PicCollectionView.swift in Sources */,
 				B6EF1D33201EC911000479F8 /* TageModel.swift in Sources */,
 				D39A4F32200D985700022A76 /* SystemConstantValue.swift in Sources */,
@@ -1964,6 +1980,7 @@
 				D347125D201202A0003E098E /* ProfileHobbiesSelectorTableViewBodyCell.swift in Sources */,
 				D3E3348C203232F90084687C /* MyHomePageAddEducationExperienceViewController.swift in Sources */,
 				B6EF1D35201F3697000479F8 /* AddTagBtnVC.swift in Sources */,
+				B6314C952067EAB000DE6D0D /* ProjectFliterVC.swift in Sources */,
 				B68182DF203FC846007CE890 /* UserSearchTableView.swift in Sources */,
 				B687AB9E2043E279004C915A /* WatingJionInCell.swift in Sources */,
 				D3B6ADCB201F410B00A7B961 /* Designable+UILabel.swift in Sources */,
@@ -1994,6 +2011,7 @@
 				B6843E3D202192C700B86A3F /* StatusViewModel.swift in Sources */,
 				B65E09E5204690A900BF81FF /* NoticeSocialConnListCell.swift in Sources */,
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
+				B6314C932067DC2E00DE6D0D /* ProjectSearchVC.swift in Sources */,
 				D327F759202B7A900045671C /* MyHomePageMomentsTableViewCell.swift in Sources */,
 				B641021D2015D7D3001C8787 /* SkillViewController.swift in Sources */,
 				B675483F204D52E200B60D3A /* InformationVC.swift in Sources */,
@@ -2031,6 +2049,7 @@
 				D3B8E5C3201AF1CB002F3A3A /* MyProjectViewController.swift in Sources */,
 				D3787E8A20411638000A0AA0 /* ProfileEditInfomationInputDetialViewController.swift in Sources */,
 				B65E09E320468B7000BF81FF /* NoticeSocialConnListModel.swift in Sources */,
+				B6314C992068974400DE6D0D /* FounderFliterVC.swift in Sources */,
 				B65E09D92045539200BF81FF /* CircleStautsCell.swift in Sources */,
 				D35A9D14203FAFFB00408B9E /* ServiceInvestAndRaiseViewController.swift in Sources */,
 				39123D94204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift in Sources */,
@@ -2092,6 +2111,7 @@
 				D3787E8C2047FD02000A0AA0 /* NetworkTool+Project.swift in Sources */,
 				D3A75918202D7CFF0043D68D /* MyHomePageEducationExperienceTableViewCell.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
+				B6314C9B2068D1EB00DE6D0D /* ServiceListCell.swift in Sources */,
 				D39F8C34201F0C8400A40AC1 /* MyProjectEditAddTeamMembersViewController.swift in Sources */,
 				D37ACEA4206246080007B3F2 /* ProviderSearchCell.swift in Sources */,
 				D34C6AF9202D44B400EA225E /* MyHomePageWorkExperienceTableViewCell.swift in Sources */,

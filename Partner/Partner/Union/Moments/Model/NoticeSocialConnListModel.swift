@@ -10,6 +10,7 @@ import MJExtension
 class NoticeSocialConnListModel: NSObject {
     @objc  var   noticeId  :  NSNumber?
     @objc  var   senderId  :  NSNumber?
+    @objc  var   projectId  :  NSNumber?
     @objc  var   circleMembId  :  NSNumber?
     @objc  var   idenId  :  NSNumber?
     @objc  var   gender  :  NSNumber?

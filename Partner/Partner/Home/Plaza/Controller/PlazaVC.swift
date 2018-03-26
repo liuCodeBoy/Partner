@@ -70,11 +70,24 @@ class PlazaVC: UIViewController {
     
     //addTopImageView
     func addTopImageView(){
-        let URLArr = [URL(string: "http://ow1i9ri5b.bkt.clouddn.com/Screen%20Shot%202017-10-21%20at%205.35.48%20PM.png"),
-                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/%E8%BD%AE%E6%92%AD%E5%9B%BE2.png"),
-                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/%E8%BD%AE%E6%92%AD%E5%9B%BE.png")]
-        loopView = LoopView.init(images: URLArr as! [URL], frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 160), isAutoScroll: true)
-        self.imageHeadView.addSubview(loopView)
+        var URLArr = [URL]()
+        NetWorkTool.shareInstance.getCarouselList { [weak self](result, error) in
+            if error == nil {
+                if  result?["code"] as? Int == 200  {
+                    guard   result != nil else{
+                        return
+                    }
+                let urlStrArr = result!["result"] as? [String]
+                    for childStr in urlStrArr!{
+                        let url = URL.init(string: childStr)
+                        URLArr.append(url!)
+                    }
+                self?.loopView = LoopView.init(images: URLArr , frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 160), isAutoScroll: true)
+                    self?.imageHeadView.addSubview((self?.loopView)!)
+                }
+            }
+        }
+     
     }
    
 }

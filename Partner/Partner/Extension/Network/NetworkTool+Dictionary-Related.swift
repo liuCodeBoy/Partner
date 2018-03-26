@@ -84,6 +84,19 @@ extension NetWorkTool {
         }
     }
     
+    //MARK: - 获取项目城市列表（area/getProjectCityList）
+    func getProjectCityList(finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http://47.97.110.89/qm/area/api/getProjectCityList.do"
+        request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            finished(resultDict, error)
+        }
+    }
+    
+    
     // MARK:- 行业领域列表
     func getFieldList(finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         let urlString = "http://47.97.110.89/qm/field/api/getFieldList.do"

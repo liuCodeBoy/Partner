@@ -140,7 +140,23 @@ extension NetWorkTool {
         }
     }
     
-    
+    //轮播图列表（carousel/list）
+    func getCarouselList(finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/carousel/api/list.do"
+        //2.获取请求参数
+        let parameters = ["type" : 1] as [String : Any]
+        //3.发送请求参数
+        request(.GET, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
     
     
     func getSocialCircleMomentList(token:String , type : Int , pageNum : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
@@ -502,6 +518,44 @@ extension NetWorkTool {
             finished(resultDict, error)
         }
     }
+    
+    //.服务通知列表（notice/api/service/list）http://47.97.110.89/qm/notice/api/service/list.do
+    func getSeriviceList(token:String ,pageNum : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/notice/api/service/list.do"
+        //2.获取请求参数
+        let parameters = ["token" : token ,"pageNum" : pageNum] as [String : Any]
+        //3.发送请求参数
+        request(.POST , urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //13.7.小助手通知列表（notice/api/helper/list）
+    func gethelperList(token:String ,pageNum : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/notice/api/helper/list.do"
+        //2.获取请求参数
+        let parameters = ["token" : token ,"pageNum" : pageNum] as [String : Any]
+        //3.发送请求参数
+        request(.POST , urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+
+
     
     //审核圈子成员 - 申请/受邀请（circle/api/member/approve）
     func getCircleMemberApprove(token:String ,circleMembId:Int, type:Int, op : Int, userId : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){

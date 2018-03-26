@@ -18,18 +18,19 @@ class SearchFliterVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var restartBtn: ShadowButton!
     @IBOutlet weak var sureBtn: ShadowButton!
     
-
+    var  type = 1
     var  headerArr = [String]()
     var  rowArr = [Int]()
     var  commentList = [[commListModel]]()
     var  buttonArr = [UIButton]()
-    
+    var seague : UIStoryboardSegue?
     override func viewDidLoad() {
         super.viewDidLoad()
        getCommunityCityList()
     }
     
     @IBAction func providerComunityClick(_ sender: Any) {
+        type = 1
         rowArr.removeAll()
         headerArr.removeAll()
         buttonArr.removeAll()
@@ -43,6 +44,7 @@ class SearchFliterVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     @IBAction func ProviderTypeClick(_ sender: Any) {
+        type = 2
         rowArr.removeAll()
         headerArr.removeAll()
         buttonArr.removeAll()
@@ -69,6 +71,35 @@ class SearchFliterVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     @IBAction func providerTypeClick(_ sender: Any) {
+        var count = 0
+        var fuzzy :String?
+        if seague != nil {
+            let sourceVC = seague?.source as! searchVC
+            for  childArr in commentList{
+                for model in childArr{
+                    if model.isSelected == 1 {
+                        count += 1
+                        fuzzy = model.name != nil ? model.name : model.typeName
+                    }
+                }
+            }
+            if count > 1{
+                
+                self.presentHintMessage(hintMessgae: "最多只能选择一个标签", completion: { (action) in
+                })
+            }else if count == 1 {
+                sourceVC.newsModelArr.removeAll()
+                sourceVC.pageNum  = 1
+                sourceVC.nextPage = 1
+                sourceVC.getInfoList(type: type, fuzzy: fuzzy)
+                self.navigationController?.popViewController(animated: true)
+               
+            }
+            
+       
+        }
+      
+
     }
     
     func clearAllSelected(){
