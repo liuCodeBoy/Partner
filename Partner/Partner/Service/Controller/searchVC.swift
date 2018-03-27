@@ -47,6 +47,13 @@ class searchVC: UIViewController,UITableViewDelegate , UITableViewDataSource, UI
         return true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.searchTextF.resignFirstResponder()

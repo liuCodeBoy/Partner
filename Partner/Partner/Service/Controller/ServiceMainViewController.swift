@@ -23,6 +23,10 @@ class ServiceMainViewController: UIViewController {
          getListType()
         getSelectedProviderList()
     }
+    @IBAction func getMoreProvider(_ sender: Any) {
+        let destVC = UIStoryboard.init(name: "ServiceProvider", bundle: nil).instantiateViewController(withIdentifier: "searchVCID")
+        self.navigationController?.pushViewController(destVC, animated: true)
+    }
     
     @IBAction func getMoreInvestor(_ sender: Any) {
         let dest = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "InvestorListVCID") as! InvestorListVC

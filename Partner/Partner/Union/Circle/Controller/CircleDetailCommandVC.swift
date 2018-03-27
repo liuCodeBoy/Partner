@@ -84,10 +84,6 @@ class CircleDetailCommandVC: UIViewController, UITableViewDelegate, UITableViewD
         // 取thumbnailImage
         return cell?.pictureCellView.image
     }
-    /// 高清图
-    func photoBrowser(_ photoBrowser: PhotoBrowser, highQualityUrlForIndex index: Int) -> URL? {
-        return URL(string: picStrsArr![index])
-    }
     
     
 }
@@ -206,6 +202,7 @@ extension  CircleDetailCommandVC {
         if  modelView.count > 0  {
             let viewModel = modelView[indexPath.row]
             dynamicDetailVC.momentId = viewModel.momentId as? Int
+            dynamicDetailVC.inputTF.resignFirstResponder()
             dynamicDetailVC.refresh()
             self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
         }

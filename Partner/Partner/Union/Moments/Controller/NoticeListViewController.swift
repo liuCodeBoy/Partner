@@ -185,6 +185,46 @@ class NoticeListViewController: UIViewController ,UITableViewDelegate ,UITableVi
             }
         }
     }
+    
+    
+    @IBAction func deleteAllNotice(_ sender: Any) {
+        self.presentAlert(title: "确认删除", hint: "", confirmTitle: "确定", cancelTitle: "取消", confirmation: { [weak self](action) in
+            self?.deleteAll()
+        }, cancel: nil)
+        
+    }
+    
+    
+    func deleteAll() {
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+      
+        
+        var noticeType = 0
+        if type == 0 {
+            noticeType = 2
+        }else if type == 1{
+            noticeType = 1
+        }else if type  == 2 {
+            noticeType = 4
+        }
+        
+        NetWorkTool.shareInstance.apiClear(token: access_token, type: noticeType) { [weak self](result, error) in
+            if error != nil {
+                //print(error as AnyObject)
+            } else if result?["code"] as? Int == 200 {
+                self?.presentHintMessage(hintMessgae: "删除成功", completion: nil)
+                self?.modelArr.removeAll()
+                self?.noticeTableView.reloadData()
+            } else {
+                //print("post request failed with exit code \(result!["code"] as! String)")
+            }
+        }
+        
+        
+
+    }
 }
 
 
@@ -237,7 +277,59 @@ extension NoticeListViewController {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+    
+    //MARK: - left slide to delete row
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //TODO: remove form data source
+        if editingStyle == .delete {
+            // MARK:- post request to server
+            
+            guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+                return
+            }
+            guard let id = modelArr[indexPath.row].noticeId as? Int else {
+                return
+            }
+            
+            var noticeType = 0
+            if type == 0 {
+                noticeType = 2
+            }else if type == 1{
+                noticeType = 1
+            }else if type  == 2 {
+                noticeType = 4
+            }
+          
+            NetWorkTool.shareInstance.apiDelete(token: access_token, type: noticeType, id: id, finished: { [weak self](result, error) in
+                if error != nil {
+                    //print(error as AnyObject)
+                } else if result?["code"] as? Int == 200 {
+                    self?.presentHintMessage(hintMessgae: "删除成功", completion: nil)
+                } else {
+                    //print("post request failed with exit code \(result!["code"] as! String)")
+                }
+            })
+            
+            modelArr.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
+            
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删除"
+    }
 }
+
 
 //初始化加载控件
 extension  NoticeListViewController {

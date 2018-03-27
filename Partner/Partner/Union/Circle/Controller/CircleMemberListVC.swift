@@ -19,6 +19,7 @@ class CircleMemberListVC: UIViewController {
     @IBOutlet weak var circleMemberTableView: CircleMemberListTableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        circleMemberTableView.circleID = self.circleId
         getCircleMemberListFunc()
     }
     

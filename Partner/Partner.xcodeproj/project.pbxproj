@@ -70,6 +70,7 @@
 		B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E5200C4932007799BC /* InformationDetailVC.swift */; };
 		B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E7200C506A007799BC /* Extension+UIViewController.swift */; };
 		B65517EA200C800E007799BC /* InterestedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E9200C800E007799BC /* InterestedVC.swift */; };
+		B6584D5A206A190F0027DBFB /* EditCircleInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6584D59206A190F0027DBFB /* EditCircleInfoVC.swift */; };
 		B65AAC0A203FAD5F00A76358 /* SearchUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AAC09203FAD5F00A76358 /* SearchUserVC.swift */; };
 		B65BE17E2029A4AD004407B1 /* CircleChooseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BE17D2029A4AD004407B1 /* CircleChooseTableView.swift */; };
 		B65BE18A2029D653004407B1 /* LoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BE1892029D652004407B1 /* LoopView.swift */; };
@@ -350,6 +351,7 @@
 		B65517E5200C4932007799BC /* InformationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailVC.swift; sourceTree = "<group>"; };
 		B65517E7200C506A007799BC /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		B65517E9200C800E007799BC /* InterestedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedVC.swift; sourceTree = "<group>"; };
+		B6584D59206A190F0027DBFB /* EditCircleInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleInfoVC.swift; sourceTree = "<group>"; };
 		B65AAC09203FAD5F00A76358 /* SearchUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserVC.swift; sourceTree = "<group>"; };
 		B65BE17D2029A4AD004407B1 /* CircleChooseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChooseTableView.swift; sourceTree = "<group>"; };
 		B65BE1892029D652004407B1 /* LoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopView.swift; sourceTree = "<group>"; };
@@ -900,6 +902,7 @@
 				B687ABA320440313004C915A /* MemberOfCircleVC.swift */,
 				B687ABA520440CC0004C915A /* CircleReportVC.swift */,
 				B65E09D62045416300BF81FF /* CircleDetailCommandVC.swift */,
+				B6584D59206A190F0027DBFB /* EditCircleInfoVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1861,14 +1864,14 @@
 		};
 		B64102202016D300001C8787 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "";
 		};
@@ -2037,6 +2040,7 @@
 				D39F14E0201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift in Sources */,
 				398F4C8E20514CAB002F0B72 /* AuthResubmitInvestAppliacneViewController.swift in Sources */,
 				B68182DB203FAF2E007CE890 /* UserSearchBarCell.swift in Sources */,
+				B6584D5A206A190F0027DBFB /* EditCircleInfoVC.swift in Sources */,
 				39837FD720513C10002BC382 /* AuthApplyEnterpriseViewController.swift in Sources */,
 				B6843E372020223A00B86A3F /* UnionMainVC.swift in Sources */,
 				B6843E3A202173FD00B86A3F /* MomentMainVC.swift in Sources */,
@@ -2348,7 +2352,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADERMAP_USES_VFS = YES;
 				INFOPLIST_FILE = Partner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LLVM_LTO = NO;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
@@ -2377,7 +2381,7 @@
 				);
 				HEADERMAP_USES_VFS = YES;
 				INFOPLIST_FILE = Partner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Qinglv.Partner;

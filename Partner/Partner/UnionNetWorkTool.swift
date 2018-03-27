@@ -8,6 +8,62 @@
 import UIKit
 
 extension NetWorkTool {
+    //删除通知（notice/api/delete）
+    //http://47.97.110.89/qm/notice/api/delete.do
+    func apiDelete(token:String , type:Int , id : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/notice/api/delete.do"
+        //2.获取请求参数
+        let parameters = ["token" : token ,"id" : id , "type" :type] as [String : Any]
+        //3.发送请求参数
+        request(.POST , urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //清空通知（notice/api/clear）
+    func apiClear(token:String , type:Int ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/notice/api/clear.do"
+        //2.获取请求参数
+        let parameters = ["token" : token , "type" :type] as [String : Any]
+        //3.发送请求参数
+        request(.POST , urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //删除圈子成员（圈子创建者）
+    func memberDelete(token:String , circleId:Int , userId :Int , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/circle/api/member/delete.do"
+        //2.获取请求参数
+        let parameters = ["token" : token , "circleId" :circleId , "userId":userId] as [String : Any]
+        //3.发送请求参数
+        request(.POST , urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    
     
     // MARK:- 屏蔽动态（moment/ignore）
     func momentIgnore(token:String ,id : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){

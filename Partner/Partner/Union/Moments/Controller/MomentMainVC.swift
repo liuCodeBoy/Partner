@@ -200,7 +200,6 @@ extension MomentMainVC {
         group.notify(queue: DispatchQueue.main) {
             self.momentTableView.reloadData()
         }
-        
     }
 }
 
