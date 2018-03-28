@@ -150,12 +150,25 @@ extension ServiceInvestAndRaiseViewController: UITableViewDelegate, UITableViewD
             }
             break
         case 2:
-            let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+//            let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+//            if hotInvestorListArr.count > 0 {
+//                let model = hotInvestorListArr[indexPath.row]
+//                destVC.id = model.uid as? Int
+//                self.navigationController?.pushViewController(destVC, animated: true)
+//            }
             if hotInvestorListArr.count > 0 {
-                let model = hotInvestorListArr[indexPath.row]
-                destVC.id = model.uid as? Int
-                self.navigationController?.pushViewController(destVC, animated: true)
+                 let model = hotInvestorListArr[indexPath.row]
+                let  uid = UserDefaults.standard.integer(forKey: "uid")
+                if model.uid as? Int == uid {
+                    let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                    self.navigationController?.pushViewController(showProviderVC, animated: true)
+                }else{
+                    let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                    showProviderVC.id = model.uid as? Int
+                    self.navigationController?.pushViewController(showProviderVC, animated: true)
+                }
             }
+            
             break
             
         default: break

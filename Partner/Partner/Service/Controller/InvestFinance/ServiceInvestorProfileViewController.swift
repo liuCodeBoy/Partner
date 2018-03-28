@@ -24,7 +24,7 @@ class ServiceInvestorProfileViewController: UIViewController {
             if let name = viewModel?.userName {
                 nickNameLbl.text = name
             }
-            if let job = viewModel?.jobName {
+            if let job = viewModel?.userJob {
                 jobLbl.text = job
             }
         }
@@ -128,6 +128,8 @@ class ServiceInvestorProfileViewController: UIViewController {
             headerImgHCons.constant += 24
         }
     }
+    
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SIBasicInfoSegue" {

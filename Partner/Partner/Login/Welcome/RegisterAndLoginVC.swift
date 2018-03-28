@@ -25,6 +25,7 @@ class RegisterAndLoginVC: UIViewController {
     @IBOutlet weak var loginInBtn: UIButton!
     @IBOutlet weak var registerAction: UIButton!
     
+    var isloaded : Bool = true
     //定时器方法
     fileprivate var countDownTimer: Timer?
     fileprivate var remainingSeconds: Int = 0 {
@@ -57,10 +58,13 @@ class RegisterAndLoginVC: UIViewController {
         registerView.isHidden = true
         loginView.isHidden = false
         
-        //添加子控制器
-          let welcomeVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "WelcomeLoginVCID")
-        self.addChildViewController(welcomeVC)
-        self.view.addSubview(welcomeVC.view)   
+        if  isloaded == false{
+            //添加子控制器
+            let welcomeVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "WelcomeLoginVCID")
+            self.addChildViewController(welcomeVC)
+            self.view.addSubview(welcomeVC.view)
+        }
+       
     }
     
     
@@ -105,13 +109,9 @@ class RegisterAndLoginVC: UIViewController {
                         }
                         
                         if let finished  = resultDict!["finished"] {
-                            print(finished)
                             if finished as? Bool == true{
                                 //回跳主界面
-                               
-                                let  destVC   = self?.chooseDesVC(page: 3)
-                                self?.navigationController?.pushViewController(destVC!, animated: true)
-                                
+                                self?.dismiss(animated: true, completion: nil)
                             }else{
                                 //跳转到对应的填充页面
                                 if let page  = resultDict!["page"] {

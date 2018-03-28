@@ -48,6 +48,13 @@ class PlazaVC: UIViewController {
         getHotInvestorList()
         getProjectList()
         getTypeList()
+        
+        if access_token == nil {
+            let RegisterAndLoginVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID") as!RegisterAndLoginVC
+            RegisterAndLoginVC.isloaded = false
+            let  navRegistAndLoginVC = UINavigationController.init(rootViewController: RegisterAndLoginVC)
+            self.present(navRegistAndLoginVC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func infoShowMore(_ sender: Any) {
@@ -154,29 +161,46 @@ extension PlazaVC {
         
         if hotModelArr.count > 0 {
             let model = hotModelArr[0]
-            let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
-            showProviderVC.id = model.uid as? Int
-            self.navigationController?.pushViewController(showProviderVC, animated: true)
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+            if model.uid as? Int == uid {
+                let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                  self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }else{
+                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                showProviderVC.id = model.uid as? Int
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }
         }
-        
     
     }
     
     @objc  func pushHotInvestor2(){
         if hotModelArr.count > 0 {
             let model = hotModelArr[1]
-            let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
-            showProviderVC.id = model.uid as? Int
-            self.navigationController?.pushViewController(showProviderVC, animated: true)
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+            if model.uid as? Int == uid {
+                let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }else{
+                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                showProviderVC.id = model.uid as? Int
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }
         }
     }
     
     @objc  func pushHotInvestor3(){
         if hotModelArr.count > 0 {
             let model = hotModelArr[2]
-            let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
-            showProviderVC.id = model.uid as? Int
-            self.navigationController?.pushViewController(showProviderVC, animated: true)
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+            if model.uid as? Int == uid {
+                let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }else{
+                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                showProviderVC.id = model.uid as? Int
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }
         }
     }
     

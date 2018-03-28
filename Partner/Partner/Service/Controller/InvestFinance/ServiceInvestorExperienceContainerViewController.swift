@@ -140,6 +140,10 @@ extension ServiceInvestorExperienceContainerViewController {
     
     // MARK:- network request
     func getEntrepreneurInfo() {
+        guard access_token != nil else {
+            self.presentHintMessage(hintMessgae: "您还为登录", completion: nil)
+            return
+        }
         NetWorkTool.shareInstance.getUserHomePageInfo(token: access_token!, userId: id!) { (result, error) in
             weak var weakSelf = self
             if error != nil {

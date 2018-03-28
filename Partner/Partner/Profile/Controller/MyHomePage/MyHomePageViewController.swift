@@ -9,6 +9,10 @@ import UIKit
 
 class MyHomePageViewController: UIViewController {
     
+    @IBAction func popBtnClicked(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBOutlet weak var avatar: RoundRectImage!
     @IBOutlet weak var nickNameLbl: UILabel!
     @IBOutlet weak var jobLbl: UILabel!

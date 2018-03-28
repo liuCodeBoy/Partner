@@ -97,12 +97,24 @@ extension InvestorListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+//        let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+//        if modelArr.count > 0 {
+//            let model = modelArr[indexPath.row]
+//            destVC.id = model.uid as? Int
+//        }
+//        self.navigationController?.pushViewController(destVC, animated: true)
         if modelArr.count > 0 {
             let model = modelArr[indexPath.row]
-            destVC.id = model.uid as? Int
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+            if model.uid as? Int == uid {
+                let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }else{
+                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                showProviderVC.id = model.uid as? Int
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }
         }
-        self.navigationController?.pushViewController(destVC, animated: true)
     }
     
     
