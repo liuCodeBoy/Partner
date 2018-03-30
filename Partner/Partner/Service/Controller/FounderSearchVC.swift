@@ -1,27 +1,29 @@
 //
-//  searchVC.swift
+//  FounderSearchVC.swift
 //  Partner
 //
-//  Created by Weslie on 20/03/2018.
+//  Created by LiuXinQiang on 2018/3/25.
 //
+
 
 import UIKit
 import SCLAlertView
 import SDWebImage
 import MJRefresh
 
-class searchVC: UIViewController,UITableViewDelegate , UITableViewDataSource, UITextFieldDelegate{
-
+class FounderSearchVC: UIViewController,UITableViewDelegate , UITableViewDataSource, UITextFieldDelegate{
+    
     var searchType = 1
     //1搜索用户 2搜索服务商
     var type : Int?
     //初始化资讯模型数组
+    var id : Int?
     var    infoModelArr = [TypeListModel]()
     @IBOutlet weak var searchTextF: UITextField!
     var   pageNum         = 1
     //标记nextPage 是否为空
     var   nextPage = 1
-    var   newsModelArr = [SelectedProviderModel]()
+    var   newsModelArr = [HotInvestorListModel]()
     
     @IBOutlet weak var newsListTableView: UITableView!
     override func viewDidLoad() {
@@ -40,33 +42,26 @@ class searchVC: UIViewController,UITableViewDelegate , UITableViewDataSource, UI
         if string.count == 0 && textField.text?.count == 1 {
             fuzzy = ""
         }
-      
+        
         self.newsModelArr.removeAll()
         setdeafultStatus()
         getInfoList(type:type, fuzzy: fuzzy)
         return true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.searchTextF.resignFirstResponder()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVC = segue.destination as! SearchFliterVC
+        let destVC = segue.destination as! FounderFliterVC
         destVC.seague = segue
     }
     
     
     
-
+    
     
     func loadRefreshComponet(tableView : UITableView) -> () {
         //默认下拉刷新
@@ -99,14 +94,14 @@ class searchVC: UIViewController,UITableViewDelegate , UITableViewDataSource, UI
         self.navigationController?.popViewController(animated: true)
     }
     
-  
+    
     
 }
 
 
 
 
-extension searchVC {
+extension FounderSearchVC {
     //加载资讯列表
     func  getInfoList(type : Int?, fuzzy : String?){
         if  self.nextPage == 0 {
@@ -116,12 +111,12 @@ extension searchVC {
         guard access_token != nil else {
             return
         }
-        var name : String?
-        if type == nil {
-            name = fuzzy
-        }
-        NetWorkTool.shareInstance.searchProvider(pageNum: pageNum, pageSize: 10, fuzzy: fuzzy, type: type, name: name) { [weak self](info, error) in
-
+        //        var name : String?
+        //        if type == nil {
+        //            name = fuzzy
+        //        }
+        //type 1投资行业 2投资轮次
+        NetWorkTool.shareInstance.getInvestorList(pageNum: pageNum, order: 2, type: type, id: id, fuzzy: fuzzy) { [weak self](info, error) in
             if error == nil {
                 // MARK:- judge the return data from server
                 if info?["code"] as? Int == 200 {
@@ -141,13 +136,13 @@ extension searchVC {
                     
                     if  let  dictARR = info?["result"]!["list"] as? [NSDictionary]{
                         for  dict in dictARR{
-                            let   model = SelectedProviderModel.mj_object(withKeyValues: dict)
+                            let   model = HotInvestorListModel.mj_object(withKeyValues: dict)
                             self?.newsModelArr.append(model!)
                         }
                         self?.newsListTableView.mj_header.endRefreshing()
                         self?.newsListTableView.reloadData()
                     }else{
-                            SCLAlertView().showError("还未找到相关数据", subTitle: "")
+                        SCLAlertView().showError("还未找到相关数据", subTitle: "")
                     }
                 } else {
                     let  errorShow  =  info!["msg"] as! String
@@ -163,13 +158,13 @@ extension searchVC {
         return newsModelArr.count
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return  90
-//    }
-//
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return  90
+    //    }
+    //
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceProviderCompanyIntroductionTableViewCell", for: indexPath) as! ServiceProviderCompanyIntroductionTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceFounderBriefTableViewCell", for: indexPath) as! ServiceFounderBriefTableViewCell
         if self.newsModelArr.count > 0  {
             //取出模型
             let  model = newsModelArr[indexPath.row]
@@ -180,16 +175,23 @@ extension searchVC {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+//        if newsModelArr.count > 0 {
+//            let model = newsModelArr[indexPath.row]
+//            destVC.id = model.uid as? Int
+//        }
+//        self.navigationController?.pushViewController(destVC, animated: true)
         if newsModelArr.count > 0 {
-            //初始化控制器
-            let VC  = UIStoryboard.init(name: "ServiceProvider", bundle: nil).instantiateViewController(withIdentifier: "ServiceDetialViewControllerID") as! ServiceDetialViewController
             let model = newsModelArr[indexPath.row]
-            VC.id = model.providerId as? Int
-            NetWorkTool.shareInstance.scanProvider(id:  (model.providerId as? Int)!, finished: { (result, error) in
-                
-            })
-            self.navigationController?.pushViewController(VC, animated: true)
-            
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+            if model.uid as? Int == uid {
+                let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }else{
+                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                showProviderVC.id = model.uid as? Int
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }
         }
     }
     

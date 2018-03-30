@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchUserJionInCircleVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource{
+class SearchUserJionInCircleVC: UIViewController ,UITableViewDelegate ,UITableViewDataSource, UITextFieldDelegate{
  
     @IBOutlet weak var userTableView: UITableView!
     @IBOutlet weak var cancelBtn: UIButton!
@@ -23,18 +23,31 @@ class SearchUserJionInCircleVC: UIViewController ,UITableViewDelegate ,UITableVi
     }
     
     
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var  fuzzy  : String?
+        if textField.text != "" {
+            fuzzy = textField.text! + string
+        }else{
+            fuzzy =  string
+        }
+        if string.count == 0 && textField.text?.count == 1 {
+            fuzzy = ""
+        }
+        
+        self.modelArr.removeAll()
+        searchUser(fuzzy: fuzzy!)
+        return true
+    }
     
     @IBAction func searchAction(_ sender: Any) {
         self.modelArr.removeAll()
-        searchUser()
     }
     @IBAction func dismissAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     //网络请求
-    func searchUser() -> () {
+    func searchUser(fuzzy: String) -> () {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
             self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
             return
@@ -44,7 +57,7 @@ class SearchUserJionInCircleVC: UIViewController ,UITableViewDelegate ,UITableVi
             return
         }
         
-        NetWorkTool.shareInstance.searchUserList(token: access_token, type: 1, fuzzy: searchTextField.text!, circleId: 0) { [weak self](result, error) in
+        NetWorkTool.shareInstance.searchUserList(token: access_token, type: 1, fuzzy: fuzzy, circleId: 0) { [weak self](result, error) in
             
             if  result?["code"] as? Int == 200  {
                 guard   result != nil else{
@@ -62,8 +75,7 @@ class SearchUserJionInCircleVC: UIViewController ,UITableViewDelegate ,UITableVi
                     }
                 }
             }else{
-                let  errorShow  =  result!["msg"] as! String
-                self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+              self?.presentHintMessage(hintMessgae: "未查找到数据", completion: nil)
             }
         }
     }

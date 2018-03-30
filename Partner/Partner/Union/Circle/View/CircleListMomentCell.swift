@@ -35,7 +35,7 @@ class CircleListMomentCell: UITableViewCell {
             guard let viewModel = viewModel else {
                 return
             }
-            avatarImage.sd_setImage(with: URL.init(string: viewModel.userImgUrl! as String), placeholderImage: nil)
+           avatarImage.sd_setImage(with: URL.init(string: viewModel.userImgUrl! as String), placeholderImage: nil)
             
             var   userIdentify : String?
             if let identID = viewModel.userIdenId{

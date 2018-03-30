@@ -41,7 +41,7 @@ class InfoNewsDetailVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     func createTableView() -> () {
         self.webViewHeight = 0.0;
         self.createWebView();
-        self.tableView = UITableView.init(frame:CGRect.init(x: 0, y: 88, width: screenWidth, height: screenHeight ), style: .grouped)
+        self.tableView = UITableView.init(frame:CGRect.init(x: 0, y: 88, width: screenWidth, height: screenHeight - 40), style: .grouped)
 
         self.tableView.delegate = self;
         self.tableView.dataSource = self;

@@ -32,6 +32,7 @@ class ProfileInfoModel: NSObject {
     @objc var phone             : String?
     @objc var mail              : String?
     @objc var compName          : String?
+    @objc var userJob           : String?
     @objc var jobName           : String?
     @objc var communityId       : NSNumber?
     @objc var commName          : String?

@@ -26,6 +26,8 @@ class NoticeViewController: UIViewController ,UITableViewDelegate ,UITableViewDa
         self.navigationController?.popViewController(animated: true)
     }
     
+ 
+    
     //网络请求
     func loadNotice() -> () {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
@@ -60,7 +62,6 @@ class NoticeViewController: UIViewController ,UITableViewDelegate ,UITableViewDa
 
 extension NoticeViewController {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return modelArr.count
@@ -77,6 +78,12 @@ extension NoticeViewController {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "NoticeListViewControllerID") as! NoticeListViewController
+        destVC.type = indexPath.row
+        self.navigationController?.pushViewController(destVC, animated: true)
     }
 
 }

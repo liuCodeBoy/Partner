@@ -23,6 +23,10 @@ class ServiceMainViewController: UIViewController {
          getListType()
         getSelectedProviderList()
     }
+    @IBAction func getMoreProvider(_ sender: Any) {
+        let destVC = UIStoryboard.init(name: "ServiceProvider", bundle: nil).instantiateViewController(withIdentifier: "searchVCID")
+        self.navigationController?.pushViewController(destVC, animated: true)
+    }
     
     @IBAction func getMoreInvestor(_ sender: Any) {
         let dest = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "InvestorListVCID") as! InvestorListVC
@@ -62,9 +66,20 @@ extension ServiceMainViewController: UITableViewDelegate, UITableViewDataSource 
             let singleCell = tableView.dequeueReusableCell(withIdentifier: "ServiceMainFounderListTableViewCell") as! ServiceMainFounderListTableViewCell
             
             singleCell.pushVC = { (id) in
-                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
-                showProviderVC.id = id
-                self.navigationController?.pushViewController(showProviderVC, animated: true)
+                    let  uid = UserDefaults.standard.integer(forKey: "uid")
+                    if id == uid {
+                        let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                        self.navigationController?.pushViewController(showProviderVC, animated: true)
+                    }else{
+                        let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                        showProviderVC.id = id
+                        self.navigationController?.pushViewController(showProviderVC, animated: true)
+                    }
+
+                
+//                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+//                showProviderVC.id = id
+//                self.navigationController?.pushViewController(showProviderVC, animated: true)
                 
             }
             cell = singleCell

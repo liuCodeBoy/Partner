@@ -7,8 +7,9 @@
 
 import UIKit
 import ImagePicker
-
-class InformationDetailVC: UIViewController {
+import Lightbox
+class InformationDetailVC: UIViewController,ImagePickerDelegate
+{
     @IBOutlet weak var profileImageView: UIImageView!
     var detailViewIsHidden : Bool = false
     @IBOutlet weak var nametextField: UITextField!
@@ -19,6 +20,7 @@ class InformationDetailVC: UIViewController {
     @IBOutlet weak var companyTextField: UITextField!
     @IBOutlet weak var jobNametextField: UITextField!
     @IBOutlet weak var communityIdLab: UITextField!
+    var imagePickerController : ImagePickerController?
     var  communityID : Int?
     var  genderID    = 0
     
@@ -32,14 +34,23 @@ class InformationDetailVC: UIViewController {
         //加载城市数据
         loadData()
         CompanyView.isHidden = detailViewIsHidden
+        let tempPickerVC = ImagePickerController()
+        tempPickerVC.delegate = self
+        tempPickerVC.imageLimit = 1
+        imagePickerController = tempPickerVC
         //照片添加点击方法
-//        let imageTap = UITapGestureRecognizer.init(target: self, action: #selector(addPhotoClick))
-//        self.profileImageView.addGestureRecognizer(imageTap)
+        let imageTap = UITapGestureRecognizer.init(target: self, action: #selector(addPhotoClick))
+        self.profileImageView.addGestureRecognizer(imageTap)
         self.setRoundRect(targets: [profileImageView])
         //指定委托
         self.cityPickerView.delegate = self;
         self.cityPickerView.dataSource = self;
     }
+    
+    @objc func addPhotoClick(){
+        self.present(imagePickerController!, animated: true, completion: nil)
+    }
+    
     //跳转控制器
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard  nametextField.text != "请输入"  && genderbtn.titleLabel?.text != "请选择" else{
@@ -60,7 +71,7 @@ class InformationDetailVC: UIViewController {
                     return
                 }
             }else{
-                print(error)
+//                print(error)
             }
         }
     }
@@ -111,52 +122,34 @@ class InformationDetailVC: UIViewController {
 }
 
 //MARK: - 照片选择方法
-extension InformationDetailVC : ImagePickerDelegate {
-    
-    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+extension InformationDetailVC  {
+   
+        func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+            imagePicker.dismiss(animated: true, completion: nil)
+        }
         
-    }
-    
-    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+            guard images.count > 0 else { return }
+            
+            let lightboxImages = images.map {
+                return LightboxImage(image: $0)
+            }
+            
+            let lightbox = LightboxController(images: lightboxImages, startIndex: 0)
+            imagePicker.present(lightbox, animated: true, completion: nil)
+        }
         
+        func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+            guard images.count > 0 else { return }
+            imagePicker.dismiss(animated: true) {
+                weak var  weakself = self
+                for tempImage  in images{
+                    weakself?.profileImageView.image = tempImage
+                 
+                }
+            }
+        }
     }
-    
-    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        
-    }
-    
-//    @objc func addPhotoClick() -> () {
-//        weak var  weakself = self
-//        let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
-//        alert.view.tintColor = UIColor.black
-//        let actionCancel = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
-//        let actionPhoto = UIAlertAction.init(title: "选择上传照片", style: .default) { (UIAlertAction) -> Void in
-//            weakself?.showLocalPhotoGallery()
-//        }
-//
-//        alert.addAction(actionCancel)
-//        alert.addAction(actionPhoto)
-//        weakself?.present(alert, animated: true, completion: nil)
-//
-//    }
-//
-//    private func showLocalPhotoGallery(){
-//        weak var  weakself = self
-//
-//        let  pushNumber = 1
-//        let  imagePickerVc = TZImagePickerController.init(maxImagesCount: pushNumber, delegate: self as TZImagePickerControllerDelegate)
-//
-//        imagePickerVc?.didFinishPickingPhotosWithInfosHandle = {(photosArr , assets ,isSelectOriginalPhoto ,infos) in
-//            for i in  0..<photosArr!.count {
-//                weakself?.profileImageView?.image = photosArr?[i]
-//            }
-//
-//        }
-//
-//        self.present(imagePickerVc!, animated: true, completion: nil)
-//
-//   }
-}
 
   //MARK: - 城市选择
 extension InformationDetailVC : UIPickerViewDataSource,UIPickerViewDelegate {

@@ -23,9 +23,14 @@ class NoticeListCell: UITableViewCell {
             }
             
             if viewModel.type == 1 {
-                self.nameTextLab.text = "服务通知"
+                self.nameTextLab.text = "社联动态通知"
+                imageHeaderView.image = #imageLiteral(resourceName: "noticeDaymatic")
+            }else if viewModel.type == 2{
+                self.nameTextLab.text = "服务消息通知"
+                imageHeaderView.image = #imageLiteral(resourceName: "noticeSchedule")
             }else{
-                self.nameTextLab.text = "社联通知"
+                self.nameTextLab.text = "合伙人小助手通知"
+                imageHeaderView.image = #imageLiteral(resourceName: "noticeListen")
             }
             if let content = viewModel.content{
               self.communityLab.text = content

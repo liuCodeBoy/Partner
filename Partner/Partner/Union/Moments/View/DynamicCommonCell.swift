@@ -77,11 +77,11 @@ class DynamicCommonCell: UITableViewCell {
                     if viewModel.my == 1 {
                         deleteBtn.isHidden = true
                     }else{
-//                        if viewModel.commUserId as? Int == uid{
+                        if viewModel.commUserId as? Int == uid{
                             deleteBtn.isHidden = false
-//                        }else{
-//                            deleteBtn.isHidden = true
-//                        }
+                        }else{
+                            deleteBtn.isHidden = true
+                        }
                     }
                 }else if viewModel.level == 1 {
                     if viewModel.my == 1 {

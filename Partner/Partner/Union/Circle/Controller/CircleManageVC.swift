@@ -13,6 +13,7 @@ class CircleManageVC: UIViewController,ImagePickerDelegate{
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var numberText: UILabel!
     @IBOutlet weak var CircleNameText: UILabel!
+    @IBOutlet weak var circleInfoLab: UILabel!
     @IBAction func dismissSelfVC(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -70,6 +71,11 @@ class CircleManageVC: UIViewController,ImagePickerDelegate{
               tempVC.circleMemberSegue = segue
              let  sourceVC = circleDetailSeague?.source as! CircleDetailVC
               tempVC.circleId = sourceVC.circleId
+        }else if segue.identifier == "EditCircleInfoVCID"{
+              let  tempVC  = segue.destination as! EditCircleInfoVC
+             tempVC.circlenameSegue = segue
+             let  sourceVC = circleDetailSeague?.source as! CircleDetailVC
+             tempVC.circleId = sourceVC.circleId
         }
     }
     
@@ -93,6 +99,7 @@ class CircleManageVC: UIViewController,ImagePickerDelegate{
                     if let number = detailModel.membNum{
                         self?.numberText.text = "\(String(describing: number))"
                     }
+                   self?.circleInfoLab.text = detailModel.circleDesc
                    self?.CircleNameText.text = detailModel.circleName
                 }
             }else{

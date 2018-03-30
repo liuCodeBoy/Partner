@@ -11,7 +11,7 @@ import JXPhotoBrowser
 import MJRefresh
 import NVActivityIndicatorView
 
-class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource ,PhotoBrowserDelegate {
+class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource ,PhotoBrowserDelegate,UITextFieldDelegate {
     @IBOutlet weak var inputDialogueView: UIView!
     @IBOutlet weak var inputTF: UITextField!
     @IBOutlet weak var sendBtn: UIButton!
@@ -45,11 +45,15 @@ class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         }
     }
     
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         statusTableview.rowHeight = UITableViewAutomaticDimension
         statusTableview.estimatedRowHeight = 200
         statusTableview.separatorStyle = .none
+        inputTF.delegate = self
         
         //加载动画
        NVActivityIndicatorPresenter.sharedInstance.startAnimating(AppDelegate.activityData)
@@ -62,9 +66,24 @@ class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         sendBtn.setTitleColor(UIColor.darkGray, for: .disabled)
         sendBtn.setTitleColor(UIColor.white, for: .normal)
-        inputTF.addTarget(self, action: #selector(passData), for: .allEditingEvents)
+//        inputTF.addTarget(self, action: #selector(passData), for: .valueChanged)
         
         loadStatuses()
+    }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var  fuzzy  : String?
+        if textField.text != "" {
+            fuzzy = textField.text! + string
+        }else{
+            fuzzy =  string
+        }
+        if string.count == 0 && textField.text?.count == 1 {
+            fuzzy = ""
+        }
+        inputText = fuzzy
+        return true
     }
     
     @objc func passData() {
@@ -73,6 +92,8 @@ class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        self.view.endEditing(true)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -265,14 +286,14 @@ extension DynamicDetailVC {
                 }
                 color = #colorLiteral(red: 0.6242706776, green: 0.8754864931, blue: 0.8703722358, alpha: 1)
                 showInfo = "评论成功"
-                self?.commentType = 1
-                self?.inputTF.text = ""
-                self?.inputTF.resignFirstResponder()
-                self?.refresh()
+                
             }else{
                 showInfo =  result!["msg"] as! String
             }
-            
+            self?.commentType = 1
+            self?.inputTF.text = ""
+            self?.inputTF.resignFirstResponder()
+            self?.refresh()
             let config = NoticeBarConfig(title: showInfo, image: nil, textColor: UIColor.white, backgroundColor: color, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
             let noticeBar = NoticeBar(config: config)
             noticeBar.show(duration: 1.5, completed: nil)
@@ -305,6 +326,10 @@ extension  DynamicDetailVC {
             rowNum = 1
         }
         return  rowNum
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       self.inputTF.resignFirstResponder()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var  cell = UITableViewCell.init()

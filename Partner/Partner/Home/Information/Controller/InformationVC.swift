@@ -229,6 +229,11 @@ extension InformationVC {
               let   url = NSURL.init(string: urlStr)
               informationVC.url = url
             }
+            if let id  = model.infoId{
+                NetWorkTool.shareInstance.apiScan(id: Int(truncating: id), finished: { (result, error) in
+                    
+                })
+            }
             self.navigationController?.pushViewController(informationVC, animated: true)
         }
     }

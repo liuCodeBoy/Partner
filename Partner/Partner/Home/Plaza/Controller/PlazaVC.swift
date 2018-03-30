@@ -48,6 +48,13 @@ class PlazaVC: UIViewController {
         getHotInvestorList()
         getProjectList()
         getTypeList()
+        
+        if access_token == nil {
+            let RegisterAndLoginVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID") as!RegisterAndLoginVC
+            RegisterAndLoginVC.isloaded = false
+            let  navRegistAndLoginVC = UINavigationController.init(rootViewController: RegisterAndLoginVC)
+            self.present(navRegistAndLoginVC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func infoShowMore(_ sender: Any) {
@@ -70,11 +77,24 @@ class PlazaVC: UIViewController {
     
     //addTopImageView
     func addTopImageView(){
-        let URLArr = [URL(string: "http://ow1i9ri5b.bkt.clouddn.com/Screen%20Shot%202017-10-21%20at%205.35.48%20PM.png"),
-                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/%E8%BD%AE%E6%92%AD%E5%9B%BE2.png"),
-                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/%E8%BD%AE%E6%92%AD%E5%9B%BE.png")]
-        loopView = LoopView.init(images: URLArr as! [URL], frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 160), isAutoScroll: true)
-        self.imageHeadView.addSubview(loopView)
+        var URLArr = [URL]()
+        NetWorkTool.shareInstance.getCarouselList { [weak self](result, error) in
+            if error == nil {
+                if  result?["code"] as? Int == 200  {
+                    guard   result != nil else{
+                        return
+                    }
+                let urlStrArr = result!["result"] as? [String]
+                    for childStr in urlStrArr!{
+                        let url = URL.init(string: childStr)
+                        URLArr.append(url!)
+                    }
+                self?.loopView = LoopView.init(images: URLArr , frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 160), isAutoScroll: true)
+                    self?.imageHeadView.addSubview((self?.loopView)!)
+                }
+            }
+        }
+     
     }
    
 }
@@ -141,29 +161,46 @@ extension PlazaVC {
         
         if hotModelArr.count > 0 {
             let model = hotModelArr[0]
-            let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
-            showProviderVC.id = model.uid as? Int
-            self.navigationController?.pushViewController(showProviderVC, animated: true)
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+            if model.uid as? Int == uid {
+                let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                  self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }else{
+                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                showProviderVC.id = model.uid as? Int
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }
         }
-        
     
     }
     
     @objc  func pushHotInvestor2(){
         if hotModelArr.count > 0 {
             let model = hotModelArr[1]
-            let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
-            showProviderVC.id = model.uid as? Int
-            self.navigationController?.pushViewController(showProviderVC, animated: true)
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+            if model.uid as? Int == uid {
+                let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }else{
+                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                showProviderVC.id = model.uid as? Int
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }
         }
     }
     
     @objc  func pushHotInvestor3(){
         if hotModelArr.count > 0 {
             let model = hotModelArr[2]
-            let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
-            showProviderVC.id = model.uid as? Int
-            self.navigationController?.pushViewController(showProviderVC, animated: true)
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+            if model.uid as? Int == uid {
+                let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }else{
+                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                showProviderVC.id = model.uid as? Int
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }
         }
     }
     
