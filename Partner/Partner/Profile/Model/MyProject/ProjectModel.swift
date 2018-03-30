@@ -23,7 +23,7 @@ class ProjectListModel: NSObject {
     @objc var focus             : NSNumber?
     @objc var create            : NSNumber?
     @objc var desc              : String?
-    
+    var isSelected : Bool?
 }
 
 class ProjectModel: NSObject {

@@ -31,6 +31,11 @@ class ServiceInvestorBasicInfomationContainerViewController: UIViewController, U
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! ChooseProjectVC
+        destVC.userId = self.id!
+    }
     override func viewWillAppear(_ animated: Bool) {
         guard UserDefaults.standard.string(forKey: "token") != nil else {
             presentLoginController()
