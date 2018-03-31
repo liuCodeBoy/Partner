@@ -83,7 +83,7 @@ class ChooseProjectVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         guard self.project != nil else{
             return
         }
-        NetWorkTool.shareInstance.deliverProject(token: access_token!, userId: self.userId!, projectIds: self.project!) { [weak self](result, error) in
+        NetWorkTool.shareInstance.deliverProject(token: access_token!, userId: self.userId!, projectIds: "\(self.project!)") { [weak self](result, error) in
             if error == nil {
                 // MARK:- judge the return data from server
                 if result?["code"] as? Int == 200 {
