@@ -7,12 +7,16 @@
 
 import UIKit
 
+
 class UnionMainVC: UIViewController {
+    
     @IBOutlet weak var topContentView: UIView!
+    var noticeBtn : UIButton?
+    var modelArr = [NoticeInfoModel]()
     var   sliderView : UIView?
     //滚动视图
     var   scrollView : UIScrollView?
-    
+    var   isRead : Int?
     //滑动Btn数组
     var   sliderBtnArr  = [UIButton]()
     override func viewDidLoad() {
@@ -21,9 +25,15 @@ class UnionMainVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         addTopViewChildsBtn()
         addChildScroll()
-        addNoticBtn()
+       
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if self.noticeBtn != nil {
+            self.noticeBtn?.removeFromSuperview()
+        }
+        loadNotice()
+    }
   
     
     
@@ -62,13 +72,51 @@ class UnionMainVC: UIViewController {
         let btn = UIButton.init(frame: CGRect.init(x: screenWidth - 50, y: 0, width: 50, height: 60))
         btn.contentHorizontalAlignment = .center
         btn.contentVerticalAlignment   = .bottom
-        btn.setImage(#imageLiteral(resourceName: "society_news_normal"), for: .normal)
+        if self.isRead == 1 {
+            btn.setImage(#imageLiteral(resourceName: "society_news_normal"), for: .normal)
+        }else {
+            btn.setImage(#imageLiteral(resourceName: "ring_noread"), for: .normal)
+        }
         btn.addTarget(self, action: #selector(addNotice(btn:)), for: UIControlEvents.touchUpInside)
-        self.topContentView.addSubview(btn)
+        self.noticeBtn = btn
+        self.topContentView.addSubview(self.noticeBtn!)
     }
+    
+    //网络请求
+    func loadNotice() -> () {
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+            self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
+            return
+        }
+        NetWorkTool.shareInstance.getNoticeApiList(token: access_token) { [weak self](result, error) in
+            if  result?["code"] as? Int == 200  {
+                guard   result != nil else{
+                    return
+                }
+                if  let dictArr  =   result!["result"] as? [NSDictionary]{
+                    for dict in dictArr{
+                        if  let statusViewModel = NoticeInfoModel.mj_object(withKeyValues: dict){
+                            self?.modelArr.append(statusViewModel)
+                        }
+                    }
+                    for model in (self?.modelArr)! {
+                        if model.read == 1{
+                            self?.isRead = 1
+                        }else{ self?.isRead = 0}
+                    }
+                }
+                self?.addNoticBtn()
+            }else{
+                let  errorShow  =  result!["msg"] as! String
+                self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+            }
+        }
+    }
+    
+    
     //跳转通知控制器
     @objc  func   addNotice(btn : UIButton){
-        let  noticeViewControllerVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "NoticeViewControllerID")
+        let  noticeViewControllerVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "NoticeViewControllerID") as! NoticeViewController
         self.navigationController?.pushViewController(noticeViewControllerVC, animated: true)
         
     }
