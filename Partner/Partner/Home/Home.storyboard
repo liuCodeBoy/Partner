@@ -138,7 +138,7 @@
                                                                             <constraint firstAttribute="height" constant="26" id="kzQ-eK-290"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <state key="normal" title="投递项目">
+                                                                        <state key="normal" title="查看详情">
                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
@@ -227,7 +227,7 @@
                                                                             <constraint firstAttribute="width" constant="100" id="yx5-e1-C43"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <state key="normal" title="投递项目">
+                                                                        <state key="normal" title="查看详情">
                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
@@ -316,7 +316,7 @@
                                                                             <constraint firstAttribute="width" constant="100" id="EiV-2j-DgG"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <state key="normal" title="投递项目">
+                                                                        <state key="normal" title="查看详情">
                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
