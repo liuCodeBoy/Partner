@@ -1858,8 +1858,8 @@
                                     <outlet property="delegate" destination="E8s-CB-JYX" id="b0x-2V-ZAB"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cu7-BR-gfD" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
-                                <rect key="frame" x="16" y="422" width="325" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cu7-BR-gfD" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
+                                <rect key="frame" x="25" y="436" width="325" height="40"/>
                                 <color key="backgroundColor" red="0.5411764979" green="0.63137257099999999" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="t37-Ao-V8t"/>
@@ -1874,7 +1874,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Xbz-Ng-Brm" kind="show" id="lR7-u7-xmm"/>
+                                    <segue destination="Xbz-Ng-Brm" kind="show" identifier="SIBIDeliverProjSegue" id="lR7-u7-xmm"/>
                                 </connections>
                             </button>
                         </subviews>

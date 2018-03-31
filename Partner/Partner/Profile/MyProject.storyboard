@@ -2024,7 +2024,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzM-gq-uXK">
-                                                    <rect key="frame" x="0.0" y="19.666666666666671" width="375" height="60"/>
+                                                    <rect key="frame" x="0.0" y="20" width="375" height="60"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lug-Qd-viN" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                                             <rect key="frame" x="12" y="10" width="351" height="40"/>
@@ -2033,7 +2033,7 @@
                                                                 <constraint firstAttribute="height" constant="40" id="Y6Z-nb-9gG"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                            <state key="normal" title="开始融资">
+                                                            <state key="normal" title="投递项目">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
@@ -2054,8 +2054,8 @@
                                                         <constraint firstAttribute="height" constant="60" id="sPT-yz-wfT"/>
                                                     </constraints>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-0P-lhR">
-                                                    <rect key="frame" x="0.0" y="80" width="375" height="50"/>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-0P-lhR">
+                                                    <rect key="frame" x="0.0" y="20" width="375" height="60"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpk-ji-exA" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                                             <rect key="frame" x="12" y="10" width="169" height="40"/>
@@ -5744,10 +5744,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NpH-Vf-cbf"/>
-        <segue reference="5fu-XA-MnE"/>
-        <segue reference="JWp-2j-dqt"/>
-        <segue reference="kFi-PQ-dux"/>
-        <segue reference="wvX-dX-IFq"/>
+        <segue reference="4K2-Dz-dxN"/>
+        <segue reference="vqI-3G-G27"/>
+        <segue reference="DxQ-Aa-YgY"/>
+        <segue reference="L5x-kz-n3a"/>
         <segue reference="a88-Mi-iqh"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,10 +41,6 @@ class MyProjectReviewViewController: UIViewController {
 
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
-    }
-    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -71,25 +67,11 @@ extension MyProjectReviewViewController {
             }
             if result!["code"] as! Int == 200 {
                 
-                // deliver
+                let vc = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "InvestorListVCID") as! InVestorListVC
                 
-//                NetWorkTool.shareInstance.deliverProject(token: access_token!, userId: userId, projectIds: "\(projId)", finished: { (result, error) in
-//                    if error != nil {
-//                        SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
-//                        return
-//                    }
-//                    if result!["code"] as! Int == 200 {
-//
-//                        let success = SCLAlertView()
-//                        success.addButton("确定", action: {
-//                            weakSelf?.navigationController?.popViewController(animated: true)
-//                        })
-//                        success.showSuccess("投递成功", subTitle: "")
-//
-//                    } else {
-//                        SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
-//                    }
-//                })
+                NotificationCenter.default.post(name: NSNotification.Name.init(deliverProjectNotification), object: nil, userInfo: ["projID" : projId, "isSingle" : true])
+                
+                weakSelf?.navigationController?.pushViewController(vc, animated: true)
                 
             } else {
                 SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")

@@ -52,6 +52,7 @@ class MyProjectEditViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(pushEditProjVC(_:)), name: NSNotification.Name.init(pushEditProjBasicInfoNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(presentImagePicker), name: NSNotification.Name.init(presentImagePickerNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deliverProject), name: NSNotification.Name.init(deliverProjectNotification), object: nil)
     }
     
     @objc func presentImagePicker() {
@@ -67,6 +68,10 @@ class MyProjectEditViewController: UIViewController {
         vc.editViewModel = model
         vc.isEdit = true
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func deliverProject() {
+        
     }
     
     deinit {

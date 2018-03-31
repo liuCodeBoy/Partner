@@ -11,6 +11,8 @@ import NoticeBar
 class ServiceInvestorProfileViewController: UIViewController {
     
     var id: Int?
+    var singleProjId: Int?
+    var isSingle = false
     
     @IBOutlet weak var avatar: RoundRectImage!
     @IBOutlet weak var nickNameLbl: UILabel!
@@ -129,12 +131,12 @@ class ServiceInvestorProfileViewController: UIViewController {
         }
     }
     
-  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SIBasicInfoSegue" {
             let dest = segue.destination as! ServiceInvestorBasicInfomationContainerViewController
             dest.id = self.id
+            dest.isSingle = self.isSingle
             dest.segue = segue
         } else if segue.identifier == "SIExperienceSegue" {
             let dest = segue.destination as! ServiceInvestorExperienceContainerViewController
