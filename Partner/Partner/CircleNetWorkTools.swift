@@ -536,6 +536,25 @@ extension NetWorkTool {
         }
     }
     
+    //设置通知已读（notice/api/read）
+    func noticeRead(token:String , type : Int ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/notice/api/read.do"
+        //类型，1服务动态通知 2社联消息通知 3合伙人客服通知 4合伙人小助手通知
+        //2.获取请求参数
+        let parameters = ["token" : token, "type" : type] as [String : Any]
+        //3.发送请求参数
+        request(.POST , urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
     //社联通知列表（notice/api/socialconn/list）
     func getNoticeSocialConnList(token:String ,pageNum : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString

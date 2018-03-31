@@ -1685,7 +1685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uuq-q4-beh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1422" y="-1722"/>
+            <point key="canvasLocation" x="-1537" y="-1739"/>
         </scene>
         <!--Cricle View Controller-->
         <scene sceneID="aEo-rS-zYz">
@@ -3143,7 +3143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ff-uZ-pAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642" y="-1913"/>
+            <point key="canvasLocation" x="1231" y="-1895"/>
         </scene>
         <!--Circle ManageVC-->
         <scene sceneID="wtm-uF-INX">
@@ -4625,7 +4625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1m-nl-GmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="229.59999999999999" y="-2543.3497536945815"/>
+            <point key="canvasLocation" x="-297" y="-2543"/>
         </scene>
         <!--Notice List View Controller-->
         <scene sceneID="lvZ-w3-hN1">
@@ -4977,7 +4977,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96d-S5-HKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.79999999999995" y="-2543.3497536945815"/>
+            <point key="canvasLocation" x="438" y="-2543"/>
         </scene>
         <!--Edit Circle InfoVC-->
         <scene sceneID="OZ8-Kp-WWs">

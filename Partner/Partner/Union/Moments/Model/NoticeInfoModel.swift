@@ -11,4 +11,5 @@ class NoticeInfoModel: NSObject {
     @objc  var   type           :  NSNumber?
     @objc  var   content         : String?
     @objc  var   sendTime       :  String?
+    @objc  var   read           :  NSNumber?
 }

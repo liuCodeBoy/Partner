@@ -57,6 +57,27 @@ class NoticeViewController: UIViewController ,UITableViewDelegate ,UITableViewDa
             }
         }
     }
+    
+    func noticeRead(index:Int){
+        var tempIndex = index
+        if index == 3{
+            tempIndex = 4
+        }
+        guard access_token != nil else {
+            return
+        }
+        NetWorkTool.shareInstance.noticeRead(token: access_token!, type: tempIndex) { [weak self](result, error) in
+            if  result?["code"] as? Int == 200  {
+                guard   result != nil else{
+                    return
+                }
+                
+            }else{
+                let  errorShow  =  result!["msg"] as! String
+                self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+            }
+        }
+    }
 }
 
 
@@ -82,6 +103,7 @@ extension NoticeViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "NoticeListViewControllerID") as! NoticeListViewController
+        noticeRead(index:indexPath.row + 1)
         destVC.type = indexPath.row
         self.navigationController?.pushViewController(destVC, animated: true)
     }
