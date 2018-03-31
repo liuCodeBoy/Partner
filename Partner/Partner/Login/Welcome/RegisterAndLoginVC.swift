@@ -95,11 +95,12 @@ class RegisterAndLoginVC: UIViewController {
                 if result?["code"] as? Int == 200 {
                     self?.presentHintMessage(hintMessgae: "登录成功", completion: { (action) in
                         let  resultDict = result!["result"] as? NSDictionary
-                        if  let token = resultDict?["token"]{
+                        if  let token = resultDict?["token"] as? String {
                             //偏好设置
                             let userDefault =  UserDefaults.standard
                             //存储数据
                             userDefault.set(token, forKey: "token")
+                            access_token = token
                             let uid = resultDict?["uid"]
                             userDefault.set(uid, forKey: "uid")
                             userDefault.set(self?.phoneNumLab.text ,forKey: "number")

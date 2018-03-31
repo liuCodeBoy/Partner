@@ -35,7 +35,7 @@
                                             <action selector="popBtnClicked:" destination="r7E-Ev-ivL" eventType="touchUpInside" id="97x-5a-sUQ"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buc-b2-PXR">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buc-b2-PXR">
                                         <rect key="frame" x="319" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="buc-b2-PXR" secondAttribute="height" id="UfA-FZ-sMY"/>
@@ -48,7 +48,7 @@
                                             <action selector="createProjBtnClicked:" destination="r7E-Ev-ivL" eventType="touchUpInside" id="EdI-Gm-BLl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06P-tD-MWQ">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06P-tD-MWQ">
                                         <rect key="frame" x="319" y="0.0" width="44" height="44"/>
                                         <state key="normal" image="profile_my_project_attention"/>
                                         <connections>
@@ -4723,7 +4723,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPo-1W-agM">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPo-1W-agM">
                                         <rect key="frame" x="329" y="0.0" width="46" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="rOH-FF-byB"/>
@@ -4733,7 +4733,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZT-C2-esX">
-                                        <rect key="frame" x="283" y="0.0" width="46" height="44"/>
+                                        <rect key="frame" x="329" y="0.0" width="46" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="Rvp-uK-O4Q"/>
                                         </constraints>
@@ -4748,7 +4748,7 @@
                                     <constraint firstAttribute="trailing" secondItem="jPo-1W-agM" secondAttribute="trailing" id="3ew-63-05n"/>
                                     <constraint firstItem="L2i-p7-2c6" firstAttribute="centerX" secondItem="baz-LF-feo" secondAttribute="centerX" id="5cb-UG-5wd"/>
                                     <constraint firstItem="s2g-IC-5TA" firstAttribute="centerY" secondItem="baz-LF-feo" secondAttribute="centerY" id="9fL-wC-uTQ"/>
-                                    <constraint firstItem="jPo-1W-agM" firstAttribute="leading" secondItem="pZT-C2-esX" secondAttribute="trailing" id="HTH-PO-4wo"/>
+                                    <constraint firstItem="jPo-1W-agM" firstAttribute="leading" secondItem="pZT-C2-esX" secondAttribute="trailing" constant="-46" id="HTH-PO-4wo"/>
                                     <constraint firstItem="pZT-C2-esX" firstAttribute="height" secondItem="jPo-1W-agM" secondAttribute="height" id="SVB-rd-2fU"/>
                                     <constraint firstItem="pZT-C2-esX" firstAttribute="centerY" secondItem="jPo-1W-agM" secondAttribute="centerY" id="Tpe-V9-N3Z"/>
                                     <constraint firstAttribute="height" constant="44" id="XVB-zd-ptr"/>
@@ -5743,7 +5743,7 @@
         <image name="right_arrow" width="6" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TiT-st-EoA"/>
+        <segue reference="NpH-Vf-cbf"/>
         <segue reference="5fu-XA-MnE"/>
         <segue reference="JWp-2j-dqt"/>
         <segue reference="kFi-PQ-dux"/>

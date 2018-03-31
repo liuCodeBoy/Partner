@@ -124,7 +124,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpQ-fA-oNG" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                 <rect key="frame" x="149.66666666666666" y="62" width="76" height="76"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="mnX-l7-46H" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="mnX-l7-46H" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -272,7 +272,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBB-ia-eF6">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                         <connections>
-                                                            <segue destination="DE1-Yd-BfS" kind="show" id="jbg-W9-GjW"/>
+                                                            <segue destination="DE1-Yd-BfS" kind="show" identifier="ProfileApplyAuthSegue" id="jbg-W9-GjW"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -545,6 +545,7 @@
                     <navigationItem key="navigationItem" id="XG3-dQ-FBr"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="applyAuthBtn" destination="DBB-ia-eF6" id="cVh-4A-d72"/>
                         <outlet property="avatar" destination="mnX-l7-46H" id="p3w-nY-9yY"/>
                         <outlet property="backImageHeightCons" destination="JlW-yo-M45" id="kIP-am-jEW"/>
                         <outlet property="dataIntegrityLbl" destination="auv-fh-azK" id="XMl-s9-Hx5"/>
@@ -650,6 +651,6 @@
         <image name="tab_bar_profile_selected" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tcz-sN-2uP"/>
+        <segue reference="Kdc-2n-0ST"/>
     </inferredMetricsTieBreakers>
 </document>

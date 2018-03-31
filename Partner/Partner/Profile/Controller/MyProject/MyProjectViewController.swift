@@ -30,6 +30,7 @@ class MyProjectViewController: UIViewController {
     @IBAction func createProjBtnClicked(_ sender: UIButton) {
         // MARK:- creat a new proj
         let vc = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "CreateProject") as! MyProjectEditAndCreateViewController
+        vc.isEdit = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -66,19 +67,17 @@ class MyProjectViewController: UIViewController {
         loadData()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillLayoutSubviews() {
         if isInvestor == true {
-            createProjBtn.isHidden = true
-            intentionBtn.isHidden  = false
             investorsSelectViewHCons.constant = 70
         } else {
-            createProjBtn.isHidden = false
-            intentionBtn.isHidden  = true
             investorsSelectViewHCons.constant = 0
         }
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         loadData()
         
         // MARK:- receive passed proj id to table view
@@ -119,9 +118,11 @@ class MyProjectViewController: UIViewController {
                 }
                 weakSelf?.placeholderContainerView.isHidden = true
                 // TODO:- convert dict to model and assign to view to show
-                for dict in resultDict["list"] as! [[String : AnyObject]] {
-                    let model = ProjectListModel.mj_object(withKeyValues: dict)
-                    weakSelf?.myProjectTableView.modelArray.append(model!)
+                if let resultDict = resultDict["list"] as? [[String : AnyObject]] {
+                    for dict in resultDict {
+                        let model = ProjectListModel.mj_object(withKeyValues: dict)
+                        weakSelf?.myProjectTableView.modelArray.append(model!)
+                    }
                 }
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)

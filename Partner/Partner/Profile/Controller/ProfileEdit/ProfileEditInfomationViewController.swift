@@ -159,6 +159,26 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        
+        // load data
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        NetWorkTool.shareInstance.getMyInfo(token: access_token!) { [weak self](result, error) in
+            if error != nil {
+                self?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                let model = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
+                self?.viewModel = model
+            } else {
+                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -185,25 +205,6 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         profileInfoTableView.dataSource = self
         
         notificationAddKeyboardObserver()
-        
-        // load data
-        guard UserDefaults.standard.string(forKey: "token") != nil else {
-            presentLoginController()
-            return
-        }
-        NetWorkTool.shareInstance.getMyInfo(token: access_token!) { [weak self](result, error) in
-            if error != nil {
-                self?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
-                print(error as AnyObject)
-                return
-            }
-            if result!["code"] as! Int == 200 {
-                let model = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
-                self?.viewModel = model
-            } else {
-                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"]!))", completion: nil)
-            }
-        }
         
     }
     

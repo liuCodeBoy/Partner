@@ -27,6 +27,12 @@ class ProjectCollectionViewController: UIViewController {
         super.viewDidLoad()
         
         loadProjData()
+        
+        tableView.pushProjReviewClosure = { id in
+            let vc = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
+            vc.projID = id
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
 
     }
 }

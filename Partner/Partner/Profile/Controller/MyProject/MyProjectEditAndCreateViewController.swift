@@ -185,7 +185,6 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
         }
         guard let logo = projModel.logo,
               let fields = projModel.fields,
-              let id = editViewModel?.projectId,
               let projName = projModel.projName,
               let projCompName = projModel.projCompName,
               let projConnName = projModel.projConnName,
@@ -199,18 +198,17 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             return
         }
 
-        NetWorkTool.shareInstance.editProject(token: access_token!,
-                                              logo: logo,
-                                              fields: fields,
-                                              id: id as! Int,
-                                              projName: projName,
-                                              projCompName: projCompName,
-                                              projConnName: projConnName,
-                                              projPhone: projPhone,
-                                              projMail: projMail,
-                                              idenId: idenId as! Int,
-                                              areaId: areaId as! Int,
-                                              roundId: roundId as! Int)
+        NetWorkTool.shareInstance.createProject(token: access_token!,
+                                                logo: logo,
+                                                fields: fields,
+                                                projName: projName,
+                                                projCompName: projCompName,
+                                                projConnName: projConnName,
+                                                projPhone: projPhone,
+                                                projMail: projMail,
+                                                idenId: idenId as! Int,
+                                                areaId: areaId as! Int,
+                                                roundId: roundId as! Int)
         { (result, error) in
             weak var weakSelf = self
             if error != nil {
@@ -220,13 +218,14 @@ class MyProjectEditAndCreateViewController: UIViewController, ImagePickerDelegat
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- save success
-                weakSelf?.presentHintMessage(hintMessgae: "保存成功", completion: { (_) in
+                weakSelf?.presentHintMessage(hintMessgae: "创建成功", completion: { (_) in
                     weakSelf?.navigationController?.popViewController(animated: true)
                 })
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
             }
         }
+        
     }
     
     func editAndSaveProjInfo() {

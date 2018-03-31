@@ -45,6 +45,10 @@ class MyProjectReviewViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 
 }
 
@@ -54,6 +58,43 @@ extension MyProjectReviewViewController {
         
         // FIXME:- to push investor vc and pass proj id
         /// call judgeDeliverValid first and then deliver project
+        
+        let userId = UserDefaults.standard.integer(forKey: "uid")
+        
+        guard let projId = self.projID else { return }
+        
+        NetWorkTool.shareInstance.judgeDelierValid(token: access_token!, userId: userId, projectId: projId) { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                
+                // deliver
+                
+//                NetWorkTool.shareInstance.deliverProject(token: access_token!, userId: userId, projectIds: "\(projId)", finished: { (result, error) in
+//                    if error != nil {
+//                        SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+//                        return
+//                    }
+//                    if result!["code"] as! Int == 200 {
+//
+//                        let success = SCLAlertView()
+//                        success.addButton("确定", action: {
+//                            weakSelf?.navigationController?.popViewController(animated: true)
+//                        })
+//                        success.showSuccess("投递成功", subTitle: "")
+//
+//                    } else {
+//                        SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+//                    }
+//                })
+                
+            } else {
+                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+            }
+        }
         
         
     }
@@ -77,12 +118,32 @@ extension MyProjectReviewViewController {
             if result!["code"] as! Int == 200 {
                 // TODO:- save data into model
                 
-                weakSelf?.modelView = ProjectDetialModel.mj_object(withKeyValues: result!["result"])
+                let tempModelView = ProjectDetialModel.mj_object(withKeyValues: result!["result"])
+                
+                // fix api bug -> member info
+                NetWorkTool.shareInstance.getMemberList(token: access_token!, projectId: id) { (result, error) in
+                    if error != nil {
+                        SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                        return
+                    }
+                    if result!["code"] as! Int == 200 {
+                        // TODO:- save data into model
+                        
+                        tempModelView?.membInfos = result!["result"] as? [NSDictionary]
+                        
+                        weakSelf?.modelView = tempModelView
+                        
+                    } else {
+                        SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+                    }
+                }
                 
             } else {
                 SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
             }
         }
+        
+        
     }
 
 }
