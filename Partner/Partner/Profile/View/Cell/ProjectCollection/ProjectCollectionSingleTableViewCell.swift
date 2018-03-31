@@ -36,7 +36,6 @@ class ProjectCollectionSingleTableViewCell: UITableViewCell {
                 }
                 if fieldsDictArray.count == 1 {
                     tagLbl[0].isHidden = false
-                    tagLbl[2].isHidden = false
                     tagLbl[0].text = fieldsDictArray.first?["fieldName"] as? String
                 } else {
                     let count = fieldsDictArray.count

@@ -20,9 +20,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var dataIntegrityLbl: UILabel!
     @IBOutlet weak var dataIntegrityProgressWidthCons: NSLayoutConstraint!
     
+    @IBOutlet weak var applyAuthBtn: UIButton!
     @IBOutlet weak var backImageHeightCons: NSLayoutConstraint!
-    
-    @IBAction func backToProfile(_ sender: UIStoryboardSegue) { }
     
     @IBAction func loginOrRegisterBtnClicked(_ sender: UIButton) {
         // login
@@ -52,6 +51,7 @@ class ProfileViewController: UIViewController {
                 case 1: verifyLbl.text = " 投资商 "; isInvestor = true
                 case 2: verifyLbl.text = " 创业者 "; isInvestor = false
                 case 3: verifyLbl.text = " 普通用户 "; isInvestor = false
+                    
                 default: break
                 }
             }
@@ -134,6 +134,18 @@ class ProfileViewController: UIViewController {
         present(alert, animated: true) { () -> Void in
             
         }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "ProfileApplyAuthSegue" {
+            if let id = viewModel?.idenId {
+                if id == 3 {
+                    presentHintMessage(hintMessgae: "普通用户不能申请认证", completion: nil)
+                    return false
+                }
+            }
+        }
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

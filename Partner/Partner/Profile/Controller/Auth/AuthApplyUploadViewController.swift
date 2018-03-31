@@ -8,6 +8,8 @@
 import UIKit
 
 class AuthApplyUploadViewController: UIViewController {
+    
+    var isInvestor = true
 
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -16,6 +18,7 @@ class AuthApplyUploadViewController: UIViewController {
     @IBOutlet weak var applyEnterpriseView: UIView!
     @IBOutlet weak var applyInvestView: UIView!
     
+    @IBOutlet weak var authSelectViewHCons: NSLayoutConstraint!
     
     @IBOutlet weak var investAuth: ShadowButton!
     @IBOutlet weak var enterpriseAuth: ShadowButton!
@@ -34,6 +37,18 @@ class AuthApplyUploadViewController: UIViewController {
         applyEnterpriseView.isHidden = false
     }
     
+    override func viewWillLayoutSubviews() {
+        if isInvestor {
+            authSelectViewHCons.constant = 70
+            applyInvestView.isHidden = false
+            applyEnterpriseView.isHidden = true
+        } else {
+            authSelectViewHCons.constant = 0
+            applyInvestView.isHidden = true
+            applyEnterpriseView.isHidden = false
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
     }
@@ -46,6 +61,13 @@ class AuthApplyUploadViewController: UIViewController {
             return
         }
         
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if !isInvestor && identifier == "investAuthContainerSegue" {
+            return false
+        }
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

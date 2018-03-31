@@ -168,6 +168,7 @@
                     <connections>
                         <outlet property="applyEnterpriseView" destination="wJp-bw-m3V" id="nKU-cZ-tGM"/>
                         <outlet property="applyInvestView" destination="tfb-Fh-bCZ" id="fcm-T7-dPj"/>
+                        <outlet property="authSelectViewHCons" destination="Qw4-92-8iU" id="hkH-sf-6vl"/>
                         <outlet property="enterpriseAuth" destination="xsj-Z1-isJ" id="5n8-5I-seQ"/>
                         <outlet property="investAuth" destination="Q9t-LH-Jo1" id="CuR-lF-4tL"/>
                     </connections>

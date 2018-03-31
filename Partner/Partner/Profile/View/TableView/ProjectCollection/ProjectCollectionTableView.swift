@@ -10,6 +10,8 @@ import SCLAlertView
 
 class ProjectCollectionTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
+    var pushProjReviewClosure: ((_ id: Int) -> Void)?
+    
     var modelArray: [ProjectListModel] = [ProjectListModel]() {
         didSet {
             reloadData()
@@ -38,16 +40,11 @@ class ProjectCollectionTableView: UITableView, UITableViewDelegate, UITableViewD
         return 100
     }
     
-//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-//
-//        let id = modelArray[indexPath.row].projectId as! Int
-//
-//        if passIDClosure != nil {
-//            passIDClosure!(id)
-//        }
-//
-//        return indexPath
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let id = modelArray[indexPath.row].projectId as? Int, pushProjReviewClosure != nil {
+            pushProjReviewClosure!(id)
+        }
+    }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
