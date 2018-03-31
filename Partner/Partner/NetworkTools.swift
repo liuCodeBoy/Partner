@@ -329,6 +329,24 @@ extension NetWorkTool {
         }
     }
     
+    //校验是否可以投递项目（project/api/deliver/valid）
+    //
+    func deliverValid(token:String, userId : Int, projectId : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+        //1.获取请求的URLString
+        let urlString = "http://47.97.110.89/qm/project/api/deliver/valid.do"
+        //2.获取请求参数
+        let parameters = ["token" : token , "userId" : userId ,"projectId" : projectId] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
     
     //1.17.投资人列表（user/getInvestorList）
     func getInvestorList( pageNum : Int, order : Int, type : Int? , id : Int? ,fuzzy : String?, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){

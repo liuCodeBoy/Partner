@@ -42,9 +42,25 @@ class ChooseProjectVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         resetModel()
         if projectModelArr.count > 0{
             let model = projectModelArr[indexPath.row]
-            model.isSelected = true
-            self.project = model.projectId as? Int
-            self.projectTableView.reloadData()
+            guard access_token != nil else{
+              return
+            }
+            NetWorkTool.shareInstance.deliverValid(token: access_token!, userId: self.userId!, projectId: (model.projectId as? Int)!, finished: { (result, error) in
+                if error == nil {
+                    // MARK:- judge the return data from server
+                    if result?["code"] as? Int == 200 {
+                        model.isSelected = true
+                        self.project = model.projectId as? Int
+                        self.projectTableView.reloadData()
+                    } else {
+                        let  errorShow  =  result!["msg"] as! String
+                        self.presentHintMessage(hintMessgae: errorShow, completion: nil)
+                        return
+                    }
+                }else{
+                }
+            })
+         
         }
     }
     
@@ -64,12 +80,15 @@ class ChooseProjectVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         guard access_token != nil else {
             return
         }
-        
+        guard self.project != nil else{
+            return
+        }
         NetWorkTool.shareInstance.deliverProject(token: access_token!, userId: self.userId!, projectIds: self.project!) { [weak self](result, error) in
             if error == nil {
                 // MARK:- judge the return data from server
                 if result?["code"] as? Int == 200 {
-                    let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "DeliverResultVCID")
+                    let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "DeliverResultVCID") as! DeliverResultVC
+                    destVC.userId = self?.userId
                     self?.navigationController?.pushViewController(destVC, animated: true)
                 } else {
                     //let  errorShow  =  result!["msg"] as! String
