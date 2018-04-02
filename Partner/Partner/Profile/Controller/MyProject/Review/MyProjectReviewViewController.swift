@@ -60,18 +60,30 @@ extension MyProjectReviewViewController {
         guard let projId = self.projID else { return }
         
         NetWorkTool.shareInstance.judgeDelierValid(token: access_token!, userId: userId, projectId: projId) { (result, error) in
-            weak var weakSelf = self
+            
             if error != nil {
                 SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
                 return
             }
             if result!["code"] as! Int == 200 {
                 
-                let vc = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "InvestorListVCID") as! InVestorListVC
-                
-                NotificationCenter.default.post(name: NSNotification.Name.init(deliverProjectNotification), object: nil, userInfo: ["projID" : projId, "isSingle" : true])
-                
-                weakSelf?.navigationController?.pushViewController(vc, animated: true)
+                NetWorkTool.shareInstance.deliverProject(token: access_token!, userId: userId, projectIds: "\(projId)", finished: { (result, error) in
+                    
+                    if error != nil {
+                        SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                        return
+                    }
+                    if result!["code"] as! Int == 200 {
+                        
+                        SCLAlertView().showSuccess("投递成功", subTitle: "")
+                        
+                        
+                    } else {
+                        SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+                    }
+                    
+                    
+                })
                 
             } else {
                 SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")

@@ -732,9 +732,9 @@
                                             <outlet property="projLogoImg" destination="5FX-QL-NmZ" id="SlS-L7-4BE"/>
                                             <outlet property="projNameLbl" destination="3gw-CO-oIU" id="lxc-m0-yvd"/>
                                             <outlet property="refuseBtn" destination="oRq-VR-xfH" id="jA9-J6-PLU"/>
-                                            <outlet property="type1Lbl" destination="CPR-vF-5XQ" id="2oN-W4-jTF"/>
-                                            <outlet property="type2Lbl" destination="dCE-Td-1dJ" id="yv2-Ak-SXn"/>
-                                            <outlet property="type3Lbl" destination="BfD-xQ-Esu" id="3Sb-dm-xk7"/>
+                                            <outletCollection property="tagLbl" destination="CPR-vF-5XQ" collectionClass="NSMutableArray" id="FEN-3h-rah"/>
+                                            <outletCollection property="tagLbl" destination="dCE-Td-1dJ" collectionClass="NSMutableArray" id="B8m-vr-7BG"/>
+                                            <outletCollection property="tagLbl" destination="BfD-xQ-Esu" collectionClass="NSMutableArray" id="l2n-ev-Ikz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -852,7 +852,7 @@
                                                                 <color key="titleColor" red="0.55294120309999995" green="0.62745100259999997" blue="0.69411766529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="hZD-k8-yzo" kind="show" id="NpH-Vf-cbf"/>
+                                                                <segue destination="hZD-k8-yzo" kind="show" identifier="MPEPushReviewSegue" id="NpH-Vf-cbf"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cW-rj-D2Z">
@@ -4732,7 +4732,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZT-C2-esX">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZT-C2-esX">
                                         <rect key="frame" x="329" y="0.0" width="46" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="Rvp-uK-O4Q"/>
@@ -5743,11 +5743,11 @@
         <image name="right_arrow" width="6" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NpH-Vf-cbf"/>
+        <segue reference="TiT-st-EoA"/>
         <segue reference="4K2-Dz-dxN"/>
-        <segue reference="vqI-3G-G27"/>
+        <segue reference="JWp-2j-dqt"/>
         <segue reference="DxQ-Aa-YgY"/>
-        <segue reference="L5x-kz-n3a"/>
+        <segue reference="wvX-dX-IFq"/>
         <segue reference="a88-Mi-iqh"/>
     </inferredMetricsTieBreakers>
 </document>
