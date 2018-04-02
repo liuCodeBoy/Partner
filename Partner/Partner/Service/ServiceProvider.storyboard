@@ -138,7 +138,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BdG-2f-6PT">
-                                <rect key="frame" x="0.0" y="280" width="375" height="532"/>
+                                <rect key="frame" x="0.0" y="285" width="375" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ServiceProviderCompanyIntroductionTableViewCell" rowHeight="300" id="hYB-Rd-eXb" customClass="ServiceProviderCompanyIntroductionTableViewCell" customModule="Partner" customModuleProvider="target">
@@ -275,7 +275,7 @@
                             <constraint firstItem="vZK-AY-P8G" firstAttribute="leading" secondItem="CD5-Iv-HDd" secondAttribute="leading" constant="12" id="Wkn-05-IqP"/>
                             <constraint firstItem="vZK-AY-P8G" firstAttribute="top" secondItem="CD5-Iv-HDd" secondAttribute="bottom" id="YwO-V8-kDk"/>
                             <constraint firstItem="8Ns-8r-r1x" firstAttribute="trailing" secondItem="tSt-2Q-fdf" secondAttribute="trailing" id="bXU-0g-73k"/>
-                            <constraint firstItem="BdG-2f-6PT" firstAttribute="top" secondItem="tSt-2Q-fdf" secondAttribute="bottom" id="fm1-4U-zCX"/>
+                            <constraint firstItem="BdG-2f-6PT" firstAttribute="top" secondItem="tSt-2Q-fdf" secondAttribute="bottom" constant="5" id="fm1-4U-zCX"/>
                             <constraint firstAttribute="bottom" secondItem="BdG-2f-6PT" secondAttribute="bottom" id="i5P-xz-RY4"/>
                             <constraint firstItem="CD5-Iv-HDd" firstAttribute="trailing" secondItem="8Ns-8r-r1x" secondAttribute="trailing" id="krP-x2-x11"/>
                             <constraint firstItem="CD5-Iv-HDd" firstAttribute="top" secondItem="8Ns-8r-r1x" secondAttribute="top" id="qqH-YV-Z0H"/>
@@ -292,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcv-ic-VWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460" y="-188"/>
+            <point key="canvasLocation" x="1460" y="-188.42364532019704"/>
         </scene>
         <!--Service Detial View Controller-->
         <scene sceneID="dy5-XI-Cxd">

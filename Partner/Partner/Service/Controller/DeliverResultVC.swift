@@ -68,7 +68,7 @@ class DeliverResultVC: UIViewController {
                             self?.hotModelArr.append(statusViewModel)
                             if i == 0 {
                                 if let url = statusViewModel.userImgUrl {
-                                    self?.hotImg1.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.hotImg1.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                 }
                                 self?.hotName1.text = statusViewModel.userName
                                 self?.roundName1.text = statusViewModel.roundName
@@ -76,7 +76,7 @@ class DeliverResultVC: UIViewController {
                                 self?.hotVoteChildView1.addGestureRecognizer(gesture)
                             }else if  i == 1{
                                 if let url = statusViewModel.userImgUrl {
-                                    self?.hotImg2.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.hotImg2.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                 }
                                 self?.hotName2.text = statusViewModel.userName
                                 self?.roundName2.text = statusViewModel.roundName
@@ -84,7 +84,7 @@ class DeliverResultVC: UIViewController {
                                 self?.hotVoteChildView2.addGestureRecognizer(gesture)
                             }else if i == 2{
                                 if let url = statusViewModel.userImgUrl {
-                                    self?.hotImg3.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.hotImg3.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                 }
                                 self?.hotName3.text = statusViewModel.userName
                                 self?.roundName3.text = statusViewModel.roundName

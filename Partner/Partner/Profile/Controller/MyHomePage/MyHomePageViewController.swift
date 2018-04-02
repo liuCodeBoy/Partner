@@ -30,7 +30,11 @@ class MyHomePageViewController: UIViewController {
             }
         }
     }
-
+    @IBAction func editProfile(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "ProfileEdit", bundle: nil).instantiateInitialViewController()!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBOutlet weak var navViewHCons: NSLayoutConstraint!
     @IBOutlet weak var headerImg: UIImageView!
     @IBOutlet weak var headerImgHCons: NSLayoutConstraint!

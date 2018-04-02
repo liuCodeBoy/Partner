@@ -168,15 +168,15 @@ class LoopView: UIView, UIScrollViewDelegate
             imageView.layer.masksToBounds = true
             
             if i <= 0 {
-                imageView.sd_setImage(with: self.images.last, placeholderImage: nil)
+                imageView.sd_setImage(with: self.images.last, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                 imageView.tag = numOfImgviews - 1
             }
             else if i >= numOfImgviews - 1 {
-                imageView.sd_setImage(with: self.images.first, placeholderImage: nil) 
+                imageView.sd_setImage(with: self.images.first, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                 imageView.tag = 0
             }
             else {
-                imageView.sd_setImage(with: self.images[i - 1], placeholderImage: nil)
+                imageView.sd_setImage(with: self.images[i - 1], placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                 imageView.tag = i - 1
             }
             

@@ -35,7 +35,7 @@ class CircleListMomentCell: UITableViewCell {
             guard let viewModel = viewModel else {
                 return
             }
-           avatarImage.sd_setImage(with: URL.init(string: viewModel.userImgUrl! as String), placeholderImage: nil)
+           avatarImage.sd_setImage(with: URL.init(string: viewModel.userImgUrl! as String), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
             let guestrue = UITapGestureRecognizer.init(target: self, action: #selector(showUserInfo))
             avatarImage.addGestureRecognizer(guestrue)
             

@@ -338,23 +338,33 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- judge the auth status
-                if result!["result"]!["auth"] as! Int == 0 {
+                
+                if (result!["result"] as? [String : AnyObject]) != nil {
+                    if let auth = result!["result"]!["auth"] as? Int, auth == 0 {
+                        // not verified
+                        // TODO:- hide cover view and button view
+                        weakSelf?.investAuthScrollView.isHidden = false
+                        weakSelf?.iinvestAuthScrollView.isHidden = true
+                        weakSelf?.rejectedView.isHidden = true
+                        weakSelf?.inReviewView.isHidden = true
+                    } else {
+                        // verified
+                        // TODO:- save to model
+                        let resultDict = result!["result"] as! [String : AnyObject]
+                        weakSelf?.invViewModel = AuthInvestInfoModel.mj_object(withKeyValues: resultDict)
+                        // TODO:- show infomation
+                        weakSelf?.investAuthScrollView.isHidden = true
+                        weakSelf?.iinvestAuthScrollView.isHidden = false
+                        weakSelf?.rejectedView.isHidden = false
+                        weakSelf?.inReviewView.isHidden = false
+                    }
+                } else {
                     // not verified
                     // TODO:- hide cover view and button view
                     weakSelf?.investAuthScrollView.isHidden = false
                     weakSelf?.iinvestAuthScrollView.isHidden = true
                     weakSelf?.rejectedView.isHidden = true
                     weakSelf?.inReviewView.isHidden = true
-                } else {
-                    // verified
-                    // TODO:- save to model
-                    let resultDict = result!["result"] as! [String : AnyObject]
-                    weakSelf?.invViewModel = AuthInvestInfoModel.mj_object(withKeyValues: resultDict)
-                    // TODO:- show infomation
-                    weakSelf?.investAuthScrollView.isHidden = true
-                    weakSelf?.iinvestAuthScrollView.isHidden = false
-                    weakSelf?.rejectedView.isHidden = false
-                    weakSelf?.inReviewView.isHidden = false
                 }
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)

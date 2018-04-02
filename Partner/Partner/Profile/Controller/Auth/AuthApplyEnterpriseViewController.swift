@@ -337,19 +337,30 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- judge the auth status
-                if result!["result"]!["auth"] as! Int == 0 {
+                if let resultDict = result!["result"] as? [String : AnyObject] {
+                    if let auth = result!["result"]!["auth"] as? Int, auth == 0 {
+                        // not verified
+                        // TODO:- hide cover view
+                        weakSelf?.enterpriseAuthScrollView.isHidden = false
+                        weakSelf?.eenterpriseAuthScrollView.isHidden = true
+                        weakSelf?.rejectedView.isHidden = true
+                        weakSelf?.inReviewView.isHidden = true
+                    } else {
+                        // verified
+                        weakSelf?.entViewModel = AuthEnterpriseInfoModel.mj_object(withKeyValues: resultDict)
+                        // TODO:- show infomation
+                        weakSelf?.enterpriseAuthScrollView.isHidden = true
+                        weakSelf?.eenterpriseAuthScrollView.isHidden = false
+                        weakSelf?.rejectedView.isHidden = false
+                        weakSelf?.inReviewView.isHidden = false
+                    }
+                } else {
                     // not verified
                     // TODO:- hide cover view
                     weakSelf?.enterpriseAuthScrollView.isHidden = false
                     weakSelf?.eenterpriseAuthScrollView.isHidden = true
-                } else {
-                    // verified
-                    // TODO:- save to model
-                    let resultDict = result!["result"] as! [String : AnyObject]
-                    weakSelf?.entViewModel = AuthEnterpriseInfoModel.mj_object(withKeyValues: resultDict)
-                    // TODO:- show infomation
-                    weakSelf?.enterpriseAuthScrollView.isHidden = true
-                    weakSelf?.eenterpriseAuthScrollView.isHidden = false
+                    weakSelf?.rejectedView.isHidden = true
+                    weakSelf?.inReviewView.isHidden = true
                 }
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)

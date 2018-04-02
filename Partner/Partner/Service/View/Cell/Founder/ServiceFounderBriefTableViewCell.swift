@@ -20,7 +20,7 @@ class ServiceFounderBriefTableViewCell: UITableViewCell {
     var model : HotInvestorListModel?  {
         didSet {
             if let logourl = model?.userImgUrl{
-                logoImage.setImageWith(URL.init(string: logourl)!, placeholderImage: nil)
+                logoImage.setImageWith(URL.init(string: logourl)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
             }
             
             if let provComm = model?.userName{

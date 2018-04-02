@@ -111,34 +111,44 @@ extension PlazaVC {
                 guard   result != nil else{
                     return
                 }
+                self?.hotVoteChildView1.isHidden = true
+                self?.hotVoteChildView2.isHidden = true
+                self?.hotVoteChildView3.isHidden = true
+
+                
                 if  let dictArr  =   result!["result"] as? [NSDictionary]{
                     for i in 0..<dictArr.count{
                         if  let statusViewModel = HotInvestorListModel.mj_object(withKeyValues: dictArr[i]){
                             self?.hotModelArr.append(statusViewModel)
                             if i == 0 {
                                 if let url = statusViewModel.userImgUrl {
-                                    self?.hotImg1.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.hotImg1.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                 }
                                 self?.hotName1.text = statusViewModel.userName
                                 self?.roundName1.text = statusViewModel.roundName
                                 let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushHotInvestor))
                                 self?.hotVoteChildView1.addGestureRecognizer(gesture)
+                                self?.hotVoteChildView1.isHidden = false
                             }else if  i == 1{
                                 if let url = statusViewModel.userImgUrl {
-                                    self?.hotImg2.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.hotImg2.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                 }
                                 self?.hotName2.text = statusViewModel.userName
                                 self?.roundName2.text = statusViewModel.roundName
                                 let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushHotInvestor2))
                                 self?.hotVoteChildView2.addGestureRecognizer(gesture)
+                                self?.hotVoteChildView2.isHidden = false
+
                             }else if i == 2{
                                 if let url = statusViewModel.userImgUrl {
-                                    self?.hotImg3.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.hotImg3.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                 }
                                 self?.hotName3.text = statusViewModel.userName
                                 self?.roundName3.text = statusViewModel.roundName
                                 let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushHotInvestor3))
                                 self?.hotVoteChildView3.addGestureRecognizer(gesture)
+                                self?.hotVoteChildView3.isHidden = false
+
                             }
                             
                         }
@@ -207,6 +217,12 @@ extension PlazaVC {
     
     //项目列表（project/getProjectList）
     func  getProjectList(){
+        
+        hotProjectImg1.isHidden = true
+        hotProjectImg2.isHidden = true
+        hotProjectImg3.isHidden = true
+
+        
         NetWorkTool.shareInstance.getProjectList(token: UserDefaults.standard.string(forKey: "token"), order: 1, type: nil, id: nil, fuzzy: nil, pageNum: 1) { [weak self](result, error) in
             guard error == nil else {
                 return
@@ -221,21 +237,26 @@ extension PlazaVC {
                             
                             if i == 0 {
                                 if let url = statusViewModel.logoUrl {
-                                    self?.hotProjectImg1.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.hotProjectImg1.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                     let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushProject))
                                     self?.hotProjectImg1.addGestureRecognizer(gesture)
+                                    self?.hotProjectImg1.isHidden = false
+
                                 }
                             }else if  i == 1{
                                 if let url = statusViewModel.logoUrl {
-                                    self?.hotProjectImg2.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.hotProjectImg2.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                     let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushProject2))
                                     self?.hotProjectImg2.addGestureRecognizer(gesture)
+                                    self?.hotProjectImg2.isHidden = false
                                 }
                             }else if i == 2{
                                 if let url = statusViewModel.logoUrl {
-                                    self?.hotProjectImg3.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.hotProjectImg3.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                     let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.pushProject3))
                                     self?.hotProjectImg3.addGestureRecognizer(gesture)
+                                    self?.hotProjectImg3.isHidden = false
+
                                 }
                             }
                             self?.projectListModelArr.append(statusViewModel)
@@ -291,21 +312,21 @@ extension PlazaVC {
                             self?.typeListModelArr.append(statusViewModel)
                             if i == 0 {
                                 if let url = statusViewModel.imgUrl {
-                                    self?.informationImg1.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.informationImg1.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                     self?.informationLab1.text = statusViewModel.typeName
                                     let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.tapInfo1))
                                     self?.informationImg1.addGestureRecognizer(gesture)
                                 }
                             }else if  i == 1{
                                 if let url = statusViewModel.imgUrl {
-                                    self?.informationImg2.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.informationImg2.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                     let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.tapInfo2))
                                     self?.informationImg2.addGestureRecognizer(gesture)
                                 }
                                 self?.informationLab2.text = statusViewModel.typeName
                             }else if i == 2{
                                 if let url = statusViewModel.imgUrl {
-                                    self?.informationImg3.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.informationImg3.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                     let gesture = UITapGestureRecognizer.init(target: self, action: #selector(self?.tapInfo3))
                                     self?.informationImg3.addGestureRecognizer(gesture)
                                 }

@@ -38,15 +38,7 @@ class AuthApplyUploadViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        if isInvestor {
-            authSelectViewHCons.constant = 70
-            applyInvestView.isHidden = false
-            applyEnterpriseView.isHidden = true
-        } else {
-            authSelectViewHCons.constant = 0
-            applyInvestView.isHidden = true
-            applyEnterpriseView.isHidden = false
-        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +51,16 @@ class AuthApplyUploadViewController: UIViewController {
         guard UserDefaults.standard.string(forKey: "token") != nil else {
             presentLoginController()
             return
+        }
+        
+        if isInvestor {
+            authSelectViewHCons.constant = 70
+            applyInvestView.isHidden = false
+            applyEnterpriseView.isHidden = true
+        } else {
+            authSelectViewHCons.constant = 0
+            applyInvestView.isHidden = true
+            applyEnterpriseView.isHidden = false
         }
         
     }

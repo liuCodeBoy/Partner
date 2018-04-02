@@ -23,7 +23,7 @@ class UserSearchBarCell: UITableViewCell {
             self.nameTextLab.text = viewModel.userName
             self.communityLab.text = viewModel.userComm
             if let  imageUrl =  viewModel.userImgUrl {
-                self.imageHeaderView.setImageWith(URL.init(string: imageUrl)!, placeholderImage: nil)
+                self.imageHeaderView.setImageWith(URL.init(string: imageUrl)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
             }
             
             if viewModel.create == 1 {

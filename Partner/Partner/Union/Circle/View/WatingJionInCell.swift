@@ -26,7 +26,7 @@ class WatingJionInCell: UITableViewCell {
             self.watingJionInNameTextLab.text = viewModel.userName
             self.watingJionInCommunityLab.text = viewModel.userComm
             if let  imageUrl =  viewModel.userImgUrl {
-                self.watingJionInImageHeaderView.setImageWith(URL.init(string: imageUrl)!, placeholderImage: nil)
+                self.watingJionInImageHeaderView.setImageWith(URL.init(string: imageUrl)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
             }
             
             

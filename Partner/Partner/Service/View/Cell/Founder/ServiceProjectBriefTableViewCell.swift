@@ -24,7 +24,7 @@ class ServiceProjectBriefTableViewCell: UITableViewCell {
         didSet {
           
             if let logourl = model?.logoUrl{
-                logoImg.setImageWith(URL.init(string: logourl)!, placeholderImage: nil)
+                logoImg.setImageWith(URL.init(string: logourl)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
             }
             
             if let locationStr = model?.cityName{

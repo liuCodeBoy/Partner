@@ -153,6 +153,8 @@ extension MomentMainVC {
             guard let resultArray = result else{
                 return
             }
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+
             self?.momentTableView.mj_header.endRefreshing()
             let dict  =   resultArray["result"] as? NSDictionary
             if  let statusViewModel = StatusViewModel.mj_object(withKeyValues: dict)
@@ -172,11 +174,11 @@ extension MomentMainVC {
                     self?.modelView.append(model!)
                 }
                 self?.momentTableView.mj_footer.endRefreshing()
-                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 self?.momentTableView.reloadData()
             }
             self?.cacheImages((self?.modelView)!)
            }else{
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 let  errorShow  =  result!["msg"] as! String
                 self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
             }

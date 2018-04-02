@@ -99,7 +99,7 @@ class NoticeSocialConnListCell: UITableViewCell {
                 self.timeTextLab.text = sendTime
             }
             if let  imageUrl =  viewModel.senderImgUrl {
-                self.imageHeaderView.setImageWith(URL.init(string: imageUrl)!, placeholderImage: nil)
+                self.imageHeaderView.setImageWith(URL.init(string: imageUrl)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
             }
         }
     }

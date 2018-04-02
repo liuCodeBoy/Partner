@@ -388,7 +388,7 @@
         <!--Auth Resubmit Invest Appliacne View Controller-->
         <scene sceneID="CPN-h5-zwX">
             <objects>
-                <viewController id="fKZ-7o-ba9" customClass="AuthResubmitInvestAppliacneViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthInvest" id="fKZ-7o-ba9" customClass="AuthResubmitInvestAppliacneViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Ke-x5-PWh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1191,7 +1191,7 @@
         <!--Auth Resubmit Enterprise Appliance View Controller-->
         <scene sceneID="Avu-qL-dOZ">
             <objects>
-                <viewController id="TjW-Db-WFI" customClass="AuthResubmitEnterpriseApplianceViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthEnterprise" id="TjW-Db-WFI" customClass="AuthResubmitEnterpriseApplianceViewController" customModule="Partner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rWX-rh-wJb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4208,8 +4208,8 @@
                                     <constraint firstAttribute="trailing" secondItem="eQr-wx-vK4" secondAttribute="trailing" id="cQR-e3-e0q"/>
                                 </constraints>
                             </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LI-kA-Apy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7LI-kA-Apy">
+                                <rect key="frame" x="191" y="0.0" width="184" height="612"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6o-rU-UbO">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="834"/>

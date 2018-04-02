@@ -18,7 +18,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 // MARK:- judge the cell, in case it is invisible and be reused
                 if cell is ProfileEditChooseAvatarTableViewCell {
                     let avatarCell = cell as! ProfileEditChooseAvatarTableViewCell
-                    avatarCell.avatar.sd_setImage(with: URL.init(string: avatar), placeholderImage: nil, options: .continueInBackground, completed: nil)
+                    avatarCell.avatar.sd_setImage(with: URL.init(string: avatar), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"), options: .continueInBackground, completed: nil)
                 }
             }
             if let name = viewModel?.userName {

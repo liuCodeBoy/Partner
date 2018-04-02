@@ -1114,7 +1114,7 @@
                                             <action selector="experienceBtnClicked:" destination="auI-c6-5aX" eventType="touchUpInside" id="gh2-My-kxz"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iKu-yJ-7z9" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iKu-yJ-7z9" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="12" y="0.0" width="80" height="80"/>
                                         <color key="backgroundColor" red="0.30196078430000001" green="0.69411764710000001" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2763,7 +2763,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="slC-YU-KLa">
-                                <rect key="frame" x="0.0" y="190" width="375" height="622"/>
+                                <rect key="frame" x="0.0" y="190" width="375" height="588"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ServiceFounderBriefTableViewCell" rowHeight="130" id="K5z-tN-cPa" customClass="ServiceFounderBriefTableViewCell" customModule="Partner" customModuleProvider="target">
@@ -2905,12 +2905,12 @@
                             <constraint firstItem="slC-YU-KLa" firstAttribute="top" secondItem="zHG-Hk-1AB" secondAttribute="bottom" id="94P-Bl-58O"/>
                             <constraint firstItem="zHG-Hk-1AB" firstAttribute="leading" secondItem="H8t-YH-LTQ" secondAttribute="leading" id="DxS-W5-Ude"/>
                             <constraint firstItem="YtI-Nt-Zl2" firstAttribute="top" secondItem="OtZ-4U-KsD" secondAttribute="bottom" id="OTb-DH-AqN"/>
+                            <constraint firstItem="H8t-YH-LTQ" firstAttribute="bottom" secondItem="slC-YU-KLa" secondAttribute="bottom" id="Ztr-JT-cn1"/>
                             <constraint firstItem="YtI-Nt-Zl2" firstAttribute="leading" secondItem="OtZ-4U-KsD" secondAttribute="leading" constant="12" id="bry-lC-bbo"/>
                             <constraint firstItem="OtZ-4U-KsD" firstAttribute="leading" secondItem="H8t-YH-LTQ" secondAttribute="leading" id="f9I-Ov-wIb"/>
                             <constraint firstItem="H8t-YH-LTQ" firstAttribute="trailing" secondItem="zHG-Hk-1AB" secondAttribute="trailing" id="fXe-hn-ltN"/>
                             <constraint firstItem="H8t-YH-LTQ" firstAttribute="trailing" secondItem="slC-YU-KLa" secondAttribute="trailing" id="i7c-v8-dGb"/>
                             <constraint firstAttribute="trailing" secondItem="OtZ-4U-KsD" secondAttribute="trailing" id="lAk-im-c9S"/>
-                            <constraint firstAttribute="bottom" secondItem="slC-YU-KLa" secondAttribute="bottom" id="tQr-OA-S0x"/>
                             <constraint firstItem="zHG-Hk-1AB" firstAttribute="top" secondItem="YtI-Nt-Zl2" secondAttribute="bottom" id="wa0-PW-bvS"/>
                             <constraint firstItem="slC-YU-KLa" firstAttribute="leading" secondItem="H8t-YH-LTQ" secondAttribute="leading" id="yn9-tL-KTI"/>
                         </constraints>
@@ -3323,7 +3323,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9u-Gn-cdA" userLabel="HotVoterChild2" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                 <rect key="frame" x="152" y="10" width="130" height="180"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="sBS-RK-CfI" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="sBS-RK-CfI" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                         <rect key="frame" x="35" y="10" width="60" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="YBh-Z4-M2S"/>
@@ -3332,7 +3332,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="30"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
@@ -3412,7 +3412,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9v-by-y1N" userLabel="HotVoterChild3" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                 <rect key="frame" x="292" y="10" width="130" height="180"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="0iz-gN-1eI" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="0iz-gN-1eI" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                         <rect key="frame" x="35" y="10" width="60" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="Il5-n6-ysG"/>
@@ -3421,7 +3421,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="30"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
@@ -3501,7 +3501,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vdp-IY-G1i" userLabel="HotVoterChild1" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="10" width="130" height="180"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="xFM-my-6em" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="xFM-my-6em" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                         <rect key="frame" x="35" y="10" width="60" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="JEW-mv-6gd"/>
@@ -3510,7 +3510,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="30"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>

@@ -73,6 +73,9 @@ extension ServiceMainFounderListTableViewCell {
 
     //getHotInvestorList
     func  getHotInvestorList(){
+        shadow1.isHidden = true
+        shadow2.isHidden = true
+        shadow3.isHidden = true
         NetWorkTool.shareInstance.getHotInvestorList { [weak self](result, error) in
             guard error == nil else {
                 return
@@ -87,7 +90,7 @@ extension ServiceMainFounderListTableViewCell {
                             self?.modelArr.append(statusViewModel)
                             if i == 0 {
                                 if let url = statusViewModel.userImgUrl {
-                                    self?.image1.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.image1.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                 }
                                 self?.nickName1.text = statusViewModel.userName
                                 self?.detailLab1.text = statusViewModel.roundName
@@ -110,10 +113,10 @@ extension ServiceMainFounderListTableViewCell {
 
                                     }
                                 }
-                                
+                                self?.shadow1.isHidden = false
                             }else if  i == 1{
                                 if let url = statusViewModel.userImgUrl {
-                                    self?.image2.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.image2.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                 }
                                 self?.nickName2.text = statusViewModel.userName
                                 self?.detailLab2.text = statusViewModel.roundName
@@ -136,9 +139,10 @@ extension ServiceMainFounderListTableViewCell {
                                         
                                     }
                                 }
+                                self?.shadow2.isHidden = false
                             }else if i == 2{
                                 if let url = statusViewModel.userImgUrl {
-                                    self?.image3.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                                    self?.image3.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                 }
                                 self?.nickName3.text = statusViewModel.userName
                                 self?.detailLab3.text = statusViewModel.roundName
@@ -161,6 +165,7 @@ extension ServiceMainFounderListTableViewCell {
                                         
                                     }
                                 }
+                                self?.shadow3.isHidden = false
                             }
                         }
                     }
