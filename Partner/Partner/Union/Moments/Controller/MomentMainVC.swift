@@ -218,6 +218,17 @@ extension MomentMainVC {
 
             self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
         }
+        cell.pushVC = {(id) in
+            let  uid = UserDefaults.standard.integer(forKey: "uid")
+            if id == uid {
+                let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }else{
+                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                showProviderVC.id = id
+                self.navigationController?.pushViewController(showProviderVC, animated: true)
+            }
+        }
         if  modelView.count > 0  { cell.viewModel = modelView[indexPath.row]}
     
         // 显示，并指定打开第几张图

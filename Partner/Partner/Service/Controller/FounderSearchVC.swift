@@ -142,7 +142,7 @@ extension FounderSearchVC {
                         self?.newsListTableView.mj_header.endRefreshing()
                         self?.newsListTableView.reloadData()
                     }else{
-                        SCLAlertView().showError("还未找到相关数据", subTitle: "")
+                       // SCLAlertView().showError("还未找到相关数据", subTitle: "")
                     }
                 } else {
                     let  errorShow  =  info!["msg"] as! String

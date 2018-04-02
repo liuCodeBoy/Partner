@@ -26,7 +26,7 @@ class CircleListMomentCell: UITableViewCell {
     @IBOutlet weak var pictureView: PicCollectionView!
     @IBOutlet weak var zanBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
-
+    var pushVC : showVCType?
     var   showVCClouse : showVCType?
     var popClouse : popVC?
    
@@ -36,6 +36,8 @@ class CircleListMomentCell: UITableViewCell {
                 return
             }
            avatarImage.sd_setImage(with: URL.init(string: viewModel.userImgUrl! as String), placeholderImage: nil)
+            let guestrue = UITapGestureRecognizer.init(target: self, action: #selector(showUserInfo))
+            avatarImage.addGestureRecognizer(guestrue)
             
             var   userIdentify : String?
             if let identID = viewModel.userIdenId{
@@ -66,8 +68,7 @@ class CircleListMomentCell: UITableViewCell {
                 deleteLab.isHidden = true
                 
             }
-            
-            
+
             //设置评论数
             if let  commentNum = viewModel.commentNum{
                 if commentNum != 0 {
@@ -118,6 +119,25 @@ class CircleListMomentCell: UITableViewCell {
         
     }
     
+    @objc func showUserInfo(){
+        if pushVC != nil {
+            let uid = viewModel?.uid as? Int
+            guard uid != nil else{
+                return
+            }
+           // let  uid = UserDefaults.standard.integer(forKey: "uid")
+            pushVC!(uid!)
+        }
+        
+//          if model?.uid as? Int == uid {
+//                let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+//                self.navigationController?.pushViewController(showProviderVC, animated: true)
+//            }else{
+//                let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+//                showProviderVC.id = model.uid as? Int
+//                self.navigationController?.pushViewController(showProviderVC, animated: true)
+//            }
+    }
     
     
     @IBAction func commentAction(_ sender: Any) {
@@ -171,8 +191,6 @@ extension CircleListMomentCell {
 
 // MARK:- 请求函数体
 extension  CircleListMomentCell {
-    
-    
     
     func thumb(btn : UIButton , isThumb : Int){
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
@@ -238,9 +256,7 @@ extension  CircleListMomentCell {
             noticeBar.show(duration: 1.5, completed: nil)
         }
     }
-    
-    
-    
+
 }
 
 

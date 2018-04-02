@@ -28,6 +28,9 @@ class HomeViewController: UIViewController {
 //      
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     //初始化头部按钮
     func addTopViewChildsBtn(){
         let  btnArr = ["广场","资讯"]

@@ -97,13 +97,15 @@ class GetProvideVC: UIViewController,UITextViewDelegate {
 
 
 
-extension  UINavigationController : UIGestureRecognizerDelegate {
-    
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        //同时禁用系统原先的侧滑返回功能
-        self.interactivePopGestureRecognizer?.delegate = self
-        self.interactivePopGestureRecognizer?.isEnabled = true
-    }
-    
-}
+//extension  UINavigationController : UIGestureRecognizerDelegate {
+//
+//    override open func viewDidLoad() {
+//        super.viewDidLoad()
+//        //同时禁用系统原先的侧滑返回功能
+//        print(self.childViewControllers.count)
+//        self.interactivePopGestureRecognizer?.delegate = self
+//        self.interactivePopGestureRecognizer?.isEnabled = true
+//    }
+//    
+//}
+

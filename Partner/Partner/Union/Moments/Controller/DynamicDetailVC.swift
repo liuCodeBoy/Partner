@@ -352,6 +352,17 @@ extension  DynamicDetailVC {
                 self?.collectionView = tempPictureView
                 self?.browser?.show(index: index.row)
             }
+            firstCell.pushVC = {(id) in
+                let  uid = UserDefaults.standard.integer(forKey: "uid")
+                if id == uid {
+                    let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                    self.navigationController?.pushViewController(showProviderVC, animated: true)
+                }else{
+                    let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                    showProviderVC.id = id
+                    self.navigationController?.pushViewController(showProviderVC, animated: true)
+                }
+            }
             cell = firstCell
         }else if(commentTotalArr.count != 0){
             let commentCell = tableView.dequeueReusableCell(withIdentifier: "DynamicCommonCellID") as!  DynamicCommonCell
@@ -366,6 +377,18 @@ extension  DynamicDetailVC {
 
             }
           }
+        commentCell.pushVC = {(id) in
+                let  uid = UserDefaults.standard.integer(forKey: "uid")
+                if id == uid {
+                    let  showProviderVC = UIStoryboard.init(name: "MyHomePage", bundle: nil).instantiateViewController(withIdentifier: "MyHomePageViewControllerID") as! MyHomePageViewController
+                    self.navigationController?.pushViewController(showProviderVC, animated: true)
+                }else{
+                    let  showProviderVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+                    showProviderVC.id = id
+                    self.navigationController?.pushViewController(showProviderVC, animated: true)
+                }
+            }
+
           cell = commentCell
         }else if(commentTotalArr.count == 0){
              let commentCell = tableView.dequeueReusableCell(withIdentifier: "NoCommentCellID") as!  NoCommentCell

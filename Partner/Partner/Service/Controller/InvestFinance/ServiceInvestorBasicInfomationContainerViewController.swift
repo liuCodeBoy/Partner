@@ -82,6 +82,7 @@ class ServiceInvestorBasicInfomationContainerViewController: UIViewController, U
             automaticallyAdjustsScrollViewInsets = false
         }
         loadRefreshComponet(tableView: tableView)
+        loadStatuses()
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -184,15 +185,15 @@ class ServiceInvestorBasicInfomationContainerViewController: UIViewController, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dynamicDetailVC  = AppDelegate.dynamicDetailVC
+        if indexPath.row >= 2 {
         if  modelArr.count > 0  {
             let viewModel = modelArr[indexPath.row - 2]
             dynamicDetailVC.momentId = viewModel.momentId as? Int
             dynamicDetailVC.refresh()
             self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
         }
-        
+     }
     }
-    
 }
 
 

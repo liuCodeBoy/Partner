@@ -24,7 +24,7 @@ class ServiceMainViewController: UIViewController {
         getSelectedProviderList()
     }
     @IBAction func getMoreProvider(_ sender: Any) {
-        let destVC = UIStoryboard.init(name: "ServiceProvider", bundle: nil).instantiateViewController(withIdentifier: "searchVCID")
+        let destVC = UIStoryboard.init(name: "ServiceProvider", bundle: nil).instantiateViewController(withIdentifier: "searchVCID") as! searchVC
         self.navigationController?.pushViewController(destVC, animated: true)
     }
     
