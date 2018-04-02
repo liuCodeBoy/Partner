@@ -10,6 +10,9 @@ import MJRefresh
 
 class InVestorListVC: UIViewController {
     
+    var projId: Int?
+    var isSingle = true
+    
     @IBOutlet weak var hostestBtn: ShadowButton!
     @IBOutlet weak var lastedBtn: ShadowButton!
     @IBOutlet weak var investorTableView: UITableView!
@@ -20,7 +23,18 @@ class InVestorListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveProjectDeliverInfo(_:)), name: NSNotification.Name.init(deliverProjectNotification), object: nil)
 
+    }
+    
+    @objc func receiveProjectDeliverInfo(_ notification: Notification) {
+        
+        if let userInfo = notification.userInfo {
+            projId = userInfo["projID"] as? Int
+            isSingle = userInfo["isSingle"] as! Bool
+        }
+        
     }
 
     @IBAction func popVCCliclk(_ sender: Any) {
@@ -102,19 +116,7 @@ extension InVestorListVC {
                 
             }
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
 //        NetWorkTool.shareInstance.getInfoList(type: type, fuzzy: fuzzy, pageNum: pageNum) { [weak self](info, error) in
 //            if error == nil {
@@ -152,24 +154,6 @@ extension InVestorListVC {
 //        }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsModelArr.count
     }
@@ -200,6 +184,19 @@ extension InVestorListVC {
 //            }
 //            self.navigationController?.pushViewController(informationVC, animated: true)
 //        }
+        
+        // MARK:- if is pushed from seliver project
+        if let uid = newsModelArr[indexPath.row].uid as? Int, let projId = self.projId, isSingle == true {
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+            
+            vc.id = uid
+            vc.isSingle = true
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
     }
 }
 

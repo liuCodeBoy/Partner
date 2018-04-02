@@ -16,6 +16,8 @@ class ServiceInvestorBasicInfomationContainerViewController: UIViewController, U
     var segue: UIStoryboardSegue?
     var modelView: ProfileInfoModel?
     var id : Int?
+    var singleProjID: Int?
+    var isSingle = false
     //
     var modelArr =  [UnionListModel]()
     var statusViewModelArr = StatusViewModel()
@@ -31,6 +33,21 @@ class ServiceInvestorBasicInfomationContainerViewController: UIViewController, U
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "SIBIDeliverProjSegue" && isSingle == true {
+            
+            // TODO:- single project deliver
+            if let userId = self.id, let projectId = self.singleProjID {
+                NetWorkTool.shareInstance.judgeDelierValid(token: access_token!, userId: userId, projectId: projectId, finished: { (result, error) in
+                    
+                })
+            }
+            
+            return false
+        }
+        return true
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! ChooseProjectVC
