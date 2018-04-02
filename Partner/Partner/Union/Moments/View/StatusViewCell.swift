@@ -29,7 +29,7 @@ class StatusViewCell: UITableViewCell {
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var zanBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
-    
+     var pushVC : showVCType?
  
     
     var viewModel: UnionListModel? {
@@ -38,7 +38,9 @@ class StatusViewCell: UITableViewCell {
                 return
             }
             avatarImage.sd_setImage(with: URL.init(string: viewModel.userImgUrl! as String), placeholderImage: nil)
-            
+            let guestrue = UITapGestureRecognizer.init(target: self, action: #selector(showUserInfo))
+            avatarImage.addGestureRecognizer(guestrue)
+           
             var   userIdentify : String?
             if let   IndentID = viewModel.userIdenId {
                 switch Int(truncating: IndentID) {
@@ -106,7 +108,16 @@ class StatusViewCell: UITableViewCell {
     
 }
     
-    
+    @objc func showUserInfo(){
+        if pushVC != nil {
+            let uid = viewModel?.uid as? Int
+            guard uid != nil else{
+                return
+            }
+            // let  uid = UserDefaults.standard.integer(forKey: "uid")
+            pushVC!(uid!)
+        }
+    }
     @IBAction func deleteStatus(_ sender: Any) {
         let alert = UIAlertController(title: "请选择操作类型", message: "", preferredStyle: .actionSheet)
         let ignoreAction = UIAlertAction(title: "屏蔽", style: .destructive) { [weak self](action) in

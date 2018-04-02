@@ -66,15 +66,15 @@ class NoticeViewController: UIViewController ,UITableViewDelegate ,UITableViewDa
         guard access_token != nil else {
             return
         }
-        NetWorkTool.shareInstance.noticeRead(token: access_token!, type: tempIndex) { [weak self](result, error) in
+        NetWorkTool.shareInstance.noticeRead(token: access_token!, type: tempIndex) { (result, error) in
             if  result?["code"] as? Int == 200  {
                 guard   result != nil else{
                     return
                 }
                 
             }else{
-                let  errorShow  =  result!["msg"] as! String
-                self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+//                let  errorShow  =  result!["msg"] as! String
+//                self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
             }
         }
     }

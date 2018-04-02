@@ -242,6 +242,21 @@ extension NoticeListViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if type == 0 {
+            if modelArr.count > 0 {
+                let model = modelArr[indexPath.row]
+                if model.momentId != nil{
+                    let destVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "DynamicDetailVCID") as! DynamicDetailVC
+                    destVC.momentId = model.momentId as? Int
+                    self.navigationController?.pushViewController(destVC, animated: true)
+                }else if model.circleId != nil {
+                    let destVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleDetailVCID") as! CircleDetailVC
+                    destVC.circleId = (model.circleId as? Int)!
+                    self.navigationController?.pushViewController(destVC, animated: true)
+                    
+                }
+//                destVC.projID = model.projectId as? Int
+//                self.navigationController?.pushViewController(destVC, animated: true)
+            }
       
         }else if type == 1{
             let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController

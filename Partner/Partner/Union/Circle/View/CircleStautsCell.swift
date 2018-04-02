@@ -28,7 +28,7 @@ class CircleStautsCell: UITableViewCell {
     @IBOutlet weak var pictureView: PicCollectionView!
     @IBOutlet weak var zanBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
-    
+    var pushVC : showVCType?
     var popClouse : popVC?
     
     var viewModel: UnionListModel? {
@@ -37,6 +37,8 @@ class CircleStautsCell: UITableViewCell {
                 return
             }
             avatarImage.sd_setImage(with: URL.init(string: viewModel.userImgUrl! as String), placeholderImage: nil)
+            let guestrue = UITapGestureRecognizer.init(target: self, action: #selector(showUserInfo))
+            avatarImage.addGestureRecognizer(guestrue)
             
             var   userIdentify : String?
             if let identID = viewModel.userIdenId{
@@ -55,20 +57,13 @@ class CircleStautsCell: UITableViewCell {
                 }
                 identifyIcon.setTitle(userIdentify, for: .normal)
             }
-            
             if viewModel.my == 1 {
-               
                 deleteBtn.isHidden = false
                 deleteLab.isHidden = false
-                
             }else if viewModel.my == 0 {
-                
                 deleteBtn.isHidden = true
                 deleteLab.isHidden = true
-
             }
-            
-            
             //设置评论数
             if let  commentNum = viewModel.commentNum{
                 if commentNum != 0 {
@@ -89,16 +84,12 @@ class CircleStautsCell: UITableViewCell {
                     self.zanNumLab.text = "\(0)"
                 }
             }
-
             nickname.text = viewModel.userName
             createAt.text = viewModel.sendDate! as String
             if let name = viewModel.commName{
                 sourceFrom.text = name as String
             }
-            
             contentText.text = viewModel.content as String?
-            
-            
             var   urlArr = [URL]()
             if let urls = viewModel.imgUrls {
                 for picStr in urls {
@@ -116,9 +107,18 @@ class CircleStautsCell: UITableViewCell {
             collectionviewHCons.constant = pictureViewSize.height
             collectionViewWCons.constant = pictureViewSize.width
         }
-        
     }
     
+    @objc func showUserInfo(){
+        if pushVC != nil {
+            let uid = viewModel?.userId as? Int
+            guard uid != nil else{
+                return
+            }
+            // let  uid = UserDefaults.standard.integer(forKey: "uid")
+            pushVC!(uid!)
+        }
+    }
     @IBAction func deleteBtnAction(_ sender: Any) {
         let alert = UIAlertController(title: "确定要删除改动态吗", message: "", preferredStyle: .alert)
         let sureAction = UIAlertAction(title: "确认", style: .destructive) { [weak self](action) in

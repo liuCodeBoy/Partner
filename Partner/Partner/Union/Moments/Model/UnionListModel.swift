@@ -21,6 +21,8 @@ class UnionListModel: NSObject {
     @objc  var   thumbNum    : NSNumber?
     @objc  var   thumb       : NSNumber?
     @objc  var   my          : NSNumber?
+    @objc  var   uid         : NSNumber?
+     @objc  var   userId         : NSNumber?
     @objc  var   comments    : [NSDictionary]?
 }
 

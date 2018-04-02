@@ -21,7 +21,7 @@ class DynamicCommonCell: UITableViewCell {
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var zanBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
-    
+    var pushVC : showVCType?
     var  dynamicIsMy : Int?
     
     var viewModel: CommentListModel? {
@@ -30,7 +30,8 @@ class DynamicCommonCell: UITableViewCell {
                 return
             }
             avatarImage.sd_setImage(with: URL.init(string: viewModel.userImgUrl! as String), placeholderImage: nil)
-            
+            let guestrue = UITapGestureRecognizer.init(target: self, action: #selector(showUserInfo))
+            avatarImage.addGestureRecognizer(guestrue)
             var   userIdentify : String?
             if let identID = viewModel.userIdenId{
                 switch Int(truncating: identID) {
@@ -187,6 +188,15 @@ class DynamicCommonCell: UITableViewCell {
         
     }
     
+    @objc func showUserInfo(){
+        if pushVC != nil {
+            let uid = viewModel?.userId as? Int
+            guard uid != nil else{
+                return
+            }
+            pushVC!(uid!)
+        }
+    }
    
     @IBAction func commentClick(_ sender: UIButton) {
         let  title  = commentNumLab.text

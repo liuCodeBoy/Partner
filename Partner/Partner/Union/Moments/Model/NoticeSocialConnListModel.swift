@@ -22,5 +22,7 @@ class NoticeSocialConnListModel: NSObject {
     @objc  var   sendTime   : String?
     @objc  var   status   : NSNumber?
     @objc  var   create   : NSNumber?
-    @objc  var   applyUserId   : NSNumber?    
+    @objc  var   applyUserId   : NSNumber?
+    @objc  var   circleId : NSNumber?
+    @objc  var   momentId : NSNumber?
 }

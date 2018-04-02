@@ -30,12 +30,13 @@ class CommentListModel: NSObject {
     @objc  var   userAuth    : NSNumber?
     @objc  var   commName    : NSString?
     @objc  var   content     : NSString?
-    @objc  var   imgUrls   : [NSString]?
-    @objc  var   sendDate  : NSString?
+    @objc  var   imgUrls     : [NSString]?
+    @objc  var   sendDate    : NSString?
     @objc  var   commentNum  : NSNumber?
     @objc  var   thumbNum    : NSNumber?
     @objc  var   thumb       : NSNumber?
     @objc  var   my          : NSNumber?
+    @objc  var   uid         : NSNumber?
     
 
 }
