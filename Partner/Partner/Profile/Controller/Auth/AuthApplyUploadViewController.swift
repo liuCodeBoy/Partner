@@ -46,12 +46,8 @@ class AuthApplyUploadViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        guard UserDefaults.standard.string(forKey: "token") != nil else {
-            presentLoginController()
-            return
-        }
+        super.viewDidLoad()
         
         if isInvestor {
             authSelectViewHCons.constant = 70

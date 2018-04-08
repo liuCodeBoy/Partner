@@ -26,11 +26,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>访问相机以拍照</string>
+	<string>需要您的允许访问相机以拍照，确定允许吗？</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>访问麦克风以录制视频</string>
+	<string>需要您的允许开启麦克风以录制视频，确定开启吗？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>访问相册以选择照片</string>
+	<string>需要您的允许访问相册以选择照片，确定允许吗？</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

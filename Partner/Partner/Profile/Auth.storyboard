@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Zb-cI-FbB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Zb-cI-FbB">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -427,8 +427,8 @@
                                 <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVE-fc-ygH">
-                                <rect key="frame" x="0.0" y="130" width="375" height="482"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVE-fc-ygH">
+                                <rect key="frame" x="0.0" y="-118" width="375" height="730"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ME7-ET-tXE">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="730"/>
@@ -1186,7 +1186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYM-hh-H6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="1738"/>
+            <point key="canvasLocation" x="976.79999999999995" y="1737.9310344827586"/>
         </scene>
         <!--Auth Resubmit Enterprise Appliance View Controller-->
         <scene sceneID="Avu-qL-dOZ">
@@ -3596,7 +3596,7 @@
                         <outlet property="invAgencyOnWorkTimeLbl" destination="oUr-jR-5ZU" id="6eE-6c-3b3"/>
                         <outlet property="invAgencyView" destination="tDJ-GL-a2y" id="hwv-3M-t0y"/>
                         <outlet property="invAvatarImg" destination="APg-2v-azo" id="XCe-za-x23"/>
-                        <outlet property="invAvatarImgBtn" destination="8BI-DH-x1Z" id="fkY-Z9-JUF"/>
+                        <outlet property="invAvatarImgBtn" destination="lbX-uq-eoc" id="KoY-ta-ZEk"/>
                         <outlet property="invCardImg" destination="gHX-Z4-Gvb" id="p2C-5K-TCW"/>
                         <outlet property="invCardImgBtn" destination="8BI-DH-x1Z" id="CV3-JO-pT2"/>
                         <outlet property="invEmailLbl" destination="vFf-fZ-rTn" id="EEY-20-VBB"/>

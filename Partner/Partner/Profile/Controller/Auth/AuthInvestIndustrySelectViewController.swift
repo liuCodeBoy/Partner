@@ -75,7 +75,7 @@ class AuthInvestIndustrySelectViewController: InterestedVC {
         guard segue != nil else { return }
         // save string and pass to the source
         let sourceVC = segue?.source
-        if sourceVC is AuthApplyUploadViewController {
+        if sourceVC is AuthApplyInvestViewController {
             let source = sourceVC as! AuthApplyInvestViewController
             source.viewModel.industryIds = selectedStr
             source.invIndustryLbl.text = "\(nums)个"

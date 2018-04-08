@@ -238,8 +238,12 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
         let picker = Bundle.main.loadNibNamed("PartnerTimePicker", owner: nil, options: nil)?.first as! PartnerTimePicker
         picker.frame = UIScreen.main.bounds
         picker.pickerTitle.text = "选择任职时间"
-        datePicker = picker.datePicker
-        self.view.addSubview(picker)
+        picker.showLabel = invAgencyOnWorkTimeLbl
+        picker.viewModel = viewModel
+        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
+        mainVC.view.addSubview(picker)
+        self.datePicker = picker.datePicker
+        
     }
     // MARK:- update auth infomation
     @IBAction func investAuthSumbit(_ sender: ShadowButton) {
@@ -249,15 +253,7 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
     override func viewWillLayoutSubviews() {
         // show or hide the agency select view
         idenID = viewModel.idenId
-        // save date
-        if datePicker != nil {
-            let year = datePicker!.date.year()
-            let month = datePicker!.date.month()
-            let day = datePicker!.date.day()
-            let date = "\(year)-\(month)-\(day)"
-            viewModel.inTime = date
-            invAgencyOnWorkTimeLbl.text = date
-        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -266,6 +262,11 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
         
         loadAndSavePickerData()
         

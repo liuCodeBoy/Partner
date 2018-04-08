@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PLh-Hg-kDh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PLh-Hg-kDh">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,9 +92,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-0H-9g2">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                                         <connections>
-                                                            <segue destination="dmH-1P-bod" kind="show" id="aSj-4d-W0w">
-                                                                <nil key="action"/>
-                                                            </segue>
+                                                            <segue destination="dmH-1P-bod" kind="show" id="aSj-4d-W0w"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -237,9 +235,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUv-b2-hFC">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                                         <connections>
-                                                            <segue destination="7e0-Ss-Cdc" kind="show" id="ViG-6a-sMz">
-                                                                <nil key="action"/>
-                                                            </segue>
+                                                            <segue destination="7e0-Ss-Cdc" kind="show" id="ViG-6a-sMz"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -731,9 +727,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoU-Gf-sl7">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                                 <connections>
-                                                    <segue destination="w8s-YQ-cSN" kind="show" id="MgS-O8-btS">
-                                                        <nil key="action"/>
-                                                    </segue>
+                                                    <segue destination="w8s-YQ-cSN" kind="show" id="MgS-O8-btS"/>
                                                 </connections>
                                             </button>
                                         </subviews>

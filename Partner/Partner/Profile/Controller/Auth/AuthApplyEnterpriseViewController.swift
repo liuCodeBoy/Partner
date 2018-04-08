@@ -270,6 +270,11 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard UserDefaults.standard.string(forKey: "access_token") != nil else {
+            presentLoginController()
+            return
+        }
+        
         loadAndSavePickerData()
         judgeAuthStatus()
         
@@ -464,6 +469,7 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
             dest.authID = entViewModel?.compAuthId as? Int
         } else if destnation is AuthInputEnterpriseDescriptionViewController {
             let dest = destnation as! AuthInputEnterpriseDescriptionViewController
+            dest.segue = segue
             dest.str = entViewModel?.compDesc
         }
     }
