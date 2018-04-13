@@ -266,7 +266,7 @@ class CriclePicktrueCell : UICollectionViewCell {
             }
             
             if let   mainBacImg = cellModel?.imgUrl{
-                showImageView.sd_setImage(with: URL.init(string: mainBacImg), placeholderImage: nil)
+                showImageView.sd_setImage(with: URL.init(string: mainBacImg), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
             }
             if let   numLab = cellModel?.membNum{
                 CircleGrounpNum.text = "\(numLab)名成员"
@@ -288,15 +288,15 @@ class CriclePicktrueCell : UICollectionViewCell {
                 for i  in 0..<imageStrArr.count {
                     switch i {
                     case 0:
-                        member1Imag.sd_setImage(with: URL.init(string: imageStrArr[0]), placeholderImage: nil)
+                        member1Imag.sd_setImage(with: URL.init(string: imageStrArr[0]), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                         member2Image.isHidden = true
                         member3Image.isHidden = true
                     case 1:
-                        member2Image.sd_setImage(with: URL.init(string: imageStrArr[1]), placeholderImage: nil)
+                        member2Image.sd_setImage(with: URL.init(string: imageStrArr[1]), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                         member2Image.isHidden = false
                         member3Image.isHidden = true
                     case 2:
-                        member3Image.sd_setImage(with: URL.init(string: imageStrArr[2]), placeholderImage: nil)
+                        member3Image.sd_setImage(with: URL.init(string: imageStrArr[2]), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                         member2Image.isHidden = false
                         member3Image.isHidden = false
                     default: break

@@ -52,7 +52,7 @@ class MyProjectEditViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(pushEditProjVC(_:)), name: NSNotification.Name.init(pushEditProjBasicInfoNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(presentImagePicker), name: NSNotification.Name.init(presentImagePickerNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(deliverProject), name: NSNotification.Name.init(deliverProjectNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deliverProject(_:)), name: NSNotification.Name.init(deliverProjectNotification), object: nil)
     }
     
     @objc func presentImagePicker() {
@@ -70,7 +70,19 @@ class MyProjectEditViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func deliverProject() {
+    @objc func deliverProject(_ notification: Notification) {
+        
+        if let userInfo = notification.userInfo {
+            
+            let vc = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "InvestorListVCID") as! InvestorListVC
+            
+            vc.projId = userInfo["projID"] as? Int
+            vc.isSingle = userInfo["isSingle"] as! Bool
+
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+   
         
     }
     
@@ -123,6 +135,9 @@ class MyProjectEditViewController: UIViewController {
             case "MPESettingSegue":
                 let dest = destnation as! MyProjectEditSettingsViewController
                 // TODO:- pass id and string to dest controller
+                dest.projID = projID
+            case "MPEPushReviewSegue":
+                let dest = destnation as! MyProjectReviewViewController
                 dest.projID = projID
             default: break
             }

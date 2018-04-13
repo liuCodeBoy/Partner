@@ -25,8 +25,9 @@ class ProfileViewController: UIViewController {
     
     @IBAction func loginOrRegisterBtnClicked(_ sender: UIButton) {
         // login
-        let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
-        self.navigationController?.present(vc, animated: true, completion: nil)
+          let  navRegistAndLoginVC = UINavigationController.init(rootViewController: AppDelegate.RegisterAndLoginVC)
+//        let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
+        self.navigationController?.present(navRegistAndLoginVC, animated: true, completion: nil)
     }
     
     var viewModel: ProfileInfoModel? {

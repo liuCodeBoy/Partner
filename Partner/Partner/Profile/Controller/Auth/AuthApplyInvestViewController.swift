@@ -238,8 +238,12 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
         let picker = Bundle.main.loadNibNamed("PartnerTimePicker", owner: nil, options: nil)?.first as! PartnerTimePicker
         picker.frame = UIScreen.main.bounds
         picker.pickerTitle.text = "选择任职时间"
-        datePicker = picker.datePicker
-        self.view.addSubview(picker)
+        picker.showLabel = invAgencyOnWorkTimeLbl
+        picker.viewModel = viewModel
+        let mainVC = containerSegue?.source as! AuthApplyUploadViewController
+        mainVC.view.addSubview(picker)
+        self.datePicker = picker.datePicker
+        
     }
     // MARK:- update auth infomation
     @IBAction func investAuthSumbit(_ sender: ShadowButton) {
@@ -249,15 +253,7 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
     override func viewWillLayoutSubviews() {
         // show or hide the agency select view
         idenID = viewModel.idenId
-        // save date
-        if datePicker != nil {
-            let year = datePicker!.date.year()
-            let month = datePicker!.date.month()
-            let day = datePicker!.date.day()
-            let date = "\(year)-\(month)-\(day)"
-            viewModel.inTime = date
-            invAgencyOnWorkTimeLbl.text = date
-        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -266,6 +262,11 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
         
         loadAndSavePickerData()
         
@@ -338,23 +339,33 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- judge the auth status
-                if result!["result"]!["auth"] as! Int == 0 {
+                
+                if (result!["result"] as? [String : AnyObject]) != nil {
+                    if let auth = result!["result"]!["auth"] as? Int, auth == 0 {
+                        // not verified
+                        // TODO:- hide cover view and button view
+                        weakSelf?.investAuthScrollView.isHidden = false
+                        weakSelf?.iinvestAuthScrollView.isHidden = true
+                        weakSelf?.rejectedView.isHidden = true
+                        weakSelf?.inReviewView.isHidden = true
+                    } else {
+                        // verified
+                        // TODO:- save to model
+                        let resultDict = result!["result"] as! [String : AnyObject]
+                        weakSelf?.invViewModel = AuthInvestInfoModel.mj_object(withKeyValues: resultDict)
+                        // TODO:- show infomation
+                        weakSelf?.investAuthScrollView.isHidden = true
+                        weakSelf?.iinvestAuthScrollView.isHidden = false
+                        weakSelf?.rejectedView.isHidden = false
+                        weakSelf?.inReviewView.isHidden = false
+                    }
+                } else {
                     // not verified
                     // TODO:- hide cover view and button view
                     weakSelf?.investAuthScrollView.isHidden = false
                     weakSelf?.iinvestAuthScrollView.isHidden = true
                     weakSelf?.rejectedView.isHidden = true
                     weakSelf?.inReviewView.isHidden = true
-                } else {
-                    // verified
-                    // TODO:- save to model
-                    let resultDict = result!["result"] as! [String : AnyObject]
-                    weakSelf?.invViewModel = AuthInvestInfoModel.mj_object(withKeyValues: resultDict)
-                    // TODO:- show infomation
-                    weakSelf?.investAuthScrollView.isHidden = true
-                    weakSelf?.iinvestAuthScrollView.isHidden = false
-                    weakSelf?.rejectedView.isHidden = false
-                    weakSelf?.inReviewView.isHidden = false
                 }
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)

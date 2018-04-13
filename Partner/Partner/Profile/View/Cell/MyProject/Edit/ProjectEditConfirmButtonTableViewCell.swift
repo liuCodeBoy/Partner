@@ -48,9 +48,9 @@ class ProjectEditConfirmButtonTableViewCell: UITableViewCell {
     @IBOutlet weak var btnBackView: UIView!
     @IBOutlet weak var btn: ShadowButton!
     @IBAction func btnClicked(_ sender: ShadowButton) {
-        
+        guard let id = projID else { return }
         if !isVerified {
-            guard let id = projID else { return }
+           
             
             NetWorkTool.shareInstance.beginProject(token: access_token!, id: id) { (result, error) in
                 if error != nil {
@@ -65,7 +65,7 @@ class ProjectEditConfirmButtonTableViewCell: UITableViewCell {
                 }
             }
         } else {
-            NotificationCenter.default.post(name: NSNotification.Name.init(deliverProjectNotification), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name.init(deliverProjectNotification), object: nil, userInfo: ["projID" : id, "isSingle" : true])
         }
         
     }

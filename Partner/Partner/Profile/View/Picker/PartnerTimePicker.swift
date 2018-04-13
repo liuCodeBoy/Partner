@@ -8,7 +8,10 @@
 import UIKit
 
 class PartnerTimePicker: UIView {
-
+    
+    var showLabel: UILabel?
+    var viewModel: AuthModel?
+    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var pickerTitle: UILabel!
     @IBOutlet weak var pickerContainerView: UIView!
@@ -22,6 +25,16 @@ class PartnerTimePicker: UIView {
         }) { (_) in
             self.removeFromSuperview()
         }
+        
+        // save date
+        let year = datePicker!.date.year()
+        let month = datePicker!.date.month()
+        let day = datePicker!.date.day()
+        let date = "\(year)-\(month)-\(day)"
+        
+        showLabel?.text = date
+        viewModel?.inTime = date
+        
     }
     
     override func awakeFromNib() {

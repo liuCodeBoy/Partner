@@ -237,4 +237,9 @@ extension InformationVC {
             self.navigationController?.pushViewController(informationVC, animated: true)
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
+    
 }

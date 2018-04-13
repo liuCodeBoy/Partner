@@ -136,6 +136,7 @@ class ServiceInvestorProfileViewController: UIViewController {
         if segue.identifier == "SIBasicInfoSegue" {
             let dest = segue.destination as! ServiceInvestorBasicInfomationContainerViewController
             dest.id = self.id
+            dest.singleProjID = self.singleProjId
             dest.isSingle = self.isSingle
             dest.segue = segue
         } else if segue.identifier == "SIExperienceSegue" {

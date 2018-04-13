@@ -2333,6 +2333,9 @@
                                             <constraint firstAttribute="width" secondItem="Wsq-sT-HMW" secondAttribute="height" id="pIS-1X-toW"/>
                                         </constraints>
                                         <state key="normal" image="profile_my_project_edit"/>
+                                        <connections>
+                                            <action selector="editProfile:" destination="cv8-aD-RJT" eventType="touchUpInside" id="rqm-D2-qao"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2354,7 +2357,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxP-eD-Gij">
                                 <rect key="frame" x="0.0" y="144" width="375" height="172"/>
                                 <subviews>
-                                    <button opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRp-G2-q0R" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
+                                    <button hidden="YES" opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRp-G2-q0R" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="321" y="4" width="40" height="26"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2370,7 +2373,7 @@
                                             <action selector="uploadHeaderBackImgClicked:" destination="cv8-aD-RJT" eventType="touchUpInside" id="y7R-2h-FEG"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_self_info_upload_image" translatesAutoresizingMaskIntoConstraints="NO" id="97N-0K-9VV">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_self_info_upload_image" translatesAutoresizingMaskIntoConstraints="NO" id="97N-0K-9VV">
                                         <rect key="frame" x="331" y="7" width="20" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2428,7 +2431,7 @@
                                             <action selector="experienceBtnClicked:" destination="cv8-aD-RJT" eventType="touchUpInside" id="nQf-oV-DGe"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="QOS-Rb-ppO" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="QOS-Rb-ppO" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="12" y="0.0" width="80" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2751,20 +2754,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="39.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全部动态（2）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuj-aW-OSe">
-                                                    <rect key="frame" x="12.000000000000007" y="12" width="107.66666666666669" height="15.666666666666664"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全部动态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuj-aW-OSe">
+                                                    <rect key="frame" x="12" y="12" width="65.333333333333329" height="15.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ng1-ff-wkM">
-                                                    <rect key="frame" x="320" y="11.666666666666664" width="29" height="17"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ng1-ff-wkM">
+                                                    <rect key="frame" x="320" y="11.333333333333336" width="29" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="xqI-sp-ZnZ">
-                                                    <rect key="frame" x="351" y="14" width="12" height="12"/>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="xqI-sp-ZnZ">
+                                                    <rect key="frame" x="351" y="13.666666666666664" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="12" id="Byg-LQ-sFB"/>
                                                         <constraint firstAttribute="height" constant="12" id="Tll-0E-gil"/>

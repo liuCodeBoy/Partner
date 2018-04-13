@@ -1114,7 +1114,7 @@
                                             <action selector="experienceBtnClicked:" destination="auI-c6-5aX" eventType="touchUpInside" id="gh2-My-kxz"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iKu-yJ-7z9" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iKu-yJ-7z9" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                         <rect key="frame" x="12" y="0.0" width="80" height="80"/>
                                         <color key="backgroundColor" red="0.30196078430000001" green="0.69411764710000001" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1537,19 +1537,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全部动态（2）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-1G-64p">
-                                                    <rect key="frame" x="12.000000000000007" y="12" width="107.66666666666669" height="15.666666666666664"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全部动态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-1G-64p">
+                                                    <rect key="frame" x="12" y="12" width="65.333333333333329" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rli-wa-k5e">
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rli-wa-k5e">
                                                     <rect key="frame" x="320" y="11.666666666666664" width="29" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="XzE-Wu-5qy">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="XzE-Wu-5qy">
                                                     <rect key="frame" x="351" y="14" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="12" id="2XY-kt-JP2"/>
@@ -2905,10 +2905,10 @@
                             <constraint firstItem="slC-YU-KLa" firstAttribute="top" secondItem="zHG-Hk-1AB" secondAttribute="bottom" id="94P-Bl-58O"/>
                             <constraint firstItem="zHG-Hk-1AB" firstAttribute="leading" secondItem="H8t-YH-LTQ" secondAttribute="leading" id="DxS-W5-Ude"/>
                             <constraint firstItem="YtI-Nt-Zl2" firstAttribute="top" secondItem="OtZ-4U-KsD" secondAttribute="bottom" id="OTb-DH-AqN"/>
+                            <constraint firstItem="H8t-YH-LTQ" firstAttribute="bottom" secondItem="slC-YU-KLa" secondAttribute="bottom" id="Ztr-JT-cn1"/>
                             <constraint firstItem="YtI-Nt-Zl2" firstAttribute="leading" secondItem="OtZ-4U-KsD" secondAttribute="leading" constant="12" id="bry-lC-bbo"/>
                             <constraint firstItem="OtZ-4U-KsD" firstAttribute="leading" secondItem="H8t-YH-LTQ" secondAttribute="leading" id="f9I-Ov-wIb"/>
                             <constraint firstItem="H8t-YH-LTQ" firstAttribute="trailing" secondItem="zHG-Hk-1AB" secondAttribute="trailing" id="fXe-hn-ltN"/>
-                            <constraint firstItem="H8t-YH-LTQ" firstAttribute="bottom" secondItem="slC-YU-KLa" secondAttribute="bottom" id="gAQ-r0-DcQ"/>
                             <constraint firstItem="H8t-YH-LTQ" firstAttribute="trailing" secondItem="slC-YU-KLa" secondAttribute="trailing" id="i7c-v8-dGb"/>
                             <constraint firstAttribute="trailing" secondItem="OtZ-4U-KsD" secondAttribute="trailing" id="lAk-im-c9S"/>
                             <constraint firstItem="zHG-Hk-1AB" firstAttribute="top" secondItem="YtI-Nt-Zl2" secondAttribute="bottom" id="wa0-PW-bvS"/>
@@ -2924,7 +2924,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHG-GK-3Rt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4580" y="446"/>
+            <point key="canvasLocation" x="4580" y="445.56650246305418"/>
         </scene>
         <!--Choose ProjectVC-->
         <scene sceneID="TVv-WK-6a4">
@@ -3323,7 +3323,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9u-Gn-cdA" userLabel="HotVoterChild2" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                 <rect key="frame" x="152" y="10" width="130" height="180"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="sBS-RK-CfI" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="sBS-RK-CfI" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                         <rect key="frame" x="35" y="10" width="60" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="YBh-Z4-M2S"/>
@@ -3332,7 +3332,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="30"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
@@ -3412,7 +3412,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9v-by-y1N" userLabel="HotVoterChild3" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                 <rect key="frame" x="292" y="10" width="130" height="180"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="0iz-gN-1eI" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="0iz-gN-1eI" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                         <rect key="frame" x="35" y="10" width="60" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="Il5-n6-ysG"/>
@@ -3421,7 +3421,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="30"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
@@ -3501,7 +3501,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vdp-IY-G1i" userLabel="HotVoterChild1" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="10" width="130" height="180"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="xFM-my-6em" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="xFM-my-6em" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                         <rect key="frame" x="35" y="10" width="60" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="JEW-mv-6gd"/>
@@ -3510,7 +3510,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="30"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>

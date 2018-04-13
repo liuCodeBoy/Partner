@@ -99,17 +99,17 @@ class CircleDetailVC: UIViewController {
                             for i  in 0..<imageStrArr.count {
                                 switch i {
                                 case 0:
-                                    self?.firstImg.sd_setImage(with: URL.init(string: imageStrArr[0]), placeholderImage: nil)
+                                    self?.firstImg.sd_setImage(with: URL.init(string: imageStrArr[0]), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                     self?.firstImg.isHidden = false
                                     self?.secondImg.isHidden = true
                                     self?.thirdImg.isHidden = true
                                 case 1:
-                                    self?.secondImg.sd_setImage(with: URL.init(string: imageStrArr[1]), placeholderImage: nil)
+                                    self?.secondImg.sd_setImage(with: URL.init(string: imageStrArr[1]), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                     self?.secondImg.isHidden = false
                                     self?.firstImg.isHidden = false
                                     self?.thirdImg.isHidden = true
                                 case 2:
-                                    self?.thirdImg.sd_setImage(with: URL.init(string: imageStrArr[2]), placeholderImage: nil)
+                                    self?.thirdImg.sd_setImage(with: URL.init(string: imageStrArr[2]), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                                     self?.firstImg.isHidden = false
                                     self?.secondImg.isHidden = false
                                     self?.thirdImg.isHidden = false

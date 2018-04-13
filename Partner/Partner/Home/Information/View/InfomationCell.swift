@@ -33,7 +33,7 @@ class InfomationCell: UITableViewCell {
                 self.timeLab.text = time
             }
             if let img =  viewModel.imgUrl {
-                self.infoImg.setImageWith(URL.init(string: img)!, placeholderImage: nil)
+                self.infoImg.setImageWith(URL.init(string: img)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
             }
             
         }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="myU-Sb-eva">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="myU-Sb-eva">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -201,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VistBackground" translatesAutoresizingMaskIntoConstraints="NO" id="By9-TD-Xfh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpD-wh-Oz5">
                                 <rect key="frame" x="70" y="84" width="40" height="20"/>
@@ -548,7 +548,6 @@
                         <constraints>
                             <constraint firstItem="7TG-Ze-EXG" firstAttribute="centerX" secondItem="HQg-vW-Tkc" secondAttribute="centerX" id="3uO-ga-RB6"/>
                             <constraint firstItem="DCN-aB-RuS" firstAttribute="trailing" secondItem="HQg-vW-Tkc" secondAttribute="trailing" constant="70" id="55A-4x-nKg"/>
-                            <constraint firstItem="DCN-aB-RuS" firstAttribute="bottom" secondItem="By9-TD-Xfh" secondAttribute="bottom" id="5dH-Od-MDN"/>
                             <constraint firstItem="7TG-Ze-EXG" firstAttribute="height" secondItem="lpD-wh-Oz5" secondAttribute="height" id="6XS-bZ-N2y"/>
                             <constraint firstItem="z9g-c4-wVJ" firstAttribute="leading" secondItem="DCN-aB-RuS" secondAttribute="leading" id="794-Km-151"/>
                             <constraint firstItem="By9-TD-Xfh" firstAttribute="top" secondItem="WDv-Fq-Bwd" secondAttribute="top" id="AAa-s1-I8E"/>
@@ -570,6 +569,7 @@
                             <constraint firstItem="1eO-Bb-20a" firstAttribute="width" secondItem="WDv-Fq-Bwd" secondAttribute="width" multiplier="0.8" id="cTZ-Yq-Vuh"/>
                             <constraint firstItem="kO1-XZ-9AC" firstAttribute="centerX" secondItem="lpD-wh-Oz5" secondAttribute="centerX" id="eke-3U-Jj8"/>
                             <constraint firstItem="DCN-aB-RuS" firstAttribute="trailing" secondItem="tPY-2s-qs0" secondAttribute="trailing" id="etP-uD-PKd"/>
+                            <constraint firstAttribute="bottom" secondItem="By9-TD-Xfh" secondAttribute="bottom" id="gy6-Jh-aBi"/>
                             <constraint firstItem="DCN-aB-RuS" firstAttribute="bottom" secondItem="z9g-c4-wVJ" secondAttribute="bottom" id="hPI-5F-Bsw"/>
                             <constraint firstItem="V3Z-af-lue" firstAttribute="centerX" secondItem="lpD-wh-Oz5" secondAttribute="centerX" id="k9i-kt-5lj"/>
                             <constraint firstItem="HQg-vW-Tkc" firstAttribute="top" secondItem="lpD-wh-Oz5" secondAttribute="top" id="meU-W5-rGu"/>
@@ -662,7 +662,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nft-7X-xSc" userLabel="333">
-                                        <rect key="frame" x="28" y="287" width="319" height="1"/>
+                                        <rect key="frame" x="28" y="287.33333333333331" width="319" height="1"/>
                                         <color key="backgroundColor" red="0.71372549019999998" green="0.73725490199999999" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="V7H-G1-Pig"/>
@@ -701,7 +701,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrO-vm-Tl8">
-                                        <rect key="frame" x="247" y="252" width="100" height="30"/>
+                                        <rect key="frame" x="247" y="252.33333333333331" width="100" height="30"/>
                                         <color key="backgroundColor" red="0.53725490200000003" green="0.63137254899999995" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="T77-Fl-HjX"/>
@@ -970,6 +970,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3VY-RA-jDS"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="commonBtn" destination="9Dl-b8-Q6j" id="WJj-Mg-paN"/>
                         <outlet property="commonLab" destination="Vfq-lb-VSn" id="SOA-2Y-oqZ"/>
@@ -991,7 +992,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sina" translatesAutoresizingMaskIntoConstraints="NO" id="hkS-Wh-UIp">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_take_photo" translatesAutoresizingMaskIntoConstraints="NO" id="hkS-Wh-UIp">
                                 <rect key="frame" x="147.66666666666666" y="164" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="ASl-Ai-30V"/>
@@ -1062,7 +1063,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQG-Q9-Ef9" userLabel="NumView">
                                                 <rect key="frame" x="0.0" y="137" width="375" height="68.333333333333314"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="练习电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MJ-Xk-udY">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MJ-Xk-udY">
                                                         <rect key="frame" x="37.666666666666657" y="33.333333333333314" width="64" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="3Ch-sV-TWw"/>
@@ -1132,7 +1133,7 @@
                                                             <action selector="showSexChoose:" destination="lu3-MW-gUP" eventType="touchUpInside" id="0uj-L3-lzv"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instructionArrow" translatesAutoresizingMaskIntoConstraints="NO" id="UO5-6S-1IK">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instructionArrow" translatesAutoresizingMaskIntoConstraints="NO" id="UO5-6S-1IK">
                                                         <rect key="frame" x="340.66666666666669" y="36.666666666666686" width="10" height="10"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="10" id="bkH-en-ZbN"/>
@@ -1418,6 +1419,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pdl-rT-oEh"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="CommonUserView" destination="Jrj-bO-qkv" id="ACQ-zf-aA5"/>
                         <outlet property="CompanyView" destination="0VR-3F-iki" id="jfU-tW-pZc"/>
@@ -1924,6 +1926,7 @@
         <image name="SmallPhoto" width="66" height="66"/>
         <image name="VistBackground" width="750" height="1334"/>
         <image name="Wechat" width="50" height="50"/>
+        <image name="avatar_take_photo" width="33" height="33"/>
         <image name="instructionArrow" width="6" height="10"/>
         <image name="left_arrow" width="6" height="10"/>
     </resources>

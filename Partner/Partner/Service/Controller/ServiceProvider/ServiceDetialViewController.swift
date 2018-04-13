@@ -46,7 +46,7 @@ class ServiceDetialViewController: UIViewController {
                 if  let dict  =   result!["result"] as? NSDictionary{
                 if  let statusViewModel = ProviderDetailModel.mj_object(withKeyValues: dict){
                     if let url = statusViewModel.imgUrl {
-                        self?.detailImage.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+                        self?.detailImage.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
                     }
                     
                     if let  companytext = statusViewModel.provName {

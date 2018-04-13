@@ -21,12 +21,12 @@ class ProjectEditMembersBriefTableViewCell: UITableViewCell {
                     }
                     // 2. set image and show
                     for i in 0..<imgURLs.count {
-                        avatarImg[i].sd_setImage(with: URL.init(string: imgURLs[i]), placeholderImage: nil, options: .continueInBackground, completed: nil)
+                        avatarImg[i].sd_setImage(with: URL.init(string: imgURLs[i]), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"), options: .continueInBackground, completed: nil)
                         avatarImg[i].isHidden = false
                     }
                 } else {
                     for j in 0..<5 {
-                        avatarImg[j].sd_setImage(with: URL.init(string: imgURLs[j]), placeholderImage: nil, options: .continueInBackground, completed: nil)
+                        avatarImg[j].sd_setImage(with: URL.init(string: imgURLs[j]), placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"), options: .continueInBackground, completed: nil)
                     }
                 }
             } else {

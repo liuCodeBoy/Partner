@@ -19,11 +19,11 @@ class ServiceProviderCompanyIntroductionTableViewCell: UITableViewCell {
     var model : SelectedProviderModel?  {
         didSet {
             if let url = model?.imgUrl {
-              mainImageView.setImageWith(URL.init(string: url)!, placeholderImage: nil)
+              mainImageView.setImageWith(URL.init(string: url)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
             }
             
             if let logourl = model?.logoUrl{
-                logoImage.setImageWith(URL.init(string: logourl)!, placeholderImage: nil)
+                logoImage.setImageWith(URL.init(string: logourl)!, placeholderImage: #imageLiteral(resourceName: "partner_img_placeholder"))
             }
             
             if let provComm = model?.provName{

@@ -10,6 +10,10 @@ import MJRefresh
 import SCLAlertView
 
 class InvestorListVC: UIViewController {
+    
+    var projId: Int?
+    var isSingle = true
+    
     var   pageNum  = 1 //标记nextPage 是否为空
     var   nextPage = 1
     
@@ -27,6 +31,7 @@ class InvestorListVC: UIViewController {
         hotBtn.setSelected()
         newBtn.reverseSelected()
         order = 1
+        
         
         pageNum  = 1 //标记nextPage 是否为空
         nextPage = 1
@@ -53,6 +58,17 @@ class InvestorListVC: UIViewController {
         super.viewDidLoad()
         loadRefreshComponet(tableView: projectListTableView)
         getProjectList()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveProjectDeliverInfo(_:)), name: NSNotification.Name.init(deliverProjectNotification), object: nil)
+        
+    }
+    
+    @objc func receiveProjectDeliverInfo(_ notification: Notification) {
+        
+        if let userInfo = notification.userInfo {
+            projId = userInfo["projID"] as? Int
+            isSingle = userInfo["isSingle"] as! Bool
+        }
         
     }
     
@@ -103,7 +119,20 @@ extension InvestorListVC: UITableViewDelegate, UITableViewDataSource {
 //            destVC.id = model.uid as? Int
 //        }
 //        self.navigationController?.pushViewController(destVC, animated: true)
-        if modelArr.count > 0 {
+        
+        
+        // MARK:- if is pushed from seliver project
+        if let uid = modelArr[indexPath.row].uid as? Int, let projId = self.projId, isSingle == true {
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
+            
+            vc.id = uid
+            vc.singleProjId = projId
+            vc.isSingle = true
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        } else if modelArr.count > 0 {
             let model = modelArr[indexPath.row]
             let  uid = UserDefaults.standard.integer(forKey: "uid")
             if model.uid as? Int == uid {
@@ -115,6 +144,7 @@ extension InvestorListVC: UITableViewDelegate, UITableViewDataSource {
                 self.navigationController?.pushViewController(showProviderVC, animated: true)
             }
         }
+        
     }
     
     
