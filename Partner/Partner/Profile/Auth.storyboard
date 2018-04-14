@@ -946,7 +946,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必填" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sN-OV-cej">
-                                                                <rect key="frame" x="319.33333333333331" y="17.666666666666629" width="28.666666666666686" height="17"/>
+                                                                <rect key="frame" x="319" y="17.666666666666629" width="29" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -990,7 +990,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="职位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orz-HJ-CwT">
-                                                                <rect key="frame" x="12" y="16" width="32.666666666666664" height="20"/>
+                                                                <rect key="frame" x="12" y="16" width="33" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -1060,7 +1060,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNh-ft-WRT">
-                                                                <rect key="frame" x="319.33333333333331" y="17.666666666666629" width="28.666666666666686" height="17"/>
+                                                                <rect key="frame" x="319" y="17.666666666666629" width="29" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -2214,7 +2214,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="790"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_my_project_camera_big" translatesAutoresizingMaskIntoConstraints="NO" id="FUL-U6-bQj" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
-                                                <rect key="frame" x="147" y="40" width="80" height="80"/>
+                                                <rect key="frame" x="147.33333333333334" y="40" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="AiU-Z0-EIw"/>
                                                     <constraint firstAttribute="height" constant="80" id="QEU-D5-Fyn"/>
@@ -2258,7 +2258,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资行业1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j3-cI-aIF" customClass="StrokeLabel" customModule="Partner" customModuleProvider="target">
-                                                <rect key="frame" x="89" y="170" width="60" height="26"/>
+                                                <rect key="frame" x="89.333333333333329" y="170" width="59.999999999999986" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="jXz-W7-Idn"/>
                                                     <constraint firstAttribute="height" constant="26" id="kqI-lI-Kup"/>
@@ -2279,7 +2279,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资行业1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Lg-pm-0Gn" customClass="StrokeLabel" customModule="Partner" customModuleProvider="target">
-                                                <rect key="frame" x="157" y="170" width="60" height="26"/>
+                                                <rect key="frame" x="157.33333333333334" y="170" width="60" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="LFi-1u-THd"/>
                                                     <constraint firstAttribute="height" constant="26" id="NTH-g4-Qgy"/>
@@ -2300,7 +2300,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资行业1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSR-lp-b8T" customClass="StrokeLabel" customModule="Partner" customModuleProvider="target">
-                                                <rect key="frame" x="225" y="170" width="60" height="26"/>
+                                                <rect key="frame" x="225.33333333333334" y="170" width="60.000000000000028" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="26" id="8qr-6u-Xyy"/>
                                                     <constraint firstAttribute="width" constant="60" id="wPe-TK-oGs"/>
@@ -2475,7 +2475,7 @@
                                                         <rect key="frame" x="37" y="0.0" width="301" height="52"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRU-yh-ttR">
-                                                                <rect key="frame" x="0.0" y="17" width="49" height="19.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="17" width="49" height="19.666666666666671"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -2510,7 +2510,7 @@
                                                         <rect key="frame" x="37" y="52" width="301" height="52"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSA-cx-c4Q">
-                                                                <rect key="frame" x="0.0" y="16" width="32.666666666666664" height="20"/>
+                                                                <rect key="frame" x="0.0" y="16" width="33" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -2690,7 +2690,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_my_project_business_card_big" translatesAutoresizingMaskIntoConstraints="NO" id="AGh-uW-zOZ" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
-                                                        <rect key="frame" x="95.666666666666686" y="52.000000000000007" width="183" height="109.66666666666669"/>
+                                                        <rect key="frame" x="95.333333333333329" y="52.000000000000007" width="183.33333333333337" height="109.66666666666669"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="AGh-uW-zOZ" secondAttribute="height" multiplier="183:110" id="ftU-aZ-vIj"/>
                                                         </constraints>
@@ -3270,7 +3270,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必填" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUc-19-Cqu">
-                                                                <rect key="frame" x="319.33333333333331" y="17.666666666666686" width="28.666666666666686" height="17"/>
+                                                                <rect key="frame" x="319" y="17.666666666666686" width="29" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -3314,7 +3314,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="职位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VS-vc-cac">
-                                                                <rect key="frame" x="12" y="16" width="32.666666666666664" height="20"/>
+                                                                <rect key="frame" x="12" y="16" width="33" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -3384,7 +3384,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUr-jR-5ZU">
-                                                                <rect key="frame" x="319.33333333333331" y="17.666666666666629" width="28.666666666666686" height="17"/>
+                                                                <rect key="frame" x="319" y="17.666666666666629" width="29" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -3649,7 +3649,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="entName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gz1-Kp-wfS">
-                                                <rect key="frame" x="151.33333333333334" y="130" width="73.666666666666657" height="25"/>
+                                                <rect key="frame" x="151.33333333333334" y="130" width="74" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="nFF-Ec-ZBb"/>
                                                 </constraints>
@@ -3658,7 +3658,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="企业类型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mH-uD-lFe" customClass="StrokeLabel" customModule="Partner" customModuleProvider="target">
-                                                <rect key="frame" x="89.666666666666671" y="170" width="60.333333333333329" height="26"/>
+                                                <rect key="frame" x="89.666666666666671" y="170" width="60.666666666666671" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="26" id="Vut-TK-QNe"/>
                                                     <constraint firstAttribute="width" constant="60" id="x2d-Qt-rpl"/>
@@ -3724,7 +3724,7 @@
                                                 <rect key="frame" x="67.666666666666686" y="196" width="240" height="82"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="企业类型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdO-fB-b6o" customClass="StrokeLabel" customModule="Partner" customModuleProvider="target">
-                                                        <rect key="frame" x="21.333333333333325" y="10" width="60.666666666666657" height="26"/>
+                                                        <rect key="frame" x="21.666666666666661" y="10" width="60.333333333333343" height="26"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="6bq-8D-eFL"/>
                                                             <constraint firstAttribute="height" constant="26" id="YUF-vv-kSw"/>
@@ -3787,7 +3787,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="企业类型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlc-Jo-LdE" customClass="StrokeLabel" customModule="Partner" customModuleProvider="target">
-                                                        <rect key="frame" x="21.333333333333325" y="46" width="60.666666666666657" height="26"/>
+                                                        <rect key="frame" x="21.666666666666661" y="46" width="60.333333333333343" height="26"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="26" id="96u-qW-G47"/>
                                                             <constraint firstAttribute="width" constant="60" id="RhX-IN-wAX"/>
@@ -4138,7 +4138,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RJG-Ht-3N7" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
-                                                <rect key="frame" x="117.33333333333333" y="699" width="140.66666666666669" height="200"/>
+                                                <rect key="frame" x="117.66666666666667" y="699" width="140.66666666666663" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="dsC-7g-zaD"/>
                                                     <constraint firstAttribute="height" constant="200" id="wWw-ow-lk8"/>

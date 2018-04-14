@@ -162,25 +162,6 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         
-        // load data
-        guard UserDefaults.standard.string(forKey: "token") != nil else {
-            presentLoginController()
-            return
-        }
-        NetWorkTool.shareInstance.getMyInfo(token: access_token!) { [weak self](result, error) in
-            if error != nil {
-                self?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
-                print(error as AnyObject)
-                return
-            }
-            if result!["code"] as! Int == 200 {
-                let model = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
-                self?.viewModel = model
-            } else {
-                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"]!))", completion: nil)
-            }
-        }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -210,6 +191,25 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         
         loadData()
         
+        
+        // load data
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        NetWorkTool.shareInstance.getMyInfo(token: access_token!) { [weak self](result, error) in
+            if error != nil {
+                self?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                let model = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
+                self?.viewModel = model
+            } else {
+                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"])), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
         
     }
     
@@ -494,12 +494,17 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                     self.viewModel?.gender = 1
                     tableView.cellForRow(at: indexPath)?.detailTextLabel?.text = "男"
                 })
+                let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
                 sheet.addAction(male)
                 sheet.addAction(female)
                 sheet.addAction(secret)
+                sheet.addAction(cancel)
                 present(sheet, animated: true, completion: {
                     return
                 })
+            case 2:
+                presentHintMessage(hintMessgae: "联系电话不可修改", completion: nil)
+                return nil
             case 6:
                 // change community
                 if let label = tableView.cellForRow(at: IndexPath.init(row: 6, section: 1))?.detailTextLabel {
