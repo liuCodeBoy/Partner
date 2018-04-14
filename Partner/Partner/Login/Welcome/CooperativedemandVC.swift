@@ -46,6 +46,13 @@ class CooperativedemandVC: UIViewController , UITextViewDelegate {
                     // MARK:- judge the return data from server
                     if  result?["code"] as? Int == 200  {
                         self?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
+                            if let access_token = UserDefaults.standard.string(forKey: "temptoken"){
+                                //偏好设置
+                                let userDefault =  UserDefaults.standard
+                                userDefault.set(access_token, forKey: "token")
+                                //同步数据
+                                userDefault.synchronize()
+                            }
                             self?.navigationController?.dismiss(animated: true , completion: nil)
                         })
                     } else {

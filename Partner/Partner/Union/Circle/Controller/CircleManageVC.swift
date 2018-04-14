@@ -46,7 +46,8 @@ class CircleManageVC: UIViewController,ImagePickerDelegate{
                 guard   result != nil else{
                     return}
                 self?.presentHintMessage(hintMessgae: "解散成功", completion: { (action) in
-                    self?.navigationController?.popViewController(animated: true)
+                    let index = self?.navigationController?.viewControllers.index(after: 0)
+         self?.navigationController?.popToViewController((self?.navigationController?.viewControllers[index!])!, animated: true)
                 })
             }else{
                 let  errorShow  =  result!["msg"] as! String

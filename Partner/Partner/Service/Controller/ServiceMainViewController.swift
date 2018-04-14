@@ -21,7 +21,7 @@ class ServiceMainViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
          getListType()
-        getSelectedProviderList()
+         getSelectedProviderList()
     }
     @IBAction func getMoreProvider(_ sender: Any) {
         let destVC = UIStoryboard.init(name: "ServiceProvider", bundle: nil).instantiateViewController(withIdentifier: "searchVCID") as! searchVC
@@ -32,9 +32,6 @@ class ServiceMainViewController: UIViewController {
         let dest = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "InvestorListVCID") as! InvestorListVC
         self.navigationController?.pushViewController(dest, animated: true)
     }
-    
-    
-
 }
 
 extension ServiceMainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -103,7 +100,12 @@ extension ServiceMainViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.modelSelectedArr.count > 0  && indexPath.row > 2{
-            let destvC = UIStoryboard.init(name: "ServiceProvider", bundle: nil).instantiateViewController(withIdentifier: "ServiceProviderViewControllerID")
+            let destvC = UIStoryboard.init(name: "ServiceProvider", bundle: nil).instantiateViewController(withIdentifier: "ServiceDetialViewControllerID") as! ServiceDetialViewController
+         
+            let model = modelSelectedArr[indexPath.row - 3]
+            NetWorkTool.shareInstance.scanProvider(id:  (model.providerId as? Int)!, finished: { (result, error) in
+            })
+            destvC.id = model.providerId as? Int
             self.navigationController?.pushViewController(destvC, animated: true)
         }
     }

@@ -67,7 +67,7 @@ class GetProvideVC: UIViewController,UITextViewDelegate {
                 }
                 if result!["code"] as! Int == 200 {
                     // TODO:- save data into model
-                    SCLAlertView().showSuccess("", subTitle: "\(String(describing: result!["msg"]!))")
+                    SCLAlertView().showSuccess("", subTitle: "提交成功")
                     self.navigationController?.popViewController(animated: true)
                     
                 } else {

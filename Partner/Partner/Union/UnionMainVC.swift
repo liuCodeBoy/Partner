@@ -89,6 +89,7 @@ class UnionMainVC: UIViewController {
             return
         }
         NetWorkTool.shareInstance.getNoticeApiList(token: access_token) { [weak self](result, error) in
+            print(access_token)
             if  result?["code"] as? Int == 200  {
                 guard   result != nil else{
                     return
