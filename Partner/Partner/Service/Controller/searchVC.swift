@@ -31,15 +31,16 @@ class searchVC: UIViewController,UITableViewDelegate , UITableViewDataSource, UI
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        var  fuzzy  : String?
-        if textField.text != "" {
-            fuzzy = textField.text! + string
-        }else{
-            fuzzy =  string
-        }
-        if string.count == 0 && textField.text?.count == 1 {
-            fuzzy = ""
-        }
+        let currentText = textField.text ?? ""
+        let fuzzy = (currentText as NSString).replacingCharacters(in: range, with: string)
+//        if textField.text != "" {
+//            fuzzy = textField.text! + string
+//        }else{
+//            fuzzy =  string
+//        }
+//        if string.count == 0 && textField.text?.count == 1 {
+//            fuzzy = ""
+//        }
       
         self.newsModelArr.removeAll()
         setdeafultStatus()
@@ -121,7 +122,7 @@ extension searchVC {
             name = fuzzy
         }
         NetWorkTool.shareInstance.searchProvider(pageNum: pageNum, pageSize: 10, fuzzy: fuzzy, type: type, name: name) { [weak self](info, error) in
-
+            print(fuzzy)
             if error == nil {
                 // MARK:- judge the return data from server
                 if info?["code"] as? Int == 200 {

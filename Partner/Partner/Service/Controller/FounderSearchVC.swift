@@ -33,15 +33,8 @@ class FounderSearchVC: UIViewController,UITableViewDelegate , UITableViewDataSou
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        var  fuzzy  : String?
-        if textField.text != "" {
-            fuzzy = textField.text! + string
-        }else{
-            fuzzy =  string
-        }
-        if string.count == 0 && textField.text?.count == 1 {
-            fuzzy = ""
-        }
+        let currentText = textField.text ?? ""
+        let fuzzy = (currentText as NSString).replacingCharacters(in: range, with: string)
         
         self.newsModelArr.removeAll()
         setdeafultStatus()

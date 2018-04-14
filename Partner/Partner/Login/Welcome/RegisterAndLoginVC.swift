@@ -13,6 +13,7 @@ class RegisterAndLoginVC: UIViewController {
     @IBOutlet weak var pwdNumField: UITextField!
     @IBOutlet weak var identifyCodeField: UITextField!
     @IBOutlet weak var identifyingbtn: UIButton!
+    @IBOutlet weak var lineCenterX: NSLayoutConstraint!
     
     //登录控件
     @IBOutlet weak var loginPhoneTextField: UITextField!
@@ -99,7 +100,8 @@ class RegisterAndLoginVC: UIViewController {
                             //偏好设置
                             let userDefault =  UserDefaults.standard
                             //存储数据
-                            userDefault.set(token, forKey: "token")
+//                            userDefault.set(token, forKey: "token")
+                             userDefault.set(token, forKey: "temptoken")
                             access_token = token
                             let uid = resultDict?["uid"]
                             userDefault.set(uid, forKey: "uid")
@@ -112,6 +114,14 @@ class RegisterAndLoginVC: UIViewController {
                         if let finished  = resultDict!["finished"] {
                             if finished as? Bool == true{
                                 //回跳主界面
+                                if let access_token = UserDefaults.standard.string(forKey: "temptoken"){
+                                    let userDefault =  UserDefaults.standard
+                                    //存储数据
+                                    userDefault.set(access_token, forKey: "token")
+                                    //同步数据
+                                    userDefault.synchronize()
+                                }
+                                
                                 self?.dismiss(animated: true, completion: nil)
                             }else{
                                 //跳转到对应的填充页面
@@ -168,17 +178,13 @@ class RegisterAndLoginVC: UIViewController {
     
     
     @IBAction func loginInAction(_ sender: Any) {
-        UIView.animate(withDuration: 0.25) {
-            self.lineView.center.x = self.loginInBtn.center.x
-        }
+        self.lineCenterX.constant = self.loginInBtn.frame.minX - self.lineView.frame.width/2.2
         loginView.isHidden = false
         registerView.isHidden = true
     }
     
     @IBAction func registerActionfunc(_ sender: Any) {
-        UIView.animate(withDuration: 0.25) {
-           self.lineView.center.x = self.registerAction.center.x
-        }
+        self.lineCenterX.constant = self.registerAction.frame.minX - self.lineView.frame.width/2.2
         loginView.isHidden = true
         registerView.isHidden = false
     }
@@ -214,7 +220,8 @@ extension RegisterAndLoginVC {
 
     //注册
     @IBAction func RegisterAction(_ sender: Any) {
-              if phoneNumLab.text == "" {
+   
+        if phoneNumLab.text == "" {
             self.presentHintMessage(hintMessgae: "请输入手机号码", completion: nil)
             return
         }else if pwdNumField.text == "" {
@@ -232,9 +239,18 @@ extension RegisterAndLoginVC {
             if error == nil {
                 // MARK:- judge the return data from server
                 if result?["code"] as? Int == 200 {
-                    self?.presentHintMessage(hintMessgae: result!["msg"] as! String, completion: nil)
-                    self?.navigationController?.popViewController(animated: true)
-                
+                    self?.presentHintMessage(hintMessgae:"注册成功", completion: nil)
+                    if  let token = result?["token"] as? String {
+                        //偏好设置
+                        let userDefault =  UserDefaults.standard
+                        //存储数据
+                        userDefault.set(token, forKey: "temptoken")
+                        access_token = token
+                        //同步数据
+                        userDefault.synchronize()
+                    }
+                    let  destVC   = self?.chooseDesVC(page: 1)
+                    self?.navigationController?.pushViewController(destVC!, animated: true)
                 } else {
                     let  errorShow  =  result!["msg"] as! String
                     self?.presentHintMessage(hintMessgae: errorShow, completion: nil)

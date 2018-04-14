@@ -11,7 +11,7 @@ class FounderFliterVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         @IBOutlet weak var sureBtn: ShadowButton!
         
         var  type = 1
-        var  headerArr = ["投资行业","城市","轮次"]
+        var  headerArr = ["投资行业","轮次"]
         var  rowArr = [Int]()
         var  commentList = [[commListModel]]()
         var  buttonArr = [UIButton]()
@@ -128,7 +128,7 @@ class FounderFliterVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return  self.commentList.count > 0 ? CGFloat((self.commentList[indexPath.section].count / 2 + 1) * 48) : 0
+            return  self.commentList.count > 0 ? CGFloat((self.commentList[indexPath.section].count / 3 + 1) * 48) : 0
         }
         
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

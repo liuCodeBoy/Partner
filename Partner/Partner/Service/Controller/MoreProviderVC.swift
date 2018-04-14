@@ -54,20 +54,10 @@ class MoreProviderVC: UIViewController {
             return
         }
         
-        NetWorkTool.shareInstance.supportCommit(token: access_token, typeId: id, suppContent: "") {(result, error) in
-            if error != nil {
-                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
-                return
-            }
-            if result!["code"] as! Int == 200 {
-                // TODO:- save data into model
-                SCLAlertView().showSuccess("", subTitle: "\(String(describing: result!["msg"]!))")
-                self.navigationController?.popViewController(animated: true)
-                
-            } else {
-                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
-            }
-        }
+        let  showProviderVC = UIStoryboard.init(name: "Service", bundle: nil).instantiateViewController(withIdentifier: "GetProvideVCID") as! GetProvideVC
+        showProviderVC.provideID = id
+        showProviderVC.showTypeName = showTypeName
+        self.navigationController?.pushViewController(showProviderVC, animated: true)
     }
     
     func getPhoneNum(){
@@ -113,7 +103,8 @@ class MoreProviderVC: UIViewController {
           let row = CGFloat(i / 2)
           let col = CGFloat(i % 2)
           let width = CGFloat(screenWidth / 2)
-          let button = UIButton.init(frame: CGRect.init(x: col * width , y: row * 80, width: width, height: 80))
+          let heigh = CGFloat(screenHeight / 10)
+          let button = UIButton.init(frame: CGRect.init(x: col * width , y: row * heigh, width: width, height: heigh))
           button.setTitle(model.typeName, for: .normal)
           button.setTitleColor(#colorLiteral(red: 0.6745098233, green: 0.7921568751, blue: 0.8549019694, alpha: 1), for: .normal)
           button.setTitleColor(UIColor.white, for: .selected)
@@ -133,6 +124,7 @@ class MoreProviderVC: UIViewController {
                      tempBtn.isSelected = false
                      tempBtn.backgroundColor = UIColor.init(white: 1.0, alpha: 0.5)
                      self.provideID = btn.foldTag
+                     self.showTypeName = btn.titleLabel?.text
                 }else{
                      btn.isSelected = true
                      btn.backgroundColor = #colorLiteral(red: 0.6745098233, green: 0.7921568751, blue: 0.8549019694, alpha: 1)
