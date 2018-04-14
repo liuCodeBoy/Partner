@@ -55,12 +55,14 @@ class ProfileEditInfomationInputDetialViewController: UIViewController {
         
         // modify detial info
         if segue.identifier == "PEIInputDetialSegue" {
-            switch previousIndexPath?.row {
-            case 0: profileModel?.userName = inputText
-            case 3: profileModel?.mail = inputText
-            case 4: profileModel?.compName = inputText
-            case 5: profileModel?.jobName = inputText
-            default: break
+            if let row = previousIndexPath?.row {
+                switch row {
+                case 0: profileModel?.userName = inputText
+                case 3: profileModel?.mail = inputText
+                case 4: profileModel?.compName = inputText
+                case 5: profileModel?.jobName = inputText
+                default: break
+                }
             }
             showLabel?.text = inputText
         }

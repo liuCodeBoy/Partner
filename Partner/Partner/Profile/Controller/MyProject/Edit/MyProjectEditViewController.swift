@@ -32,6 +32,11 @@ class MyProjectEditViewController: UIViewController {
         didSet {
             // MARK:- reload model
             tableView.modelView = modelView
+            
+            // 项目状态 0未提交 1审核中 2审核通过 3审核不通过
+            if modelView?.status == 0 {
+                settingsBtn.isHidden = true
+            }
         }
     }
     
@@ -40,6 +45,7 @@ class MyProjectEditViewController: UIViewController {
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBOutlet weak var settingsBtn: UIButton!
     
     @IBOutlet weak var tableView: ProjectEditlTableView!
     
