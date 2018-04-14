@@ -19,6 +19,10 @@ class PartnerTimePicker: UIView {
     
 
     @IBAction func closeBtnClicked(_ sender: UIButton) {
+        
+        if let superView = self.superview {
+            superView.endEditing(true)
+        }
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.backgroundView.alpha = 0
             self.pickerContainerView.transform = CGAffineTransform(translationX: 0, y: 266)

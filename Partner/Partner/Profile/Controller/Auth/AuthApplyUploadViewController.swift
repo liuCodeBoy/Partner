@@ -10,6 +10,8 @@ import UIKit
 class AuthApplyUploadViewController: UIViewController {
     
     var isInvestor = true
+    
+    var auth = 0
 
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -31,14 +33,16 @@ class AuthApplyUploadViewController: UIViewController {
     }
     
     @IBAction func enterpriseAuthClicked(_ sender: ShadowButton) {
-        investAuth.reverseSelected()
-        enterpriseAuth.setSelected()
-        applyInvestView.isHidden = true
-        applyEnterpriseView.isHidden = false
-    }
-    
-    override func viewWillLayoutSubviews() {
-
+        
+        if auth == 2 {
+            investAuth.reverseSelected()
+            enterpriseAuth.setSelected()
+            applyInvestView.isHidden = true
+            applyEnterpriseView.isHidden = false
+        } else {
+            presentHintMessage(hintMessgae: "请先完成投资认证", completion: nil)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +62,8 @@ class AuthApplyUploadViewController: UIViewController {
             applyInvestView.isHidden = true
             applyEnterpriseView.isHidden = false
         }
+        
+        judgeAuthStatus()
         
     }
     
@@ -79,4 +85,19 @@ class AuthApplyUploadViewController: UIViewController {
         }
     }
 
+}
+
+extension AuthApplyUploadViewController {
+    
+    func judgeAuthStatus() {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        NetWorkTool.shareInstance.getAuthInfo(token: access_token!, type: 1) { (result, error) in
+            if result != nil, let resultDict = result!["result"] as? [String : AnyObject] {
+                self.auth = resultDict["auth"] as! Int //认证状态 0未认证 1认证中 2通过 3不通过
+            }
+        }
+    }
 }

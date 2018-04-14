@@ -113,4 +113,15 @@ extension NetWorkTool {
     }
     
     
+    func getCityAndCommunityList(finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
+        let urlString = "http://106.15.199.8/qm/community/api/getCityAndCommunityList.do"
+        request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            finished(resultDict, error)
+        }
+    }
+    
 }

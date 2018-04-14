@@ -349,15 +349,39 @@ class AuthApplyInvestViewController: UIViewController, ImagePickerDelegate {
                         weakSelf?.rejectedView.isHidden = true
                         weakSelf?.inReviewView.isHidden = true
                     } else {
-                        // verified
                         // TODO:- save to model
                         let resultDict = result!["result"] as! [String : AnyObject]
                         weakSelf?.invViewModel = AuthInvestInfoModel.mj_object(withKeyValues: resultDict)
                         // TODO:- show infomation
-                        weakSelf?.investAuthScrollView.isHidden = true
-                        weakSelf?.iinvestAuthScrollView.isHidden = false
-                        weakSelf?.rejectedView.isHidden = false
-                        weakSelf?.inReviewView.isHidden = false
+                        let auth = weakSelf?.invViewModel?.auth as! Int //0未认证 1认证中 2通过 3不通过
+                        
+                        switch auth {
+                        case 0:
+                            weakSelf?.investAuthScrollView.isHidden = false
+                            weakSelf?.iinvestAuthScrollView.isHidden = true
+                            weakSelf?.rejectedView.isHidden = true
+                            weakSelf?.inReviewView.isHidden = true
+                        case 1:
+                            weakSelf?.investAuthScrollView.isHidden = true
+                            weakSelf?.iinvestAuthScrollView.isHidden = false
+                            weakSelf?.rejectedView.isHidden = true
+                            weakSelf?.inReviewView.isHidden = false
+                        case 2:
+                            weakSelf?.investAuthScrollView.isHidden = true
+                            weakSelf?.iinvestAuthScrollView.isHidden = false
+                            weakSelf?.rejectedView.isHidden = true
+                            weakSelf?.inReviewView.isHidden = true
+                        case 3:
+                            weakSelf?.investAuthScrollView.isHidden = true
+                            weakSelf?.iinvestAuthScrollView.isHidden = false
+                            weakSelf?.rejectedView.isHidden = false
+                            weakSelf?.inReviewView.isHidden = true
+                        default: break
+                        }
+//                        weakSelf?.investAuthScrollView.isHidden = true
+//                        weakSelf?.iinvestAuthScrollView.isHidden = false
+//                        weakSelf?.rejectedView.isHidden = false
+//                        weakSelf?.inReviewView.isHidden = false
                     }
                 } else {
                     // not verified

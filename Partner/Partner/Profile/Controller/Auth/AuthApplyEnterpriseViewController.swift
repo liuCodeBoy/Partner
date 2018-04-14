@@ -267,10 +267,9 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
         uploadEnterpriseAuthInfo()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
         
-        guard UserDefaults.standard.string(forKey: "access_token") != nil else {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
             presentLoginController()
             return
         }
@@ -284,6 +283,11 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
             inReviewHCons.constant += 14
             rejectHCons.constant += 14
         }
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
     }
     
@@ -342,7 +346,7 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
             }
             if result!["code"] as! Int == 200 {
                 // TODO:- judge the auth status
-                if let resultDict = result!["result"] as? [String : AnyObject] {
+                if (result!["result"] as? [String : AnyObject]) != nil {
                     if let auth = result!["result"]!["auth"] as? Int, auth == 0 {
                         // not verified
                         // TODO:- hide cover view
@@ -351,13 +355,36 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
                         weakSelf?.rejectedView.isHidden = true
                         weakSelf?.inReviewView.isHidden = true
                     } else {
-                        // verified
+                        // TODO:- save to model
+                        let resultDict = result!["result"] as! [String : AnyObject]
                         weakSelf?.entViewModel = AuthEnterpriseInfoModel.mj_object(withKeyValues: resultDict)
+
                         // TODO:- show infomation
-                        weakSelf?.enterpriseAuthScrollView.isHidden = true
-                        weakSelf?.eenterpriseAuthScrollView.isHidden = false
-                        weakSelf?.rejectedView.isHidden = false
-                        weakSelf?.inReviewView.isHidden = false
+                        let auth = weakSelf?.entViewModel?.auth as! Int //0未认证 1认证中 2通过 3不通过
+                        
+                        switch auth {
+                        case 0:
+                            weakSelf?.enterpriseAuthScrollView.isHidden = false
+                            weakSelf?.eenterpriseAuthScrollView.isHidden = true
+                            weakSelf?.rejectedView.isHidden = true
+                            weakSelf?.inReviewView.isHidden = true
+                        case 1:
+                            weakSelf?.enterpriseAuthScrollView.isHidden = true
+                            weakSelf?.eenterpriseAuthScrollView.isHidden = false
+                            weakSelf?.rejectedView.isHidden = true
+                            weakSelf?.inReviewView.isHidden = false
+                        case 2:
+                            weakSelf?.enterpriseAuthScrollView.isHidden = true
+                            weakSelf?.eenterpriseAuthScrollView.isHidden = false
+                            weakSelf?.rejectedView.isHidden = true
+                            weakSelf?.inReviewView.isHidden = true
+                        case 3:
+                            weakSelf?.enterpriseAuthScrollView.isHidden = true
+                            weakSelf?.eenterpriseAuthScrollView.isHidden = false
+                            weakSelf?.rejectedView.isHidden = false
+                            weakSelf?.inReviewView.isHidden = true
+                        default: break
+                        }
                     }
                 } else {
                     // not verified
