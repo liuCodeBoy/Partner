@@ -2120,6 +2120,7 @@
                         <viewLayoutGuide key="safeArea" id="GfK-Fi-J8m"/>
                     </view>
                     <connections>
+                        <outlet property="settingsBtn" destination="Irq-62-9uG" id="8FD-lJ-gUl"/>
                         <outlet property="tableView" destination="bQk-KF-9rD" id="CI3-ad-Mnf"/>
                     </connections>
                 </viewController>
@@ -4155,8 +4156,8 @@
                                                         <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9r-qm-3m5">
-                                                        <rect key="frame" x="306" y="17.666666666666686" width="43" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9r-qm-3m5">
+                                                        <rect key="frame" x="340" y="17.666666666666686" width="9" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -4180,9 +4181,6 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="inputTitleID" value="MPEFNEstimate"/>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="showInputVC:" destination="45W-Qs-iN2" eventType="touchUpInside" id="Ppz-SL-U0s"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5715,7 +5713,7 @@
         <image name="right_arrow" width="6" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NpH-Vf-cbf"/>
+        <segue reference="TiT-st-EoA"/>
         <segue reference="4K2-Dz-dxN"/>
         <segue reference="JWp-2j-dqt"/>
         <segue reference="DxQ-Aa-YgY"/>

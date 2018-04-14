@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 let passProjectIDNOtification = "com.Partner.projectID.pass"
 
@@ -43,6 +44,13 @@ class ProjectListTableView: UITableView, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
         let id = modelArray[indexPath.row].projectId as! Int
+        
+        let status = modelArray[indexPath.row].status as! Int
+        // 项目状态，0未融资 1审核中 2通过 3审核不通过
+        if status == 1 {
+            SCLAlertView().showNotice("审核中无法查看", subTitle: "")
+            return nil
+        }
         
         if passIDClosure != nil {
             passIDClosure!(id)

@@ -105,38 +105,6 @@ class ProfileViewController: UIViewController {
             avatar.image = #imageLiteral(resourceName: "profile_avatar_placeholder")
         }
     }
-
-    @IBAction func clearCacheClicked(_ sender: UIButton) {
-        // 取出cache文件夹路径
-        let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
-        
-        // 取出文件夹下所有文件数组
-        let files = FileManager.default.subpaths(atPath: cachePath!)
-        
-        let alert = UIAlertController(title: "提示", message: "是否清除缓存", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let alertConfirm = UIAlertAction(title: "确定", style: UIAlertActionStyle.default) { (alertConfirm) -> Void in
-            // 点击确定时开始删除
-            for p in files!{
-                // 拼接路径
-                let path = cachePath!.appendingFormat("/\(p)")
-                // 判断是否可以删除
-                if(FileManager.default.fileExists(atPath: path)){
-                    // 删除
-                    try? FileManager.default.removeItem(atPath: path)
-                }
-            }
-        }
-        alert.addAction(alertConfirm)
-        let cancle = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (cancle) -> Void in
-            
-        }
-        alert.addAction(cancle)
-        // 提示框弹出
-        present(alert, animated: true) { () -> Void in
-            
-        }
-    }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "ProfileApplyAuthSegue" {
