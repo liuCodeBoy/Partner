@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zmd-8y-eO6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zmd-8y-eO6">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,7 +60,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auv-fh-azK">
-                                        <rect key="frame" x="173" y="49" width="28.666666666666657" height="17"/>
+                                        <rect key="frame" x="173" y="49" width="29" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -226,7 +226,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyW-uq-bky">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                         <connections>
-                                                            <segue destination="yFt-b3-gE6" kind="show" id="1IB-GB-bwN"/>
+                                                            <segue destination="yFt-b3-gE6" kind="show" identifier="ProfileMyProjects" id="1IB-GB-bwN"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -559,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hb-dM-Ki8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="469.60000000000002" y="169.21182266009853"/>
+            <point key="canvasLocation" x="-516" y="167"/>
         </scene>
         <!--Auth-->
         <scene sceneID="2jU-88-CI1">
@@ -567,7 +567,7 @@
                 <viewControllerPlaceholder storyboardName="Auth" id="DE1-Yd-BfS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xjm-0f-SMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="153"/>
+            <point key="canvasLocation" x="199" y="151"/>
         </scene>
         <!--ProfileEdit-->
         <scene sceneID="f6y-vw-snD">
@@ -575,7 +575,7 @@
                 <viewControllerPlaceholder storyboardName="ProfileEdit" id="XRu-AO-uRl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqT-vt-vzm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213" y="244"/>
+            <point key="canvasLocation" x="227" y="242"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="Bjy-xX-PEh">
@@ -583,7 +583,7 @@
                 <viewControllerPlaceholder storyboardName="Feedback" id="Oem-Iq-KGE" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feN-tV-fQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1206" y="299"/>
+            <point key="canvasLocation" x="220" y="296"/>
         </scene>
         <!--ProjectCollection-->
         <scene sceneID="mKg-wP-GeK">
@@ -591,7 +591,7 @@
                 <viewControllerPlaceholder storyboardName="ProjectCollection" id="e9e-Cc-lbX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCA-YR-3Qz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1246" y="189"/>
+            <point key="canvasLocation" x="260" y="186"/>
         </scene>
         <!--Settings-->
         <scene sceneID="pT1-iT-S0f">
@@ -599,7 +599,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="fLK-U3-gha" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRq-pc-R3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1201" y="40"/>
+            <point key="canvasLocation" x="215" y="38"/>
         </scene>
         <!--MyHomePage-->
         <scene sceneID="OGl-UK-efn">
@@ -607,7 +607,7 @@
                 <viewControllerPlaceholder storyboardName="MyHomePage" id="CJ0-Bn-fVm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2b-5N-9V6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1226" y="76"/>
+            <point key="canvasLocation" x="240" y="73"/>
         </scene>
         <!--MyProject-->
         <scene sceneID="sUp-T4-u5b">
@@ -615,7 +615,7 @@
                 <viewControllerPlaceholder storyboardName="MyProject" id="yFt-b3-gE6" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7MA-rg-KZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1210" y="114"/>
+            <point key="canvasLocation" x="224" y="112"/>
         </scene>
         <!--我的-->
         <scene sceneID="fSr-Y6-xDu">
@@ -635,7 +635,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDc-fA-tca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-391" y="169"/>
+            <point key="canvasLocation" x="-1377" y="166"/>
         </scene>
     </scenes>
     <resources>

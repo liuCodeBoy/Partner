@@ -16,6 +16,7 @@ class ProfileSettingsViewController: UIViewController {
     @IBOutlet weak var phoneNumBindingLbl: UILabel!
     @IBOutlet weak var qqBindingStatus: UILabel!
     @IBOutlet weak var weiboBindingStatus: UILabel!
+    
     @IBOutlet weak var cacheDataLbl: UILabel!
     
     var cacheSpace: Int = 0

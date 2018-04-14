@@ -61,6 +61,7 @@ class ProfileViewController: UIViewController {
                 let per = Double(truncating: percent) * 0.01
                 dataIntegrityProgressWidthCons.constant = CGFloat(120 * (1 - per))
             }
+            
         }
     }
     
@@ -144,6 +145,12 @@ class ProfileViewController: UIViewController {
                     presentHintMessage(hintMessgae: "普通用户不能申请认证", completion: nil)
                     return false
                 }
+            }
+        }
+        if identifier == "ProfileMyProjects" {
+            if let auth = viewModel?.auth, auth == 3 {
+                presentHintMessage(hintMessgae: "普通用户无法查看我的项目", completion: nil)
+                return false
             }
         }
         return true

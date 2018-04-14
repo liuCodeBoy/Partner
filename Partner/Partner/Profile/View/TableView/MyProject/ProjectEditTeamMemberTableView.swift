@@ -61,6 +61,32 @@ class ProjectEditTeamMemberTableView: UITableView, UITableViewDelegate, UITableV
         return indexPath
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+    
+    //MARK: - left slide to delete row
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //TODO: remove form data source
+        if editingStyle == .delete {
+            // MARK:- post request to server
+            
+            deleteMember(memberId: modelArray[indexPath.row].id as! Int)
+            
+            modelArray.remove(at: indexPath.row)
+            
+            tableView.reloadData()
+            //            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
+            
+        }
+        
+    }
+    
+    
 }
 
 extension ProjectEditTeamMemberTableView {
@@ -85,6 +111,28 @@ extension ProjectEditTeamMemberTableView {
                     let model = ProjectMemberModel.mj_object(withKeyValues: dict)
                     weakSelf?.modelArray.append(model!)
                 }
+                
+            } else {
+                SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
+            }
+        }
+        
+    }
+    
+    // MARK:- delete member
+    func deleteMember(memberId: Int) {
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            return
+        }
+        guard let id = projID else { return }
+        
+        NetWorkTool.shareInstance.deleteMember(token: access_token!, id: id, memberId: memberId) { (result, error) in
+            if error != nil {
+                SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                SCLAlertView().showSuccess("删除成功", subTitle: "")
                 
             } else {
                 SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
