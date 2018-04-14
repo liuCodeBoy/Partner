@@ -413,7 +413,7 @@ extension NetWorkTool {
                      eduDesc        : String?,
                      finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         
-        let urlString = "http://106.15.199.8/qm/user/api/saveUserEntrepreneurship.do"
+        let urlString = "http://106.15.199.8/qm/user/api/saveUserEdu.do"
         var parameters = ["token"            : token,
                           "eduSchool"        : eduSchool,
                           "eduSpecialty"     : eduSpecialty,

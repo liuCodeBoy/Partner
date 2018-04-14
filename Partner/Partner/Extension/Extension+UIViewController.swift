@@ -55,14 +55,15 @@ extension UIViewController {
     
     // MARK:- make a phone call
     func makePhoneCall(with number: String) {
-        let alert = UIAlertController(title: number, message: "", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "呼叫", style: .default) { (_) in
-            UIApplication.shared.openURL(URL.init(string: "tel://\(number)")!)
-        }
-        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        self.present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: number, message: "", preferredStyle: .alert)
+//        let ok = UIAlertAction(title: "呼叫", style: .default) { (_) in
+//            UIApplication.shared.openURL(URL.init(string: "tel://\(number)")!)
+//        }
+//        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+//        alert.addAction(ok)
+//        alert.addAction(cancel)
+//        self.present(alert, animated: true, completion: nil)
+        UIApplication.shared.openURL(URL.init(string: "tel://\(number)")!)
     }
     
     // MARK:- present login view controller
@@ -123,6 +124,7 @@ extension UIViewController {
         switch pickerType {
         case .enterpriseType: pickerTitle = "选择企业类型"
         case .projLocation, .enterpriseLocation: pickerTitle = "选择地区"
+        case .community: pickerTitle = "选择社区"
         }
         picker.pickerTitle.text = pickerTitle
         picker.type = pickerType
@@ -132,6 +134,8 @@ extension UIViewController {
             picker.projModel = pickerModel as? ProjectModel
         } else if pickerModel is AuthModel {
             picker.authModel = pickerModel as? AuthModel
+        } else if pickerModel is ProfileInfoModel {
+            picker.profileModel = pickerModel as? ProfileInfoModel
         }
         
         picker.twoDimensionArray = dictData

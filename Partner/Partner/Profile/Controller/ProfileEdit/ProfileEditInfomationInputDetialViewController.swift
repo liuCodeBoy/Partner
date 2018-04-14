@@ -13,6 +13,9 @@ class ProfileEditInfomationInputDetialViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    var showLabel: UILabel?
+    var profileModel: ProfileInfoModel?
+    
     var previousIndexPath: IndexPath?
     var segue: UIStoryboardSegue?
     
@@ -49,6 +52,19 @@ class ProfileEditInfomationInputDetialViewController: UIViewController {
         guard let segue = segue else { return }
         // MARK:- modify the edit profile infomation
         let source = segue.source as! ProfileEditInfomationViewController
+        
+        // modify detial info
+        if segue.identifier == "PEIInputDetialSegue" {
+            switch previousIndexPath?.row {
+            case 0: profileModel?.userName = inputText
+            case 3: profileModel?.mail = inputText
+            case 4: profileModel?.compName = inputText
+            case 5: profileModel?.jobName = inputText
+            default: break
+            }
+            showLabel?.text = inputText
+        }
+        
         // if is the hobby tag selector
         if segue.identifier!.hasPrefix("PEICustomHobbyTagSegue") {
             if let text = inputTF.text, text.count > 4 {

@@ -23,6 +23,9 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var backView: UIView!
     @IBAction func cancelBtnClicked(_ sender: UIButton) {
+        if let superView = self.superview {
+            superView.endEditing(true)
+        }
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.backView.alpha = 0
             self.picContainerView.transform = CGAffineTransform(translationX: 0, y: 276)
@@ -32,6 +35,9 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
     }
     
     @IBAction func confirmBtnClicked(_ sender: UIButton) {
+        if let superView = self.superview {
+            superView.endEditing(true)
+        }
         if saveDataClosure != nil {
             saveDataClosure!(beginDate!, endDate!, time!)
         }
@@ -47,6 +53,9 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        if let superView = self.superview {
+            superView.endEditing(true)
+        }
         // get the curret year an create an array
         let yaer = currentDate.year()
         current = "\(yaer)/\(currentDate.month())月"
@@ -70,6 +79,9 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
             self.backView.alpha = 0.3
             self.picContainerView.transform = CGAffineTransform(translationX: 0, y: -276)
         }, completion: nil)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cancelBtnClicked(_:)))
+        backView.addGestureRecognizer(tap)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

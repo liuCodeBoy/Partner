@@ -1068,7 +1068,6 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qf5-a8-8Y3">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                                                 <connections>
-                                                                    <action selector="showInputVC:" destination="fKZ-7o-ba9" eventType="touchUpInside" id="bHV-6c-Q9j"/>
                                                                     <action selector="workTimeClicked:" destination="fKZ-7o-ba9" eventType="touchUpInside" id="4Io-vW-ILS"/>
                                                                 </connections>
                                                             </button>
@@ -1181,7 +1180,6 @@
                         <outlet property="invPhoneNumLbl" destination="Mug-3V-jYE" id="JUx-tA-QwA"/>
                         <outlet property="invRealNameLbl" destination="DLq-tK-lJs" id="byz-7h-QaV"/>
                         <outlet property="invRoundLbl" destination="jrG-xZ-eZf" id="hIh-3X-Xuj"/>
-                        <outlet property="invSumbitBtn" destination="zfH-bT-mZO" id="CiD-uH-TEW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYM-hh-H6F" userLabel="First Responder" sceneMemberID="firstResponder"/>

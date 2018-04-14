@@ -27,11 +27,6 @@ class MyHomePageSelfExperienceContainerViewController: UIViewController, UITable
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        guard UserDefaults.standard.string(forKey: "token") != nil else {
-            presentLoginController()
-            return
-        }
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -59,17 +54,7 @@ class MyHomePageSelfExperienceContainerViewController: UIViewController, UITable
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        var count = 0
-        if entreExpModelArray.count != 0 {
-            count += 1
-        }
-        if workExpModelArray.count != 0 {
-            count += 1
-        }
-        if eduExpModelArray.count != 0 {
-            count += 1
-        }
-        return count
+        return 3
     }
     
     
@@ -139,6 +124,12 @@ class MyHomePageSelfExperienceContainerViewController: UIViewController, UITable
 extension MyHomePageSelfExperienceContainerViewController {
     // MARK:- network request
     func getEntrepreneurInfo() {
+        
+        guard UserDefaults.standard.string(forKey: "token") != nil else {
+            presentLoginController()
+            return
+        }
+        
         NetWorkTool.shareInstance.getMyHomePageInfo(token: access_token!) { (result, error) in
             weak var weakSelf = self
             if error != nil {

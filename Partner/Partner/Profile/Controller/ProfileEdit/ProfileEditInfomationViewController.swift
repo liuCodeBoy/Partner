@@ -11,6 +11,8 @@ import Lightbox
 
 class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ImagePickerDelegate {
     
+    var communityData = [[String : AnyObject]]()
+    
     var viewModel: ProfileInfoModel? {
         didSet {
             if let avatar = viewModel?.userImgUrl {
@@ -62,7 +64,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 profileInfoTableView.cellForRow(at: IndexPath.init(row: 5, section: 1))?.detailTextLabel?.text = "请输入"
             }
             // TODO:- post request to get community name
-            if let community = viewModel?.communityId {
+            if let community = viewModel?.commName {
                 let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 6, section: 1))
                 cell?.detailTextLabel?.text = "\(community)"
             } else {
@@ -205,6 +207,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         profileInfoTableView.dataSource = self
         
         notificationAddKeyboardObserver()
+        
+        loadData()
+        
         
     }
     
@@ -495,7 +500,12 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 present(sheet, animated: true, completion: {
                     return
                 })
-            case 6: print("6")
+            case 6:
+                // change community
+                if let label = tableView.cellForRow(at: IndexPath.init(row: 6, section: 1))?.detailTextLabel {
+                    popupSecondaryPicker(bindingLabel: label, type: .community, model: viewModel!, componentDict: communityData)
+                }
+                
             case 7: print("7")
             default: break
             }
@@ -510,6 +520,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
             destnationVC?.navTitle = detialText
             destnationVC?.previousIndexPath = indexPath
             destnationVC?.inputPlaceholder = "请输入你的\(String(describing: detialText!))"
+            
+            destnationVC?.profileModel = viewModel
+            destnationVC?.showLabel = tableView.cellForRow(at: indexPath)?.detailTextLabel
         }
     }
     
@@ -597,6 +610,26 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func loadData() {
+        
+        NetWorkTool.shareInstance.getCityAndCommunityList { (result, error) in
+            weak var weakSelf = self
+            if error != nil {
+                weakSelf?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)
+                print(error as AnyObject)
+                return
+            }
+            if result!["code"] as! Int == 200 {
+                // TODO:- save province and city an array
+                for dict in result!["result"]! as! [[String : AnyObject]] {
+                    weakSelf?.communityData.append(dict)
+                }
+            } else {
+                weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
+            }
+        }
     }
 
 }

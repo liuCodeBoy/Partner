@@ -7,12 +7,16 @@
 
 import UIKit
 
-class MyHomePageAddEntrepreneurshipExperienceViewController: UIViewController, UITextViewDelegate {
+class MyHomePageAddEntrepreneurshipExperienceViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     
     var isEdit: Bool = false
     
     @IBAction func popBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
     
     var modelView: EntrepreneurshipModel? = EntrepreneurshipModel()

@@ -11,6 +11,7 @@ enum SecondaryPickerType: String {
     case enterpriseType = "enterpriseType"
     case enterpriseLocation = "enterpriseLocation"
     case projLocation = "projLocation"
+    case community = "community"
 }
 
 class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -19,6 +20,7 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var projModel: ProjectModel?
     var authModel: AuthModel?
+    var profileModel: ProfileInfoModel?
     
     var twoDimensionArray = [[String : AnyObject]]()
     
@@ -117,6 +119,17 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
                 // save the default id
                 projModel?.areaId = secondaryComponentDictArray[0]["id"] as? NSNumber
                 inputLbl?.text = secondaryComponentDictArray[0]["name"] as? String
+
+            case .community:
+                // save secondary component data source
+                secondaryComponentDictArray = twoDimensionArray[firstComponentRows]["commList"] as! [[String: AnyObject]]
+                for dict in secondaryComponentDictArray {
+                    let city = dict["name"] as! String
+                    secondaryComponentArray.append(city)
+                }
+                // save the default id
+                profileModel?.communityId = secondaryComponentDictArray[0]["id"] as? NSNumber
+                inputLbl?.text = secondaryComponentDictArray[0]["name"] as? String
             }
             
             return secondaryComponentArray.count
@@ -168,6 +181,9 @@ class PartnerPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
                     authModel?.typeIds = "\(id)"
                 }
                 inputLbl?.text = secondaryComponentDictArray[row]["typeName"] as? String
+            case .community:
+                profileModel?.communityId = secondaryComponentDictArray[row]["id"] as? NSNumber
+                inputLbl?.text = secondaryComponentDictArray[row]["name"] as? String
             }
         }
     }

@@ -31,7 +31,7 @@ class MyHomePageAddEducationExperienceViewController: UIViewController, UITextVi
                 modelView?.eduDegree = degree
             }
             if let time = viewModel?.eduDate {
-//                timeLbl.text = time
+                timeLbl.text = time
             }
             if let desc = viewModel?.eduDesc {
                 str = desc
@@ -65,6 +65,7 @@ class MyHomePageAddEducationExperienceViewController: UIViewController, UITextVi
         }
     }
     @IBAction func selectDegree(_ sender: UIButton) {
+        self.view.endEditing(true)
         let picker = Bundle.main.loadNibNamed("DegreePicker", owner: nil, options: nil)?.first as! DegreePicker
         picker.frame = UIScreen.main.bounds
         self.view.addSubview(picker)
@@ -77,6 +78,7 @@ class MyHomePageAddEducationExperienceViewController: UIViewController, UITextVi
     }
     
     @IBAction func selectTime(_ sender: UIButton) {
+        self.view.endEditing(true)
         let picker = Bundle.main.loadNibNamed("EntrepreneurshipTimePicker", owner: nil, options: nil)?.first as! EntrepreneurshipTimePicker
         picker.frame = UIScreen.main.bounds
         self.view.addSubview(picker)
