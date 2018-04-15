@@ -40,6 +40,11 @@ class CircleDetailVC: UIViewController {
         commandView.addSubview(circledetailCommandVC.view)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let vc = self.childViewControllers.first as! CircleDetailCommandVC
+        vc.refresh()
+        
+    }
     
     //添加发布按钮
     func   addPushBtn(){

@@ -33,6 +33,7 @@ class CriclePicktrueView: UICollectionView {
     }
     
     
+    
     //设置初始状态
     func setdeafultStatus(){
         self.modelArr.removeAll()

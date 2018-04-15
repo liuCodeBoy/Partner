@@ -19,6 +19,8 @@ class ServiceInvestAndRaiseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        modelArr.removeAll()
+        getSelectedProject()
     }
 
     override func viewDidLoad() {
@@ -26,6 +28,8 @@ class ServiceInvestAndRaiseViewController: UIViewController {
          getSelectedProject()
          getHotInvestorList()
     }
+    
+    
 
 }
 
@@ -146,6 +150,9 @@ extension ServiceInvestAndRaiseViewController: UITableViewDelegate, UITableViewD
             if modelArr.count > 0 {
                 let model = modelArr[indexPath.row]
                 destVC.projID = model.projectId as? Int
+                NetWorkTool.shareInstance.scanProject(token: access_token!, id: (model.projectId as? Int)!, finished: { (result, error) in
+                    
+                })
                 self.navigationController?.pushViewController(destVC, animated: true)
             }
             break
