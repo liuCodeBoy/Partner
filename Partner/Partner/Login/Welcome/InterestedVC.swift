@@ -33,7 +33,7 @@ class InterestedVC: UIViewController {
     //请求标签
     func getTagList(){
         //保存身份选择
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+        guard let access_token = UserDefaults.standard.string(forKey: "temptoken") else {
             return
         }
         NetWorkTool.shareInstance.getTagList(token: access_token, type: 2) { [weak self](result, error) in
@@ -96,7 +96,7 @@ class InterestedVC: UIViewController {
  //完善标签信息
     func perfectTagInfo(selectedStr : String){
         
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+        guard let access_token = UserDefaults.standard.string(forKey: "temptoken") else {
             return
         }
         

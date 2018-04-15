@@ -67,7 +67,7 @@ class ForgetPwdVC: UIViewController {
             if error == nil {
                 // MARK:- judge the return data from server
                 if result?["code"] as? Int == 200 {
-                    self?.presentHintMessage(hintMessgae: result!["msg"] as! String, completion: { (action) in
+                    self?.presentHintMessage(hintMessgae: "修改成功", completion: { (action) in
                         self?.dismiss(animated: true, completion: nil)
                         })
                 } else {

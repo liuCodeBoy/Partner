@@ -94,7 +94,7 @@
                                                 <rect key="frame" x="0.0" y="217" width="375" height="200"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaT-rg-JIh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="562.66666666666663" height="200"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="420" height="200"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RkK-Qc-N4Y" userLabel="HotVoterChild2" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="152" y="10" width="130" height="180"/>
@@ -367,6 +367,7 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="yGT-hq-KNy" firstAttribute="centerY" secondItem="RkK-Qc-N4Y" secondAttribute="centerY" id="3kQ-4R-SVJ"/>
+                                                            <constraint firstAttribute="width" constant="420" id="BJ2-c3-8df"/>
                                                             <constraint firstItem="RkK-Qc-N4Y" firstAttribute="leading" secondItem="RiR-JJ-rsu" secondAttribute="trailing" constant="10" id="Ifx-X0-lAk"/>
                                                             <constraint firstItem="RiR-JJ-rsu" firstAttribute="top" secondItem="eaT-rg-JIh" secondAttribute="top" constant="10" id="Ikq-aV-x4W"/>
                                                             <constraint firstItem="RiR-JJ-rsu" firstAttribute="leading" secondItem="eaT-rg-JIh" secondAttribute="leading" constant="12" id="ilJ-5h-xdg"/>
@@ -379,7 +380,6 @@
                                                     <constraint firstItem="eaT-rg-JIh" firstAttribute="leading" secondItem="o1g-w1-66Z" secondAttribute="leading" id="1jN-eV-kEh"/>
                                                     <constraint firstItem="eaT-rg-JIh" firstAttribute="top" secondItem="o1g-w1-66Z" secondAttribute="top" id="5J2-Uh-TMy"/>
                                                     <constraint firstAttribute="trailing" secondItem="eaT-rg-JIh" secondAttribute="trailing" id="RZ1-i1-S4W"/>
-                                                    <constraint firstItem="eaT-rg-JIh" firstAttribute="width" secondItem="o1g-w1-66Z" secondAttribute="width" multiplier="1.5" id="TpB-fl-ZPm"/>
                                                     <constraint firstAttribute="bottom" secondItem="eaT-rg-JIh" secondAttribute="bottom" id="kOp-0x-Tx2"/>
                                                     <constraint firstItem="eaT-rg-JIh" firstAttribute="height" secondItem="o1g-w1-66Z" secondAttribute="height" id="nWO-l9-NQG"/>
                                                     <constraint firstAttribute="height" constant="200" id="wdF-EG-tpo"/>
@@ -389,7 +389,7 @@
                                                 <rect key="frame" x="0.0" y="474" width="375" height="266"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQQ-7b-aPu" userLabel="ViewHot">
-                                                        <rect key="frame" x="0.0" y="0.0" width="750" height="266"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="690" height="266"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsY-QR-8hN" userLabel="Shadow View1" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="232" y="10" width="230" height="246"/>
@@ -510,6 +510,7 @@
                                                             <constraint firstItem="neb-ex-55n" firstAttribute="width" secondItem="PpC-WY-yuU" secondAttribute="width" id="BMT-1g-QyV"/>
                                                             <constraint firstItem="neb-ex-55n" firstAttribute="leading" secondItem="PpC-WY-yuU" secondAttribute="trailing" constant="10" id="BVH-Lb-izg"/>
                                                             <constraint firstItem="neb-ex-55n" firstAttribute="height" secondItem="PpC-WY-yuU" secondAttribute="height" id="Efs-rP-g37"/>
+                                                            <constraint firstAttribute="width" constant="690" id="OMD-4B-Sru"/>
                                                             <constraint firstItem="pXc-Dg-aj4" firstAttribute="width" secondItem="PpC-WY-yuU" secondAttribute="width" id="gSj-hS-JQ6"/>
                                                             <constraint firstItem="pXc-Dg-aj4" firstAttribute="height" secondItem="PpC-WY-yuU" secondAttribute="height" id="lhK-8f-x6k"/>
                                                             <constraint firstItem="pXc-Dg-aj4" firstAttribute="top" secondItem="PpC-WY-yuU" secondAttribute="top" id="mGr-VS-JuK"/>
@@ -522,7 +523,6 @@
                                                     <constraint firstAttribute="trailing" secondItem="JQQ-7b-aPu" secondAttribute="trailing" id="G34-nJ-oY6"/>
                                                     <constraint firstAttribute="bottom" secondItem="JQQ-7b-aPu" secondAttribute="bottom" id="gw5-vl-hya"/>
                                                     <constraint firstItem="JQQ-7b-aPu" firstAttribute="height" secondItem="p2R-bT-w3k" secondAttribute="height" id="lQL-Hg-UXH"/>
-                                                    <constraint firstItem="JQQ-7b-aPu" firstAttribute="width" secondItem="p2R-bT-w3k" secondAttribute="width" multiplier="2" id="mUa-cI-AWU"/>
                                                     <constraint firstItem="JQQ-7b-aPu" firstAttribute="top" secondItem="p2R-bT-w3k" secondAttribute="top" id="pDO-v3-ULr"/>
                                                     <constraint firstAttribute="height" constant="266" id="wit-7S-QsH"/>
                                                     <constraint firstItem="JQQ-7b-aPu" firstAttribute="leading" secondItem="p2R-bT-w3k" secondAttribute="leading" id="yum-dp-Fsv"/>
