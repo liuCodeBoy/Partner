@@ -52,13 +52,18 @@ class ProfileEditInfomationInputDetialViewController: UIViewController {
         guard let segue = segue else { return }
         // MARK:- modify the edit profile infomation
         let source = segue.source as! ProfileEditInfomationViewController
-        
+        guard inputText != nil else { return }
         // modify detial info
         if segue.identifier == "PEIInputDetialSegue" {
             if let row = previousIndexPath?.row {
                 switch row {
                 case 0: profileModel?.userName = inputText
-                case 3: profileModel?.mail = inputText
+                case 3:
+                    profileModel?.mail = inputText
+                    if inputText!.isValidEmail == false {
+                        presentHintMessage(hintMessgae: "请输入正确的邮箱", completion: nil)
+                        return
+                    }
                 case 4: profileModel?.compName = inputText
                 case 5: profileModel?.jobName = inputText
                 default: break

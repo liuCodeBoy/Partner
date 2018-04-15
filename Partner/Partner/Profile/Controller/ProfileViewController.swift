@@ -116,7 +116,7 @@ class ProfileViewController: UIViewController {
             }
         }
         if identifier == "ProfileMyProjects" {
-            if let auth = viewModel?.auth, auth == 3 {
+            if viewModel?.auth == nil {
                 presentHintMessage(hintMessgae: "普通用户无法查看我的项目", completion: nil)
                 return false
             }

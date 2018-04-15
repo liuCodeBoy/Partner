@@ -92,6 +92,8 @@ class ProjectDetialModel: NSObject {
     @objc var projectId         : NSNumber?
     // 项目状态 0未提交 1审核中 2审核通过 3审核不通过
     @objc var status            : NSNumber?
+    // reEdit
+    @objc var isEdit            : NSNumber?
     @objc var logoUrl           : String?
     @objc var projName          : String?
     @objc var roundName         : String?

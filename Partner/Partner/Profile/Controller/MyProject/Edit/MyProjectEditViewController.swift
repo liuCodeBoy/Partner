@@ -12,7 +12,7 @@ import Lightbox
 
 class MyProjectEditViewController: UIViewController {
     
-    var isEdited = true
+    var isEdited = false
     
     var projID: Int? {
         didSet {
@@ -31,12 +31,19 @@ class MyProjectEditViewController: UIViewController {
     var modelView: ProjectDetialModel? {
         didSet {
             // MARK:- reload model
+            // MARK:- reEdit
+            if isEdited {
+                modelView?.status = 0
+                modelView?.isEdit = 1
+            }
             tableView.modelView = modelView
             
             // 项目状态 0未提交 1审核中 2审核通过 3审核不通过
             if modelView?.status == 0 {
                 settingsBtn.isHidden = true
             }
+            
+            
         }
     }
     
@@ -59,6 +66,7 @@ class MyProjectEditViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(pushEditProjVC(_:)), name: NSNotification.Name.init(pushEditProjBasicInfoNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(presentImagePicker), name: NSNotification.Name.init(presentImagePickerNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deliverProject(_:)), name: NSNotification.Name.init(deliverProjectNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reEditProject(_:)), name: NSNotification.Name.init(reEditProjectNotification), object: nil)
     }
     
     @objc func presentImagePicker() {
@@ -88,7 +96,15 @@ class MyProjectEditViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
-   
+    }
+    
+    @objc func reEditProject(_ notification: Notification) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyProjectEdit") as! MyProjectEditViewController
+        if let id = notification.object as? Int {
+            vc.projID = id
+            vc.isEdited = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
     }
     
@@ -145,6 +161,9 @@ class MyProjectEditViewController: UIViewController {
             case "MPEPushReviewSegue":
                 let dest = destnation as! MyProjectReviewViewController
                 dest.projID = projID
+            case "MPEPushMPRIssueSegue":
+                let dest = destnation as! MyProjectRejectedIssueViewController
+                dest.projId = projID
             default: break
             }
             

@@ -9,6 +9,7 @@ import UIKit
 import SCLAlertView
 
 let deliverProjectNotification = "com.Partner.project.deliver"
+let reEditProjectNotification = "com.Partner.project.reEdit"
 
 class ProjectEditConfirmButtonTableViewCell: UITableViewCell {
     
@@ -69,5 +70,11 @@ class ProjectEditConfirmButtonTableViewCell: UITableViewCell {
         }
         
     }
+    
+    @IBAction func reEditBtnClicked(_ sender: ShadowButton) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name.init(reEditProjectNotification), object: projID, userInfo: nil)
+    }
+    
     
 }

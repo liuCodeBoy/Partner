@@ -10,6 +10,7 @@ import SDWebImage
 import JXPhotoBrowser
 import MJRefresh
 import NVActivityIndicatorView
+import SCLAlertView
 
 class ServiceInvestorBasicInfomationContainerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,PhotoBrowserDelegate {
     
@@ -32,6 +33,7 @@ class ServiceInvestorBasicInfomationContainerViewController: UIViewController, U
     //
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var deliverProjBtn: ShadowButton!
     
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -39,7 +41,27 @@ class ServiceInvestorBasicInfomationContainerViewController: UIViewController, U
             
             // TODO:- single project deliver
             if let userId = self.id, let projectId = self.singleProjID {
-                NetWorkTool.shareInstance.judgeDelierValid(token: access_token!, userId: userId, projectId: projectId, finished: { (result, error) in
+                NetWorkTool.shareInstance.judgeDelierValid(token: access_token!, userId: userId, projectId: projectId, finished: { [weak self](result, error) in
+                    
+                    if result!["code"] as! Int == 200 {
+                        
+                        NetWorkTool.shareInstance.deliverProject(token: access_token!, userId: userId, projectIds: "\(projectId)", finished: { (result, error) in
+                            
+                            if error != nil {
+                                self?.presentConfirmationAlert(hint: "\(String(describing: error))", completion: nil)
+                            }
+                            if result!["code"] as! Int == 200 {
+                                self?.presentHintMessage(hintMessgae: "投递成功", completion: { (_) in
+                                    self?.navigationController?.popViewController(animated: true)
+                                })
+                            } else {
+                                self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!)))", completion: nil)
+                            }
+                            
+                        })
+                    } else {
+                        self?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!)))", completion: nil)
+                    }
                     
                 })
             }
@@ -214,6 +236,19 @@ extension ServiceInvestorBasicInfomationContainerViewController {
         }
         guard self.modelView?.uid != nil else {
             return
+        }
+        
+        NetWorkTool.shareInstance.getMyPageInfo(token: access_token) { [weak self](result, error) in
+            
+            if result!["code"] as! Int == 200 {
+                let model = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
+                if model?.auth != 2 {
+                    self?.deliverProjBtn.isHidden = true
+                } else {
+                    self?.deliverProjBtn.isHidden = false
+                }
+            }
+            
         }
         
         NetWorkTool.shareInstance.getUserHomePageMomentList(token: access_token, userId: self.id! , pageNum: pageNum) { [weak self](result, error) in
