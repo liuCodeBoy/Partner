@@ -94,15 +94,19 @@ class ServiceProjectBriefTableViewCell: UITableViewCell {
                 return
             }
             if  result?["code"] as? Int == 200  {
-               SCLAlertView().showSuccess("\(String(describing: result!["msg"]!))", subTitle: "")
+                var showmsg = ""
                 if self?.type == 1 {
-                   self?.model?.focus = 1
+                    self?.model?.focus = 1
+                    showmsg = "收藏成功"
                     sender.isSelected = true
                 }else{
-                   self?.model?.focus = 0
+                    self?.model?.focus = 0
+                     showmsg = "取消收藏"
                     sender.isSelected = false
                     
                 }
+               SCLAlertView().showSuccess(showmsg, subTitle: "")
+             
             }else{
                 SCLAlertView().showError("\(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
             }
