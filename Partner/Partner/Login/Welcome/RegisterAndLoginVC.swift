@@ -220,7 +220,8 @@ extension RegisterAndLoginVC {
 
     //注册
     @IBAction func RegisterAction(_ sender: Any) {
-   
+        let  destVC   = self.chooseDesVC(page: 1)
+        self.navigationController?.pushViewController(destVC, animated: true)
         if phoneNumLab.text == "" {
             self.presentHintMessage(hintMessgae: "请输入手机号码", completion: nil)
             return
@@ -234,13 +235,14 @@ extension RegisterAndLoginVC {
             self.presentHintMessage(hintMessgae: "密码应为6-20位字母和数字组合", completion: nil)
             return
         }
-        //发送请求
+//        //发送请求
         NetWorkTool.shareInstance.userRegister(phone:  phoneNumLab.text!, password: pwdNumField.text!, code: identifyCodeField.text!) { [weak self](result, error) in
             if error == nil {
                 // MARK:- judge the return data from server
                 if result?["code"] as? Int == 200 {
                     self?.presentHintMessage(hintMessgae:"注册成功", completion: nil)
-                    if  let token = result?["token"] as? String {
+                    let dict = result?["result"] as? NSDictionary
+                    if  let token = dict?["token"] as? String {
                         //偏好设置
                         let userDefault =  UserDefaults.standard
                         //存储数据
@@ -254,11 +256,10 @@ extension RegisterAndLoginVC {
                 } else {
                     let  errorShow  =  result!["msg"] as! String
                     self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
-                    
+
                 }
             }
         }
-
 
     }
     

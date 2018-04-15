@@ -150,9 +150,9 @@ class DynamicDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         return cell?.pictureCellView.image
     }
     /// 高清图
-    func photoBrowser(_ photoBrowser: PhotoBrowser, highQualityUrlForIndex index: Int) -> URL? {
-        return URL(string: picStrsArr![index])
-    }
+//    func photoBrowser(_ photoBrowser: PhotoBrowser, highQualityUrlForIndex index: Int) -> URL? {
+//        return URL(string: picStrsArr![index])
+//    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)

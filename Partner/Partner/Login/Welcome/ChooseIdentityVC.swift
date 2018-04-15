@@ -61,7 +61,7 @@ class ChooseIdentityVC: UIViewController {
     
     @IBAction func showProfileInformation(_ sender: Any) {
         //保存身份选择
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+        guard let access_token = UserDefaults.standard.string(forKey: "temptoken") else{
             return
         }
         

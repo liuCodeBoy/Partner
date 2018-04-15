@@ -24,7 +24,7 @@ class SkillViewController: InterestedVC {
     //请求标签
     override func getTagList(){
         //保存身份选择
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+        guard let access_token = UserDefaults.standard.string(forKey: "temptoken") else{
             return
         }
         NetWorkTool.shareInstance.getTagList(token: access_token, type: 1) { [weak self](result, error) in
@@ -86,7 +86,7 @@ class SkillViewController: InterestedVC {
     
     //完善标签信息
     override func  perfectTagInfo(selectedStr : String){
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+        guard let access_token = UserDefaults.standard.string(forKey: "temptoken") else{
             return
         }
         NetWorkTool.shareInstance.perfectUsertagInfo(token: access_token, type: 1, tagName: selectedStr) { [weak self](result, error) in

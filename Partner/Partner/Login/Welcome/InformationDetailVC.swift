@@ -58,7 +58,7 @@ class InformationDetailVC: UIViewController,ImagePickerDelegate
             })
             return
         }
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+        guard let access_token = UserDefaults.standard.string(forKey: "temptoken") else{
             return
         }
         NetWorkTool.shareInstance.perfectUserInfo(token: access_token, image: profileImageView.image, realName: nametextField.text!, gender: genderID, companyName: companyTextField.text, jobName: jobNametextField.text, communityId: communityID) { [weak self](result, error) in
@@ -167,7 +167,7 @@ extension InformationDetailVC : UIPickerViewDataSource,UIPickerViewDelegate {
     //加载数据
     func loadData(){
         //保存身份选择
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+        guard let access_token = UserDefaults.standard.string(forKey: "temptoken") else{
             self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
             return
         }
