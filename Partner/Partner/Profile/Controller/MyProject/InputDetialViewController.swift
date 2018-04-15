@@ -50,6 +50,21 @@ class InputDetialViewController: UIViewController {
             return
         }
         
+        // MARK:- judge
+        if navTitle == "转让股份（%）", (Int(inputText!)! >= 0 && Int(inputText!)! <= 100) == false {
+            presentHintMessage(hintMessgae: "请输入有效的百分数", completion: nil)
+            return
+        } else if navTitle == "手机号", inputText!.isValidePhoneNumber == false {
+            presentHintMessage(hintMessgae: "请输入有效的手机号", completion:  nil)
+            return
+        } else if navTitle == "邮箱", inputText!.isValidEmail == false {
+            presentHintMessage(hintMessgae: "请输入有效的邮箱", completion:  nil)
+            return
+        } else  if navTitle == "法人身份证号", inputText!.isValidIDNumber == false {
+            presentHintMessage(hintMessgae: "请输入有效的身份证", completion:  nil)
+            return
+        }
+        
         guard let identifier = sourceSegue?.identifier else { return }
         guard let sourceSegue = sourceSegue else { return }
         
@@ -69,9 +84,17 @@ class InputDetialViewController: UIViewController {
                 source.contactNameLbl.text      = inputText
                 source.projModel.projConnName   = inputText
             case "contactPhoneSegue":
+                if inputText!.isValidePhoneNumber == false {
+                    presentHintMessage(hintMessgae: "请输入正确的手机号", completion: nil)
+                    return
+                }
                 source.contactPhoneLbl.text     = inputText
                 source.projModel.projPhone      = inputText
             case "emailSegue":
+                if inputText!.isValidEmail == false {
+                    presentHintMessage(hintMessgae: "请输入正确的手机号", completion: nil)
+                    return
+                }
                 source.emailLbl.text            = inputText
                 source.projModel.projMail       = inputText
             default: break
