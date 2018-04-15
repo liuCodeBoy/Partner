@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r7E-Ev-ivL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r7E-Ev-ivL">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -53,9 +53,7 @@
                                         <state key="normal" image="profile_my_project_attention"/>
                                         <connections>
                                             <action selector="intentionBtnClicked:" destination="r7E-Ev-ivL" eventType="touchUpInside" id="2sr-ZW-GLm"/>
-                                            <segue destination="juB-pN-vcf" kind="show" id="kB2-XA-QVh">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <segue destination="juB-pN-vcf" kind="show" id="kB2-XA-QVh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -495,9 +493,7 @@
                                             <outletCollection property="tagLbl" destination="a8R-J0-8Ug" collectionClass="NSMutableArray" id="ndT-qb-grU"/>
                                             <outletCollection property="tagLbl" destination="Lch-gF-TSD" collectionClass="NSMutableArray" id="1Az-wR-gyM"/>
                                             <outletCollection property="tagLbl" destination="uvM-L1-CyL" collectionClass="NSMutableArray" id="0PD-Ih-Iad"/>
-                                            <segue destination="AD3-TN-oHN" kind="show" identifier="MPEDetialInfoSegue" id="kBd-Oe-bWH">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <segue destination="AD3-TN-oHN" kind="show" identifier="MPEDetialInfoSegue" id="kBd-Oe-bWH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -804,9 +800,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="NLO-IJ-Snk" kind="show" identifier="MPESettingSegue" id="gjv-TY-xeA">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <segue destination="NLO-IJ-Snk" kind="show" identifier="MPESettingSegue" id="gjv-TY-xeA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1189,9 +1183,7 @@
                                             <outletCollection property="avatarImg" destination="MPx-QH-oG1" collectionClass="NSMutableArray" id="UNx-8V-o7y"/>
                                             <outletCollection property="avatarImg" destination="XEa-BV-cwQ" collectionClass="NSMutableArray" id="Du5-Yg-RaP"/>
                                             <outletCollection property="avatarImg" destination="kDs-1G-Qir" collectionClass="NSMutableArray" id="Ldx-rp-w8C"/>
-                                            <segue destination="H9Y-oB-VQc" kind="show" identifier="MPEPushTMSegue" id="Ndb-Mj-Lxl">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <segue destination="H9Y-oB-VQc" kind="show" identifier="MPEPushTMSegue" id="Ndb-Mj-Lxl"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectEditIntroductionTableViewCell" rowHeight="232" id="z3U-xh-gSn" customClass="ProjectEditIntroductionTableViewCell" customModule="Partner" customModuleProvider="target">
@@ -1251,9 +1243,7 @@
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
                                                     <connections>
-                                                        <segue destination="Ex6-3h-KCT" kind="show" identifier="ProjectIntroductionEditSegue" id="L5x-kz-n3a">
-                                                            <nil key="action"/>
-                                                        </segue>
+                                                        <segue destination="Ex6-3h-KCT" kind="show" identifier="ProjectIntroductionEditSegue" id="L5x-kz-n3a"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0L-3K-0aT">
@@ -1268,9 +1258,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asq-YQ-Op7">
                                                             <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
                                                             <connections>
-                                                                <segue destination="Ex6-3h-KCT" kind="show" identifier="ProjectIntroductionSegue" id="wvX-dX-IFq">
-                                                                    <nil key="action"/>
-                                                                </segue>
+                                                                <segue destination="Ex6-3h-KCT" kind="show" identifier="ProjectIntroductionSegue" id="wvX-dX-IFq"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -1414,9 +1402,7 @@
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
                                                     <connections>
-                                                        <segue destination="TkE-mx-DHm" kind="show" identifier="ProjectMarketAnalysisEditSegue" id="DxQ-Aa-YgY">
-                                                            <nil key="action"/>
-                                                        </segue>
+                                                        <segue destination="TkE-mx-DHm" kind="show" identifier="ProjectMarketAnalysisEditSegue" id="DxQ-Aa-YgY"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzL-Km-sEn">
@@ -1431,9 +1417,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1B1-So-r8g">
                                                             <rect key="frame" x="0.0" y="0.0" width="351" height="285"/>
                                                             <connections>
-                                                                <segue destination="TkE-mx-DHm" kind="show" identifier="ProjectMarketAnalysisSegue" id="kFi-PQ-dux">
-                                                                    <nil key="action"/>
-                                                                </segue>
+                                                                <segue destination="TkE-mx-DHm" kind="show" identifier="ProjectMarketAnalysisSegue" id="kFi-PQ-dux"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -1500,7 +1484,7 @@
                                         <rect key="frame" x="0.0" y="929" width="375" height="232"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y9q-UC-MZ2" id="Xvi-Zi-KSI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="231.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vq8-Vs-hqz" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
@@ -1628,7 +1612,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请从产品特色、核心资源、团队优势等方面描述项目亮点，不得超过200字" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsN-l7-BOX">
-                                                    <rect key="frame" x="12" y="150" width="351" height="51.666666666666657"/>
+                                                    <rect key="frame" x="12" y="150" width="351" height="51.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1650,13 +1634,11 @@
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
                                                     <connections>
-                                                        <segue destination="cl6-Wb-PVb" kind="show" identifier="ProjectRunStatusEditSegue" id="JWp-2j-dqt">
-                                                            <nil key="action"/>
-                                                        </segue>
+                                                        <segue destination="cl6-Wb-PVb" kind="show" identifier="ProjectRunStatusEditSegue" id="JWp-2j-dqt"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPY-dU-jnP">
-                                                    <rect key="frame" x="12" y="60" width="351" height="172"/>
+                                                    <rect key="frame" x="12" y="59.999999999999986" width="351" height="171.66666666666663"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加运营状况" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nq2-cT-4X8">
                                                             <rect key="frame" x="127.33333333333334" y="76" width="98" height="20"/>
@@ -1665,11 +1647,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciU-uF-jgW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="171.66666666666666"/>
                                                             <connections>
-                                                                <segue destination="cl6-Wb-PVb" kind="show" identifier="ProjectRunStatusSegue" id="vqI-3G-G27">
-                                                                    <nil key="action"/>
-                                                                </segue>
+                                                                <segue destination="cl6-Wb-PVb" kind="show" identifier="ProjectRunStatusSegue" id="vqI-3G-G27"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -1732,7 +1712,7 @@
                                         <rect key="frame" x="0.0" y="1161" width="375" height="232"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D2Z-P3-m5n" id="DqV-LD-rpa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="231.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-Ll-bVw" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
@@ -1860,7 +1840,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请从产品特色、核心资源、团队优势等方面描述项目亮点，不得超过200字" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gd-Q9-90W">
-                                                    <rect key="frame" x="12" y="150" width="351" height="51.666666666666657"/>
+                                                    <rect key="frame" x="12" y="150" width="351" height="51.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1882,13 +1862,11 @@
                                                     </constraints>
                                                     <state key="normal" image="profile_my_project_edit"/>
                                                     <connections>
-                                                        <segue destination="45W-Qs-iN2" kind="show" identifier="ProjectFundingEditSegue" id="5fu-XA-MnE">
-                                                            <nil key="action"/>
-                                                        </segue>
+                                                        <segue destination="45W-Qs-iN2" kind="show" identifier="ProjectFundingEditSegue" id="5fu-XA-MnE"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mt2-fW-3sY">
-                                                    <rect key="frame" x="12" y="60" width="351" height="172"/>
+                                                    <rect key="frame" x="12" y="59.999999999999986" width="351" height="171.66666666666663"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加融资需求" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXo-0E-7pC">
                                                             <rect key="frame" x="127.33333333333334" y="76" width="98" height="20"/>
@@ -1897,11 +1875,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydj-Ve-4Ik">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="172"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="171.66666666666666"/>
                                                             <connections>
-                                                                <segue destination="45W-Qs-iN2" kind="show" identifier="ProjectFundingSegue" id="4K2-Dz-dxN">
-                                                                    <nil key="action"/>
-                                                                </segue>
+                                                                <segue destination="45W-Qs-iN2" kind="show" identifier="ProjectFundingSegue" id="4K2-Dz-dxN"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -1964,18 +1940,18 @@
                                         <rect key="frame" x="0.0" y="1393" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TlL-ce-piC" id="RDL-DN-vqm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOq-mr-8ec">
-                                                    <rect key="frame" x="0.0" y="52.666666666666664" width="375" height="1"/>
+                                                    <rect key="frame" x="0.0" y="53" width="375" height="1"/>
                                                     <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="c5y-8l-Aib"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商业计划书" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf8-JB-hgG">
-                                                    <rect key="frame" x="12" y="16" width="82" height="22"/>
+                                                    <rect key="frame" x="12" y="16.333333333333332" width="82" height="21.999999999999996"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="jfh-r4-6A0"/>
                                                     </constraints>
@@ -1984,14 +1960,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="jdt-DX-kkE">
-                                                    <rect key="frame" x="351" y="21.666666666666668" width="12" height="12.000000000000004"/>
+                                                    <rect key="frame" x="351" y="22" width="12" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="knd-fU-z7j"/>
                                                         <constraint firstAttribute="width" constant="12" id="pYN-wt-rQT"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未上传" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJr-3R-1RS">
-                                                    <rect key="frame" x="298" y="17.666666666666668" width="49" height="20.000000000000004"/>
+                                                    <rect key="frame" x="298" y="18" width="49" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2020,11 +1996,11 @@
                                         <rect key="frame" x="0.0" y="1447" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1QS-mo-1gf" id="cIv-ER-QIA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzM-gq-uXK">
-                                                    <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                                    <rect key="frame" x="0.0" y="19.666666666666671" width="375" height="60"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lug-Qd-viN" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                                             <rect key="frame" x="12" y="10" width="351" height="40"/>
@@ -2055,7 +2031,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-0P-lhR">
-                                                    <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                                    <rect key="frame" x="0.0" y="19.666666666666671" width="375" height="60"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpk-ji-exA" customClass="ShadowButton" customModule="Partner" customModuleProvider="target">
                                                             <rect key="frame" x="12" y="10" width="169" height="40"/>
@@ -2144,6 +2120,7 @@
                         <viewLayoutGuide key="safeArea" id="GfK-Fi-J8m"/>
                     </view>
                     <connections>
+                        <outlet property="settingsBtn" destination="Irq-62-9uG" id="8FD-lJ-gUl"/>
                         <outlet property="tableView" destination="bQk-KF-9rD" id="CI3-ad-Mnf"/>
                     </connections>
                 </viewController>
@@ -2189,9 +2166,7 @@
                                             <color key="titleColor" red="0.23137255009999999" green="0.2941176593" blue="0.34117648010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Dbu-oW-RqM" kind="show" identifier="MPETMPushAddMemberSegue" id="ISa-ZH-agr">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <segue destination="Dbu-oW-RqM" kind="show" identifier="MPETMPushAddMemberSegue" id="ISa-ZH-agr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2287,9 +2262,7 @@
                                             <outlet property="avatarImg" destination="fDn-oc-2O5" id="x1h-aA-5nv"/>
                                             <outlet property="detialLbl" destination="IFW-Ou-FN5" id="Utk-wD-7ll"/>
                                             <outlet property="nickNameLbl" destination="KK1-gz-CCu" id="Ia5-fb-AAL"/>
-                                            <segue destination="Dbu-oW-RqM" kind="show" identifier="MPETMPushDetialInfoSegue" id="a88-Mi-iqh">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <segue destination="Dbu-oW-RqM" kind="show" identifier="MPETMPushDetialInfoSegue" id="a88-Mi-iqh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -4183,8 +4156,8 @@
                                                         <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9r-qm-3m5">
-                                                        <rect key="frame" x="306" y="17.666666666666686" width="43" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9r-qm-3m5">
+                                                        <rect key="frame" x="340" y="17.666666666666686" width="9" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.64705884459999996" green="0.67450982329999998" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -4208,9 +4181,6 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="inputTitleID" value="MPEFNEstimate"/>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="showInputVC:" destination="45W-Qs-iN2" eventType="touchUpInside" id="Ppz-SL-U0s"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

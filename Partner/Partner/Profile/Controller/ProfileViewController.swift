@@ -61,6 +61,7 @@ class ProfileViewController: UIViewController {
                 let per = Double(truncating: percent) * 0.01
                 dataIntegrityProgressWidthCons.constant = CGFloat(120 * (1 - per))
             }
+            
         }
     }
     
@@ -104,38 +105,6 @@ class ProfileViewController: UIViewController {
             avatar.image = #imageLiteral(resourceName: "profile_avatar_placeholder")
         }
     }
-
-    @IBAction func clearCacheClicked(_ sender: UIButton) {
-        // 取出cache文件夹路径
-        let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
-        
-        // 取出文件夹下所有文件数组
-        let files = FileManager.default.subpaths(atPath: cachePath!)
-        
-        let alert = UIAlertController(title: "提示", message: "是否清除缓存", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let alertConfirm = UIAlertAction(title: "确定", style: UIAlertActionStyle.default) { (alertConfirm) -> Void in
-            // 点击确定时开始删除
-            for p in files!{
-                // 拼接路径
-                let path = cachePath!.appendingFormat("/\(p)")
-                // 判断是否可以删除
-                if(FileManager.default.fileExists(atPath: path)){
-                    // 删除
-                    try? FileManager.default.removeItem(atPath: path)
-                }
-            }
-        }
-        alert.addAction(alertConfirm)
-        let cancle = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (cancle) -> Void in
-            
-        }
-        alert.addAction(cancle)
-        // 提示框弹出
-        present(alert, animated: true) { () -> Void in
-            
-        }
-    }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "ProfileApplyAuthSegue" {
@@ -144,6 +113,12 @@ class ProfileViewController: UIViewController {
                     presentHintMessage(hintMessgae: "普通用户不能申请认证", completion: nil)
                     return false
                 }
+            }
+        }
+        if identifier == "ProfileMyProjects" {
+            if let auth = viewModel?.auth, auth == 3 {
+                presentHintMessage(hintMessgae: "普通用户无法查看我的项目", completion: nil)
+                return false
             }
         }
         return true

@@ -34,11 +34,21 @@ class MyProjectEditSettingsViewController: UIViewController {
 
     @IBOutlet weak var offlineBtn: UIButton!
     @IBAction func offlineClicked(_ sender: UIButton) {
-        projStatus = 1
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            projStatus = 1
+        } else {
+            projStatus = 0
+        }
     }
     @IBOutlet weak var openBtn: UIButton!
     @IBAction func openClicked(_ sender: UIButton) {
-        projStatus = 2
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            projStatus = 2
+        } else {
+            projStatus = 0
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

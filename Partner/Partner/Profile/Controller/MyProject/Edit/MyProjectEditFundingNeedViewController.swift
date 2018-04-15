@@ -117,6 +117,14 @@ class MyProjectEditFundingNeedViewController: UIViewController, UITextViewDelega
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let expect = modelView.projFinancing, let stock = modelView.projShare {
+            let est = Int((expect as! Float) * (stock as! Float) / 100)
+            estimateLbl.text = "\(est)"
+            modelView.projValue = est as NSNumber
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
