@@ -121,7 +121,7 @@ extension InvestorListVC: UITableViewDelegate, UITableViewDataSource {
 //        self.navigationController?.pushViewController(destVC, animated: true)
         
         
-        // MARK:- if is pushed from seliver project
+        // MARK:- if is pushed from deliver project
         if let uid = modelArr[indexPath.row].uid as? Int, let projId = self.projId, isSingle == true {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController

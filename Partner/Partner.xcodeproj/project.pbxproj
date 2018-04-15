@@ -202,6 +202,7 @@
 		D37ACEA6206354350007B3F2 /* commListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37ACEA5206354350007B3F2 /* commListModel.swift */; };
 		D37D712F202AE9ED007B38EB /* MyHomePageBasicInfomationContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D712E202AE9ED007B38EB /* MyHomePageBasicInfomationContainerViewController.swift */; };
 		D37D7131202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D7130202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift */; };
+		D38C76B620833F5900F651DC /* MyProjectRejectedIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C76B520833F5900F651DC /* MyProjectRejectedIssueViewController.swift */; };
 		D39A4F32200D985700022A76 /* SystemConstantValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A4F31200D984C00022A76 /* SystemConstantValue.swift */; };
 		D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A4F33200D98AE00022A76 /* Extension+String.swift */; };
 		D39A4F37200D98AF00022A76 /* Extension+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A4F34200D98AE00022A76 /* Extension+Colors.swift */; };
@@ -493,6 +494,7 @@
 		D37AE8E3202064B700B32E4D /* Partner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Partner-Bridging-Header.h"; sourceTree = "<group>"; };
 		D37D712E202AE9ED007B38EB /* MyHomePageBasicInfomationContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomePageBasicInfomationContainerViewController.swift; sourceTree = "<group>"; };
 		D37D7130202AEA26007B38EB /* MyHomePageSelfExperienceContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomePageSelfExperienceContainerViewController.swift; sourceTree = "<group>"; };
+		D38C76B520833F5900F651DC /* MyProjectRejectedIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectRejectedIssueViewController.swift; sourceTree = "<group>"; };
 		D39A4F31200D984C00022A76 /* SystemConstantValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConstantValue.swift; sourceTree = "<group>"; };
 		D39A4F33200D98AE00022A76 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		D39A4F34200D98AE00022A76 /* Extension+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
@@ -1527,6 +1529,7 @@
 				D3BFC9BB2019C8A600D2C6BD /* MyProjectEditAndCreateViewController.swift */,
 				39123D93204ED7C9000563B5 /* MyProjectCreateIndustrySelectViewController.swift */,
 				D3BCE69D2019D44A00097DDA /* InputDetialViewController.swift */,
+				D38C76B520833F5900F651DC /* MyProjectRejectedIssueViewController.swift */,
 				D39F8C2E201F0BA400A40AC1 /* Edit */,
 				397E801C205A10CC006620DC /* Review */,
 			);
@@ -2001,6 +2004,7 @@
 				D35A9D23203FBEBD00408B9E /* ServiceInvestorProfileViewController.swift in Sources */,
 				D3C58DFD204808A900C88E98 /* NetworkTool+CopyModel.swift in Sources */,
 				39A87F87204F8951003D8226 /* AuthInfoModel.swift in Sources */,
+				D38C76B620833F5900F651DC /* MyProjectRejectedIssueViewController.swift in Sources */,
 				D39F8C3E201F0D1100A40AC1 /* MyProjectEditSettingsViewController.swift in Sources */,
 				B687ABA22043EBCE004C915A /* SearchUserJionInCircleVC.swift in Sources */,
 				B65E09E12046538000BF81FF /* NoticeInfoModel.swift in Sources */,

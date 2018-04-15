@@ -48,7 +48,7 @@ extension String {
     
     var isValidIDNumber: Bool {
         get {
-            let mobileRE: String = "^\\d{15}$)|(^\\d{17}([0-9]|X)$"
+            let mobileRE: String = "(^[0-9]{15}$)|([0-9]{17}([0-9]|X)$)"
             let regex = NSPredicate(format: "SELF MATCHES %@", mobileRE)
             
             if regex.evaluate(with: self) == true {

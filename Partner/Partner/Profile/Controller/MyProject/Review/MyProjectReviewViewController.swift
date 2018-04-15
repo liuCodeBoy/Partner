@@ -55,9 +55,28 @@ extension MyProjectReviewViewController {
         // FIXME:- to push investor vc and pass proj id
         /// call judgeDeliverValid first and then deliver project
         
-        let userId = UserDefaults.standard.integer(forKey: "uid")
+        guard (UserDefaults.standard.string(forKey: "token") != nil) else {
+            presentLoginController()
+            return
+        }
+        NetWorkTool.shareInstance.getMyPageInfo(token: access_token!, finished: { [weak self] (result, error) in
+            if result!["code"] as! Int == 200 {
+                let model = ProfileInfoModel.mj_object(withKeyValues: result!["result"])
+                if model?.auth != 2 {
+                    SCLAlertView().showNotice("请完成投资商认证", subTitle: "")
+                    return
+                } else {
+                    self?.judegValid()
+                }
+            }
+            
+        })
         
+    }
+    
+    func judegValid() {
         guard let projId = self.projID else { return }
+        let userId = UserDefaults.standard.integer(forKey: "uid")
         
         NetWorkTool.shareInstance.judgeDelierValid(token: access_token!, userId: userId, projectId: projId) { (result, error) in
             
@@ -89,8 +108,6 @@ extension MyProjectReviewViewController {
                 SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")
             }
         }
-        
-        
     }
     
     func loadProjBasicInfo() {
