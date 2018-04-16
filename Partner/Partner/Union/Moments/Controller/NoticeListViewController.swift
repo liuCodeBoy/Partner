@@ -245,9 +245,10 @@ extension NoticeListViewController {
             if modelArr.count > 0 {
                 let model = modelArr[indexPath.row]
                 if model.momentId != nil{
-                    let destVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "DynamicDetailVCID") as! DynamicDetailVC
-                    destVC.momentId = model.momentId as? Int
-                    self.navigationController?.pushViewController(destVC, animated: true)
+                    let dynamicDetailVC  = AppDelegate.dynamicDetailVC
+                    dynamicDetailVC.momentId = model.momentId as? Int
+                    dynamicDetailVC.refresh()
+                    self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
                 }else if model.circleId != nil {
                     let destVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleDetailVCID") as! CircleDetailVC
                     destVC.circleId = (model.circleId as? Int)!

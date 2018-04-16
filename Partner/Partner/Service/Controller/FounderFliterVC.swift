@@ -145,9 +145,9 @@ class FounderFliterVC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     extension FounderFliterVC {
         //search getCommunityCityList
         func getInvestIndustryList(){
-            guard access_token != nil else{
-                return
-            }
+//            guard access_token != nil else{
+//                return
+//            }
             NetWorkTool.shareInstance.getInvestIndustryList { [weak self](result, error) in
                 if error == nil {
                     // MARK:- judge the return data from server

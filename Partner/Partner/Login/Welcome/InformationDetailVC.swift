@@ -96,9 +96,11 @@ class InformationDetailVC: UIViewController,ImagePickerDelegate
             self?.genderbtn.setTitle("保密", for: .normal)
             self?.genderID = 0
         })
+        let cancelBtn = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(male)
         alert.addAction(female)
         alert.addAction(unknow)
+        alert.addAction(cancelBtn)
         self.present(alert, animated: true, completion: nil)
         
     }

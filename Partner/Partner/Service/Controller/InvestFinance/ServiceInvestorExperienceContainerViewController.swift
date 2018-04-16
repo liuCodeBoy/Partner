@@ -59,17 +59,8 @@ class ServiceInvestorExperienceContainerViewController: UIViewController, UITabl
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        var count = 0
-        if entreExpModelArray.count != 0 {
-            count += 1
-        }
-        if workExpModelArray.count != 0 {
-            count += 1
-        }
-        if eduExpModelArray.count != 0 {
-            count += 1
-        }
-        return count
+        
+        return 3
     }
     
     

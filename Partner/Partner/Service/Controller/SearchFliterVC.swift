@@ -68,6 +68,11 @@ class SearchFliterVC: UIViewController,UITableViewDelegate,UITableViewDataSource
             clearAllSelected()
         }
          sender.isSelected = !sender.isSelected
+        if seague != nil {
+            let sourceVC = seague?.source as! searchVC
+            sourceVC.refresh()
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func providerTypeClick(_ sender: Any) {
@@ -183,10 +188,10 @@ extension SearchFliterVC{
 extension SearchFliterVC {
     //search getCommunityCityList
     func getCommunityCityList(){
-        guard access_token != nil else{
-            return
-        }
-        NetWorkTool.shareInstance.getCommunityCityList(token: access_token!) { [weak self](result, error) in
+//        guard access_token != nil else{
+//            return
+//        }
+        NetWorkTool.shareInstance.getCommunityCityList(token: "") { [weak self](result, error) in
             if error == nil {
                 // MARK:- judge the return data from server
                 if  result?["code"] as? Int == 200  {

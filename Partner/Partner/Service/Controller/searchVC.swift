@@ -114,15 +114,11 @@ extension searchVC {
             newsListTableView.mj_footer.endRefreshingWithNoMoreData()
             return
         }
-        guard access_token != nil else {
-            return
-        }
         var name : String?
         if type == nil {
             name = fuzzy
         }
         NetWorkTool.shareInstance.searchProvider(pageNum: pageNum, pageSize: 10, fuzzy: fuzzy, type: type, name: name) { [weak self](info, error) in
-            print(fuzzy)
             if error == nil {
                 // MARK:- judge the return data from server
                 if info?["code"] as? Int == 200 {
