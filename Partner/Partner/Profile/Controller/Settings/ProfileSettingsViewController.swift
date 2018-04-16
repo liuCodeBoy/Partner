@@ -97,6 +97,7 @@ class ProfileSettingsViewController: UIViewController {
             UserDefaults.standard.removeObject(forKey: "token")
             UserDefaults.standard.removeObject(forKey: "uid")
             access_token = nil
+            print("\(UserDefaults.standard.integer(forKey: "uid"))")
             self.navigationController?.popViewController(animated: true)
         }
     }

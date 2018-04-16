@@ -60,7 +60,7 @@ class InputDetialViewController: UIViewController {
         } else if navTitle == "邮箱", inputText!.isValidEmail == false {
             presentHintMessage(hintMessgae: "请输入有效的邮箱", completion:  nil)
             return
-        } else  if navTitle == "法人身份证号", inputText!.isValidIDNumber == false {
+        } else if navTitle == "法人身份证号", inputText!.isValidIDNumber == false {
             presentHintMessage(hintMessgae: "请输入有效的身份证", completion:  nil)
             return
         }
@@ -145,7 +145,39 @@ class InputDetialViewController: UIViewController {
     }
     
     @objc func saveBtnCallBack() {
+        
+        // MARK:- judge
+        if navTitle == "转让股份（%）", (Int(inputText!)! >= 0 && Int(inputText!)! <= 100) == false {
+            presentHintMessage(hintMessgae: "请输入有效的百分数", completion: nil)
+            return
+        } else if navTitle == "手机号", inputText!.isValidePhoneNumber == false {
+            presentHintMessage(hintMessgae: "请输入有效的手机号", completion:  nil)
+            return
+        } else if navTitle == "邮箱", inputText!.isValidEmail == false {
+            presentHintMessage(hintMessgae: "请输入有效的邮箱", completion:  nil)
+            return
+        } else if navTitle == "法人身份证号", inputText!.isValidIDNumber == false {
+            presentHintMessage(hintMessgae: "请输入有效的身份证", completion:  nil)
+            return
+        }
+        if (sourceSegue?.source.isKind(of: MyProjectEditAndCreateViewController.self))! {
+            switch sourceSegue?.identifier! {
+            case "contactPhoneSegue":
+                if inputText!.isValidePhoneNumber == false {
+                    presentHintMessage(hintMessgae: "请输入正确的手机号", completion: nil)
+                    return
+                }
+            case "emailSegue":
+                if inputText!.isValidEmail == false {
+                    presentHintMessage(hintMessgae: "请输入正确的手机号", completion: nil)
+                    return
+                }
+            default: break
+            }
+        
         saveClousre!()
+    
+        }
     }
     
     override func viewDidLoad() {

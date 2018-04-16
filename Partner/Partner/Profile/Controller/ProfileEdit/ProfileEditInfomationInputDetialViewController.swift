@@ -59,11 +59,11 @@ class ProfileEditInfomationInputDetialViewController: UIViewController {
                 switch row {
                 case 0: profileModel?.userName = inputText
                 case 3:
-                    profileModel?.mail = inputText
                     if inputText!.isValidEmail == false {
                         presentHintMessage(hintMessgae: "请输入正确的邮箱", completion: nil)
                         return
                     }
+                    profileModel?.mail = inputText
                 case 4: profileModel?.compName = inputText
                 case 5: profileModel?.jobName = inputText
                 default: break

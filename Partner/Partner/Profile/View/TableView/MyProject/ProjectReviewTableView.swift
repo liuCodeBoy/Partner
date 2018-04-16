@@ -119,6 +119,9 @@ class ProjectReviewTableView: UITableView, UITableViewDelegate, UITableViewDataS
                 if let id = modelView?.projectId {
                     confirm.projID = id as? Int
                 }
+                if let operation = modelView?.operation as? Int {
+                    confirm.operation = operation
+                }
                 cell = confirm
             }
         default: break

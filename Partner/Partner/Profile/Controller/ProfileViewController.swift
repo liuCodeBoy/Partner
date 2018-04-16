@@ -82,6 +82,7 @@ class ProfileViewController: UIViewController {
         if let access_token = UserDefaults.standard.string(forKey: "token") {
             // user has loged in
             print("access_token: \(access_token)")
+            print(UserDefaults.standard.integer(forKey: "uid"))
             NetWorkTool.shareInstance.getMyPageInfo(token: access_token, finished: { [weak self](result, error) in
                 if error != nil {
                     self?.presentConfirmationAlert(hint: "\(error as AnyObject)", completion: nil)

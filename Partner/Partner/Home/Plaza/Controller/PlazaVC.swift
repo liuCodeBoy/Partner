@@ -277,6 +277,7 @@ extension PlazaVC {
         let statusViewModel = projectListModelArr[0]
        let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
         destVC.projID = statusViewModel.projectId as? Int
+        destVC.isPushedFromHome = true
         self.navigationController?.pushViewController(destVC, animated: true)
     
     }
@@ -285,6 +286,7 @@ extension PlazaVC {
         let statusViewModel = projectListModelArr[1]
         let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
         destVC.projID = statusViewModel.projectId as? Int
+        destVC.isPushedFromHome = true
         self.navigationController?.pushViewController(destVC, animated: true)
     }
     @objc  func pushProject3() -> () {
@@ -292,6 +294,7 @@ extension PlazaVC {
         let statusViewModel = projectListModelArr[2]
         let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
         destVC.projID = statusViewModel.projectId as? Int
+        destVC.isPushedFromHome = true
         self.navigationController?.pushViewController(destVC, animated: true)
     }
     
