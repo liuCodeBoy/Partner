@@ -52,6 +52,7 @@ class SkillViewController: InterestedVC {
     }
     
     @IBAction func nextStepFunc(_ sender: Any) {
+        self.selectedArr.removeAllObjects()
         var  nums = 0
         guard self.buttonList != nil else {
             return

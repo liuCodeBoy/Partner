@@ -51,8 +51,6 @@ class ProjectEditConfirmButtonTableViewCell: UITableViewCell {
     @IBAction func btnClicked(_ sender: ShadowButton) {
         guard let id = projID else { return }
         if !isVerified {
-           
-            
             NetWorkTool.shareInstance.beginProject(token: access_token!, id: id) { (result, error) in
                 if error != nil {
                     SCLAlertView().showError("request error", subTitle: "\(error as AnyObject)")

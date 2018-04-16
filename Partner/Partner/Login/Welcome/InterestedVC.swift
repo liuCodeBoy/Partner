@@ -64,6 +64,7 @@ class InterestedVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func nextStepBtn(_ sender: Any) {
+        self.selectedArr.removeAllObjects()
         var nums = 0
         guard buttonList != nil else { return }
         for btn in self.buttonList! {
