@@ -320,7 +320,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
             }
         case 2:
             let hobbyCell = tableView.dequeueReusableCell(withIdentifier: "ProfileHobbiesSelectorTableViewBodyCell") as! ProfileHobbiesSelectorTableViewBodyCell
-            if let hobbies = viewModel?.hobby {
+            if let hobbies = viewModel?.hobby, hobbies != "" {
                 // get the single element of the string
                 let hobbyArray = hobbies.components(separatedBy: ",")
                 // remove the same element of an array
@@ -379,7 +379,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
             cell = hobbyCell
         case 3:
             let skillCell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsSelectorTableViewBodyCell") as! ProfileSkillsSelectorTableViewBodyCell
-            if let skills = viewModel?.skill {
+            if let skills = viewModel?.skill, skills != "" {
                 // get the single element of the string
                 let skillArray = skills.components(separatedBy: ",")
                 // remove the same element of an array
@@ -564,7 +564,6 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
             viewModel?.skill = cell.skillString
         }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! ProfileEditInfomationInputDetialViewController

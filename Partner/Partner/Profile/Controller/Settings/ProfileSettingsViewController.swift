@@ -54,6 +54,19 @@ class ProfileSettingsViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func contactClicked(_ sender: UIButton) {
+        
+        NetWorkTool.shareInstance.getPhone(phoneType: 2) { [weak self](result, error) in
+            if error != nil {
+                print(error as AnyObject)
+            }
+            if let phone = result?["result"] as? String {
+                self?.makePhoneCall(with: phone)
+            }
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         cacheDataLbl.text = "\(calculateCache())M"

@@ -237,16 +237,6 @@ class AuthApplyEnterpriseViewController: UIViewController, ImagePickerDelegate {
                 weakSelf?.entLegalIDNumLbl.text = vc.inputText
                 vc.navigationController?.popViewController(animated: true)
             }
-        case "entLegalID":
-            let title = "法人身份证号"
-            vc.navTitle = title
-            vc.inputPlaceholder = "请输入\(title)"
-            vc.saveClousre = {
-                weak var weakSelf = self
-                weakSelf?.viewModel.compCardNo = vc.inputText
-                weakSelf?.entLegalIDNumLbl.text = vc.inputText
-                vc.navigationController?.popViewController(animated: true)
-            }
         case "entDetialAddress":
             let title = "详细地址"
             vc.navTitle = title

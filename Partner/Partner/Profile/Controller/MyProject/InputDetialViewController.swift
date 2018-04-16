@@ -63,6 +63,9 @@ class InputDetialViewController: UIViewController {
         } else if navTitle == "法人身份证号", inputText!.isValidIDNumber == false {
             presentHintMessage(hintMessgae: "请输入有效的身份证", completion:  nil)
             return
+        } else if navTitle == "统一信用代码", inputText!.isValidCreditNumber == false {
+            presentHintMessage(hintMessgae: "请输入有效的统一信用代码", completion:  nil)
+            return
         }
         
         guard let identifier = sourceSegue?.identifier else { return }
@@ -159,9 +162,13 @@ class InputDetialViewController: UIViewController {
         } else if navTitle == "法人身份证号", inputText!.isValidIDNumber == false {
             presentHintMessage(hintMessgae: "请输入有效的身份证", completion:  nil)
             return
+        } else if navTitle == "统一信用代码", inputText!.isValidCreditNumber == false {
+            presentHintMessage(hintMessgae: "请输入有效的统一信用代码", completion:  nil)
+            return
         }
-        if (sourceSegue?.source.isKind(of: MyProjectEditAndCreateViewController.self))! {
-            switch sourceSegue?.identifier! {
+        
+        if let sourceSegue = sourceSegue, sourceSegue.source.isKind(of: MyProjectEditAndCreateViewController.self) {
+            switch sourceSegue.identifier! {
             case "contactPhoneSegue":
                 if inputText!.isValidePhoneNumber == false {
                     presentHintMessage(hintMessgae: "请输入正确的手机号", completion: nil)
@@ -174,10 +181,9 @@ class InputDetialViewController: UIViewController {
                 }
             default: break
             }
+        }
         
         saveClousre!()
-    
-        }
     }
     
     override func viewDidLoad() {
