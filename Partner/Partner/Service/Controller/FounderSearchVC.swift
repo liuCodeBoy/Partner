@@ -101,9 +101,7 @@ extension FounderSearchVC {
             newsListTableView.mj_footer.endRefreshingWithNoMoreData()
             return
         }
-        guard access_token != nil else {
-            return
-        }
+
         //        var name : String?
         //        if type == nil {
         //            name = fuzzy
@@ -168,12 +166,17 @@ extension FounderSearchVC {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard access_token != nil else {
+            self.presentHintMessage(hintMessgae: "您尚未登录") { (nil) in }
+            return
+    }
 //        let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
 //        if newsModelArr.count > 0 {
 //            let model = newsModelArr[indexPath.row]
 //            destVC.id = model.uid as? Int
 //        }
 //        self.navigationController?.pushViewController(destVC, animated: true)
+        
         if newsModelArr.count > 0 {
             let model = newsModelArr[indexPath.row]
             let  uid = UserDefaults.standard.integer(forKey: "uid")

@@ -251,7 +251,6 @@ extension MomentMainVC {
             dynamicDetailVC.refresh()
             self.navigationController?.pushViewController(dynamicDetailVC, animated: true)
         }
-        
     }
 
 }

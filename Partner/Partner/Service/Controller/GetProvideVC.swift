@@ -55,7 +55,7 @@ class GetProvideVC: UIViewController,UITextViewDelegate {
             self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
             return
         }
-        guard detailTextView.text.count < 1 else {
+        guard detailTextView.text.count > 1 else {
             SCLAlertView().showError("输入框不能为空", subTitle: "")
             return
         }

@@ -113,6 +113,10 @@ extension InvestorListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard access_token != nil else {
+            self.presentHintMessage(hintMessgae: "您尚未登录") { (nil) in }
+            return
+        }
 //        let destVC = UIStoryboard.init(name: "InvestFinance", bundle: nil).instantiateViewController(withIdentifier: "ServiceInvestorProfileViewControllerID") as! ServiceInvestorProfileViewController
 //        if modelArr.count > 0 {
 //            let model = modelArr[indexPath.row]

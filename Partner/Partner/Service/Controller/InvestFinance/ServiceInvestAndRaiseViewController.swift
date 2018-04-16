@@ -25,8 +25,7 @@ class ServiceInvestAndRaiseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         getSelectedProject()
-         getHotInvestorList()
+        getHotInvestorList()
     }
     
     
@@ -150,6 +149,10 @@ extension ServiceInvestAndRaiseViewController: UITableViewDelegate, UITableViewD
             if modelArr.count > 0 {
                 let model = modelArr[indexPath.row]
                 destVC.projID = model.projectId as? Int
+                guard access_token != nil else{
+                    self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
+                    return
+                }
                 NetWorkTool.shareInstance.scanProject(token: access_token!, id: (model.projectId as? Int)!, finished: { (result, error) in
                     
                 })
