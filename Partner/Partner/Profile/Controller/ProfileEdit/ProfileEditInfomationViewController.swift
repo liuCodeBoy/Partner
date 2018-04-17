@@ -439,24 +439,30 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         case 4:
             let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
             tagCell.placeholderLbl.text = "简要介绍你的合伙需求（必填）"
+            tagCell.isDesc = false
+            tagCell.viewModel = self.viewModel
             tagCell.presentAlert = { [weak self]() in
                 self?.presentHintMessage(hintMessgae: "字符不能超过300字", completion: nil)
             }
             if viewModel?.require != nil || viewModel?.require != "" {
                 tagCell.inputTextView.text = viewModel?.require
                 tagCell.placeholderLbl.isHidden = true
+                tagCell.inputString = viewModel?.require
             }
             self.requireCell = tagCell
             cell = tagCell
         case 5:
             let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
             tagCell.placeholderLbl.text = "可简单的介绍下自己（选填）"
+            tagCell.isDesc = true
+            tagCell.viewModel = self.viewModel
             tagCell.presentAlert = { [weak self]() in
                 self?.presentHintMessage(hintMessgae: "字符不能超过300字", completion: nil)
             }
             if viewModel?.desc != nil || viewModel?.desc != "" {
                 tagCell.inputTextView.text = viewModel?.desc
                 tagCell.placeholderLbl.isHidden = true
+                tagCell.inputString = viewModel?.desc
             }
             self.descCell = tagCell
             cell = tagCell
@@ -536,26 +542,16 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         self.profileInfoTableView.endEditing(true)
         keyboardWillHide(withTransforming: profileInfoTableView)
         // MARK:- store the require and description
-//        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 4)) {
-//            let requireCell = cell as! ProfileTextInputTableViewBodyCell
-//            self.requireCell = requireCell
-//            viewModel?.require = requireCell.inputString
+//        if let require = viewModel?.require {
+//            requireCell?.inputString = require
+//            let charCount = Int(require.count)
+//            requireCell?.inputLimitLbl.text = "\(charCount)/300"
 //        }
-//        if let cell = profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 5)) {
-//            let descCell = cell as! ProfileTextInputTableViewBodyCell
-//            self.descCell = descCell
-//            viewModel?.desc = descCell.inputString
+//        if let desc = viewModel?.desc {
+//            descCell?.inputString = desc
+//            let charCount = Int(desc.count)
+//            descCell?.inputLimitLbl.text = "\(charCount)/300"
 //        }
-        if let require = viewModel?.require {
-            requireCell?.inputString = require
-            let charCount = Int(require.count)
-            requireCell?.inputLimitLbl.text = "\(charCount)/300"
-        }
-        if let desc = viewModel?.desc {
-            descCell?.inputString = desc
-            let charCount = Int(desc.count)
-            descCell?.inputLimitLbl.text = "\(charCount)/300"
-        }
         // MARK:- save hobby and skill
         if let cell = hobbyCell {
             viewModel?.hobby = cell.hobbyString

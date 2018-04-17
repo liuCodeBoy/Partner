@@ -11,6 +11,10 @@ class ProfileTextInputTableViewBodyCell: UITableViewCell, UITextViewDelegate {
     
     typealias presentBlock = (() -> Void)?
     var presentAlert: presentBlock = nil
+    
+    var isDesc = false
+    
+    var viewModel: ProfileInfoModel?
 
     @IBOutlet weak var placeholderLbl: UILabel!
     @IBOutlet weak var inputTextView: UITextView!
@@ -29,8 +33,13 @@ class ProfileTextInputTableViewBodyCell: UITableViewCell, UITextViewDelegate {
             if charCount > 300 {
                 // notify vc to present alert with block
                 presentAlert!()
+            } else {
+                if isDesc {
+                    viewModel?.desc = inputString
+                } else {
+                    viewModel?.require = inputString
+                }
             }
-            
         }
     }
     

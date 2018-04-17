@@ -66,7 +66,7 @@ extension NetWorkTool {
         let urlString = "http://106.15.199.8/qm/user/api/editUser.do"
         var parameters = ["token"               : token,
                           "user.userName"       : userName,
-                          "userGender"          : userGender,
+                          "user.userGender"     : userGender,
                           "user.userMail"       : userMail,
                           "user.userCompanyName": userCompanyName,
                           "user.userJob"        : userJob,
