@@ -42,8 +42,19 @@ class CircleDetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let vc = self.childViewControllers.first as! CircleDetailCommandVC
+        detailTableview.reloadData()
         vc.refresh()
-        
+    }
+    
+    @IBAction func userdetailPushAction(_ sender: Any) {
+        if create == 1 {
+            let destVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleMemberListVCID") as! CircleMemberListVC
+            destVC.circleId = circleId
+            self.navigationController?.pushViewController(destVC, animated: true)
+        }else {
+            
+        }
+      
     }
     
     //添加发布按钮
@@ -195,6 +206,7 @@ class CircleDetailVC: UIViewController {
                     return
                 }
                 self?.presentHintMessage(hintMessgae:  "退出成功", completion: { (action) in
+                     NotificationCenter.default.post(name: NSNotification.Name.init("Refresh"), object: nil)
                     self?.navigationController?.popViewController(animated: true)
                 })
             }else{

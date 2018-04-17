@@ -30,7 +30,7 @@ class CircleMemberListVC: UIViewController {
             self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
             return
         }
-        //修改圈名称
+    
         NetWorkTool.shareInstance.getCircleMemberList(token: access_token, id: circleId) { [weak self](result, error) in
             if  result?["code"] as? Int == 200  {
                 guard   result != nil else{

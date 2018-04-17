@@ -19,7 +19,7 @@ class CricleViewController: UIViewController {
 
 
     @objc  func requestNetwork(){
-        circlePickertrueView.awakeFromNib()
+        circlePickertrueView.refresh()
     }
     
     

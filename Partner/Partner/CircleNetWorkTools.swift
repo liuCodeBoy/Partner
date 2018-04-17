@@ -270,7 +270,7 @@ extension NetWorkTool {
     
     
     // 创建圈子
-    func circleCreated(token:String , membIds : String , circName : String, circDesc : String , image : UIImage? , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
+    func circleCreated(token:String , membIds : String , circName : String, circDesc : String? , image : UIImage? , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
         let urlString = "http://106.15.199.8/qm/circle/api/create.do"
         //2.获取请求参数

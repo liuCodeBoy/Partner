@@ -24,6 +24,13 @@ class CircleManageVC: UIViewController,ImagePickerDelegate{
         loadDetailInfoVC()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        let  sourceVC = self.circleDetailSeague?.source as! CircleDetailVC
+        sourceVC.detailTableview.topDetailModel?.desc = circleInfoLab.text
+        sourceVC.detailTableview.topDetailModel?.circleName = CircleNameText.text
+        NotificationCenter.default.post(name: NSNotification.Name.init("Refresh"), object: nil)
+    }
+    
     @IBAction func chooseCircleImage(_ sender: Any) {
         
         let imagePickerController = ImagePickerController()
@@ -46,7 +53,6 @@ class CircleManageVC: UIViewController,ImagePickerDelegate{
                 guard   result != nil else{
                     return}
                 self?.presentHintMessage(hintMessgae: "解散成功", completion: { (action) in
-                     NotificationCenter.default.post(name: NSNotification.Name.init("Refresh"), object: nil)
                     let index =  (self?.navigationController?.viewControllers.index(of: self!))! - 2
                     self?.navigationController?.popToViewController((self?.navigationController?.viewControllers[index])!, animated: true)
                 })
@@ -101,8 +107,16 @@ class CircleManageVC: UIViewController,ImagePickerDelegate{
                     if let number = detailModel.membNum{
                         self?.numberText.text = "\(String(describing: number))"
                     }
-                   self?.circleInfoLab.text = detailModel.circleDesc
+                    
+                    if let detail = detailModel.circleDesc {
+                        if detail.count > 0 {
+                            self?.circleInfoLab.text = detailModel.circleDesc
+                        }else{
+                            self?.circleInfoLab.text = "暂无简介"
+                        }
+                    }
                    self?.CircleNameText.text = detailModel.circleName
+                  
                 }
             }else{
                 let  errorShow  =  result!["msg"] as! String

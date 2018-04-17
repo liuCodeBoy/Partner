@@ -103,6 +103,9 @@ extension NoticeViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "NoticeListViewControllerID") as! NoticeListViewController
+        if indexPath.row == 3 {
+         noticeRead(index:4)
+        }
         noticeRead(index:indexPath.row + 1)
         destVC.type = indexPath.row
         self.navigationController?.pushViewController(destVC, animated: true)

@@ -69,8 +69,8 @@ extension UIViewController {
     // MARK:- present login view controller
     func presentLoginController() {
         presentHintMessage(hintMessgae: "你还未登陆", completion: { [weak self](_) in
-            let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
-            self?.navigationController?.present(vc, animated: true, completion: nil)
+//            let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
+//            self?.navigationController?.present(vc, animated: true, completion: nil)
         })
     }
     

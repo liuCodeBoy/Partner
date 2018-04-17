@@ -99,9 +99,7 @@ extension ProjectSearchVC {
             newsListTableView.mj_footer.endRefreshingWithNoMoreData()
             return
         }
-        guard access_token != nil else {
-            return
-        }
+
 //        var name : String?
 //        if type == nil {
 //            name = fuzzy
@@ -166,6 +164,10 @@ extension ProjectSearchVC {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard access_token != nil else {
+        self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
+        return
+            }
         if newsModelArr.count > 0 {
             //初始化控制器
             let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
