@@ -45,6 +45,7 @@ class CriclePicktrueView: UICollectionView {
     
     //发送请求
     func getSelfCircleInfo(){
+        self.modelArr.removeAll()
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
             return
         }
@@ -137,7 +138,6 @@ extension  CriclePicktrueView {
     }
     
     @objc func refresh() -> () {
-        self.othersModelArr.removeAll()
         setdeafultStatus()
         getSelfCircleInfo()
         getOtherCircleInfo()

@@ -82,6 +82,8 @@ class UnionMainVC: UIViewController {
         self.topContentView.addSubview(self.noticeBtn!)
     }
     
+    
+    
     //网络请求
     func loadNotice() -> () {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
@@ -89,7 +91,7 @@ class UnionMainVC: UIViewController {
             return
         }
         NetWorkTool.shareInstance.getNoticeApiList(token: access_token) { [weak self](result, error) in
-            print(access_token)
+            self?.modelArr.removeAll()
             if  result?["code"] as? Int == 200  {
                 guard   result != nil else{
                     return
@@ -100,16 +102,19 @@ class UnionMainVC: UIViewController {
                             self?.modelArr.append(statusViewModel)
                         }
                     }
+                    var hasRead = 1
                     for model in (self?.modelArr)! {
-                        if model.read == 1{
-                            self?.isRead = 1
-                        }else{ self?.isRead = 0}
+                        if model.read == 0{
+                            hasRead = 0
+                        }
                     }
+                    self?.isRead = hasRead
                 }
                 self?.addNoticBtn()
             }else{
-                let  errorShow  =  result!["msg"] as! String
-                self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+//                if let  errorShow  =  result!["msg"] as? String{
+//                    self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
+//                }
             }
         }
     }

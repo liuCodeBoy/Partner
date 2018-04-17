@@ -75,8 +75,12 @@ class  CircleDetailTopCell : UITableViewCell{
                     break
                 }
             }
-            if let desString = (detailModel?.desc) as? String {
-                self.detailTextLab.text = "简介： "  + desString
+            if let desString = (detailModel?.desc) {
+                if desString.count > 0 {
+                 self.detailTextLab.text = "简介： "  + desString
+                }else{
+                  self.detailTextLab.text = "简介： "  + "暂无简介"
+                }
             }
 
         }

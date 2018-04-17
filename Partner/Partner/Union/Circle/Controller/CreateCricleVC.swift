@@ -12,6 +12,7 @@ class CreateCricleVC: UIViewController {
     @IBOutlet weak var pictrueCollectionView: PickImageCollectionView!
     @IBOutlet weak var placeholdView: LimitTextView!
     @IBOutlet weak var selectedUserTableView: UserSearchTableView!
+    @IBOutlet weak var circleDetailInfo: UITextField!
     
     var userModelArr = [UserModel]()
     let   limitNumbers  = 20
@@ -71,7 +72,7 @@ class CreateCricleVC: UIViewController {
         
             //加载动画
             NVActivityIndicatorPresenter.sharedInstance.startAnimating(AppDelegate.activityData)
-            NetWorkTool.shareInstance.circleCreated(token: access_token, membIds: membIds, circName: placeholdView.inputTF.text, circDesc: "", image: pictrueCollectionView.imageArr[0], finished: { [weak self](info, error) in
+            NetWorkTool.shareInstance.circleCreated(token: access_token, membIds: membIds, circName: placeholdView.inputTF.text, circDesc: circleDetailInfo.text, image: pictrueCollectionView.imageArr[0], finished: { [weak self](info, error) in
                 NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 if error == nil {
                  // MARK:- judge the return data from server

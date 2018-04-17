@@ -17,6 +17,7 @@ class NoticeSocialConnListModel: NSObject {
     @objc  var   auth  :  NSNumber?
     @objc  var   secAuth  :  NSNumber?
     @objc  var   senderImgUrl : String?
+    @objc  var   circleName   : String?
     @objc  var   senderName   : String?
     @objc  var   content   : String?
     @objc  var   sendTime   : String?

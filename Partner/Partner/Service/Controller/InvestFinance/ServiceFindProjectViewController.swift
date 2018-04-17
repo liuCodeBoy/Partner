@@ -98,6 +98,10 @@ extension ServiceFindProjectViewController: UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard access_token != nil else {
+            self.presentHintMessage(hintMessgae: "您尚未登录", completion: nil)
+            return
+        }
         let destVC = UIStoryboard.init(name: "MyProject", bundle: nil).instantiateViewController(withIdentifier: "MyProjectReview") as! MyProjectReviewViewController
         if modelArr.count > 0 {
             let model = modelArr[indexPath.row]

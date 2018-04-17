@@ -25,7 +25,9 @@ class MemberOfCircleVC: UIViewController {
             self.withdrawCircle()
         }, cancel: nil)
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+         NotificationCenter.default.post(name: NSNotification.Name.init("Refresh"), object: nil)
+    }
     
     func  withdrawCircle(){
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{

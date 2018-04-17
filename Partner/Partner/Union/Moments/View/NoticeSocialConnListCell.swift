@@ -93,7 +93,13 @@ class NoticeSocialConnListCell: UITableViewCell {
             
             
             if let content = viewModel.content{
-                self.communityLab.text = content
+                if let circlename = viewModel.circleName {
+                    let str = "####"
+                    let result = content.replacingOccurrences(of:str, with: circlename)
+                    self.communityLab.text = result
+                }else{
+                    self.communityLab.text = content
+                }
             }
             if let  sendTime =  viewModel.sendTime{
                 self.timeTextLab.text = sendTime
