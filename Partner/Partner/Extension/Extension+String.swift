@@ -87,6 +87,21 @@ extension String {
         }
         set { }
     }
+    
+    var isValidCreditNumber: Bool {
+        get {
+            let pwdRE: String = "^[^_IOZSVa-z\\W]{2}\\d{6}[^_IOZSVa-z\\W]{10}$"
+            let regex = NSPredicate(format: "SELF MATCHES %@", pwdRE)
+            
+            if regex.evaluate(with: self) == true {
+                return true
+            } else {
+                return false
+            }
+        }
+        set { }
+    }
+    
 
 }
 

@@ -40,9 +40,6 @@ class ProjectEditlTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let isEdit = modelView?.isEdit, isEdit == 1 {
-            return 7
-        }
         return 8
     }
     

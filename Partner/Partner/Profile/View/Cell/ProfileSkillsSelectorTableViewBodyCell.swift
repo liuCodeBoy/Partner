@@ -17,7 +17,9 @@ class ProfileSkillsSelectorTableViewBodyCell: UITableViewCell {
             for skill in skillArray {
                 str += "\(skill),"
             }
-            str.removeLast(1)
+            if !str.isEmptyString {
+                str.removeLast(1)
+            }
             skillString = str
         }
     }

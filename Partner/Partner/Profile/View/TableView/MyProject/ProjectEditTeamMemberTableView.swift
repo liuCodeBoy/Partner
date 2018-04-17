@@ -75,13 +75,8 @@ class ProjectEditTeamMemberTableView: UITableView, UITableViewDelegate, UITableV
         if editingStyle == .delete {
             // MARK:- post request to server
             
-            deleteMember(memberId: modelArray[indexPath.row].id as! Int)
-            
-            modelArray.remove(at: indexPath.row)
-            
+            deleteMember(memberId: modelArray[indexPath.row].id as! Int, row: indexPath.row)
             tableView.reloadData()
-            //            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
-            
         }
         
     }
@@ -120,7 +115,7 @@ extension ProjectEditTeamMemberTableView {
     }
     
     // MARK:- delete member
-    func deleteMember(memberId: Int) {
+    func deleteMember(memberId: Int, row: Int) {
         guard UserDefaults.standard.string(forKey: "token") != nil else {
             return
         }
@@ -133,6 +128,9 @@ extension ProjectEditTeamMemberTableView {
             }
             if result!["code"] as! Int == 200 {
                 SCLAlertView().showSuccess("删除成功", subTitle: "")
+                
+                self.modelArray.remove(at: row)
+                self.reloadData()
                 
             } else {
                 SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")

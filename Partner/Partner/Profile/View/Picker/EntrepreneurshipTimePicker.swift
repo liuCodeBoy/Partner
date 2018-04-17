@@ -6,14 +6,44 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var years: [Int] = [Int]()
     var months: [String] = [String]()
     
-    var beginDate: String?
-    var endDate: String?
+    var fromYear = "1980" {
+        didSet {
+            beginDate = "\(fromYear)年/\(fromMonth)"
+        }
+    }
+    var fromMonth = "1" {
+        didSet {
+            beginDate = "\(fromYear)年/\(fromMonth)"
+        }
+    }
+    var toYear = "2018" {
+        didSet {
+            endDate = "\(toYear)年/\(toMonth)"
+        }
+    }
+    var toMonth = "1" {
+        didSet {
+            endDate = "\(toYear)年/\(toMonth)"
+        }
+    }
+    
+    var beginDate: String = "1980年/1月" {
+        didSet {
+            time = "\(beginDate) - \(endDate)"
+        }
+    }
+    var endDate: String = "2018年/1月" {
+        didSet {
+            time = "\(beginDate) - \(endDate)"
+        }
+    }
     var time: String?
     var saveDataClosure: ((_ from: String, _ to: String, _ time: String) -> Void)?
     
@@ -38,8 +68,17 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
         if let superView = self.superview {
             superView.endEditing(true)
         }
+        
+        if Int(fromYear)! > Int(toYear)! {
+            SCLAlertView().showWarning("请选择正确的时间", subTitle: "")
+            return
+        } else if Int(fromYear)! == Int(toYear)! && Int(fromMonth.replacingOccurrences(of: "月", with: ""))! > Int(toMonth.replacingOccurrences(of: "月", with: ""))! {
+            SCLAlertView().showWarning("请选择正确的时间", subTitle: "")
+            return
+        }
+        
         if saveDataClosure != nil {
-            saveDataClosure!(beginDate!, endDate!, time!)
+            saveDataClosure!("\(fromYear)/\(fromMonth)", "\(toYear)/\(toMonth)", "\(fromYear)/\(fromMonth) - \(toYear)/\(toMonth)")
         }
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.backView.alpha = 0
@@ -69,11 +108,6 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
         for j in 1...12 {
             months.append("\(j)月")
         }
-        
-        // set the deafult value
-        beginDate = "\(currentDate.year())/\(currentDate.month())"
-        endDate = "\(currentDate.year())/\(currentDate.month())"
-        time = "\(beginDate!) - \(endDate!)"
 
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.backView.alpha = 0.3
@@ -128,20 +162,28 @@ class EntrepreneurshipTimePicker: UIView, UIPickerViewDelegate, UIPickerViewData
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let fromYear    = pickerView.view(forRow: row, forComponent: 0) as? UILabel
-        let fromMonth   = pickerView.view(forRow: row, forComponent: 1) as? UILabel
-        let toYear      = pickerView.view(forRow: row, forComponent: 3) as? UILabel
-        let toMonth     = pickerView.view(forRow: row, forComponent: 4) as? UILabel
-
-        let beginTime = "\(fromYear?.text ?? "\(currentDate.year())")/\(fromMonth?.text ?? "\(currentDate.month())")"
-        let endTime = "\(toYear?.text ?? "\(currentDate.year())")/\(toMonth?.text ?? "\(currentDate.month())")"
-        let entDate = "\(beginTime) - \(endTime)"
         
-        self.beginDate = beginTime
-        self.endDate = endTime
-        self.time = entDate
+        switch component {
+        case 0:
+            if let fromYear = pickerView.view(forRow: row, forComponent: 0) as? UILabel {
+                self.fromYear = fromYear.text!
+            }
+        case 1:
+            if let fromMonth = pickerView.view(forRow: row, forComponent: 1) as? UILabel {
+                self.fromMonth = fromMonth.text!
+            }
+        case 3:
+            if let toYear = pickerView.view(forRow: row, forComponent: 3) as? UILabel {
+                self.toYear = toYear.text!
+            }
+        case 4:
+            if let toMonth = pickerView.view(forRow: row, forComponent: 4) as? UILabel {
+                self.toMonth = toMonth.text!
+            }
+        default: break
+        }
         
-        timeLbl.text = entDate
+        timeLbl.text = time
         
     }
     

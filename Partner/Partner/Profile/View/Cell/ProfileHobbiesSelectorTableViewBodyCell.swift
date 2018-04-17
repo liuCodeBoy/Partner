@@ -17,7 +17,9 @@ class ProfileHobbiesSelectorTableViewBodyCell: UITableViewCell {
             for skill in hobbyArray {
                 str += "\(skill),"
             }
-            str.removeLast(1)
+            if !str.isEmptyString {
+                str.removeLast(1)
+            }
             hobbyString = str
         }
     }
