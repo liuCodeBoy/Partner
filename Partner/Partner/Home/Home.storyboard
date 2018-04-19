@@ -99,7 +99,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RkK-Qc-N4Y" userLabel="HotVoterChild2" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="152" y="10" width="130" height="180"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="yIN-DK-Ey4" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partner_img_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="yIN-DK-Ey4" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                                         <rect key="frame" x="35" y="10" width="60" height="60"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="60" id="4Qi-tr-fxG"/>
@@ -112,8 +112,8 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iif-C6-At7">
-                                                                        <rect key="frame" x="44.333333333333343" y="80" width="42.333333333333343" height="19.666666666666671"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iif-C6-At7">
+                                                                        <rect key="frame" x="65.666666666666657" y="80" width="0.0" height="19.666666666666671"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19.670000000000002" id="umL-GL-k8v"/>
                                                                         </constraints>
@@ -121,8 +121,8 @@
                                                                         <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKJ-hV-K7x">
-                                                                        <rect key="frame" x="46.666666666666657" y="99.666666666666686" width="37.666666666666657" height="22"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKJ-hV-K7x">
+                                                                        <rect key="frame" x="65.666666666666657" y="99.666666666666686" width="0.0" height="22"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="22" id="H1W-7d-wYn"/>
                                                                         </constraints>
@@ -188,7 +188,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGT-hq-KNy" userLabel="HotVoterChild3" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="292" y="10" width="130" height="180"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="A18-5v-nIZ" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partner_img_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="A18-5v-nIZ" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                                         <rect key="frame" x="35" y="10" width="60" height="60"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="60" id="8rI-8Q-GtQ"/>
@@ -201,8 +201,8 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22r-IS-eUJ">
-                                                                        <rect key="frame" x="44.333333333333314" y="80" width="42.333333333333343" height="19.666666666666671"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22r-IS-eUJ">
+                                                                        <rect key="frame" x="65.666666666666686" y="80" width="0.0" height="19.666666666666671"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19.670000000000002" id="JYc-jH-ghm"/>
                                                                         </constraints>
@@ -210,8 +210,8 @@
                                                                         <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxR-JP-rAg">
-                                                                        <rect key="frame" x="46.666666666666686" y="99.666666666666686" width="37.666666666666657" height="22"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxR-JP-rAg">
+                                                                        <rect key="frame" x="65.666666666666686" y="99.666666666666686" width="0.0" height="22"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="22" id="GHT-Q9-fZ7"/>
                                                                         </constraints>
@@ -277,7 +277,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiR-JJ-rsu" userLabel="HotVoterChild1" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="12" y="10" width="130" height="180"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="JxU-wZ-71U" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partner_img_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="JxU-wZ-71U" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                                         <rect key="frame" x="35" y="10" width="60" height="60"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="60" id="0io-Xx-BTc"/>
@@ -290,8 +290,8 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THh-LL-CGt">
-                                                                        <rect key="frame" x="44.333333333333329" y="80" width="42.333333333333329" height="19.666666666666671"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THh-LL-CGt">
+                                                                        <rect key="frame" x="65.666666666666671" y="80" width="0.0" height="19.666666666666671"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19.670000000000002" id="2TA-F8-gdw"/>
                                                                         </constraints>
@@ -299,8 +299,8 @@
                                                                         <color key="textColor" red="0.23137254900000001" green="0.29411764709999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMd-h2-F4D">
-                                                                        <rect key="frame" x="46.666666666666671" y="99.666666666666686" width="37.666666666666671" height="22"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMd-h2-F4D">
+                                                                        <rect key="frame" x="65.666666666666671" y="99.666666666666686" width="0.0" height="22"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="22" id="SR4-14-QP2"/>
                                                                         </constraints>
@@ -394,7 +394,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsY-QR-8hN" userLabel="Shadow View1" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="232" y="10" width="230" height="246"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="neb-ex-55n" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partner_img_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="neb-ex-55n" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="0.0" width="220" height="246"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -430,7 +430,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PpC-WY-yuU" userLabel="Shadow View2" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="12" y="10" width="220" height="246"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-4z-oe9" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partner_img_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-4z-oe9" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="220" height="246"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -469,7 +469,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXc-Dg-aj4" userLabel="Shadow View3" customClass="ShadowView" customModule="Partner" customModuleProvider="target">
                                                                 <rect key="frame" x="462" y="10" width="220" height="246"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="service_detail_bg" translatesAutoresizingMaskIntoConstraints="NO" id="zNV-z6-gNF" userLabel="service_detail_bg3" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
+                                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partner_img_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="zNV-z6-gNF" userLabel="service_detail_bg3" customClass="RoundRectImage" customModule="Partner" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="0.0" width="210" height="246"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2002,6 +2002,7 @@
     </scenes>
     <resources>
         <image name="left_arrow" width="6" height="10"/>
+        <image name="partner_img_placeholder" width="720" height="720"/>
         <image name="profile_my_project_view" width="16" height="10"/>
         <image name="right_arrow" width="6" height="10"/>
         <image name="search_bar_magnifier" width="17" height="17"/>

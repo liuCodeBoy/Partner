@@ -42,6 +42,7 @@ class StatusPushVC: UIViewController , UITextViewDelegate {
         changeBtnStatus()
     }
     
+    
     func changeBtnStatus(){
         self.isPublicBtn.isSelected =  !self.isPublicBtn.isSelected
         if isPublicBtn.isSelected {

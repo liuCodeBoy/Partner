@@ -132,9 +132,13 @@ extension FounderSearchVC {
                         }
                         self?.newsListTableView.mj_header.endRefreshing()
                         self?.newsListTableView.reloadData()
-                    }else{
-                       // SCLAlertView().showError("还未找到相关数据", subTitle: "")
                     }
+                    if self?.newsModelArr.count == 0 {
+                            self?.newsListTableView.addPlaceholder()
+                        }else{
+                            self?.newsListTableView.removePlaceholder()
+                    }
+                   
                 } else {
                     let  errorShow  =  info!["msg"] as! String
                     self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
@@ -144,6 +148,9 @@ extension FounderSearchVC {
         }
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsModelArr.count

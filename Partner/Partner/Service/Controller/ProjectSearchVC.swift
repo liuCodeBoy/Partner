@@ -130,8 +130,11 @@ extension ProjectSearchVC {
                         }
                         self?.newsListTableView.mj_header.endRefreshing()
                         self?.newsListTableView.reloadData()
+                    }
+                    if self?.newsModelArr.count == 0 {
+                        self?.newsListTableView.addPlaceholder()
                     }else{
-                      //  SCLAlertView().showError("还未找到相关数据", subTitle: "")
+                        self?.newsListTableView.removePlaceholder()
                     }
                 } else {
                     let  errorShow  =  info!["msg"] as! String
@@ -142,6 +145,9 @@ extension ProjectSearchVC {
         }
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsModelArr.count

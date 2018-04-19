@@ -44,6 +44,9 @@ class SearchUserVC: UIViewController,UITextFieldDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     //网络请求
     func searchUser(fuzzy : String) -> () {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else{
@@ -73,15 +76,16 @@ class SearchUserVC: UIViewController,UITextFieldDelegate {
                     }
                 }
                  self?.userTableView.userModelArr = (self?.modelArr)!
-                    if dictArr.count == 0 {
-                     self?.presentHintMessage(hintMessgae: "未查找到数据", completion: nil)
-                    }
+                   
                 }
-            
-                
+                if self?.modelArr.count == 0 {
+                    self?.userTableView.addPlaceholder()
+                }else{
+                    self?.userTableView.removePlaceholder()
+                }
             }else{
               //  let  errorShow  =  result!["msg"] as! String
-                 self?.presentHintMessage(hintMessgae: "未查找到数据", completion: nil)
+               
             }
         }
     }

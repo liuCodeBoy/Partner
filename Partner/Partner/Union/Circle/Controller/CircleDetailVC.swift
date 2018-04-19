@@ -24,8 +24,7 @@ class CircleDetailVC: UIViewController {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
         getCircleDetInfo()
-        //添加子控
-        addchildVC()
+        
         //设置设置按钮的切换
         changeBtnType()
         addPushBtn()
@@ -41,9 +40,15 @@ class CircleDetailVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let vc = self.childViewControllers.first as! CircleDetailCommandVC
-        detailTableview.reloadData()
-        vc.refresh()
+        if self.childViewControllers.count == 0{
+            //添加子控
+            addchildVC()
+        }else{
+            let vc = self.childViewControllers.first as! CircleDetailCommandVC
+            detailTableview.reloadData()
+            vc.refresh()
+        }
+       
     }
     
     @IBAction func userdetailPushAction(_ sender: Any) {
@@ -51,8 +56,10 @@ class CircleDetailVC: UIViewController {
             let destVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleMemberListVCID") as! CircleMemberListVC
             destVC.circleId = circleId
             self.navigationController?.pushViewController(destVC, animated: true)
-        }else {
-            
+        }else if create == 0{
+            let destVC = UIStoryboard.init(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "CircleMemberSingleListVCID") as! CircleMemberSingleListVC
+           destVC.circleId = circleId
+            self.navigationController?.pushViewController(destVC, animated: true)
         }
       
     }
@@ -69,7 +76,6 @@ class CircleDetailVC: UIViewController {
     }
     
     @objc func pushSendOutVC(){
-        
         let statusPushVC  = UIStoryboard(name: "Union", bundle: nil).instantiateViewController(withIdentifier: "StatusPushVCID") as!  StatusPushVC
         statusPushVC.circleViewisHidden = true
         statusPushVC.circleName = detailTableview.topDetailModel?.circleName

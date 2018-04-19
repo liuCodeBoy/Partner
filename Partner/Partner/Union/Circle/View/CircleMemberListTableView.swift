@@ -68,10 +68,6 @@ class CircleMemberListTableView: UITableView ,UITableViewDelegate,UITableViewDat
                     SCLAlertView().showError(errorShow, subTitle: "")
                 }
             })
-            
-          
-           
-            
         }
         
     }

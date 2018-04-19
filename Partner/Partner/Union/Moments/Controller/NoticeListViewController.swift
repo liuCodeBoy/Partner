@@ -85,6 +85,11 @@ class NoticeListViewController: UIViewController ,UITableViewDelegate ,UITableVi
                     NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                     self?.noticeTableView.reloadData()
                 }
+                if self?.modelArr.count == 0 {
+                    self?.noticeTableView.addPlaceholder()
+                }else{
+                    self?.noticeTableView.removePlaceholder()
+                }
             }else{
                 let  errorShow  =  result!["msg"] as! String
                 self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
@@ -131,6 +136,11 @@ class NoticeListViewController: UIViewController ,UITableViewDelegate ,UITableVi
                     self?.noticeTableView.mj_footer.endRefreshing()
                     NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                     self?.noticeTableView.reloadData()
+                }
+                if self?.modelArr.count == 0 {
+                    self?.noticeTableView.addPlaceholder()
+                }else{
+                    self?.noticeTableView.removePlaceholder()
                 }
             }else{
                 let  errorShow  =  result!["msg"] as! String
@@ -179,6 +189,11 @@ class NoticeListViewController: UIViewController ,UITableViewDelegate ,UITableVi
                     NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                     self?.noticeTableView.reloadData()
                 }
+                if self?.modelArr.count == 0 {
+                    self?.noticeTableView.addPlaceholder()
+                }else{
+                    self?.noticeTableView.removePlaceholder()
+                }
             }else{
                 let  errorShow  =  result!["msg"] as! String
                 self?.presentHintMessage(hintMessgae: errorShow, completion: nil)
@@ -188,6 +203,10 @@ class NoticeListViewController: UIViewController ,UITableViewDelegate ,UITableVi
     
     
     @IBAction func deleteAllNotice(_ sender: Any) {
+        if self.modelArr.count == 0 {
+            self.presentHintMessage(hintMessgae: "暂无数据", completion: nil)
+            return
+        }
         self.presentAlert(title: "确认删除", hint: "", confirmTitle: "确定", cancelTitle: "取消", confirmation: { [weak self](action) in
             self?.deleteAll()
         }, cancel: nil)
@@ -217,6 +236,11 @@ class NoticeListViewController: UIViewController ,UITableViewDelegate ,UITableVi
                 self?.presentHintMessage(hintMessgae: "删除成功", completion: nil)
                 self?.modelArr.removeAll()
                 self?.noticeTableView.reloadData()
+                if self?.modelArr.count == 0 {
+                    self?.noticeTableView.addPlaceholder()
+                }else{
+                    self?.noticeTableView.removePlaceholder()
+                }
             } else {
                 //print("post request failed with exit code \(result!["code"] as! String)")
             }
@@ -329,6 +353,11 @@ extension NoticeListViewController {
                     //print(error as AnyObject)
                 } else if result?["code"] as? Int == 200 {
                     self?.presentHintMessage(hintMessgae: "删除成功", completion: nil)
+                    if self?.modelArr.count == 0 {
+                        self?.noticeTableView.addPlaceholder()
+                    }else{
+                        self?.noticeTableView.removePlaceholder()
+                    }
                 } else {
                     //print("post request failed with exit code \(result!["code"] as! String)")
                 }
