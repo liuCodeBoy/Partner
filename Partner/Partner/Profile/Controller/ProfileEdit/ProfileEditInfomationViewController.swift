@@ -329,6 +329,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 hobbyCell.hobbyArray = hobbyArr
                 // traverse the whole array and set selected status
                 for hobby in hobbyArr {
+                    if hobby == "+自定义" {
+                        hobbyArr.remove(at: hobbyArr.index(of: "+自定义")!)
+                    }
                     for btn in hobbyCell.contentView.subviews {
                         let button = btn as! ShadowButton
                         let btnTitle = button.titleLabel!.text!
@@ -337,7 +340,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                             button.backgroundColor = #colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1)
                             button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
                             // remove the selected button in array
-                            hobbyArr.remove(at: hobbyArr.index(of: btnTitle)!)
+                            if let index = hobbyArr.index(of: btnTitle) {
+                                hobbyArr.remove(at: index)
+                            }
                         } else {
                             continue
                         }
@@ -376,6 +381,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 }
             }
             self.hobbyCell = hobbyCell
+            hobbyCell.viewModel = self.viewModel
             cell = hobbyCell
         case 3:
             let skillCell = tableView.dequeueReusableCell(withIdentifier: "ProfileSkillsSelectorTableViewBodyCell") as! ProfileSkillsSelectorTableViewBodyCell
@@ -435,6 +441,7 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 }
             }
             self.skillCell = skillCell
+            skillCell.viewModel = self.viewModel
             cell = skillCell
         case 4:
             let tagCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextInputTableViewBodyCell") as! ProfileTextInputTableViewBodyCell
@@ -541,24 +548,87 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         // MARK:- end deiting to force the object resign first responder
         self.profileInfoTableView.endEditing(true)
         keyboardWillHide(withTransforming: profileInfoTableView)
-        // MARK:- store the require and description
-//        if let require = viewModel?.require {
-//            requireCell?.inputString = require
-//            let charCount = Int(require.count)
-//            requireCell?.inputLimitLbl.text = "\(charCount)/300"
-//        }
-//        if let desc = viewModel?.desc {
-//            descCell?.inputString = desc
-//            let charCount = Int(desc.count)
-//            descCell?.inputLimitLbl.text = "\(charCount)/300"
-//        }
-        // MARK:- save hobby and skill
-        if let cell = hobbyCell {
-            viewModel?.hobby = cell.hobbyString
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+        case "PEICustomHobbyTagSegue1":
+            if let cell = hobbyCell {
+                cell.customBtnClick(cell.customBtn1)
+                if cell.customBtn1.titleLabel?.text == "+自定义" {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        case "PEICustomHobbyTagSegue2":
+            if let cell = hobbyCell {
+                cell.customBtnClick(cell.customBtn2)
+                if cell.customBtn2.titleLabel?.text == "+自定义" {
+                    
+                    return true
+                } else {
+                    return false
+                }
+            }
+        case "PEICustomHobbyTagSegue3":
+            if let cell = hobbyCell {
+                cell.customBtnClick(cell.customBtn3)
+                if cell.customBtn3.titleLabel?.text == "+自定义" {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        case "PEICustomHobbyTagSegue4":
+            if let cell = hobbyCell {
+                cell.customBtnClick(cell.customBtn4)
+                if cell.customBtn4.titleLabel?.text == "+自定义" {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        case "PEICustomSkillTagSegue1":
+            if let cell = skillCell {
+                cell.customBtnClick(cell.customBtn5)
+                if cell.customBtn5.titleLabel?.text == "+自定义" {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        case "PEICustomSkillTagSegue2":
+            if let cell = skillCell {
+                cell.customBtnClick(cell.customBtn6)
+                if cell.customBtn6.titleLabel?.text == "+自定义" {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        case "PEICustomSkillTagSegue3":
+            if let cell = skillCell {
+                cell.customBtnClick(cell.customBtn7)
+                if cell.customBtn7.titleLabel?.text == "+自定义" {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        case "PEICustomSkillTagSegue4":
+            if let cell = skillCell {
+                cell.customBtnClick(cell.customBtn8)
+                if cell.customBtn8.titleLabel?.text == "+自定义" {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        default: break
         }
-        if let cell = skillCell {
-            viewModel?.skill = cell.skillString
-        }
+        
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -568,7 +638,6 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         if segue.identifier != "PEIInputDetialSegue" {
             destnationVC?.navTitle = "自定义标签"
         }
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
