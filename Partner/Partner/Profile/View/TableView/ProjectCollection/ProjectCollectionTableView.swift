@@ -15,6 +15,11 @@ class ProjectCollectionTableView: UITableView, UITableViewDelegate, UITableViewD
     var modelArray: [ProjectListModel] = [ProjectListModel]() {
         didSet {
             reloadData()
+            if modelArray.count == 0 {
+                self.addPlaceholder()
+            } else {
+                self.removePlaceholder()
+            }
         }
     }
     

@@ -146,6 +146,7 @@
 		D30AA10020285B8B00711F20 /* EntrepreneurshipTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30AA0FF20285B8B00711F20 /* EntrepreneurshipTimePicker.xib */; };
 		D30AA10220287BC200711F20 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30AA10120287BC200711F20 /* Extension+Date.swift */; };
 		D31C3CAD2040057300E97460 /* ProfileInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31C3CAC2040057300E97460 /* ProfileInfoModel.swift */; };
+		D327DB372087248E00FEB0B0 /* PartnerEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327DB362087248D00FEB0B0 /* PartnerEmpty.swift */; };
 		D327F759202B7A900045671C /* MyHomePageMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327F758202B7A900045671C /* MyHomePageMomentsTableViewCell.swift */; };
 		D33EA6772011D27200745003 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA6762011D27200745003 /* Extension+UIView.swift */; };
 		D33EA67A2011D29200745003 /* CFFlowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EA6792011D29200745003 /* CFFlowButtonView.swift */; };
@@ -431,6 +432,7 @@
 		D30AA0FF20285B8B00711F20 /* EntrepreneurshipTimePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntrepreneurshipTimePicker.xib; sourceTree = "<group>"; };
 		D30AA10120287BC200711F20 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		D31C3CAC2040057300E97460 /* ProfileInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoModel.swift; sourceTree = "<group>"; };
+		D327DB362087248D00FEB0B0 /* PartnerEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerEmpty.swift; sourceTree = "<group>"; };
 		D327F758202B7A900045671C /* MyHomePageMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomePageMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D33EA6762011D27200745003 /* Extension+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		D33EA6792011D29200745003 /* CFFlowButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFFlowButtonView.swift; sourceTree = "<group>"; };
@@ -1391,6 +1393,7 @@
 				D3E3349320351CBD0084687C /* ProfileEditTableViewHeader.xib */,
 				D3E3349520351D180084687C /* ProfileEditTableViewHeader.swift */,
 				39837FD0205130C6002BC382 /* PartnerEmpty.xib */,
+				D327DB362087248D00FEB0B0 /* PartnerEmpty.swift */,
 				D32328FC2027F4BC00D5AAE7 /* Picker */,
 				39FE111B205390AD0060CD76 /* TableView */,
 				D34712522011FFF9003E098E /* Cell */,
@@ -2078,6 +2081,7 @@
 				D34C6AF5202D43C700EA225E /* MyHomePageExperiencesTableViewSectionHeaderCell.swift in Sources */,
 				B6D7F80F204169370044B31C /* CircleSettingInfoModel.swift in Sources */,
 				D3D5660A2052694A005C8E75 /* CircleListMomentCell.swift in Sources */,
+				D327DB372087248E00FEB0B0 /* PartnerEmpty.swift in Sources */,
 				D35A9D1F203FB67D00408B9E /* ServiceFindProjectViewController.swift in Sources */,
 				D3A827E7201096C40053ADBF /* PartnerPickerView.swift in Sources */,
 				B65BE190202AF13A004407B1 /* CircleModel.swift in Sources */,

@@ -16,6 +16,11 @@ class IntentionProjectViewController: UIViewController, UITableViewDataSource, U
     var modelArray: [ProjectBasicInfoModel] = [ProjectBasicInfoModel]() {
         didSet {
             tableView.reloadData()
+            if modelArray.count == 0 {
+                tableView.addPlaceholder()
+            } else {
+                tableView.removePlaceholder()
+            }
         }
     }
     
@@ -24,6 +29,10 @@ class IntentionProjectViewController: UIViewController, UITableViewDataSource, U
     }
 
     @IBOutlet weak var tableView: UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +77,11 @@ class IntentionProjectViewController: UIViewController, UITableViewDataSource, U
                     }
                 }
                 
+                if weakSelf?.modelArray.count == 0 {
+                    weakSelf?.tableView.addPlaceholder()
+                } else {
+                    weakSelf?.tableView.removePlaceholder()
+                }
                 
             } else {
                 SCLAlertView().showError("post request failed, code: \(String(describing: result!["code"]!))", subTitle: "reason: \(String(describing: result!["msg"]!))")

@@ -65,6 +65,7 @@ extension ProjectCollectionViewController {
                         let model = ProjectListModel.mj_object(withKeyValues: dict)
                         weakSelf?.tableView.modelArray.append(model!)
                     }
+                    
                 } else {
                     return
                 }
