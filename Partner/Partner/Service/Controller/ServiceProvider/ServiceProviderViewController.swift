@@ -134,6 +134,9 @@ extension ServiceProviderViewController: UITableViewDelegate, UITableViewDataSou
         }
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
    
     //浏览服务商
     
@@ -170,6 +173,11 @@ extension ServiceProviderViewController: UITableViewDelegate, UITableViewDataSou
                         }
                     }
                     self?.serviceProvideTableView.reloadData()
+                }
+                if self?.newsModelArr.count == 0 {
+                    self?.serviceProvideTableView.addPlaceholder()
+                }else{
+                    self?.serviceProvideTableView.removePlaceholder()
                 }
                 
             }else{

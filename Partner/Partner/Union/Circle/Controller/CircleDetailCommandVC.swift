@@ -25,6 +25,7 @@ class CircleDetailCommandVC: UIViewController, UITableViewDelegate, UITableViewD
     var   nextPage = 1
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         statusTableview.rowHeight = UITableViewAutomaticDimension
         statusTableview.estimatedRowHeight = 200
         statusTableview.separatorStyle = .none
@@ -53,7 +54,7 @@ class CircleDetailCommandVC: UIViewController, UITableViewDelegate, UITableViewD
         self.nextPage = 1
         self.modelView.removeAll()
         loadStatuses()
-        //          momentTableView.mj_header.endRefreshing()
+        //momentTableView.mj_header.endRefreshing()
     }
     @objc func  endrefresh() -> (){
         loadStatuses()
@@ -92,6 +93,7 @@ class CircleDetailCommandVC: UIViewController, UITableViewDelegate, UITableViewD
 
 extension CircleDetailCommandVC {
     fileprivate   func loadStatuses() {
+        
         if  self.nextPage == 0 {
             self.statusTableview.mj_footer.endRefreshingWithNoMoreData()
             return
@@ -134,6 +136,11 @@ extension CircleDetailCommandVC {
                     self?.statusTableview.mj_footer.endRefreshing()
                     NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                     self?.statusTableview.reloadData()
+                }
+                if self?.modelView.count == 0 {
+                    self?.statusTableview.addPlaceholder()
+                }else{
+                    self?.statusTableview.removePlaceholder()
                 }
                 self?.cacheImages((self?.modelView)!)
             }else{

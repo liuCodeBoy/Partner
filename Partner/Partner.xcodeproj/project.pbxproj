@@ -66,6 +66,8 @@
 		B6314C972067EE8F00DE6D0D /* FounderSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6314C962067EE8F00DE6D0D /* FounderSearchVC.swift */; };
 		B6314C992068974400DE6D0D /* FounderFliterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6314C982068974400DE6D0D /* FounderFliterVC.swift */; };
 		B6314C9B2068D1EB00DE6D0D /* ServiceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6314C9A2068D1EB00DE6D0D /* ServiceListCell.swift */; };
+		B63B2AE520884A2300A30C4E /* CircleMemberSingleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B2AE420884A2300A30C4E /* CircleMemberSingleListVC.swift */; };
+		B63B2AE7208874C000A30C4E /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63B2AE6208874C000A30C4E /* UserListCell.xib */; };
 		B641021D2015D7D3001C8787 /* SkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641021C2015D7D3001C8787 /* SkillViewController.swift */; };
 		B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E5200C4932007799BC /* InformationDetailVC.swift */; };
 		B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E7200C506A007799BC /* Extension+UIViewController.swift */; };
@@ -351,6 +353,8 @@
 		B6314C962067EE8F00DE6D0D /* FounderSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FounderSearchVC.swift; sourceTree = "<group>"; };
 		B6314C982068974400DE6D0D /* FounderFliterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FounderFliterVC.swift; sourceTree = "<group>"; };
 		B6314C9A2068D1EB00DE6D0D /* ServiceListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCell.swift; sourceTree = "<group>"; };
+		B63B2AE420884A2300A30C4E /* CircleMemberSingleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMemberSingleListVC.swift; sourceTree = "<group>"; };
+		B63B2AE6208874C000A30C4E /* UserListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
 		B641021C2015D7D3001C8787 /* SkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillViewController.swift; sourceTree = "<group>"; };
 		B641021E2016D2E2001C8787 /* NoticeBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NoticeBar.framework; path = Carthage/Build/iOS/NoticeBar.framework; sourceTree = "<group>"; };
 		B65517E5200C4932007799BC /* InformationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailVC.swift; sourceTree = "<group>"; };
@@ -913,6 +917,7 @@
 				B687ABA520440CC0004C915A /* CircleReportVC.swift */,
 				B65E09D62045416300BF81FF /* CircleDetailCommandVC.swift */,
 				B6584D59206A190F0027DBFB /* EditCircleInfoVC.swift */,
+				B63B2AE420884A2300A30C4E /* CircleMemberSingleListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -929,6 +934,7 @@
 				B687AB9F2043E4EA004C915A /* CircleWatingJoinInListTableView.swift */,
 				B65E09D82045539200BF81FF /* CircleStautsCell.swift */,
 				D3D566092052694A005C8E75 /* CircleListMomentCell.swift */,
+				B63B2AE6208874C000A30C4E /* UserListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1738,6 +1744,7 @@
 				D378FEFE1FF0E80600065EEC /* Service.storyboard in Resources */,
 				39BFD412204D135500CD1563 /* ProfileEdit.storyboard in Resources */,
 				D3C58E0B2048F77C00C88E98 /* PartnerSinglePickerView.xib in Resources */,
+				B63B2AE7208874C000A30C4E /* UserListCell.xib in Resources */,
 				39FE1118205386F30060CD76 /* InvestFinance.storyboard in Resources */,
 				39837FD1205130C6002BC382 /* PartnerEmpty.xib in Resources */,
 				D3A827E9201096CD0053ADBF /* PartnerPickerView.xib in Resources */,
@@ -1971,6 +1978,7 @@
 				B6D7F80D204163BA0044B31C /* CircleNameEditVC.swift in Sources */,
 				D3034648201ECFD1007A37A5 /* ProjectEditHeaderTableViewCell.swift in Sources */,
 				D39A4F36200D98AF00022A76 /* Extension+String.swift in Sources */,
+				B63B2AE520884A2300A30C4E /* CircleMemberSingleListVC.swift in Sources */,
 				B6A34318201C645300C7D5F5 /* communityModel.swift in Sources */,
 				B65BE18C2029DBB8004407B1 /* PlazaVC.swift in Sources */,
 				D39F14E0201EF69A003F3BC5 /* ProjectEditRunStatusTableViewCell.swift in Sources */,
