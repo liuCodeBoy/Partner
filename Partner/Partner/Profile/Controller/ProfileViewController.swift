@@ -41,8 +41,10 @@ class ProfileViewController: UIViewController {
             if let gender = viewModel?.gender {
                 if gender == 1 {
                     genderImg.image = #imageLiteral(resourceName: "male")
-                } else {
+                } else if gender == 2 {
                     genderImg.image = #imageLiteral(resourceName: "female")
+                } else {
+                    genderImg.image = #imageLiteral(resourceName: "gender_unkonwn_white")
                 }
             } else {
                 genderImg.isHidden = true

@@ -11,6 +11,8 @@ class ProfileSkillsSelectorTableViewBodyCell: UITableViewCell {
     
     var skillString = ""
     
+    var viewModel: ProfileInfoModel?
+    
     var skillArray = [String]() {
         didSet {
             var str = ""
@@ -21,6 +23,7 @@ class ProfileSkillsSelectorTableViewBodyCell: UITableViewCell {
                 str.removeLast(1)
             }
             skillString = str
+            viewModel?.skill = str
         }
     }
     
@@ -45,6 +48,37 @@ class ProfileSkillsSelectorTableViewBodyCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+    }
+    
+    func customBtnClick(_ sender: ShadowButton) {
+        guard let title = sender.titleLabel?.text else {
+            return
+        }
+        if sender.isSelected {
+            reverseTagClicked(sender)
+            for var hobby in skillArray {
+                if hobby == title {
+                    hobby = skillArray.remove(at: skillArray.index(of: hobby)!)
+                }
+            }
+        } else {
+            setTagClicked(sender)
+            skillArray.append(title)
+        }
+    }
+    
+    func setTagClicked(_ sender: ShadowButton) {
+        sender.isSelected = true
+        sender.backgroundColor = #colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1)
+        sender.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        
+    }
+    
+    func reverseTagClicked(_ sender: ShadowButton) {
+        sender.isSelected = false
+        sender.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        sender.setTitleColor(#colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1), for: .normal)
     }
     
 }
