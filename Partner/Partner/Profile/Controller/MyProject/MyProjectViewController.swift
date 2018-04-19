@@ -36,6 +36,7 @@ class MyProjectViewController: UIViewController {
     
     @IBOutlet weak var intentionBtn: UIButton!
     @IBAction func intentionBtnClicked(_ sender: UIButton) {
+        
     }
     
     @IBOutlet weak var investorsSelectViewHCons: NSLayoutConstraint!
@@ -50,6 +51,11 @@ class MyProjectViewController: UIViewController {
         investProjectTableView.isHidden = true
         createProjBtn.isHidden = false
         intentionBtn.isHidden  = true
+        
+        if myProjectTableView.modelArray.count == 0 {
+            placeholderContainerView.isHidden = false
+        }
+        
     }
     @IBOutlet weak var investorInvestProjBtn: ShadowButton!
     @IBAction func investorInvestProjBtnClicked(_ sender: ShadowButton) {
@@ -60,6 +66,17 @@ class MyProjectViewController: UIViewController {
         investProjectTableView.isHidden = false
         createProjBtn.isHidden = true
         intentionBtn.isHidden  = false
+        
+        if myProjectTableView.modelArray.count == 0 {
+            placeholderContainerView.isHidden = true
+        }
+        
+        if investProjectTableView.modelArray.count == 0 {
+            investProjectTableView.addPlaceholder()
+        } else {
+            investProjectTableView.removePlaceholder()
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,13 +133,17 @@ class MyProjectViewController: UIViewController {
                     weakSelf?.placeholderContainerView.isHidden = false
                     return
                 }
-                weakSelf?.placeholderContainerView.isHidden = true
+//                weakSelf?.placeholderContainerView.isHidden = true
                 // TODO:- convert dict to model and assign to view to show
                 if let resultDict = resultDict["list"] as? [[String : AnyObject]] {
                     for dict in resultDict {
                         let model = ProjectListModel.mj_object(withKeyValues: dict)
                         weakSelf?.myProjectTableView.modelArray.append(model!)
                     }
+                    
+                }
+                if weakSelf?.myProjectTableView.modelArray.count == 0 {
+                    weakSelf?.placeholderContainerView.isHidden = false
                 }
             } else {
                 weakSelf?.presentConfirmationAlert(hint: "post request failed with exit code: \(String(describing: result!["code"]!)), reason: \(String(describing: result!["msg"]!))", completion: nil)
@@ -147,7 +168,6 @@ class MyProjectViewController: UIViewController {
                     weakSelf?.placeholderContainerView.isHidden = false
                     return
                 }
-                weakSelf?.placeholderContainerView.isHidden = true
                 // TODO:- convert dict to model and assign to view to show
                 if let resultDict = resultDict["list"] as? [[String : AnyObject]] {
                     for dict in resultDict {

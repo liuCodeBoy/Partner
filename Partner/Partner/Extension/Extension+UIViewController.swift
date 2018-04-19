@@ -221,6 +221,7 @@ extension UIView {
     
     private struct AssociateKeys {
         static var foldProperty = "foldProperty"
+        static var placeholder = "placeholder"
     }
     var foldTag: Int {
         set(value) {
@@ -229,6 +230,36 @@ extension UIView {
         get {
             return objc_getAssociatedObject(self, &AssociateKeys.foldProperty) as! Int
         }
+    }
+    
+    var placeholderView: UIView? {
+        set(value) {
+            objc_setAssociatedObject(self, &AssociateKeys.placeholder, value, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+        get {
+            return objc_getAssociatedObject(self, &AssociateKeys.placeholder) as? UIView
+        }
+    }
+    
+    // MARK:- add or remove placeholder
+    
+    func addPlaceholder() {
+        if placeholderView == nil {
+            let placeholderView = Bundle.main.loadNibNamed("PartnerEmpty", owner: nil, options: nil)?.first as! UIView
+            placeholderView.frame = self.bounds
+            if self is UITableView {
+                let tableView = self as! UITableView
+                tableView.isScrollEnabled = false
+                
+            }
+            self.placeholderView = placeholderView
+            addSubview(placeholderView)
+        }
+    }
+    
+    func removePlaceholder() {
+        placeholderView?.removeFromSuperview()
+        placeholderView = nil
     }
     
     
